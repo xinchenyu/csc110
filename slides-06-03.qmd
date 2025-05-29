@@ -1,0 +1,237 @@
+---
+title: "while loop aggregation (slides)"
+format: revealjs
+slide-number: true
+---
+
+# CSc 110 - while loop aggregation
+
+
+## `while` loops
+
+-   Using an `index` variable:
+    -   Defined before the loop
+    -   Used in the **condition** of the loop
+    -   Changed within the loop
+-   Using a `temporary variable` for aggregation:
+    -   Defined before the loop
+    -   Changed within the loop
+    -   **Returned** outside the loop
+
+## `while` loops with aggregation
+
+Adding numbers from 1 to 5:
+```{python}
+#| eval: true
+#| echo: true
+total = 0
+index = 1
+while index <= 5:
+    print('adding ' + str(index))
+    total = total + index
+    index = index + 1
+    
+print(total)
+```
+
+## `while` loops table
+
+Start with `total = 0`, `index = 1`:
+
+| `index <= 5`   | total =  total + index | index = index + 1 |
+| :-------: |:-------: |:-------: |
+| True | total = 0 + 1 | index = 1 + 1 |
+| True | total = 1 + 2 | index = 2 + 1 |
+| True | total = 3 + 3 | index = 3 + 1 |
+| True | total = 6 + 4 | index = 4 + 1 |
+| True | total = 10 + 5 | index = 5 + 1 |
+| False | - | - |
+
+## Write a function
+
+Its name is `sum_all` and takes two numeric arguments: `low` and `high`.
+It runs a loop that iterates through the values `low` and `high` summing all values.
+It returns the sum of all values between `low` and `high`.
+
+HINT: Create a variable that will aggregate the sum. Use `while` (set the index as the `low` before the loop, use index in the `while` condition, update the index inside the loop). 
+
+```{python}
+#| eval: false
+#| echo: true
+assert sum_all(1, 3) == 6
+assert sum_all(0, 5) == 15
+```
+
+## Write a function -- solution
+
+```{python}
+#| eval: true
+#| echo: true
+def sum_all(low, high):
+  total = 0
+  index = low
+  while index <= high:
+    total += index
+    index += 1
+  return total
+    
+def main():
+  assert sum_all(1, 3) == 6
+  assert sum_all(0, 5) == 15
+  
+main()
+  
+```
+
+## Write a function
+
+Write a function called `count_vowels` that takes a string as argument, and returns
+an integer with the number of vowels in the string.
+
+HINT: use `in` to determine if a character is a vowel. The vowels are `"a"`,`"e"`,`"i"`,`"o"`, and `"u"`.
+
+```{python}
+#| eval: false
+#| echo: true
+assert count_vowels("banana") == 3
+assert count_vowels("fly") == 0
+```
+
+## Write a function -- solution
+
+```{python}
+#| eval: true
+#| echo: true
+def count_vowels(string):
+  index = 0
+  count = 0
+  while index < len(string):
+    if string[index] in "aeiou":
+      count += 1
+    index += 1
+  return count
+
+def main():
+  assert count_vowels("banana") == 3
+  assert count_vowels("fly") == 0
+  print("End of tests.")
+  
+main()
+
+```
+
+
+## Write a function
+
+Its name is `factorial` and takes a numeric argument `number`.
+It returns the factorial of `number`. 
+The factorial of a number is the product of that number and every number that comes before it, down to one. 
+
+For example, factorial of 4: `1 * 2 * 3 * 4 = 24`.
+
+Name your file `factorial.py` and submit to Gradescope.
+
+```{python}
+#| eval: false
+#| echo: true
+assert factorial(4) == 24
+assert factorial(5) == 120
+assert factorial(0) == 1
+```
+
+
+## Write a function -- solution
+
+```{python}
+#| eval: true
+#| echo: true
+def factorial(number):
+  result = 1
+  index = 1
+  while index <= number:
+    result *= index
+    index += 1
+  return result
+
+def main():
+  assert factorial(4) == 24
+  assert factorial(5) == 120
+  assert factorial(0) == 1
+  
+main()
+```
+
+
+## Write a function
+
+1.  Its name is `power`
+2.  It takes two numeric arguments: `base` and `exp`
+3.  It returns the `base` to the power of `exp`
+4.  Don't use the `**` operator, use a `while` loop (define an `index` before the loop, use `index` in the `while` condition, change `index` inside the loop)
+
+```{python}
+#| eval: false
+#| echo: true
+assert power(2, 4) == 16
+assert power(3, 2) == 9
+```
+
+
+## Write a function -- solution
+
+Write more test cases for this function.
+
+```{python}
+#| eval: true
+#| echo: true
+def power(base, exp):
+  result = 1
+  index = 1
+  while index <= exp:
+    result *= base
+    index += 1
+  return result
+
+def main():
+  assert power(2, 4) == 16
+  assert power(3, 2) == 9
+    
+main()
+```
+
+
+## Write a function
+
+1.  Its name is `vowels_only`
+2.  It takes a `string` argument
+3.  It builds a new string containing only the vowels in the `string` argument
+4.  It returns new string with vowels only (define an `index` before the loop, use index in the `while` condition, change `index` inside the loop)
+
+```{python}
+#| eval: false
+#| echo: true
+print( vowels_only("banana") ) # "aaa"
+print( vowels_only("fly") ) # ""
+```
+
+
+## Write a function -- solution
+
+
+```{python}
+#| eval: true
+#| echo: true
+def vowels_only(string):
+  new_string = ""
+  index = 0
+  while index < len(string):
+    if string[index] in "aeiou":
+      new_string += string[index]
+    index += 1
+  return new_string
+
+def main():
+  print( vowels_only("banana") ) # "aaa"
+  
+main()
+```

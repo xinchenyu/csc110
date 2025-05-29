@@ -1,378 +1,377 @@
 ---
-title: "mutability (slides)"
+title: "lists (slides)"
 format: revealjs
 slide-number: true
 df-print: kable
 ---
 
-# CSc 110 - Mutability
+# CSc 110 - Lists
 
-## Lists vs strings
+## Announcement
 
--   Lists are **mutable**
+Review session tomorrow (Tuesday, Feb 18) 
 
--   Strings are **not**
+-   Location: Gittings 129b 
 
--   In addition to retrieving an item from a `list`, we can remove or change it (which is **not** something you can do with strings)
+-   Time: 5 - 7 : 00 pm
 
-```{python}
-#| echo: true
-#| eval: true
-songs = ["Lavender Haze", "Calm Down", "As It Was", "About Damn Time"]
-songs
-```
+## Sequences
 
-```{python}
-#| echo: true
-#| eval: true
-songs[0] = "Flowers"
-songs
-```
-
-## Lists are mutable
-
-(strings are not)
-
-Because lists are mutable:
-
--   once a list is changed **inside** a function, that **change persists** when the function has finished running
-
-
-## Write a function
-
-1.  Its name is `make_even`
-2.  It takes one argument, a list of `integers`
-3.  It iterates over the list, changing odd numbers to even number (even up)
-
-Name your file  `make_even.py` and submit to Gradescope.
-```{python}
-#| eval: false
-#| echo: true
-integers = [1, 2, 3, 4]
-make_even(integers)
-assert integers == [2, 2, 4, 4] # change persists
-```
-
-
-## Write a function -- solution 1
+We've worked with `strings`, which are sequences in Python. Sequences can be indexed with `[ ]`:
 
 ```{python}
 #| eval: true
 #| echo: true
-def make_even(integers):
-  index = 0
-  while index < len(integers):
-    if integers[index] % 2 == 1:
-      integers[index] += 1
-    index += 1
-  return integers
-      
-def main():
-  integers = [1, 2, 3, 4]
-  make_even(integers)
-  assert integers == [2, 2, 4, 4]
-  
-main()
+word = "lotion"
+word[0] # returns first character in string
 ```
-
-Let's visualize this on [Python Tutor](https://pythontutor.com/visualize.html#mode=edit)
-
-## Write a function -- solution 2
 
 ```{python}
 #| eval: true
 #| echo: true
-def make_even(integers):
-  index = 0
-  while index < len(integers):
-    integers[index] += integers[index] % 2
-    index += 1
-  return integers
-      
-def main():
-  test_integers = [1, 2, 3, 4]
-  make_even(test_integers)
-  assert test_integers == [2, 2, 4, 4]
-  
-main()
+word[1] # returns second character in string
 ```
 
-If we remove the `return` statement on line 6, will the function still work properly?
-
-
-## Object References
-
--   A variable doesn't store values, it stores a reference to an object that lives in your computer memory (RAM)
-
--   If you assign a value to an existing object, the variable references that object
-```{python}
-#| eval: true
-#| echo: true
-last_name = "Brown"
-name = last_name # both reference the same object "Brown"
-```
-   
--   If you assign it to a new object, the object is created, placed in memory, and then the variable references it
-    
-```{python}
-#| eval: true
-#| echo: true
-title = "Dr."
-title = "Ms." # "Dr." object will be removed from memory
-```
-
-
-## Examples
-
-Strings are **not** mutable
+We also have `lists` in Python, which are also sequences and can indexed with `[ ]`:
 
 ```{python}
 #| eval: true
 #| echo: true
-title = "Dr."
-last_name = "Brown"
-print(title + " " + last_name)
-
-title = "Ms."
-print(title + " " + last_name)
-
-name = last_name # both point to the same object
-last_name = "Silva" # a new object created, last_name point to the new 
-print(title + " " + name) # name still point to the original string
+numbers = ['l', 'o', 't', 'i', 'o', 'n']
+numbers[0] # returns first item in list
 ```
 
-Visualize these examples in [Python Tutor](https://pythontutor.com/visualize.html#mode=display)
+## Data Structures
 
-## Examples
+-   Data structures is a way to organize data when coding
+-   Data structures allow for easy access and **modification** of values
+-   You can see data structures as a collection of data values
+-   In Python `lists` are a data structure that is:
+    -   mutable (you can change the values in it)
+    -   unordered -- you can have repeated elements in a list
 
-Lists are **mutable**
+## Creating lists
 
 ```{python}
 #| eval: true
 #| echo: true
-names = ["Dr.", "Brown"]
-print(names[0] + " " + names[1])
+# empty list
+no_numbers = []
 
-names[0] = "Ms."
-print(names[0] + " " + names[1])
+# list of integers
+numbers = [1, 5, 2, 10, 7]
 
-names_copy = names # both point to the same object
-names[1] = "Silva" # the object been mutated, no new object created
-print(names_copy[0] + " " + names_copy[1]) # both point to the mutated object
-```
+# list of strings
+names = ['SZA', 'JVKE', 'Bruno Mars', 'Doechii']
 
-Visualize these examples in [Python Tutor](https://pythontutor.com/visualize.html#mode=display)
-
-
-## Summary
-
-When working with lists, once they are changed in a function, the changes happen to the object in memory
-
-Changes to lists persist once the function has finished running
-
-## `.pop()` list method
-
-We will be using a few built-in list `methods`
-
-Here's how `.pop()` works:
-
-```{python}
-#| echo: true
-#| eval: true
-songs = ["Lavender Haze", "Calm Down", "As It Was", "Her"]
-songs
-```
-
-```{python}
-#| echo: true
-#| eval: true
-songs.pop(0) # 'Her' index moves from 3 to 2
-songs
-```
-
-```{python}
-#| echo: true
-#| eval: true
-songs.pop(0) # 'Her' index moves from 2 to 1
-songs
-```
-
-## `.pop()` items using `while` loop
-
-```{python}
-#| echo: true
-#| eval: true
-songs = ["Lavender Haze", "Calm Down", "As It Was", "Her"]
-index = 0
-while index < len(songs):
-  songs.pop(index)
-  
-print(songs)
-```
-
-Why we don't update index in the while loop?
-
-## Write two functions
-
-*   The first function returns the original argument list by removing vowels. 
-
-*   The second function returns a string without vowels.
-
-Note: list is mutable, but string is not.
-
-```{python}
-#| eval: false
-#| echo: true
-assert remove_vowels_list(["b", "a", "n", "a", "n", "a"]) == ["b", "n", "n"]
-assert remove_vowels_string("banana") == "bnn"
-```
-
-
-## Write two functions -- solution
-
-```{python}
-#| echo: true
-#| eval: true
-def remove_vowels_list(characters):
-  index = 0
-  while index < len(characters):
-    if characters[index] in "aeiou":
-      characters.pop(index)
-    else:
-      index += 1 # go to next index only if no item has been removed
-  return characters
-    
-def remove_vowels_string(string):
-  new_string = ""
-  index = 0
-  while index < len(string):
-    if string[index] not in "aeiou":
-      new_string += string[index]
-    index += 1
-  return new_string
-
-def main():
-  test_characters = ["b", "a", "n", "a", "n", "a"]
-  test_string = "banana"
-  
-  assert remove_vowels_list(test_characters) == test_characters
-  assert test_characters == ["b", "n", "n"]
-  assert remove_vowels_string("banana") == "bnn"
-  
-  print(test_characters)
-  print(test_string)
-      
-main()
-```
-
-
-
-## List methods
-
-We will be using the following list methods in this class:
-
--   `.append()` adds an element at the end of the list: `list.append(value)`
--   `.insert()` adds an element at the provided index: `list.insert(index, value)`
--   `.pop()` removes a specific element at the provided index: `list.pop(index)`
--   `.remove()` removes the first element with the provided value: `list.remove(value)`
-
-## `.append()` list method
-
-```{python}
-#| echo: true
-#| eval: true
-songs = ["Lavender Haze", "Calm Down", "As It Was", "Her"]
-songs
-```
-
-```{python}
-#| echo: true
-#| eval: true
-songs.append("Attention")
-songs
-```
-
-## Write a function
-
-It returns a list of integers that represent the indices of the vowels in the original list.
-
-Test cases:
-
-```{python}
-#| echo: true
-#| eval: false
-assert indices_of_vowels("hello") == [1, 4]
-assert indices_of_vowels("") == []
-assert indices_of_vowels("aeiou") == [0, 1, 2, 3, 4]
-```
-
-## Write a function -- solution
-
-```{python}
-#| echo: true
-#| eval: true
-def indices_of_vowels(string):
-  result = [] # initialize empty list to hold indices
-  index = 0 # initialize index
-  while index < len(string):
-    if string[index] in "aeiou": # check if character is vowel
-      result.append(index) # append index to result
-    index += 1 # increment index
-  return result
-
-def main():
-  assert indices_of_vowels("hello") == [1, 4]
-  assert indices_of_vowels("") == []
-  assert indices_of_vowels("aeiou") == [0, 1, 2, 3, 4]
-  print("Passed all tests.")
-
-main()
+# mixed types list
+values = [2, 1.15, 7, 1.75, 'those']
+print(values[0] * values[1])
 ```
 
 
 ## Write a function
 
-It returns a new list with the items of the original list inverted.
+Its name is `sum_all` that takes a list of `values` as an argument.
+It runs a loop that iterates through the number in `values` summing all numbers.
+It returns the sum of all numbers in `values`.
+HINT: a) create a variable that accumulate the sum and b) use `while`.
 
-Test case:
+Name your file `sum_list.py` and submit to Gradescope.
 
 ```{python}
 #| eval: false
 #| echo: true
-strings = ["banana", "apple", "grape"]
-assert reverse_list(strings) == ["grape", "apple", "banana"]
-assert strings == ["banana", "apple", "grape"] # original list unchanged
+assert sum_all([2, 2, 2]) == 6
+assert sum_all([2, 1, 5, 2, 3]) == 13
+assert sum_all([]) == 0
 ```
+
 
 ## Write a function -- solution
 
 ```{python}
 #| eval: true
 #| echo: true
-def reverse_list(items):
-  index = len(items) - 1 # initialize index
-  inverted_list = []
-  while index >= 0:
-    inverted_list.append(items[index])
-    index -= 1
-  return inverted_list
-    
+def sum_all(values):
+  total = 0
+  index = 0
+  while index < len(values):
+    total += values[index]
+    index += 1
+  return total
+
 def main():
-  strings = ["banana", "apple", "grape"]
-  assert reverse_list(strings) == ["grape", "apple", "banana"]
-  assert strings == ["banana", "apple", "grape"]
-  print("Passed test")
+  assert sum_all([2, 2, 2]) == 6
+  assert sum_all([2, 1, 5, 2, 3]) == 13
+  assert sum_all([]) == 0
+    
+main()
+```
+
+## Loop Table
+
+We start with `index = 0` and `total = 0`:
+```{python}
+#| eval: false
+#| echo: true
+sum_all([2, 1, 5, 2, 3])
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+#| message: false
+library(knitr)
+library(tidyverse)
+data.frame(index = c(0:5),
+           condition = c("True", "True", "True", "True",
+                                               "True", "False"),
+           `item` = c("2", "1", "5", "2", "3", "-"),
+           total = c("0 + 2 = 2", "2 + 1 = 3", "3 + 5 = 8",
+                     "8 + 2 = 10", "10 + 3 = 13", "13")
+                    ) %>% 
+  kable(col.names = c("index", "index < len(values)", "values[index]", "total"))
+```
+
+## Loop Table
+
+Start with `index = 0` and `total = 0`:
+```{python}
+#| eval: false
+#| echo: true
+sum_all([2, 1, 3, 4])
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+#| message: false
+data.frame(index = c("|", "| ", "| ", "| ",
+                                               "| ", "| "),
+           condition = c(" ", " ", " ", " ",
+                                               " ", " "),
+           `item` = c(" ", " ", " ", " ", " ", " "),
+           total = c(" ", " ", " ",
+                     " ", " ", " ")
+                    ) %>% 
+  kable(col.names = c("index", "index < len(values)", "values[index]", "total"))
+```
+
+## Loop Table -- solution
+
+```{python}
+#| eval: false
+#| echo: true
+sum_all([2, 1, 3, 4])
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+#| message: false
+data.frame(index = c(0:4),
+           condition = c("True", "True", "True", "True",
+                                               "False"),
+           `item` = c("2", "1", "3", "4", "-"),
+           total = c("2", "3", "6",
+                     "10", "10")
+                    ) %>% 
+  kable(col.names = c("index", "index < len(numbers)", "numbers[index]", "total"))
+```
+
+# Python Tutor
+
+You can also visualize code in python on [Python Tutor](https://pythontutor.com/visualize.html#mode=edit)
+
+## Using a control variable
+
+Remember how to get the max of three numbers?
+
+```{python}
+#| eval: true
+#| echo: true
+def max3(x, y, z):
+  max = x # assume max is first number
+  if y > max:
+    max = y # assumption is incorrect, assume y is max
+  if z > max:
+    max = z # assumption is incorrect, z is max
+  return max
+
+def main():
+  print( max3(1, 2, 2) ) # 2
   
 main()
 ```
 
-## Quiz 06
+Adapt this function (`max_list`) to take a list of numbers (for example `[1, 2, 2, 1, 3, 1, 1]`) instead of three numbers (use `while`). 
 
-<center>
-<div class="cleanslate w24tz-current-time w24tz-large" style="display: inline-block !important; visibility: hidden !important; min-width:300px !important; min-height:145px !important;"><a href="//24timezones.com/Tucson/time" style="text-decoration: none" class="clock24" id="tz24-1695057604-c1393-eyJob3VydHlwZSI6IjEyIiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIwIiwiY29udGFpbmVyX2lkIjoiY2xvY2tfYmxvY2tfY2I2NTA4ODZjNDg0OWVlIiwidHlwZSI6ImRiIiwibGFuZyI6ImVuIn0=" title="World Time :: Tucson" target="_blank" rel="nofollow"></a>current time<div id="clock_block_cb650886c4849ee"></div></div>
-<script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
-</center>
+## Max of list -- solution
 
-You have 10 minutes to complete the quiz.
+```{python}
+#| eval: true
+#| echo: true
+def max_list(numbers):
+  '''
+  Given a list of number, this function returns the highest number.
+  Args:
+    List of numeric values
+  Returns:
+    Max (float or integer, whatever value type is the highest)
+  '''
+  max = numbers[0]
+  index = 1
+  while index < len(numbers):
+    if numbers[index] > max:
+      max = numbers[index]
+    index += 1
+  return max
 
-No need to write `main()` function.
+def main():
+  print( max_list([1, 2, 2, 1, 3, 1, 1]) ) # 3
+  print( max_list([3, 2, 2, 1, 0, 1, 1]) ) # 3
+  
+main()
+```
+
+## Loop table
+
+We start with `index = 1` and `max = 2`:
+```{python}
+#| eval: false
+#| echo: true
+max_list([2, 1, 3, 1])
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+#| message: false
+data.frame(index = c("|", "| ", "| ", "| ",
+                                               "| ", "| "),
+           condition = c(" ", " ", " ", " ",
+                                               " ", " "),
+           `item` = c(" ", " ", " ", " ", " ", " "),
+           total = c(" ", " ", " ",
+                     " ", " ", " ")
+                    ) %>% 
+  kable(col.names = c("index", "index < len(numbers)", "numbers[index]", "max"))
+```
+
+## Loop table -- solution
+
+We start with `index = 1` and `max = 2`:
+```{python}
+#| eval: false
+#| echo: true
+max_list([2, 1, 3, 1])
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+#| message: false
+data.frame(index = c(1:4),
+           condition = c("True", "True", "True", "False"),
+           `item` = c("1", "3", "1", "-"),
+            max = c("2", "3", "3", "3")) %>% 
+  kable(col.names = c("index", "index < len(numbers)", "numbers[index]", "max"))
+```
+
+## Max solution
+
+-   What about empty lists?
+-   How to get the min instead?
+
+```{python}
+#| eval: false
+#| echo: true
+assert max_list([]) == None
+assert max_list([2, 1, 3, 1]) == 3
+```
+
+## Max solution - empty lists
+
+Can we swap the two expressions at `line 5`?
+```{python}
+#| eval: true
+#| echo: true
+def max_list(numbers):
+  max = None
+  index = 0
+  while index < len(numbers):
+    if max == None or numbers[index] > max:
+      max = numbers[index]
+    index += 1
+  return max
+
+def main():
+  print( max_list([2, 1, 3, 1]) ) # 3
+  print( max_list([]) ) # None
+
+main()
+```
+
+## Updating lists
+
+```{python}
+#| eval: true
+#| echo: true
+names = ['SZA', 'JVKE', 'Bruno Mars']
+
+# mutate list using the index
+names[1] = "Billie Eilish"
+
+names
+```
+
+## Write a function
+
+Its name is `double` that takes a list of numeric variables as argument.
+It iterates over the list (use `while`) doubling (multiplying by two) each value in the list.
+It returns the modified list.
+
+
+```{python}
+#| eval: false
+#| echo: true
+assert double([0, 1, 2, 3]) == [0, 2, 4, 6]
+```
+
+## Write a function -- solution
+
+```{python}
+#| eval: false
+#| echo: true
+def double(numbers):
+  index = 0
+  while index < len(numbers):
+    numbers[index] *= 2
+    index += 1
+  return numbers
+
+def main():
+  original_list = [0, 1, 2, 3]
+  new_list = double(original_list)
+  assert original_list == new_list
+  assert original_list == [0, 2, 4, 6]
+  
+  print("Passed all tests")
+  
+main()
+```
+
+
+## Slicing lists
+
+* Range -- `list[2:4]`
+* Whole list -- `list[:]`
+* Everything but last character -- `list[:-1]`
+
+The same slicing can be done with strings

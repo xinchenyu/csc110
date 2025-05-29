@@ -1,312 +1,403 @@
 ---
-title: "mutating lists (slides)"
+title: "data structures -- review (slides)"
 format: revealjs
 slide-number: true
 df-print: kable
 ---
 
-# CSc 110 - mutating lists
+# CSc 110 - Data Structures
+
+## Data Structures in Python
+
+-   lists (mutable)
+-   dictionaries (mutable)
+-   tuples (immutable)
+
+## A comparison - fill in the missing cells
+
+use `i` to represent index, `v` to represent value:
+
+|   Method    | List | Dictionary | Tuple |
+|:------------:|:----------|:--------------|:-----------|
+|  Create  |  my_l = [] |      |   my_t = ()  |
+|  Retrieve  |    my_l[i] |    my_d[k]   |    |
+|  Update |   |      |      |
+|  Add  |     |     my_d[k] = v   |       |
+|  Delete  |  my_l.pop(i) <br> my_l.remove(v) |     |       |
+
+## A comparison
+
+Other ways for update: `my_l[i] += v`, `my_d[i] += v`
+
+|   Method    | List | Dictionary | Tuple |
+|:------:|:----------|:--------------|:-----------|
+|  Create  |  my_l = [] |   my_d = {}   |   my_t = ()  |
+|  Retrieve  |    my_l[i] |    my_d[k]   |  my_t[i]  |
+|  Update |  my_l[i] = v  |  my_d[k] = v    |    -  |
+|  Add  | my_l.insert(i, v) <br> my_l.append(v)    |     my_d[k] = v   |     -  |
+|  Delete  |  my_l.pop(i) <br> my_l.remove(v) |  my_d.pop(k)    |     -  |
 
 
-## Lists are mutable
+## Lists
 
-* changes to a list in a function will remain after the function finishes running
-* changes to individual list elements do not change the list itself
+-   store:
+    -   ordered items
+    -   elements of different types
+-   use square brackets (`[]`) syntax for creating a list
+-   allow indexing (integers starting at `0`) with square brackets (`[]`) as well
+-   are **mutable**
 
-## Changing a list in a loop
+## Lists
 
-Changes to individual list elements do not change the list itself
+Indexing to retrieve values:
 
 ```{python}
-#| echo: true
 #| eval: true
-numbers = [1, 2, 1, 4, 5]
-for n in numbers:
-  n += 1
-numbers
+#| echo: true
+my_list = ["a", 1, "b", 2]
+my_list[0]
 ```
 
-Use a `for i in range` loop instead:
+Indexing to mutate values:
 
 ```{python}
-#| echo: true
 #| eval: true
-numbers = [1, 2, 1, 4, 5]
-for i in range(len(numbers)):
-  numbers[i] += 1
-numbers
+#| echo: true
+my_list[0] = 5
+my_list
 ```
+
+## List methods
+
+-   `.append(value)`
+-   `.insert(index, value)`
+-   `.pop(index)`
+-   `.remove(value)`
+
+## Tuples
+
+-   store:
+    -   ordered items
+    -   elements of different types
+-   use parentheses (`()`) syntax for creating a tuple
+-   allow indexing (integers starting at `0`) with square brackets (`[]`)
+-   are **immutable**
+
+## Tuples
+
+Indexing to retrieve values:
+
+```{python}
+#| eval: true
+#| echo: true
+my_tuple = ("a", 1, "b", 2)
+my_tuple[0]
+```
+
+Not possible to mutate/change values in tuples
+
+No methods to change it (because tuples are immutable)
+
+## Dictionaries
+
+-   store pairs of items `key: value`
+-   use curly brackets (`{}`) with key and value separated by colon (`:`)
+-   allow value retrieval through key with square brackets (`[]`)
+-   are **mutable**
+
+## Dictionaries
+
+Use key to retrieve values:
+
+```{python}
+#| eval: true
+#| echo: true
+my_dict = {"banana": 10, "apple": 3, "orange": 40}
+my_dict["banana"]
+```
+
+Use key to add `key: value` pairs:
+
+```{python}
+#| eval: true
+#| echo: true
+my_dict["pear"] = 5
+my_dict
+```
+
+Use key to mutate value associated with key:
+
+```{python}
+#| eval: true
+#| echo: true
+my_dict["pear"] += 5
+my_dict
+```
+
+## Dictionary methods
+
+-   `.values()`
+-   `.items()`
+-   `.pop()`
+
+## Evaluate the code
+
+Indicate when errors are thrown
+
+```{python}
+#| eval: false
+#| echo: true
+my_list = [2, 3, 1, 2]
+my_list.append(3)
+my_list.insert(0, 1)
+my_list[3] = 4
+my_list[6] = 10
+my_list # evaluate what this list holds at this point
+
+my_tuple = (3, 4, 1)
+my_tuple.append(3)
+my_tuple # evaluate what this tuple holds at this point
+
+my_dictionary = {3: 4, 1: 2, 5: 4}
+my_dictionary[5] = 10
+my_dictionary # evaluate what this dictionary holds at this point
+
+my_dictionary.append(4: 5)
+my_dictionary # evaluate what this dictionary holds at this point
+```
+
+## Evaluate the code
+
+Indicate when errors are thrown
+
+```{python}
+#| eval: true
+#| echo: true
+my_list = [2, 3, 1, 2]
+my_list.append(3)
+my_list.insert(0, 1)
+my_list[3] = 4
+# error --- my_list[6] = 10
+my_list # evaluate what this list holds at this point
+```
+
+```{python}
+#| eval: true
+#| echo: true
+my_tuple = (3, 4, 1)
+# error --- my_tupple.append(3)
+my_tuple # evaluate what this tuple holds at this point
+```
+
+```{python}
+#| eval: true
+#| echo: true
+my_dictionary = {3: 4, 1: 2, 5: 4}
+my_dictionary[5] = 10
+my_dictionary # evaluate what this dictionary holds at this point
+```
+
+```{python}
+#| eval: true
+#| echo: true
+# error --- my_dictionary.append(4: 5)
+my_dictionary # evaluate what this dictionary holds at this point
+```
+
+## Iterating over data structures
+
+Use `for x in data_structure` to retrieve values/keys (cannot make changes with this type of loop)
+
+```{python}
+#| eval: true
+#| echo: true
+my_list = [3, 5, 5]
+for value in my_list:
+  print(value)
+```
+
+```{python}
+#| eval: true
+#| echo: true
+my_tuple = (3, 5, 5)
+for value in my_tuple:
+  print(value)
+```
+
+## Iterating over dictionaries
+
+```{python}
+#| eval: true
+#| echo: true
+my_dictionary = {3: "a", 5: "b"}
+for key in my_dictionary:
+  print(key)
+```
+
+You can change values in a dictionary with `for key in dictionary`
+
+```{python}
+#| eval: true
+#| echo: true
+my_dictionary = {"a": 2, "b": 3}
+for key in my_dictionary:
+  my_dictionary[key] += 1
+my_dictionary
+```
+
+## Iterating over dictionaries
+
+Use `for x in data_structure.method()` for dictionaries
+
+```{python}
+#| eval: true
+#| echo: true
+my_dictionary = {3: "a", 5: "b"}
+for value in my_dictionary.values():
+  print(value)
+```
+
+```{python}
+#| eval: true
+#| echo: true
+my_dictionary = {3: "a", 5: "b"}
+for key, value in my_dictionary.items():
+  print(value)
+  print(key)
+```
+
 
 ## Write a function
 
-It takes a 2D list of integers as argument with at least one inner list. It **mutates** the list, replace each inner list with a tuple. The tuple is the total and mean of that inner list.
+1.  Its name is `count_names` that opens in read mode [a file that contains a name per line](data/names.txt), with repeated names
+3.  It counts how many unique names there are in the file
+4.  It returns an **integer** with the count
+5.  Use a **list** for this
+
+Name your file `names.py` and submit to Gradescope.
 
 ```{python}
-#| echo: true
 #| eval: false
-test_list = [[2, 4, 6, 8], [], [2, 3, 4]]
-total_mean(test_list)
-assert test_list == [(20, 5.0), (None, None), (9, 3.0)]
-assert total_mean([[2, 4, 6, 8], [], [2, 3, 4]]) == [(20, 5.0), (None, None), (9, 3.0)]
+#| echo: true
+assert count_names("names.txt") == 11
 ```
 
 
 ## Write a function -- solution
 
-line 2: can we use `for sublist in lists`?
-
-line 7: can we use `for n in lists[i]`?
 ```{python}
-#| echo: true
 #| eval: true
-def total_mean(lists):
-    for i in range(len(lists)): # 
-        total = None
-        mean = None
-        if len(lists[i]) > 0: 
-            total = 0
-            for j in range(len(lists[i])): # 
-                total += lists[i][j]
-            mean = total/len(lists[i])
-        lists[i] = total, mean 
-    return lists
-```
-
-## Write a function -- solution
-
-```{python}
 #| echo: true
-#| eval: true
-def total_mean(lists):
-    for i in range(len(lists)): #must use for i in range(len(lists))
-        total = None
-        mean = None
-        if len(lists[i]) > 0: 
-            total = 0
-            for j in range(len(lists[i])): #can also use for n in lists[i]
-                total += lists[i][j]
-            mean = total/len(lists[i])
-        lists[i] = total, mean #need to use i to mutate lists
-    return lists
-    
+def count_names(file_name):
+  f = open(file_name, "r")
+  name_list = []
+  for line in f:
+    name = line.strip()
+    if name not in name_list and name != "":
+      name_list.append(name)
+  f.close()
+  return len(name_list)
+
 def main():
-  test_list = [[2, 4, 6, 8], [], [2, 3, 4]]
-  total_mean(test_list)
-  assert test_list == [(20, 5.0), (None, None), (9, 3.0)]
-  assert total_mean([[2, 4, 6, 8], [], [2, 3, 4]]) == [(20, 5.0), (None, None), (9, 3.0)]
+  assert count_names("names.txt") == 11
   
 main()
 ```
 
-## Removing list elements in a `loop`
-
-`for i in range` when removing list items throws an ERROR. 
-
-```{python}
-#| echo: true
-#| eval: false
-numbers = [1, 2, 1, 4, 5]
-for i in range(len(numbers)):
-  numbers.pop(i)
-numbers
-```
-
-ERROR
-
-## Removing list elements in a `loop`
-
-Visualize the execution in [Python Tutor](https://pythontutor.com/).
-
--   Option 1: `while` loop without adjusting `i`
-
-```{python}
-#| echo: true
-#| eval: true
-numbers = [1, 2, 1, 4, 5]
-i = 0
-while i < len(numbers):
-  numbers.pop(i)
-numbers
-```
-
--  Option 2: `for` loop but go backwards
-
-
-```{python}
-#| echo: true
-#| eval: true
-numbers = [1, 2, 1, 4, 5]
-for i in range(len(numbers)-1, -1, -1):
-  numbers.pop(i)
-numbers
-```
 
 ## Write a function
 
-1. Its name is `remove_names`
-1. It takes one argument: a list of strings
-1. It `mutates` and `returns` the argument list removing all strings that end in vowel
-
-Name as `delete_from_list.py`, submit to Gradescope.
-
-```{python}
-#| echo: true
-#| eval: false
-names = ["Beatrice", "ASA", "Philip", "Anna", "Peter"]
-remove_names(names)
-assert names == ["Philip", "Peter"]
-```
-
-## Write a function -- solution 1
-
-```{python}
-#| echo: true
-#| eval: true
-def remove_names(string_list):
-  i = 0
-  while i < len(string_list):
-    if string_list[i][-1].lower() in "aeiou":
-      string_list.pop(i)
-    else:
-      i += 1
-  return string_list
-      
-def main():
-  names = ["Beatrice", "ASA", "Philip", "Anna", "Peter"]
-  remove_names(names)
-  assert names == ["Philip", "Peter"]
-
-main()
-```
-
-## Write a function -- solution 2
-
-```{python}
-#| echo: true
-#| eval: true
-def remove_names(string_list):
-  for i in range(len(string_list)-1, -1, -1):
-    if string_list[i][-1].lower() in "aeiou":
-      string_list.pop(i)
-  return string_list
-      
-def main():
-  names = ["Beatrice", "ASA", "Philip", "Anna", "Peter"]
-  remove_names(names)
-  assert names == ["Philip", "Peter"]
-
-main()
-```
-
-## Removing elements from inner lists in 2D lists
-
-```{python}
-#| echo: true
-#| eval: true
-lists_of_numbers = [ [2, 3, 1, 2], [4, 5, 2, 1] ]
-for inner_list in lists_of_numbers:
-  for i in range(len(inner_list)-1, -1, -1):
-    inner_list.pop(i)
-    
-print(lists_of_numbers)
-```
-
-## Write a function
-
-1. Its name is `remove_odds`
-1. It takes a list of lists of integers as argument
-1. It **mutates** the inner list, removing odd numbers
+1.  Its name is `count_names`
+2.  It opens in read mode [a file that contains a name per line](data/names.txt), with repeated names
+3.  It counts how many unique names there are in the file
+4.  It returns an **integer** with the count
+5.  Use a **dictionary** for this
 
 ```{python}
 #| eval: false
 #| echo: true
-lists_of_numbers = [ [2, 3, 1, 2], [4, 5, 2, 1] ]
-remove_odds(lists_of_numbers)
-assert lists_of_numbers == [ [2, 2], [4, 2] ]
+assert count_names("names.txt") == 11
 ```
+
 
 ## Write a function -- solution
 
 ```{python}
 #| eval: true
 #| echo: true
-def remove_odds(lists):
-  for i in range(len(lists)):
-    for j in range(len(lists[i])-1, -1, -1):
-      if lists[i][j] % 2 != 0:
-        lists[i].pop(j)
-  return lists
+def count_names(file_name):
+  f = open(file_name, "r")
+  name_dict = {}
+  for line in f:
+    name = line.strip()
+    if name not in name_dict and name != "":
+      name_dict[name] = ""
+  f.close()
+  return len(name_dict)
 
 def main():
-  test_list = [ [2, 3, 1, 2], [4, 5, 2, 1] ]
-  remove_odds(test_list)
-  assert test_list == [ [2, 2], [4, 2] ]
-  print(test_list) # [ [2, 2], [4, 2] ]
+  assert count_names("names.txt") == 11
   
 main()
 ```
 
-## Write a function -- questions
+## Can we change size while iterating?
 
-line 2: can we use `for innerlist in lists`?
+Go to [Python Tutor](https://pythontutor.com/) and visualize the execution. 
 
-line 3: can we use `for X in list`?
-
-```{python}
-#| eval: true
-#| echo: true
-def remove_odds(lists):
-  for i in range(len(lists)): #
-    for j in range(len(lists[i])-1, -1, -1): #
-      if lists[i][j] % 2 != 0:
-        lists[i].pop(j)
-  return lists
-```
-
-## Write a function -- answers
-
-```{python}
-#| eval: true
-#| echo: true
-def remove_odds(lists):
-  for inner_list in lists: # yes we can
-    for i in range(len(inner_list)-1, -1, -1): # no 
-      if inner_list[i] % 2 != 0:
-        inner_list.pop(i)
-  return lists
-
-def main():
-  test_list = [ [2, 3, 1, 2], [4, 5, 2, 1] ]
-  remove_odds(test_list)
-  assert test_list == [ [2, 2], [4, 2] ]
-  print(test_list) # [ [2, 2], [4, 2] ]
-  
-main()
-```
-
-## Determine the ouput 
-
-data.txt
-```{html}
-harsh sitting spins
-daybed trees fox a b c
-```
-
-code.py
+-   Remove values using `for x in list`:
 ```{python}
 #| eval: false
 #| echo: true
-def write_result(input_filename, output_filename):
-  data = open(input_filename, 'r')
-  result = open(output_filename, 'w')
-  for line in data:
-    words = line.strip().split(' ')
-    for w in words:
-      if w[0] == w[-1]:
-        result.write(w + '\n')
-  data.close()
-  result.close()
-  
-if __name__ == '__main__':
-  write_result('data.txt', 'result.txt')
+my_list = [2, 3, 1, 2]
+for value in my_list:
+  my_list.remove(value)
+```
+
+-   Append values using `for x in list`:
+```{python}
+#| eval: false
+#| echo: true
+my_list = [2, 3, 1, 2]
+for value in my_list:
+  my_list.append(value + 1) 
+```
+
+## Cannot change size while iterating
+
+It's not possible to remove or add items to a list/dictionary inside a `for x in data_structure` loop:
+
+Weird behavior:
+
+```{python}
+#| eval: true
+#| echo: true
+my_list = [2, 3, 1, 2]
+for value in my_list:
+  my_list.remove(value)
+my_list
+```
+
+Infinite loop:
+
+```{python}
+#| eval: false
+#| echo: true
+my_list = [2, 3, 1, 2]
+for value in my_list:
+  my_list.append(value + 1) # this causes an infinite loop
+```
+
+## Cannot change size while iterating
+
+It's not possible to remove or add items to a list/dictionary inside a `for x in data_structure` loop:
+
+Error:
+
+```{python}
+#| eval: false
+#| echo: true
+my_dict = {2: 0, 3: 1, 1: 0}
+for key in my_dict:
+  my_dict.pop(key) # this causes an error
 ```

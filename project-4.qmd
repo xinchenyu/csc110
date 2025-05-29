@@ -2,6 +2,7 @@
 title: "Programming Project 4"
 ---
 
+
 ```{r}
 #| echo: false
 #| message: false
@@ -12,151 +13,190 @@ assignments <- read_excel("assessment_schedule.xlsx") %>%
   mutate(formatted_date = format(due_date, "%A, %B %d, %Y"))
 ```
 
-Programming Projects are to be submitted to [gradescope](https://www.gradescope.com/courses/934148).
+
+Programming Projects are to be submitted to [gradescope](https://www.gradescope.com/courses/934148)
 
 **Due date: `r assignments %>% filter(assessment == "Programming Project 4") %>% pull(formatted_date)` at 9pm**
 
-This assignment is an adaptation of the [MIT's 6.0001 Introduction to Computer Science and Programming in Python programming set 1](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/resources/mit6_0001f16_ps1/).
 
-Make sure you follow the provided [style guide](style.html) (you will be graded on it!). 
+This programming project is an adaptation of Ben Dicken's Where's the Money Programming Assignment.
 
-Also make sure you check the [Academic Integrity](academic-integrity.html) and [Common Gradescope Errors](gradescope-errors.html) pages.
+Do not import any modules for this assignment. Do not use built-in functions like max() (you have to
+write your own). You can use the built-in functions we covered in class: `print()`, `round()`, `input()`, `len()`, `int()`, `float()`, `str()` in addition to `format()`.
+
+# Where's the Money
+
+Budgeting and money management is very important both at the individual level, and for corporations and government. Having a clear understanding of where your money goes, how much you are saving, and how much you invest is important to financial success. As a famous author once wrote:
+
+> Annual income twenty pounds, annual expenditure nineteen six, result happiness.
+> Annual income twenty pounds, annual expenditure twenty pound ought and six, result misery.
+
+*–Charles Dickens*
+
+In this assignment, you will be writing a program that helps a user visualize and understand how much money they spend of various categories of expenditures. Perhaps you will even find this program useful for your personal finances! You should name your program `wheres_the_money.py`. 
+
+# Overview of the program
+
+This program takes a number of various arguments about how much someone makes, and how much they spend. The program will accept 5 argument values:
+
+* Annual salary
+* Monthly mortgage or rent
+* Monthly bills
+* Weekly grocery/food expenses
+* Annual travel
 
 
-# House Hunting
-
-You have graduated and now have a great job and decide that you want to start saving to buy a house. As housing prices are very high in the US right now, you realize you are going to have to save for several years before you can afford to make the down payment on a house. 
-
-## Part 1
-
-Name the program `house_hunting_1.py`. Make sure that gradescope gives you the points for passing the test cases.
-
-In this assignment we are going to determine how long it will take you to save enough money to make the down payment given the following assumptions:
-
-1. Call the cost of your first home `total_cost`.
-2. Call the portion of the cost needed for a down payment `portion_down_payment` . For
-simplicity, assume that `portion_down_payment = 0.25 (25%)`.
-3. Call the amount that you have saved thus far `current_savings`. You start with a current
-savings of $0.
-4. Assume that you invest your current savings wisely, with an annual return of r (in other words,
-at the beginning of each month, you receive an additional `current_savings*r/12` funds to put into
-your savings – the 12 is because r is an annual rate). Assume that your investments earn a
-return of r = 0.04 (4%).
-5. Assume your annual salary is `annual_salary` .
-6. Assume you are going to dedicate a certain amount of your salary each month to saving for
-the down payment. Call that `portion_saved`. This variable should be in decimal form (i.e. 0.1
-for 10%).
-7. At the end of each month, your savings will be increased by the return on your investment,
-plus a percentage of your monthly salary (annual salary / 12).
-
-Write a program to calculate how many months it will take you to save up enough money for a down
-payment.
-
-### Test cases -- Part 1
-
-Try different arguments and see how long it takes to save for a down payment. Please make your
-program print results in the format shown in the test cases below.
-
-#### Test Case 1
-```{python}
-#| eval: false
-#| echo: true
-annual_salary = 120000
-portion_saved = .1
-total_cost = 1000000
-total_months = calculate_months(annual_salary, portion_saved, total_cost)
-print("Number of months:", total_months)
-```
+These 5 values will be used to generate a visualization of the financial situation that looks like so:
 
 <pre>
-Number of months: 183
+------------------------------------------------------------------
+See the financial breakdown below, based on a salary of $50000
+------------------------------------------------------------------
+| mortgage/rent | $  12,000.00 |  24.0% | ########################
+|         bills | $   4,800.00 |   9.6% | #########
+|          food | $  10,400.00 |  20.8% | ####################
+|        travel | $   2,500.00 |   5.0% | #####
+|           tax | $  10,000.00 |  20.0% | ####################
+|         extra | $  10,300.00 |  20.6% | ####################
+------------------------------------------------------------------
 </pre>
 
-#### Test Case 2
-```{python}
-#| eval: false
-#| echo: true
-annual_salary = 80000
-portion_saved = .15
-total_cost = 500000
-total_months = calculate_months(annual_salary, portion_saved, total_cost)
-print("Number of months:", total_months)
-```
+As you can see, the result is essentially a 6-row, 4-column grid that neatly shows that amounts and percentages of income go where.
 
-<pre>
-Number of months: 105
-</pre>
+Each row represents an expense (or other category) where money goes to on a yearly basis. The first columns provides the name of the category. The second column shows the amount of money that goes to this category in dollars. The third columns shows the amount of money as a percentage of yearly income. The last column is a horizontal bard that correlates with the percentage of income. The number of # characters in this column should be the same as the percentage of income (rounded down).
 
-## Part 2
+# Calculating the values
 
-Name the program `house_hunting_2.py`. Make sure that gradescope gives you the points for passing the test cases.
+The output provided above shows the kind of output this program should produce. Let’s talk a bit about how to compute these values.
 
-In Part 1, we unrealistically assumed that your salary didn’t change.  So we are going to build on your
-solution to Part 1 by factoring in a raise every six months. 
+The basis for all of the percentages is the annual income argument. All of the percentages are calculated based on this. The next two arguments, rent and bills, are monthly expense values. In order to get the total spend on these categories annually, these numbers must be multiplied by the number of months in a year. Then, you can use this result to calculate the percentage. The fourth value is a weekly expense, so this must instead be multiplied by the number of weeks in a year. The fifth argument is already an annual value, so you don’t need to multiple by number of weeks or months.
 
-In `house_hunting_2.py`, copy your solution to Part 1 (as we are going to reuse much of that machinery).  Modify your program to include the following:
+You need to write a `calculate_tax` function to calculate taxes. The tax percentage is dependent upon the amount of money a person make annually. The tax brackets are as follows:
 
-1. Use a variable for a semi-annual salary raise semi_annual_raise (as a decimal percentage)
-2. After the 6th month, increase your salary by that percentage.  Do the same after the 12th
-month, the 18  month, and so on. 
+* [$0, $15k] annually: 10% tax
+* ($15k, $75k] annually: 20% tax
+* ($75k, $200k] annually: 25% tax
+* over $200k annually: 30% tax
 
-Write a program to calculate how many months it will take you save up enough money for a down
-payment.  Like before, assume that your investments earn a return of r = 0.04 (or 4%) and the
-required down payment percentage is 0.25 (or 25%). 
-
-Be careful about when you increase your salary – this should only happen after the 6th, 12th, 18th month, and so on. 
-
-
-### Test cases -- Part 2
-
-Try different arguments and see how long it takes to save for a down payment. Please make your
-program print results in the format shown in the test cases below.
-
-#### Test Case 1
+You should use one or more if / elif / else statements in the code to determine which tax percentage to use. You can store the tax percentage as an integer variable, with one of the following values: 10, 20, 25, or 30. You can compute the amount of the salary goes to taxes as a particular percentage with this formula:
 
 ```{python}
 #| eval: false
 #| echo: true
-annual_salary = 120000
-portion_saved = .05
-total_cost =  500000
-semi_annual_raise = .03
-total_months = calculate_months(annual_salary, portion_saved, total_cost, semi_annual_raise)
-print("Number of months:", total_months)
+annual_salary * ( tax_percentage / 100.0)
 ```
 
-<pre>
-Number of months: 142
-</pre>
+Here are some tests to verify you are calculating the taxes correctly:
 
-#### Test Case 2
 ```{python}
 #| eval: false
 #| echo: true
-annual_salary =  80000
-portion_saved = .1
-total_cost =   800000
-semi_annual_raise = .03
-total_months = calculate_months(annual_salary, portion_saved, total_cost, semi_annual_raise)
-print("Number of months:", total_months)
+assert calculate_tax(40000) == 8000
+assert calculate_tax(10000) == 1000
+assert calculate_tax(20000) == 4000
 ```
 
-<pre>
-Number of months: 159
-</pre>
 
-#### Test Case 3
+After calculating all of these values programmatically, you should generate the output table. Print the table in the `wheres_the_money` function.
+
+Finally, after printing the table, two warnings are optional to print (overspending & tax limit).
+
+Overspending - what happens if the expenditures and taxes are more than the annual salary? This should be represented by negative values in the extra row. You should also print a warning after the chart. Below is an example of a financial situation in which the user spends more than they earn, resulting in a deficit in the extra row.
+
 ```{python}
 #| eval: false
 #| echo: true
-annual_salary =   75000
-portion_saved = .05
-total_cost =    1500000
-semi_annual_raise = .05
-total_months = calculate_months(annual_salary, portion_saved, total_cost, semi_annual_raise)
-print("Number of months:", total_months)
+# arguments: salary, mortgage/rent, bills, food, travel
+wheres_the_money(40000, 2000, 300, 150, 4000)
 ```
 
+
 <pre>
-Number of months: 261
+------------------------------------------------------------------------------------------------------
+See the financial breakdown below, based on a salary of $40000
+------------------------------------------------------------------------------------------------------
+| mortgage/rent | $  24,000.00 |  60.0% | ############################################################
+|         bills | $   3,600.00 |   9.0% | #########
+|          food | $   7,800.00 |  19.5% | ###################
+|        travel | $   4,000.00 |  10.0% | ##########
+|           tax | $   8,000.00 |  20.0% | ####################
+|         extra | $  -7,400.00 | -18.5% |
+------------------------------------------------------------------------------------------------------
+>>> WARNING: DEFICIT <<<
 </pre>
+
+Tax limit - there is also a tax limit of `$75,000`. The tax should be capped at this value, and if the limit is reached, a message indicating this should be printed out after the chart. The message should say:
+
+<pre>
+>>> TAX LIMIT REACHED <<<
+</pre>
+
+# Formatting a Number
+
+Notice that the numbers are formatted in a particular way in the output table. You must match this formatting exactly. In order to do so, you can use the format() function. This function was mentioned in the [Constants, variables, and comments
+ reading](https://adrianapicoral.com/csc-110/basics.html#the-format-method). Here's an example of how you can use this function to match the formatting in the spec.
+
+Say we have a floating point number, like below:
+
+```{python}
+#| eval: false
+#| echo: true
+number = 134567.123
+```
+
+Perhaps this is a result you get for one of the dollar values after doing the necessary computations. When printing, you’ll want to adjust the way it is printed in several ways.
+
+## Add a comma
+
+* Set to stop at two decimal points
+* Add necessary spacing before the number, so that the table lines up
+
+## Examples for string method `.format()`
+
+Using the comma as a thousands separator:
+
+```{python}
+#| eval: true
+#| echo: true
+'{:,}'.format(1234567890)
+```
+
+Establishing numbers of digits to hold space for:
+
+```{python}
+#| eval: true
+#| echo: true
+'{:15,}'.format(10000)
+```
+
+Expressing floats with four decimals (the `4` is number of digits after the decimal point, the `f` means it's formatting a float):
+
+```{python}
+#| eval: true
+#| echo: true
+'{:.4f}'.format(4.2353635234)
+```
+
+
+Expressing a percentage with two decimals:
+
+```{python}
+#| eval: true
+#| echo: true
+points = 19
+total = 22
+'Correct answers: {:.2%}'.format(points/total)
+```
+
+Holding space and right aligning the numbers:
+```{python}
+#| eval: true
+#| echo: true
+point_1 = 20
+print('Correct answers: {:>5,}'.format(point_1))
+
+point_2 = 1000
+print('Correct answers: {:>5,}'.format(point_2))
+```
+
+

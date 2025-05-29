@@ -1,429 +1,267 @@
 ---
-title: "decomposition (slides)"
+title: "functions (slides)"
 format: revealjs
 slide-number: true
 df-print: kable
 ---
 
-# CSc 110 - decomposition
+# CSc 110 - Functions
 
+## Functions
 
-## Program decomposition
+-   Functions are named operations that are available to do tasks
+-   Some functions are *built-in* functions that Python provides
+-   Programmers can also define their own functions
+-   Functions are **called** (or **invoked**)
 
-Program decomposition refers to the process of breaking down a complex program into smaller, more manageable, and understandable parts or components.
-
-It avoids unnecessary common code and improves the structural quality of code.
-
-## Print a classic guitar
-
-```{python}
-#| echo: true
-#| eval: false
-print("      ___")
-print("    o|* *|o")
-print("    o|* *|o")
-print("    o|* *|o")
-print("     \===/")
-print("      |||")
-print("      |||")
-print("   ___|||___")
-print("  /   |||   \ ")
-print(" /    |||    \ ")
-print("|     |||     |")
-print(" \   (|||)   /")
-print("  |   |||   |")
-print("  /   |||   \ ")
-print(" /    |||    \ ")
-print("/     |||     \ ")
-print("|    [===]    |")
-print(" \           /")
-print("  '.       .'")
-print("   '-------'")
-```
-
-## Print a retro head guitar
+## Function definitions
 
 ```{python}
 #| echo: true
 #| eval: false
-print("     ._-_.")
-print("    +|\G/|+")
-print("    +|\./|+")
-print("    +|\./|+")
-print("     \===/")
-print("      |||")
-print("      |||")
-print("   ___|||___")
-print("  /   |||   \ ")
-print(" /    |||    \ ")
-print("|     |||     |")
-print(" \   (|||)   /")
-print("  |   |||   |")
-print("  /   |||   \ ")
-print(" /    |||    \ ")
-print("/     |||     \ ")
-print("|    [===]    |")
-print(" \           /")
-print("  '.       .'")
-print("   '-------'")
+def two():
+  return 2
 ```
 
-## Print a retro head long neck guitar
+This function definition has many parts:
+
+-   `two` is the name of the function
+-   `()` is the **parameter** list (Here, it is empty)
+-   the body (or content) of the function is indented
+-   `return 2` is a statement that causes the function to cease and produce the value 2
+
+## Example of a simple function
 
 ```{python}
 #| echo: true
 #| eval: false
-print("     ._-_.")
-print("    +|\G/|+")
-print("    +|\./|+")
-print("    +|\./|+")
-print("     \===/")
-print("      |||")
-print("      |||")
-print("      |||")
-print("      |||")
-print("   ___|||___")
-print("  /   |||   \ ")
-print(" /    |||    \ ")
-print("|     |||     |")
-print(" \   (|||)   /")
-print("  |   |||   |")
-print("  /   |||   \ ")
-print(" /    |||    \ ")
-print("/     |||     \ ")
-print("|    [===]    |")
-print(" \           /")
-print("  '.       .'")
-print("   '-------'")
+def add_one(n):
+  return n + 1
 ```
 
-## Class activity one
+-   `add_one` is the name of the function
+-   `(n)` is the **parameter** list
+-   the body (or content) of the function is indented
+-   `return n + 1` is a statement that causes the function to cease and produce the value n + 1
 
-Compare the three types of guitar, write your asnwers:
-
--   which parts of code are the same?
-
--   which parts of code are different?
-
-## Class activity one -- answers
-
-Classic guitar vs. Retro head guitar:
-
--   which parts of code are the same?
-
-    -   the neck
-    
-    -   the body
-
--   which parts of code are different?
-
-    -   the head: line 1-4
-    
-
-## Class activity one -- answers
-
-Retro head guitar vs. Retro head long neck guitar:
-
--   which parts of code are the same?
-
-    -   the head
-    
-    -   the body
-
--   which parts of code are different?
-
-    -   the neck
-
-## Decomposition
-
-```{python}
-#| echo: true
-#| eval: false
-def print_classic_guitar():
-    print_head()
-    print_neck()
-    print_body()
-
-def print_retro_guitar():
-    print_retro_head()
-    print_neck()
-    print_body()
-    
-def print_long_guitar():
-    print_head()
-    print_neck()
-    print_neck()
-    print_body()
-
-def main():
-    print_classic_guitar() # print classic guitar
-    print_retro_guitar() # print retro head guitar
-    print_long_guitar() # print long neck guitar
-
-main()
-```
-
-## Class activity two
-
-Read the code for classic guitar, write your asnwers:
-
--   which lines of code are the same?
-
-    -   in the head:
-    
-    -   in the neck:
-    
-    -   in the body:
-
-
-## Print a classic guitar
-
-```{python}
-#| echo: true
-#| eval: false
-print("      ___")
-print("    o|* *|o")
-print("    o|* *|o")
-print("    o|* *|o")
-print("     \===/")
-print("      |||")
-print("      |||")
-print("   ___|||___")
-print("  /   |||   \ ")
-print(" /    |||    \ ")
-print("|     |||     |")
-print(" \   (|||)   /")
-print("  |   |||   |")
-print("  /   |||   \ ")
-print(" /    |||    \ ")
-print("/     |||     \ ")
-print("|    [===]    |")
-print(" \           /")
-print("  '.       .'")
-print("   '-------'")
-```
-
-## Class activity two -- answers
-
-Read the code for classic guitar, answer the questions:
-
--   which lines of code are the same?
-
-    -   in the head: line 2 - 4
-    
-    -   in the neck: line 6 - 7
-    
-    -   in the body: line 9 - 10 and line 14 - 15
-    
-## Write functions
-
-Write functions `print_head`, `print_neck`, and `print_body`:
-
-```{python}
-#| echo: true
-#| eval: false
-def print_classic_guitar():
-    print_head()
-    print_neck()
-    print_body()
-
-def print_long_guitar():
-    print_head()
-    print_neck()
-    print_neck()
-    print_body()
-
-def main():
-    print_classic_guitar() # print classic guitar
-    print_long_guitar() # print long neck guitar
-
-main()
-```
-
-## Write functions -- answers 
+## Another example
 
 ```{python}
 #| echo: true
 #| eval: true
-def print_head():
-    print("      ___")
-    print("    o|* *|o")
-    print("    o|* *|o")
-    print("    o|* *|o")
-    print("     \===/")
+def cook_food(order):
+  message = "Your " + order + " is ready!"
+  return message
 
-def print_neck():
-    print("      |||" + "\n" + "      |||")
-    
-def print_body():
-    print("   ___|||___")
-    print("  /   |||   \ ")
-    print(" /    |||    \ ")
-    print("|     |||     |")
-    print(" \   (|||)   /")
-    print("  |   |||   |")
-    print("  /   |||   \ ")
-    print(" /    |||    \ ")
-    print("/     |||     \ ")
-    print("|    [===]    |")
-    print(" \           /")
-    print("  '.       .'")
-    print("   '-------'")
-
-def print_classic_guitar():
-    print_head()
-    print_neck()
-    print_body()
-
-def print_long_guitar():
-    print_head()
-    print_neck()
-    print_neck()
-    print_body()
-
-def main():
-    print_classic_guitar() # print classic guitar
-    print_long_guitar() # print long neck guitar
-
-main()
+meal = cook_food("pasta")
+print(meal)
+meal = cook_food("burger")
+print(meal)
 ```
 
-## Write functions -- improved answers
+-   The function `cook_food` prepares a meal. 
+-   Then returns a string that says the meal is ready. 
+-   The returned message is stored in the `meal` variable. 
+-   Finally, `print` function displays that message to the caller.
+
+## Function to calculate area of a circle
+
+Remember this from the last set of slides?
 
 ```{python}
 #| echo: true
-#| eval: true
-def print_head():
-    print("      ___")
-    pattern = "    o|* *|o"
-    print(pattern)
-    print(pattern)
-    print(pattern)
-    print("     \===/")
+#| eval: false
+# assign a radius value
+radius = 3
+# compute the rounded area of a circle
+area = round(3.1415 * radius ** 2, 2)
+# print the area
+print(area)
+```
 
-def print_neck():
-    print("      |||" + "\n" + "      |||")
-    
-def print_body():
-    print("   ___|||___")
-    pattern = "  /   |||   \ " + "\n" + " /    |||    \ " 
-    print(pattern)
-    print("|     |||     |")
-    print(" \   (|||)   /")
-    print("  |   |||   |")
-    print(pattern)
-    print("/     |||     \ ")
-    print("|    [===]    |")
-    print(" \           /")
-    print("  '.       .'")
-    print("   '-------'")
 
-def print_classic_guitar():
-    print_head()
-    print_neck()
-    print_body()
+## Function to calculate area of a circle
 
-def print_long_guitar():
-    print_head()
-    print_neck()
-    print_neck()
-    print_body()
+Function name is `calculate_area`. Given a `radius` parameter, it returns the rounded `area` of the circle.
+```{python}
+#| echo: true
+#| eval: false
+def calculate_area(radius):
+  area = 3.1415 * radius ** 2
+  return round(area, 2)
 
 def main():
-    print_classic_guitar() # print classic guitar
-    print_long_guitar() # print long neck guitar
-
+  print(calculate_area(3)) # 28.27
+  print(calculate_area(6)) # 113.09
+  
 main()
 ```
 
 
 ## Write a function
 
-Write `print_retro_head`:
+Write a function that calculates the volume of a sphere:
 
-```{python}
-#| echo: true
-#| eval: false
-def print_retro_guitar():
-    print_retro_head()
-    print_neck()
-    print_body()
+1.  Its name is `sphere_volume`
+2.  It takes one argument: `radius`
+3.  It calculates the volume of the sphere (use `3.1415` for $\pi$):
 
-def main():
-    print_classic_guitar() # print classic guitar
-    print_long_guitar() # print long neck guitar
-    print_retro_guitar() # print retro head guitar
+$$
+v = {4 / 3} \cdot \pi \cdot radius^3
+$$
 
-main()
-```
+4.  It returns the rounded value for the calculated volume
+5.  Test case: `sphere_volume(.75)` should return `1.77`.
 
-
-## Write a function -- answer
+## Write a function -- sphere volume
 
 ```{python}
 #| echo: true
 #| eval: true
-def print_head():
-    print("      ___")
-    pattern = "    o|* *|o"
-    print(pattern)
-    print(pattern)
-    print(pattern)
-    print("     \===/")
-
-def print_retro_head():
-    print("     ._-_.")
-    print("    +|\G/|+")
-    pattern = "    +|\./|+"
-    print(pattern)
-    print(pattern)
-    print("     \===/")
-
-def print_neck():
-    print("      |||" + "\n" + "      |||")
-    
-def print_body():
-    print("   ___|||___")
-    pattern = "  /   |||   \ " + "\n" + " /    |||    \ " 
-    print(pattern)
-    print("|     |||     |")
-    print(" \   (|||)   /")
-    print("  |   |||   |")
-    print(pattern)
-    print("/     |||     \ ")
-    print("|    [===]    |")
-    print(" \           /")
-    print("  '.       .'")
-    print("   '-------'")
-
-def print_classic_guitar():
-    print_head()
-    print_neck()
-    print_body()
-
-def print_retro_guitar():
-    print_retro_head()
-    print_neck()
-    print_body()
-    
-def print_long_guitar():
-    print_head()
-    print_neck()
-    print_neck()
-    print_body()
+def sphere_volume(radius):
+  "calculates the volume of a sphere of given radius"
+  volume = (4 / 3) * 3.1415 * radius**3
+  return round(volume, 2)
 
 def main():
-    print_classic_guitar() # print classic guitar
-    print_retro_guitar() # print retro head guitar
-    print_long_guitar() # print long neck guitar
+  print(sphere_volume(.75)) # 1.77
+  print(sphere_volume(2)) # 33.51
+  print(sphere_volume(5.5)) # 696.89
 
 main()
 ```
 
-## Discussion
+## Write a function
 
-Download and run [old guitar file](data/guitar_old.py) and [new guitar file](data/guitar_new.py):
+Write a function that calculates the area of a sphere:
 
--   Which version is more readable?
+1.  Its name is `sphere_area`
+2.  It takes one argument: `radius`
+3.  It calculates the volume of the sphere (use `3.1415` for $\pi$):
 
--   Why it is better?
+$$
+a = 4 \cdot \pi \cdot radius^2
+$$
+
+4.  It returns the value for the calculated sphere area
+5.  Test case: `sphere_area(.75)` should return `7.07`.
+
+## Write a function -- solutions 1
+
+```{python}
+#| echo: true
+#| eval: true
+def sphere_area(radius):
+  "calculates the area of a sphere of given radius"
+  area = 4 * 3.1415 * radius**2
+  return round(area, 2)
+
+def sphere_volume(radius):
+  "calculates the volume of a sphere of given radius"
+  volume = (4 / 3) * 3.1415 * radius**3
+  return round(volume, 2)
+
+def main():
+  r = .75
+  v = sphere_volume(r)
+  a = sphere_area(r)
+  print(v, a)
+
+main()
+```
+
+## Write a function
+Comparing two formulas:
+$$
+a = 4 \cdot \pi \cdot radius^2
+$$
+
+$$
+v = {4 / 3} \cdot \pi \cdot radius^3 
+$$
+We can use area when calculating volume:
+$$
+v = {1 / 3} \cdot a \cdot radius
+$$
+
+Modify your `sphere_volume` function by calling `sphere_area` inside the function.
+
+## Write a function -- solutions 2
+
+```{python}
+#| echo: true
+#| eval: true
+def sphere_area(radius):
+  "calculates the area of a sphere of given radius"
+  area = 4 * 3.1415 * radius**2
+  return round(area, 2)
+
+
+def sphere_volume(radius):
+  "calculates the volume of a sphere of given radius"
+  volume = (1 / 3) * sphere_area(radius) * radius
+  return round(volume, 2)
+
+
+def main():
+  r = .75
+  v = sphere_volume(r)
+  a = sphere_area(r)
+  print(v, a)
+
+main()
+```
+
+## Write a function
+
+Write a Python function named `hypotenuse` that takes two arguments: `a` and `b` representing the length of the two non-hypotenuse sides of a right triangle.
+The function calculate the hypotenuse according to the Pythagorean theorem: $c = \sqrt(a^2 + b^2)$. Return it rounded at two decimals.
+
+Test cases: `hypotenuse(3, 4)` should return `5.0`, `hypotenuse(10, 10)` should return `14.14`
+
+Name your file `hypotenuse.py` and submit to gradescope.
+
+
+## Write a function
+
+```{python}
+#| eval: true
+#| echo: true
+def sqrt(n):
+  '''
+  This function calculates the square root of a number
+  Args:
+    n: integer or float
+  Returns:
+    The square root of n
+  '''
+  return n**0.5
+
+def hypotenuse(a, b):
+  '''
+  This function calculates the hypotenuse of a right angle triangle.
+  Args:
+    a: number (integer or float) representing one of the non-hypotenuse sides
+    b: number (integer or float) representing one of the non-hypotenuse sides
+  Returns:
+    Float representing the length of the hypotenuse given a and b
+  ''' 
+  h = sqrt(a**2 + b**2)
+  return round(h, 2)
+
+def main():
+  '''
+  This function calls the hypotenuse function to calculate and then
+  print out the hypotenuse of a right angle triangle of sides 3 and 4
+  and the hypotenuse of a right angle triange of sides 10 and 10
+  '''
+  result = hypotenuse(3, 4)
+  print(result)
+  
+  result = hypotenuse(10, 10)
+  print(result)
+  
+main()
+```
+
+

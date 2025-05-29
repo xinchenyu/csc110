@@ -1,49 +1,241 @@
 ---
-title: "files and strings (slides)"
+title: "for loops -- iterating over items (slides)"
 format: revealjs
 slide-number: true
 df-print: kable
 ---
 
-# CSc 110 - files and strings
+# CSc 110 - the other type of `for` loop
 
-## Review - iterating lines in a file
+## Review of `for in range():`
+
+```{python}
+#| echo: true
+#| eval: true
+for n in range(5):
+  print(n)
+```
+
+```{python}
+#| echo: true
+#| eval: true
+numbers = [2, 1, 4, 6, 23, 2]
+for i in range(len(numbers)):
+  print(numbers[i])
+```
+
+## Introducing `for x in string:`
+
+```{python}
+#| echo: true
+#| eval: true
+string = "hello"
+for n in string:
+  print(n)
+```
+
+## Introducing `for x in list:`
+
+```{python}
+#| echo: true
+#| eval: true
+numbers = [2, 1, 4, 6, 23, 2]
+for n in numbers:
+  print(n)
+```
+
+## Write a function
+
+Modify your `count_chars` function.
+Use `for x in string` instead of `for x in range(len(string))`.
+
+```{python}
+#| eval: false
+#| echo: true
+assert count_chars("") == {}
+assert count_chars("banana") == {"b": 1, "a": 3, "n": 2}
+```
+
+
+## Write a function -- solution
 
 ```{python}
 #| eval: true
 #| echo: true
-info = open('info.txt', 'r')
-for line in info:
-    print(line)
-info.close()
+def count_chars(string):
+  counts = {}
+  for char in string:
+    if char in counts:
+      counts[char] += 1
+    else:
+      counts[char] = 1
+      
+  return counts
+
+def main():
+  assert count_chars("") == {}
+  assert count_chars("banana") == {"b": 1, "a": 3, "n": 2}
+  print("Passed all tests.")
+
+main()
 ```
 
+## A Note on two methods
 
-## Review - string methods
+`for i in range(len(list)):` VS. `for x in list:`
 
--   `string.strip(chars)` -- removes any of the characters in chars from the beginning or end of string, returns a string
--   `string.split(chars)` -- splits string at the chars, returns a list
--   `string.lower()` -- forces all characters to lowercase, returns a string
+-   Mutate the list: `option 1` (need to use index `i` to mutate)
+
+```{python}
+#| echo: true
+#| eval: true
+numbers = [2, 1, 4]
+for i in range(len(numbers)):
+  numbers[i] += 1
+numbers
+```
+
+-   Get the values: `both options`
+
+```{python}
+#| echo: true
+#| eval: true
+numbers = [2, 1, 4]
+for n in numbers:
+  print(n)
+```
 
 
 ## Write a function
 
-It reads the file with filename, iterates over each line in the [numbers.txt](data/numbers.txt) and return the sum. Submit your attendance.
+It returns a dictionary that maps each negative value in `numbers` to its frequency in `numbers`.
 
-numbers.txt
-```{html}
-1
-0
-5
-7
-2
+```{python}
+#| eval: false
+#| echo: true
+assert tally_negatives([1, -2, 0, -4, -2]) == {-2: 2, -4: 1}
+assert tally_negatives([]) == {}
 ```
 
-sum_numbers.py
+## Write a function -- solution
+
+```{python}
+#| eval: true
+#| echo: true
+def tally_negatives(numbers):
+  tally = {}
+  for n in numbers:
+    if n < 0:
+      if n not in tally:
+        tally[n] = 0
+      tally[n] += 1
+  return tally
+
+def main():
+  assert tally_negatives([1, -2, 0, -4, -2]) == {-2: 2, -4: 1}
+  assert tally_negatives([]) == {}
+  print("Passed all tests.")
+  
+main()
+```
+
+
+## Iterating a dictionary 
+
+Iterating keys: 
+```{python}
+#| eval: true
+#| echo: true
+scores = {'A': 10, 'B': 25, 'C': 27, 'D': 10}
+for key in scores:
+  print(key)
+```
+
+Another option: `dict.keys()`:
+```{python}
+#| eval: true
+#| echo: true
+scores = {'A': 10, 'B': 25, 'C': 27, 'D': 10}
+for key in scores.keys():
+  print(key)
+```
+
+## Iterating a dictionary 
+
+Iterating values: `dict.values()`:
+```{python}
+#| eval: true
+#| echo: true
+scores = {'A': 10, 'B': 25, 'C': 27, 'D': 10}
+for value in scores.values():
+  print(value)
+```
+
+Iterating both keys and values: `dict.items()`
+```{python}
+#| eval: true
+#| echo: true
+scores = {'A': 10, 'B': 25, 'C': 27, 'D': 10}
+for key, value in scores.items():
+  print(key, value)
+```
+
+
+## Write a function
+
+It returns a list with all the keys and values in the `dictionary`.
+
+Test cases:
+
+```{python}
+#| eval: false
+#| echo: true
+assert keys_and_values({'A': 10, 'B': 25, 'C': 27, 'D': 10, 'E': 5}) == \
+    ['A', 10, 'B', 25, 'C', 27, 'D', 10, 'E', 5]
+```
+
+## Write a function -- solution
+
+```{python}
+#| eval: true
+#| echo: true
+def keys_and_values(dictionary):
+  new_list = []
+  for key, value in dictionary.items():
+    new_list.append(key)
+    new_list.append(value)
+  return new_list
+
+def main():
+  assert keys_and_values({'A': 10, 'B': 25, 'C': 27, 'D': 10, 'E': 5}) == ['A', 10, 'B', 25, 'C', 27, 'D', 10, 'E', 5]
+  
+main()
+```
+
+## Quiz 07
+
+<center>
+<div class="cleanslate w24tz-current-time w24tz-large" style="display: inline-block !important; visibility: hidden !important; min-width:300px !important; min-height:145px !important;"><a href="//24timezones.com/Tucson/time" style="text-decoration: none" class="clock24" id="tz24-1695057604-c1393-eyJob3VydHlwZSI6IjEyIiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIwIiwiY29udGFpbmVyX2lkIjoiY2xvY2tfYmxvY2tfY2I2NTA4ODZjNDg0OWVlIiwidHlwZSI6ImRiIiwibGFuZyI6ImVuIn0=" title="World Time :: Tucson" target="_blank" rel="nofollow"></a>current time<div id="clock_block_cb650886c4849ee"></div></div>
+<script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
+</center>
+
+You have 10 minutes to complete the quiz.
+
+No need to write `main()` function.
+
+## Write a function
+
+It mutates `dict_1`, by adding to it all key-values pairs in `dict_2`. If a key is in both dictionaries, the values are added.
+
+
+Test cases:
+
 ```{python}
 #| echo: true
 #| eval: false
-assert sum_all("numbers.txt") == 15
+dict_1 = {"a": 20, "e": 5}
+dict_2 = {"e": 10, "i": 2}
+assert merge_dictionaries(dict_1, dict_2) == {"a": 20, "e": 15, "i": 2}
 ```
 
 ## Write a function -- solution
@@ -51,243 +243,111 @@ assert sum_all("numbers.txt") == 15
 ```{python}
 #| echo: true
 #| eval: true
-def sum_all(file_name):
-  total = 0
-  f = open(file_name, "r")
-  for line in f:
-    number = int(line.strip("\n"))
-    total += number
-  return total
+def merge_dictionaries(dict_1, dict_2):
+  for key, value in dict_2.items():
+    if key in dict_1:
+      dict_1[key] += value
+    else:
+      dict_1[key] = value
+  return dict_1
+      
+def main():
+  dict_1 = {"a": 20, "e": 5}
+  dict_2 = {"e": 10, "i": 2}
+  assert merge_dictionaries(dict_1, dict_2) == {"a": 20, "e": 15, "i": 2}
+  
+main()
+```
+
+## Write a function
+
+It mutate the list, multiply every number by 2. It returns the highest value in the mutated list.
+
+Test cases:
+
+```{python}
+#| eval: false
+#| echo: true
+assert max_list([2, 2, 1]) == 4
+assert max_list([5, 2, 1]) == 10
+assert max_list([]) == None
+```
+
+## Write a function -- solution 1
+
+```{python}
+#| eval: true
+#| echo: true
+def max_list(numbers):
+    max = None
+    for i in range(len(numbers)):
+        numbers[i] *= 2
+    for n in numbers:
+        if max == None or n > max:
+            max =  n
+    return max
 
 def main():
-  assert sum_all("numbers.txt") == 15
-
-main()
-```
-
-
-## Modes
-
--   To read a file:
-
-    -   Use **'r'** for reading the contents of a file
-
--   To write to a file: 
-
-    -   Use **'a'** to append to the existing file content
-
-    -   Use **'w'** to replace existing content and write to a file
-
-## Write function
-
-```{python}
-#| eval: false
-#| echo: true
-# opened the file in w mode
-f = open('words.txt', 'w')
-
-# write text content to the file
-f.write("Let us start a story.")
-
-# close the file
-f.close()
-```
-
-You will see `words.txt` in your folder.
-```{html}
-Let us start a story.
-```
-
-
-## Evaluate the code
-
-```{python}
-#| echo: true
-#| eval: true
-f = open('words.txt', 'w')
-f.write('The slow wolf')
-f.write('jumped over')
-f.write('the bear')
-f.close()
-```
-
-## Evaluate the code
-
-```{python}
-#| echo: true
-#| eval: true
-f = open('words.txt', 'w')
-f.write('The slow wolf')
-f.write('jumped over')
-f.write('the bear')
-f.close()
-```
-
-words.txt
-
-```{html}
-The slow wolfjumped overthe bear
-```
-
-## Evaluate the code
-
-```{python}
-#| echo: true
-#| eval: true
-f = open('words.txt', 'w')
-f.write('The slow wolf\n')
-f.write('jumped over\n')
-f.write('the bear')
-f.close()
-```
-
-## Evaluate the code
-
-```{python}
-#| echo: true
-#| eval: true
-f = open('words.txt', 'w')
-f.write('The slow wolf\n')
-f.write('jumped over\n')
-f.write('the bear')
-f.close()
-```
-
-words.txt
-
-```{html}
-The slow wolf
-jumped over
-the bear
-```
-
-## Evaluate the code -- continued
-
-```{python}
-#| echo: true
-#| eval: true
-f = open('words.txt', 'a')
-f.write('The quick fox\n')
-f.write('jumped over\n')
-f.write('the bear')
-f.close()
-```
-
-## Evaluate the code -- continued
-
-```{python}
-#| echo: true
-#| eval: true
-f = open('words.txt', 'a')
-f.write('The quick fox\n')
-f.write('jumped over\n')
-f.write('the bear')
-f.close()
-```
-
-words.txt
-
-```{html}
-The slow wolf
-jumped over
-the bearThe quick fox
-jumped over
-the bear
-```
-
-## Write key, value to a file
-
-Replace line 4 and line 5 with your code
-```{python}
-#| eval: false
-#| echo: true
-info = {"a": 2, "b": 5, "c": 0}
-output = open("count.txt", "w")
-
-# write code
-# write code
-output.write("end")
-
-output.close()
-```
-
-count.txt
-
-```{html}
-a, 2
-b, 5
-c, 0
-end   
-```
-
-## Write key, value to a file
-
-```{python}
-#| eval: false
-#| echo: true
-info = {"a": 2, "b": 5, "c": 0}
-output = open("count.txt", "w")
-
-for key, value in info.items():
-  output.write(key + ", " + str(value) + "\n")
-output.write("end")
-
-output.close()
-```
-
-count.txt
-
-```{html}
-a, 2
-b, 5
-c, 0
-end   
-```
-
-## Write two functions
-
-*   Both functions takes a string `file_name` as argument: 
-    *  `count_words` count frequency of each lowercase word, return a dictionary.
-    *  `write_word_count` call `count_words`, iterate it and write a comma separated file ("out_" + `file_name`). 
-*   [Download test file](data/alien.txt). Name your file as `read_and_write.py`.
-
-Test case:
-
-```{python}
-#| eval: false
-#| echo: true
-write_word_count("alien.txt")
-# writes to out_alien.txt with word counts
-```
-
-## Write two functions -- solution
-
-```{python}
-#| eval: true
-#| echo: true
-def count_words(filename):
-  f = open(filename, "r")
-  counts = {}
-  for line in f:
-    words = line.strip("\n").split(" ")
-    for w in words:
-      lower_w = w.lower()
-      if lower_w not in counts:
-        counts[lower_w] = 1
-      else:
-        counts[lower_w] += 1
-  return counts
-
-def write_word_count(filename):
-  count_dict = count_words(filename)
-  output_file = open("out_" + filename, "w")
-  for key, value in count_dict.items():
-    output_file.write(key + "," + str(value) + "\n")
-  output_file.close()
-  
-def main(): 
-  write_word_count("alien.txt")
+  assert max_list([2, 2, 1]) == 4
+  assert max_list([5, 2, 1]) == 10
+  assert max_list([]) == None
+  print("pass")
   
 main()
 ```
 
+## Write a function -- solution 1 continue
+
+-   line 3: can we use `for x in list`?
+
+-   line 5: can we use `for i in range(len(list))`?
+```{python}
+#| eval: true
+#| echo: true
+def max_list(numbers):
+    max = None
+    for i in range(len(numbers)):
+        numbers[i] *= 2
+    for n in numbers:
+        if max == None or n > max:
+            max =  n
+    return max
+```
+
+## Write a function -- solution 2
+
+```{python}
+#| eval: true
+#| echo: true
+def max_list(numbers):
+    max = None
+    for i in range(len(numbers)):
+        numbers[i] *= 2
+        if max == None or numbers[i] > max:
+            max = numbers[i]
+    return max
+
+def main():
+  assert max_list([2, 2, 1]) == 4
+  assert max_list([5, 2, 1]) == 10
+  assert max_list([]) == None
+  print("pass")
+  
+main()
+```
+
+## Write a function -- solution 2 continue
+
+-   line 3: can we use `for x in list`?
+
+```{python}
+#| eval: true
+#| echo: true
+def max_list(numbers):
+    max = None
+    for i in range(len(numbers)):
+        numbers[i] *= 2
+        if max == None or numbers[i] > max:
+            max = numbers[i]
+    return max
+```

@@ -1,100 +1,292 @@
 ---
-title: "tuples (slides)"
+title: "files and strings (slides)"
 format: revealjs
 slide-number: true
 df-print: kable
 ---
 
-# CSc 110 - tuples
+# CSc 110 - files and strings
 
-## Variable length parameter
-
-Sometimes you want to handle a variable number of parameters (like `print` does)
+## Review - iterating lines in a file
 
 ```{python}
 #| eval: true
 #| echo: true
-print(1, 2, 3, 4, 5)
-```
-
-## Variable length parameter
-
-Add a `*` before your parameter name so that it accepts a variable number of arguments, gathering them into a tuple
-
-```{python}
-#| eval: true
-#| echo: true
-def func(*values):
-  print(values)
-  for v in values:
-    print(v)
-  
-def main():
-  func(0, 2, 'quick', 4, 'brown', 'fox')
-  
-main()
+info = open('info.txt', 'r')
+for line in info:
+    print(line)
+info.close()
 ```
 
 
+## Review - string methods
 
-## Variable length parameter
-
-Add a `*` before your parameter name so that it accepts a variable number of arguments, gathering them into a tuple
-
-```{python}
-#| eval: true
-#| echo: true
-def concatenate(*values):
-  new_string = ""
-  for v in values:
-    new_string += str(v) + " "
-  return new_string[:-1]
-
-def main():
-  print( concatenate("The", "temperature", "is", 82, "degrees"))
-  
-main()
-```
+-   `string.strip(chars)` -- removes any of the characters in chars from the beginning or end of string, returns a string
+-   `string.split(chars)` -- splits string at the chars, returns a list
+-   `string.lower()` -- forces all characters to lowercase, returns a string
 
 
 ## Write a function
 
-1.  Its name is `min_max`
-2.  It takes a variable number of arguments: `*values`
-3.  It returns the highest and lowest values in `values`
+It reads the file with filename, iterates over each line in the [numbers.txt](data/numbers.txt) and return the sum. Submit your attendance.
 
-Name your file `min_max_tuple.py`, submit to Gradescope.
+numbers.txt
+```{html}
+1
+0
+5
+7
+2
+```
 
+sum_numbers.py
 ```{python}
-#| eval: false
 #| echo: true
-assert min_max(1) == (1, 1)
-assert min_max(3,1) == (1, 3)
-assert min_max(2,4,6) == (2, 6)
-assert min_max() == (None, None)
+#| eval: false
+assert sum_all("numbers.txt") == 15
 ```
 
 ## Write a function -- solution
 
 ```{python}
-#| eval: true
 #| echo: true
-def min_max(*values):
-  max = None
-  min = None
-  for v in values:
-    if max == None or v > max:
-      max = v
-    if min == None or v < min:
-      min = v
-  return min, max
+#| eval: true
+def sum_all(file_name):
+  total = 0
+  f = open(file_name, "r")
+  for line in f:
+    number = int(line.strip("\n"))
+    total += number
+  return total
 
 def main():
-  assert min_max(1) == (1, 1)
-  assert min_max(3,1) == (1, 3)
-  assert min_max(2,4,6) == (2, 6)
-  assert min_max() == (None, None)
-  print("Passed all tests")
+  assert sum_all("numbers.txt") == 15
+
+main()
+```
+
+
+## Modes
+
+-   To read a file:
+
+    -   Use **'r'** for reading the contents of a file
+
+-   To write to a file: 
+
+    -   Use **'a'** to append to the existing file content
+
+    -   Use **'w'** to replace existing content and write to a file
+
+## Write function
+
+```{python}
+#| eval: false
+#| echo: true
+# opened the file in w mode
+f = open('words.txt', 'w')
+
+# write text content to the file
+f.write("Let us start a story.")
+
+# close the file
+f.close()
+```
+
+You will see `words.txt` in your folder.
+```{html}
+Let us start a story.
+```
+
+
+## Evaluate the code
+
+```{python}
+#| echo: true
+#| eval: true
+f = open('words.txt', 'w')
+f.write('The slow wolf')
+f.write('jumped over')
+f.write('the bear')
+f.close()
+```
+
+## Evaluate the code
+
+```{python}
+#| echo: true
+#| eval: true
+f = open('words.txt', 'w')
+f.write('The slow wolf')
+f.write('jumped over')
+f.write('the bear')
+f.close()
+```
+
+words.txt
+
+```{html}
+The slow wolfjumped overthe bear
+```
+
+## Evaluate the code
+
+```{python}
+#| echo: true
+#| eval: true
+f = open('words.txt', 'w')
+f.write('The slow wolf\n')
+f.write('jumped over\n')
+f.write('the bear')
+f.close()
+```
+
+## Evaluate the code
+
+```{python}
+#| echo: true
+#| eval: true
+f = open('words.txt', 'w')
+f.write('The slow wolf\n')
+f.write('jumped over\n')
+f.write('the bear')
+f.close()
+```
+
+words.txt
+
+```{html}
+The slow wolf
+jumped over
+the bear
+```
+
+## Evaluate the code -- continued
+
+```{python}
+#| echo: true
+#| eval: true
+f = open('words.txt', 'a')
+f.write('The quick fox\n')
+f.write('jumped over\n')
+f.write('the bear')
+f.close()
+```
+
+## Evaluate the code -- continued
+
+```{python}
+#| echo: true
+#| eval: true
+f = open('words.txt', 'a')
+f.write('The quick fox\n')
+f.write('jumped over\n')
+f.write('the bear')
+f.close()
+```
+
+words.txt
+
+```{html}
+The slow wolf
+jumped over
+the bearThe quick fox
+jumped over
+the bear
+```
+
+## Write key, value to a file
+
+Replace line 4 and line 5 with your code
+```{python}
+#| eval: false
+#| echo: true
+info = {"a": 2, "b": 5, "c": 0}
+output = open("count.txt", "w")
+
+# write code
+# write code
+output.write("end")
+
+output.close()
+```
+
+count.txt
+
+```{html}
+a, 2
+b, 5
+c, 0
+end   
+```
+
+## Write key, value to a file
+
+```{python}
+#| eval: false
+#| echo: true
+info = {"a": 2, "b": 5, "c": 0}
+output = open("count.txt", "w")
+
+for key, value in info.items():
+  output.write(key + ", " + str(value) + "\n")
+output.write("end")
+
+output.close()
+```
+
+count.txt
+
+```{html}
+a, 2
+b, 5
+c, 0
+end   
+```
+
+## Write two functions
+
+*   Both functions takes a string `file_name` as argument: 
+    *  `count_words` count frequency of each lowercase word, return a dictionary.
+    *  `write_word_count` call `count_words`, iterate it and write a comma separated file ("out_" + `file_name`). 
+*   [Download test file](data/alien.txt). Name your file as `read_and_write.py`.
+
+Test case:
+
+```{python}
+#| eval: false
+#| echo: true
+write_word_count("alien.txt")
+# writes to out_alien.txt with word counts
+```
+
+## Write two functions -- solution
+
+```{python}
+#| eval: true
+#| echo: true
+def count_words(filename):
+  f = open(filename, "r")
+  counts = {}
+  for line in f:
+    words = line.strip("\n").split(" ")
+    for w in words:
+      lower_w = w.lower()
+      if lower_w not in counts:
+        counts[lower_w] = 1
+      else:
+        counts[lower_w] += 1
+  return counts
+
+def write_word_count(filename):
+  count_dict = count_words(filename)
+  output_file = open("out_" + filename, "w")
+  for key, value in count_dict.items():
+    output_file.write(key + "," + str(value) + "\n")
+  output_file.close()
+  
+def main(): 
+  write_word_count("alien.txt")
   
 main()
 ```

@@ -13,6 +13,7 @@ assignments <- read_excel("assessment_schedule.xlsx") %>%
   mutate(formatted_date = format(due_date, "%A, %B %d, %Y"))
 ```
 
+
 # Short Project 07
 
 **Due date: `r assignments %>% filter(assessment == "Module 8 Programming Problems") %>% pull(formatted_date)` at 9pm**
@@ -21,57 +22,58 @@ Short Programming projects are submitted during our weekly 45-minute in-person l
 
 # Programming Problems
 
-Programming Problems should be submitted to [gradescope](https://www.gradescope.com/courses/934148).
+**Due date: `r assignments %>% filter(assessment == "Module 8 Programming Problems") %>% pull(formatted_date)` at 9pm**
 
 ## Programming Problem 15
 
-**Due date: `r assignments %>% filter(assessment == "Module 8 Programming Problems") %>% pull(formatted_date)` at 9pm**
 
 Write a Python function that does the following:
 
-1.  Its name is `count_vowels`
-2.  It takes as argument a `string`
-3.  It iterates over the `string` (either with a `while` or `for` loop) counting how many lowercase and uppercase vowels the `string` has
-4.  It returns a **dictionary** with vowels are the keys, and integer counts as the values
+1\. Its name is `stop_ascending`.\
+2. It takes a list of numbers as argument.\
+3. It returns the index of the first value that is not larger than the preceding value.\
+4. If the list is entirely ascending, then the function should return the length of the list.\
+5. Be very careful to return the correct index.
+
+Name the program `ascending.py`. Make sure that gradescope gives you the points for passing the test case.
 
 Test cases:
 
 ```{python}
 #| echo: true
 #| eval: false
-print( count_vowels("") ) # {"a": 0, "e": 0, "i": 0, "o": 0, "u": 0,
-                          #  "A": 0, "E": 0, "I": 0, "O": 0, "U": 0}
-                
-print( count_vowels("banana") ) # {"a": 3, "e": 0, "i": 0, "o": 0, "u": 0,
-                                #  "A": 0, "E": 0, "I": 0, "O": 0, "U": 0}
-                                
-print( count_vowels("Adriana") ) # {"a": 2, "e": 0, "i": 1, "o": 0, "u": 0,
-                                 #  "A": 1, "E": 0, "I": 0, "O": 0, "U": 0}
-                                 
-print( count_vowels("Hello World!") ) # {"a": 0, "e": 1, "i": 0, "o": 2, "u": 0,
-                                      #  "A": 0, "E": 0, "I": 0, "O": 0, "U": 0}
+print( stop_ascending([]) ) # None
+print( stop_ascending([1, 2, 3]) ) # 3
+print( stop_ascending([1, 2, 3, 1, 5]) ) # 3
 ```
-
-Name the program `vowel_counting.py`. Make sure that gradescope gives you the points for passing the test case.
 
 ## Programming Problem 16
 
-**Due date: `r assignments %>% filter(assessment == "Module 8 Programming Problems") %>% pull(formatted_date)` at 9pm**
 
 Write a Python function that does the following:
 
-1.  Its name is `invert_dictionary`
-2.  It takes a single `dictionary` as a parameter
-3.  It returns a new dictionary with the original `dictionary` values mapped as keys, and its original keys mapped as lists of values
+1.  Its name is `combine`.
+2.  It takes two lists as parameter.
+3.  It combines the two lists into a single list that contains exactly the same values -- make sure you add the items from the second list into the first list (the first list needs to be modified)
+4.  Do not use any list methods besides `.append`.
+
+Name the program `combine_lists.py`. Make sure that gradescope gives you the points for passing the test case.
 
 Test cases:
 
 ```{python}
 #| echo: true
 #| eval: false
-print( invert_dictionary({"a": 7, "b": 8}) ) # { 7: ["a"], 8: ["b"] }
-print( invert_dictionary({"a": 2, "b": 2}) ) # { 2: ["a", "b"] }
-print( invert_dictionary({}) ) # {}
-```
 
-Name the program `inversion.py`. Make sure that gradescope gives you the points for passing the test case.
+test_list = []
+combine(test_list, []) 
+print(test_list) # []
+
+test_list = [1, 2, 3]
+combine(test_list, [1, 1]) 
+print(test_list) # [1, 2, 3, 1, 1]
+
+test_list = [1, 2, 3, 1, 5]
+combine(test_list, [])
+print(test_list) # [1, 2, 3, 1, 5]
+```

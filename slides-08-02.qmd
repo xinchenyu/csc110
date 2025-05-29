@@ -1,59 +1,65 @@
 ---
-title: "for loops -- iterating over items (slides)"
+title: "for loops with range (slides)"
 format: revealjs
 slide-number: true
 df-print: kable
 ---
 
-# CSc 110 - the other type of `for` loop
+# CSc 110 - for loops with range
 
-## Review of `for in range():`
+## `while` vs. `for` loops
 
+In addition to `while`, we can use `for` to create loops
 ```{python}
-#| echo: true
 #| eval: true
-for n in range(5):
-  print(n)
+#| echo: true
+index = 0
+while index < 3:
+  print(index)
+  index += 1
 ```
 
 ```{python}
-#| echo: true
 #| eval: true
-numbers = [2, 1, 4, 6, 23, 2]
-for i in range(len(numbers)):
-  print(numbers[i])
+#| echo: true
+for index in range(3):
+  print(index)
 ```
 
-## Introducing `for x in string:`
+## `while` vs. `for` loops
+
+In addition to `while`, we can use `for` to create loops
 
 ```{python}
-#| echo: true
 #| eval: true
-string = "hello"
-for n in string:
-  print(n)
+#| echo: true
+values = [70, 20, 30]
+index = 0
+while index < len(values):
+  print(values[index])
+  index += 1
 ```
 
-## Introducing `for x in list:`
-
 ```{python}
-#| echo: true
 #| eval: true
-numbers = [2, 1, 4, 6, 23, 2]
-for n in numbers:
-  print(n)
+#| echo: true
+values = [70, 20, 30]
+for index in range(len(values)):
+  print(values[index])
 ```
 
 ## Write a function
 
-Modify your `count_chars` function.
-Use `for x in string` instead of `for x in range(len(string))`.
+It iterates over the list, changing odd numbers to even number (even up). 
+
+Use a `for` loop.
 
 ```{python}
 #| eval: false
-#| echo: true
-assert count_chars("") == {}
-assert count_chars("banana") == {"b": 1, "a": 3, "n": 2}
+#| echo: true 
+test_integers = [1, 2, 3, 4]
+assert make_all_even(test_integers) == [2, 2, 4, 4]
+assert test_integers == [2, 2, 4, 4] # change persists
 ```
 
 
@@ -62,292 +68,189 @@ assert count_chars("banana") == {"b": 1, "a": 3, "n": 2}
 ```{python}
 #| eval: true
 #| echo: true
-def count_chars(string):
-  counts = {}
-  for char in string:
-    if char in counts:
-      counts[char] += 1
-    else:
-      counts[char] = 1
-      
-  return counts
-
-def main():
-  assert count_chars("") == {}
-  assert count_chars("banana") == {"b": 1, "a": 3, "n": 2}
-  print("Passed all tests.")
-
-main()
-```
-
-## A Note on two methods
-
-`for i in range(len(list)):` VS. `for x in list:`
-
--   Mutate the list: `option 1` (need to use index `i` to mutate)
-
-```{python}
-#| echo: true
-#| eval: true
-numbers = [2, 1, 4]
-for i in range(len(numbers)):
-  numbers[i] += 1
-numbers
-```
-
--   Get the values: `both options`
-
-```{python}
-#| echo: true
-#| eval: true
-numbers = [2, 1, 4]
-for n in numbers:
-  print(n)
-```
-
-
-## Write a function
-
-It returns a dictionary that maps each negative value in `numbers` to its frequency in `numbers`.
-
-```{python}
-#| eval: false
-#| echo: true
-assert tally_negatives([1, -2, 0, -4, -2]) == {-2: 2, -4: 1}
-assert tally_negatives([]) == {}
-```
-
-## Write a function -- solution
-
-```{python}
-#| eval: true
-#| echo: true
-def tally_negatives(numbers):
-  tally = {}
-  for n in numbers:
-    if n < 0:
-      if n not in tally:
-        tally[n] = 0
-      tally[n] += 1
-  return tally
-
-def main():
-  assert tally_negatives([1, -2, 0, -4, -2]) == {-2: 2, -4: 1}
-  assert tally_negatives([]) == {}
-  print("Passed all tests.")
-  
-main()
-```
-
-
-## Iterating a dictionary 
-
-Iterating keys: 
-```{python}
-#| eval: true
-#| echo: true
-scores = {'A': 10, 'B': 25, 'C': 27, 'D': 10}
-for key in scores:
-  print(key)
-```
-
-Another option: `dict.keys()`:
-```{python}
-#| eval: true
-#| echo: true
-scores = {'A': 10, 'B': 25, 'C': 27, 'D': 10}
-for key in scores.keys():
-  print(key)
-```
-
-## Iterating a dictionary 
-
-Iterating values: `dict.values()`:
-```{python}
-#| eval: true
-#| echo: true
-scores = {'A': 10, 'B': 25, 'C': 27, 'D': 10}
-for value in scores.values():
-  print(value)
-```
-
-Iterating both keys and values: `dict.items()`
-```{python}
-#| eval: true
-#| echo: true
-scores = {'A': 10, 'B': 25, 'C': 27, 'D': 10}
-for key, value in scores.items():
-  print(key, value)
-```
-
-
-## Write a function
-
-It returns a list with all the keys and values in the `dictionary`.
-
-Test cases:
-
-```{python}
-#| eval: false
-#| echo: true
-assert keys_and_values({'A': 10, 'B': 25, 'C': 27, 'D': 10, 'E': 5}) == \
-    ['A', 10, 'B', 25, 'C', 27, 'D', 10, 'E', 5]
-```
-
-## Write a function -- solution
-
-```{python}
-#| eval: true
-#| echo: true
-def keys_and_values(dictionary):
-  new_list = []
-  for key, value in dictionary.items():
-    new_list.append(key)
-    new_list.append(value)
-  return new_list
-
-def main():
-  assert keys_and_values({'A': 10, 'B': 25, 'C': 27, 'D': 10, 'E': 5}) == ['A', 10, 'B', 25, 'C', 27, 'D', 10, 'E', 5]
-  
-main()
-```
-
-## Quiz 07
-
-<center>
-<div class="cleanslate w24tz-current-time w24tz-large" style="display: inline-block !important; visibility: hidden !important; min-width:300px !important; min-height:145px !important;"><a href="//24timezones.com/Tucson/time" style="text-decoration: none" class="clock24" id="tz24-1695057604-c1393-eyJob3VydHlwZSI6IjEyIiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIwIiwiY29udGFpbmVyX2lkIjoiY2xvY2tfYmxvY2tfY2I2NTA4ODZjNDg0OWVlIiwidHlwZSI6ImRiIiwibGFuZyI6ImVuIn0=" title="World Time :: Tucson" target="_blank" rel="nofollow"></a>current time<div id="clock_block_cb650886c4849ee"></div></div>
-<script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
-</center>
-
-You have 10 minutes to complete the quiz.
-
-No need to write `main()` function.
-
-## Write a function
-
-It mutates `dict_1`, by adding to it all key-values pairs in `dict_2`. If a key is in both dictionaries, the values are added.
-
-
-Test cases:
-
-```{python}
-#| echo: true
-#| eval: false
-dict_1 = {"a": 20, "e": 5}
-dict_2 = {"e": 10, "i": 2}
-assert merge_dictionaries(dict_1, dict_2) == {"a": 20, "e": 15, "i": 2}
-```
-
-## Write a function -- solution
-
-```{python}
-#| echo: true
-#| eval: true
-def merge_dictionaries(dict_1, dict_2):
-  for key, value in dict_2.items():
-    if key in dict_1:
-      dict_1[key] += value
-    else:
-      dict_1[key] = value
-  return dict_1
+def make_all_even(integers):
+  # for each index in list
+  for index in range(len(integers)):
+    integers[index] += integers[index] % 2 # add zero if even, one if odd
+  return integers
       
 def main():
-  dict_1 = {"a": 20, "e": 5}
-  dict_2 = {"e": 10, "i": 2}
-  assert merge_dictionaries(dict_1, dict_2) == {"a": 20, "e": 15, "i": 2}
+  test_integers = [1, 2, 3, 4]
+  assert make_all_even(test_integers) == [2, 2, 4, 4]
+  assert test_integers == [2, 2, 4, 4]
+  print(test_integers) 
   
 main()
 ```
 
 ## Write a function
 
-It mutate the list, multiply every number by 2. It returns the highest value in the mutated list.
+It returns a list of integers that represent the indices of the vowels in the string
+
+Name file `indices_of_vowels.py` and submit to Gradescope. 
+
+Use a `for` loop.
+
+Test cases:
+
+```{python}
+#| echo: true
+#| eval: false
+assert indices_of_vowels("hello") == [1, 4]
+assert indices_of_vowels("") == []
+assert indices_of_vowels("aeiou") == [0, 1, 2, 3, 4]
+```
+
+## Write a function -- solution
+
+```{python}
+#| echo: true
+#| eval: true
+def indices_of_vowels(string):
+  result = [] # initialize empty list to hold indices
+  # for every index in list
+  for index in range(len(string)):
+    if string[index] in "aeiou": # check if character is vowel
+      result.append(index) # append index to result
+  return result
+
+def main():
+  assert indices_of_vowels("hello") == [1, 4]
+  assert indices_of_vowels("") == []
+  assert indices_of_vowels("aeiou") == [0, 1, 2, 3, 4]
+
+main()
+```
+
+
+## More on how to use `range()`
+
+Syntax: `range(start, stop, step)`
+
+-   `start` Optional. An integer specifying at which position to start. Default is 0
+-   `stop` Required. An integer specifying at which position to stop (NOT included).
+-   `step` Optional. An integer specifying the incrementation. Default is 1
+
+## More on how to use `range()`
+
+```{python}
+#| eval: true
+#| echo: true
+for n in range(0, 5, 1): # step is 1, same as range(5)
+  print(n)
+```
+
+```{python}
+#| eval: true
+#| echo: true
+for n in range(0, 5, 2): # step is 2
+  print(n)
+```
+
+```{python}
+#| eval: true
+#| echo: true
+for n in range(5, 0, -2): # step is -2
+  print(n)
+```
+## Write a function
+
+It returns a new string with items at even indices in `characters` concatenated together.
+
+Use a `for` loop.
 
 Test cases:
 
 ```{python}
 #| eval: false
 #| echo: true
-assert max_list([2, 2, 1]) == 4
-assert max_list([5, 2, 1]) == 10
-assert max_list([]) == None
+characters = ["a", "e", "p", "o", "p", "w", "l", "i", "e", "f"]
+assert every_two_together(characters) == "apple"
+assert every_two_together([]) == ""
 ```
 
-## Write a function -- solution 1
+## Write a function -- solution
+
 
 ```{python}
 #| eval: true
 #| echo: true
-def max_list(numbers):
-    max = None
-    for i in range(len(numbers)):
-        numbers[i] *= 2
-    for n in numbers:
-        if max == None or n > max:
-            max =  n
-    return max
+def every_two_together(chars):
+  new_string = ""
+  for i in range(0, len(chars), 2):
+    new_string += chars[i]
+  return new_string
 
 def main():
-  assert max_list([2, 2, 1]) == 4
-  assert max_list([5, 2, 1]) == 10
-  assert max_list([]) == None
-  print("pass")
+  characters = ["a", "e", "p", "o", "p", "w", "l", "i", "e", "f"]
+  assert every_two_together(characters) == "apple"
+  assert every_two_together([]) == ""
   
 main()
 ```
 
-## Write a function -- solution 1 continue
 
--   line 3: can we use `for x in list`?
+## Write a function
 
--   line 5: can we use `for i in range(len(list))`?
+It returns a **new**  list in reversed order, containing items at every other index in the original list.
+
+Use a `for` loop.
+
+Test cases:
+
 ```{python}
-#| eval: true
+#| eval: false
 #| echo: true
-def max_list(numbers):
-    max = None
-    for i in range(len(numbers)):
-        numbers[i] *= 2
-    for n in numbers:
-        if max == None or n > max:
-            max =  n
-    return max
+characters = ["o", "e", "k", "l", "c", "p", "l", "p", "m", "a"]
+assert every_two(characters) == ["a", "p", "p", "l", "e"]
+assert every_two(["y", "e", "o", "e", "j"]) == ["j", "o", "y"]
 ```
 
-## Write a function -- solution 2
+## Write a function -- solution
 
 ```{python}
 #| eval: true
 #| echo: true
-def max_list(numbers):
-    max = None
-    for i in range(len(numbers)):
-        numbers[i] *= 2
-        if max == None or numbers[i] > max:
-            max = numbers[i]
-    return max
+def every_two(chars):
+  result = []
+  for i in range(len(chars)-1, -1, -2):
+    result.append(chars[i])
+  return result
 
 def main():
-  assert max_list([2, 2, 1]) == 4
-  assert max_list([5, 2, 1]) == 10
-  assert max_list([]) == None
-  print("pass")
+  characters = ["o", "e", "k", "l", "c", "p", "l", "p", "m", "a"]
+  assert every_two(characters) == ["a", "p", "p", "l", "e"]
+  assert every_two(["y", "e", "o", "e", "j"]) == ["j", "o", "y"]
+  print("pass the test case")
   
 main()
 ```
 
-## Write a function -- solution 2 continue
+## Write a function
 
--   line 3: can we use `for x in list`?
+Test cases:
+
+```{python}
+#| eval: false
+#| echo: true
+my_numbers = [0, 1, 0, 3, 0]
+assert add_every_two(my_numbers) == 0
+```
+
+## Write a function -- solution
 
 ```{python}
 #| eval: true
 #| echo: true
-def max_list(numbers):
-    max = None
-    for i in range(len(numbers)):
-        numbers[i] *= 2
-        if max == None or numbers[i] > max:
-            max = numbers[i]
-    return max
+def add_every_two(numbers):
+  result = 0
+  for i in range(0, len(numbers), 2):
+    result += numbers[i]
+  return result
+
+def main():
+  my_numbers = [0, 1, 0, 3, 0]
+  assert add_every_two(my_numbers) == 0
+  
+main()
 ```

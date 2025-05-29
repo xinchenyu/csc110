@@ -9,7 +9,7 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.39">
 
-  <title>CSc 110 Computer Programming I – more expressions (slides)</title>
+  <title>CSc 110 Computer Programming I – built-in functions (slides)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -191,287 +191,202 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">more expressions (slides)</h1>
+  <h1 class="title">built-in functions (slides)</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
 <section>
-<section id="csc-110-more-expressions" class="title-slide slide level1 center">
-<h1>CSc 110 More expressions</h1>
+<section id="csc-110-python-functions" class="title-slide slide level1 center">
+<h1>CSC 110 Python Functions</h1>
 
 </section>
-<section id="review-of-arithmetic-operations" class="slide level2">
-<h2>Review of arithmetic operations</h2>
+<section id="built-in-functions" class="slide level2">
+<h2>Built-in Functions</h2>
 <ul>
-<li><p><code>+</code> : plus</p></li>
-<li><p><code>-</code> : minus</p></li>
-<li><p><code>*</code> : multiple</p></li>
-<li><p><code>/</code> : divide</p></li>
-<li><p><code>**</code> : power</p></li>
-<li><p><code>//</code> : divide and floor</p></li>
-<li><p><code>%</code> : modulos</p></li>
-</ul>
-<p><br></p>
-</section>
-<section id="review-of-previous-expressions" class="slide level2">
-<h2>Review of previous expressions</h2>
-<p>Evaluate the expressions below:</p>
-<div id="4171443c" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="dv">4</span> <span class="op">*</span> <span class="dv">4</span> <span class="op">/</span> <span class="dv">2</span> <span class="op">%</span> <span class="dv">2</span></span>
-<span id="cb1-2"><a></a>( <span class="dv">2</span> <span class="op">+</span> <span class="dv">3</span> ) <span class="op">/</span> ( <span class="dv">2</span> <span class="op">-</span> <span class="fl">1.5</span>)</span>
-<span id="cb1-3"><a></a><span class="dv">3</span><span class="op">**</span><span class="dv">3</span> <span class="op">//</span> <span class="dv">7</span></span>
-<span id="cb1-4"><a></a><span class="dv">5</span><span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">25</span><span class="op">**</span><span class="fl">0.5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="review-of-previous-expressions-1" class="slide level2">
-<h2>Review of previous expressions</h2>
-<p>Evaluate the expressions below:</p>
-<div id="197ca47b" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="dv">4</span> <span class="op">*</span> <span class="dv">4</span> <span class="op">/</span> <span class="dv">2</span> <span class="op">%</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>0.0</code></pre>
-</div>
-</div>
-<div id="caf07c13" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>( <span class="dv">2</span> <span class="op">+</span> <span class="dv">3</span> ) <span class="op">/</span> ( <span class="dv">2</span> <span class="op">-</span> <span class="fl">1.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>10.0</code></pre>
-</div>
-</div>
-<div id="24cc38b3" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="dv">3</span><span class="op">**</span><span class="dv">3</span> <span class="op">//</span> <span class="dv">7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>3</code></pre>
-</div>
-</div>
-<div id="c63658f4" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="dv">5</span><span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">25</span><span class="op">**</span><span class="fl">0.5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>30.0</code></pre>
-</div>
-</div>
-</section>
-<section id="comparisons" class="slide level2">
-<h2>Comparisons</h2>
-<ul>
-<li>What will be the result of the following expressions:</li>
-</ul>
-<div id="c4583178" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="dv">8</span> <span class="op">==</span> <span class="dv">7</span></span>
-<span id="cb10-2"><a></a><span class="dv">8</span> <span class="op">&lt;</span> <span class="dv">7</span></span>
-<span id="cb10-3"><a></a><span class="dv">8</span> <span class="op">&gt;</span> <span class="dv">7</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>What are the other comparison operators?</li>
-</ul>
-</section>
-<section id="comparisons-1" class="slide level2">
-<h2>Comparisons</h2>
-<p>Expressions with comparisons operators are evaluated to <code>True</code> or <code>False</code></p>
-<ul>
-<li><code>==</code> equal</li>
-<li><code>!=</code> different</li>
-<li><code>&gt;=</code> greater or equal</li>
-<li><code>&gt;</code> greater</li>
-<li><code>&lt;=</code> less or equal</li>
-<li><code>&lt;</code> less</li>
+<li><code>print()</code></li>
+<li><code>round()</code></li>
+<li><code>type()</code></li>
+<li><code>input()</code></li>
+<li><code>len()</code></li>
+<li><code>int()</code></li>
+<li><code>float()</code></li>
 </ul>
 </section>
 <section id="write-a-function" class="slide level2">
 <h2>Write a function</h2>
+<p>Write a Python function that does the following:</p>
 <ol type="1">
-<li>Its name is <code>odd</code> and it takes one integer argument <code>n</code></li>
-<li>It <strong>returns</strong> <code>True</code> if <code>n</code> is odd, <code>False</code> if <code>n</code> is even</li>
+<li>Its name is <code>greeting</code></li>
+<li>It takes two arguments, <code>first_name</code> and <code>last_name</code></li>
+<li>It returns a string with a greeting using <code>first_name</code> and <code>last_name</code></li>
 </ol>
-<div id="31765f20" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="bu">print</span>( odd(<span class="dv">10</span>) ) <span class="co"># False</span></span>
-<span id="cb11-2"><a></a><span class="bu">print</span>( odd(<span class="dv">5</span>) ) <span class="co"># True</span></span>
-<span id="cb11-3"><a></a><span class="bu">print</span>( odd(<span class="dv">0</span>) ) <span class="co"># False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="a15f77d7" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="bu">print</span>( greeting(<span class="st">"Mickey"</span>, <span class="st">"Mouse"</span>) ) <span class="co"># Hello, Mickey Mouse!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="write-a-function-solution" class="slide level2">
-<h2>Write a function – solution</h2>
-<div id="7f111f8b" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="kw">def</span> odd(n):</span>
-<span id="cb12-2"><a></a>  <span class="cf">return</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">1</span></span>
-<span id="cb12-3"><a></a></span>
-<span id="cb12-4"><a></a><span class="kw">def</span> main():</span>
-<span id="cb12-5"><a></a>  <span class="bu">print</span>( odd(<span class="dv">10</span>) ) <span class="co"># False</span></span>
-<span id="cb12-6"><a></a>  <span class="bu">print</span>( odd(<span class="dv">5</span>) ) <span class="co"># True</span></span>
-<span id="cb12-7"><a></a>  <span class="bu">print</span>( odd(<span class="dv">0</span>) ) <span class="co"># False</span></span>
-<span id="cb12-8"><a></a>  </span>
-<span id="cb12-9"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="input-function" class="slide level2">
+<h2><code>input()</code> function</h2>
+<ul>
+<li>The <code>input()</code> function prompts the user to input text in the standard output</li>
+<li>Whatever is inside the parentheses in <code>input()</code> will be written to the standard output (without a trailing newline, which you can add using <code>\n</code>).</li>
+<li>The function then reads a line from input, converts it to a string (stripping a trailing newline), and returns that</li>
+<li><code>input()</code> always returns a string</li>
+</ul>
+<div id="1be1208e" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="bu">input</span>(<span class="st">"What's your name?</span><span class="ch">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="write-a-function-1" class="slide level2">
+<h2>Write a function</h2>
+<p>Write a Python function that does the following:</p>
+<ol type="1">
+<li>Its name is <code>greeting_again</code> with no parameters</li>
+<li>It first prompts you to enter your first name</li>
+<li>It again prompts you to enter your last name</li>
+<li>It returns a string with the same greeting as <code>greeting</code> but replace with your first and last name</li>
+</ol>
+<div id="82d1256c" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="bu">print</span>( greeting_again() ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="write-a-function-2" class="slide level2">
+<h2>Write a function</h2>
+<div id="9719c01b" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="kw">def</span> greeting(first, last):</span>
+<span id="cb4-2"><a></a>    message <span class="op">=</span> <span class="st">"Hello, "</span> <span class="op">+</span> first <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> last <span class="op">+</span> <span class="st">"!"</span></span>
+<span id="cb4-3"><a></a>    <span class="cf">return</span> message</span>
+<span id="cb4-4"><a></a></span>
+<span id="cb4-5"><a></a><span class="kw">def</span> greeting_again():</span>
+<span id="cb4-6"><a></a>    first <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter your first name:</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb4-7"><a></a>    last <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter your last name:</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb4-8"><a></a>    message <span class="op">=</span> <span class="st">"Hello, "</span> <span class="op">+</span> first <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> last <span class="op">+</span> <span class="st">"!"</span></span>
+<span id="cb4-9"><a></a>    <span class="cf">return</span> message</span>
+<span id="cb4-10"><a></a></span>
+<span id="cb4-11"><a></a><span class="kw">def</span> main():</span>
+<span id="cb4-12"><a></a>    <span class="bu">print</span>(greeting(<span class="st">"Mickey"</span>, <span class="st">"Mouse"</span>))</span>
+<span id="cb4-13"><a></a>    <span class="bu">print</span>(greeting_again())</span>
+<span id="cb4-14"><a></a></span>
+<span id="cb4-15"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="len-function" class="slide level2">
+<h2><code>len()</code> function</h2>
+<ul>
+<li>The <code>len()</code> function can be used with many types – we will be using it with <code>string</code> for now</li>
+<li>It returns the number of characters in a string</li>
+</ul>
+<div id="33d18ebc" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>character_count <span class="op">=</span> <span class="bu">len</span>(<span class="st">"Mickey"</span>)</span>
+<span id="cb5-2"><a></a><span class="bu">print</span>(character_count)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>False
-True
-False</code></pre>
+<pre><code>6</code></pre>
 </div>
 </div>
 </section>
-<section id="arithmetic-vs-comparison-operators" class="slide level2">
-<h2>Arithmetic vs Comparison Operators</h2>
-<p>Arithmetic Operators:</p>
+<section id="write-a-function-3" class="slide level2">
+<h2>Write a function</h2>
+<p>Write a Python function that does the following:</p>
+<ol type="1">
+<li>Its name is <code>count_characters</code></li>
+<li>It takes three string arguments, <code>a</code>, <code>b</code> and <code>c</code></li>
+<li>It returns the total number of characters for all three strings</li>
+</ol>
+<div id="deb040ba" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="bu">print</span>( count_characters(<span class="st">"hel"</span>, <span class="st">"lo"</span>, <span class="st">"world"</span>) ) <span class="co"># 10</span></span>
+<span id="cb7-2"><a></a><span class="bu">print</span>( count_characters(<span class="st">""</span>, <span class="st">""</span>, <span class="st">""</span>) ) <span class="co"># 0</span></span>
+<span id="cb7-3"><a></a><span class="bu">print</span>( count_characters(<span class="st">" "</span>, <span class="st">" "</span>, <span class="st">" "</span>) ) <span class="co"># 3</span></span>
+<span id="cb7-4"><a></a><span class="bu">print</span>( count_characters(<span class="st">"10"</span>, <span class="st">"2"</span>, <span class="st">"3"</span>) ) <span class="co"># 4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="write-a-function-4" class="slide level2">
+<h2>Write a function</h2>
+<div id="126e09ac" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="kw">def</span> count_characters(a, b, c):</span>
+<span id="cb8-2"><a></a>    <span class="cf">return</span> <span class="bu">len</span>(a) <span class="op">+</span> <span class="bu">len</span>(b) <span class="op">+</span> <span class="bu">len</span>(c)</span>
+<span id="cb8-3"><a></a></span>
+<span id="cb8-4"><a></a><span class="kw">def</span> main():</span>
+<span id="cb8-5"><a></a>    <span class="bu">print</span>( count_characters(<span class="st">"hel"</span>, <span class="st">"lo"</span>, <span class="st">"world"</span>) ) <span class="co"># 10</span></span>
+<span id="cb8-6"><a></a>    <span class="bu">print</span>( count_characters(<span class="st">""</span>, <span class="st">""</span>, <span class="st">""</span>) ) <span class="co"># 0</span></span>
+<span id="cb8-7"><a></a>    <span class="bu">print</span>( count_characters(<span class="st">" "</span>, <span class="st">" "</span>, <span class="st">" "</span>) ) <span class="co"># 3</span></span>
+<span id="cb8-8"><a></a>    <span class="bu">print</span>( count_characters(<span class="st">"10"</span>, <span class="st">"2"</span>, <span class="st">"3"</span>) ) <span class="co"># 4</span></span>
+<span id="cb8-9"><a></a></span>
+<span id="cb8-10"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>10
+0
+3
+4</code></pre>
+</div>
+</div>
+</section>
+<section id="quiz-03" class="slide level2">
+<h2>Quiz 03</h2>
+<center>
+<div class="cleanslate w24tz-current-time w24tz-large" style="display: inline-block !important; visibility: hidden !important; min-width:300px !important; min-height:145px !important;">
+<a href="//24timezones.com/Tucson/time" style="text-decoration: none" class="clock24" id="tz24-1695057604-c1393-eyJob3VydHlwZSI6IjEyIiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIwIiwiY29udGFpbmVyX2lkIjoiY2xvY2tfYmxvY2tfY2I2NTA4ODZjNDg0OWVlIiwidHlwZSI6ImRiIiwibGFuZyI6ImVuIn0=" title="World Time :: Tucson" target="_blank" rel="nofollow"></a>current time
+<div id="clock_block_cb650886c4849ee">
+
+</div>
+</div>
+<script type="text/javascript" src="//w.24timezones.com/l.js" async=""></script>
+</center>
+<p>You have 10 minutes to complete the quiz.</p>
+<p>Your formula in your function should be Python code (in other words, do not just copy the formula in the instructions, make it so it uses <strong>actual symbols for Python operators</strong>)</p>
+</section>
+<section id="int-function" class="slide level2">
+<h2><code>int()</code> function</h2>
 <ul>
-<li><code>(expressions...)</code>, <code>**</code>, <code>*</code>, <code>/</code>, <code>//</code>, <code>%</code>, <code>+</code>, <code>-</code></li>
+<li>The <code>int()</code> function can be used to convert a string to an integer type</li>
+<li>It only works if the string only contains digits</li>
 </ul>
-<p>Comparison Operators:</p>
+<div id="fdd1efbb" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>age <span class="op">=</span> <span class="st">'35'</span></span>
+<span id="cb10-2"><a></a>age_int <span class="op">=</span> <span class="bu">int</span>(age)</span>
+<span id="cb10-3"><a></a><span class="bu">print</span>(<span class="bu">type</span>(age), <span class="bu">type</span>(age_int))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'str'&gt; &lt;class 'int'&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="float-function" class="slide level2">
+<h2><code>float()</code> function</h2>
 <ul>
-<li><code>==</code>, <code>!=</code>, <code>&gt;=</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&lt;</code></li>
+<li>The <code>float()</code> function can be used to convert a string to a float type</li>
+<li>It only works if the string only contains digits and optionally a decimal point</li>
 </ul>
-<p>Order of operations: arithmetic operators come before comparison operators.</p>
-</section>
-<section id="evaluate-the-expressions" class="slide level2">
-<h2>Evaluate the expressions</h2>
-<p>Evaluation the expressions on your whiteboard and answer attendance questions on Gradescope.</p>
-<div id="865f651d" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a><span class="dv">3</span><span class="op">**</span><span class="dv">2</span> <span class="op">&lt;</span> <span class="dv">25</span><span class="op">**</span><span class="fl">0.5</span></span>
-<span id="cb14-2"><a></a><span class="dv">9</span> <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">8</span> <span class="op">%</span> <span class="dv">2</span></span>
-<span id="cb14-3"><a></a><span class="dv">10</span> <span class="op">//</span> <span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">9</span> <span class="op">//</span> <span class="dv">3</span></span>
-<span id="cb14-4"><a></a><span class="dv">14</span> <span class="op">%</span> <span class="dv">2</span> <span class="op">!=</span> <span class="dv">15</span> <span class="op">%</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="b93eb3a8" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>age <span class="op">=</span> <span class="st">'35'</span></span>
+<span id="cb12-2"><a></a>age_float <span class="op">=</span> <span class="bu">float</span>(age)</span>
+<span id="cb12-3"><a></a><span class="bu">print</span>(<span class="bu">type</span>(age), <span class="bu">type</span>(age_float))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'str'&gt; &lt;class 'float'&gt;</code></pre>
+</div>
 </div>
 </section>
-<section id="evaluation-order" class="slide level2">
-<h2>Evaluation order</h2>
-<ul>
-<li><p><code>(expressions...)</code></p></li>
-<li><p><code>**</code> : Exponentiation</p></li>
-<li><p><code>*, /, //, %</code> : Multiplication, Division, Floor Division and Remainder</p></li>
-<li><p><code>+, -</code> : Addition and subtraction</p></li>
-<li><p><code>&lt;, &lt;=, &gt;, &gt;=, !=, ==</code> : Comparisons</p></li>
-<li><p><code>not x</code> : Boolean NOT</p></li>
-<li><p><code>and</code> : Boolean AND</p></li>
-<li><p><code>or</code> : Boolean OR</p></li>
-</ul>
-</section>
-<section id="not" class="slide level2">
-<h2>not</h2>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Expression</th>
-<th style="text-align: center;">Result</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>not True</td>
-<td style="text-align: center;">False</td>
-</tr>
-<tr class="even">
-<td>not False</td>
-<td style="text-align: center;">True</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="and" class="slide level2">
-<h2>and</h2>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Expression</th>
-<th style="text-align: center;">Result</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>True and True</td>
-<td style="text-align: center;">True</td>
-</tr>
-<tr class="even">
-<td>False and True</td>
-<td style="text-align: center;">False</td>
-</tr>
-<tr class="odd">
-<td>True and False</td>
-<td style="text-align: center;">False</td>
-</tr>
-<tr class="even">
-<td>False and False</td>
-<td style="text-align: center;">False</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="or" class="slide level2">
-<h2>or</h2>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Expression</th>
-<th style="text-align: center;">Result</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>True or True</td>
-<td style="text-align: center;">True</td>
-</tr>
-<tr class="even">
-<td>False or True</td>
-<td style="text-align: center;">True</td>
-</tr>
-<tr class="odd">
-<td>True or False</td>
-<td style="text-align: center;">True</td>
-</tr>
-<tr class="even">
-<td>False or False</td>
-<td style="text-align: center;">False</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="evaluate-the-expressions-1" class="slide level2">
-<h2>Evaluate the expressions</h2>
-<div id="dfeee11f" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a><span class="kw">not</span> <span class="dv">2</span><span class="op">**</span><span class="dv">3</span> <span class="op">==</span> <span class="dv">8</span> <span class="kw">and</span> <span class="dv">4</span> <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span></span>
-<span id="cb15-2"><a></a><span class="dv">25</span><span class="op">*</span><span class="fl">0.5</span> <span class="op">&gt;</span> <span class="dv">5</span><span class="op">**</span><span class="dv">2</span> <span class="kw">or</span> <span class="dv">4</span> <span class="op">&lt;=</span> <span class="dv">2</span><span class="op">**</span><span class="dv">2</span></span>
-<span id="cb15-3"><a></a><span class="dv">4</span> <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">or</span> <span class="dv">4</span> <span class="op">//</span> <span class="dv">0</span> <span class="op">==</span> <span class="dv">0</span></span>
-<span id="cb15-4"><a></a><span class="dv">4</span> <span class="op">%</span> <span class="dv">2</span> <span class="op">!=</span> <span class="dv">1</span></span>
-<span id="cb15-5"><a></a><span class="kw">not</span> <span class="dv">0</span></span>
-<span id="cb15-6"><a></a><span class="kw">not</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="write-a-function-5" class="slide level2">
+<h2>Write a function</h2>
+<p>Write a Python function <code>calculate_year_born</code> with no parameters. It prompts user to enter their age <code>input()</code>.</p>
+<p>It converts user’s <code>age</code> to integer and calculates (imperfectly) the year a person of <code>age</code> was born by subtracting <code>age</code> from <code>2025</code>.</p>
+<p>It returns an integer representing the approximate year person of <code>age</code> was born.</p>
+<div id="b55ef02d" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a><span class="bu">print</span>( calculate_year_born() ) <span class="co"># user enters 60, function returns 1965</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="evaluate-the-expressions-2" class="slide level2">
-<h2>Evaluate the expressions</h2>
-<div id="d72a96f4" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a><span class="kw">not</span> <span class="dv">2</span><span class="op">**</span><span class="dv">3</span> <span class="op">==</span> <span class="dv">8</span> <span class="kw">and</span> <span class="dv">4</span> <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>False</code></pre>
-</div>
-</div>
-<div id="45dda7c2" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a><span class="dv">25</span><span class="op">*</span><span class="fl">0.5</span> <span class="op">&gt;</span> <span class="dv">5</span><span class="op">**</span><span class="dv">2</span> <span class="kw">or</span> <span class="dv">4</span> <span class="op">&lt;=</span> <span class="dv">2</span><span class="op">**</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<pre><code>True</code></pre>
-</div>
-</div>
-<div id="7bfd815d" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a><span class="dv">4</span> <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">or</span> <span class="dv">4</span> <span class="op">//</span> <span class="dv">0</span> <span class="op">==</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
-<pre><code>True</code></pre>
-</div>
-</div>
-<div id="bef157ce" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a><span class="dv">4</span> <span class="op">%</span> <span class="dv">2</span> <span class="op">!=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
-<pre><code>True</code></pre>
-</div>
-</div>
-<div id="dc221b9a" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a><span class="kw">not</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
-<pre><code>True</code></pre>
-</div>
-</div>
-<div id="55269b29" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a></a><span class="kw">not</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
-<pre><code>False</code></pre>
-</div>
+<section id="write-a-function-6" class="slide level2">
+<h2>Write a function</h2>
+<div id="5e28c46a" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a><span class="kw">def</span> calculate_year_born():</span>
+<span id="cb15-2"><a></a>    str_age <span class="op">=</span> <span class="bu">input</span>(<span class="st">"what's your age?</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb15-3"><a></a>    age <span class="op">=</span> <span class="bu">int</span>(str_age)</span>
+<span id="cb15-4"><a></a>    year_born <span class="op">=</span> <span class="dv">2025</span> <span class="op">-</span> age</span>
+<span id="cb15-5"><a></a>    <span class="cf">return</span> year_born</span>
+<span id="cb15-6"><a></a></span>
+<span id="cb15-7"><a></a><span class="kw">def</span> main():</span>
+<span id="cb15-8"><a></a>    <span class="bu">print</span>(calculate_year_born())</span>
+<span id="cb15-9"><a></a></span>
+<span id="cb15-10"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

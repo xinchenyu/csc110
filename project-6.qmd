@@ -16,350 +16,367 @@ Programming Projects are to be submitted to [gradescope](https://www.gradescope.
 
 **Due date: `r assignments %>% filter(assessment == "Programming Project 6") %>% pull(formatted_date)` at 9pm**
 
-For this programming project, you will create and manipulate 2D lists -- which are lists that contain lists.
+In this programming project you will implement a number of Python functions to implement a simplified version of chess. Make sure you follow the provided [style guide](https://adrianapicoral.com/csc-110/style.html) (you will be graded on it!).
 
-# Cross stitch pattern creator
+Name your program `one_d_chess.py` to submit to gradescope. Make sure that gradescope gives you the points for passing the test cases.
 
-This assignment exercises the use of the random module, 2D lists, and for loops.  You are going to write a Python script called `cross_stitch.py`.
+This programming project is an adaptation of Ben Dicken's 1 Dimensional Chess Programming Assignment.
 
-Cross stitch designs are usually depicted on a grid, with each square on the grid corresponding to a stitch. 
+In this programming project, you will be implementing a simpler variant of chess: 1D Chess! 1D chess is a variant of the game that is played on a board that has only one column of spaces, rather than a grid of spaces, as in typical chess. There are actually [multiple variants of 1D chess](https://www.chessvariants.com/shape.dir/onedim.html). In this PA, you should implement a custom variant of 1D chess, which I'll refer to as "110 1D chess".
 
-For the grid, x refers to the row number (starting at zero) and y refers to the column number (starting at zero).
+## **1D Chess Rules**
 
-You can learn more about [how to read a cross stitch pattern](https://stitchedmodern.com/blogs/news/how-to-read-a-cross-stitch-pattern). For this assignment, you will be creating different functions to create a random background and to add different shapes to the pattern.
+In 110 1D chess, the board will be 1 by 9. Each player will get one king, and two knights. The white pieces go on the left, and the black on the right. The starting positions for the pieces of the game should be as follows:
 
-This assignment has [starter code](starter-code/cross_stitch.py), which contains a global constant for a list of symbols to be used and a function to print the pattern called `print_pattern(pattern)`. The started code also imports the library random. Do not make changes to the starter code (changes might cause gradescope test fails).
-
-## Create the random background
-
-The first function you should write is the `create_background` function, which takes a width (how wide the pattern will be in number of stitches), a length (how many rows the pattern has), and number of unique symbols. Note how the last argument, `2`, makes it so the pattern is created with the first two symbols in the `SYMBOLS` list provided in the starter code. 
-
-Make sure you have `random.seed(123)` in this function so that every time we generate the same random number.
-
-```{python}
-#| echo: true
-#| eval: false
-pattern = create_background(20, 10, 2)
-print_pattern(pattern)
+```{html}
++-----------------------------------------------------+
+| WKi | WKn | WKn |     |     |     | BKn | BKn | BKi |
++-----------------------------------------------------+
 ```
 
-<pre>
-┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
-│ ◎ │ △ │ ◎ │ △ │ △ │ ◎ │ ◎ │ △ │ △ │ △ │ ◎ │ ◎ │ ◎ │ △ │ △ │ ◎ │ ◎ │ ◎ │ △ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ △ │ ◎ │ ◎ │ △ │ △ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ △ │ △ │ △ │ △ │ △ │ ◎ │ △ │ △ │ △ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ △ │ ◎ │ △ │ △ │ △ │ △ │ △ │ ◎ │ ◎ │ ◎ │ △ │ △ │ ◎ │ △ │ △ │ △ │ ◎ │ △ │ △ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ △ │ ◎ │ ◎ │ ◎ │ △ │ ◎ │ △ │ ◎ │ △ │ ◎ │ △ │ △ │ ◎ │ △ │ ◎ │ ◎ │ △ │ △ │ △ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ △ │ ◎ │ ◎ │ △ │ △ │ △ │ △ │ △ │ ◎ │ ◎ │ ◎ │ △ │ ◎ │ ◎ │ △ │ ◎ │ △ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ △ │ ◎ │ △ │ △ │ △ │ ◎ │ △ │ △ │ △ │ ◎ │ ◎ │ △ │ ◎ │ ◎ │ △ │ ◎ │ ◎ │ ◎ │ △ │ △ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ △ │ △ │ △ │ ◎ │ △ │ ◎ │ ◎ │ △ │ △ │ ◎ │ ◎ │ △ │ ◎ │ △ │ △ │ △ │ △ │ △ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ △ │ ◎ │ △ │ ◎ │ △ │ ◎ │ △ │ ◎ │ △ │ ◎ │ ◎ │ △ │ △ │ △ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ △ │ ◎ │ ◎ │ △ │ ◎ │ △ │ ◎ │ ◎ │ △ │ △ │ △ │ ◎ │ △ │ △ │ △ │ △ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ △ │ △ │ ◎ │ ◎ │ △ │ △ │ △ │ △ │ △ │ △ │ ◎ │ △ │ △ │ ◎ │ ◎ │ △ │ ◎ │ △ │ △ │ △ │
-└───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┘
-</pre>
+Kings and Knights move and kill their opponents differently. Knights can move either left or right, and when they move thy jump two pieces over. If they land on another piece, they kill them and take their spot. The king can move left or right, until they hit either another piece or an edge of the board. If a king hits another piece, they kill them and take their place. In chess, a player cannot typically kill one of their own pieces. In 110 1D chess, a king or knight can kill one of their own, if they hit or land on them, so be careful!
 
+# Functions to implement
 
+## Start Game
 
-## Add a vertical stripe to the pattern
+Write a function called `create_board` that takes no arguments. It returns a list with the initial state of the board (as shown in the test case below)
 
-Write the function `add_v_stripe` that modifies and returns the pattern, by adding a stripe of certain width, using a specific symbol. The stripe should start at the first row of symbols (y = 0) and end at the last row of symbols.
+Test case:
 
 ```{python}
-#| echo: true
 #| eval: false
-pattern = create_background(20, 10, 2)
-# add vertical stripe at y = 2, of width = 4,
-# using the symbol at index 3 in the list of symbols
-pattern = add_v_stripe(pattern, 2, 4, 3)
-print_pattern(pattern)
+print( create_board() ) # ["WKi", "WKn", "WKn", 
+                        #  "EMPTY", "EMPTY", "EMPTY",
+                        #  "BKn", "BKn", "BKi"]
 ```
 
-<pre>
-┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
-│ ◎ │ △ │ ● │ ● │ ● │ ● │ ◎ │ △ │ △ │ △ │ ◎ │ ◎ │ ◎ │ △ │ △ │ ◎ │ ◎ │ ◎ │ △ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ △ │ ◎ │ ● │ ● │ ● │ ● │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ △ │ △ │ △ │ △ │ △ │ ◎ │ △ │ △ │ △ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ △ │ ● │ ● │ ● │ ● │ △ │ △ │ ◎ │ ◎ │ ◎ │ △ │ △ │ ◎ │ △ │ △ │ △ │ ◎ │ △ │ △ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ △ │ ◎ │ ● │ ● │ ● │ ● │ △ │ ◎ │ △ │ ◎ │ △ │ △ │ ◎ │ △ │ ◎ │ ◎ │ △ │ △ │ △ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ● │ ● │ ● │ ● │ △ │ △ │ △ │ △ │ ◎ │ ◎ │ ◎ │ △ │ ◎ │ ◎ │ △ │ ◎ │ △ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ △ │ ◎ │ ● │ ● │ ● │ ● │ △ │ △ │ △ │ ◎ │ ◎ │ △ │ ◎ │ ◎ │ △ │ ◎ │ ◎ │ ◎ │ △ │ △ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ △ │ ● │ ● │ ● │ ● │ ◎ │ ◎ │ △ │ △ │ ◎ │ ◎ │ △ │ ◎ │ △ │ △ │ △ │ △ │ △ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ △ │ ● │ ● │ ● │ ● │ ◎ │ △ │ ◎ │ △ │ ◎ │ ◎ │ △ │ △ │ △ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ △ │ ● │ ● │ ● │ ● │ △ │ ◎ │ ◎ │ △ │ △ │ △ │ ◎ │ △ │ △ │ △ │ △ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ △ │ △ │ ● │ ● │ ● │ ● │ △ │ △ │ △ │ △ │ ◎ │ △ │ △ │ ◎ │ ◎ │ △ │ ◎ │ △ │ △ │ △ │
-└───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┘
-</pre>
+## Print Board
 
-## Add a horizontal stripe to the pattern
+This functions should have one parameter variable, the board list. The job of this function is to simply print out the board to standard output. If the board is passed in and in the initial game state, the output should look like so:
 
-Write the function `add_h_stripe` that modifies and returns the pattern, by adding a stripe of certain height, using a specific symbol. The stripe should start at the first column of symbols (x = 0) and end at the last column of symbols.
+Test case for initial board state:
 
 ```{python}
-#| echo: true
 #| eval: false
-pattern = create_background(20, 10, 2)
-# add vertical stripe at x = 2, of height = 5,
-# using the symbol at index 6 in the list of symbols
-pattern = add_h_stripe(pattern, 2, 5, 6)
-print_pattern(pattern)
+board = create_board()
+print( printable_board(board) ) # "+-----------------------------------------------------+\n
+                                #  | WKi | WKn | WKn |     |     |     | BKn | BKn | BKi |\n
+                                #  +-----------------------------------------------------+"
 ```
 
-<pre>
-┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
-│ ◎ │ △ │ ◎ │ △ │ △ │ ◎ │ ◎ │ △ │ △ │ △ │ ◎ │ ◎ │ ◎ │ △ │ △ │ ◎ │ ◎ │ ◎ │ △ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ △ │ ◎ │ ◎ │ △ │ △ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ △ │ △ │ △ │ △ │ △ │ ◎ │ △ │ △ │ △ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │ ▲ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ △ │ ◎ │ △ │ ◎ │ △ │ ◎ │ △ │ ◎ │ △ │ ◎ │ ◎ │ △ │ △ │ △ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ △ │ ◎ │ ◎ │ △ │ ◎ │ △ │ ◎ │ ◎ │ △ │ △ │ △ │ ◎ │ △ │ △ │ △ │ △ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ △ │ △ │ ◎ │ ◎ │ △ │ △ │ △ │ △ │ △ │ △ │ ◎ │ △ │ △ │ ◎ │ ◎ │ △ │ ◎ │ △ │ △ │ △ │
-└───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┘
-</pre>
+```{html}
++-----------------------------------------------------+
+| WKi | WKn | WKn |     |     |     | BKn | BKn | BKi |
++-----------------------------------------------------+
+```
 
-## Add a square to the pattern
+## Check move validity
 
-Write the function `add_square` that modifies and returns the pattern, by adding a square of certain size, using a specific symbol.
+This function has three parameter variables. The board (a list, representing the 1 by 9 board), the position (index) of the player to move, and player (WHITE or BLACK). This function should return a boolean (`True` or `False`). True if the desired move is valid, False otherwise. A move is valid if:
+
+-   The position (index) is a valid index in the `board` list
+-   The position is an index of one of the current player's pieces on the board (for example, position 6 is an index of one of the BLACK's pieces - BKn)
+
+You do not need a while loop or for loop within this function. It can be accomplished with if statements. If the above two conditions are True, the function should return True. In any other case, return False.
+
+Test cases:
 
 ```{python}
-#| echo: true
 #| eval: false
-pattern = create_background(20, 10, 2)
-# add a square to the pattern at coordinates x and y,
-# of size 8 using symbol at index 14
-pattern = add_square(pattern, 1, 5, 8, 14)
-print_pattern(pattern)
+board = create_board()
+print( printable_board(board) )
 ```
 
-<pre>
-┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
-│ ◎ │ △ │ ◎ │ △ │ △ │ ◎ │ ◎ │ △ │ △ │ △ │ ◎ │ ◎ │ ◎ │ △ │ △ │ ◎ │ ◎ │ ◎ │ △ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ △ │ ◎ │ ◎ │ △ │ △ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ △ │ △ │ △ │ ◎ │ △ │ △ │ △ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ △ │ ◎ │ △ │ △ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ◎ │ △ │ △ │ △ │ ◎ │ △ │ △ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ △ │ ◎ │ ◎ │ ◎ │ △ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ △ │ ◎ │ ◎ │ △ │ △ │ △ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ △ │ ◎ │ ◎ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ △ │ ◎ │ ◎ │ △ │ ◎ │ △ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ △ │ ◎ │ △ │ △ │ △ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ◎ │ △ │ ◎ │ ◎ │ ◎ │ △ │ △ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ △ │ △ │ △ │ ◎ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ◎ │ △ │ △ │ △ │ △ │ △ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ △ │ ◎ │ △ │ ◎ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ △ │ △ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ △ │ ◎ │ ◎ │ △ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ ♦ │ △ │ △ │ △ │ △ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ △ │ △ │ ◎ │ ◎ │ △ │ △ │ △ │ △ │ △ │ △ │ ◎ │ △ │ △ │ ◎ │ ◎ │ △ │ ◎ │ △ │ △ │ △ │
-└───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┘
-</pre>
-
-## Add a rectangle to the pattern
-
-Write the function `add_rectangle` that modifies and returns the pattern, by adding a rectangle of certain width and height, using a specific symbol.
+```{html}
++-----------------------------------------------------+
+| WKi | WKn | WKn |     |     |     | BKn | BKn | BKi |
++-----------------------------------------------------+
+```
 
 ```{python}
-#| echo: true
 #| eval: false
-pattern = create_background(20, 10, 2)
-# add a rectangle to the pattern at coordinates x and y,
-# of width 5 and height 3, using the symbol at index 4
-add_rectangle(pattern, 2, 3, 5, 3, 4)
-print_pattern(pattern)
+assert is_valid_move(board, 1, "BLACK" ) == False
+assert is_valid_move(board, 9, "BLACK" ) == False
+assert is_valid_move(board, -1, "BLACK" ) == False
+assert is_valid_move(board, 6, "BLACK" ) == True
+assert is_valid_move(board, 2, "WHITE" ) == True
 ```
 
-<pre>
-┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
-│ ◎ │ △ │ ◎ │ △ │ △ │ ◎ │ ◎ │ △ │ △ │ △ │ ◎ │ ◎ │ ◎ │ △ │ △ │ ◎ │ ◎ │ ◎ │ △ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ △ │ ◎ │ ◎ │ △ │ △ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ △ │ △ │ △ │ △ │ △ │ ◎ │ △ │ △ │ △ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ △ │ ◎ │ ▣ │ ▣ │ ▣ │ ▣ │ ▣ │ ◎ │ ◎ │ ◎ │ △ │ △ │ ◎ │ △ │ △ │ △ │ ◎ │ △ │ △ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ △ │ ◎ │ ◎ │ ▣ │ ▣ │ ▣ │ ▣ │ ▣ │ △ │ ◎ │ △ │ △ │ ◎ │ △ │ ◎ │ ◎ │ △ │ △ │ △ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ △ │ ▣ │ ▣ │ ▣ │ ▣ │ ▣ │ △ │ △ │ ◎ │ ◎ │ ◎ │ △ │ ◎ │ ◎ │ △ │ ◎ │ △ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ △ │ ◎ │ △ │ △ │ △ │ ◎ │ △ │ △ │ △ │ ◎ │ ◎ │ △ │ ◎ │ ◎ │ △ │ ◎ │ ◎ │ ◎ │ △ │ △ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ △ │ △ │ △ │ ◎ │ △ │ ◎ │ ◎ │ △ │ △ │ ◎ │ ◎ │ △ │ ◎ │ △ │ △ │ △ │ △ │ △ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ △ │ ◎ │ △ │ ◎ │ △ │ ◎ │ △ │ ◎ │ △ │ ◎ │ ◎ │ △ │ △ │ △ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ △ │ ◎ │ ◎ │ △ │ ◎ │ △ │ ◎ │ ◎ │ △ │ △ │ △ │ ◎ │ △ │ △ │ △ │ △ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ △ │ △ │ ◎ │ ◎ │ △ │ △ │ △ │ △ │ △ │ △ │ ◎ │ △ │ △ │ ◎ │ ◎ │ △ │ ◎ │ △ │ △ │ △ │
-└───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┘
-</pre>
+## Move a king
 
-## Add four different triangles to the pattern
+This function has the same three parameters as the `is_valid_move` function except the third parameter should be the direction. `move_king` should actually move a king on the board (thus, it should change the board list). In 110 1d Chess, a king can move either left or right. The king will move until either it reaches another piece (killing that piece and taking it’s place), or an end of the board.
 
-You should write four different functions to add four types of triangles to the pattern.
+This function should move the king at the provided position in the correct direction. You should use a for-loop or while-loop to iterate through the elements in the list and determine the spot it should end up at.
 
-Each triangle function modifies and returns the pattern, by adding a triangle of certain size, using a specific symbol. Each triangle is half of a square -- each of the four options slices the square diagonally is four different ways.
+Test cases:
 
 ```{python}
-#| echo: true
 #| eval: false
-pattern = create_background(10, 10, 1)
-# add a triangle to the pattern at coordinates x and y,
-# of size 6, using the symbol at index 17
-# the first 2 is x, the second 2 is y
-add_triangle_a(pattern, 2, 2, 6, 17)
-print_pattern(pattern)
+board = create_board()
+print( printable_board(board) )
 ```
 
-<pre>
-┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
-│ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◘ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◘ │ ◘ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◘ │ ◘ │ ◘ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◘ │ ◘ │ ◘ │ ◘ │ ◎ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◘ │ ◘ │ ◘ │ ◘ │ ◘ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◘ │ ◘ │ ◘ │ ◘ │ ◘ │ ◘ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-└───┴───┴───┴───┴───┴───┴───┴───┴───┴───┘
-</pre>
+```{html}
++-----------------------------------------------------+
+| WKi | WKn | WKn |     |     |     | BKn | BKn | BKi |
++-----------------------------------------------------+
+```
 
 ```{python}
-#| echo: true
 #| eval: false
-pattern = create_background(10, 10, 1)
-# add a triangle to the pattern at coordinates x and y,
-# of size 6, using the symbol at index 17
-add_triangle_b(pattern, 2, 2, 6, 17)
-print_pattern(pattern)
+move_king(board, 0, "LEFT") 
+print( printable_board(board) )
 ```
 
-<pre>
-┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
-│ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◘ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◘ │ ◘ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◘ │ ◘ │ ◘ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◎ │ ◎ │ ◘ │ ◘ │ ◘ │ ◘ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◎ │ ◘ │ ◘ │ ◘ │ ◘ │ ◘ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◘ │ ◘ │ ◘ │ ◘ │ ◘ │ ◘ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-└───┴───┴───┴───┴───┴───┴───┴───┴───┴───┘
-</pre>
+```{html}
++-----------------------------------------------------+
+| WKi | WKn | WKn |     |     |     | BKn | BKn | BKi |
++-----------------------------------------------------+
+```
 
 ```{python}
-#| echo: true
 #| eval: false
-pattern = create_background(10, 10, 1)
-# add a triangle to the pattern at coordinates x and y,
-# of size 6, using the symbol at index 17
-add_triangle_c(pattern, 2, 2, 6, 17)
-print_pattern(pattern)
+move_king(board, 8, "LEFT")
+print( printable_board(board) )
 ```
 
-<pre>
-┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
-│ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◘ │ ◘ │ ◘ │ ◘ │ ◘ │ ◘ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◘ │ ◘ │ ◘ │ ◘ │ ◘ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◘ │ ◘ │ ◘ │ ◘ │ ◎ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◘ │ ◘ │ ◘ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◘ │ ◘ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◘ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-└───┴───┴───┴───┴───┴───┴───┴───┴───┴───┘
-</pre>
+```{html}
++-----------------------------------------------------+
+| WKi | WKn | WKn |     |     |     | BKn | BKi |     |
++-----------------------------------------------------+
+```
+
+## Move a knight
+
+This function has the same three parameters as the `move_king` function. `move_knight` should actually move a knight on the board (thus, it should change the board list). In 110 1d Chess, a knight can move either left or right. A knight moves 2 locations. If it lands on a space that another piece occupies, then it kills that piece. It can jump over other pieces. If it cannot move due to the ending position of the move being out-of-bounds of the board, the knight should stay in its place. Note the biggest differences between a knight and a king here are:  
+
+- a knight moves 2 locations each time
+- it only moves once if it moves (the king may move multiple times and stop). 
+
+This function should move the knight at the provided position in the correct direction.
+
+Test cases:
+```{python}
+#| eval: false
+board = create_board()
+print( printable_board(board) )
+```
+
+```{html}
++-----------------------------------------------------+
+| WKi | WKn | WKn |     |     |     | BKn | BKn | BKi |
++-----------------------------------------------------+
+```
 
 ```{python}
-#| echo: true
 #| eval: false
-pattern = create_background(10, 10, 1)
-# add a triangle to the pattern at coordinates x and y,
-# of size 6, using the symbol at index 17
-add_triangle_d(pattern, 2, 2, 6, 17)
-print_pattern(pattern)
+move_knight(board, 6, "LEFT") 
+print( printable_board(board) )
 ```
 
-<pre>
-┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
-│ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◘ │ ◘ │ ◘ │ ◘ │ ◘ │ ◘ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◎ │ ◘ │ ◘ │ ◘ │ ◘ │ ◘ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◎ │ ◎ │ ◘ │ ◘ │ ◘ │ ◘ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◘ │ ◘ │ ◘ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◘ │ ◘ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◘ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
-│ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │ ◎ │
-└───┴───┴───┴───┴───┴───┴───┴───┴───┴───┘
-</pre>
+```{html}
++-----------------------------------------------------+
+| WKi | WKn | WKn |     | BKn |     |     | BKn | BKi |
++-----------------------------------------------------+
+```
+
+```{python}
+#| eval: false
+move_knight(board, 2, "RIGHT") 
+print( printable_board(board) )
+```
+
+```{html}
++-----------------------------------------------------+
+| WKi | WKn |     |     | WKn |     |     | BKn | BKi |
++-----------------------------------------------------+
+```
+
+## Make a move
+
+Function name is `move` and it has three parameter variables. The board (a list, representing the 1 by 9 board), the position (index) of the player to move, and a direction (either `"LEFT"` or `"RIGHT"`). This function should determine if the piece to be moved is a king or a knight. If it is a king, call the `move_king` function. If a knight, call `move_knight.`
+
+
+Test case:
+
+```{python}
+#| eval: false
+board = create_board()
+print( printable_board(board) )
+```
+
+```{html}
++-----------------------------------------------------+
+| WKi | WKn | WKn |     |     |     | BKn | BKn | BKi |
++-----------------------------------------------------+
+```
+
+```{python}
+#| eval: false
+move(board, 0, "LEFT")
+print( printable_board(board) )
+```
+
+```{html}
++-----------------------------------------------------+
+| WKi | WKn | WKn |     |     |     | BKn | BKn | BKi |
++-----------------------------------------------------+
+```
+
+```{python}
+#| eval: false
+move(board, 8, "LEFT") 
+print( printable_board(board) )
+```
+
+```{html}
++-----------------------------------------------------+
+| WKi | WKn | WKn |     |     |     | BKn | BKi |     |
++-----------------------------------------------------+
+```
+
+## Game over
+
+This function should be named `is_game_over` and it takes the board list as its only parameter, and should determine if the game is over or not. If the white king does not exist on the board, then the game is over, and black wins. In this case, the function should print `Black wins!` and return `True`. If the black king does not exist on the board, then the game is over, and white wins. In this case, the function should print `White wins!` and return `True`. If both kings are still in the board list, then the function should print nothing, and return `False`. Note you should print `Black wins!` or `White wins!` without adding a new line to the end of string. 
+
+Test case:
+
+```{python}
+#| eval: false
+board = create_board()
+print( printable_board(board) )
+```
+
+```{html}
++-----------------------------------------------------+
+| WKi | WKn | WKn |     |     |     | BKn | BKn | BKi |
++-----------------------------------------------------+
+```
+
+```{python}
+#| eval: false
+assert is_game_over(board) == False
+move(board, 2, "RIGHT")
+print( printable_board(board) )
+```
+
+```{html}
++-----------------------------------------------------+
+| WKi | WKn |     |     | WKn |     | BKn | BKn | BKi |
++-----------------------------------------------------+
+```
+
+```{python}
+#| eval: false
+assert is_game_over(board) == False
+move(board, 6, "LEFT")
+print( printable_board(board) )
+```
+
+```{html}
++-----------------------------------------------------+
+| WKi | WKn |     |     | BKn |     |     | BKn | BKi |
++-----------------------------------------------------+
+```
+
+```{python}
+#| eval: false
+assert is_game_over(board) == False
+move(board, 1, "RIGHT")
+print( printable_board(board) )
+```
+
+```{html}
++-----------------------------------------------------+
+| WKi |     |     | WKn | BKn |     |     | BKn | BKi |
++-----------------------------------------------------+
+```
+
+```{python}
+#| eval: false
+assert is_game_over(board) == False
+move(board, 4, "LEFT")
+print( printable_board(board) )
+```
+
+```{html}
++-----------------------------------------------------+
+| WKi |     | BKn | WKn |     |     |     | BKn | BKi |
++-----------------------------------------------------+
+```
+
+```{python}
+#| eval: false
+assert is_game_over(board) == False
+move(board, 0, "RIGHT")
+print( printable_board(board) )
+```
+
+```{html}
++-----------------------------------------------------+
+|     |     | WKi | WKn |     |     |     | BKn | BKi |
++-----------------------------------------------------+
+```
+
+```{python}
+#| eval: false
+assert is_game_over(board) == False
+move(board, 7, "LEFT")
+print( printable_board(board) )
+```
+
+```{html}
++-----------------------------------------------------+
+|     |     | WKi | WKn |     | BKn |     |     | BKi |
++-----------------------------------------------------+
+```
+
+```{python}
+#| eval: false
+assert is_game_over(board) == False
+move(board, 3, "RIGHT")
+print( printable_board(board) )
+```
+
+```{html}
++-----------------------------------------------------+
+|     |     | WKi |     |     | WKn |     |     | BKi |
++-----------------------------------------------------+
+```
+
+```{python}
+#| eval: false
+assert is_game_over(board) == False
+move(board, 8, "LEFT")
+print( printable_board(board) )
+```
+
+```{html}
++-----------------------------------------------------+
+|     |     | WKi |     |     | BKi |     |     |     |
++-----------------------------------------------------+
+```
+
+```{python}
+#| eval: false
+assert is_game_over(board) == False
+move(board, 2, "RIGHT")
+print( printable_board(board) )
+```
+
+```{html}
++-----------------------------------------------------+
+|     |     |     |     |     | WKi |     |     |     |
++-----------------------------------------------------+
+```
+
+```{python}
+#| eval: false
+assert is_game_over(board) == True
+```
+
+
+```{html}
+White wins!
+```

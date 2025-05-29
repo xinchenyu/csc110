@@ -1,251 +1,228 @@
 ---
-title: "intro to sets (slides)"
+title: "nested for loops (slides)"
 format: revealjs
 slide-number: true
 df-print: kable
 ---
 
-# CSc 110 - Intro to Sets
+# CSc 110 - nested for loops
 
-## Data Structures in Python
-
--   lists (mutable)
--   dictionaries (mutable)
--   tuples (immutable)
--   sets (mutable)
-
-## Lists
-
--   store:
-    -   ordered items (it keeps the original order)
-    -   elements of different types
-    -   repeated elements
--   use square brackets (`[]`) syntax for creating a list
--   allow indexing (integers starting at `0`) with square brackets (`[]`) as well
--   are **mutable**
-
-## Tuples
-
--   store:
-    -   ordered items  (it keeps the original order)
-    -   elements of different types
-    -   repeated elements
--   use parentheses (`()`) syntax for creating a tuple
--   allow indexing (integers starting at `0`) with square brackets (`[]`)
--   are **immutable**
-
-## Dictionaries
-
--   store pairs of items `key: value`
--   keys have to be unique (no repeated keys allowed)
--   use curly brackets (`{}`) with key and value separated by colon (`:`)
--   allow value retrieval through key with square brackets (`[]`)
--   are **mutable**
-
-
-## Sets
-
--   store:
-    -   do **NOT** store items in the order you created them
-    -   **CANNOT** use square brackets to retrieve an item
-    -   do **NOT** allow repeated items to be stored
-
--   use `set()` to initiate an empty set
-
--   use curly brackets (`{}`) for creating a set with values
-
--   use `for x in set` to iterate over the elements in a set
-
-
-## Set methods
-
-* `.add(value)` adds an element to the set
-* `.discard(value)` discards the specified value
-
--   You can also use `in` and `len()` with sets 
-
-## Converting data structure 
-
--   `set()` to convert a list/tuple into a set
+## 2D lists
 
 ```{python}
 #| eval: true
 #| echo: true
-print(set([3, 2, 2, 1]), set((3, 2, 2, 1)))
+people = [["Ana", 34, "B"],
+          ["Peter", 23, "A"]]
 ```
 
--   `list()` to convert a set/tuple into a list
+How to retrieve first name `"Ana"`?
+
+How to retrieve first name `"Peter"`?
+
+How to retrieve integer `23`?
+
+## 2D lists
 
 ```{python}
 #| eval: true
 #| echo: true
-print(list({3, 2, 2, 1}), list((3, 2, 2, 1)))
+people = [["Ana", 34, "B"],
+          ["Peter", 23, "A"]]
 ```
 
--   `tuple()` to convert a list/set into a tuple
+How to retrieve first name `"Ana"`?
 
 ```{python}
 #| eval: true
 #| echo: true
-print(tuple({3, 2, 2, 1}), tuple([3, 2, 2, 1]))
+people[0][0]
 ```
 
-
-## Evaluate the code
-
-```{python}
-#| eval: false
-#| echo: true
-numbers_list = [2, 1, 2, 1, 3, 4, 1]
-numbers_list # evaluate this line
-
-numbers_set = set(numbers_list)
-numbers_set # evaluate this line
-
-numbers_set.add(1)
-numbers_set.add(2)
-numbers_set # evaluate this line
-
-numbers_set.add(5)
-numbers_set # evaluate this line
-
-numbers_set.discard(6)
-numbers_set.discard(1)
-numbers_set # evaluate this line
-```
-
-## Evaluate the code
+How to retrieve first name `"Peter"`?
 
 ```{python}
 #| eval: true
 #| echo: true
-numbers_list = [2, 1, 2, 1, 3, 4, 1]
-numbers_list # evaluate this line
+people[1][0]
 ```
 
+How to retrieve integer `23`?
 
 ```{python}
 #| eval: true
 #| echo: true
-numbers_set = set(numbers_list)
-numbers_set # evaluate this line
+people[1][1]
 ```
 
+## Nested `for` loops
 
 ```{python}
 #| eval: true
 #| echo: true
-numbers_set.add(1)
-numbers_set.add(2)
-numbers_set # evaluate this line
+people = [["Ana", 34, "B"],
+          ["Peter", 23, "A"]]
+          
+for i in range(len(people)):
+  for j in range(len(people[i])):
+    print(people[i][j])
 ```
-
-
-```{python}
-#| eval: true
-#| echo: true
-numbers_set.add(5)
-numbers_set # evaluate this line
-```
-
-
-```{python}
-#| eval: true
-#| echo: true
-numbers_set.discard(6)
-numbers_set.discard(1)
-numbers_set # evaluate this line
-```
-
 
 ## Write a function
 
-1.  Its name is `count_names`
-2.  It opens in read mode [a file that contains a name per line](data/names.txt), with repeated names
-3.  It counts how many unique names there are in the file
-4.  It returns an **integer** with the count
-5.  Use a **set** for this
+It returns the highest value among all the numbers in the list.
+
+Test cases
+```{python}
+#| eval: false
+#| echo: true
+assert nested_max([[], []]) == None
+assert nested_max([[1, 2, 3, 2, 1],
+                   [2, 3, 2, 1, 5],
+                   [0, 1]]) == 5
+```
+
+## Write a function -- solution
+```{python}
+#| eval: true
+#| echo: true
+def nested_max(lists):
+  max = None
+  for i in range(len(lists)):
+    for j in range(len(lists[i])):
+      if max == None or lists[i][j] > max:
+        max = lists[i][j]
+  return max
+
+def main():
+  assert nested_max([[], []]) == None
+  assert nested_max([[1, 2, 3, 2, 1],
+                     [2, 3, 2, 1, 5],
+                     [0, 1]]) == 5
+  print("Passed all tests")
+main()
+```
+
+
+## Loop Table
 
 ```{python}
 #| eval: false
 #| echo: true
-assert count_names("names.txt") == 11
+def nested_max(lists):
+  max = None
+  for i in range(len(lists)):
+    for j in range(len(lists[i])):
+      if max == None or lists[i][j] > max:
+        max = lists[i][j]
+  return max
+
+max_nested([[], [], [2, 1], [0, 5])
+```
+
+Draw a loop table with:
+
+* values of `i`, `j`,`len(lists[i])`, `lists[i][j]`, and `max` for each nested loop iteration
+* Hint: both values of `j` and `lists[i][j]` are `"-"` if an inner list is empty 
+
+## Loop Table -- solution
+
+
+```{python}
+#| eval: false
+#| echo: true
+max_nested([[], [], [2, 1], [0, 5])
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+#| message: false
+library(knitr)
+library(tidyverse)
+library(huxtable)
+df <- data.frame(a = c("0", "1", "2", "2", "3", "3"),
+           b = c("-", "-", "0", "1", "0", "1"),
+           c = c("0", "0", "2", "2", "2", "2"),
+           d = c("-", "-", "2", "1", "0", "5"),
+           e = c("None", "None", "2", "2", "2", "5"))
+
+colnames(df) <-  c("i", "j", "len(lists[i])", "lists[i][j]", "max")
+
+as_hux(df, add_colnames = TRUE) %>%
+      set_right_border(1:7, everywhere, 0.4) %>%
+      set_left_border(1:7, everywhere, 0.4) %>%
+      set_top_border(1:7, everywhere, 0.4) %>% 
+      set_bottom_border(1:7, everywhere, 0.4)
+```
+
+## Read solution: correct or not?
+
+```{python}
+#| eval: false
+#| echo: true
+def max_list(numbers):
+  max = None
+  for n in numbers:
+    if max == None or n > max:
+      max = n
+  return max
+
+def nested_max(lists):
+  max = None
+  for i in range(len(lists)):
+    max_of_sublist = max_list(lists[i])
+    if max == None or  max_of_sublist > max:
+      max = max_of_sublist
+  return max
+
+def main():
+  assert nested_max([[1, 2, 3, 2, 1],
+                     [],
+                     [5, 1]]) == 5
+
+main()
+```
+
+## Write a function
+
+It returns the lowest number in all inner lists.
+
+Test cases:
+```{python}
+#| eval: false
+#| echo: true
+assert nested_min([[], []]) == None
+assert nested_min([[1, 2, 3, 2, 1],
+                   [2, 3, 2, 1, 5],
+                   [0, 1]]) == 0
 ```
 
 ## Write a function -- solution
 
-```{python}
-#| eval: false
-#| echo: true
-def count_names(file_name):
-  f = open(file_name, "r")
-  name_set = set()
-  for line in f:
-    name = line.strip()
-    if name != "":
-      name_set.add(name)
-  f.close()
-  return len(name_set)
-
-def main():
-  assert count_names("names.txt") == 11
-  
-main()
-```
-
-
-
-## Write a function
-
-1. Its name is `has_duplicates`
-1. It takes a variable number of arguments: `*values`
-1. It returns `True` if there are repeated elements in `values`, `False` otherwise
-
-```{python}
-#| eval: false
-#| echo: true
-assert has_duplicates(3, 2, 1, 2, 3) == True
-assert has_duplicates(3, 20, 1, 2, 13) == False
-```
-
-## Write a function -- solution 1
 
 ```{python}
 #| eval: true
 #| echo: true
-def has_duplicates(*values):
-  values_set = set(values)
-  return len(values) > len(values_set)
+def nested_min(lists):
+  min = None
+  for i in range(len(lists)):
+    for j in range(len(lists[i])):
+      if min == None or lists[i][j] < min:
+        min = lists[i][j]
+  return min
 
 def main():
-  assert has_duplicates(3, 2, 1, 2, 3) == True
-  assert has_duplicates(3, 20, 1, 2, 13) == False
-  
+  assert nested_min([[], []]) == None
+  assert nested_min([[1, 2, 3, 2, 1],
+                     [2, 3, 2, 1, 5],
+                     [0, 1]]) == 0
+  print("Passed all tests")
 main()
 ```
 
-## Write a function -- solution 2
-
-```{python}
-#| eval: true
-#| echo: true
-def has_duplicates(*values):
-  unique_values = set()
-  for v in values:
-    if v not in unique_values:
-      unique_values.add(v)
-    else:
-      return True
-  return False
-
-def main():
-  assert has_duplicates(3, 2, 1, 2, 3) == True
-  assert has_duplicates(3, 20, 1, 2, 13) == False
-  
-main()
-```
-
-## Quiz 10
+## Quiz 09
 
 <center>
 <div class="cleanslate w24tz-current-time w24tz-large" style="display: inline-block !important; visibility: hidden !important; min-width:300px !important; min-height:145px !important;"><a href="//24timezones.com/Tucson/time" style="text-decoration: none" class="clock24" id="tz24-1695057604-c1393-eyJob3VydHlwZSI6IjEyIiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIwIiwiY29udGFpbmVyX2lkIjoiY2xvY2tfYmxvY2tfY2I2NTA4ODZjNDg0OWVlIiwidHlwZSI6ImRiIiwibGFuZyI6ImVuIn0=" title="World Time :: Tucson" target="_blank" rel="nofollow"></a>current time<div id="clock_block_cb650886c4849ee"></div></div>
@@ -254,4 +231,98 @@ main()
 
 You have 10 minutes to complete the quiz.
 
+
+## Mutate nested lists
+
+In addition to retrieving a value from nested lists, we can also mutate a value in a sublist.
+
+```{python}
+#| eval: true
+#| echo: true
+people = [["Ana", 24, "B"],
+          ["Peter", 23, "A"]]
+people
+```
+
+
+```{python}
+#| eval: true
+#| echo: true
+people[0][1] = 54
+people
+```
+
+## Write a function
+
+It mutates the sublist items by multiplying each number in each sublist by 2 and returns the argument list.
+
+Test cases
+```{python}
+#| eval: false
+#| echo: true
+assert double_nested([[], []]) == [[], []]
+assert double_nested([[1, 2, 3, 2, 1],
+                     [0, 1]]) == [[2, 4, 6, 4, 2],
+                                  [0, 2]]
+```
+
+## Write a function -- solution
+
+```{python}
+#| eval: true
+#| echo: true
+def double_nested(lists):
+  for i in range(len(lists)):
+    for j in range(len(lists[i])):
+      lists[i][j] *= 2
+  return lists
+
+def main():
+  assert double_nested([[], []]) == [[], []]
+  assert double_nested([[1, 2, 3, 2, 1],
+                        [0, 1]]) == [[2, 4, 6, 4, 2],
+                                     [0, 2]]
+  print("Passed all tests")
+main()
+```
+
+
+## Write a function
+
+It mutates the sublist items by reversing each string (use `string[::-1]` to reverse it) and returns the argument list.
+
+Name file `reverse_strings.py` and submit your attendance.
+
+Test cases:
+
+```{python}
+#| eval: false
+#| echo: true
+assert reverse_strings_nested([["desserts", "raw", "live"],
+                               ["smart", "knits"]]) == [["stressed", "war", "evil"],
+                                                        ["trams", "stink"]]
+```
+
+## Write a function -- solution
+
+```{python}
+#| eval: true
+#| echo: true
+def reverse_strings_nested(strings):
+  for i in range(len(strings)):
+    for j in range(len(strings[i])):
+      strings[i][j] = strings[i][j][::-1]
+  return strings
+
+def main():
+  original_strings = [["desserts", "raw", "live"],
+                      ["smart", "knits"]]
+  reverse_strings_nested(original_strings)   
+  assert  original_strings == [["stressed", "war", "evil"],
+                               ["trams", "stink"]]
+  
+  print(original_strings)
+  
+main()
+```
 

@@ -1,112 +1,283 @@
 ---
-title: "random (slides)"
+title: "loops + strings (slides)"
 format: revealjs
 slide-number: true
-df-print: kable
 ---
 
-# CSC 110 -- Generating Random Numbers and Other Important Functions and Methods
+# CSc 110 - looping through strings
+  
+# String Manipulation
 
-## random module
+## String indexing
 
-We need to `import` the module `random`
-
-What do the functions `.random()` and `.randint()` return?
+-   Strings are sequences in Python
+-   We can retrieve values in a sequence using `[ ]`
 
 ```{python}
 #| echo: true
-import random
-
-n = random.random() #returns a random float between 0 and 1
-print(n)
-
-n = random.randint(0, 9) #returns a random integer betweem 0 and 9.
-
-
-print(n)
+#| eval: true
+name = "Xinchen"
+name[0]
 ```
 
-## Write a function
+Note that the first index in a sequence is always `zero`.
 
-1. Function name is `pick_winner`
-1. It takes a list as argument
-1. It generates a random index, and returns the item at that position
+## String indexing
+
+Since the first index of a sequence is `zero`, the last index is going to be the length of the string `minus 1`
 
 ```{python}
+#| echo: true
+#| eval: true
+name = "Xinchen"
+len(name)
+```
+
+```{python}
+#| echo: true
+#| eval: true
+name = "Xinchen"
+name[6]
+```
+
+```{python}
+#| echo: true
 #| eval: false
-#| echo: true
-winner = pick_winner(["Peter", "Joan", "Mary", "June"])
-print(winner)
-```
-
-## Write a function -- solution
-
-```{python}
-#| eval: true
-#| echo: true
-import random
-
-def pick_winner(names):
-  index = random.randint(0, len(names) - 1)
-  return names[index]
-
-if __name__ == "__main__":
-  winner = pick_winner(["Peter", "Joan", "Mary", "June"])
-  print(winner)
-```
-
-## Setting a seed 
-
-What happens when you run `pick_winner` multiple times?
-
-To get always the same result (for autograding purposes, for example) we can set a seed.
-
-```{python}
-#| eval: true
-#| echo: true
-import random
-
-def pick_winner(names):
-  random.seed(123)
-  index = random.randint(0, len(names) - 1)
-  return names[index]
-
-if __name__ == "__main__":
-  winner = pick_winner(["Peter", "Joan", "Mary", "June"])
-  print(winner)
+name = "Xinchen"
+name[7] # this will throw an error
 ```
 
 
 ## Write a function
 
-Write a function `random_list` that takes as argument a list of `numbers`. Iterate over each list element (with a `while` loop), replacing each integer with a random number between zero and the original number. Set the seed as `123` in your function.
+Function `four_letter_anagram` takes a `string`, and four integers `a`, `b`, `c` and `d`.
+It returns the anagram of the string according to the indices `a`, `b`, `c` and `d` -- concatenate the individual characters.
 
-Name your file `random_list.py` and submit to Gradescope.
 
+Test cases:
 ```{python}
 #| eval: false
 #| echo: true
-# test case
-assert random_list([3, 2, 1, 3, 5]) == [0, 1, 0, 3, 2]
+assert four_letter_anagram("balm", 2, 1, 3, 0) == 'lamb'
+assert four_letter_anagram("loin", 0, 2, 1, 3) == 'lion'
+assert four_letter_anagram("reap", 3, 1, 2, 0) == 'pear'
 ```
 
-## Write a function -- solution
+
+## Write a function - solution 
+
+```{python}
+#| echo: true
+#| eval: true
+def four_letter_anagram(word, a, b, c, d):
+  return word[a] + word[b] + word[c] + word[d]
+
+def main():
+  assert four_letter_anagram("balm", 2, 1, 3, 0) == 'lamb'
+  assert four_letter_anagram("loin", 0, 2, 1, 3) == 'lion'
+  assert four_letter_anagram("reap", 3, 1, 2, 0) == 'pear'
+
+main()
+```
+
+
+## `in` operator
+
+The `in` operator determines whether a given value is a constituent element of a sequence (such as a string)
 
 ```{python}
 #| eval: true
 #| echo: true
-import random
+"i" in "aeiou"
+```
 
-def random_list(numbers):
-  random.seed(123)
+
+```{python}
+#| eval: true
+#| echo: true
+"eio" in "aeiou"
+```
+
+```{python}
+#| eval: true
+#| echo: true
+not "b" in "aeiou"
+```
+
+```{python}
+#| eval: true
+#| echo: true
+"0" in  "0987654321."
+```
+
+```{python}
+#| eval: true
+#| echo: true
+"10.0" in  "0987654321."
+```
+
+## Question
+
+How to check if a string can be converted to an integer or float? 
+
+-   `"BladeRunner2049"` will return `False`  
+
+-   `"2049"` will return `True`
+
+-   `"12.5"` will return `True`
+
+## Question
+
+How to check if a string can be converted to an integer or float? 
+
+Can we use the string method`.isnumeric()`?
+
+```{python}
+#| eval: true
+#| echo: true
+user_input = "BladeRunner2049"
+user_input.isnumeric()
+```
+
+```{python}
+#| eval: true
+#| echo: true
+user_input = "2049"
+user_input.isnumeric()
+```
+
+```{python}
+#| eval: true
+#| echo: true
+user_input = "12.5"
+user_input.isnumeric()
+```
+
+
+
+## Iterating a string
+
+-   One technique that can be used to control the number of loop iterations is using an `index` variable
+-   For while loops, an index variable is:
+    -   Defined before the loop
+    -   Used in the condition of the loop
+    -   Incremented within the loop
+
+## Iterating a string
+
+Print characters at even indices.
+```{python}
+#| eval: true
+#| echo: true
+word = "BladeRunner2049"
+index = 0
+while index < len(word):
+    print(word[index])
+    # Can add other lines here too
+    index = index + 2
+```
+
+
+## Write a function
+
+Function name `is_numeric` that takes one `string` argument of any length (assume length > 0).
+
+It returns `True` if every character in the argument is a digit (0-9) or a period (.), `False` otherwise.
+
+Use `in` operator instead of built-in function `isnumeric()`.
+
+```{python}
+#| echo: true
+#| eval: false
+assert is_numeric("BladeRunner2049") == False
+assert is_numeric("2049") == True
+assert is_numeric("12.5") == True
+```
+
+## `is_numeric()` solution
+
+How do we change our function so that the last test case ("1.2.3") returns `False` instead?
+
+```{python}
+#| eval: true
+#| echo: true
+def is_numeric(my_string):
   index = 0
-  while index < len(numbers):
-    item = numbers[index]
-    numbers[index] = random.randint(0, item)
+  while index < len(my_string):
+    if my_string[index] not in "0123456789.":
+      return False
     index += 1
-  return numbers
+  return True
 
-if __name__ == "__main__":
-  assert random_list([3, 2, 1, 3, 5]) == [0, 1, 0, 3, 2]
-  print("pass the test")
+def main():
+  assert is_numeric("BladeRunner2049") == False
+  assert is_numeric("2049") == True
+  assert is_numeric("12.5") == True
+  assert is_numeric("1.2.3") == True # how to return False?
+  
+main()
+```
+
+
+
+## `is_numeric()` -- solution 1
+
+```{python}
+#| eval: true
+#| echo: true
+def is_numeric(my_string):
+  index = 0
+  count_period = 0
+  while index < len(my_string):
+    if my_string[index] == ".":
+      count_period += 1
+    if my_string[index] not in "0123456789." or count_period > 1:
+      return False
+    index += 1
+  return True
+
+def main():
+  assert is_numeric("234") == True
+  assert is_numeric("abc") == False
+  assert is_numeric("12c") ==  False
+  assert is_numeric("12.3") == True
+  assert is_numeric("1.2.3") == False
+  
+main()
+```
+
+## `is_numeric()` -- solution 2
+
+```{python}
+#| eval: true
+#| echo: true
+def is_numeric(my_string):
+  # create control variable for one decimal point
+  decimal_point = False
+  # create index variable
+  index = 0
+  while index < len(my_string):
+    # first check, can character be found in a number?
+    if my_string[index] not in "0123456789.":
+      return False
+    # second check, if a period, has a period been found before?
+    if my_string[index] == ".":
+      if decimal_point: # a previous period was detected
+        return False
+      else: # first period detected
+        decimal_point = True
+    # increment index  
+    index += 1
+  # while loop executed without returning False
+  # that means every character is valid, so return True
+  return True
+
+def main():
+  assert is_numeric("234") == True
+  assert is_numeric("abc") == False
+  assert is_numeric("12c") ==  False
+  assert is_numeric("12.3") == True
+  assert is_numeric("1.2.3") == False
+  
+main()
 ```

@@ -1,209 +1,42 @@
 ---
-title: "for loops with range (slides)"
+title: "random (slides)"
 format: revealjs
 slide-number: true
 df-print: kable
 ---
 
-# CSc 110 - for loops with range
+# CSC 110 -- Generating Random Numbers and Other Important Functions and Methods
 
-## `while` vs. `for` loops
+## random module
 
-In addition to `while`, we can use `for` to create loops
-```{python}
-#| eval: true
-#| echo: true
-index = 0
-while index < 3:
-  print(index)
-  index += 1
-```
+We need to `import` the module `random`
+
+What do the functions `.random()` and `.randint()` return?
 
 ```{python}
-#| eval: true
 #| echo: true
-for index in range(3):
-  print(index)
-```
+import random
 
-## `while` vs. `for` loops
+n = random.random() #returns a random float between 0 and 1
+print(n)
 
-In addition to `while`, we can use `for` to create loops
+n = random.randint(0, 9) #returns a random integer betweem 0 and 9.
 
-```{python}
-#| eval: true
-#| echo: true
-values = [70, 20, 30]
-index = 0
-while index < len(values):
-  print(values[index])
-  index += 1
-```
 
-```{python}
-#| eval: true
-#| echo: true
-values = [70, 20, 30]
-for index in range(len(values)):
-  print(values[index])
+print(n)
 ```
 
 ## Write a function
 
-It iterates over the list, changing odd numbers to even number (even up). 
-
-Use a `for` loop.
-
-```{python}
-#| eval: false
-#| echo: true 
-test_integers = [1, 2, 3, 4]
-assert make_all_even(test_integers) == [2, 2, 4, 4]
-assert test_integers == [2, 2, 4, 4] # change persists
-```
-
-
-## Write a function -- solution
-
-```{python}
-#| eval: true
-#| echo: true
-def make_all_even(integers):
-  # for each index in list
-  for index in range(len(integers)):
-    integers[index] += integers[index] % 2 # add zero if even, one if odd
-  return integers
-      
-def main():
-  test_integers = [1, 2, 3, 4]
-  assert make_all_even(test_integers) == [2, 2, 4, 4]
-  assert test_integers == [2, 2, 4, 4]
-  print(test_integers) 
-  
-main()
-```
-
-## Write a function
-
-It returns a list of integers that represent the indices of the vowels in the string
-
-Name file `indices_of_vowels.py` and submit to Gradescope. 
-
-Use a `for` loop.
-
-Test cases:
-
-```{python}
-#| echo: true
-#| eval: false
-assert indices_of_vowels("hello") == [1, 4]
-assert indices_of_vowels("") == []
-assert indices_of_vowels("aeiou") == [0, 1, 2, 3, 4]
-```
-
-## Write a function -- solution
-
-```{python}
-#| echo: true
-#| eval: true
-def indices_of_vowels(string):
-  result = [] # initialize empty list to hold indices
-  # for every index in list
-  for index in range(len(string)):
-    if string[index] in "aeiou": # check if character is vowel
-      result.append(index) # append index to result
-  return result
-
-def main():
-  assert indices_of_vowels("hello") == [1, 4]
-  assert indices_of_vowels("") == []
-  assert indices_of_vowels("aeiou") == [0, 1, 2, 3, 4]
-
-main()
-```
-
-
-## More on how to use `range()`
-
-Syntax: `range(start, stop, step)`
-
--   `start` Optional. An integer specifying at which position to start. Default is 0
--   `stop` Required. An integer specifying at which position to stop (NOT included).
--   `step` Optional. An integer specifying the incrementation. Default is 1
-
-## More on how to use `range()`
-
-```{python}
-#| eval: true
-#| echo: true
-for n in range(0, 5, 1): # step is 1, same as range(5)
-  print(n)
-```
-
-```{python}
-#| eval: true
-#| echo: true
-for n in range(0, 5, 2): # step is 2
-  print(n)
-```
-
-```{python}
-#| eval: true
-#| echo: true
-for n in range(5, 0, -2): # step is -2
-  print(n)
-```
-## Write a function
-
-It returns a new string with items at even indices in `characters` concatenated together.
-
-Use a `for` loop.
-
-Test cases:
+1. Function name is `pick_winner`
+1. It takes a list as argument
+1. It generates a random index, and returns the item at that position
 
 ```{python}
 #| eval: false
 #| echo: true
-characters = ["a", "e", "p", "o", "p", "w", "l", "i", "e", "f"]
-assert every_two_together(characters) == "apple"
-assert every_two_together([]) == ""
-```
-
-## Write a function -- solution
-
-
-```{python}
-#| eval: true
-#| echo: true
-def every_two_together(chars):
-  new_string = ""
-  for i in range(0, len(chars), 2):
-    new_string += chars[i]
-  return new_string
-
-def main():
-  characters = ["a", "e", "p", "o", "p", "w", "l", "i", "e", "f"]
-  assert every_two_together(characters) == "apple"
-  assert every_two_together([]) == ""
-  
-main()
-```
-
-
-## Write a function
-
-It returns a **new**  list in reversed order, containing items at every other index in the original list.
-
-Use a `for` loop.
-
-Test cases:
-
-```{python}
-#| eval: false
-#| echo: true
-characters = ["o", "e", "k", "l", "c", "p", "l", "p", "m", "a"]
-assert every_two(characters) == ["a", "p", "p", "l", "e"]
-assert every_two(["y", "e", "o", "e", "j"]) == ["j", "o", "y"]
+winner = pick_winner(["Peter", "Joan", "Mary", "June"])
+print(winner)
 ```
 
 ## Write a function -- solution
@@ -211,30 +44,50 @@ assert every_two(["y", "e", "o", "e", "j"]) == ["j", "o", "y"]
 ```{python}
 #| eval: true
 #| echo: true
-def every_two(chars):
-  result = []
-  for i in range(len(chars)-1, -1, -2):
-    result.append(chars[i])
-  return result
+import random
 
-def main():
-  characters = ["o", "e", "k", "l", "c", "p", "l", "p", "m", "a"]
-  assert every_two(characters) == ["a", "p", "p", "l", "e"]
-  assert every_two(["y", "e", "o", "e", "j"]) == ["j", "o", "y"]
-  print("pass the test case")
-  
-main()
+def pick_winner(names):
+  index = random.randint(0, len(names) - 1)
+  return names[index]
+
+if __name__ == "__main__":
+  winner = pick_winner(["Peter", "Joan", "Mary", "June"])
+  print(winner)
 ```
+
+## Setting a seed 
+
+What happens when you run `pick_winner` multiple times?
+
+To get always the same result (for autograding purposes, for example) we can set a seed.
+
+```{python}
+#| eval: true
+#| echo: true
+import random
+
+def pick_winner(names):
+  random.seed(123)
+  index = random.randint(0, len(names) - 1)
+  return names[index]
+
+if __name__ == "__main__":
+  winner = pick_winner(["Peter", "Joan", "Mary", "June"])
+  print(winner)
+```
+
 
 ## Write a function
 
-Test cases:
+Write a function `random_list` that takes as argument a list of `numbers`. Iterate over each list element (with a `while` loop), replacing each integer with a random number between zero and the original number. Set the seed as `123` in your function.
+
+Name your file `random_list.py` and submit to Gradescope.
 
 ```{python}
 #| eval: false
 #| echo: true
-my_numbers = [0, 1, 0, 3, 0]
-assert add_every_two(my_numbers) == 0
+# test case
+assert random_list([3, 2, 1, 3, 5]) == [0, 1, 0, 3, 2]
 ```
 
 ## Write a function -- solution
@@ -242,15 +95,18 @@ assert add_every_two(my_numbers) == 0
 ```{python}
 #| eval: true
 #| echo: true
-def add_every_two(numbers):
-  result = 0
-  for i in range(0, len(numbers), 2):
-    result += numbers[i]
-  return result
+import random
 
-def main():
-  my_numbers = [0, 1, 0, 3, 0]
-  assert add_every_two(my_numbers) == 0
-  
-main()
+def random_list(numbers):
+  random.seed(123)
+  index = 0
+  while index < len(numbers):
+    item = numbers[index]
+    numbers[index] = random.randint(0, item)
+    index += 1
+  return numbers
+
+if __name__ == "__main__":
+  assert random_list([3, 2, 1, 3, 5]) == [0, 1, 0, 3, 2]
+  print("pass the test")
 ```

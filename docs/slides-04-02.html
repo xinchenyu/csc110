@@ -9,7 +9,7 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.39">
 
-  <title>CSc 110 Computer Programming I – if statements (slides)</title>
+  <title>CSc 110 Computer Programming I – more on decomposition (slides)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -191,304 +191,148 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">if statements (slides)</h1>
+  <h1 class="title">more on decomposition (slides)</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
 <section>
-<section id="csc-110-if-statements" class="title-slide slide level1 center">
-<h1>CSc 110 If statements</h1>
+<section id="csc-110-more-on-decomposition" class="title-slide slide level1 center">
+<h1>CSC 110 more on decomposition</h1>
 
 </section>
-<section id="expression-vs-statement" class="slide level2">
-<h2>Expression vs Statement</h2>
+<section id="class-activity-one" class="slide level2">
+<h2>Class activity one</h2>
+<p>Read the code, discuss and answer the question in 1-2 sentences using natural language:</p>
 <ul>
-<li><em>Expression</em> evaluates to value</li>
-<li><em>Statement</em> does something</li>
+<li>What problem does the code solve?</li>
 </ul>
-<div id="6f502376" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="dv">3</span> <span class="op">+</span> <span class="dv">4</span> <span class="co"># expression</span></span>
-<span id="cb1-2"><a></a><span class="bu">print</span>(<span class="dv">3</span> <span class="op">+</span> <span class="dv">4</span>) <span class="co"># statement</span></span>
-<span id="cb1-3"><a></a></span>
-<span id="cb1-4"><a></a>a <span class="op">=</span> <span class="dv">8</span> <span class="co"># statement</span></span>
-<span id="cb1-5"><a></a>a <span class="op">!=</span> <span class="dv">9</span> <span class="co"># expression</span></span>
-<span id="cb1-6"><a></a><span class="bu">print</span>(a) <span class="co"># statement</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="rubiks-cubes" class="slide level2">
+<h2>Rubik’s Cubes</h2>
+<div id="8987159d" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>cube_len <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Cube length? "</span>))</span>
+<span id="cb1-2"><a></a>box_w <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Box width? "</span>))</span>
+<span id="cb1-3"><a></a>box_h <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Box height? "</span>))</span>
+<span id="cb1-4"><a></a>box_l <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Box length? "</span>))</span>
+<span id="cb1-5"><a></a></span>
+<span id="cb1-6"><a></a>fit_w <span class="op">=</span> box_w <span class="op">//</span> cube_len</span>
+<span id="cb1-7"><a></a>fit_h <span class="op">=</span> box_h <span class="op">//</span> cube_len</span>
+<span id="cb1-8"><a></a>fit_l <span class="op">=</span> box_l <span class="op">//</span> cube_len</span>
+<span id="cb1-9"><a></a></span>
+<span id="cb1-10"><a></a><span class="bu">print</span>(<span class="bu">str</span>(fit_w) <span class="op">+</span> <span class="st">" Rubik's cubes will fit width-wise."</span>)</span>
+<span id="cb1-11"><a></a><span class="bu">print</span>(<span class="bu">str</span>(fit_h) <span class="op">+</span> <span class="st">" Rubik's cubes will fit height-wise."</span>)</span>
+<span id="cb1-12"><a></a><span class="bu">print</span>(<span class="bu">str</span>(fit_l) <span class="op">+</span> <span class="st">" Rubik's cubes will fit length-wise."</span>)</span>
+<span id="cb1-13"><a></a></span>
+<span id="cb1-14"><a></a>res <span class="op">=</span> fit_w <span class="op">*</span> fit_h <span class="op">*</span> fit_l</span>
+<span id="cb1-15"><a></a><span class="bu">print</span>(<span class="bu">str</span>(res)<span class="op">+</span><span class="st">" Rubik's cubes will fit in that container."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="the-if-statement" class="slide level2">
-<h2>The if statement</h2>
+<section id="activity-two" class="slide level2">
+<h2>Activity two</h2>
+<p>Read the code and write the questions:</p>
 <ul>
-<li><p>If statements can be used to <strong>run code conditionally</strong></p>
+<li><p>which lines of code are similar?</p></li>
+<li><p>which lines of code are unique?</p></li>
+<li><p>which lines can be grouped together into a function? what does the function do?</p></li>
+</ul>
+</section>
+<section id="rubiks-cubes-1" class="slide level2">
+<h2>Rubik’s Cubes</h2>
+<div id="c7ac3d99" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>cube_len <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Cube length? "</span>))</span>
+<span id="cb2-2"><a></a>box_w <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Box width? "</span>)) </span>
+<span id="cb2-3"><a></a>box_h <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Box height? "</span>))</span>
+<span id="cb2-4"><a></a>box_l <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Box length? "</span>))</span>
+<span id="cb2-5"><a></a></span>
+<span id="cb2-6"><a></a>fit_w <span class="op">=</span> box_w <span class="op">//</span> cube_len</span>
+<span id="cb2-7"><a></a>fit_h <span class="op">=</span> box_h <span class="op">//</span> cube_len</span>
+<span id="cb2-8"><a></a>fit_l <span class="op">=</span> box_l <span class="op">//</span> cube_len</span>
+<span id="cb2-9"><a></a></span>
+<span id="cb2-10"><a></a><span class="bu">print</span>(<span class="bu">str</span>(fit_w) <span class="op">+</span> <span class="st">" Rubik's cubes will fit width-wise."</span>)</span>
+<span id="cb2-11"><a></a><span class="bu">print</span>(<span class="bu">str</span>(fit_h) <span class="op">+</span> <span class="st">" Rubik's cubes will fit height-wise."</span>)</span>
+<span id="cb2-12"><a></a><span class="bu">print</span>(<span class="bu">str</span>(fit_l) <span class="op">+</span> <span class="st">" Rubik's cubes will fit length-wise."</span>)</span>
+<span id="cb2-13"><a></a></span>
+<span id="cb2-14"><a></a>res <span class="op">=</span> fit_w <span class="op">*</span> fit_h <span class="op">*</span> fit_l</span>
+<span id="cb2-15"><a></a><span class="bu">print</span>(<span class="bu">str</span>(res)<span class="op">+</span><span class="st">" Rubik's cubes will fit in that container."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="activity-two-answers" class="slide level2">
+<h2>Activity two – answers</h2>
+<p>Read the code and write the questions:</p>
 <ul>
-<li><p><strong>Before if-statements:</strong> Code has pretty much just run in a straight line</p></li>
-<li><p><strong>With ifs:</strong> Can run code optionally, depending on the value of a condition</p></li>
+<li><p>which lines of code are similar?</p>
+<ul>
+<li>line 2-4, line 6-8, line 10-12</li>
+</ul></li>
+<li><p>which lines of code are unique?</p>
+<ul>
+<li>line 1, line 14-15</li>
 </ul></li>
 </ul>
-<p>This means our code can <strong>branch</strong> in different directions</p>
 </section>
-<section id="the-if-statement-1" class="slide level2">
-<h2>The if statement</h2>
-<pre>if condition:
-    statement 1
-    statement 2
-    . . .
-    statement N
-</pre>
-<p>The condition is an expression that is evaluated to a bool.</p>
-<p>Example:</p>
-<div id="f0d69e16" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="kw">def</span> greeting(name):</span>
-<span id="cb2-2"><a></a>  <span class="cf">if</span> name <span class="op">==</span> <span class="st">"Bond"</span>:</span>
-<span id="cb2-3"><a></a>    <span class="cf">return</span> <span class="st">"Welcome on board 007."</span></span>
-<span id="cb2-4"><a></a>  <span class="cf">else</span>:</span>
-<span id="cb2-5"><a></a>    <span class="cf">return</span> <span class="st">"Hello, "</span> <span class="op">+</span> name</span>
-<span id="cb2-6"><a></a></span>
-<span id="cb2-7"><a></a><span class="kw">def</span> main():</span>
-<span id="cb2-8"><a></a>  user_name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter your name:</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb2-9"><a></a>  <span class="bu">print</span>( greeting(user_name) )</span>
-<span id="cb2-10"><a></a></span>
-<span id="cb2-11"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="activity-two-continued" class="slide level2">
+<h2>Activity two – continued</h2>
+<p>Which lines can be grouped together into a function?</p>
+<ul>
+<li>line 2, 6, 10:</li>
+</ul>
+<div id="558f896a" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>box_w <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Box width? "</span>)) </span>
+<span id="cb3-2"><a></a></span>
+<span id="cb3-3"><a></a>fit_w <span class="op">=</span> box_w <span class="op">//</span> cube_len</span>
+<span id="cb3-4"><a></a></span>
+<span id="cb3-5"><a></a><span class="bu">print</span>(<span class="bu">str</span>(fit_w) <span class="op">+</span> <span class="st">" Rubik's cubes will fit width-wise."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>What are the parameters of this function? In other words, what information must be known beforehand?</p>
 </section>
-<section id="improve-the-function" class="slide level2">
-<h2>Improve the function</h2>
-<p>Instead of checking if the name entered is “Bond”, also check whether the name is “James Bond”.</p>
-</section>
-<section id="conditional-execution" class="slide level2">
-<h2>Conditional execution</h2>
-<p>The computer program branches out, or makes decisions</p>
-<div id="33a1ee77" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="kw">def</span> greater_than_zero(n):</span>
-<span id="cb3-2"><a></a>  <span class="cf">if</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb3-3"><a></a>    <span class="cf">return</span> <span class="st">"Greater than zero"</span></span>
-<span id="cb3-4"><a></a>  <span class="cf">else</span>:</span>
-<span id="cb3-5"><a></a>    <span class="cf">return</span> <span class="st">"Not greater than zero"</span></span>
-<span id="cb3-6"><a></a>  </span>
-<span id="cb3-7"><a></a><span class="kw">def</span> main():</span>
-<span id="cb3-8"><a></a>  result <span class="op">=</span> greater_than_zero(<span class="dv">4</span>)</span>
-<span id="cb3-9"><a></a>  <span class="bu">print</span>(result)</span>
-<span id="cb3-10"><a></a>  </span>
-<span id="cb3-11"><a></a>  result <span class="op">=</span> greater_than_zero(<span class="dv">0</span>)</span>
-<span id="cb3-12"><a></a>  <span class="bu">print</span>(result)</span>
-<span id="cb3-13"><a></a>  </span>
-<span id="cb3-14"><a></a>  result <span class="op">=</span> greater_than_zero(<span class="op">-</span><span class="dv">3</span>)</span>
-<span id="cb3-15"><a></a>  <span class="bu">print</span>(result)</span>
-<span id="cb3-16"><a></a>  </span>
-<span id="cb3-17"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Greater than zero
-Not greater than zero
-Not greater than zero</code></pre>
-</div>
-</div>
+<section id="activity-two-answers-continued" class="slide level2">
+<h2>Activity two – answers continued</h2>
+<p>Given the length of a cube and the name of a box side:</p>
+<ul>
+<li><p>It prompts you to the enter the length of the side</p></li>
+<li><p>It calculates the number of cube that can fit in the side</p></li>
+<li><p>It print the message and return the number.</p></li>
+</ul>
 </section>
 <section id="write-a-function" class="slide level2">
 <h2>Write a function</h2>
-<p>Write a Python function called <code>absolute</code> that takes one numeric argument (integer or float) <code>n</code> and returns the absolute value of <code>n</code>: if <code>n</code> is positive, it results <code>n</code>, if <code>n</code> is negative, it returns <code>n * -1</code></p>
-<p>Test cases:</p>
-<div id="15984053" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="bu">print</span>( absolute(<span class="dv">4</span>) ) <span class="co"># 4</span></span>
-<span id="cb5-2"><a></a><span class="bu">print</span>( absolute(<span class="op">-</span><span class="dv">4</span>) ) <span class="co"># 4</span></span>
-<span id="cb5-3"><a></a><span class="bu">print</span>( absolute(<span class="dv">0</span>) ) <span class="co"># 0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="write-a-function-solution-1" class="slide level2">
-<h2>Write a function – solution 1</h2>
-<div id="831bc668" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">def</span> absolute(n):</span>
-<span id="cb6-2"><a></a>  <span class="cf">if</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb6-3"><a></a>    <span class="cf">return</span> n</span>
-<span id="cb6-4"><a></a>  <span class="cf">else</span>:</span>
-<span id="cb6-5"><a></a>    <span class="cf">return</span> <span class="op">-</span>n</span>
-<span id="cb6-6"><a></a>  </span>
-<span id="cb6-7"><a></a><span class="kw">def</span> main():</span>
-<span id="cb6-8"><a></a>  <span class="bu">print</span>( absolute(<span class="dv">4</span>) )</span>
-<span id="cb6-9"><a></a>  <span class="bu">print</span>( absolute(<span class="op">-</span><span class="dv">4</span>) )</span>
-<span id="cb6-10"><a></a>  <span class="bu">print</span>( absolute(<span class="dv">0</span>) )</span>
-<span id="cb6-11"><a></a>  </span>
-<span id="cb6-12"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>4
-4
-0</code></pre>
-</div>
-</div>
-</section>
-<section id="write-a-function-solution-2" class="slide level2">
-<h2>Write a function – solution 2</h2>
-<div id="0d12e460" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="kw">def</span> absolute(n):</span>
-<span id="cb8-2"><a></a>  <span class="cf">if</span> n <span class="op">&gt;</span> <span class="dv">0</span>:</span>
-<span id="cb8-3"><a></a>    <span class="cf">return</span> n</span>
-<span id="cb8-4"><a></a>  <span class="cf">return</span> <span class="op">-</span>n</span>
-<span id="cb8-5"><a></a>  </span>
-<span id="cb8-6"><a></a><span class="kw">def</span> main():</span>
-<span id="cb8-7"><a></a>  <span class="bu">print</span>( absolute(<span class="dv">4</span>) )</span>
-<span id="cb8-8"><a></a>  <span class="bu">print</span>( absolute(<span class="op">-</span><span class="dv">4</span>) )</span>
-<span id="cb8-9"><a></a>  </span>
-<span id="cb8-10"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>4
-4</code></pre>
-</div>
-</div>
-<p>Which lines run in the function <code>absolute</code>?</p>
+<p>Write function <code>get_fit</code> that takes the length of a <code>cube</code> (integer) and the name of a <code>side</code> (string)</p>
 <ul>
-<li>When expression <code>n &gt; 0</code> is <code>True</code>, line <code>3</code> runs (<code>return</code> is used to exit a function and returns a value)</li>
-<li>When expression <code>n &gt; 0</code> is <code>False</code>, line <code>4</code> runs (skip line <code>3</code>)</li>
+<li><p>It prompts you to the enter the length of the <code>side</code></p></li>
+<li><p>It calculates the number of <code>cube</code> that can fit in the <code>side</code></p></li>
+<li><p>It print the message and return the number.</p></li>
 </ul>
-</section>
-<section id="write-a-function-1" class="slide level2">
-<h2>Write a function</h2>
-<ol type="1">
-<li>Function <code>age_milestones</code> takes one integer <code>age</code></li>
-<li>It returns:
-<ul>
-<li>‘You may apply to join the military.’ if <code>age</code> is greater or equal to <code>18</code></li>
-<li>‘You may drink.’ if <code>age</code> greater or equal to <code>21</code></li>
-<li>‘You may run for president.’ if <code>age</code> greater or equal to <code>35</code></li>
-</ul></li>
-<li>The latter conditions include former so concatenate them</li>
-</ol>
-<div id="2af88a03" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="bu">print</span>( age_milestones(<span class="dv">18</span>) ) <span class="co"># You may apply to join the military.</span></span>
-<span id="cb10-2"><a></a><span class="bu">print</span>( age_milestones(<span class="dv">30</span>) ) <span class="co"># You may apply to join the military. You may drink.</span></span>
-<span id="cb10-3"><a></a><span class="bu">print</span>( age_milestones(<span class="dv">0</span>) ) <span class="co"># </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Name your file as <code>cubes.py</code> and submit to Gradescope.</p>
+<div id="9e766ef7" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="kw">def</span> main():</span>
+<span id="cb4-2"><a></a>    cube_len <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Cube length? "</span>))</span>
+<span id="cb4-3"><a></a>    fit_w <span class="op">=</span> get_fit(cube_len, <span class="st">'width'</span>)</span>
+<span id="cb4-4"><a></a>    fit_h <span class="op">=</span> get_fit(cube_len, <span class="st">'height'</span>)</span>
+<span id="cb4-5"><a></a>    fit_l <span class="op">=</span> get_fit(cube_len, <span class="st">'length'</span>)</span>
+<span id="cb4-6"><a></a>    result <span class="op">=</span> fit_w <span class="op">*</span> fit_h <span class="op">*</span> fit_l</span>
+<span id="cb4-7"><a></a>    <span class="bu">print</span>(<span class="bu">str</span>(result) <span class="op">+</span> <span class="st">" Rubik's cubes will fit in that container."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="write-a-function-solution" class="slide level2">
-<h2>Write a function – solution</h2>
-<div id="05ca463a" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="kw">def</span> age_milestones(age):</span>
-<span id="cb11-2"><a></a>  <span class="co">'''</span></span>
-<span id="cb11-3"><a></a><span class="co">  This function prints an informative message based on,</span></span>
-<span id="cb11-4"><a></a><span class="co">  a person's age.</span></span>
-<span id="cb11-5"><a></a><span class="co">  Args:</span></span>
-<span id="cb11-6"><a></a><span class="co">    age: integer representing a person's age</span></span>
-<span id="cb11-7"><a></a><span class="co">  Returns:</span></span>
-<span id="cb11-8"><a></a><span class="co">    A string with a message to the user</span></span>
-<span id="cb11-9"><a></a><span class="co">  '''</span></span>
-<span id="cb11-10"><a></a>  message <span class="op">=</span> <span class="st">""</span></span>
-<span id="cb11-11"><a></a>  <span class="cf">if</span> age <span class="op">&gt;=</span> <span class="dv">18</span>:</span>
-<span id="cb11-12"><a></a>      message <span class="op">+=</span> <span class="st">'You may apply to join the military.'</span></span>
-<span id="cb11-13"><a></a>     </span>
-<span id="cb11-14"><a></a>  <span class="cf">if</span> age <span class="op">&gt;=</span> <span class="dv">21</span>:</span>
-<span id="cb11-15"><a></a>      message <span class="op">+=</span> <span class="st">' You may drink.'</span></span>
-<span id="cb11-16"><a></a>     </span>
-<span id="cb11-17"><a></a>  <span class="cf">if</span> age <span class="op">&gt;=</span> <span class="dv">35</span>:</span>
-<span id="cb11-18"><a></a>      message <span class="op">+=</span> <span class="st">' You may run for president.'</span></span>
-<span id="cb11-19"><a></a>      </span>
-<span id="cb11-20"><a></a>  <span class="cf">return</span> message</span>
-<span id="cb11-21"><a></a>     </span>
-<span id="cb11-22"><a></a><span class="kw">def</span> main():</span>
-<span id="cb11-23"><a></a>  <span class="bu">print</span>( age_milestones(<span class="dv">18</span>) ) <span class="co"># You may apply to join the military.</span></span>
-<span id="cb11-24"><a></a>  <span class="bu">print</span>( age_milestones(<span class="dv">30</span>) ) <span class="co"># You may apply to join the military. You may drink.</span></span>
-<span id="cb11-25"><a></a>  <span class="bu">print</span>( age_milestones(<span class="dv">0</span>) ) <span class="co"># </span></span>
-<span id="cb11-26"><a></a> </span>
-<span id="cb11-27"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>You may apply to join the military.
-You may apply to join the military. You may drink.
-</code></pre>
-</div>
-</div>
-</section>
-<section id="quiz-04" class="slide level2">
-<h2>Quiz 04</h2>
-<center>
-<div class="cleanslate w24tz-current-time w24tz-large" style="display: inline-block !important; visibility: hidden !important; min-width:300px !important; min-height:145px !important;">
-<a href="//24timezones.com/Tucson/time" style="text-decoration: none" class="clock24" id="tz24-1695057604-c1393-eyJob3VydHlwZSI6IjEyIiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIwIiwiY29udGFpbmVyX2lkIjoiY2xvY2tfYmxvY2tfY2I2NTA4ODZjNDg0OWVlIiwidHlwZSI6ImRiIiwibGFuZyI6ImVuIn0=" title="World Time :: Tucson" target="_blank" rel="nofollow"></a>current time
-<div id="clock_block_cb650886c4849ee">
-
-</div>
-</div>
-<script type="text/javascript" src="//w.24timezones.com/l.js" async=""></script>
-</center>
-<p>You have 10 minutes to complete the quiz.</p>
-<p>No need to write <code>main()</code> function.</p>
-</section></section>
-<section>
-<section id="input-validation" class="title-slide slide level1 center">
-<h1>Input validation</h1>
-
-</section>
-<section id="string-methods" class="slide level2">
-<h2>String methods</h2>
-<p>In addition to having built-in <strong>functions</strong> (<code>len()</code>, <code>print()</code>, <code>int()</code>, <code>float()</code>, etc.), Python also has a number of <strong>methods</strong> we will be using in this class.</p>
-<p>Check the <a href="https://docs.python.org/3/library/stdtypes.html#str.isnumeric">documentation</a> for string methods and read what <code>.isnumeric()</code> does.</p>
-</section>
-<section id="validating-numbers" class="slide level2">
-<h2>Validating numbers</h2>
-<ul>
-<li>The <code>input()</code> function always returns a <code>string</code></li>
-<li>We can use the string built-in method <code>.isnumeric()</code> to determine if a string represents an integer</li>
-<li><code>.isnumeric()</code> returns True if all the characters are numeric (0-9)</li>
-</ul>
-<p>Try these out:</p>
-<div id="64d2fdfa" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>name <span class="op">=</span> <span class="st">"Jimmy42"</span></span>
-<span id="cb13-2"><a></a>name.isnumeric()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>False</code></pre>
-</div>
-</div>
-<div id="2e2a3292" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>age <span class="op">=</span> <span class="dv">37</span></span>
-<span id="cb15-2"><a></a>age.isnumeric() <span class="co"># this throws an error</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="write-a-validation-function" class="slide level2">
-<h2>Write a validation function</h2>
-<p>Write a Python function <code>validate_age</code> that takes a string argument <code>age</code>. It returns <code>True</code> if <code>age</code> contains only 0-9 digit characters, and <code>False</code> otherwise.</p>
-<p>In your previous file for age milestone, in the <code>main</code> function:</p>
-<ul>
-<li>call <code>input()</code> to type an age</li>
-<li>call <code>validate_age</code> to validate your input</li>
-<li>if it is <code>True</code>, call <code>age_milestones</code> to print messages</li>
-<li>if it is <code>False</code>, print ‘Invalid age entered’</li>
-</ul>
-</section>
-<section id="age-milestones" class="slide level2">
-<h2>Age milestones</h2>
-<div id="51571f1f" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a><span class="kw">def</span> age_milestones(age):</span>
-<span id="cb16-2"><a></a>  <span class="co">'''</span></span>
-<span id="cb16-3"><a></a><span class="co">  This function prints an informative message based on,</span></span>
-<span id="cb16-4"><a></a><span class="co">  a person's age.</span></span>
-<span id="cb16-5"><a></a><span class="co">  Args:</span></span>
-<span id="cb16-6"><a></a><span class="co">    age: integer representing a person's age</span></span>
-<span id="cb16-7"><a></a><span class="co">  Returns:</span></span>
-<span id="cb16-8"><a></a><span class="co">    A string with a message to the user</span></span>
-<span id="cb16-9"><a></a><span class="co">  '''</span></span>
-<span id="cb16-10"><a></a>  message <span class="op">=</span> <span class="st">""</span></span>
-<span id="cb16-11"><a></a>  <span class="cf">if</span> age <span class="op">&gt;=</span> <span class="dv">18</span>:</span>
-<span id="cb16-12"><a></a>      message <span class="op">+=</span> <span class="st">'You may apply to join the military'</span></span>
-<span id="cb16-13"><a></a>     </span>
-<span id="cb16-14"><a></a>  <span class="cf">if</span> age <span class="op">&gt;=</span> <span class="dv">21</span>:</span>
-<span id="cb16-15"><a></a>      message <span class="op">+=</span> <span class="st">'You may drink'</span></span>
-<span id="cb16-16"><a></a>     </span>
-<span id="cb16-17"><a></a>  <span class="cf">if</span> age <span class="op">&gt;=</span> <span class="dv">35</span>:</span>
-<span id="cb16-18"><a></a>      message <span class="op">+=</span> <span class="st">'You may run for president'</span></span>
-<span id="cb16-19"><a></a>      </span>
-<span id="cb16-20"><a></a>  <span class="cf">return</span> message</span>
-<span id="cb16-21"><a></a></span>
-<span id="cb16-22"><a></a><span class="kw">def</span> validate_age(age):</span>
-<span id="cb16-23"><a></a>  <span class="cf">return</span> age.isnumeric()</span>
-<span id="cb16-24"><a></a>     </span>
-<span id="cb16-25"><a></a><span class="kw">def</span> main():</span>
-<span id="cb16-26"><a></a>  <span class="co">'''</span></span>
-<span id="cb16-27"><a></a><span class="co">  This functions takes input from the user and calls the</span></span>
-<span id="cb16-28"><a></a><span class="co">  check_age() functiont to print a message</span></span>
-<span id="cb16-29"><a></a><span class="co">  '''</span></span>
-<span id="cb16-30"><a></a>  age <span class="op">=</span> <span class="bu">input</span>(<span class="st">'How old are you?</span><span class="ch">\n</span><span class="st">'</span>)</span>
-<span id="cb16-31"><a></a>  <span class="cf">if</span> validate_age(age):</span>
-<span id="cb16-32"><a></a>    <span class="bu">print</span>(age_milestones(<span class="bu">int</span>(age)))</span>
-<span id="cb16-33"><a></a>  <span class="cf">else</span>:</span>
-<span id="cb16-34"><a></a>    <span class="bu">print</span>(<span class="st">"Invalid age entered"</span>)</span>
-<span id="cb16-35"><a></a> </span>
-<span id="cb16-36"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="write-a-function-answer" class="slide level2">
+<h2>Write a function – answer</h2>
+<div id="affcde95" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="kw">def</span> get_fit(cube, side):</span>
+<span id="cb5-2"><a></a>    large <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Box </span><span class="sc">{}</span><span class="st">? "</span>.<span class="bu">format</span>(side)))</span>
+<span id="cb5-3"><a></a>    fit <span class="op">=</span> large <span class="op">//</span> cube</span>
+<span id="cb5-4"><a></a>    <span class="bu">print</span>(<span class="st">"</span><span class="sc">{}</span><span class="st"> Rubik's cubes will fit </span><span class="sc">{}</span><span class="st">-wise."</span>.<span class="bu">format</span>(fit, side))</span>
+<span id="cb5-5"><a></a>    <span class="cf">return</span> fit</span>
+<span id="cb5-6"><a></a></span>
+<span id="cb5-7"><a></a><span class="kw">def</span> main():</span>
+<span id="cb5-8"><a></a>    cube_len <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">"Cube length? "</span>))</span>
+<span id="cb5-9"><a></a>    fit_w <span class="op">=</span> get_fit(cube_len, <span class="st">'width'</span>)</span>
+<span id="cb5-10"><a></a>    fit_h <span class="op">=</span> get_fit(cube_len, <span class="st">'height'</span>)</span>
+<span id="cb5-11"><a></a>    fit_l <span class="op">=</span> get_fit(cube_len, <span class="st">'length'</span>)</span>
+<span id="cb5-12"><a></a>    result <span class="op">=</span> fit_w <span class="op">*</span> fit_h <span class="op">*</span> fit_l</span>
+<span id="cb5-13"><a></a>    <span class="bu">print</span>(<span class="bu">str</span>(result) <span class="op">+</span> <span class="st">" Rubik's cubes will fit in that container."</span>)</span>
+<span id="cb5-14"><a></a></span>
+<span id="cb5-15"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

@@ -1,283 +1,301 @@
 ---
-title: "loops + strings (slides)"
+title: "if statements (slides)"
 format: revealjs
 slide-number: true
 ---
 
-# CSc 110 - looping through strings
-  
-# String Manipulation
+# CSc 110 If statements
 
-## String indexing
+## Expression vs Statement
 
--   Strings are sequences in Python
--   We can retrieve values in a sequence using `[ ]`
-
-```{python}
-#| echo: true
-#| eval: true
-name = "Xinchen"
-name[0]
-```
-
-Note that the first index in a sequence is always `zero`.
-
-## String indexing
-
-Since the first index of a sequence is `zero`, the last index is going to be the length of the string `minus 1`
-
-```{python}
-#| echo: true
-#| eval: true
-name = "Xinchen"
-len(name)
-```
-
-```{python}
-#| echo: true
-#| eval: true
-name = "Xinchen"
-name[6]
-```
+-   *Expression* evaluates to value
+-   *Statement* does something
 
 ```{python}
 #| echo: true
 #| eval: false
-name = "Xinchen"
-name[7] # this will throw an error
+3 + 4 # expression
+print(3 + 4) # statement
+
+a = 8 # statement
+a != 9 # expression
+print(a) # statement
 ```
 
+## The if statement
+
+-   If statements can be used to **run code conditionally**
+
+    -   **Before if-statements:** Code has pretty much just run in a straight line
+
+    -   **With ifs:** Can run code optionally, depending on the value of a condition
+
+This means our code can **branch** in different directions
+
+## The if statement
+
+```{=html}
+<pre>
+if condition:
+    statement 1
+    statement 2
+    . . .
+    statement N
+</pre>
+```
+The condition is an expression that is evaluated to a bool.
+
+Example:
+
+```{python}
+#| eval: false
+#| echo: true
+def greeting(name):
+  if name == "Bond":
+    return "Welcome on board 007."
+  else:
+    return "Hello, " + name
+
+def main():
+  user_name = input("Enter your name:\n")
+  print( greeting(user_name) )
+
+main()
+```
+
+## Improve the function
+
+Instead of checking if the name entered is "Bond", also check whether the name is "James Bond".
+
+## Conditional execution
+
+The computer program branches out, or makes decisions
+
+```{python}
+#| echo: true
+#| eval: true
+def greater_than_zero(n):
+  if n > 0:
+    return "Greater than zero"
+  else:
+    return "Not greater than zero"
+  
+def main():
+  result = greater_than_zero(4)
+  print(result)
+  
+  result = greater_than_zero(0)
+  print(result)
+  
+  result = greater_than_zero(-3)
+  print(result)
+  
+main()
+```
 
 ## Write a function
 
-Function `four_letter_anagram` takes a `string`, and four integers `a`, `b`, `c` and `d`.
-It returns the anagram of the string according to the indices `a`, `b`, `c` and `d` -- concatenate the individual characters.
-
+Write a Python function called `absolute` that takes one numeric argument (integer or float) `n`
+and returns the absolute value of `n`: if `n` is positive, it results `n`, if `n` is negative, it returns `n * -1`
 
 Test cases:
+
 ```{python}
-#| eval: false
 #| echo: true
-assert four_letter_anagram("balm", 2, 1, 3, 0) == 'lamb'
-assert four_letter_anagram("loin", 0, 2, 1, 3) == 'lion'
-assert four_letter_anagram("reap", 3, 1, 2, 0) == 'pear'
+#| eval: false
+print( absolute(4) ) # 4
+print( absolute(-4) ) # 4
+print( absolute(0) ) # 0
 ```
 
 
-## Write a function - solution 
+## Write a function -- solution 1
 
 ```{python}
 #| echo: true
 #| eval: true
-def four_letter_anagram(word, a, b, c, d):
-  return word[a] + word[b] + word[c] + word[d]
-
+def absolute(n):
+  if n > 0:
+    return n
+  else:
+    return -n
+  
 def main():
-  assert four_letter_anagram("balm", 2, 1, 3, 0) == 'lamb'
-  assert four_letter_anagram("loin", 0, 2, 1, 3) == 'lion'
-  assert four_letter_anagram("reap", 3, 1, 2, 0) == 'pear'
-
+  print( absolute(4) )
+  print( absolute(-4) )
+  print( absolute(0) )
+  
 main()
 ```
 
-
-## `in` operator
-
-The `in` operator determines whether a given value is a constituent element of a sequence (such as a string)
+## Write a function -- solution 2
 
 ```{python}
-#| eval: true
 #| echo: true
-"i" in "aeiou"
+#| eval: true
+def absolute(n):
+  if n > 0:
+    return n
+  return -n
+  
+def main():
+  print( absolute(4) )
+  print( absolute(-4) )
+  
+main()
 ```
 
+Which lines run in the function `absolute`?
 
-```{python}
-#| eval: true
-#| echo: true
-"eio" in "aeiou"
-```
-
-```{python}
-#| eval: true
-#| echo: true
-not "b" in "aeiou"
-```
-
-```{python}
-#| eval: true
-#| echo: true
-"0" in  "0987654321."
-```
-
-```{python}
-#| eval: true
-#| echo: true
-"10.0" in  "0987654321."
-```
-
-## Question
-
-How to check if a string can be converted to an integer or float? 
-
--   `"BladeRunner2049"` will return `False`  
-
--   `"2049"` will return `True`
-
--   `"12.5"` will return `True`
-
-## Question
-
-How to check if a string can be converted to an integer or float? 
-
-Can we use the string method`.isnumeric()`?
-
-```{python}
-#| eval: true
-#| echo: true
-user_input = "BladeRunner2049"
-user_input.isnumeric()
-```
-
-```{python}
-#| eval: true
-#| echo: true
-user_input = "2049"
-user_input.isnumeric()
-```
-
-```{python}
-#| eval: true
-#| echo: true
-user_input = "12.5"
-user_input.isnumeric()
-```
-
-
-
-## Iterating a string
-
--   One technique that can be used to control the number of loop iterations is using an `index` variable
--   For while loops, an index variable is:
-    -   Defined before the loop
-    -   Used in the condition of the loop
-    -   Incremented within the loop
-
-## Iterating a string
-
-Print characters at even indices.
-```{python}
-#| eval: true
-#| echo: true
-word = "BladeRunner2049"
-index = 0
-while index < len(word):
-    print(word[index])
-    # Can add other lines here too
-    index = index + 2
-```
+-   When expression `n > 0` is `True`, line `3` runs (`return` is used to exit a function and returns a value)
+-   When expression `n > 0` is `False`, line `4` runs (skip line `3`)
 
 
 ## Write a function
 
-Function name `is_numeric` that takes one `string` argument of any length (assume length > 0).
-
-It returns `True` if every character in the argument is a digit (0-9) or a period (.), `False` otherwise.
-
-Use `in` operator instead of built-in function `isnumeric()`.
-
+1.  Function `age_milestones` takes one integer `age`
+2.  It returns:
+    -   'You may apply to join the military.' if `age` is greater or equal to `18`
+    -   'You may drink.' if `age` greater or equal to `21`
+    -   'You may run for president.' if `age` greater or equal to `35`
+3.  The latter conditions include former so concatenate them
+    
 ```{python}
 #| echo: true
 #| eval: false
-assert is_numeric("BladeRunner2049") == False
-assert is_numeric("2049") == True
-assert is_numeric("12.5") == True
+print( age_milestones(18) ) # You may apply to join the military.
+print( age_milestones(30) ) # You may apply to join the military. You may drink.
+print( age_milestones(0) ) # 
 ```
 
-## `is_numeric()` solution
-
-How do we change our function so that the last test case ("1.2.3") returns `False` instead?
+## Write a function -- solution
 
 ```{python}
 #| eval: true
 #| echo: true
-def is_numeric(my_string):
-  index = 0
-  while index < len(my_string):
-    if my_string[index] not in "0123456789.":
-      return False
-    index += 1
-  return True
-
+def age_milestones(age):
+  '''
+  This function prints an informative message based on,
+  a person's age.
+  Args:
+    age: integer representing a person's age
+  Returns:
+    A string with a message to the user
+  '''
+  message = ""
+  if age >= 18:
+      message += 'You may apply to join the military.'
+     
+  if age >= 21:
+      message += ' You may drink.'
+     
+  if age >= 35:
+      message += ' You may run for president.'
+      
+  return message
+     
 def main():
-  assert is_numeric("BladeRunner2049") == False
-  assert is_numeric("2049") == True
-  assert is_numeric("12.5") == True
-  assert is_numeric("1.2.3") == True # how to return False?
-  
+  print( age_milestones(18) ) # You may apply to join the military.
+  print( age_milestones(30) ) # You may apply to join the military. You may drink.
+  print( age_milestones(0) ) # 
+ 
 main()
 ```
 
+## Quiz 04
 
+<center>
+<div class="cleanslate w24tz-current-time w24tz-large" style="display: inline-block !important; visibility: hidden !important; min-width:300px !important; min-height:145px !important;"><a href="//24timezones.com/Tucson/time" style="text-decoration: none" class="clock24" id="tz24-1695057604-c1393-eyJob3VydHlwZSI6IjEyIiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIwIiwiY29udGFpbmVyX2lkIjoiY2xvY2tfYmxvY2tfY2I2NTA4ODZjNDg0OWVlIiwidHlwZSI6ImRiIiwibGFuZyI6ImVuIn0=" title="World Time :: Tucson" target="_blank" rel="nofollow"></a>current time<div id="clock_block_cb650886c4849ee"></div></div>
+<script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
+</center>
 
-## `is_numeric()` -- solution 1
+You have 10 minutes to complete the quiz.
+
+No need to write `main()` function.
+
+# Input validation
+
+## String methods
+
+In addition to having built-in **functions** (`len()`, `print()`, `int()`, `float()`, etc.), Python also has a number of **methods** we will be using in this class.
+
+Check the [documentation](https://docs.python.org/3/library/stdtypes.html#str.isnumeric) for string methods and read what `.isnumeric()` does.
+
+## Validating numbers
+
+-   The `input()` function always returns a `string`
+-   We can use the string built-in method `.isnumeric()` to determine if a string represents an integer
+-   `.isnumeric()` returns True if all the characters are numeric (0-9)
+
+Try these out:
 
 ```{python}
 #| eval: true
 #| echo: true
-def is_numeric(my_string):
-  index = 0
-  count_period = 0
-  while index < len(my_string):
-    if my_string[index] == ".":
-      count_period += 1
-    if my_string[index] not in "0123456789." or count_period > 1:
-      return False
-    index += 1
-  return True
-
-def main():
-  assert is_numeric("234") == True
-  assert is_numeric("abc") == False
-  assert is_numeric("12c") ==  False
-  assert is_numeric("12.3") == True
-  assert is_numeric("1.2.3") == False
-  
-main()
+name = "Jimmy42"
+name.isnumeric()
 ```
 
-## `is_numeric()` -- solution 2
 
 ```{python}
-#| eval: true
+#| eval: false
 #| echo: true
-def is_numeric(my_string):
-  # create control variable for one decimal point
-  decimal_point = False
-  # create index variable
-  index = 0
-  while index < len(my_string):
-    # first check, can character be found in a number?
-    if my_string[index] not in "0123456789.":
-      return False
-    # second check, if a period, has a period been found before?
-    if my_string[index] == ".":
-      if decimal_point: # a previous period was detected
-        return False
-      else: # first period detected
-        decimal_point = True
-    # increment index  
-    index += 1
-  # while loop executed without returning False
-  # that means every character is valid, so return True
-  return True
+age = 37
+age.isnumeric() # this throws an error
+```
 
+## Write a validation function
+
+Write a Python function `validate_age` that takes a string argument `age`.
+It returns `True` if `age` contains only 0-9 digit characters, and `False` otherwise.
+
+In your previous file for age milestone, in the `main` function:
+
+-   call `input()` to type an age 
+-   call `validate_age` to validate your input 
+-   if it is `True`, call `age_milestones` to print messages
+-   if it is `False`, print 'Invalid age entered'
+
+## Age milestones
+
+```{python}
+#| eval: false
+#| echo: true
+def age_milestones(age):
+  '''
+  This function prints an informative message based on,
+  a person's age.
+  Args:
+    age: integer representing a person's age
+  Returns:
+    A string with a message to the user
+  '''
+  message = ""
+  if age >= 18:
+      message += 'You may apply to join the military'
+     
+  if age >= 21:
+      message += 'You may drink'
+     
+  if age >= 35:
+      message += 'You may run for president'
+      
+  return message
+
+def validate_age(age):
+  return age.isnumeric()
+     
 def main():
-  assert is_numeric("234") == True
-  assert is_numeric("abc") == False
-  assert is_numeric("12c") ==  False
-  assert is_numeric("12.3") == True
-  assert is_numeric("1.2.3") == False
-  
+  '''
+  This functions takes input from the user and calls the
+  check_age() functiont to print a message
+  '''
+  age = input('How old are you?\n')
+  if validate_age(age):
+    print(age_milestones(int(age)))
+  else:
+    print("Invalid age entered")
+ 
 main()
 ```
+

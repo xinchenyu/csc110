@@ -36,6 +36,7 @@ website:
         - project-10.qmd
         - project-11.qmd
         - project-12.qmd
+        - project-13.qmd
       - section: "Short Projects"
         contents: 
         - short-projects.qmd
@@ -53,92 +54,93 @@ website:
         - slides-01-01.qmd
         - slides-01-02.qmd
         - assignments-01.qmd
-      - section: "Module 2 - Functions, Operators, Expressions and Decomposition"
+      - section: "Module 2 - Functions, Operators, and Expressions"
         contents:
         - functions-a.md
         - op_exp-a.md
         - slides-02-01.qmd
         - slides-02-02.qmd
         - assignments-02.qmd
-      - section: "Module 3 - More on Functions and Decomposition"
+      - section: "Module 3 - Decomposition and More on Functions"
         contents: 
         - functions.md
         - input.md
         - slides-03-01.qmd
         - slides-03-02.qmd
-        - slides-03-03.qmd
         - assignments-03.qmd
-      - section: "Module 4 - Control Flow (if statements)"
+      - section: "Module 4 - Built-In Functions and Decomposition"
+        contents: 
+        - functions.md
+        - input.md
+        - slides-04-01.qmd
+        - slides-04-02.qmd
+        - assignments-04.qmd
+      - section: "Module 5 - Control Flow (if statements)"
         contents:
         - op_exp.md
         - control_flow_if.md
         - fizzbuzz.qmd
-        - slides-04-01.qmd
-        - slides-04-02.qmd
-        - slides-04-03.qmd
-        - assignments-04.qmd
-      - section: "Module 5 - Control Flow (while statements)"
-        contents:
-        - strings.qmd
-        - control_flow_while.md
         - slides-05-01.qmd
         - slides-05-02.qmd
         - slides-05-03.qmd
         - assignments-05.qmd
-      - section: "Module 6 - Data Structures (lists)"
+      - section: "Module 6 - Control Flow (while statements)"
         contents:
-        - data_structures_list.md
+        - strings.qmd
+        - control_flow_while.md
         - slides-06-01.qmd
         - slides-06-02.qmd
-        - assignments-06.qmd
-      - section: "Module 7 - Control Flow (for statements)"
+        - slides-06-03.qmd
+        - assignments-05.qmd
+      - section: "Module 7 - Data Structures (lists)"
         contents:
-        - mutability.qmd
-        - control_flow_for.md
+        - data_structures_list.md
         - slides-07-01.qmd
         - slides-07-02.qmd
         - assignments-07.qmd
-      - section: "Module 8 - Data Structures (dictionaries)"
+      - section: "Module 8 - Control Flow (for statements)"
         contents:
-        - data_structures_dict.md
+        - mutability.qmd
+        - control_flow_for.md
         - slides-08-01.qmd
         - slides-08-02.qmd
         - assignments-08.qmd
-      - section: "Module 9 - Reading and Writing Text Files"
+      - section: "Module 9 - Data Structures (dictionaries)"
         contents:
-        - io.md
+        - data_structures_dict.md
         - slides-09-01.qmd
         - slides-09-02.qmd
-        - assignments-09.qmd
-      - section: "Module 10 - Data Structures (tuples)"
+        - assignments-08.qmd
+      - section: "Module 10 - Reading and Writing Text Files"
         contents:
-        - data_structures_tuples.md
+        - io.md
         - slides-10-01.qmd
         - slides-10-02.qmd
-        - assignments-10.qmd
-      - section: "Module 11 - Data Structures (2D lists)"
+        - assignments-09.qmd
+      - section: "Module 11 - Data Structures (tuples)"
         contents:
+        - data_structures_tuples.md
         - slides-11-01.qmd
         - slides-11-02.qmd
         - assignments-11.qmd
-      - section: "Module 12 - Data Structures (sets)"
+      - section: "Module 12 - Data Structures (2D lists)"
         contents:
-        - data_structures_sets.md
         - slides-12-01.qmd
         - slides-12-02.qmd
-        - slides-12-03.qmd
         - assignments-12.qmd
-      - section: "Module 13 - Control Flow with different Data Structures"
+      - section: "Module 13 - Data Structures (sets)"
         contents:
-        - structures-review.qmd
+        - data_structures_sets.md
         - slides-13-01.qmd
         - slides-13-02.qmd
         - slides-13-03.qmd
         - assignments-13.qmd
-      - section: "Module 14 - Combining Data Structures and Sorting Lists"
+      - section: "Module 14 - Control Flow with different Data Structures"
         contents:
+        - structures-review.qmd
         - slides-14-01.qmd
         - slides-14-02.qmd
+        - slides-14-03.qmd
         - assignments-14.qmd
       - section: "Module 15 - Handling Exceptions"
         contents:

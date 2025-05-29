@@ -21,41 +21,47 @@ Short Programming projects are submitted during our weekly 45-minute in-person l
 
 # Programming Problems
 
-Programming Problems should be submitted to [gradescope](https://www.gradescope.com/courses/934148).
+**Due date: `r assignments %>% filter(assessment == "Module 11 Programming Problems") %>% pull(formatted_date)` at 9pm**
 
 ## Programming Problem 21
 
-**Due date: `r assignments %>% filter(assessment == "Module 11 Programming Problems") %>% pull(formatted_date)` at 9pm**
+Write a Python function that does the following:
 
-Write a `remove_zero_sides` function that given a 2D list as argument, it **mutates** and returns the list removing any first and last values that are equal to zero. Name your file `filter.py`.
+1.  Its name is `zip_lists`
+2.  It takes three arguments: `list_1`, `list_2`, `list_3` -- all of the same length
+3.  It iterates over all three lists (remember, they have the same length, so you can use the same index for all of them) appending to a new list of tuples of three elements
+4.  It returns the list of tuples
 
 Test cases:
-```{python}
-#| eval: false
-#| echo: true
-numbers = [[0, 1, 2], [0], [], [2, 4, 0], [0, 0], [0, 20, 3, 10, 0]]
-remove_zero_sides(numbers)
-assert numbers ==  [[1, 2], [], [], [2, 4], [], [20, 3, 10]]
 
-more_numbers = [[0], [], [0, 0], [0, 1], [2, 0]]
-assert remove_zero_sides(more_numbers) == [[], [], [], [1], [2]]
+```{python}
+#| echo: true
+#| eval: false
+print( zip_lists([1, 2], ["a", "b"], [1.0, 2.0]) ) # [(1, "a", 1.0), (2, "b", 2.0)]
+print( zip_lists([], [], []) ) # []
 ```
 
+Name the program `create_tuples.py`. Make sure that gradescope gives you the points for passing the test case.
 
 ## Programming Problem 22
 
-**Due date: `r assignments %>% filter(assessment == "Module 11 Programming Problems") %>% pull(formatted_date)` at 9pm**
+**Due date: `r assignments %>% filter(assessment == "Module 10 Programming Problems") %>% pull(formatted_date)` at 9pm**
 
-Write a `lowercase_items` function that given a 2D list of strings as argument, it **mutates** and returns the list lowercasing all strings in each sublist. You can assume all items in the lists are strings. You can use the `.lower()` string method. Name your file `lowercasing.py`
+Write a Python function that does the following:
+
+1.  Its name is `all_mappings`
+2.  It takes a single `dictionary` as an argument, which maps strings to lists of integers
+3.  It returns a list of 2-value tuples, where the first value of the tuples is a key from D, and the second value is an element from its associated list value
 
 Test cases:
-```{python}
-#| eval: false
-#| echo: true
-words = [["A", "B", "C"], [], ["BANANA", "Apple", "pineapple"]]
-lowercase_items(words)
-assert words == [["a", "b", "c"], [], ["banana", "apple", "pineapple"]]
 
-more_words = [["A"], ["Monica"]]
-assert lowercase_items(more_words) == [["a"], ["monica"]]
+```{python}
+#| echo: true
+#| eval: false
+print( all_mappings({"a": [7, 3, 1]}) ) # [("a", 7), ("a", 3), ("a", 1)]
+print( all_mappings({"a": [8], "b": [2]}) ) # [("a", 8), ("b", 2)]
+print( all_mappings({"a": [], "b": [2]}) ) # [("b", 2)]
+print( all_mappings({}) ) # []
 ```
+
+Name the program `mappings.py`. Make sure that gradescope gives you the points for passing the test case.

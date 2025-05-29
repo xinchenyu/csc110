@@ -1,237 +1,221 @@
 ---
-title: "while loop aggregation (slides)"
+title: "if elif else statements (slides)"
 format: revealjs
 slide-number: true
 ---
 
-# CSc 110 - while loop aggregation
+# CSc 110 if elif else statements
+
+## if elif else
+
+While the if condition is required, the elif and else statements are not.
+
+`elif` is saying 'if the previous conditions were not true, then try this condition'. It forces the cases to be mutually exclusive.
+
+```{html}
+if conditionA:
+    statements
+elif conditionB:
+    statements
+elif conditionC:
+    statements
+else:
+    statements
+```
 
 
-## `while` loops
+## Compare the functions
 
--   Using an `index` variable:
-    -   Defined before the loop
-    -   Used in the **condition** of the loop
-    -   Changed within the loop
--   Using a `temporary variable` for aggregation:
-    -   Defined before the loop
-    -   Changed within the loop
-    -   **Returned** outside the loop
-
-## `while` loops with aggregation
-
-Adding numbers from 1 to 5:
 ```{python}
 #| eval: true
 #| echo: true
-total = 0
-index = 1
-while index <= 5:
-    print('adding ' + str(index))
-    total = total + index
-    index = index + 1
+def func_one(a):
+  message = ""
+  if a >= 18:
+    message += 'You may apply to join the military.'
+  if a >= 35:  # independent from a >= 18
+    message += ' You may run for president.'
+  return message
+
+def func_two(a):
+  message = ""
+  if a >= 18:
+    message += 'You may apply to join the military.'
+  elif a >= 35:  # only runs when a >= 18 is False
+    message += ' You may run for president.'
+  return message
+
+def main():
+  print(func_one(40))
+  print(func_two(40))
+  
+main()
+```
+
+
+## Write a function
+
+Write a function that does the following:
+
+1. Its name is `max_of_two`
+1. It takes two numeric arguments
+1. It returns the highest value
+
+Test cases
+
+```{python}
+#| eval: false
+#| echo: true
+print( max_of_two(-1, 3) ) # 3
+print( max_of_two(-1, -3) ) # -1
+print( max_of_two(5, 5) ) # 5
+```
+
+## Write a function -- solution
+
+```{python}
+#| eval: true
+#| echo: true
+def max_of_two(x, y):
+  if x >= y:
+    return x
+  else:
+    return y
+
+def main():
+  print( max_of_two(-1, 3) ) # 3
+  print( max_of_two(-1, -3) ) # -1
+  print( max_of_two(5, 5) ) # 5
+
+main()
+```
+
+
+## Write a function
+
+Write a function that does the following:
+
+1. Its name is `max_of_three`
+1. It takes three numeric arguments
+1. It returns the highest value
+
+Name your file `max_of_three.py` and submit to Gradescope.
+
+Test cases:
+
+```{python}
+#| eval: false
+#| echo: true
+print( max_of_three(-1, 3, 3) ) # 3
+print( max_of_three(-1, -3, 0) ) # 0
+print( max_of_three(5, 5, 10) ) # 10
+```
+
+## Write a function -- solution 1
+
+```{python}
+#| eval: true
+#| echo: true
+def max_of_three(x, y, z):
+  if x >= y and x >= z:
+    return x
+  elif y >= x and y >= z:
+    return y
+  else:
+    return z
+
+def main():
+  print( max_of_three(-1, 3, 3) ) # 3
+  print( max_of_three(-1, -3, 0) ) # 0
+  print( max_of_three(5, 5, 10) ) # 10
+
+main()
+```
+
+## Write a function -- solution 2
+
+```{python}
+#| eval: true
+#| echo: true
+def max_of_three(x, y, z):
+  max_value = x
+  
+  if y >= max_value:
+    max_value = y
     
-print(total)
-```
-
-## `while` loops table
-
-Start with `total = 0`, `index = 1`:
-
-| `index <= 5`   | total =  total + index | index = index + 1 |
-| :-------: |:-------: |:-------: |
-| True | total = 0 + 1 | index = 1 + 1 |
-| True | total = 1 + 2 | index = 2 + 1 |
-| True | total = 3 + 3 | index = 3 + 1 |
-| True | total = 6 + 4 | index = 4 + 1 |
-| True | total = 10 + 5 | index = 5 + 1 |
-| False | - | - |
-
-## Write a function
-
-Its name is `sum_all` and takes two numeric arguments: `low` and `high`.
-It runs a loop that iterates through the values `low` and `high` summing all values.
-It returns the sum of all values between `low` and `high`.
-
-HINT: Create a variable that will aggregate the sum. Use `while` (set the index as the `low` before the loop, use index in the `while` condition, update the index inside the loop). 
-
-```{python}
-#| eval: false
-#| echo: true
-assert sum_all(1, 3) == 6
-assert sum_all(0, 5) == 15
-```
-
-## Write a function -- solution
-
-```{python}
-#| eval: true
-#| echo: true
-def sum_all(low, high):
-  total = 0
-  index = low
-  while index <= high:
-    total += index
-    index += 1
-  return total
+  if z >= max_value:
+    max_value = z
     
+  return max_value
+
 def main():
-  assert sum_all(1, 3) == 6
-  assert sum_all(0, 5) == 15
-  
+  print( max_of_three(-1, 3, 3) ) # 3
+  print( max_of_three(-1, -3, 0) ) # 0
+  print( max_of_three(5, 5, 10) ) # 10
+
 main()
-  
 ```
 
-## Write a function
-
-Write a function called `count_vowels` that takes a string as argument, and returns
-an integer with the number of vowels in the string.
-
-HINT: use `in` to determine if a character is a vowel. The vowels are `"a"`,`"e"`,`"i"`,`"o"`, and `"u"`.
-
-```{python}
-#| eval: false
-#| echo: true
-assert count_vowels("banana") == 3
-assert count_vowels("fly") == 0
-```
-
-## Write a function -- solution
+## Write a function -- solution 3
 
 ```{python}
 #| eval: true
 #| echo: true
-def count_vowels(string):
-  index = 0
-  count = 0
-  while index < len(string):
-    if string[index] in "aeiou":
-      count += 1
-    index += 1
-  return count
+def max_of_two(x, y):
+  if x >= y:
+    return x
+  else:
+    return y
+
+def max_of_three(x, y, z):
+  max_x_y = max_of_two(x, y)
+  return max_of_two(max_x_y, z)
 
 def main():
-  assert count_vowels("banana") == 3
-  assert count_vowels("fly") == 0
-  print("End of tests.")
-  
-main()
+  print( max_of_three(-1, 3, 3) ) # 3
+  print( max_of_three(-1, -3, 0) ) # 0
+  print( max_of_three(5, 5, 10) ) # 10
 
+main()
 ```
+
 
 
 ## Write a function
 
-Its name is `factorial` and takes a numeric argument `number`.
-It returns the factorial of `number`. 
-The factorial of a number is the product of that number and every number that comes before it, down to one. 
+Write a function that does the following:
 
-For example, factorial of 4: `1 * 2 * 3 * 4 = 24`.
+1.  Its name is `average_of_highest`
+2.  It has three numeric parameters: `x`, `y` and `z`
+3.  It returns the average of the two highest of the three arguments
+4.  Test cases:
+    1.  arguments `1`, `3`, `4` should return `3.5`
 
-Name your file `factorial.py` and submit to Gradescope.
+    2.  arguments `6`, `4`, `2` should return `5.0`
 
-```{python}
-#| eval: false
-#| echo: true
-assert factorial(4) == 24
-assert factorial(5) == 120
-assert factorial(0) == 1
-```
+    3.  arguments `4`, `2`, `1` should return `3.0`
 
-
-## Write a function -- solution
+## Write a function - solution
 
 ```{python}
 #| eval: true
 #| echo: true
-def factorial(number):
-  result = 1
-  index = 1
-  while index <= number:
-    result *= index
-    index += 1
-  return result
-
+def average_of_highest(x, y, z):
+  if x >= z and y >= z:
+    return (x + y) / 2
+  elif y >= x and z >= x:
+    return (y + z) / 2
+  else:
+    return (x + z) / 2
+  
 def main():
-  assert factorial(4) == 24
-  assert factorial(5) == 120
-  assert factorial(0) == 1
+  print( average_of_highest(1, 3, 5) ) # should print 4.0
+  print( average_of_highest(6, 4, 2) ) # should print 5.0
+  print( average_of_highest(4, 2, 1) ) # should print 3.0
+  print( average_of_highest(2, 2, 1) ) # should print 2.0
+  print( average_of_highest(2, 1, 2) ) # should print 2.0
+  print( average_of_highest(1, 2, 1) ) # should print 1.5
   
 main()
 ```
 
-
-## Write a function
-
-1.  Its name is `power`
-2.  It takes two numeric arguments: `base` and `exp`
-3.  It returns the `base` to the power of `exp`
-4.  Don't use the `**` operator, use a `while` loop (define an `index` before the loop, use `index` in the `while` condition, change `index` inside the loop)
-
-```{python}
-#| eval: false
-#| echo: true
-assert power(2, 4) == 16
-assert power(3, 2) == 9
-```
-
-
-## Write a function -- solution
-
-Write more test cases for this function.
-
-```{python}
-#| eval: true
-#| echo: true
-def power(base, exp):
-  result = 1
-  index = 1
-  while index <= exp:
-    result *= base
-    index += 1
-  return result
-
-def main():
-  assert power(2, 4) == 16
-  assert power(3, 2) == 9
-    
-main()
-```
-
-
-## Write a function
-
-1.  Its name is `vowels_only`
-2.  It takes a `string` argument
-3.  It builds a new string containing only the vowels in the `string` argument
-4.  It returns new string with vowels only (define an `index` before the loop, use index in the `while` condition, change `index` inside the loop)
-
-```{python}
-#| eval: false
-#| echo: true
-print( vowels_only("banana") ) # "aaa"
-print( vowels_only("fly") ) # ""
-```
-
-
-## Write a function -- solution
-
-
-```{python}
-#| eval: true
-#| echo: true
-def vowels_only(string):
-  new_string = ""
-  index = 0
-  while index < len(string):
-    if string[index] in "aeiou":
-      new_string += string[index]
-    index += 1
-  return new_string
-
-def main():
-  print( vowels_only("banana") ) # "aaa"
-  
-main()
-```

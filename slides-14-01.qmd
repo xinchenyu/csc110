@@ -1,71 +1,228 @@
 ---
-title: "combining data structures (slides)"
+title: "mutating lists (slides)"
 format: revealjs
 slide-number: true
 df-print: kable
 ---
 
-# CSC 110 -- Combining data structures
-
-## Tuples as dictionary keys
-
--   We can only use immutable types as dictionary keys (strings, integers, and tuples)
--   Values in a dictionary can be of any type
-
-## Tuples as dictionary keys
-
--   How would you retrieve the room where CSC 110, section 2 takes place?
-
-```{python}
-#| eval: true
-#| echo: true
-course_schedule = { ("CSC 110", "section 1") : ("Gittings", "129b"),
-                    ("CSC 110", "section 2") : ("Gittings", "129b"),
-                    ("CSC 110", "section 3") : ("Gittings", "129b"),
-                    ("CSC 120", "section 1") : ("Gittings", "129b"),
-                    ("CSC 144", "section 1") : ("Social Sciences", "100"),
-                    ("CSC 120", "section 2") : ("Gittings", "129b")}
-```
+# CSc 110 - mutating lists
 
 
-## Tuples as dictionary keys
+## Lists are mutable
 
--   How would you retrieve the room where CSC 110, section 2 takes place?
+* changes to a list in a function will remain after the function finishes running
+* changes to individual list elements do not change the list itself
+
+## Changing a list in a loop
+
+Changes to individual list elements do not change the list itself
 
 ```{python}
-#| eval: true
 #| echo: true
-course_schedule = { ("CSC 110", "section 1") : ("Gittings", "129b"),
-                    ("CSC 110", "section 2") : ("Gittings", "129b"),
-                    ("CSC 110", "section 3") : ("Gittings", "129b"),
-                    ("CSC 120", "section 1") : ("Gittings", "129b"),
-                    ("CSC 144", "section 1") : ("Social Sciences", "100"),
-                    ("CSC 120", "section 2") : ("Gittings", "129b")}
-                    
-course_schedule[("CSC 110", "section 2")]      
+#| eval: true
+numbers = [1, 2, 1, 4, 5]
+for n in numbers:
+  n += 1
+numbers
 ```
 
-Tuples are useful as keys since keys need to be unique (no repeated key is allowed)
+Use a `for i in range` loop instead:
 
+```{python}
+#| echo: true
+#| eval: true
+numbers = [1, 2, 1, 4, 5]
+for i in range(len(numbers)):
+  numbers[i] += 1
+numbers
+```
 
 ## Write a function
 
-Its name is `retrieve_room` that takes three arguments: 
+It takes a 2D list of integers as argument with at least one inner list. It **mutates** the list, replace each inner list with a tuple. The tuple is the total and mean of that inner list.
 
--   a dictionary with course information 
+```{python}
+#| echo: true
+#| eval: false
+test_list = [[2, 4, 6, 8], [], [2, 3, 4]]
+total_mean(test_list)
+assert test_list == [(20, 5.0), (None, None), (9, 3.0)]
+assert total_mean([[2, 4, 6, 8], [], [2, 3, 4]]) == [(20, 5.0), (None, None), (9, 3.0)]
+```
 
--   a string for course code and number (e.g., `"CSC 110"`)
 
--   a string for section (e.g., `"section 3"`)
+## Write a function -- solution
 
-It returns a string with the building and room number
+line 2: can we use `for sublist in lists`?
+
+line 7: can we use `for n in lists[i]`?
+```{python}
+#| echo: true
+#| eval: true
+def total_mean(lists):
+    for i in range(len(lists)): # 
+        total = None
+        mean = None
+        if len(lists[i]) > 0: 
+            total = 0
+            for j in range(len(lists[i])): # 
+                total += lists[i][j]
+            mean = total/len(lists[i])
+        lists[i] = total, mean 
+    return lists
+```
+
+## Write a function -- solution
+
+```{python}
+#| echo: true
+#| eval: true
+def total_mean(lists):
+    for i in range(len(lists)): #must use for i in range(len(lists))
+        total = None
+        mean = None
+        if len(lists[i]) > 0: 
+            total = 0
+            for j in range(len(lists[i])): #can also use for n in lists[i]
+                total += lists[i][j]
+            mean = total/len(lists[i])
+        lists[i] = total, mean #need to use i to mutate lists
+    return lists
+    
+def main():
+  test_list = [[2, 4, 6, 8], [], [2, 3, 4]]
+  total_mean(test_list)
+  assert test_list == [(20, 5.0), (None, None), (9, 3.0)]
+  assert total_mean([[2, 4, 6, 8], [], [2, 3, 4]]) == [(20, 5.0), (None, None), (9, 3.0)]
+  
+main()
+```
+
+## Removing list elements in a `loop`
+
+`for i in range` when removing list items throws an ERROR. 
+
+```{python}
+#| echo: true
+#| eval: false
+numbers = [1, 2, 1, 4, 5]
+for i in range(len(numbers)):
+  numbers.pop(i)
+numbers
+```
+
+ERROR
+
+## Removing list elements in a `loop`
+
+Visualize the execution in [Python Tutor](https://pythontutor.com/).
+
+-   Option 1: `while` loop without adjusting `i`
+
+```{python}
+#| echo: true
+#| eval: true
+numbers = [1, 2, 1, 4, 5]
+i = 0
+while i < len(numbers):
+  numbers.pop(i)
+numbers
+```
+
+-  Option 2: `for` loop but go backwards
+
+
+```{python}
+#| echo: true
+#| eval: true
+numbers = [1, 2, 1, 4, 5]
+for i in range(len(numbers)-1, -1, -1):
+  numbers.pop(i)
+numbers
+```
+
+## Write a function
+
+1. Its name is `remove_names`
+1. It takes one argument: a list of strings
+1. It `mutates` and `returns` the argument list removing all strings that end in vowel
+
+Name as `delete_from_list.py`, submit to Gradescope.
+
+```{python}
+#| echo: true
+#| eval: false
+names = ["Beatrice", "ASA", "Philip", "Anna", "Peter"]
+remove_names(names)
+assert names == ["Philip", "Peter"]
+```
+
+## Write a function -- solution 1
+
+```{python}
+#| echo: true
+#| eval: true
+def remove_names(string_list):
+  i = 0
+  while i < len(string_list):
+    if string_list[i][-1].lower() in "aeiou":
+      string_list.pop(i)
+    else:
+      i += 1
+  return string_list
+      
+def main():
+  names = ["Beatrice", "ASA", "Philip", "Anna", "Peter"]
+  remove_names(names)
+  assert names == ["Philip", "Peter"]
+
+main()
+```
+
+## Write a function -- solution 2
+
+```{python}
+#| echo: true
+#| eval: true
+def remove_names(string_list):
+  for i in range(len(string_list)-1, -1, -1):
+    if string_list[i][-1].lower() in "aeiou":
+      string_list.pop(i)
+  return string_list
+      
+def main():
+  names = ["Beatrice", "ASA", "Philip", "Anna", "Peter"]
+  remove_names(names)
+  assert names == ["Philip", "Peter"]
+
+main()
+```
+
+## Removing elements from inner lists in 2D lists
+
+```{python}
+#| echo: true
+#| eval: true
+lists_of_numbers = [ [2, 3, 1, 2], [4, 5, 2, 1] ]
+for inner_list in lists_of_numbers:
+  for i in range(len(inner_list)-1, -1, -1):
+    inner_list.pop(i)
+    
+print(lists_of_numbers)
+```
+
+## Write a function
+
+1. Its name is `remove_odds`
+1. It takes a list of lists of integers as argument
+1. It **mutates** the inner list, removing odd numbers
 
 ```{python}
 #| eval: false
 #| echo: true
-course = "CSC 110"
-section = "section 3"
-assert retrieve_room(course_schedule, course, section) == "Gittings 129b"
+lists_of_numbers = [ [2, 3, 1, 2], [4, 5, 2, 1] ]
+remove_odds(lists_of_numbers)
+assert lists_of_numbers == [ [2, 2], [4, 2] ]
 ```
 
 ## Write a function -- solution
@@ -73,111 +230,83 @@ assert retrieve_room(course_schedule, course, section) == "Gittings 129b"
 ```{python}
 #| eval: true
 #| echo: true
-def retrieve_room(course_dict, course, section):
-  building, room =  course_dict[(course, section)]
-  return building + " " + room
+def remove_odds(lists):
+  for i in range(len(lists)):
+    for j in range(len(lists[i])-1, -1, -1):
+      if lists[i][j] % 2 != 0:
+        lists[i].pop(j)
+  return lists
 
 def main():
-  course_schedule = { ("CSC 110", "section 1") : ("Gittings", "129b"),
-                      ("CSC 110", "section 2") : ("Gittings", "129b"),
-                      ("CSC 110", "section 3") : ("Gittings", "129b"),
-                      ("CSC 120", "section 1") : ("Gittings", "129b"),
-                      ("CSC 144", "section 1") : ("Social Sciences", "100"),
-                      ("CSC 120", "section 2") : ("Gittings", "129b")}
-  course = "CSC 110"
-  section = "section 3"
-  assert retrieve_room(course_schedule, course, section) == "Gittings 129b"
+  test_list = [ [2, 3, 1, 2], [4, 5, 2, 1] ]
+  remove_odds(test_list)
+  assert test_list == [ [2, 2], [4, 2] ]
+  print(test_list) # [ [2, 2], [4, 2] ]
   
 main()
 ```
 
-## Dictionaries as values
+## Write a function -- questions
+
+line 2: can we use `for innerlist in lists`?
+
+line 3: can we use `for X in list`?
 
 ```{python}
 #| eval: true
 #| echo: true
-course_schedule = { "CSC 110": 
-                      {1: {"building": "Gittings", "room": "129b"},
-                       2: {"building": "Gittings", "room": "129b"},
-                       3: {"building": "Gittings", "room": "129b"} },
-                    "CSC 120":
-                       {1: {"building": "Gittings", "room": "129b"},
-                        2: {"building": "Gittings", "room": "129b"} },
-                    "CSC 144":
-                       {1: {"building": "Social Sciences", "room": "100"}}}
-                       
-course_schedule["CSC 110"][3]["building"]
+def remove_odds(lists):
+  for i in range(len(lists)): #
+    for j in range(len(lists[i])-1, -1, -1): #
+      if lists[i][j] % 2 != 0:
+        lists[i].pop(j)
+  return lists
 ```
 
--   How would you retrieve the building for CSC 110 section 3?
-
-# Review
-
-## Write functions side-by-side
-
-Write a function called `remove_first` that takes in a list of lists (2D list) and removes the first element of each sublist.
-
-Write a function called `remove_odds` that takes in a list of list (2D list) of numbers and removes all values that are odd.
-
-## Solutions
+## Write a function -- answers
 
 ```{python}
 #| eval: true
 #| echo: true
-def remove_first(list_of_lists):
-  for sublist in list_of_lists:
-    if len(sublist) > 0:
-      sublist.pop(0)
-  return list_of_lists
+def remove_odds(lists):
+  for inner_list in lists: # yes we can
+    for i in range(len(inner_list)-1, -1, -1): # no 
+      if inner_list[i] % 2 != 0:
+        inner_list.pop(i)
+  return lists
 
-def remove_odds(list_of_lists):
-  for sublist in list_of_lists:
-    for i in range(len(sublist)-1, -1, -1):
-      if sublist[i] % 2 == 1:
-        sublist.pop(i)
-  return list_of_lists
-
-if __name__ == "__main__":
-  original_list = [["banana", "apple"], [], ["pear"]]
-  remove_first(original_list)
-  assert original_list == [["apple"], [], []]
+def main():
+  test_list = [ [2, 3, 1, 2], [4, 5, 2, 1] ]
+  remove_odds(test_list)
+  assert test_list == [ [2, 2], [4, 2] ]
+  print(test_list) # [ [2, 2], [4, 2] ]
   
-  numbers = [[1, 1, 1], [0, 0], []]
-  remove_odds(numbers)
-  assert numbers == [[], [0, 0], []]
+main()
 ```
 
-## Write functions side-by-side
+## Determine the ouput 
 
-Write a function called `censor_consonants` that takes as argument a string and returns the string with the consonants replaced with `"*"`.
+data.txt
+```{html}
+harsh sitting spins
+daybed trees fox a b c
+```
 
-Write a function called `replace_consonants` that takes as argument a list of characters (strings of length one) and replaces the consonants with a `"*"`.
-
-## Solutions
-
+code.py
 ```{python}
-#| eval: true
+#| eval: false
 #| echo: true
-def censor_consonants(string):
-  new_string = ""
-  for char in string:
-    if char not in "aeiou":
-      new_string += "*"
-    else:
-      new_string += char
-  return new_string
-
-def replace_consonants(strings):
-  for i in range(len(strings)):
-    if strings[i] not in "aeiou":
-      strings[i] = "*"
-  return strings
-
-if __name__ == "__main__":
-  assert censor_consonants("abcd") == "a***"
+def write_result(input_filename, output_filename):
+  data = open(input_filename, 'r')
+  result = open(output_filename, 'w')
+  for line in data:
+    words = line.strip().split(' ')
+    for w in words:
+      if w[0] == w[-1]:
+        result.write(w + '\n')
+  data.close()
+  result.close()
   
-  letters = ["a", "b", "c", "d"]
-  replace_consonants(letters)
-  assert letters == ["a", "*", "*", "*"]
-
+if __name__ == '__main__':
+  write_result('data.txt', 'result.txt')
 ```

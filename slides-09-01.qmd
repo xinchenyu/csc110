@@ -1,273 +1,225 @@
 ---
-title: "files (slides)"
+title: "intro to dictionaries (slides)"
 format: revealjs
 slide-number: true
 df-print: kable
 ---
 
+# CSc 110 - dictionaries
 
 ## Announcements
 
--   Midterm 2 on March 26, next Wednesday
+* Last lab for short project 06 is Today -- no lab this week, we re-start lab sessions Tuesday Mar 18 
 
-    - modules 1 - 8
+
+
+## Data Structure
+
+-   **A data-structure is a way of arranging and organizing data in a computer program**
+
+-   Python has several useful data-structures built into the language
+
+    -   One is a **list** (already covered)
+
+    -   Another, **dictionary**
+
+
+## Mapping
+
+-   Many data structures allow data to be stored and retrieved using a concept called **mapping**
+
+-   **Mapping** is the process of associating one value with another (a **key** with a **value**)
+
+    -   Sometimes also referred to as Hashing or Associativity
     
-    - [study guide 2](https://xinchenyu.github.io/csc110-spring2025/practice-01.html)
 
-## Key Concepts
+## Mapping
 
--   iterating a string/list/dictionary (+ if statements)
+-   Lists map **keys** to **values** too!
 
-    - while loop, for loops (two ways, difference?)
-    
-    -   draw a loop table
+    -   Indices **of** the list are the **keys**
 
--   purpose of iterating, for example:
+    -   Elements **in** the list are the **values**
 
-    -   mutate (list/dictionary methods)
-    
-    -   aggregate (e.g., sum, factorial)
-    
-    -   get max or min
-    
-    -   concatenate strings (string methods)
+-   Keys (indices) are used to acess or modify the elements in the list
 
-# CSc 110 - files
+![](images/list_key_value.png)
 
-## Files and file systems
-
--   On (at least most of) our computers, there is a **file system** via which we can create, save, modify, and remove files
-
-    -   On Mac: can browse with Finder
-
-    -   On Windows: can browse with windows explorer
-
--   File systems are often hierarchical
-
-## Opening a file
-
--   To open a file in a python program:
-
-    **`info = open(file_name, mode)`**
-
--   `file_name`: the name of the file to open
-
-    -   It can also be a path
-
--   `mode`: the mode in which to open in
-
-    -   **'a'    'r'    'w'**
-
-## Absolute vs Relative path
-
-    
-- An **absolute path** describes the location from the root directory. 
-
-  -   */home/doc/example.txt*
-
-- A **relative** path describes the location of a file relative to the current (working) directory.
-
-  -   if `.py` and `example.txt` are in the same folder, the relative path is the filename itself - *example.txt*
-
-## Opening and closing a file
-
-info.txt
-
-```{html}
-The quick brown fox
-jumped over
-the lazy
-bear
-sitting by the tree
-```
-
-read_file.py
-
-```{python}
-#| eval: true
-#| echo: true
-info = open('info.txt', 'r')
-info.close()
-```
-
-## Reading a line
-
-Use `info` object and call `readline()`to read a line
-
-read_file.py
-
-```{python}
-#| eval: true
-#| echo: true
-info = open('info.txt', 'r')
-line = info.readline()
-info.close()
-
-print(line)
-assert line == "The quick brown fox\n"
-```
-
-## Reading three lines 
-
-```{python}
-#| eval: true
-#| echo: true
-info = open('info.txt', 'r')
-print(info.readline())
-print(info.readline())
-print(info.readline())
-info.close()
-```
-
-# Write a function
-
-Function name `read_first_line`: given a `filename` string, open file in read (`'r'`) mode, read one line, close file, return that line.
-
-Name your file `first_read.py` and submit to gradescope.
-
-## Reading a line example
-
-info.txt
-
-```{html}
-The quick brown fox
-jumped over
-the lazy
-bear
-sitting by the tree
-```
-
-first_read.py
-
-```{python}
-#| eval: true
-#| echo: true
-def read_first_line(filename):
-  info = open(filename, 'r')
-  line = info.readline()
-  info.close()
-  return line
-
-assert read_first_line('info.txt') == "The quick brown fox\n"
-```
-
-## Reading lines
-
--   **`file.readline()`**
-
-    -   reads one line from a file, returns a string 
-
--   **`file.readlines()`**
-
-    -   reads all of the lines, returns a list of strings
-
--   **`file.read()`**
-
-    -   returns one string
-
-## Iterating over a file
-
-Use `readlines()`:
-
-```{python}
-#| eval: true
-#| echo: true
-info = open('info.txt', 'r')
-for line in info.readlines():
-    print(line)
-info.close()
-```
-
-
-## Iterating over a file -- an easier way
-
-Here `info` is iterable, so we can use `for x in file` loop:
-
-```{python}
-#| eval: true
-#| echo: true
-info = open('info.txt', 'r')
-for line in info:
-    print(line)
-info.close()
-```
-
-## More string methods
-
-We worked with `.isnumeric()`, a string method to check if a string contains only digit characters
-
-Here are some other useful string methods:
-
--   `string.strip(chars)` -- removes any of the characters in chars from the beginning or end of string, returns a string
--   `string.split(chars)` -- splits string at the chars, returns a list
-
-## More string methods
-
-`.strip()` and `.split(" ")`
-```{python}
-#| eval: true
-#| echo: true
-info = open('info.txt', 'r')
-
-line = info.readline()
-print(line)
-
-line = line.strip("\n")
-print(line)
-
-words = line.split(" ")
-print(words)
-
-info.close()
-```
-
-## Write your code
-
-Use `.strip()` and `.split(" ")` to print a list: `['The', 'quick', 'brown', 'fox']`
+## Mapping and Lists
 
 ```{python}
 #| eval: false
 #| echo: true
-name = "The-quick-brown-fox$"
+numbers = [12, 49, -2, 26, 5, 17, -6]
+
+# Using the key 3 to lookup the associated value of 26
+# and then save the value into variable
+new = numbers[3]
+
+# Modifying the list so that the key 5 now maps to 77
+# instead of 17
+numbers[5] = 77
 ```
 
+## Dictionary
+- Like lists:
+  
+    -   Associates a set of keys to their corresponding values 
+    -   Each key has exactly 1 associated value 
+    
+- Unlike lists:
 
-## More string methods
+    -   The keys can be types other than ints: strings 
 
-Use only `.strip()`:
+## Dictionary
+
+Example (mapping strings to integers)
+
 ```{python}
 #| eval: true
 #| echo: true
-name = "The-quick-brown-fox$"
+singers = { "Taylor Swift": 1989,
+            "JVKE":  2001,
+            "Bruno Mars":  1983}
+        
+# Using the key "JVKE" 
+# to lookup the number 2001
+singers["JVKE"]
 
-print(name.strip('$'))
+# Modifying the value associated with "Bruno Mars" 
+singers["Bruno Mars"] = 1985
+
+# add a new key and value pair
+singers["Doja Cat"] = 1995
+
+print(singers)
 ```
 
-Use `.strip()` and `.split(" ")`:
+## Evaluate the expressions
+
+```{python}
+#| eval: false
+#| echo: true
+word_count = {"and": 324, "why": 134, "cannot": 76, "sanded": 13}
+word_count["cannot"] = 90
+word_count["and"] = 110
+word_count["foot"] = "feet"
+word_count["and"] += 10
+
+# what will these evaluate to?
+word_count["and"] 
+word_count["cannot"]
+word_count["foot"]
+```
+
+## Evaluate the expressions
+
 ```{python}
 #| eval: true
 #| echo: true
-name = "The-quick-brown-fox$"
+word_count = {"and": 324, "why": 134, "cannot": 76, "sanded": 13}
+word_count["cannot"] = 90
+word_count["and"] = 110
+word_count["foot"] = "feet"
+word_count["and"] += 10
 
-print(name.strip('$').split('-'))
+# what will these evaluate to?
+word_count["and"]
 ```
+
+```{python}
+#| eval: true
+#| echo: true
+word_count["cannot"]
+```
+
+```{python}
+#| eval: true
+#| echo: true
+word_count["foot"]
+```
+
+
+## Attendance
+Attendance Evaluate the expression on Gradescope.
+
+
+## Review: list methods
+
+-   `.append(value)`
+-   `.remove(value)`
+-   `.pop(index)`
+
+## Dictionary operations
+
+Adds a new key/value pair:
+```{python}
+#| eval: false
+#| echo: true
+scores = {'A': 10, 'B': 25, 'C': 27, 'D': 10, 'E': 5}
+scores['A+'] = 7  # key not in the original dictionary   
+``` 
+
+Changes value associated with a key:
+```{python}
+#| eval: false
+#| echo: true
+scores['B'] = 20    # key in the dictionary
+``` 
+
+Retrieves a value:
+```{python}
+#| eval: false
+#| echo: true
+scores['C']    
+``` 
+
+Removes a key/value pair:
+```{python}
+#| eval: false
+#| echo: true
+scores.pop('E')      
+```
+
+## The `in` operator
+
+With strings:
+
+```{python}
+#| eval: true
+#| echo: true
+"a" in "aeiou"
+```
+
+With lists:
+
+```{python}
+#| eval: true
+#| echo: true
+1 in [1, 2, 3, 4, 5]
+```
+
+Check if an item is a dictionary key:
+
+```{python}
+#| eval: true
+#| echo: true
+word_count = {"and": 324, "why": 134, "cannot": 76, "Sanded": 13}
+"why" in word_count
+```
+
 
 ## Write a function
 
--   It opens the file in read mode.
+It returns a `dictionary` with the count of every vowel in the `string`. 
 
--   It iterates over the lines, stripping the line breaks and splitting each line by space.
-
--   It returns a list of lists, where each inner-list is a line containing all the words in that line
-
-Test case ([download text file](data/info.txt)):
+Use `for` loop.
 
 ```{python}
 #| eval: false
 #| echo: true
-assert lines_and_words("info.txt") == [ ['The', 'quick', 'brown', 'fox'], 
-                                        ['jumped', 'over'], ['the', 'lazy'],
-                                        ['bear'], ['sitting', 'by', 'the', 'tree'] ]
+assert count_vowels("") == {"a": 0, "e": 0, "i": 0, "o": 0, "u": 0}
+assert count_vowels("pineapple") == {"a": 1, "e": 2, "i": 1, "o": 0, "u": 0}
 ```
 
 ## Write a function -- solution
@@ -275,74 +227,58 @@ assert lines_and_words("info.txt") == [ ['The', 'quick', 'brown', 'fox'],
 ```{python}
 #| eval: true
 #| echo: true
-def lines_and_words(file_name):
-  f = open(file_name, "r")
-  all_words = []
-  for line in f:
-    all_words.append(line.strip("\n").split(" "))
-  f.close()
-  return all_words
-  
-  
-def main():
-  assert lines_and_words("info.txt") == [ ['The', 'quick', 'brown', 'fox'], 
-                                          ['jumped', 'over'], ['the', 'lazy'],
-                                          ['bear'], ['sitting', 'by', 'the', 'tree'] ]
-                                     
-main()
-```
-
-## Write a function
-
-It takes a string `file_name` as argument and returns a dictionary with word counts.
-
-Use `str.lower()` to convert a string to lowercase. 
-
-Test case:
-
-```{python}
-#| eval: false
-#| echo: true
-assert count_words("info.txt") == {"the": 3, "quick": 1, "brown": 1,
-                                   "fox": 1 , "jumped": 1, "over": 1, 
-                                   "lazy": 1, "bear": 1, "sitting": 1,
-                                   "by": 1, "tree": 1}
-```
-
-## Write a function -- solution
-
-```{python}
-#| eval: true
-#| echo: true
-def count_words(file_name):
-  f = open(file_name, "r")
-  counts = {}
-  for line in f:
-    words = line.strip("\n").split(" ")
-    for w in words:
-      lower_case_w = w.lower()
-      if lower_case_w not in counts:
-        counts[lower_case_w] = 1
-      else:
-        counts[lower_case_w] += 1
+def count_vowels(string):
+  counts = {"a": 0, "e": 0, "i": 0, "o": 0, "u": 0}
+  for i in range(len(string)):
+    char = string[i]
+    if char in counts:
+      counts[char] += 1
   return counts
 
 def main():
-  assert count_words("info.txt") == {"the": 3, "quick": 1, "brown": 1,
-                                     "fox": 1 , "jumped": 1, "over": 1, 
-                                     "lazy": 1, "bear": 1, "sitting": 1,
-                                     "by": 1, "tree": 1}
-                                 
+  assert count_vowels("") == {"a": 0, "e": 0, "i": 0, "o": 0, "u": 0}
+  assert count_vowels("pineapple") == {"a": 1, "e": 2, "i": 1, "o": 0, "u": 0}
+  
 main()
 ```
 
-## Quiz 08
 
-<center>
-<div class="cleanslate w24tz-current-time w24tz-large" style="display: inline-block !important; visibility: hidden !important; min-width:300px !important; min-height:145px !important;"><a href="//24timezones.com/Tucson/time" style="text-decoration: none" class="clock24" id="tz24-1695057604-c1393-eyJob3VydHlwZSI6IjEyIiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIwIiwiY29udGFpbmVyX2lkIjoiY2xvY2tfYmxvY2tfY2I2NTA4ODZjNDg0OWVlIiwidHlwZSI6ImRiIiwibGFuZyI6ImVuIn0=" title="World Time :: Tucson" target="_blank" rel="nofollow"></a>current time<div id="clock_block_cb650886c4849ee"></div></div>
-<script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
-</center>
+## Write a function
 
-You have 10 minutes to complete the quiz.
+It returns the `dictionary` with the count of every characters in the `string`.
 
-No need to write `main()` function.
+```{python}
+#| eval: false
+#| echo: true
+assert count_chars("") == {}
+assert count_chars("banana") == {"b": 1, "a": 3, "n": 2}
+```
+
+
+## Write a function -- solution
+
+```{python}
+#| eval: true
+#| echo: true
+def count_chars(string):
+  counts = {}
+  for i in range(len(string)):
+    char = string[i]
+    if char in counts:
+      counts[char] += 1
+    else:
+      counts[char] = 1
+      
+  return counts
+
+def main():
+  assert count_chars("") == {}
+  assert count_chars("banana") == {"b": 1, "a": 3, "n": 2}
+  print("pass all test cases")
+
+main()
+```
+
+
+
+

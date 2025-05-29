@@ -1,112 +1,273 @@
 ---
-title: "returning tuples (slides)"
+title: "files (slides)"
 format: revealjs
 slide-number: true
 df-print: kable
 ---
 
-# CSc 110 - returning tuples
 
+## Announcements
 
-## What are tuples?
+-   Midterm 2 on March 26, next Wednesday
 
--   **immutable** lists
+    - modules 1 - 8
+    
+    - [study guide 2](https://xinchenyu.github.io/csc110-spring2025/practice-01.html)
 
--   a sequence of zero or more values (just like lists)
+## Key Concepts
 
--   addressable by index (just like lists)
+-   iterating a string/list/dictionary (+ if statements)
 
--   iterable (just like lists)
+    - while loop, for loops (two ways, difference?)
+    
+    -   draw a loop table
 
-## tuple syntax
+-   purpose of iterating, for example:
 
-Use `()` to create a new tuple:
+    -   mutate (list/dictionary methods)
+    
+    -   aggregate (e.g., sum, factorial)
+    
+    -   get max or min
+    
+    -   concatenate strings (string methods)
+
+# CSc 110 - files
+
+## Files and file systems
+
+-   On (at least most of) our computers, there is a **file system** via which we can create, save, modify, and remove files
+
+    -   On Mac: can browse with Finder
+
+    -   On Windows: can browse with windows explorer
+
+-   File systems are often hierarchical
+
+## Opening a file
+
+-   To open a file in a python program:
+
+    **`info = open(file_name, mode)`**
+
+-   `file_name`: the name of the file to open
+
+    -   It can also be a path
+
+-   `mode`: the mode in which to open in
+
+    -   **'a'    'r'    'w'**
+
+## Absolute vs Relative path
+
+    
+- An **absolute path** describes the location from the root directory. 
+
+  -   */home/doc/example.txt*
+
+- A **relative** path describes the location of a file relative to the current (working) directory.
+
+  -   if `.py` and `example.txt` are in the same folder, the relative path is the filename itself - *example.txt*
+
+## Opening and closing a file
+
+info.txt
+
+```{html}
+The quick brown fox
+jumped over
+the lazy
+bear
+sitting by the tree
+```
+
+read_file.py
 
 ```{python}
 #| eval: true
 #| echo: true
-my_tuple = (2, 4, 6)
-my_tuple[0]
+info = open('info.txt', 'r')
+info.close()
 ```
+
+## Reading a line
+
+Use `info` object and call `readline()`to read a line
+
+read_file.py
 
 ```{python}
 #| eval: true
 #| echo: true
-my_tuple[2]
+info = open('info.txt', 'r')
+line = info.readline()
+info.close()
+
+print(line)
+assert line == "The quick brown fox\n"
 ```
 
-Empty tuple:
+## Reading three lines 
 
 ```{python}
 #| eval: true
 #| echo: true
-empty = ()
-empty
+info = open('info.txt', 'r')
+print(info.readline())
+print(info.readline())
+print(info.readline())
+info.close()
 ```
 
-## `tuples` are immutable
+# Write a function
 
-No assignment is allowed
+Function name `read_first_line`: given a `filename` string, open file in read (`'r'`) mode, read one line, close file, return that line.
+
+Name your file `first_read.py` and submit to gradescope.
+
+## Reading a line example
+
+info.txt
+
+```{html}
+The quick brown fox
+jumped over
+the lazy
+bear
+sitting by the tree
+```
+
+first_read.py
+
+```{python}
+#| eval: true
+#| echo: true
+def read_first_line(filename):
+  info = open(filename, 'r')
+  line = info.readline()
+  info.close()
+  return line
+
+assert read_first_line('info.txt') == "The quick brown fox\n"
+```
+
+## Reading lines
+
+-   **`file.readline()`**
+
+    -   reads one line from a file, returns a string 
+
+-   **`file.readlines()`**
+
+    -   reads all of the lines, returns a list of strings
+
+-   **`file.read()`**
+
+    -   returns one string
+
+## Iterating over a file
+
+Use `readlines()`:
+
+```{python}
+#| eval: true
+#| echo: true
+info = open('info.txt', 'r')
+for line in info.readlines():
+    print(line)
+info.close()
+```
+
+
+## Iterating over a file -- an easier way
+
+Here `info` is iterable, so we can use `for x in file` loop:
+
+```{python}
+#| eval: true
+#| echo: true
+info = open('info.txt', 'r')
+for line in info:
+    print(line)
+info.close()
+```
+
+## More string methods
+
+We worked with `.isnumeric()`, a string method to check if a string contains only digit characters
+
+Here are some other useful string methods:
+
+-   `string.strip(chars)` -- removes any of the characters in chars from the beginning or end of string, returns a string
+-   `string.split(chars)` -- splits string at the chars, returns a list
+
+## More string methods
+
+`.strip()` and `.split(" ")`
+```{python}
+#| eval: true
+#| echo: true
+info = open('info.txt', 'r')
+
+line = info.readline()
+print(line)
+
+line = line.strip("\n")
+print(line)
+
+words = line.split(" ")
+print(words)
+
+info.close()
+```
+
+## Write your code
+
+Use `.strip()` and `.split(" ")` to print a list: `['The', 'quick', 'brown', 'fox']`
 
 ```{python}
 #| eval: false
 #| echo: true
-my_tuple = (2, 4, 6)
-my_tuple[1] = 99 # will fail and cause an exception
+name = "The-quick-brown-fox$"
 ```
 
-## Why use tuples?
 
-* They are a little more efficient than lists
-* They can be used as dictionary keys (**important**)
-* When functions return multiple values, it returns a tuple
+## More string methods
 
-## Why use tuples?
-
-Tuples can be used as dictionary keys (lists cannot).
+Use only `.strip()`:
 ```{python}
 #| eval: true
 #| echo: true
-coordinates = {
-    (40.7128, -74.0060): "New York",
-    (34.0522, -118.2437): "Los Angeles",
-    (51.5074, -0.1278): "London"
-}
+name = "The-quick-brown-fox$"
 
-coordinates
+print(name.strip('$'))
 ```
 
-## Returning multiple values 
-
+Use `.strip()` and `.split(" ")`:
 ```{python}
 #| eval: true
 #| echo: true
-def low_high(x, y):
-  if x < y:
-    return x, y
-  else:
-    return y, x
-  
-def main():
-  print(low_high(4, 2))
-  low, high = low_high(4, 2)
-  assert low == 2
-  assert high == 4
-  
-main()
+name = "The-quick-brown-fox$"
+
+print(name.strip('$').split('-'))
 ```
 
-## Write a function 
+## Write a function
 
-It calculates and returns the total and average of all people's numbers.
+-   It opens the file in read mode.
+
+-   It iterates over the lines, stripping the line breaks and splitting each line by space.
+
+-   It returns a list of lists, where each inner-list is a line containing all the words in that line
+
+Test case ([download text file](data/info.txt)):
 
 ```{python}
 #| eval: false
 #| echo: true
-grades = ['Eric', 90, 'Sam', 87, 'Josh', 83, 'Susan', 100]
-total, mean = descr_stats(grades)
-assert total == 360
-assert mean == 90.0
+assert lines_and_words("info.txt") == [ ['The', 'quick', 'brown', 'fox'], 
+                                        ['jumped', 'over'], ['the', 'lazy'],
+                                        ['bear'], ['sitting', 'by', 'the', 'tree'] ]
 ```
 
 ## Write a function -- solution
@@ -114,89 +275,38 @@ assert mean == 90.0
 ```{python}
 #| eval: true
 #| echo: true
-def descr_stats(numbers):
-  total = 0
-  count = 0
-  for i in range(1, len(numbers), 2):
-    total += numbers[i]
-    count += 1
-  return total, total/count
-
+def lines_and_words(file_name):
+  f = open(file_name, "r")
+  all_words = []
+  for line in f:
+    all_words.append(line.strip("\n").split(" "))
+  f.close()
+  return all_words
+  
+  
 def main():
-  grades = ['Eric', 90, 'Sam', 87, 'Josh', 83, 'Susan', 100]
-  print(descr_stats(grades))
-  total, mean = descr_stats(grades)
-  assert total == 360
-  assert mean == 90.0
-
+  assert lines_and_words("info.txt") == [ ['The', 'quick', 'brown', 'fox'], 
+                                          ['jumped', 'over'], ['the', 'lazy'],
+                                          ['bear'], ['sitting', 'by', 'the', 'tree'] ]
+                                     
 main()
 ```
 
 ## Write a function
 
-It takes a `dictionary` as argument and returns the sum and the multiplication of the values in the dictionary
+It takes a string `file_name` as argument and returns a dictionary with word counts.
+
+Use `str.lower()` to convert a string to lowercase. 
+
+Test case:
 
 ```{python}
 #| eval: false
 #| echo: true
-test_dict = {"a": 2, "b": 3, "c": 5}
-total, mult = sum_and_multiplication(test_dict)
-assert total == 10
-assert mult == 30
-```
-
-## Write a function -- solution 1
-
-```{python}
-#| eval: true
-#| echo: true
-def sum_and_multiplication(dictionary):
-  total = 0
-  multiplication = 1
-  for k in dictionary:
-    total += dictionary[k]
-    multiplication *= dictionary[k]
-  return total, multiplication
-
-def main():
-  test_dict = {"a": 2, "b": 3, "c": 5}
-  total, mult = sum_and_multiplication(test_dict)
-  assert total == 10
-  assert mult == 30
-  
-main()
-```
-
-## Write a function -- solution 2
-
-```{python}
-#| eval: true
-#| echo: true
-def sum_and_multiplication(dictionary):
-  total = 0
-  multiplication = 1
-  for v in dictionary.values():
-    total += v
-    multiplication *= v
-  return total, multiplication
-
-def main():
-  test_dict = {"a": 2, "b": 3, "c": 5}
-  total, mult = sum_and_multiplication(test_dict)
-  assert total == 10
-  assert mult == 30
-  
-main()
-```
-
-## Write a function
-
-It takes one list of `integers` as argument and returns two lists: one with all the odd numbers and the other with all the even numbers.
-
-```{python}
-#| eval: false
-#| echo: true
-assert odds_and_evens([2,6,1]) == ([1], [2,6])
+assert count_words("info.txt") == {"the": 3, "quick": 1, "brown": 1,
+                                   "fox": 1 , "jumped": 1, "over": 1, 
+                                   "lazy": 1, "bear": 1, "sitting": 1,
+                                   "by": 1, "tree": 1}
 ```
 
 ## Write a function -- solution
@@ -204,19 +314,35 @@ assert odds_and_evens([2,6,1]) == ([1], [2,6])
 ```{python}
 #| eval: true
 #| echo: true
-def odds_and_evens(integers):
-  odds = []
-  evens = []
-  for n in integers:
-    if n % 2 == 0:
-      evens.append(n)
-    else:
-      odds.append(n)
-  return odds, evens
-      
+def count_words(file_name):
+  f = open(file_name, "r")
+  counts = {}
+  for line in f:
+    words = line.strip("\n").split(" ")
+    for w in words:
+      lower_case_w = w.lower()
+      if lower_case_w not in counts:
+        counts[lower_case_w] = 1
+      else:
+        counts[lower_case_w] += 1
+  return counts
+
 def main():
-  assert odds_and_evens([2,6,1]) == ([1], [2,6])
-  
+  assert count_words("info.txt") == {"the": 3, "quick": 1, "brown": 1,
+                                     "fox": 1 , "jumped": 1, "over": 1, 
+                                     "lazy": 1, "bear": 1, "sitting": 1,
+                                     "by": 1, "tree": 1}
+                                 
 main()
 ```
 
+## Quiz 08
+
+<center>
+<div class="cleanslate w24tz-current-time w24tz-large" style="display: inline-block !important; visibility: hidden !important; min-width:300px !important; min-height:145px !important;"><a href="//24timezones.com/Tucson/time" style="text-decoration: none" class="clock24" id="tz24-1695057604-c1393-eyJob3VydHlwZSI6IjEyIiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIwIiwiY29udGFpbmVyX2lkIjoiY2xvY2tfYmxvY2tfY2I2NTA4ODZjNDg0OWVlIiwidHlwZSI6ImRiIiwibGFuZyI6ImVuIn0=" title="World Time :: Tucson" target="_blank" rel="nofollow"></a>current time<div id="clock_block_cb650886c4849ee"></div></div>
+<script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
+</center>
+
+You have 10 minutes to complete the quiz.
+
+No need to write `main()` function.

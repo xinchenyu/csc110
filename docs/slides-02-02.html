@@ -9,7 +9,7 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.39">
 
-  <title>CSc 110 Computer Programming I – decomposition (slides)</title>
+  <title>CSc 110 Computer Programming I – functions (slides)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -191,563 +191,269 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">decomposition (slides)</h1>
+  <h1 class="title">functions (slides)</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
 <section>
-<section id="csc-110---decomposition" class="title-slide slide level1 center">
-<h1>CSc 110 - decomposition</h1>
+<section id="csc-110---functions" class="title-slide slide level1 center">
+<h1>CSc 110 - Functions</h1>
 
 </section>
-<section id="program-decomposition" class="slide level2">
-<h2>Program decomposition</h2>
-<p>Program decomposition refers to the process of breaking down a complex program into smaller, more manageable, and understandable parts or components.</p>
-<p>It avoids unnecessary common code and improves the structural quality of code.</p>
-</section>
-<section id="print-a-classic-guitar" class="slide level2">
-<h2>Print a classic guitar</h2>
-<div id="c9249a72" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="bu">print</span>(<span class="st">"      ___"</span>)</span>
-<span id="cb1-2"><a></a><span class="bu">print</span>(<span class="st">"    o|* *|o"</span>)</span>
-<span id="cb1-3"><a></a><span class="bu">print</span>(<span class="st">"    o|* *|o"</span>)</span>
-<span id="cb1-4"><a></a><span class="bu">print</span>(<span class="st">"    o|* *|o"</span>)</span>
-<span id="cb1-5"><a></a><span class="bu">print</span>(<span class="st">"     \===/"</span>)</span>
-<span id="cb1-6"><a></a><span class="bu">print</span>(<span class="st">"      |||"</span>)</span>
-<span id="cb1-7"><a></a><span class="bu">print</span>(<span class="st">"      |||"</span>)</span>
-<span id="cb1-8"><a></a><span class="bu">print</span>(<span class="st">"   ___|||___"</span>)</span>
-<span id="cb1-9"><a></a><span class="bu">print</span>(<span class="st">"  /   |||   \ "</span>)</span>
-<span id="cb1-10"><a></a><span class="bu">print</span>(<span class="st">" /    |||    \ "</span>)</span>
-<span id="cb1-11"><a></a><span class="bu">print</span>(<span class="st">"|     |||     |"</span>)</span>
-<span id="cb1-12"><a></a><span class="bu">print</span>(<span class="st">" \   (|||)   /"</span>)</span>
-<span id="cb1-13"><a></a><span class="bu">print</span>(<span class="st">"  |   |||   |"</span>)</span>
-<span id="cb1-14"><a></a><span class="bu">print</span>(<span class="st">"  /   |||   \ "</span>)</span>
-<span id="cb1-15"><a></a><span class="bu">print</span>(<span class="st">" /    |||    \ "</span>)</span>
-<span id="cb1-16"><a></a><span class="bu">print</span>(<span class="st">"/     |||     \ "</span>)</span>
-<span id="cb1-17"><a></a><span class="bu">print</span>(<span class="st">"|    [===]    |"</span>)</span>
-<span id="cb1-18"><a></a><span class="bu">print</span>(<span class="st">" \           /"</span>)</span>
-<span id="cb1-19"><a></a><span class="bu">print</span>(<span class="st">"  '.       .'"</span>)</span>
-<span id="cb1-20"><a></a><span class="bu">print</span>(<span class="st">"   '-------'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="print-a-retro-head-guitar" class="slide level2">
-<h2>Print a retro head guitar</h2>
-<div id="54a7ab5e" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="bu">print</span>(<span class="st">"     ._-_."</span>)</span>
-<span id="cb2-2"><a></a><span class="bu">print</span>(<span class="st">"    +|\G/|+"</span>)</span>
-<span id="cb2-3"><a></a><span class="bu">print</span>(<span class="st">"    +|\./|+"</span>)</span>
-<span id="cb2-4"><a></a><span class="bu">print</span>(<span class="st">"    +|\./|+"</span>)</span>
-<span id="cb2-5"><a></a><span class="bu">print</span>(<span class="st">"     \===/"</span>)</span>
-<span id="cb2-6"><a></a><span class="bu">print</span>(<span class="st">"      |||"</span>)</span>
-<span id="cb2-7"><a></a><span class="bu">print</span>(<span class="st">"      |||"</span>)</span>
-<span id="cb2-8"><a></a><span class="bu">print</span>(<span class="st">"   ___|||___"</span>)</span>
-<span id="cb2-9"><a></a><span class="bu">print</span>(<span class="st">"  /   |||   \ "</span>)</span>
-<span id="cb2-10"><a></a><span class="bu">print</span>(<span class="st">" /    |||    \ "</span>)</span>
-<span id="cb2-11"><a></a><span class="bu">print</span>(<span class="st">"|     |||     |"</span>)</span>
-<span id="cb2-12"><a></a><span class="bu">print</span>(<span class="st">" \   (|||)   /"</span>)</span>
-<span id="cb2-13"><a></a><span class="bu">print</span>(<span class="st">"  |   |||   |"</span>)</span>
-<span id="cb2-14"><a></a><span class="bu">print</span>(<span class="st">"  /   |||   \ "</span>)</span>
-<span id="cb2-15"><a></a><span class="bu">print</span>(<span class="st">" /    |||    \ "</span>)</span>
-<span id="cb2-16"><a></a><span class="bu">print</span>(<span class="st">"/     |||     \ "</span>)</span>
-<span id="cb2-17"><a></a><span class="bu">print</span>(<span class="st">"|    [===]    |"</span>)</span>
-<span id="cb2-18"><a></a><span class="bu">print</span>(<span class="st">" \           /"</span>)</span>
-<span id="cb2-19"><a></a><span class="bu">print</span>(<span class="st">"  '.       .'"</span>)</span>
-<span id="cb2-20"><a></a><span class="bu">print</span>(<span class="st">"   '-------'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="print-a-retro-head-long-neck-guitar" class="slide level2">
-<h2>Print a retro head long neck guitar</h2>
-<div id="86f23c34" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="bu">print</span>(<span class="st">"     ._-_."</span>)</span>
-<span id="cb3-2"><a></a><span class="bu">print</span>(<span class="st">"    +|\G/|+"</span>)</span>
-<span id="cb3-3"><a></a><span class="bu">print</span>(<span class="st">"    +|\./|+"</span>)</span>
-<span id="cb3-4"><a></a><span class="bu">print</span>(<span class="st">"    +|\./|+"</span>)</span>
-<span id="cb3-5"><a></a><span class="bu">print</span>(<span class="st">"     \===/"</span>)</span>
-<span id="cb3-6"><a></a><span class="bu">print</span>(<span class="st">"      |||"</span>)</span>
-<span id="cb3-7"><a></a><span class="bu">print</span>(<span class="st">"      |||"</span>)</span>
-<span id="cb3-8"><a></a><span class="bu">print</span>(<span class="st">"      |||"</span>)</span>
-<span id="cb3-9"><a></a><span class="bu">print</span>(<span class="st">"      |||"</span>)</span>
-<span id="cb3-10"><a></a><span class="bu">print</span>(<span class="st">"   ___|||___"</span>)</span>
-<span id="cb3-11"><a></a><span class="bu">print</span>(<span class="st">"  /   |||   \ "</span>)</span>
-<span id="cb3-12"><a></a><span class="bu">print</span>(<span class="st">" /    |||    \ "</span>)</span>
-<span id="cb3-13"><a></a><span class="bu">print</span>(<span class="st">"|     |||     |"</span>)</span>
-<span id="cb3-14"><a></a><span class="bu">print</span>(<span class="st">" \   (|||)   /"</span>)</span>
-<span id="cb3-15"><a></a><span class="bu">print</span>(<span class="st">"  |   |||   |"</span>)</span>
-<span id="cb3-16"><a></a><span class="bu">print</span>(<span class="st">"  /   |||   \ "</span>)</span>
-<span id="cb3-17"><a></a><span class="bu">print</span>(<span class="st">" /    |||    \ "</span>)</span>
-<span id="cb3-18"><a></a><span class="bu">print</span>(<span class="st">"/     |||     \ "</span>)</span>
-<span id="cb3-19"><a></a><span class="bu">print</span>(<span class="st">"|    [===]    |"</span>)</span>
-<span id="cb3-20"><a></a><span class="bu">print</span>(<span class="st">" \           /"</span>)</span>
-<span id="cb3-21"><a></a><span class="bu">print</span>(<span class="st">"  '.       .'"</span>)</span>
-<span id="cb3-22"><a></a><span class="bu">print</span>(<span class="st">"   '-------'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="class-activity-one" class="slide level2">
-<h2>Class activity one</h2>
-<p>Compare the three types of guitar, write your asnwers:</p>
+<section id="functions" class="slide level2">
+<h2>Functions</h2>
 <ul>
-<li><p>which parts of code are the same?</p></li>
-<li><p>which parts of code are different?</p></li>
+<li>Functions are named operations that are available to do tasks</li>
+<li>Some functions are <em>built-in</em> functions that Python provides</li>
+<li>Programmers can also define their own functions</li>
+<li>Functions are <strong>called</strong> (or <strong>invoked</strong>)</li>
 </ul>
 </section>
-<section id="class-activity-one-answers" class="slide level2">
-<h2>Class activity one – answers</h2>
-<p>Classic guitar vs.&nbsp;Retro head guitar:</p>
-<ul>
-<li><p>which parts of code are the same?</p>
-<ul>
-<li><p>the neck</p></li>
-<li><p>the body</p></li>
-</ul></li>
-<li><p>which parts of code are different?</p>
-<ul>
-<li>the head: line 1-4</li>
-</ul></li>
-</ul>
-</section>
-<section id="class-activity-one-answers-1" class="slide level2">
-<h2>Class activity one – answers</h2>
-<p>Retro head guitar vs.&nbsp;Retro head long neck guitar:</p>
-<ul>
-<li><p>which parts of code are the same?</p>
-<ul>
-<li><p>the head</p></li>
-<li><p>the body</p></li>
-</ul></li>
-<li><p>which parts of code are different?</p>
-<ul>
-<li>the neck</li>
-</ul></li>
-</ul>
-</section>
-<section id="decomposition" class="slide level2">
-<h2>Decomposition</h2>
-<div id="31e58985" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="kw">def</span> print_classic_guitar():</span>
-<span id="cb4-2"><a></a>    print_head()</span>
-<span id="cb4-3"><a></a>    print_neck()</span>
-<span id="cb4-4"><a></a>    print_body()</span>
-<span id="cb4-5"><a></a></span>
-<span id="cb4-6"><a></a><span class="kw">def</span> print_retro_guitar():</span>
-<span id="cb4-7"><a></a>    print_retro_head()</span>
-<span id="cb4-8"><a></a>    print_neck()</span>
-<span id="cb4-9"><a></a>    print_body()</span>
-<span id="cb4-10"><a></a>    </span>
-<span id="cb4-11"><a></a><span class="kw">def</span> print_long_guitar():</span>
-<span id="cb4-12"><a></a>    print_head()</span>
-<span id="cb4-13"><a></a>    print_neck()</span>
-<span id="cb4-14"><a></a>    print_neck()</span>
-<span id="cb4-15"><a></a>    print_body()</span>
-<span id="cb4-16"><a></a></span>
-<span id="cb4-17"><a></a><span class="kw">def</span> main():</span>
-<span id="cb4-18"><a></a>    print_classic_guitar() <span class="co"># print classic guitar</span></span>
-<span id="cb4-19"><a></a>    print_retro_guitar() <span class="co"># print retro head guitar</span></span>
-<span id="cb4-20"><a></a>    print_long_guitar() <span class="co"># print long neck guitar</span></span>
-<span id="cb4-21"><a></a></span>
-<span id="cb4-22"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="function-definitions" class="slide level2">
+<h2>Function definitions</h2>
+<div id="c352cdc3" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="kw">def</span> two():</span>
+<span id="cb1-2"><a></a>  <span class="cf">return</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="class-activity-two" class="slide level2">
-<h2>Class activity two</h2>
-<p>Read the code for classic guitar, write your asnwers:</p>
+<p>This function definition has many parts:</p>
 <ul>
-<li><p>which lines of code are the same?</p>
-<ul>
-<li><p>in the head:</p></li>
-<li><p>in the neck:</p></li>
-<li><p>in the body:</p></li>
-</ul></li>
+<li><code>two</code> is the name of the function</li>
+<li><code>()</code> is the <strong>parameter</strong> list (Here, it is empty)</li>
+<li>the body (or content) of the function is indented</li>
+<li><code>return 2</code> is a statement that causes the function to cease and produce the value 2</li>
 </ul>
 </section>
-<section id="print-a-classic-guitar-1" class="slide level2">
-<h2>Print a classic guitar</h2>
-<div id="c4fe89d9" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="bu">print</span>(<span class="st">"      ___"</span>)</span>
-<span id="cb5-2"><a></a><span class="bu">print</span>(<span class="st">"    o|* *|o"</span>)</span>
-<span id="cb5-3"><a></a><span class="bu">print</span>(<span class="st">"    o|* *|o"</span>)</span>
-<span id="cb5-4"><a></a><span class="bu">print</span>(<span class="st">"    o|* *|o"</span>)</span>
-<span id="cb5-5"><a></a><span class="bu">print</span>(<span class="st">"     \===/"</span>)</span>
-<span id="cb5-6"><a></a><span class="bu">print</span>(<span class="st">"      |||"</span>)</span>
-<span id="cb5-7"><a></a><span class="bu">print</span>(<span class="st">"      |||"</span>)</span>
-<span id="cb5-8"><a></a><span class="bu">print</span>(<span class="st">"   ___|||___"</span>)</span>
-<span id="cb5-9"><a></a><span class="bu">print</span>(<span class="st">"  /   |||   \ "</span>)</span>
-<span id="cb5-10"><a></a><span class="bu">print</span>(<span class="st">" /    |||    \ "</span>)</span>
-<span id="cb5-11"><a></a><span class="bu">print</span>(<span class="st">"|     |||     |"</span>)</span>
-<span id="cb5-12"><a></a><span class="bu">print</span>(<span class="st">" \   (|||)   /"</span>)</span>
-<span id="cb5-13"><a></a><span class="bu">print</span>(<span class="st">"  |   |||   |"</span>)</span>
-<span id="cb5-14"><a></a><span class="bu">print</span>(<span class="st">"  /   |||   \ "</span>)</span>
-<span id="cb5-15"><a></a><span class="bu">print</span>(<span class="st">" /    |||    \ "</span>)</span>
-<span id="cb5-16"><a></a><span class="bu">print</span>(<span class="st">"/     |||     \ "</span>)</span>
-<span id="cb5-17"><a></a><span class="bu">print</span>(<span class="st">"|    [===]    |"</span>)</span>
-<span id="cb5-18"><a></a><span class="bu">print</span>(<span class="st">" \           /"</span>)</span>
-<span id="cb5-19"><a></a><span class="bu">print</span>(<span class="st">"  '.       .'"</span>)</span>
-<span id="cb5-20"><a></a><span class="bu">print</span>(<span class="st">"   '-------'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="example-of-a-simple-function" class="slide level2">
+<h2>Example of a simple function</h2>
+<div id="3fc3eee3" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="kw">def</span> add_one(n):</span>
+<span id="cb2-2"><a></a>  <span class="cf">return</span> n <span class="op">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="class-activity-two-answers" class="slide level2">
-<h2>Class activity two – answers</h2>
-<p>Read the code for classic guitar, answer the questions:</p>
 <ul>
-<li><p>which lines of code are the same?</p>
-<ul>
-<li><p>in the head: line 2 - 4</p></li>
-<li><p>in the neck: line 6 - 7</p></li>
-<li><p>in the body: line 9 - 10 and line 14 - 15</p></li>
-</ul></li>
+<li><code>add_one</code> is the name of the function</li>
+<li><code>(n)</code> is the <strong>parameter</strong> list</li>
+<li>the body (or content) of the function is indented</li>
+<li><code>return n + 1</code> is a statement that causes the function to cease and produce the value n + 1</li>
 </ul>
 </section>
-<section id="write-functions" class="slide level2">
-<h2>Write functions</h2>
-<p>Write functions <code>print_head</code>, <code>print_neck</code>, and <code>print_body</code>:</p>
-<div id="2534038a" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">def</span> print_classic_guitar():</span>
-<span id="cb6-2"><a></a>    print_head()</span>
-<span id="cb6-3"><a></a>    print_neck()</span>
-<span id="cb6-4"><a></a>    print_body()</span>
-<span id="cb6-5"><a></a></span>
-<span id="cb6-6"><a></a><span class="kw">def</span> print_long_guitar():</span>
-<span id="cb6-7"><a></a>    print_head()</span>
-<span id="cb6-8"><a></a>    print_neck()</span>
-<span id="cb6-9"><a></a>    print_neck()</span>
-<span id="cb6-10"><a></a>    print_body()</span>
-<span id="cb6-11"><a></a></span>
-<span id="cb6-12"><a></a><span class="kw">def</span> main():</span>
-<span id="cb6-13"><a></a>    print_classic_guitar() <span class="co"># print classic guitar</span></span>
-<span id="cb6-14"><a></a>    print_long_guitar() <span class="co"># print long neck guitar</span></span>
-<span id="cb6-15"><a></a></span>
-<span id="cb6-16"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="write-functions-answers" class="slide level2">
-<h2>Write functions – answers</h2>
-<div id="3126bada" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="kw">def</span> print_head():</span>
-<span id="cb7-2"><a></a>    <span class="bu">print</span>(<span class="st">"      ___"</span>)</span>
-<span id="cb7-3"><a></a>    <span class="bu">print</span>(<span class="st">"    o|* *|o"</span>)</span>
-<span id="cb7-4"><a></a>    <span class="bu">print</span>(<span class="st">"    o|* *|o"</span>)</span>
-<span id="cb7-5"><a></a>    <span class="bu">print</span>(<span class="st">"    o|* *|o"</span>)</span>
-<span id="cb7-6"><a></a>    <span class="bu">print</span>(<span class="st">"     \===/"</span>)</span>
-<span id="cb7-7"><a></a></span>
-<span id="cb7-8"><a></a><span class="kw">def</span> print_neck():</span>
-<span id="cb7-9"><a></a>    <span class="bu">print</span>(<span class="st">"      |||"</span> <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"      |||"</span>)</span>
-<span id="cb7-10"><a></a>    </span>
-<span id="cb7-11"><a></a><span class="kw">def</span> print_body():</span>
-<span id="cb7-12"><a></a>    <span class="bu">print</span>(<span class="st">"   ___|||___"</span>)</span>
-<span id="cb7-13"><a></a>    <span class="bu">print</span>(<span class="st">"  /   |||   \ "</span>)</span>
-<span id="cb7-14"><a></a>    <span class="bu">print</span>(<span class="st">" /    |||    \ "</span>)</span>
-<span id="cb7-15"><a></a>    <span class="bu">print</span>(<span class="st">"|     |||     |"</span>)</span>
-<span id="cb7-16"><a></a>    <span class="bu">print</span>(<span class="st">" \   (|||)   /"</span>)</span>
-<span id="cb7-17"><a></a>    <span class="bu">print</span>(<span class="st">"  |   |||   |"</span>)</span>
-<span id="cb7-18"><a></a>    <span class="bu">print</span>(<span class="st">"  /   |||   \ "</span>)</span>
-<span id="cb7-19"><a></a>    <span class="bu">print</span>(<span class="st">" /    |||    \ "</span>)</span>
-<span id="cb7-20"><a></a>    <span class="bu">print</span>(<span class="st">"/     |||     \ "</span>)</span>
-<span id="cb7-21"><a></a>    <span class="bu">print</span>(<span class="st">"|    [===]    |"</span>)</span>
-<span id="cb7-22"><a></a>    <span class="bu">print</span>(<span class="st">" \           /"</span>)</span>
-<span id="cb7-23"><a></a>    <span class="bu">print</span>(<span class="st">"  '.       .'"</span>)</span>
-<span id="cb7-24"><a></a>    <span class="bu">print</span>(<span class="st">"   '-------'"</span>)</span>
-<span id="cb7-25"><a></a></span>
-<span id="cb7-26"><a></a><span class="kw">def</span> print_classic_guitar():</span>
-<span id="cb7-27"><a></a>    print_head()</span>
-<span id="cb7-28"><a></a>    print_neck()</span>
-<span id="cb7-29"><a></a>    print_body()</span>
-<span id="cb7-30"><a></a></span>
-<span id="cb7-31"><a></a><span class="kw">def</span> print_long_guitar():</span>
-<span id="cb7-32"><a></a>    print_head()</span>
-<span id="cb7-33"><a></a>    print_neck()</span>
-<span id="cb7-34"><a></a>    print_neck()</span>
-<span id="cb7-35"><a></a>    print_body()</span>
-<span id="cb7-36"><a></a></span>
-<span id="cb7-37"><a></a><span class="kw">def</span> main():</span>
-<span id="cb7-38"><a></a>    print_classic_guitar() <span class="co"># print classic guitar</span></span>
-<span id="cb7-39"><a></a>    print_long_guitar() <span class="co"># print long neck guitar</span></span>
-<span id="cb7-40"><a></a></span>
-<span id="cb7-41"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="another-example" class="slide level2">
+<h2>Another example</h2>
+<div id="12fb61a7" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="kw">def</span> cook_food(order):</span>
+<span id="cb3-2"><a></a>  message <span class="op">=</span> <span class="st">"Your "</span> <span class="op">+</span> order <span class="op">+</span> <span class="st">" is ready!"</span></span>
+<span id="cb3-3"><a></a>  <span class="cf">return</span> message</span>
+<span id="cb3-4"><a></a></span>
+<span id="cb3-5"><a></a>meal <span class="op">=</span> cook_food(<span class="st">"pasta"</span>)</span>
+<span id="cb3-6"><a></a><span class="bu">print</span>(meal)</span>
+<span id="cb3-7"><a></a>meal <span class="op">=</span> cook_food(<span class="st">"burger"</span>)</span>
+<span id="cb3-8"><a></a><span class="bu">print</span>(meal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>      ___
-    o|* *|o
-    o|* *|o
-    o|* *|o
-     \===/
-      |||
-      |||
-   ___|||___
-  /   |||   \ 
- /    |||    \ 
-|     |||     |
- \   (|||)   /
-  |   |||   |
-  /   |||   \ 
- /    |||    \ 
-/     |||     \ 
-|    [===]    |
- \           /
-  '.       .'
-   '-------'
-      ___
-    o|* *|o
-    o|* *|o
-    o|* *|o
-     \===/
-      |||
-      |||
-      |||
-      |||
-   ___|||___
-  /   |||   \ 
- /    |||    \ 
-|     |||     |
- \   (|||)   /
-  |   |||   |
-  /   |||   \ 
- /    |||    \ 
-/     |||     \ 
-|    [===]    |
- \           /
-  '.       .'
-   '-------'</code></pre>
+<pre><code>Your pasta is ready!
+Your burger is ready!</code></pre>
 </div>
+</div>
+<ul>
+<li>The function <code>cook_food</code> prepares a meal.</li>
+<li>Then returns a string that says the meal is ready.</li>
+<li>The returned message is stored in the <code>meal</code> variable.</li>
+<li>Finally, <code>print</code> function displays that message to the caller.</li>
+</ul>
+</section>
+<section id="function-to-calculate-area-of-a-circle" class="slide level2">
+<h2>Function to calculate area of a circle</h2>
+<p>Remember this from the last set of slides?</p>
+<div id="c50dad9d" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="co"># assign a radius value</span></span>
+<span id="cb5-2"><a></a>radius <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb5-3"><a></a><span class="co"># compute the rounded area of a circle</span></span>
+<span id="cb5-4"><a></a>area <span class="op">=</span> <span class="bu">round</span>(<span class="fl">3.1415</span> <span class="op">*</span> radius <span class="op">**</span> <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb5-5"><a></a><span class="co"># print the area</span></span>
+<span id="cb5-6"><a></a><span class="bu">print</span>(area)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="write-functions-improved-answers" class="slide level2">
-<h2>Write functions – improved answers</h2>
-<div id="f7b919cb" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="kw">def</span> print_head():</span>
-<span id="cb9-2"><a></a>    <span class="bu">print</span>(<span class="st">"      ___"</span>)</span>
-<span id="cb9-3"><a></a>    pattern <span class="op">=</span> <span class="st">"    o|* *|o"</span></span>
-<span id="cb9-4"><a></a>    <span class="bu">print</span>(pattern)</span>
-<span id="cb9-5"><a></a>    <span class="bu">print</span>(pattern)</span>
-<span id="cb9-6"><a></a>    <span class="bu">print</span>(pattern)</span>
-<span id="cb9-7"><a></a>    <span class="bu">print</span>(<span class="st">"     \===/"</span>)</span>
-<span id="cb9-8"><a></a></span>
-<span id="cb9-9"><a></a><span class="kw">def</span> print_neck():</span>
-<span id="cb9-10"><a></a>    <span class="bu">print</span>(<span class="st">"      |||"</span> <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"      |||"</span>)</span>
-<span id="cb9-11"><a></a>    </span>
-<span id="cb9-12"><a></a><span class="kw">def</span> print_body():</span>
-<span id="cb9-13"><a></a>    <span class="bu">print</span>(<span class="st">"   ___|||___"</span>)</span>
-<span id="cb9-14"><a></a>    pattern <span class="op">=</span> <span class="st">"  /   |||   \ "</span> <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">" /    |||    \ "</span> </span>
-<span id="cb9-15"><a></a>    <span class="bu">print</span>(pattern)</span>
-<span id="cb9-16"><a></a>    <span class="bu">print</span>(<span class="st">"|     |||     |"</span>)</span>
-<span id="cb9-17"><a></a>    <span class="bu">print</span>(<span class="st">" \   (|||)   /"</span>)</span>
-<span id="cb9-18"><a></a>    <span class="bu">print</span>(<span class="st">"  |   |||   |"</span>)</span>
-<span id="cb9-19"><a></a>    <span class="bu">print</span>(pattern)</span>
-<span id="cb9-20"><a></a>    <span class="bu">print</span>(<span class="st">"/     |||     \ "</span>)</span>
-<span id="cb9-21"><a></a>    <span class="bu">print</span>(<span class="st">"|    [===]    |"</span>)</span>
-<span id="cb9-22"><a></a>    <span class="bu">print</span>(<span class="st">" \           /"</span>)</span>
-<span id="cb9-23"><a></a>    <span class="bu">print</span>(<span class="st">"  '.       .'"</span>)</span>
-<span id="cb9-24"><a></a>    <span class="bu">print</span>(<span class="st">"   '-------'"</span>)</span>
-<span id="cb9-25"><a></a></span>
-<span id="cb9-26"><a></a><span class="kw">def</span> print_classic_guitar():</span>
-<span id="cb9-27"><a></a>    print_head()</span>
-<span id="cb9-28"><a></a>    print_neck()</span>
-<span id="cb9-29"><a></a>    print_body()</span>
-<span id="cb9-30"><a></a></span>
-<span id="cb9-31"><a></a><span class="kw">def</span> print_long_guitar():</span>
-<span id="cb9-32"><a></a>    print_head()</span>
-<span id="cb9-33"><a></a>    print_neck()</span>
-<span id="cb9-34"><a></a>    print_neck()</span>
-<span id="cb9-35"><a></a>    print_body()</span>
-<span id="cb9-36"><a></a></span>
-<span id="cb9-37"><a></a><span class="kw">def</span> main():</span>
-<span id="cb9-38"><a></a>    print_classic_guitar() <span class="co"># print classic guitar</span></span>
-<span id="cb9-39"><a></a>    print_long_guitar() <span class="co"># print long neck guitar</span></span>
-<span id="cb9-40"><a></a></span>
-<span id="cb9-41"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>      ___
-    o|* *|o
-    o|* *|o
-    o|* *|o
-     \===/
-      |||
-      |||
-   ___|||___
-  /   |||   \ 
- /    |||    \ 
-|     |||     |
- \   (|||)   /
-  |   |||   |
-  /   |||   \ 
- /    |||    \ 
-/     |||     \ 
-|    [===]    |
- \           /
-  '.       .'
-   '-------'
-      ___
-    o|* *|o
-    o|* *|o
-    o|* *|o
-     \===/
-      |||
-      |||
-      |||
-      |||
-   ___|||___
-  /   |||   \ 
- /    |||    \ 
-|     |||     |
- \   (|||)   /
-  |   |||   |
-  /   |||   \ 
- /    |||    \ 
-/     |||     \ 
-|    [===]    |
- \           /
-  '.       .'
-   '-------'</code></pre>
-</div>
+<section id="function-to-calculate-area-of-a-circle-1" class="slide level2">
+<h2>Function to calculate area of a circle</h2>
+<p>Function name is <code>calculate_area</code>. Given a <code>radius</code> parameter, it returns the rounded <code>area</code> of the circle.</p>
+<div id="1b74894e" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">def</span> calculate_area(radius):</span>
+<span id="cb6-2"><a></a>  area <span class="op">=</span> <span class="fl">3.1415</span> <span class="op">*</span> radius <span class="op">**</span> <span class="dv">2</span></span>
+<span id="cb6-3"><a></a>  <span class="cf">return</span> <span class="bu">round</span>(area, <span class="dv">2</span>)</span>
+<span id="cb6-4"><a></a></span>
+<span id="cb6-5"><a></a><span class="kw">def</span> main():</span>
+<span id="cb6-6"><a></a>  <span class="bu">print</span>(calculate_area(<span class="dv">3</span>)) <span class="co"># 28.27</span></span>
+<span id="cb6-7"><a></a>  <span class="bu">print</span>(calculate_area(<span class="dv">6</span>)) <span class="co"># 113.09</span></span>
+<span id="cb6-8"><a></a>  </span>
+<span id="cb6-9"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="write-a-function" class="slide level2">
 <h2>Write a function</h2>
-<p>Write <code>print_retro_head</code>:</p>
-<div id="0e6b95e6" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="kw">def</span> print_retro_guitar():</span>
-<span id="cb11-2"><a></a>    print_retro_head()</span>
-<span id="cb11-3"><a></a>    print_neck()</span>
-<span id="cb11-4"><a></a>    print_body()</span>
-<span id="cb11-5"><a></a></span>
-<span id="cb11-6"><a></a><span class="kw">def</span> main():</span>
-<span id="cb11-7"><a></a>    print_classic_guitar() <span class="co"># print classic guitar</span></span>
-<span id="cb11-8"><a></a>    print_long_guitar() <span class="co"># print long neck guitar</span></span>
-<span id="cb11-9"><a></a>    print_retro_guitar() <span class="co"># print retro head guitar</span></span>
-<span id="cb11-10"><a></a></span>
-<span id="cb11-11"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p>Write a function that calculates the volume of a sphere:</p>
+<ol type="1">
+<li>Its name is <code>sphere_volume</code></li>
+<li>It takes one argument: <code>radius</code></li>
+<li>It calculates the volume of the sphere (use <code>3.1415</code> for <span class="math inline">\(\pi\)</span>):</li>
+</ol>
+<p><span class="math display">\[
+v = {4 / 3} \cdot \pi \cdot radius^3
+\]</span></p>
+<ol start="4" type="1">
+<li>It returns the rounded value for the calculated volume</li>
+<li>Test case: <code>sphere_volume(.75)</code> should return <code>1.77</code>.</li>
+</ol>
 </section>
-<section id="write-a-function-answer" class="slide level2">
-<h2>Write a function – answer</h2>
-<div id="343952bd" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="kw">def</span> print_head():</span>
-<span id="cb12-2"><a></a>    <span class="bu">print</span>(<span class="st">"      ___"</span>)</span>
-<span id="cb12-3"><a></a>    pattern <span class="op">=</span> <span class="st">"    o|* *|o"</span></span>
-<span id="cb12-4"><a></a>    <span class="bu">print</span>(pattern)</span>
-<span id="cb12-5"><a></a>    <span class="bu">print</span>(pattern)</span>
-<span id="cb12-6"><a></a>    <span class="bu">print</span>(pattern)</span>
-<span id="cb12-7"><a></a>    <span class="bu">print</span>(<span class="st">"     \===/"</span>)</span>
-<span id="cb12-8"><a></a></span>
-<span id="cb12-9"><a></a><span class="kw">def</span> print_retro_head():</span>
-<span id="cb12-10"><a></a>    <span class="bu">print</span>(<span class="st">"     ._-_."</span>)</span>
-<span id="cb12-11"><a></a>    <span class="bu">print</span>(<span class="st">"    +|\G/|+"</span>)</span>
-<span id="cb12-12"><a></a>    pattern <span class="op">=</span> <span class="st">"    +|\./|+"</span></span>
-<span id="cb12-13"><a></a>    <span class="bu">print</span>(pattern)</span>
-<span id="cb12-14"><a></a>    <span class="bu">print</span>(pattern)</span>
-<span id="cb12-15"><a></a>    <span class="bu">print</span>(<span class="st">"     \===/"</span>)</span>
-<span id="cb12-16"><a></a></span>
-<span id="cb12-17"><a></a><span class="kw">def</span> print_neck():</span>
-<span id="cb12-18"><a></a>    <span class="bu">print</span>(<span class="st">"      |||"</span> <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">"      |||"</span>)</span>
-<span id="cb12-19"><a></a>    </span>
-<span id="cb12-20"><a></a><span class="kw">def</span> print_body():</span>
-<span id="cb12-21"><a></a>    <span class="bu">print</span>(<span class="st">"   ___|||___"</span>)</span>
-<span id="cb12-22"><a></a>    pattern <span class="op">=</span> <span class="st">"  /   |||   \ "</span> <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">" /    |||    \ "</span> </span>
-<span id="cb12-23"><a></a>    <span class="bu">print</span>(pattern)</span>
-<span id="cb12-24"><a></a>    <span class="bu">print</span>(<span class="st">"|     |||     |"</span>)</span>
-<span id="cb12-25"><a></a>    <span class="bu">print</span>(<span class="st">" \   (|||)   /"</span>)</span>
-<span id="cb12-26"><a></a>    <span class="bu">print</span>(<span class="st">"  |   |||   |"</span>)</span>
-<span id="cb12-27"><a></a>    <span class="bu">print</span>(pattern)</span>
-<span id="cb12-28"><a></a>    <span class="bu">print</span>(<span class="st">"/     |||     \ "</span>)</span>
-<span id="cb12-29"><a></a>    <span class="bu">print</span>(<span class="st">"|    [===]    |"</span>)</span>
-<span id="cb12-30"><a></a>    <span class="bu">print</span>(<span class="st">" \           /"</span>)</span>
-<span id="cb12-31"><a></a>    <span class="bu">print</span>(<span class="st">"  '.       .'"</span>)</span>
-<span id="cb12-32"><a></a>    <span class="bu">print</span>(<span class="st">"   '-------'"</span>)</span>
-<span id="cb12-33"><a></a></span>
-<span id="cb12-34"><a></a><span class="kw">def</span> print_classic_guitar():</span>
-<span id="cb12-35"><a></a>    print_head()</span>
-<span id="cb12-36"><a></a>    print_neck()</span>
-<span id="cb12-37"><a></a>    print_body()</span>
-<span id="cb12-38"><a></a></span>
-<span id="cb12-39"><a></a><span class="kw">def</span> print_retro_guitar():</span>
-<span id="cb12-40"><a></a>    print_retro_head()</span>
-<span id="cb12-41"><a></a>    print_neck()</span>
-<span id="cb12-42"><a></a>    print_body()</span>
-<span id="cb12-43"><a></a>    </span>
-<span id="cb12-44"><a></a><span class="kw">def</span> print_long_guitar():</span>
-<span id="cb12-45"><a></a>    print_head()</span>
-<span id="cb12-46"><a></a>    print_neck()</span>
-<span id="cb12-47"><a></a>    print_neck()</span>
-<span id="cb12-48"><a></a>    print_body()</span>
-<span id="cb12-49"><a></a></span>
-<span id="cb12-50"><a></a><span class="kw">def</span> main():</span>
-<span id="cb12-51"><a></a>    print_classic_guitar() <span class="co"># print classic guitar</span></span>
-<span id="cb12-52"><a></a>    print_retro_guitar() <span class="co"># print retro head guitar</span></span>
-<span id="cb12-53"><a></a>    print_long_guitar() <span class="co"># print long neck guitar</span></span>
-<span id="cb12-54"><a></a></span>
-<span id="cb12-55"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="write-a-function-sphere-volume" class="slide level2">
+<h2>Write a function – sphere volume</h2>
+<div id="f7db5c77" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="kw">def</span> sphere_volume(radius):</span>
+<span id="cb7-2"><a></a>  <span class="co">"calculates the volume of a sphere of given radius"</span></span>
+<span id="cb7-3"><a></a>  volume <span class="op">=</span> (<span class="dv">4</span> <span class="op">/</span> <span class="dv">3</span>) <span class="op">*</span> <span class="fl">3.1415</span> <span class="op">*</span> radius<span class="op">**</span><span class="dv">3</span></span>
+<span id="cb7-4"><a></a>  <span class="cf">return</span> <span class="bu">round</span>(volume, <span class="dv">2</span>)</span>
+<span id="cb7-5"><a></a></span>
+<span id="cb7-6"><a></a><span class="kw">def</span> main():</span>
+<span id="cb7-7"><a></a>  <span class="bu">print</span>(sphere_volume(<span class="fl">.75</span>)) <span class="co"># 1.77</span></span>
+<span id="cb7-8"><a></a>  <span class="bu">print</span>(sphere_volume(<span class="dv">2</span>)) <span class="co"># 33.51</span></span>
+<span id="cb7-9"><a></a>  <span class="bu">print</span>(sphere_volume(<span class="fl">5.5</span>)) <span class="co"># 696.89</span></span>
+<span id="cb7-10"><a></a></span>
+<span id="cb7-11"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>      ___
-    o|* *|o
-    o|* *|o
-    o|* *|o
-     \===/
-      |||
-      |||
-   ___|||___
-  /   |||   \ 
- /    |||    \ 
-|     |||     |
- \   (|||)   /
-  |   |||   |
-  /   |||   \ 
- /    |||    \ 
-/     |||     \ 
-|    [===]    |
- \           /
-  '.       .'
-   '-------'
-     ._-_.
-    +|\G/|+
-    +|\./|+
-    +|\./|+
-     \===/
-      |||
-      |||
-   ___|||___
-  /   |||   \ 
- /    |||    \ 
-|     |||     |
- \   (|||)   /
-  |   |||   |
-  /   |||   \ 
- /    |||    \ 
-/     |||     \ 
-|    [===]    |
- \           /
-  '.       .'
-   '-------'
-      ___
-    o|* *|o
-    o|* *|o
-    o|* *|o
-     \===/
-      |||
-      |||
-      |||
-      |||
-   ___|||___
-  /   |||   \ 
- /    |||    \ 
-|     |||     |
- \   (|||)   /
-  |   |||   |
-  /   |||   \ 
- /    |||    \ 
-/     |||     \ 
-|    [===]    |
- \           /
-  '.       .'
-   '-------'</code></pre>
+<pre><code>1.77
+33.51
+696.89</code></pre>
 </div>
 </div>
 </section>
-<section id="discussion" class="slide level2">
-<h2>Discussion</h2>
-<p>Download and run <a href="data/guitar_old.py">old guitar file</a> and <a href="data/guitar_new.py">new guitar file</a>:</p>
-<ul>
-<li><p>Which version is more readable?</p></li>
-<li><p>Why it is better?</p></li>
-</ul>
+<section id="write-a-function-1" class="slide level2">
+<h2>Write a function</h2>
+<p>Write a function that calculates the area of a sphere:</p>
+<ol type="1">
+<li>Its name is <code>sphere_area</code></li>
+<li>It takes one argument: <code>radius</code></li>
+<li>It calculates the volume of the sphere (use <code>3.1415</code> for <span class="math inline">\(\pi\)</span>):</li>
+</ol>
+<p><span class="math display">\[
+a = 4 \cdot \pi \cdot radius^2
+\]</span></p>
+<ol start="4" type="1">
+<li>It returns the value for the calculated sphere area</li>
+<li>Test case: <code>sphere_area(.75)</code> should return <code>7.07</code>.</li>
+</ol>
+</section>
+<section id="write-a-function-solutions-1" class="slide level2">
+<h2>Write a function – solutions 1</h2>
+<div id="fab955e0" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="kw">def</span> sphere_area(radius):</span>
+<span id="cb9-2"><a></a>  <span class="co">"calculates the area of a sphere of given radius"</span></span>
+<span id="cb9-3"><a></a>  area <span class="op">=</span> <span class="dv">4</span> <span class="op">*</span> <span class="fl">3.1415</span> <span class="op">*</span> radius<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb9-4"><a></a>  <span class="cf">return</span> <span class="bu">round</span>(area, <span class="dv">2</span>)</span>
+<span id="cb9-5"><a></a></span>
+<span id="cb9-6"><a></a><span class="kw">def</span> sphere_volume(radius):</span>
+<span id="cb9-7"><a></a>  <span class="co">"calculates the volume of a sphere of given radius"</span></span>
+<span id="cb9-8"><a></a>  volume <span class="op">=</span> (<span class="dv">4</span> <span class="op">/</span> <span class="dv">3</span>) <span class="op">*</span> <span class="fl">3.1415</span> <span class="op">*</span> radius<span class="op">**</span><span class="dv">3</span></span>
+<span id="cb9-9"><a></a>  <span class="cf">return</span> <span class="bu">round</span>(volume, <span class="dv">2</span>)</span>
+<span id="cb9-10"><a></a></span>
+<span id="cb9-11"><a></a><span class="kw">def</span> main():</span>
+<span id="cb9-12"><a></a>  r <span class="op">=</span> <span class="fl">.75</span></span>
+<span id="cb9-13"><a></a>  v <span class="op">=</span> sphere_volume(r)</span>
+<span id="cb9-14"><a></a>  a <span class="op">=</span> sphere_area(r)</span>
+<span id="cb9-15"><a></a>  <span class="bu">print</span>(v, a)</span>
+<span id="cb9-16"><a></a></span>
+<span id="cb9-17"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1.77 7.07</code></pre>
+</div>
+</div>
+</section>
+<section id="write-a-function-2" class="slide level2">
+<h2>Write a function</h2>
+<p>Comparing two formulas: <span class="math display">\[
+a = 4 \cdot \pi \cdot radius^2
+\]</span></p>
+<p><span class="math display">\[
+v = {4 / 3} \cdot \pi \cdot radius^3
+\]</span> We can use area when calculating volume: <span class="math display">\[
+v = {1 / 3} \cdot a \cdot radius
+\]</span></p>
+<p>Modify your <code>sphere_volume</code> function by calling <code>sphere_area</code> inside the function.</p>
+</section>
+<section id="write-a-function-solutions-2" class="slide level2">
+<h2>Write a function – solutions 2</h2>
+<div id="757d7e78" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="kw">def</span> sphere_area(radius):</span>
+<span id="cb11-2"><a></a>  <span class="co">"calculates the area of a sphere of given radius"</span></span>
+<span id="cb11-3"><a></a>  area <span class="op">=</span> <span class="dv">4</span> <span class="op">*</span> <span class="fl">3.1415</span> <span class="op">*</span> radius<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb11-4"><a></a>  <span class="cf">return</span> <span class="bu">round</span>(area, <span class="dv">2</span>)</span>
+<span id="cb11-5"><a></a></span>
+<span id="cb11-6"><a></a></span>
+<span id="cb11-7"><a></a><span class="kw">def</span> sphere_volume(radius):</span>
+<span id="cb11-8"><a></a>  <span class="co">"calculates the volume of a sphere of given radius"</span></span>
+<span id="cb11-9"><a></a>  volume <span class="op">=</span> (<span class="dv">1</span> <span class="op">/</span> <span class="dv">3</span>) <span class="op">*</span> sphere_area(radius) <span class="op">*</span> radius</span>
+<span id="cb11-10"><a></a>  <span class="cf">return</span> <span class="bu">round</span>(volume, <span class="dv">2</span>)</span>
+<span id="cb11-11"><a></a></span>
+<span id="cb11-12"><a></a></span>
+<span id="cb11-13"><a></a><span class="kw">def</span> main():</span>
+<span id="cb11-14"><a></a>  r <span class="op">=</span> <span class="fl">.75</span></span>
+<span id="cb11-15"><a></a>  v <span class="op">=</span> sphere_volume(r)</span>
+<span id="cb11-16"><a></a>  a <span class="op">=</span> sphere_area(r)</span>
+<span id="cb11-17"><a></a>  <span class="bu">print</span>(v, a)</span>
+<span id="cb11-18"><a></a></span>
+<span id="cb11-19"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1.77 7.07</code></pre>
+</div>
+</div>
+</section>
+<section id="write-a-function-3" class="slide level2">
+<h2>Write a function</h2>
+<p>Write a Python function named <code>hypotenuse</code> that takes two arguments: <code>a</code> and <code>b</code> representing the length of the two non-hypotenuse sides of a right triangle. The function calculate the hypotenuse according to the Pythagorean theorem: <span class="math inline">\(c = \sqrt(a^2 + b^2)\)</span>. Return it rounded at two decimals.</p>
+<p>Test cases: <code>hypotenuse(3, 4)</code> should return <code>5.0</code>, <code>hypotenuse(10, 10)</code> should return <code>14.14</code></p>
+<p>Name your file <code>hypotenuse.py</code> and submit to gradescope.</p>
+</section>
+<section id="write-a-function-4" class="slide level2">
+<h2>Write a function</h2>
+<div id="ebba5686" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a><span class="kw">def</span> sqrt(n):</span>
+<span id="cb13-2"><a></a>  <span class="co">'''</span></span>
+<span id="cb13-3"><a></a><span class="co">  This function calculates the square root of a number</span></span>
+<span id="cb13-4"><a></a><span class="co">  Args:</span></span>
+<span id="cb13-5"><a></a><span class="co">    n: integer or float</span></span>
+<span id="cb13-6"><a></a><span class="co">  Returns:</span></span>
+<span id="cb13-7"><a></a><span class="co">    The square root of n</span></span>
+<span id="cb13-8"><a></a><span class="co">  '''</span></span>
+<span id="cb13-9"><a></a>  <span class="cf">return</span> n<span class="op">**</span><span class="fl">0.5</span></span>
+<span id="cb13-10"><a></a></span>
+<span id="cb13-11"><a></a><span class="kw">def</span> hypotenuse(a, b):</span>
+<span id="cb13-12"><a></a>  <span class="co">'''</span></span>
+<span id="cb13-13"><a></a><span class="co">  This function calculates the hypotenuse of a right angle triangle.</span></span>
+<span id="cb13-14"><a></a><span class="co">  Args:</span></span>
+<span id="cb13-15"><a></a><span class="co">    a: number (integer or float) representing one of the non-hypotenuse sides</span></span>
+<span id="cb13-16"><a></a><span class="co">    b: number (integer or float) representing one of the non-hypotenuse sides</span></span>
+<span id="cb13-17"><a></a><span class="co">  Returns:</span></span>
+<span id="cb13-18"><a></a><span class="co">    Float representing the length of the hypotenuse given a and b</span></span>
+<span id="cb13-19"><a></a><span class="co">  '''</span> </span>
+<span id="cb13-20"><a></a>  h <span class="op">=</span> sqrt(a<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> b<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb13-21"><a></a>  <span class="cf">return</span> <span class="bu">round</span>(h, <span class="dv">2</span>)</span>
+<span id="cb13-22"><a></a></span>
+<span id="cb13-23"><a></a><span class="kw">def</span> main():</span>
+<span id="cb13-24"><a></a>  <span class="co">'''</span></span>
+<span id="cb13-25"><a></a><span class="co">  This function calls the hypotenuse function to calculate and then</span></span>
+<span id="cb13-26"><a></a><span class="co">  print out the hypotenuse of a right angle triangle of sides 3 and 4</span></span>
+<span id="cb13-27"><a></a><span class="co">  and the hypotenuse of a right angle triange of sides 10 and 10</span></span>
+<span id="cb13-28"><a></a><span class="co">  '''</span></span>
+<span id="cb13-29"><a></a>  result <span class="op">=</span> hypotenuse(<span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb13-30"><a></a>  <span class="bu">print</span>(result)</span>
+<span id="cb13-31"><a></a>  </span>
+<span id="cb13-32"><a></a>  result <span class="op">=</span> hypotenuse(<span class="dv">10</span>, <span class="dv">10</span>)</span>
+<span id="cb13-33"><a></a>  <span class="bu">print</span>(result)</span>
+<span id="cb13-34"><a></a>  </span>
+<span id="cb13-35"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>5.0
+14.14</code></pre>
+</div>
+</div>
 
 
 </section></section>

@@ -9,7 +9,7 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.39">
 
-  <title>CSc 110 Computer Programming I – sorting (slides)</title>
+  <title>CSc 110 Computer Programming I – mutating dictionaries (slides)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -191,466 +191,210 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">sorting (slides)</h1>
+  <h1 class="title">mutating dictionaries (slides)</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
 <section>
-<section id="csc-110-sorting" class="title-slide slide level1 center">
-<h1>CSC 110 – Sorting</h1>
+<section id="csc-110---mutating-dictionaries" class="title-slide slide level1 center">
+<h1>CSc 110 - mutating dictionaries</h1>
 
 </section>
-<section id="sorting" class="slide level2">
-<h2>Sorting</h2>
+<section id="dictionaries-are-mutable" class="slide level2">
+<h2>Dictionaries are mutable</h2>
 <ul>
-<li>A number of reasons to want sorted data
-<ul>
-<li>For doing binary search!</li>
-<li>Finding a median value</li>
-<li>Finding the min and max</li>
-<li>Others?</li>
-</ul></li>
+<li>changes to a dictionary in a function will remain after the function finishes running</li>
+<li>you can change dictionary values using keys</li>
 </ul>
 </section>
-<section id="what-is-a-sorted-list" class="slide level2">
-<h2>What is a sorted list?</h2>
-<ul>
-<li>A <strong>sorting algorithm</strong> is an algorithm that puts elements of a list in a certain order</li>
-<li>There are different types of “ordering”:</li>
-</ul>
-<div id="0c537e87" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="co"># ascending numeric order </span></span>
-<span id="cb1-2"><a></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">10</span>]</span>
-<span id="cb1-3"><a></a></span>
-<span id="cb1-4"><a></a><span class="co"># descending numeric order</span></span>
-<span id="cb1-5"><a></a>numbers <span class="op">=</span> [<span class="dv">20</span>, <span class="dv">17</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">1</span>]</span>
-<span id="cb1-6"><a></a></span>
-<span id="cb1-7"><a></a><span class="co"># lexicographic</span></span>
-<span id="cb1-8"><a></a>letters <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'e'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="sorting-1" class="slide level2">
-<h2>Sorting</h2>
-<p>Two built-in functions, compare their difference:</p>
-<ul>
-<li><code>list_var.sort()</code></li>
-</ul>
-<div id="47d96bb9" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>items <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">43</span>, <span class="dv">10</span>, <span class="dv">12</span>]</span>
-<span id="cb2-2"><a></a>items.sort()</span>
-<span id="cb2-3"><a></a>items</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
-<pre><code>[5, 6, 7, 9, 10, 10, 12, 20, 43]</code></pre>
-</div>
-</div>
-<ul>
-<li><code>sorted(list_var)</code></li>
-</ul>
-<div id="11bcfe5f" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>items <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">43</span>, <span class="dv">10</span>, <span class="dv">12</span>]</span>
-<span id="cb4-2"><a></a><span class="bu">sorted</span>(items)</span>
-<span id="cb4-3"><a></a>items</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="16">
-<pre><code>[5, 10, 20, 6, 7, 9, 43, 10, 12]</code></pre>
+<section id="changing-values-in-a-dictionary" class="slide level2">
+<h2>Changing values in a dictionary</h2>
+<p>You can change dictionary values using keys</p>
+<div id="1bae9099" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>names_ages <span class="op">=</span> {<span class="st">"Paul"</span>: <span class="dv">32</span>, <span class="st">"Patricia"</span>: <span class="dv">44</span>, <span class="st">"Eduardo"</span>: <span class="dv">27</span>}</span>
+<span id="cb1-2"><a></a><span class="cf">for</span> key <span class="kw">in</span> names_ages:</span>
+<span id="cb1-3"><a></a>  names_ages[key] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-4"><a></a>names_ages</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>{'Paul': 33, 'Patricia': 45, 'Eduardo': 28}</code></pre>
 </div>
 </div>
 </section>
-<section id="in-place-and-out-of-place" class="slide level2">
-<h2>In-place and out-of-place</h2>
-<ul>
-<li><p><strong>In-place sorting:</strong> does not require a secondary data structure</p></li>
-<li><p><strong>Out-of-place sorting:</strong> may require a secondary data structure</p></li>
-</ul>
-</section>
-<section id="selection-sort" class="slide level2">
-<h2>Selection sort</h2>
-<p>Watch visualization of selection sort and discuss:</p>
-<ul>
-<li><p>in-place sorting or out-of-place?</p></li>
-<li><p>how selection sort works?</p></li>
-<li><p><a href="https://visualgo.net/en/sorting" class="uri">https://visualgo.net/en/sorting</a></p></li>
-</ul>
-</section>
-<section id="selection-sort-1" class="slide level2">
-<h2>Selection sort</h2>
-<ol type="1">
-<li><p>Scan the list and find the smallest element</p></li>
-<li><p>Swap this element with the beginning element</p></li>
-<li><p>Continue these steps for the remaining list, not including the element just swapped</p></li>
-<li><p>Repeat</p></li>
-</ol>
-</section>
-<section id="write-selection-sort---step-1" class="slide level2">
-<h2>Write selection sort - step 1</h2>
-<ol type="1">
-<li>Function name is <code>find_min_index</code></li>
-<li>It takes a list of numbers as argument</li>
-<li>It iterates over the list, scanning the list to find the smallest number</li>
-<li>Return the index of the smallest number</li>
-</ol>
-<div id="95739fde" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="cf">assert</span> find_min_index([]) <span class="op">==</span> <span class="va">None</span></span>
-<span id="cb6-2"><a></a><span class="cf">assert</span> find_min_index([<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">1</span>, <span class="dv">20</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">9</span>]) <span class="op">==</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="write-a-function" class="slide level2">
+<h2>Write a function</h2>
+<p>It <strong>mutates</strong> the dictionary, multiplying each value by 0.056 and rounding the result to two decimals</p>
+<p>Name file as <code>sales_tax.py</code> and submit to Gradescope</p>
+<div id="e576b232" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>groceries <span class="op">=</span> {<span class="st">"banana"</span>: <span class="fl">2.50</span>, <span class="st">"milk"</span>: <span class="fl">4.25</span>, <span class="st">"bread"</span>: <span class="fl">3.68</span>}</span>
+<span id="cb3-2"><a></a>sales_tax(groceries)</span>
+<span id="cb3-3"><a></a><span class="cf">assert</span> groceries <span class="op">==</span> {<span class="st">'banana'</span>: <span class="fl">0.14</span>, <span class="st">'milk'</span>: <span class="fl">0.24</span>, <span class="st">'bread'</span>: <span class="fl">0.21</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="write-selection-sort-step-1-solution" class="slide level2">
-<h2>Write selection sort – step 1 solution</h2>
-<div id="bd8b2501" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="kw">def</span> find_min_index(items):</span>
-<span id="cb7-2"><a></a>  min_index <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb7-3"><a></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(items)):</span>
-<span id="cb7-4"><a></a>    <span class="cf">if</span> min_index <span class="op">==</span> <span class="va">None</span> <span class="kw">or</span> items[min_index] <span class="op">&gt;</span> items[i]:</span>
-<span id="cb7-5"><a></a>      min_index <span class="op">=</span> i</span>
-<span id="cb7-6"><a></a>  <span class="cf">return</span> min_index</span>
-<span id="cb7-7"><a></a>    </span>
-<span id="cb7-8"><a></a><span class="kw">def</span> main():</span>
-<span id="cb7-9"><a></a>  test_list <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">1</span>, <span class="dv">20</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">9</span>]</span>
-<span id="cb7-10"><a></a>  <span class="cf">assert</span> find_min_index(test_list) <span class="op">==</span> <span class="dv">2</span></span>
-<span id="cb7-11"><a></a>  </span>
-<span id="cb7-12"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="write-selection-sort---step-1-continue" class="slide level2">
-<h2>Write selection sort - step 1 continue</h2>
-<p>Now you found the index of smallest number, let’s make one swap: swap the items at index <code>0</code> and <code>min_index</code>.</p>
-<div id="f749b19e" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>items <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">1</span>, <span class="dv">20</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">9</span>]</span>
-<span id="cb8-2"><a></a></span>
-<span id="cb8-3"><a></a>begin_index <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb8-4"><a></a>min_index <span class="op">=</span> find_min_index(items) <span class="co"># min_index is 2</span></span>
-<span id="cb8-5"><a></a></span>
-<span id="cb8-6"><a></a><span class="co"># swap items at index 0 and 2</span></span>
-<span id="cb8-7"><a></a>items[begin_index], items[min_index] <span class="op">=</span> items[min_index], items[begin_index]</span>
-<span id="cb8-8"><a></a></span>
-<span id="cb8-9"><a></a><span class="cf">assert</span> items <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">20</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">9</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="write-selection-sort---step-2" class="slide level2">
-<h2>Write selection sort - step 2</h2>
-<p>How to find the <code>min_index</code> starting from <code>begin_index</code>? You can call <code>find_min_index</code> function.</p>
-<div id="33472c39" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>begin_index <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb9-2"><a></a>items <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">20</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">9</span>]</span>
-<span id="cb9-3"><a></a></span>
-<span id="cb9-4"><a></a><span class="co"># write your code here</span></span>
-<span id="cb9-5"><a></a></span>
-<span id="cb9-6"><a></a><span class="cf">assert</span> min_index <span class="op">==</span> <span class="dv">5</span>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="write-selection-sort---step-2-solution" class="slide level2">
-<h2>Write selection sort - step 2 solution</h2>
-<p>How to find the <code>min_index</code> starting from <code>begin_index</code>? You can call <code>find_min_index</code> function.</p>
-<div id="bf48139a" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>begin_index <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb10-2"><a></a>items <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">20</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">9</span>]</span>
-<span id="cb10-3"><a></a></span>
-<span id="cb10-4"><a></a><span class="cf">assert</span> items[begin_index:] <span class="op">==</span> [<span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">20</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">9</span>] </span>
-<span id="cb10-5"><a></a></span>
-<span id="cb10-6"><a></a><span class="co"># index of 3 in the sublist is 4</span></span>
-<span id="cb10-7"><a></a><span class="cf">assert</span> find_min_index(items[begin_index:]) <span class="op">==</span> <span class="dv">4</span>  </span>
-<span id="cb10-8"><a></a></span>
-<span id="cb10-9"><a></a><span class="co"># index of 3 in the list is 5</span></span>
-<span id="cb10-10"><a></a>min_index <span class="op">=</span> find_min_index(items[begin_index:]) <span class="op">+</span> begin_index </span>
-<span id="cb10-11"><a></a><span class="cf">assert</span> min_index <span class="op">==</span> <span class="dv">5</span>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="write-selection-sort---step-2-continue" class="slide level2">
-<h2>Write selection sort - step 2 continue</h2>
-<p>Now you found the index of smallest number starting from <code>begin_index</code>, let’s make another swap:</p>
-<div id="b612e90a" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>items <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">20</span>, <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">9</span>]</span>
-<span id="cb11-2"><a></a></span>
-<span id="cb11-3"><a></a>begin_index <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb11-4"><a></a>min_index <span class="op">=</span> find_min_index(items[begin_index:]) <span class="op">+</span> begin_index </span>
-<span id="cb11-5"><a></a></span>
-<span id="cb11-6"><a></a><span class="co"># swap items at index 1 and 5</span></span>
-<span id="cb11-7"><a></a>items[begin_index], items[min_index] <span class="op">=</span> items[min_index], items[begin_index]</span>
-<span id="cb11-8"><a></a></span>
-<span id="cb11-9"><a></a><span class="cf">assert</span> items <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">20</span>, <span class="dv">7</span>, <span class="dv">10</span>, <span class="dv">9</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="write-selection-sort---step-3" class="slide level2">
-<h2>Write selection sort - step 3</h2>
-<ol type="1">
-<li>Function name is <code>selection_sort</code> that <strong>mutates</strong> the list argument and sort it</li>
-<li>Iterate over the list, call <code>find_min_index</code> to find the index of smallest element</li>
-<li>Swap the smallest element found in each iteration with the beginning one</li>
-<li>Use a <strong>while</strong> loop, set a <code>begin_index</code> before loop, in each iteration add 1 to <code>begin_index</code></li>
-</ol>
-</section>
-<section id="write-selection-sort" class="slide level2">
-<h2>Write selection sort</h2>
-<div id="b680e765" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="kw">def</span> find_min_index(items):</span>
-<span id="cb12-2"><a></a>  min_index <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb12-3"><a></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(items)):</span>
-<span id="cb12-4"><a></a>    <span class="cf">if</span> min_index <span class="op">==</span> <span class="va">None</span> <span class="kw">or</span> items[min_index] <span class="op">&gt;</span> items[i]:</span>
-<span id="cb12-5"><a></a>      min_index <span class="op">=</span> i</span>
-<span id="cb12-6"><a></a>  <span class="cf">return</span> min_index</span>
-<span id="cb12-7"><a></a></span>
-<span id="cb12-8"><a></a><span class="kw">def</span> selection_sort(items):</span>
-<span id="cb12-9"><a></a>  begin_index <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb12-10"><a></a>  <span class="cf">while</span> begin_index <span class="op">&lt;</span>  <span class="co"># &lt;---------&gt; :</span></span>
-<span id="cb12-11"><a></a>     <span class="co"># &lt;---------&gt; </span></span>
-<span id="cb12-12"><a></a>     <span class="co"># &lt;---------&gt; </span></span>
-<span id="cb12-13"><a></a>    begin_index <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb12-14"><a></a>    </span>
-<span id="cb12-15"><a></a><span class="kw">def</span> main():</span>
-<span id="cb12-16"><a></a>  test_list <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">43</span>, <span class="dv">10</span>, <span class="dv">12</span>]</span>
-<span id="cb12-17"><a></a>  selection_sort(test_list)</span>
-<span id="cb12-18"><a></a>  <span class="cf">assert</span> test_list <span class="op">==</span> [<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">20</span>, <span class="dv">43</span>]</span>
-<span id="cb12-19"><a></a>  </span>
-<span id="cb12-20"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="write-selection-sort-solution" class="slide level2">
-<h2>Write selection sort – solution</h2>
-<div id="a5a8c09a" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a><span class="kw">def</span> find_min_index(items):</span>
-<span id="cb13-2"><a></a>  min_index <span class="op">=</span> <span class="va">None</span></span>
-<span id="cb13-3"><a></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(items)):</span>
-<span id="cb13-4"><a></a>    <span class="cf">if</span> min_index <span class="op">==</span> <span class="va">None</span> <span class="kw">or</span> items[min_index] <span class="op">&gt;</span> items[i]:</span>
-<span id="cb13-5"><a></a>      min_index <span class="op">=</span> i</span>
-<span id="cb13-6"><a></a>  <span class="cf">return</span> min_index</span>
-<span id="cb13-7"><a></a></span>
-<span id="cb13-8"><a></a><span class="kw">def</span> selection_sort(items):</span>
-<span id="cb13-9"><a></a>  begin_index <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb13-10"><a></a>  <span class="cf">while</span> begin_index <span class="op">&lt;</span> <span class="bu">len</span>(items)<span class="op">-</span><span class="dv">1</span>:</span>
-<span id="cb13-11"><a></a>    <span class="co"># get min of sublist, add begin_index to shift it</span></span>
-<span id="cb13-12"><a></a>    min_index <span class="op">=</span> find_min_index(items[begin_index:]) <span class="op">+</span> begin_index</span>
-<span id="cb13-13"><a></a>    items[begin_index], items[min_index] <span class="op">=</span> items[min_index], items[begin_index]</span>
-<span id="cb13-14"><a></a>    begin_index <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb13-15"><a></a>    </span>
-<span id="cb13-16"><a></a><span class="kw">def</span> main():</span>
-<span id="cb13-17"><a></a>  test_list <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">43</span>, <span class="dv">10</span>, <span class="dv">12</span>]</span>
-<span id="cb13-18"><a></a>  selection_sort(test_list)</span>
-<span id="cb13-19"><a></a>  <span class="cf">assert</span> test_list <span class="op">==</span> [<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">20</span>, <span class="dv">43</span>]</span>
-<span id="cb13-20"><a></a>  </span>
-<span id="cb13-21"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="how-many-total-sweeps-and-swaps-to-sort-this-list" class="slide level2">
-<h2>How many total sweeps and swaps to sort this list?</h2>
-<div id="60aae65f" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>numbers <span class="op">=</span> [ <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">7</span>, <span class="dv">2</span>, <span class="dv">4</span> ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="how-many-total-sweeps-and-swaps" class="slide level2">
-<h2>How many total sweeps and swaps?</h2>
-<blockquote>
-<p>[ <span style="color:cornflowerblue">3, 1, </span> 7, 2, 4 ] sweep, begin_index: 0</p>
-</blockquote>
-<blockquote>
-<p>[ 1, <span style="color:cornflowerblue"> 3, </span> 7, <span style="color:cornflowerblue"> 2, </span> 4 ] swap and sweep, begin_index: 1</p>
-</blockquote>
-<blockquote>
-<p>[ 1, 2, <span style="color:cornflowerblue"> 7, </span> <span style="color:cornflowerblue"> 3, </span> 4 ] swap and sweep, begin_index: 2</p>
-</blockquote>
-<blockquote>
-<p>[ 1, 2, 3, <span style="color:cornflowerblue"> 7, 4 </span> ] swap and sweep: begin_index: 3</p>
-</blockquote>
-<blockquote>
-<p>[ 1, 2, 3, 4, 7 ] swap</p>
-</blockquote>
-<p>4 sweeps, 4 swaps (worst case scenario)</p>
-</section>
-<section id="how-many-total-sweeps-and-swaps-to-sort-this-list-1" class="slide level2">
-<h2>How many total sweeps and swaps to sort this list?</h2>
-<div id="13218e7d" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>numbers <span class="op">=</span> [ <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span> ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="how-many-total-sweeps-and-swaps-to-sort-this-list-2" class="slide level2">
-<h2>How many total sweeps and swaps to sort this list?</h2>
-<p>[ <strong>3</strong>, <strong>0</strong>, 7, 2, 4, 8 ] sweep</p>
-<p>[ 0, <strong>3</strong>, 7, <strong>2</strong>, 4, 8] swap and sweep</p>
-<p>[ 0, 2, <strong>7</strong>, <strong>3</strong>, 4, 8 ] swap and sweep</p>
-<p>[ 0, 2, 3, <strong>7</strong>, <strong>4</strong>, 8 ] swap and sweep</p>
-<p>[ 0, 2, 3, 4, 7, 8 ] swap and sweep</p>
-<p>5 sweeps, 4 swaps</p>
-</section>
-<section id="attendance" class="slide level2">
-<h2>Attendance</h2>
-<p>How many total sweeps and swaps to sort this list?</p>
-<p>[ 7, 1, 1, 4, 2 ]</p>
-</section>
-<section id="bubble-sort" class="slide level2">
-<h2>Bubble sort</h2>
-<ul>
-<li><p><strong>Bubble Sort:</strong> another sorting algorithm</p>
-<ol type="1">
-<li><p>Scan through each element in the list, comparing the current element with the next one</p></li>
-<li><p>If the next one is smaller, swap the elements</p></li>
-<li><p>Continue these iterations until the whole list is sorted</p></li>
-</ol></li>
-<li><p>This causes the large elements to “bubble up” to the top</p></li>
-</ul>
-</section>
-<section id="write-bubble-sort---step-1" class="slide level2">
-<h2>Write bubble sort - step 1</h2>
-<ol type="1">
-<li>Function name is <code>single_sweep_swap</code> that takes a list as argument</li>
-<li>It <strong>mutates</strong> the list, sorting it</li>
-<li>It iterates over the list, comparing each element with the next one, if the next one is smaller, swap elements</li>
-<li>It sweeps the list only once</li>
-</ol>
-<div id="a3bb952b" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a><span class="cf">assert</span> single_sweep_swap([<span class="dv">8</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">1</span>]) <span class="op">==</span> [<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">1</span>, <span class="dv">8</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="write-bubble-sort-step-1-solution" class="slide level2">
-<h2>Write bubble sort – step 1 solution</h2>
-<div id="b9f2917d" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a><span class="kw">def</span> single_sweep_swap(numbers):</span>
-<span id="cb17-2"><a></a>    end <span class="op">=</span> <span class="bu">len</span>(numbers) <span class="op">-</span> <span class="dv">1</span></span>
-<span id="cb17-3"><a></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(end):</span>
-<span id="cb17-4"><a></a>        <span class="cf">if</span> numbers[i] <span class="op">&gt;</span> numbers[i<span class="op">+</span><span class="dv">1</span>]:</span>
-<span id="cb17-5"><a></a>            numbers[i], numbers[i<span class="op">+</span><span class="dv">1</span>] <span class="op">=</span> numbers[i<span class="op">+</span><span class="dv">1</span>], numbers[i]</span>
-<span id="cb17-6"><a></a>    <span class="cf">return</span> numbers</span>
-<span id="cb17-7"><a></a></span>
-<span id="cb17-8"><a></a><span class="kw">def</span> main():</span>
-<span id="cb17-9"><a></a>    <span class="cf">assert</span> single_sweep_swap([<span class="dv">8</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">1</span>]) <span class="op">==</span> [<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">1</span>, <span class="dv">8</span>]</span>
-<span id="cb17-10"><a></a>    <span class="cf">assert</span> single_sweep_swap([<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">1</span>, <span class="dv">9</span>]) <span class="op">==</span> [<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">7</span>, <span class="dv">9</span>]</span>
-<span id="cb17-11"><a></a>    </span>
-<span id="cb17-12"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="write-bubble-sort---step-2" class="slide level2">
-<h2>Write bubble sort - step 2</h2>
-<ol type="1">
-<li>Function name is <code>bubble_sort</code> that sweeps the list, comparing elements</li>
-<li>If it is sorted, end iteration. Otherwise, swap elements</li>
-<li>The <code>end</code> starts at <code>len(items)-1</code></li>
-<li>In each iteration, subtract 1 from the <code>end</code> index</li>
-</ol>
-<div id="c313777c" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a><span class="cf">assert</span> bubble_sort([<span class="dv">8</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">1</span>]) <span class="op">==</span> [<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">8</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="write-bubble-sort" class="slide level2">
-<h2>Write bubble sort</h2>
-<p>Replace the two lines of comment with your code:</p>
-<div id="70d1bbc8" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a><span class="kw">def</span> bubble_sort(items):</span>
-<span id="cb19-2"><a></a>  is_sorted <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb19-3"><a></a>  end <span class="op">=</span> <span class="bu">len</span>(items)<span class="op">-</span><span class="dv">1</span></span>
-<span id="cb19-4"><a></a>  <span class="cf">while</span> <span class="kw">not</span> is_sorted:</span>
-<span id="cb19-5"><a></a>    <span class="co"># &lt;---------&gt; </span></span>
-<span id="cb19-6"><a></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(end):</span>
-<span id="cb19-7"><a></a>      <span class="cf">if</span> items[i] <span class="op">&gt;</span> items[i<span class="op">+</span><span class="dv">1</span>]:</span>
-<span id="cb19-8"><a></a>        items[i], items[i<span class="op">+</span><span class="dv">1</span>] <span class="op">=</span> items[i<span class="op">+</span><span class="dv">1</span>], items[i]</span>
-<span id="cb19-9"><a></a>        <span class="co"># &lt;---------&gt; </span></span>
-<span id="cb19-10"><a></a>    end <span class="op">-=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="write-bubble-sort-solution" class="slide level2">
-<h2>Write bubble sort – solution</h2>
-<div id="2897194a" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a><span class="kw">def</span> bubble_sort(items):</span>
-<span id="cb20-2"><a></a>  is_sorted <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb20-3"><a></a>  end <span class="op">=</span> <span class="bu">len</span>(items)<span class="op">-</span><span class="dv">1</span></span>
-<span id="cb20-4"><a></a>  <span class="cf">while</span> <span class="kw">not</span> is_sorted:</span>
-<span id="cb20-5"><a></a>    is_sorted <span class="op">=</span> <span class="va">True</span></span>
-<span id="cb20-6"><a></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(end):</span>
-<span id="cb20-7"><a></a>      <span class="cf">if</span> items[i] <span class="op">&gt;</span> items[i<span class="op">+</span><span class="dv">1</span>]:</span>
-<span id="cb20-8"><a></a>        items[i], items[i<span class="op">+</span><span class="dv">1</span>] <span class="op">=</span> items[i<span class="op">+</span><span class="dv">1</span>], items[i]</span>
-<span id="cb20-9"><a></a>        is_sorted <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb20-10"><a></a>    end <span class="op">-=</span> <span class="dv">1</span></span>
-<span id="cb20-11"><a></a>      </span>
-<span id="cb20-12"><a></a><span class="kw">def</span> main():</span>
-<span id="cb20-13"><a></a>  test_list <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">43</span>, <span class="dv">10</span>, <span class="dv">12</span>]</span>
-<span id="cb20-14"><a></a>  bubble_sort(test_list)</span>
-<span id="cb20-15"><a></a>  <span class="bu">print</span>(test_list)</span>
-<span id="cb20-16"><a></a>  </span>
-<span id="cb20-17"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="write-a-function-solution" class="slide level2">
+<h2>Write a function – solution</h2>
+<div id="5f28ebcd" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="kw">def</span> sales_tax(dictionary):</span>
+<span id="cb4-2"><a></a>  <span class="cf">for</span> key <span class="kw">in</span> dictionary:</span>
+<span id="cb4-3"><a></a>    dictionary[key] <span class="op">=</span> <span class="bu">round</span>(dictionary[key] <span class="op">*</span> <span class="fl">0.056</span>, <span class="dv">2</span>)</span>
+<span id="cb4-4"><a></a>  <span class="cf">return</span> dictionary</span>
+<span id="cb4-5"><a></a></span>
+<span id="cb4-6"><a></a><span class="kw">def</span> main():</span>
+<span id="cb4-7"><a></a>  groceries <span class="op">=</span> {<span class="st">"banana"</span>: <span class="fl">2.50</span>, <span class="st">"milk"</span>: <span class="fl">4.25</span>, <span class="st">"bread"</span>: <span class="fl">3.68</span>}</span>
+<span id="cb4-8"><a></a>  sales_tax(groceries)</span>
+<span id="cb4-9"><a></a>  <span class="cf">assert</span> groceries <span class="op">==</span> {<span class="st">'banana'</span>: <span class="fl">0.14</span>, <span class="st">'milk'</span>: <span class="fl">0.24</span>, <span class="st">'bread'</span>: <span class="fl">0.21</span>}</span>
+<span id="cb4-10"><a></a>  <span class="bu">print</span>(groceries)</span>
+<span id="cb4-11"><a></a>  </span>
+<span id="cb4-12"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[5, 6, 7, 9, 10, 10, 12, 20, 43]</code></pre>
+<pre><code>{'banana': 0.14, 'milk': 0.24, 'bread': 0.21}</code></pre>
 </div>
 </div>
 </section>
-<section id="how-many-total-sweeps-and-swaps-to-sort-this-list-3" class="slide level2">
-<h2>How many total sweeps and swaps to sort this list?</h2>
-<div id="294ac20a" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a>numbers <span class="op">=</span> [ <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">7</span>, <span class="dv">2</span>, <span class="dv">4</span> ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="removing-dictionary-key-value" class="slide level2">
+<h2>Removing dictionary <code>key: value</code></h2>
+<p>Cannot iterate over a dictionary and change its size:</p>
+<div id="70452293" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>counts <span class="op">=</span> {<span class="st">"a"</span>: <span class="dv">10</span>, <span class="st">"e"</span>: <span class="dv">4</span>, <span class="st">"i"</span>: <span class="dv">3</span>}</span>
+<span id="cb6-2"><a></a><span class="cf">for</span> key <span class="kw">in</span> counts:</span>
+<span id="cb6-3"><a></a>  counts.pop(key)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>RuntimeError: dictionary changed size during iteration</p>
 </section>
-<section id="how-many-total-sweeps-and-swaps-1" class="slide level2">
-<h2>How many total sweeps and swaps?</h2>
-<blockquote>
-<p>[ <span style="color:cornflowerblue">3, 1, 7, 2, 4</span> ] first sweep</p>
-</blockquote>
-<p>[ <strong>1</strong>, <strong>3</strong>, 7, 2, 4 ] swap</p>
-<p>[ 1, 3, <strong>2</strong>, <strong>7</strong>, 4 ] swap</p>
-<p>[ 1, 3, 2, <strong>4</strong>, <strong>7</strong> ] swap</p>
-<blockquote>
-<p>[ <span style="color:cornflowerblue">1, 3, 2, 4</span>, 7 ] second sweep</p>
-</blockquote>
-<p>[ 1, <strong>2</strong>, <strong>3</strong>, 4, 7 ] swap</p>
-<blockquote>
-<p>[ <span style="color:cornflowerblue">1, 2, 3</span>, 4, 7 ] third sweep</p>
-</blockquote>
-</section>
-<section id="how-many-total-sweeps-and-swaps-2" class="slide level2">
-<h2>How many total sweeps and swaps?</h2>
-<div id="473ee81b" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a>numbers <span class="op">=</span> [ <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">7</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">5</span> ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="how-many-sweeps-swaps-part-1" class="slide level2">
-<h2>How many sweeps, swaps? (part 1)</h2>
-<blockquote>
-<p>[ <span style="color:cornflowerblue">3, 1, 7, 2, 4, 8, 5</span> ] first sweep</p>
-</blockquote>
-<p>[ <strong>1</strong>, <strong>3</strong>, 7, 2, 4, 8, 5 ] swap</p>
-<p>[ 1, 3, <strong>2</strong>, <strong>7</strong>, 4, 8, 5 ] swap</p>
-<p>[ 1, 3, 2, <strong>4</strong>, <strong>7</strong>, 8, 5 ] swap</p>
-<p>[ 1, 3, 2, 4, 7, <strong>5</strong>, <strong>8</strong> ] swap</p>
-</section>
-<section id="how-many-sweeps-swaps-part-2" class="slide level2">
-<h2>How many sweeps, swaps? (part 2)</h2>
-<blockquote>
-<p>[ <span style="color:cornflowerblue">1, 3, 2, 4, 7, 5</span>, 8 ] second sweep</p>
-</blockquote>
-<p>[ 1, <strong>2</strong>, <strong>3</strong>, 4, 7, 5, 8 ] swap</p>
-<p>[ 1, 2, 3, 4, <strong>5</strong>, <strong>7</strong>, 8 ] swap</p>
-<blockquote>
-<p>[ <span style="color:cornflowerblue">1, 2, 3, 4, 5</span>, 7, 8 ] third sweep</p>
-</blockquote>
-</section>
-<section id="how-many-total-sweeps-and-swaps-3" class="slide level2">
-<h2>How many total sweeps and swaps?</h2>
-<div id="0f5b44f7" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a>numbers <span class="op">=</span> [ <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">2</span>, <span class="dv">4</span> ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="how-many-total-sweeps-and-swaps-4" class="slide level2">
-<h2>How many total sweeps and swaps?</h2>
-<div id="302e900a" class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a>numbers <span class="op">=</span> [ <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">2</span>, <span class="dv">4</span> ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>4 sweeps, 6 swaps</p>
-</section>
-<section id="lots-of-algorithms" class="slide level2">
-<h2>Lots of algorithms</h2>
+<section id="removing-dictionary-key-value-1" class="slide level2">
+<h2>Removing dictionary <code>key: value</code></h2>
 <ul>
-<li><p>There are many sorting algorithms</p>
-<ul>
-<li><p><strong>Bogo sort</strong></p></li>
-<li><p><strong>Selection sort</strong></p></li>
-<li><p><strong>Bubble sort</strong></p></li>
-<li><p><strong>Insertion sort</strong></p></li>
-<li><p><strong>Merge sort</strong></p></li>
-<li><p><strong>Quick sort</strong></p></li>
-<li><p>...more...</p></li>
-</ul></li>
+<li>Step 1: use another data structure (like a set) instead</li>
+<li>Step 2: iterate that data structure</li>
 </ul>
+<div id="6470e443" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>counts <span class="op">=</span> {<span class="st">"a"</span>: <span class="dv">10</span>, <span class="st">"e"</span>: <span class="dv">4</span>, <span class="st">"i"</span>: <span class="dv">3</span>}</span>
+<span id="cb7-2"><a></a>keys <span class="op">=</span> <span class="bu">set</span>(counts)</span>
+<span id="cb7-3"><a></a><span class="cf">for</span> k <span class="kw">in</span> keys:</span>
+<span id="cb7-4"><a></a>  counts.pop(k)</span>
+<span id="cb7-5"><a></a>counts</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>{}</code></pre>
+</div>
+</div>
 </section>
-<section id="visualization" class="slide level2">
-<h2>Visualization</h2>
-<p><span style="color:red">Flash Warning</span>: the following video contains flashing lights. <a href="https://www.youtube.com/watch?v=kPRA0W1kECg" class="uri">https://www.youtube.com/watch?v=kPRA0W1kECg</a></p>
-<p>selection sort at 0:00, bubble sort at 4:00</p>
+<section id="write-a-function-1" class="slide level2">
+<h2>Write a function</h2>
+<p>It takes a dictionary as argument, with string keys. It <strong>mutates</strong> and returns the dictionary argument removing keys that start and end with the same character</p>
+<div id="d104e9c7" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>students <span class="op">=</span> {<span class="st">"Anna"</span>: <span class="st">"A"</span>, <span class="st">"Peter"</span>: <span class="st">"B"</span>, <span class="st">"Bob"</span>: <span class="st">"D"</span>, <span class="st">"Cedric"</span>: <span class="st">"A"</span>}</span>
+<span id="cb9-2"><a></a>remove_records(students)</span>
+<span id="cb9-3"><a></a><span class="cf">assert</span> students <span class="op">==</span> {<span class="st">"Peter"</span>: <span class="st">"B"</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="write-a-function-solution-1" class="slide level2">
+<h2>Write a function – solution</h2>
+<div id="2fa2e6f9" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="kw">def</span> remove_records(dictionary):</span>
+<span id="cb10-2"><a></a>  <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">set</span>(dictionary):</span>
+<span id="cb10-3"><a></a>    <span class="cf">if</span> <span class="bu">len</span>(k) <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> k[<span class="dv">0</span>].lower() <span class="op">==</span> k[<span class="op">-</span><span class="dv">1</span>].lower():</span>
+<span id="cb10-4"><a></a>      dictionary.pop(k)</span>
+<span id="cb10-5"><a></a>  <span class="cf">return</span> dictionary</span>
+<span id="cb10-6"><a></a>      </span>
+<span id="cb10-7"><a></a><span class="kw">def</span> main():</span>
+<span id="cb10-8"><a></a>  students <span class="op">=</span> {<span class="st">"Anna"</span>: <span class="st">"A"</span>, <span class="st">"Peter"</span>: <span class="st">"B"</span>, <span class="st">"Bob"</span>: <span class="st">"D"</span>, <span class="st">"Cedric"</span>: <span class="st">"A"</span>}</span>
+<span id="cb10-9"><a></a>  remove_records(students)</span>
+<span id="cb10-10"><a></a>  <span class="cf">assert</span> students <span class="op">==</span> {<span class="st">"Peter"</span>: <span class="st">"B"</span>}</span>
+<span id="cb10-11"><a></a>  </span>
+<span id="cb10-12"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="create-a-list-with-duplicate-items" class="slide level2">
+<h2>Create a list with duplicate items</h2>
+<p>Create a list with a total of five <code>'a'</code>:</p>
+<div id="fa9161a5" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>new_list <span class="op">=</span> [<span class="st">'a'</span>] <span class="op">*</span> <span class="dv">5</span></span>
+<span id="cb11-2"><a></a>new_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>['a', 'a', 'a', 'a', 'a']</code></pre>
+</div>
+</div>
+<p>Create a list with a total of three <code>1</code>:</p>
+<div id="3d970b30" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>new_list <span class="op">=</span> [<span class="dv">1</span>] <span class="op">*</span> <span class="dv">3</span></span>
+<span id="cb13-2"><a></a>new_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>[1, 1, 1]</code></pre>
+</div>
+</div>
+</section>
+<section id="write-a-function-2" class="slide level2">
+<h2>Write a function</h2>
+<p>It takes a dictionary as argument, with strings as keys and integers as values (assume all values are positive). It <strong>mutates</strong> and returns the dictionary, replacing each value with a list of the key repeated by the value.</p>
+<div id="ef3d4d7d" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>test_dictionary <span class="op">=</span> {<span class="st">"a"</span>: <span class="dv">5</span>, <span class="st">"b"</span>: <span class="dv">2</span>, <span class="st">"c"</span>: <span class="dv">3</span>}</span>
+<span id="cb15-2"><a></a>repetition(test_dictionary)</span>
+<span id="cb15-3"><a></a><span class="cf">assert</span> test_dictionary <span class="op">==</span> {<span class="st">"a"</span>: [<span class="st">"a"</span>, <span class="st">"a"</span>, <span class="st">"a"</span>, <span class="st">"a"</span>, <span class="st">"a"</span>], </span>
+<span id="cb15-4"><a></a>                           <span class="st">"b"</span>: [<span class="st">"b"</span>, <span class="st">"b"</span>], <span class="st">"c"</span>: [<span class="st">"c"</span>, <span class="st">"c"</span>, <span class="st">"c"</span>] }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="write-a-function-solution-2" class="slide level2">
+<h2>Write a function – solution</h2>
+<div id="252a2137" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a><span class="kw">def</span> repetition(dictionary):</span>
+<span id="cb16-2"><a></a>  <span class="cf">for</span> key, value <span class="kw">in</span> dictionary.items():</span>
+<span id="cb16-3"><a></a>    dictionary[key] <span class="op">=</span> [key] <span class="op">*</span> value</span>
+<span id="cb16-4"><a></a>  <span class="cf">return</span> dictionary</span>
+<span id="cb16-5"><a></a></span>
+<span id="cb16-6"><a></a><span class="kw">def</span> main():</span>
+<span id="cb16-7"><a></a>  test_dictionary <span class="op">=</span> {<span class="st">"a"</span>: <span class="dv">5</span>, <span class="st">"b"</span>: <span class="dv">2</span>, <span class="st">"c"</span>: <span class="dv">3</span>}</span>
+<span id="cb16-8"><a></a>  repetition(test_dictionary)</span>
+<span id="cb16-9"><a></a>  <span class="cf">assert</span> test_dictionary <span class="op">==</span> {<span class="st">"a"</span>: [<span class="st">"a"</span>, <span class="st">"a"</span>, <span class="st">"a"</span>, <span class="st">"a"</span>, <span class="st">"a"</span>], </span>
+<span id="cb16-10"><a></a>                           <span class="st">"b"</span>: [<span class="st">"b"</span>, <span class="st">"b"</span>], <span class="st">"c"</span>: [<span class="st">"c"</span>, <span class="st">"c"</span>, <span class="st">"c"</span>] }</span>
+<span id="cb16-11"><a></a>  </span>
+<span id="cb16-12"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="write-a-function-3" class="slide level2">
+<h2>Write a function</h2>
+<p>It has two parameters: a <code>dictionary</code> that maps one-letter strings to lists of strings, and a <code>string</code>. It returns a list with strings (names) from the lists in the dictionary that include the second parameter (<code>string</code>) as a substring (this search is not case sensitive)</p>
+<p>Test case:</p>
+<div id="adb3aa12" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>names <span class="op">=</span> {<span class="st">"R"</span>: [<span class="st">"Randy"</span>, <span class="st">"Roger"</span>], <span class="st">"S"</span>: [<span class="st">"Steve"</span>, <span class="st">"Sally"</span>], <span class="st">"T"</span>: [<span class="st">"Tanner"</span>]}</span>
+<span id="cb17-2"><a></a><span class="cf">assert</span> get_names(names, <span class="st">"er"</span>) <span class="op">==</span> [<span class="st">"Roger"</span>, <span class="st">"Tanner"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="write-a-function-solution-3" class="slide level2">
+<h2>Write a function – solution</h2>
+<div id="b538004e" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a><span class="kw">def</span> get_names(dictionary, string):</span>
+<span id="cb18-2"><a></a>  new_list <span class="op">=</span> []</span>
+<span id="cb18-3"><a></a>  <span class="cf">for</span> name_list <span class="kw">in</span> dictionary.values():</span>
+<span id="cb18-4"><a></a>    <span class="cf">for</span> name <span class="kw">in</span> name_list:</span>
+<span id="cb18-5"><a></a>      <span class="cf">if</span> string.lower() <span class="kw">in</span> name.lower():</span>
+<span id="cb18-6"><a></a>        new_list.append(name)</span>
+<span id="cb18-7"><a></a>  <span class="cf">return</span> new_list</span>
+<span id="cb18-8"><a></a></span>
+<span id="cb18-9"><a></a><span class="kw">def</span> main():</span>
+<span id="cb18-10"><a></a>  names <span class="op">=</span> { <span class="st">"R"</span>: [<span class="st">"Randy"</span>, <span class="st">"Roger"</span>], </span>
+<span id="cb18-11"><a></a>            <span class="st">"S"</span>: [<span class="st">"Steve"</span>, <span class="st">"Sally"</span>], </span>
+<span id="cb18-12"><a></a>            <span class="st">"T"</span>: [<span class="st">"Tanner"</span>] }</span>
+<span id="cb18-13"><a></a>  <span class="bu">print</span>( get_names(names, <span class="st">"er"</span>) ) <span class="co"># ["Roger", "Tanner"]</span></span>
+<span id="cb18-14"><a></a>  </span>
+<span id="cb18-15"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['Roger', 'Tanner']</code></pre>
+</div>
+</div>
+</section>
+<section id="quiz-11" class="slide level2">
+<h2>Quiz 11</h2>
+<center>
+<div class="cleanslate w24tz-current-time w24tz-large" style="display: inline-block !important; visibility: hidden !important; min-width:300px !important; min-height:145px !important;">
+<a href="//24timezones.com/Tucson/time" style="text-decoration: none" class="clock24" id="tz24-1695057604-c1393-eyJob3VydHlwZSI6IjEyIiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIwIiwiY29udGFpbmVyX2lkIjoiY2xvY2tfYmxvY2tfY2I2NTA4ODZjNDg0OWVlIiwidHlwZSI6ImRiIiwibGFuZyI6ImVuIn0=" title="World Time :: Tucson" target="_blank" rel="nofollow"></a>current time
+<div id="clock_block_cb650886c4849ee">
+
+</div>
+</div>
+<script type="text/javascript" src="//w.24timezones.com/l.js" async=""></script>
+</center>
+<p>You have 10 minutes to complete the quiz.</p>
 
 
 </section></section>

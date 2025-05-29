@@ -16,367 +16,147 @@ Programming Projects are to be submitted to [gradescope](https://www.gradescope.
 
 **Due date: `r assignments %>% filter(assessment == "Programming Project 5") %>% pull(formatted_date)` at 9pm**
 
-In this programming project you will implement a number of Python functions to implement a simplified version of chess. Make sure you follow the provided [style guide](https://adrianapicoral.com/csc-110/style.html) (you will be graded on it!).
+This assignment is an adaptation of the [MIT's 6.0001 Introduction to Computer Science and Programming in Python programming set 1](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/resources/mit6_0001f16_ps1/).
 
-Name your program `one_d_chess.py` to submit to gradescope. Make sure that gradescope gives you the points for passing the test cases.
+Make sure you follow the provided [style guide](style.html) (you will be graded on it!). 
 
-This programming project is an adaptation of Ben Dicken's 1 Dimensional Chess Programming Assignment.
+Also make sure you check the [Academic Integrity](academic-integrity.html) and [Common Gradescope Errors](gradescope-errors.html) pages.
 
-In this programming project, you will be implementing a simpler variant of chess: 1D Chess! 1D chess is a variant of the game that is played on a board that has only one column of spaces, rather than a grid of spaces, as in typical chess. There are actually [multiple variants of 1D chess](https://www.chessvariants.com/shape.dir/onedim.html). In this PA, you should implement a custom variant of 1D chess, which I'll refer to as "110 1D chess".
 
-## **1D Chess Rules**
+# House Hunting
 
-In 110 1D chess, the board will be 1 by 9. Each player will get one king, and two knights. The white pieces go on the left, and the black on the right. The starting positions for the pieces of the game should be as follows:
+You have graduated and now have a great job and decide that you want to start saving to buy a house. As housing prices are very high in the US right now, you realize you are going to have to save for several years before you can afford to make the down payment on a house. 
 
-```{html}
-+-----------------------------------------------------+
-| WKi | WKn | WKn |     |     |     | BKn | BKn | BKi |
-+-----------------------------------------------------+
+## Part 1
+
+Name the program `house_hunting_1.py`. Make sure that gradescope gives you the points for passing the test cases.
+
+In this assignment we are going to determine how long it will take you to save enough money to make the down payment given the following assumptions:
+
+1. Call the cost of your first home `total_cost`.
+2. Call the portion of the cost needed for a down payment `portion_down_payment` . For
+simplicity, assume that `portion_down_payment = 0.25 (25%)`.
+3. Call the amount that you have saved thus far `current_savings`. You start with a current
+savings of $0.
+4. Assume that you invest your current savings wisely, with an annual return of r (in other words,
+at the beginning of each month, you receive an additional `current_savings*r/12` funds to put into
+your savings – the 12 is because r is an annual rate). Assume that your investments earn a
+return of r = 0.04 (4%).
+5. Assume your annual salary is `annual_salary` .
+6. Assume you are going to dedicate a certain amount of your salary each month to saving for
+the down payment. Call that `portion_saved`. This variable should be in decimal form (i.e. 0.1
+for 10%).
+7. At the end of each month, your savings will be increased by the return on your investment,
+plus a percentage of your monthly salary (annual salary / 12).
+
+Write a program to calculate how many months it will take you to save up enough money for a down
+payment.
+
+### Test cases -- Part 1
+
+Try different arguments and see how long it takes to save for a down payment. Please make your
+program print results in the format shown in the test cases below.
+
+#### Test Case 1
+```{python}
+#| eval: false
+#| echo: true
+annual_salary = 120000
+portion_saved = .1
+total_cost = 1000000
+total_months = calculate_months(annual_salary, portion_saved, total_cost)
+print("Number of months:", total_months)
 ```
 
-Kings and Knights move and kill their opponents differently. Knights can move either left or right, and when they move thy jump two pieces over. If they land on another piece, they kill them and take their spot. The king can move left or right, until they hit either another piece or an edge of the board. If a king hits another piece, they kill them and take their place. In chess, a player cannot typically kill one of their own pieces. In 110 1D chess, a king or knight can kill one of their own, if they hit or land on them, so be careful!
+<pre>
+Number of months: 183
+</pre>
 
-# Functions to implement
+#### Test Case 2
+```{python}
+#| eval: false
+#| echo: true
+annual_salary = 80000
+portion_saved = .15
+total_cost = 500000
+total_months = calculate_months(annual_salary, portion_saved, total_cost)
+print("Number of months:", total_months)
+```
 
-## Start Game
+<pre>
+Number of months: 105
+</pre>
 
-Write a function called `create_board` that takes no arguments. It returns a list with the initial state of the board (as shown in the test case below)
+## Part 2
 
-Test case:
+Name the program `house_hunting_2.py`. Make sure that gradescope gives you the points for passing the test cases.
+
+In Part 1, we unrealistically assumed that your salary didn’t change.  So we are going to build on your
+solution to Part 1 by factoring in a raise every six months. 
+
+In `house_hunting_2.py`, copy your solution to Part 1 (as we are going to reuse much of that machinery).  Modify your program to include the following:
+
+1. Use a variable for a semi-annual salary raise semi_annual_raise (as a decimal percentage)
+2. After the 6th month, increase your salary by that percentage.  Do the same after the 12th
+month, the 18  month, and so on. 
+
+Write a program to calculate how many months it will take you save up enough money for a down
+payment.  Like before, assume that your investments earn a return of r = 0.04 (or 4%) and the
+required down payment percentage is 0.25 (or 25%). 
+
+Be careful about when you increase your salary – this should only happen after the 6th, 12th, 18th month, and so on. 
+
+
+### Test cases -- Part 2
+
+Try different arguments and see how long it takes to save for a down payment. Please make your
+program print results in the format shown in the test cases below.
+
+#### Test Case 1
 
 ```{python}
 #| eval: false
-print( create_board() ) # ["WKi", "WKn", "WKn", 
-                        #  "EMPTY", "EMPTY", "EMPTY",
-                        #  "BKn", "BKn", "BKi"]
+#| echo: true
+annual_salary = 120000
+portion_saved = .05
+total_cost =  500000
+semi_annual_raise = .03
+total_months = calculate_months(annual_salary, portion_saved, total_cost, semi_annual_raise)
+print("Number of months:", total_months)
 ```
 
-## Print Board
+<pre>
+Number of months: 142
+</pre>
 
-This functions should have one parameter variable, the board list. The job of this function is to simply print out the board to standard output. If the board is passed in and in the initial game state, the output should look like so:
-
-Test case for initial board state:
-
+#### Test Case 2
 ```{python}
 #| eval: false
-board = create_board()
-print( printable_board(board) ) # "+-----------------------------------------------------+\n
-                                #  | WKi | WKn | WKn |     |     |     | BKn | BKn | BKi |\n
-                                #  +-----------------------------------------------------+"
+#| echo: true
+annual_salary =  80000
+portion_saved = .1
+total_cost =   800000
+semi_annual_raise = .03
+total_months = calculate_months(annual_salary, portion_saved, total_cost, semi_annual_raise)
+print("Number of months:", total_months)
 ```
 
-```{html}
-+-----------------------------------------------------+
-| WKi | WKn | WKn |     |     |     | BKn | BKn | BKi |
-+-----------------------------------------------------+
-```
+<pre>
+Number of months: 159
+</pre>
 
-## Check move validity
-
-This function has three parameter variables. The board (a list, representing the 1 by 9 board), the position (index) of the player to move, and player (WHITE or BLACK). This function should return a boolean (`True` or `False`). True if the desired move is valid, False otherwise. A move is valid if:
-
--   The position (index) is a valid index in the `board` list
--   The position is an index of one of the current player's pieces on the board (for example, position 6 is an index of one of the BLACK's pieces - BKn)
-
-You do not need a while loop or for loop within this function. It can be accomplished with if statements. If the above two conditions are True, the function should return True. In any other case, return False.
-
-Test cases:
-
+#### Test Case 3
 ```{python}
 #| eval: false
-board = create_board()
-print( printable_board(board) )
+#| echo: true
+annual_salary =   75000
+portion_saved = .05
+total_cost =    1500000
+semi_annual_raise = .05
+total_months = calculate_months(annual_salary, portion_saved, total_cost, semi_annual_raise)
+print("Number of months:", total_months)
 ```
 
-```{html}
-+-----------------------------------------------------+
-| WKi | WKn | WKn |     |     |     | BKn | BKn | BKi |
-+-----------------------------------------------------+
-```
-
-```{python}
-#| eval: false
-assert is_valid_move(board, 1, "BLACK" ) == False
-assert is_valid_move(board, 9, "BLACK" ) == False
-assert is_valid_move(board, -1, "BLACK" ) == False
-assert is_valid_move(board, 6, "BLACK" ) == True
-assert is_valid_move(board, 2, "WHITE" ) == True
-```
-
-## Move a king
-
-This function has the same three parameters as the `is_valid_move` function except the third parameter should be the direction. `move_king` should actually move a king on the board (thus, it should change the board list). In 110 1d Chess, a king can move either left or right. The king will move until either it reaches another piece (killing that piece and taking it’s place), or an end of the board.
-
-This function should move the king at the provided position in the correct direction. You should use a for-loop or while-loop to iterate through the elements in the list and determine the spot it should end up at.
-
-Test cases:
-
-```{python}
-#| eval: false
-board = create_board()
-print( printable_board(board) )
-```
-
-```{html}
-+-----------------------------------------------------+
-| WKi | WKn | WKn |     |     |     | BKn | BKn | BKi |
-+-----------------------------------------------------+
-```
-
-```{python}
-#| eval: false
-move_king(board, 0, "LEFT") 
-print( printable_board(board) )
-```
-
-```{html}
-+-----------------------------------------------------+
-| WKi | WKn | WKn |     |     |     | BKn | BKn | BKi |
-+-----------------------------------------------------+
-```
-
-```{python}
-#| eval: false
-move_king(board, 8, "LEFT")
-print( printable_board(board) )
-```
-
-```{html}
-+-----------------------------------------------------+
-| WKi | WKn | WKn |     |     |     | BKn | BKi |     |
-+-----------------------------------------------------+
-```
-
-## Move a knight
-
-This function has the same three parameters as the `move_king` function. `move_knight` should actually move a knight on the board (thus, it should change the board list). In 110 1d Chess, a knight can move either left or right. A knight moves 2 locations. If it lands on a space that another piece occupies, then it kills that piece. It can jump over other pieces. If it cannot move due to the ending position of the move being out-of-bounds of the board, the knight should stay in its place. Note the biggest differences between a knight and a king here are:  
-
-- a knight moves 2 locations each time
-- it only moves once if it moves (the king may move multiple times and stop). 
-
-This function should move the knight at the provided position in the correct direction.
-
-Test cases:
-```{python}
-#| eval: false
-board = create_board()
-print( printable_board(board) )
-```
-
-```{html}
-+-----------------------------------------------------+
-| WKi | WKn | WKn |     |     |     | BKn | BKn | BKi |
-+-----------------------------------------------------+
-```
-
-```{python}
-#| eval: false
-move_knight(board, 6, "LEFT") 
-print( printable_board(board) )
-```
-
-```{html}
-+-----------------------------------------------------+
-| WKi | WKn | WKn |     | BKn |     |     | BKn | BKi |
-+-----------------------------------------------------+
-```
-
-```{python}
-#| eval: false
-move_knight(board, 2, "RIGHT") 
-print( printable_board(board) )
-```
-
-```{html}
-+-----------------------------------------------------+
-| WKi | WKn |     |     | WKn |     |     | BKn | BKi |
-+-----------------------------------------------------+
-```
-
-## Make a move
-
-Function name is `move` and it has three parameter variables. The board (a list, representing the 1 by 9 board), the position (index) of the player to move, and a direction (either `"LEFT"` or `"RIGHT"`). This function should determine if the piece to be moved is a king or a knight. If it is a king, call the `move_king` function. If a knight, call `move_knight.`
-
-
-Test case:
-
-```{python}
-#| eval: false
-board = create_board()
-print( printable_board(board) )
-```
-
-```{html}
-+-----------------------------------------------------+
-| WKi | WKn | WKn |     |     |     | BKn | BKn | BKi |
-+-----------------------------------------------------+
-```
-
-```{python}
-#| eval: false
-move(board, 0, "LEFT")
-print( printable_board(board) )
-```
-
-```{html}
-+-----------------------------------------------------+
-| WKi | WKn | WKn |     |     |     | BKn | BKn | BKi |
-+-----------------------------------------------------+
-```
-
-```{python}
-#| eval: false
-move(board, 8, "LEFT") 
-print( printable_board(board) )
-```
-
-```{html}
-+-----------------------------------------------------+
-| WKi | WKn | WKn |     |     |     | BKn | BKi |     |
-+-----------------------------------------------------+
-```
-
-## Game over
-
-This function should be named `is_game_over` and it takes the board list as its only parameter, and should determine if the game is over or not. If the white king does not exist on the board, then the game is over, and black wins. In this case, the function should print `Black wins!` and return `True`. If the black king does not exist on the board, then the game is over, and white wins. In this case, the function should print `White wins!` and return `True`. If both kings are still in the board list, then the function should print nothing, and return `False`. Note you should print `Black wins!` or `White wins!` without adding a new line to the end of string. 
-
-Test case:
-
-```{python}
-#| eval: false
-board = create_board()
-print( printable_board(board) )
-```
-
-```{html}
-+-----------------------------------------------------+
-| WKi | WKn | WKn |     |     |     | BKn | BKn | BKi |
-+-----------------------------------------------------+
-```
-
-```{python}
-#| eval: false
-assert is_game_over(board) == False
-move(board, 2, "RIGHT")
-print( printable_board(board) )
-```
-
-```{html}
-+-----------------------------------------------------+
-| WKi | WKn |     |     | WKn |     | BKn | BKn | BKi |
-+-----------------------------------------------------+
-```
-
-```{python}
-#| eval: false
-assert is_game_over(board) == False
-move(board, 6, "LEFT")
-print( printable_board(board) )
-```
-
-```{html}
-+-----------------------------------------------------+
-| WKi | WKn |     |     | BKn |     |     | BKn | BKi |
-+-----------------------------------------------------+
-```
-
-```{python}
-#| eval: false
-assert is_game_over(board) == False
-move(board, 1, "RIGHT")
-print( printable_board(board) )
-```
-
-```{html}
-+-----------------------------------------------------+
-| WKi |     |     | WKn | BKn |     |     | BKn | BKi |
-+-----------------------------------------------------+
-```
-
-```{python}
-#| eval: false
-assert is_game_over(board) == False
-move(board, 4, "LEFT")
-print( printable_board(board) )
-```
-
-```{html}
-+-----------------------------------------------------+
-| WKi |     | BKn | WKn |     |     |     | BKn | BKi |
-+-----------------------------------------------------+
-```
-
-```{python}
-#| eval: false
-assert is_game_over(board) == False
-move(board, 0, "RIGHT")
-print( printable_board(board) )
-```
-
-```{html}
-+-----------------------------------------------------+
-|     |     | WKi | WKn |     |     |     | BKn | BKi |
-+-----------------------------------------------------+
-```
-
-```{python}
-#| eval: false
-assert is_game_over(board) == False
-move(board, 7, "LEFT")
-print( printable_board(board) )
-```
-
-```{html}
-+-----------------------------------------------------+
-|     |     | WKi | WKn |     | BKn |     |     | BKi |
-+-----------------------------------------------------+
-```
-
-```{python}
-#| eval: false
-assert is_game_over(board) == False
-move(board, 3, "RIGHT")
-print( printable_board(board) )
-```
-
-```{html}
-+-----------------------------------------------------+
-|     |     | WKi |     |     | WKn |     |     | BKi |
-+-----------------------------------------------------+
-```
-
-```{python}
-#| eval: false
-assert is_game_over(board) == False
-move(board, 8, "LEFT")
-print( printable_board(board) )
-```
-
-```{html}
-+-----------------------------------------------------+
-|     |     | WKi |     |     | BKi |     |     |     |
-+-----------------------------------------------------+
-```
-
-```{python}
-#| eval: false
-assert is_game_over(board) == False
-move(board, 2, "RIGHT")
-print( printable_board(board) )
-```
-
-```{html}
-+-----------------------------------------------------+
-|     |     |     |     |     | WKi |     |     |     |
-+-----------------------------------------------------+
-```
-
-```{python}
-#| eval: false
-assert is_game_over(board) == True
-```
-
-
-```{html}
-White wins!
-```
+<pre>
+Number of months: 261
+</pre>

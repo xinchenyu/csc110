@@ -1,250 +1,201 @@
 ---
-title: "more expressions (slides)"
+title: "built-in functions (slides)"
 format: revealjs
 slide-number: true
 ---
 
-# CSc 110 More expressions
+# CSC 110 Python Functions
 
-## Review of arithmetic operations
+## Built-in Functions
 
--   `+` : plus 
-
--   `-` : minus
-
--   `*` : multiple
-
--   `/` : divide
-
--   `**` : power
-
--  `//` : divide and floor
-
--  `%` : modulos
-   
-<br />
-
-## Review of previous expressions
-
-Evaluate the expressions below:
-
-```{python}
-#| echo: true
-#| eval: false
-4 * 4 / 2 % 2
-( 2 + 3 ) / ( 2 - 1.5)
-3**3 // 7
-5**2 + 25**0.5
-```
-
-## Review of previous expressions
-
-Evaluate the expressions below:
-
-```{python}
-#| echo: true
-#| eval: true
-4 * 4 / 2 % 2
-```
-
-
-```{python}
-#| echo: true
-#| eval: true
-( 2 + 3 ) / ( 2 - 1.5)
-```
-
-
-```{python}
-#| echo: true
-#| eval: true
-3**3 // 7
-```
-
-
-```{python}
-#| echo: true
-#| eval: true
-5**2 + 25**0.5
-```
-
-
-## Comparisons
-
--   What will be the result of the following expressions:
-
-```{python}
-#| eval: false
-#| echo: true
-8 == 7
-8 < 7
-8 > 7
-```
-
--   What are the other comparison operators?
-
-## Comparisons
-
-Expressions with comparisons operators are evaluated to `True` or `False`
-
--   `==` equal
--   `!=` different
--   `>=` greater or equal
--   `>` greater
--   `<=` less or equal
--   `<` less
-
+-   `print()` 
+-   `round()`
+-   `type()`
+-   `input()`
+-   `len()`
+-   `int()`
+-   `float()`
 
 ## Write a function
 
-1. Its name is `odd` and it takes one integer argument `n`
-1. It **returns** `True` if `n` is odd, `False` if `n` is even
+Write a Python function that does the following:
+
+1.  Its name is `greeting`
+2.  It takes two arguments, `first_name` and `last_name`
+3.  It returns a string with a greeting using `first_name` and `last_name`
 
 ```{python}
-#| eval: false
 #| echo: true
-print( odd(10) ) # False
-print( odd(5) ) # True
-print( odd(0) ) # False
+#| eval: false
+print( greeting("Mickey", "Mouse") ) # Hello, Mickey Mouse!
 ```
 
+## `input()` function
 
-## Write a function -- solution
+-   The `input()` function prompts the user to input text in the standard output
+-   Whatever is inside the parentheses in `input()` will be written to the standard output (without a trailing newline, which you can add using `\n`).
+-   The function then reads a line from input, converts it to a string (stripping a trailing newline), and returns that
+-   `input()` always returns a string
 
 ```{python}
-#| eval: true
 #| echo: true
-def odd(n):
-  return n % 2 == 1
+#| eval: false
+input("What's your name?\n")
+```
+
+## Write a function
+
+Write a Python function that does the following:
+
+1.  Its name is `greeting_again` with no parameters
+2.  It first prompts you to enter your first name
+3.  It again prompts you to enter your last name
+3.  It returns a string with the same greeting as `greeting` but replace with your first and last name
+
+```{python}
+#| echo: true
+#| eval: false
+print( greeting_again() ) 
+```
+
+## Write a function
+
+```{python}
+#| echo: true
+#| eval: false
+def greeting(first, last):
+    message = "Hello, " + first + " " + last + "!"
+    return message
+
+def greeting_again():
+    first = input("Enter your first name:\n")
+    last = input("Enter your last name:\n")
+    message = "Hello, " + first + " " + last + "!"
+    return message
 
 def main():
-  print( odd(10) ) # False
-  print( odd(5) ) # True
-  print( odd(0) ) # False
-  
+    print(greeting("Mickey", "Mouse"))
+    print(greeting_again())
+
+main()
+```
+
+## `len()` function
+
+-   The `len()` function can be used with many types -- we will be using it with `string` for now
+-   It returns the number of characters in a string
+
+```{python}
+#| echo: true
+#| eval: true
+character_count = len("Mickey")
+print(character_count)
+```
+
+## Write a function
+
+Write a Python function that does the following:
+
+1.  Its name is `count_characters`
+2.  It takes three string arguments, `a`, `b` and `c`
+3.  It returns the total number of characters for all three strings
+
+
+```{python}
+#| echo: true
+#| eval: false
+print( count_characters("hel", "lo", "world") ) # 10
+print( count_characters("", "", "") ) # 0
+print( count_characters(" ", " ", " ") ) # 3
+print( count_characters("10", "2", "3") ) # 4
+```
+
+## Write a function
+```{python}
+#| echo: true
+#| eval: true
+def count_characters(a, b, c):
+    return len(a) + len(b) + len(c)
+
+def main():
+    print( count_characters("hel", "lo", "world") ) # 10
+    print( count_characters("", "", "") ) # 0
+    print( count_characters(" ", " ", " ") ) # 3
+    print( count_characters("10", "2", "3") ) # 4
+
 main()
 ```
 
 
-## Arithmetic vs Comparison Operators
 
-Arithmetic Operators:
+## Quiz 03
 
--   `(expressions...)`, `**`, `*`, `/`, `//`, `%`, `+`, `-` 
+<center>
+<div class="cleanslate w24tz-current-time w24tz-large" style="display: inline-block !important; visibility: hidden !important; min-width:300px !important; min-height:145px !important;"><a href="//24timezones.com/Tucson/time" style="text-decoration: none" class="clock24" id="tz24-1695057604-c1393-eyJob3VydHlwZSI6IjEyIiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIwIiwiY29udGFpbmVyX2lkIjoiY2xvY2tfYmxvY2tfY2I2NTA4ODZjNDg0OWVlIiwidHlwZSI6ImRiIiwibGFuZyI6ImVuIn0=" title="World Time :: Tucson" target="_blank" rel="nofollow"></a>current time<div id="clock_block_cb650886c4849ee"></div></div>
+<script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
+</center>
 
-Comparison Operators:
+You have 10 minutes to complete the quiz.
 
--   `==`, `!=`, `>=`, `>`, `<=`, `<` 
-
-Order of operations: arithmetic operators come before comparison operators.
+Your formula in your function should be Python code (in other words, do not just copy the formula in the instructions, make it so it uses **actual symbols for Python operators**)
 
 
-## Evaluate the expressions
+## `int()` function
 
-Evaluation the expressions on your whiteboard and answer attendance questions on Gradescope.
+-   The `int()` function can be used to convert a string to an integer type
+-   It only works if the string only contains digits
+
 ```{python}
+#| echo: true
+#| eval: true
+age = '35'
+age_int = int(age)
+print(type(age), type(age_int))
+```
+
+## `float()` function
+
+-   The `float()` function can be used to convert a string to a float type
+-   It only works if the string only contains digits and optionally a decimal point
+
+```{python}
+#| echo: true
+#| eval: true
+age = '35'
+age_float = float(age)
+print(type(age), type(age_float))
+```
+
+
+## Write a function
+
+Write a Python function `calculate_year_born` with no parameters. It prompts user to enter their age `input()`. 
+
+It converts user's `age` to integer and calculates (imperfectly) the year a person of `age` was born by subtracting `age` from `2025`. 
+
+It returns an integer representing the approximate year person of `age` was born.
+
+
+```{python}
+#| echo: true
 #| eval: false
-#| echo: true
-3**2 < 25**0.5
-9 % 3 == 8 % 2
-10 // 3 > 9 // 3
-14 % 2 != 15 % 2
+print( calculate_year_born() ) # user enters 60, function returns 1965
 ```
 
 
-## Evaluation order
-
--   `(expressions...)`
-
--   `**` : Exponentiation
-
--   `*, /, //, %` : Multiplication, Division, Floor Division and Remainder
-
--   `+, -` : Addition and subtraction
-
--   `<, <=, >, >=, !=, ==` : Comparisons
-
--   `not x` : Boolean NOT
-
--   `and` : Boolean AND
-
--   `or` : Boolean OR
-
-## not
-
-| Expression    | Result |
-| -------- | :-------: |
-| not True  | False   |
-| not False | True    |
-
-## and
-
-| Expression    | Result |
-| -------- | :-------: |
-| True and True  | True   |
-| False  and True | False    |
-| True  and False | False    |
-| False and False  | False   |
-
-## or
-
-| Expression    | Result |
-| -------- | :-------: |
-| True or True  | True   |
-| False  or True | True    |
-| True  or False | True    |
-| False or False  | False   |
-
-
-## Evaluate the expressions
+## Write a function
 
 ```{python}
+#| echo: true
 #| eval: false
-#| echo: true
-not 2**3 == 8 and 4 % 2 == 0
-25*0.5 > 5**2 or 4 <= 2**2
-4 % 2 == 0 or 4 // 0 == 0
-4 % 2 != 1
-not 0
-not 1
+def calculate_year_born():
+    str_age = input("what's your age?\n")
+    age = int(str_age)
+    year_born = 2025 - age
+    return year_born
+
+def main():
+    print(calculate_year_born())
+
+main()
 ```
-
-
-## Evaluate the expressions
-
-```{python}
-#| eval: true
-#| echo: true
-not 2**3 == 8 and 4 % 2 == 0
-```
-
-```{python}
-#| eval: true
-#| echo: true
-25*0.5 > 5**2 or 4 <= 2**2
-```
-
-```{python}
-#| eval: true
-#| echo: true
-4 % 2 == 0 or 4 // 0 == 0
-```
-
-```{python}
-#| eval: true
-#| echo: true
-4 % 2 != 1
-```
-
-```{python}
-#| eval: true
-#| echo: true
-not 0
-```
-
-```{python}
-#| eval: true
-#| echo: true
-not 1
-```
-

@@ -20,11 +20,11 @@ Short Programming projects are submitted during our weekly 45-minute in-person l
 
 # Programming Problems
 
-Programming Problems should be submitted to [gradescope](https://www.gradescope.com/courses/934148).
-
-## Programming Problem 5
+Programming Problems should be submitted to [gradescope](https://www.gradescope.com/courses/1044596).
 
 **Due date: `r assignments %>% filter(assessment == "Module 3 Programming Problems") %>% pull(formatted_date)` at 9pm**
+
+## Programming Problem 5
 
 Write two python functions. The first function does the following:
 
@@ -69,8 +69,6 @@ print( liters_to_gallons() ) # 1.59
 You can also download the [ready-to-run script](test_scripts/test_conversions.py) to test your solution.
 
 ## Programming Problem 6
-
-**Due date: `r assignments %>% filter(assessment == "Module 3 Programming Problems") %>% pull(formatted_date)` at 9pm**
 
 Write a python function that does the following:
 

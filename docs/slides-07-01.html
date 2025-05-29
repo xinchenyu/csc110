@@ -9,7 +9,7 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.39">
 
-  <title>CSc 110 Computer Programming I – mutability (slides)</title>
+  <title>CSc 110 Computer Programming I – lists (slides)</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -191,365 +191,530 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">mutability (slides)</h1>
+  <h1 class="title">lists (slides)</h1>
 
 <div class="quarto-title-authors">
 </div>
 
 </section>
 <section>
-<section id="csc-110---mutability" class="title-slide slide level1 center">
-<h1>CSc 110 - Mutability</h1>
+<section id="csc-110---lists" class="title-slide slide level1 center">
+<h1>CSc 110 - Lists</h1>
 
 </section>
-<section id="lists-vs-strings" class="slide level2">
-<h2>Lists vs strings</h2>
+<section id="announcement" class="slide level2">
+<h2>Announcement</h2>
+<p>Review session tomorrow (Tuesday, Feb 18)</p>
 <ul>
-<li><p>Lists are <strong>mutable</strong></p></li>
-<li><p>Strings are <strong>not</strong></p></li>
-<li><p>In addition to retrieving an item from a <code>list</code>, we can remove or change it (which is <strong>not</strong> something you can do with strings)</p></li>
+<li><p>Location: Gittings 129b</p></li>
+<li><p>Time: 5 - 7 : 00 pm</p></li>
 </ul>
-<div id="3dc6c013" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>songs <span class="op">=</span> [<span class="st">"Lavender Haze"</span>, <span class="st">"Calm Down"</span>, <span class="st">"As It Was"</span>, <span class="st">"About Damn Time"</span>]</span>
-<span id="cb1-2"><a></a>songs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>['Lavender Haze', 'Calm Down', 'As It Was', 'About Damn Time']</code></pre>
+</section>
+<section id="sequences" class="slide level2">
+<h2>Sequences</h2>
+<p>We’ve worked with <code>strings</code>, which are sequences in Python. Sequences can be indexed with <code>[ ]</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>word <span class="op">=</span> <span class="st">"lotion"</span></span>
+<span id="cb1-2"><a></a>word[<span class="dv">0</span>] <span class="co"># returns first character in string</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'l'</code></pre>
 </div>
 </div>
-<div id="a5c83c36" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>songs[<span class="dv">0</span>] <span class="op">=</span> <span class="st">"Flowers"</span></span>
-<span id="cb3-2"><a></a>songs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>['Flowers', 'Calm Down', 'As It Was', 'About Damn Time']</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>word[<span class="dv">1</span>] <span class="co"># returns second character in string</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'o'</code></pre>
+</div>
+</div>
+<p>We also have <code>lists</code> in Python, which are also sequences and can indexed with <code>[ ]</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>numbers <span class="op">=</span> [<span class="st">'l'</span>, <span class="st">'o'</span>, <span class="st">'t'</span>, <span class="st">'i'</span>, <span class="st">'o'</span>, <span class="st">'n'</span>]</span>
+<span id="cb5-2"><a></a>numbers[<span class="dv">0</span>] <span class="co"># returns first item in list</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'l'</code></pre>
 </div>
 </div>
 </section>
-<section id="lists-are-mutable" class="slide level2">
-<h2>Lists are mutable</h2>
-<p>(strings are not)</p>
-<p>Because lists are mutable:</p>
+<section id="data-structures" class="slide level2">
+<h2>Data Structures</h2>
 <ul>
-<li>once a list is changed <strong>inside</strong> a function, that <strong>change persists</strong> when the function has finished running</li>
+<li>Data structures is a way to organize data when coding</li>
+<li>Data structures allow for easy access and <strong>modification</strong> of values</li>
+<li>You can see data structures as a collection of data values</li>
+<li>In Python <code>lists</code> are a data structure that is:
+<ul>
+<li>mutable (you can change the values in it)</li>
+<li>unordered – you can have repeated elements in a list</li>
+</ul></li>
 </ul>
+</section>
+<section id="creating-lists" class="slide level2">
+<h2>Creating lists</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="co"># empty list</span></span>
+<span id="cb7-2"><a></a>no_numbers <span class="op">=</span> []</span>
+<span id="cb7-3"><a></a></span>
+<span id="cb7-4"><a></a><span class="co"># list of integers</span></span>
+<span id="cb7-5"><a></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">10</span>, <span class="dv">7</span>]</span>
+<span id="cb7-6"><a></a></span>
+<span id="cb7-7"><a></a><span class="co"># list of strings</span></span>
+<span id="cb7-8"><a></a>names <span class="op">=</span> [<span class="st">'SZA'</span>, <span class="st">'JVKE'</span>, <span class="st">'Bruno Mars'</span>, <span class="st">'Doechii'</span>]</span>
+<span id="cb7-9"><a></a></span>
+<span id="cb7-10"><a></a><span class="co"># mixed types list</span></span>
+<span id="cb7-11"><a></a>values <span class="op">=</span> [<span class="dv">2</span>, <span class="fl">1.15</span>, <span class="dv">7</span>, <span class="fl">1.75</span>, <span class="st">'those'</span>]</span>
+<span id="cb7-12"><a></a><span class="bu">print</span>(values[<span class="dv">0</span>] <span class="op">*</span> values[<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2.3</code></pre>
+</div>
+</div>
 </section>
 <section id="write-a-function" class="slide level2">
 <h2>Write a function</h2>
-<ol type="1">
-<li>Its name is <code>make_even</code></li>
-<li>It takes one argument, a list of <code>integers</code></li>
-<li>It iterates over the list, changing odd numbers to even number (even up)</li>
-</ol>
-<p>Name your file <code>make_even.py</code> and submit to Gradescope.</p>
-<div id="fa158ad8" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>integers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
-<span id="cb5-2"><a></a>make_even(integers)</span>
-<span id="cb5-3"><a></a><span class="cf">assert</span> integers <span class="op">==</span> [<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>] <span class="co"># change persists</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Its name is <code>sum_all</code> that takes a list of <code>values</code> as an argument. It runs a loop that iterates through the number in <code>values</code> summing all numbers. It returns the sum of all numbers in <code>values</code>. HINT: a) create a variable that accumulate the sum and b) use <code>while</code>.</p>
+<p>Name your file <code>sum_list.py</code> and submit to Gradescope.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="cf">assert</span> sum_all([<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>]) <span class="op">==</span> <span class="dv">6</span></span>
+<span id="cb9-2"><a></a><span class="cf">assert</span> sum_all([<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">3</span>]) <span class="op">==</span> <span class="dv">13</span></span>
+<span id="cb9-3"><a></a><span class="cf">assert</span> sum_all([]) <span class="op">==</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="write-a-function-solution-1" class="slide level2">
-<h2>Write a function – solution 1</h2>
-<div id="d98e2fb7" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">def</span> make_even(integers):</span>
-<span id="cb6-2"><a></a>  index <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb6-3"><a></a>  <span class="cf">while</span> index <span class="op">&lt;</span> <span class="bu">len</span>(integers):</span>
-<span id="cb6-4"><a></a>    <span class="cf">if</span> integers[index] <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">1</span>:</span>
-<span id="cb6-5"><a></a>      integers[index] <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb6-6"><a></a>    index <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb6-7"><a></a>  <span class="cf">return</span> integers</span>
-<span id="cb6-8"><a></a>      </span>
-<span id="cb6-9"><a></a><span class="kw">def</span> main():</span>
-<span id="cb6-10"><a></a>  integers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
-<span id="cb6-11"><a></a>  make_even(integers)</span>
-<span id="cb6-12"><a></a>  <span class="cf">assert</span> integers <span class="op">==</span> [<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>]</span>
-<span id="cb6-13"><a></a>  </span>
-<span id="cb6-14"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Let’s visualize this on <a href="https://pythontutor.com/visualize.html#mode=edit">Python Tutor</a></p>
-</section>
-<section id="write-a-function-solution-2" class="slide level2">
-<h2>Write a function – solution 2</h2>
-<div id="6d9955ac" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="kw">def</span> make_even(integers):</span>
-<span id="cb7-2"><a></a>  index <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb7-3"><a></a>  <span class="cf">while</span> index <span class="op">&lt;</span> <span class="bu">len</span>(integers):</span>
-<span id="cb7-4"><a></a>    integers[index] <span class="op">+=</span> integers[index] <span class="op">%</span> <span class="dv">2</span></span>
-<span id="cb7-5"><a></a>    index <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb7-6"><a></a>  <span class="cf">return</span> integers</span>
-<span id="cb7-7"><a></a>      </span>
-<span id="cb7-8"><a></a><span class="kw">def</span> main():</span>
-<span id="cb7-9"><a></a>  test_integers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
-<span id="cb7-10"><a></a>  make_even(test_integers)</span>
-<span id="cb7-11"><a></a>  <span class="cf">assert</span> test_integers <span class="op">==</span> [<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>]</span>
-<span id="cb7-12"><a></a>  </span>
-<span id="cb7-13"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>If we remove the <code>return</code> statement on line 6, will the function still work properly?</p>
-</section>
-<section id="object-references" class="slide level2">
-<h2>Object References</h2>
-<ul>
-<li><p>A variable doesn’t store values, it stores a reference to an object that lives in your computer memory (RAM)</p></li>
-<li><p>If you assign a value to an existing object, the variable references that object</p></li>
-</ul>
-<div id="8c0365c4" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>last_name <span class="op">=</span> <span class="st">"Brown"</span></span>
-<span id="cb8-2"><a></a>name <span class="op">=</span> last_name <span class="co"># both reference the same object "Brown"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ul>
-<li>If you assign it to a new object, the object is created, placed in memory, and then the variable references it</li>
-</ul>
-<div id="6aac0b6a" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>title <span class="op">=</span> <span class="st">"Dr."</span></span>
-<span id="cb9-2"><a></a>title <span class="op">=</span> <span class="st">"Ms."</span> <span class="co"># "Dr." object will be removed from memory</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="write-a-function-solution" class="slide level2">
+<h2>Write a function – solution</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="kw">def</span> sum_all(values):</span>
+<span id="cb10-2"><a></a>  total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb10-3"><a></a>  index <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb10-4"><a></a>  <span class="cf">while</span> index <span class="op">&lt;</span> <span class="bu">len</span>(values):</span>
+<span id="cb10-5"><a></a>    total <span class="op">+=</span> values[index]</span>
+<span id="cb10-6"><a></a>    index <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb10-7"><a></a>  <span class="cf">return</span> total</span>
+<span id="cb10-8"><a></a></span>
+<span id="cb10-9"><a></a><span class="kw">def</span> main():</span>
+<span id="cb10-10"><a></a>  <span class="cf">assert</span> sum_all([<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>]) <span class="op">==</span> <span class="dv">6</span></span>
+<span id="cb10-11"><a></a>  <span class="cf">assert</span> sum_all([<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">3</span>]) <span class="op">==</span> <span class="dv">13</span></span>
+<span id="cb10-12"><a></a>  <span class="cf">assert</span> sum_all([]) <span class="op">==</span> <span class="dv">0</span></span>
+<span id="cb10-13"><a></a>    </span>
+<span id="cb10-14"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="examples" class="slide level2">
-<h2>Examples</h2>
-<p>Strings are <strong>not</strong> mutable</p>
-<div id="ce53469a" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>title <span class="op">=</span> <span class="st">"Dr."</span></span>
-<span id="cb10-2"><a></a>last_name <span class="op">=</span> <span class="st">"Brown"</span></span>
-<span id="cb10-3"><a></a><span class="bu">print</span>(title <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> last_name)</span>
-<span id="cb10-4"><a></a></span>
-<span id="cb10-5"><a></a>title <span class="op">=</span> <span class="st">"Ms."</span></span>
-<span id="cb10-6"><a></a><span class="bu">print</span>(title <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> last_name)</span>
-<span id="cb10-7"><a></a></span>
-<span id="cb10-8"><a></a>name <span class="op">=</span> last_name <span class="co"># both point to the same object</span></span>
-<span id="cb10-9"><a></a>last_name <span class="op">=</span> <span class="st">"Silva"</span> <span class="co"># a new object created, last_name point to the new </span></span>
-<span id="cb10-10"><a></a><span class="bu">print</span>(title <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> name) <span class="co"># name still point to the original string</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="loop-table" class="slide level2">
+<h2>Loop Table</h2>
+<p>We start with <code>index = 0</code> and <code>total = 0</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>sum_all([<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: right;">index</th>
+<th style="text-align: left;">index &lt; len(values)</th>
+<th style="text-align: left;">values[index]</th>
+<th style="text-align: left;">total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">True</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">0 + 2 = 2</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">True</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2 + 1 = 3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">True</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">3 + 5 = 8</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">True</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">8 + 2 = 10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">True</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">10 + 3 = 13</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">False</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">13</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="loop-table-1" class="slide level2">
+<h2>Loop Table</h2>
+<p>Start with <code>index = 0</code> and <code>total = 0</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>sum_all([<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">index</th>
+<th style="text-align: left;">index &lt; len(values)</th>
+<th style="text-align: left;">values[index]</th>
+<th style="text-align: left;">total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">|</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">|</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">|</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">|</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">|</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">|</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="loop-table-solution" class="slide level2">
+<h2>Loop Table – solution</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>sum_all([<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: right;">index</th>
+<th style="text-align: left;">index &lt; len(numbers)</th>
+<th style="text-align: left;">numbers[index]</th>
+<th style="text-align: left;">total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">True</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">True</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">True</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">6</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">True</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">False</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">10</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section></section>
+<section>
+<section id="python-tutor" class="title-slide slide level1 center">
+<h1>Python Tutor</h1>
+<p>You can also visualize code in python on <a href="https://pythontutor.com/visualize.html#mode=edit">Python Tutor</a></p>
+</section>
+<section id="using-a-control-variable" class="slide level2">
+<h2>Using a control variable</h2>
+<p>Remember how to get the max of three numbers?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a><span class="kw">def</span> max3(x, y, z):</span>
+<span id="cb14-2"><a></a>  <span class="bu">max</span> <span class="op">=</span> x <span class="co"># assume max is first number</span></span>
+<span id="cb14-3"><a></a>  <span class="cf">if</span> y <span class="op">&gt;</span> <span class="bu">max</span>:</span>
+<span id="cb14-4"><a></a>    <span class="bu">max</span> <span class="op">=</span> y <span class="co"># assumption is incorrect, assume y is max</span></span>
+<span id="cb14-5"><a></a>  <span class="cf">if</span> z <span class="op">&gt;</span> <span class="bu">max</span>:</span>
+<span id="cb14-6"><a></a>    <span class="bu">max</span> <span class="op">=</span> z <span class="co"># assumption is incorrect, z is max</span></span>
+<span id="cb14-7"><a></a>  <span class="cf">return</span> <span class="bu">max</span></span>
+<span id="cb14-8"><a></a></span>
+<span id="cb14-9"><a></a><span class="kw">def</span> main():</span>
+<span id="cb14-10"><a></a>  <span class="bu">print</span>( max3(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>) ) <span class="co"># 2</span></span>
+<span id="cb14-11"><a></a>  </span>
+<span id="cb14-12"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Dr. Brown
-Ms. Brown
-Ms. Brown</code></pre>
+<pre><code>2</code></pre>
 </div>
 </div>
-<p>Visualize these examples in <a href="https://pythontutor.com/visualize.html#mode=display">Python Tutor</a></p>
+<p>Adapt this function (<code>max_list</code>) to take a list of numbers (for example <code>[1, 2, 2, 1, 3, 1, 1]</code>) instead of three numbers (use <code>while</code>).</p>
 </section>
-<section id="examples-1" class="slide level2">
-<h2>Examples</h2>
-<p>Lists are <strong>mutable</strong></p>
-<div id="8ce59142" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>names <span class="op">=</span> [<span class="st">"Dr."</span>, <span class="st">"Brown"</span>]</span>
-<span id="cb12-2"><a></a><span class="bu">print</span>(names[<span class="dv">0</span>] <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> names[<span class="dv">1</span>])</span>
-<span id="cb12-3"><a></a></span>
-<span id="cb12-4"><a></a>names[<span class="dv">0</span>] <span class="op">=</span> <span class="st">"Ms."</span></span>
-<span id="cb12-5"><a></a><span class="bu">print</span>(names[<span class="dv">0</span>] <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> names[<span class="dv">1</span>])</span>
-<span id="cb12-6"><a></a></span>
-<span id="cb12-7"><a></a>names_copy <span class="op">=</span> names <span class="co"># both point to the same object</span></span>
-<span id="cb12-8"><a></a>names[<span class="dv">1</span>] <span class="op">=</span> <span class="st">"Silva"</span> <span class="co"># the object been mutated, no new object created</span></span>
-<span id="cb12-9"><a></a><span class="bu">print</span>(names_copy[<span class="dv">0</span>] <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> names_copy[<span class="dv">1</span>]) <span class="co"># both point to the mutated object</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="max-of-list-solution" class="slide level2">
+<h2>Max of list – solution</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a><span class="kw">def</span> max_list(numbers):</span>
+<span id="cb16-2"><a></a>  <span class="co">'''</span></span>
+<span id="cb16-3"><a></a><span class="co">  Given a list of number, this function returns the highest number.</span></span>
+<span id="cb16-4"><a></a><span class="co">  Args:</span></span>
+<span id="cb16-5"><a></a><span class="co">    List of numeric values</span></span>
+<span id="cb16-6"><a></a><span class="co">  Returns:</span></span>
+<span id="cb16-7"><a></a><span class="co">    Max (float or integer, whatever value type is the highest)</span></span>
+<span id="cb16-8"><a></a><span class="co">  '''</span></span>
+<span id="cb16-9"><a></a>  <span class="bu">max</span> <span class="op">=</span> numbers[<span class="dv">0</span>]</span>
+<span id="cb16-10"><a></a>  index <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb16-11"><a></a>  <span class="cf">while</span> index <span class="op">&lt;</span> <span class="bu">len</span>(numbers):</span>
+<span id="cb16-12"><a></a>    <span class="cf">if</span> numbers[index] <span class="op">&gt;</span> <span class="bu">max</span>:</span>
+<span id="cb16-13"><a></a>      <span class="bu">max</span> <span class="op">=</span> numbers[index]</span>
+<span id="cb16-14"><a></a>    index <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb16-15"><a></a>  <span class="cf">return</span> <span class="bu">max</span></span>
+<span id="cb16-16"><a></a></span>
+<span id="cb16-17"><a></a><span class="kw">def</span> main():</span>
+<span id="cb16-18"><a></a>  <span class="bu">print</span>( max_list([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>]) ) <span class="co"># 3</span></span>
+<span id="cb16-19"><a></a>  <span class="bu">print</span>( max_list([<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>]) ) <span class="co"># 3</span></span>
+<span id="cb16-20"><a></a>  </span>
+<span id="cb16-21"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Dr. Brown
-Ms. Brown
-Ms. Silva</code></pre>
-</div>
-</div>
-<p>Visualize these examples in <a href="https://pythontutor.com/visualize.html#mode=display">Python Tutor</a></p>
-</section>
-<section id="summary" class="slide level2">
-<h2>Summary</h2>
-<p>When working with lists, once they are changed in a function, the changes happen to the object in memory</p>
-<p>Changes to lists persist once the function has finished running</p>
-</section>
-<section id="pop-list-method" class="slide level2">
-<h2><code>.pop()</code> list method</h2>
-<p>We will be using a few built-in list <code>methods</code></p>
-<p>Here’s how <code>.pop()</code> works:</p>
-<div id="06b3b893" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>songs <span class="op">=</span> [<span class="st">"Lavender Haze"</span>, <span class="st">"Calm Down"</span>, <span class="st">"As It Was"</span>, <span class="st">"Her"</span>]</span>
-<span id="cb14-2"><a></a>songs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
-<pre><code>['Lavender Haze', 'Calm Down', 'As It Was', 'Her']</code></pre>
-</div>
-</div>
-<div id="9ca4556f" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a>songs.pop(<span class="dv">0</span>) <span class="co"># 'Her' index moves from 3 to 2</span></span>
-<span id="cb16-2"><a></a>songs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
-<pre><code>['Calm Down', 'As It Was', 'Her']</code></pre>
-</div>
-</div>
-<div id="efcbdf81" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a>songs.pop(<span class="dv">0</span>) <span class="co"># 'Her' index moves from 2 to 1</span></span>
-<span id="cb18-2"><a></a>songs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
-<pre><code>['As It Was', 'Her']</code></pre>
+<pre><code>3
+3</code></pre>
 </div>
 </div>
 </section>
-<section id="pop-items-using-while-loop" class="slide level2">
-<h2><code>.pop()</code> items using <code>while</code> loop</h2>
-<div id="78eb1e78" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a>songs <span class="op">=</span> [<span class="st">"Lavender Haze"</span>, <span class="st">"Calm Down"</span>, <span class="st">"As It Was"</span>, <span class="st">"Her"</span>]</span>
-<span id="cb20-2"><a></a>index <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb20-3"><a></a><span class="cf">while</span> index <span class="op">&lt;</span> <span class="bu">len</span>(songs):</span>
-<span id="cb20-4"><a></a>  songs.pop(index)</span>
-<span id="cb20-5"><a></a>  </span>
-<span id="cb20-6"><a></a><span class="bu">print</span>(songs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[]</code></pre>
+<section id="loop-table-2" class="slide level2">
+<h2>Loop table</h2>
+<p>We start with <code>index = 1</code> and <code>max = 2</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a>max_list([<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">index</th>
+<th style="text-align: left;">index &lt; len(numbers)</th>
+<th style="text-align: left;">numbers[index]</th>
+<th style="text-align: left;">max</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">|</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">|</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">|</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">|</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">|</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">|</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<p>Why we don’t update index in the while loop?</p>
 </section>
-<section id="write-two-functions" class="slide level2">
-<h2>Write two functions</h2>
+<section id="loop-table-solution-1" class="slide level2">
+<h2>Loop table – solution</h2>
+<p>We start with <code>index = 1</code> and <code>max = 2</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a>max_list([<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: right;">index</th>
+<th style="text-align: left;">index &lt; len(numbers)</th>
+<th style="text-align: left;">numbers[index]</th>
+<th style="text-align: left;">max</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">True</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">True</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">True</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">False</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">3</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="max-solution" class="slide level2">
+<h2>Max solution</h2>
 <ul>
-<li><p>The first function returns the original argument list by removing vowels.</p></li>
-<li><p>The second function returns a string without vowels.</p></li>
+<li>What about empty lists?</li>
+<li>How to get the min instead?</li>
 </ul>
-<p>Note: list is mutable, but string is not.</p>
-<div id="3f858e3f" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a><span class="cf">assert</span> remove_vowels_list([<span class="st">"b"</span>, <span class="st">"a"</span>, <span class="st">"n"</span>, <span class="st">"a"</span>, <span class="st">"n"</span>, <span class="st">"a"</span>]) <span class="op">==</span> [<span class="st">"b"</span>, <span class="st">"n"</span>, <span class="st">"n"</span>]</span>
-<span id="cb22-2"><a></a><span class="cf">assert</span> remove_vowels_string(<span class="st">"banana"</span>) <span class="op">==</span> <span class="st">"bnn"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a><span class="cf">assert</span> max_list([]) <span class="op">==</span> <span class="va">None</span></span>
+<span id="cb20-2"><a></a><span class="cf">assert</span> max_list([<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>]) <span class="op">==</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="write-two-functions-solution" class="slide level2">
-<h2>Write two functions – solution</h2>
-<div id="f9e5b735" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a><span class="kw">def</span> remove_vowels_list(characters):</span>
-<span id="cb23-2"><a></a>  index <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb23-3"><a></a>  <span class="cf">while</span> index <span class="op">&lt;</span> <span class="bu">len</span>(characters):</span>
-<span id="cb23-4"><a></a>    <span class="cf">if</span> characters[index] <span class="kw">in</span> <span class="st">"aeiou"</span>:</span>
-<span id="cb23-5"><a></a>      characters.pop(index)</span>
-<span id="cb23-6"><a></a>    <span class="cf">else</span>:</span>
-<span id="cb23-7"><a></a>      index <span class="op">+=</span> <span class="dv">1</span> <span class="co"># go to next index only if no item has been removed</span></span>
-<span id="cb23-8"><a></a>  <span class="cf">return</span> characters</span>
-<span id="cb23-9"><a></a>    </span>
-<span id="cb23-10"><a></a><span class="kw">def</span> remove_vowels_string(string):</span>
-<span id="cb23-11"><a></a>  new_string <span class="op">=</span> <span class="st">""</span></span>
-<span id="cb23-12"><a></a>  index <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb23-13"><a></a>  <span class="cf">while</span> index <span class="op">&lt;</span> <span class="bu">len</span>(string):</span>
-<span id="cb23-14"><a></a>    <span class="cf">if</span> string[index] <span class="kw">not</span> <span class="kw">in</span> <span class="st">"aeiou"</span>:</span>
-<span id="cb23-15"><a></a>      new_string <span class="op">+=</span> string[index]</span>
-<span id="cb23-16"><a></a>    index <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb23-17"><a></a>  <span class="cf">return</span> new_string</span>
-<span id="cb23-18"><a></a></span>
-<span id="cb23-19"><a></a><span class="kw">def</span> main():</span>
-<span id="cb23-20"><a></a>  test_characters <span class="op">=</span> [<span class="st">"b"</span>, <span class="st">"a"</span>, <span class="st">"n"</span>, <span class="st">"a"</span>, <span class="st">"n"</span>, <span class="st">"a"</span>]</span>
-<span id="cb23-21"><a></a>  test_string <span class="op">=</span> <span class="st">"banana"</span></span>
-<span id="cb23-22"><a></a>  </span>
-<span id="cb23-23"><a></a>  <span class="cf">assert</span> remove_vowels_list(test_characters) <span class="op">==</span> test_characters</span>
-<span id="cb23-24"><a></a>  <span class="cf">assert</span> test_characters <span class="op">==</span> [<span class="st">"b"</span>, <span class="st">"n"</span>, <span class="st">"n"</span>]</span>
-<span id="cb23-25"><a></a>  <span class="cf">assert</span> remove_vowels_string(<span class="st">"banana"</span>) <span class="op">==</span> <span class="st">"bnn"</span></span>
-<span id="cb23-26"><a></a>  </span>
-<span id="cb23-27"><a></a>  <span class="bu">print</span>(test_characters)</span>
-<span id="cb23-28"><a></a>  <span class="bu">print</span>(test_string)</span>
-<span id="cb23-29"><a></a>      </span>
-<span id="cb23-30"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="max-solution---empty-lists" class="slide level2">
+<h2>Max solution - empty lists</h2>
+<p>Can we swap the two expressions at <code>line 5</code>?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a><span class="kw">def</span> max_list(numbers):</span>
+<span id="cb21-2"><a></a>  <span class="bu">max</span> <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb21-3"><a></a>  index <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb21-4"><a></a>  <span class="cf">while</span> index <span class="op">&lt;</span> <span class="bu">len</span>(numbers):</span>
+<span id="cb21-5"><a></a>    <span class="cf">if</span> <span class="bu">max</span> <span class="op">==</span> <span class="va">None</span> <span class="kw">or</span> numbers[index] <span class="op">&gt;</span> <span class="bu">max</span>:</span>
+<span id="cb21-6"><a></a>      <span class="bu">max</span> <span class="op">=</span> numbers[index]</span>
+<span id="cb21-7"><a></a>    index <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb21-8"><a></a>  <span class="cf">return</span> <span class="bu">max</span></span>
+<span id="cb21-9"><a></a></span>
+<span id="cb21-10"><a></a><span class="kw">def</span> main():</span>
+<span id="cb21-11"><a></a>  <span class="bu">print</span>( max_list([<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>]) ) <span class="co"># 3</span></span>
+<span id="cb21-12"><a></a>  <span class="bu">print</span>( max_list([]) ) <span class="co"># None</span></span>
+<span id="cb21-13"><a></a></span>
+<span id="cb21-14"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>['b', 'n', 'n']
-banana</code></pre>
+<pre><code>3
+None</code></pre>
 </div>
 </div>
 </section>
-<section id="list-methods" class="slide level2">
-<h2>List methods</h2>
-<p>We will be using the following list methods in this class:</p>
-<ul>
-<li><code>.append()</code> adds an element at the end of the list: <code>list.append(value)</code></li>
-<li><code>.insert()</code> adds an element at the provided index: <code>list.insert(index, value)</code></li>
-<li><code>.pop()</code> removes a specific element at the provided index: <code>list.pop(index)</code></li>
-<li><code>.remove()</code> removes the first element with the provided value: <code>list.remove(value)</code></li>
-</ul>
-</section>
-<section id="append-list-method" class="slide level2">
-<h2><code>.append()</code> list method</h2>
-<div id="b67646c0" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a>songs <span class="op">=</span> [<span class="st">"Lavender Haze"</span>, <span class="st">"Calm Down"</span>, <span class="st">"As It Was"</span>, <span class="st">"Her"</span>]</span>
-<span id="cb25-2"><a></a>songs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="14">
-<pre><code>['Lavender Haze', 'Calm Down', 'As It Was', 'Her']</code></pre>
-</div>
-</div>
-<div id="ec09d343" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a></a>songs.append(<span class="st">"Attention"</span>)</span>
-<span id="cb27-2"><a></a>songs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
-<pre><code>['Lavender Haze', 'Calm Down', 'As It Was', 'Her', 'Attention']</code></pre>
+<section id="updating-lists" class="slide level2">
+<h2>Updating lists</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a>names <span class="op">=</span> [<span class="st">'SZA'</span>, <span class="st">'JVKE'</span>, <span class="st">'Bruno Mars'</span>]</span>
+<span id="cb23-2"><a></a></span>
+<span id="cb23-3"><a></a><span class="co"># mutate list using the index</span></span>
+<span id="cb23-4"><a></a>names[<span class="dv">1</span>] <span class="op">=</span> <span class="st">"Billie Eilish"</span></span>
+<span id="cb23-5"><a></a></span>
+<span id="cb23-6"><a></a>names</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['SZA', 'Billie Eilish', 'Bruno Mars']</code></pre>
 </div>
 </div>
 </section>
 <section id="write-a-function-1" class="slide level2">
 <h2>Write a function</h2>
-<p>It returns a list of integers that represent the indices of the vowels in the original list.</p>
-<p>Test cases:</p>
-<div id="c90d029b" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a></a><span class="cf">assert</span> indices_of_vowels(<span class="st">"hello"</span>) <span class="op">==</span> [<span class="dv">1</span>, <span class="dv">4</span>]</span>
-<span id="cb29-2"><a></a><span class="cf">assert</span> indices_of_vowels(<span class="st">""</span>) <span class="op">==</span> []</span>
-<span id="cb29-3"><a></a><span class="cf">assert</span> indices_of_vowels(<span class="st">"aeiou"</span>) <span class="op">==</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Its name is <code>double</code> that takes a list of numeric variables as argument. It iterates over the list (use <code>while</code>) doubling (multiplying by two) each value in the list. It returns the modified list.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a><span class="cf">assert</span> double([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]) <span class="op">==</span> [<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="write-a-function-solution" class="slide level2">
+<section id="write-a-function-solution-1" class="slide level2">
 <h2>Write a function – solution</h2>
-<div id="4d8df811" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a></a><span class="kw">def</span> indices_of_vowels(string):</span>
-<span id="cb30-2"><a></a>  result <span class="op">=</span> [] <span class="co"># initialize empty list to hold indices</span></span>
-<span id="cb30-3"><a></a>  index <span class="op">=</span> <span class="dv">0</span> <span class="co"># initialize index</span></span>
-<span id="cb30-4"><a></a>  <span class="cf">while</span> index <span class="op">&lt;</span> <span class="bu">len</span>(string):</span>
-<span id="cb30-5"><a></a>    <span class="cf">if</span> string[index] <span class="kw">in</span> <span class="st">"aeiou"</span>: <span class="co"># check if character is vowel</span></span>
-<span id="cb30-6"><a></a>      result.append(index) <span class="co"># append index to result</span></span>
-<span id="cb30-7"><a></a>    index <span class="op">+=</span> <span class="dv">1</span> <span class="co"># increment index</span></span>
-<span id="cb30-8"><a></a>  <span class="cf">return</span> result</span>
-<span id="cb30-9"><a></a></span>
-<span id="cb30-10"><a></a><span class="kw">def</span> main():</span>
-<span id="cb30-11"><a></a>  <span class="cf">assert</span> indices_of_vowels(<span class="st">"hello"</span>) <span class="op">==</span> [<span class="dv">1</span>, <span class="dv">4</span>]</span>
-<span id="cb30-12"><a></a>  <span class="cf">assert</span> indices_of_vowels(<span class="st">""</span>) <span class="op">==</span> []</span>
-<span id="cb30-13"><a></a>  <span class="cf">assert</span> indices_of_vowels(<span class="st">"aeiou"</span>) <span class="op">==</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
-<span id="cb30-14"><a></a>  <span class="bu">print</span>(<span class="st">"Passed all tests."</span>)</span>
-<span id="cb30-15"><a></a></span>
-<span id="cb30-16"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Passed all tests.</code></pre>
-</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a></a><span class="kw">def</span> double(numbers):</span>
+<span id="cb26-2"><a></a>  index <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb26-3"><a></a>  <span class="cf">while</span> index <span class="op">&lt;</span> <span class="bu">len</span>(numbers):</span>
+<span id="cb26-4"><a></a>    numbers[index] <span class="op">*=</span> <span class="dv">2</span></span>
+<span id="cb26-5"><a></a>    index <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb26-6"><a></a>  <span class="cf">return</span> numbers</span>
+<span id="cb26-7"><a></a></span>
+<span id="cb26-8"><a></a><span class="kw">def</span> main():</span>
+<span id="cb26-9"><a></a>  original_list <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb26-10"><a></a>  new_list <span class="op">=</span> double(original_list)</span>
+<span id="cb26-11"><a></a>  <span class="cf">assert</span> original_list <span class="op">==</span> new_list</span>
+<span id="cb26-12"><a></a>  <span class="cf">assert</span> original_list <span class="op">==</span> [<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>]</span>
+<span id="cb26-13"><a></a>  </span>
+<span id="cb26-14"><a></a>  <span class="bu">print</span>(<span class="st">"Passed all tests"</span>)</span>
+<span id="cb26-15"><a></a>  </span>
+<span id="cb26-16"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="write-a-function-2" class="slide level2">
-<h2>Write a function</h2>
-<p>It returns a new list with the items of the original list inverted.</p>
-<p>Test case:</p>
-<div id="80a9df4f" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a></a>strings <span class="op">=</span> [<span class="st">"banana"</span>, <span class="st">"apple"</span>, <span class="st">"grape"</span>]</span>
-<span id="cb32-2"><a></a><span class="cf">assert</span> reverse_list(strings) <span class="op">==</span> [<span class="st">"grape"</span>, <span class="st">"apple"</span>, <span class="st">"banana"</span>]</span>
-<span id="cb32-3"><a></a><span class="cf">assert</span> strings <span class="op">==</span> [<span class="st">"banana"</span>, <span class="st">"apple"</span>, <span class="st">"grape"</span>] <span class="co"># original list unchanged</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="write-a-function-solution-3" class="slide level2">
-<h2>Write a function – solution</h2>
-<div id="e9b2ebca" class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a></a><span class="kw">def</span> reverse_list(items):</span>
-<span id="cb33-2"><a></a>  index <span class="op">=</span> <span class="bu">len</span>(items) <span class="op">-</span> <span class="dv">1</span> <span class="co"># initialize index</span></span>
-<span id="cb33-3"><a></a>  inverted_list <span class="op">=</span> []</span>
-<span id="cb33-4"><a></a>  <span class="cf">while</span> index <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
-<span id="cb33-5"><a></a>    inverted_list.append(items[index])</span>
-<span id="cb33-6"><a></a>    index <span class="op">-=</span> <span class="dv">1</span></span>
-<span id="cb33-7"><a></a>  <span class="cf">return</span> inverted_list</span>
-<span id="cb33-8"><a></a>    </span>
-<span id="cb33-9"><a></a><span class="kw">def</span> main():</span>
-<span id="cb33-10"><a></a>  strings <span class="op">=</span> [<span class="st">"banana"</span>, <span class="st">"apple"</span>, <span class="st">"grape"</span>]</span>
-<span id="cb33-11"><a></a>  <span class="cf">assert</span> reverse_list(strings) <span class="op">==</span> [<span class="st">"grape"</span>, <span class="st">"apple"</span>, <span class="st">"banana"</span>]</span>
-<span id="cb33-12"><a></a>  <span class="cf">assert</span> strings <span class="op">==</span> [<span class="st">"banana"</span>, <span class="st">"apple"</span>, <span class="st">"grape"</span>]</span>
-<span id="cb33-13"><a></a>  <span class="bu">print</span>(<span class="st">"Passed test"</span>)</span>
-<span id="cb33-14"><a></a>  </span>
-<span id="cb33-15"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Passed test</code></pre>
-</div>
-</div>
-</section>
-<section id="quiz-06" class="slide level2">
-<h2>Quiz 06</h2>
-<center>
-<div class="cleanslate w24tz-current-time w24tz-large" style="display: inline-block !important; visibility: hidden !important; min-width:300px !important; min-height:145px !important;">
-<a href="//24timezones.com/Tucson/time" style="text-decoration: none" class="clock24" id="tz24-1695057604-c1393-eyJob3VydHlwZSI6IjEyIiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIwIiwiY29udGFpbmVyX2lkIjoiY2xvY2tfYmxvY2tfY2I2NTA4ODZjNDg0OWVlIiwidHlwZSI6ImRiIiwibGFuZyI6ImVuIn0=" title="World Time :: Tucson" target="_blank" rel="nofollow"></a>current time
-<div id="clock_block_cb650886c4849ee">
-
-</div>
-</div>
-<script type="text/javascript" src="//w.24timezones.com/l.js" async=""></script>
-</center>
-<p>You have 10 minutes to complete the quiz.</p>
-<p>No need to write <code>main()</code> function.</p>
+<section id="slicing-lists" class="slide level2">
+<h2>Slicing lists</h2>
+<ul>
+<li>Range – <code>list[2:4]</code></li>
+<li>Whole list – <code>list[:]</code></li>
+<li>Everything but last character – <code>list[:-1]</code></li>
+</ul>
+<p>The same slicing can be done with strings</p>
 
 
 </section></section>
@@ -768,6 +933,44 @@ banana</code></pre>
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

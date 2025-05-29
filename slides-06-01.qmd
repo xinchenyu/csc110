@@ -1,377 +1,267 @@
 ---
-title: "lists (slides)"
+title: "while loop intro (slides)"
 format: revealjs
 slide-number: true
-df-print: kable
 ---
 
-# CSc 110 - Lists
+# CSc 110 - Intro to While Loops
 
-## Announcement
+## Announcements
 
-Review session tomorrow (Tuesday, Feb 18) 
+* Midterm 1 Febuary 19 -- BRING PHOTO ID
+* Modules 1 to 5 -- study guide under [practice problems](practice-01.html) page on website
 
--   Location: Gittings 129b 
+## While loops
 
--   Time: 5 - 7 : 00 pm
-
-## Sequences
-
-We've worked with `strings`, which are sequences in Python. Sequences can be indexed with `[ ]`:
-
-```{python}
-#| eval: true
-#| echo: true
-word = "lotion"
-word[0] # returns first character in string
-```
-
-```{python}
-#| eval: true
-#| echo: true
-word[1] # returns second character in string
-```
-
-We also have `lists` in Python, which are also sequences and can indexed with `[ ]`:
-
-```{python}
-#| eval: true
-#| echo: true
-numbers = ['l', 'o', 't', 'i', 'o', 'n']
-numbers[0] # returns first item in list
-```
-
-## Data Structures
-
--   Data structures is a way to organize data when coding
--   Data structures allow for easy access and **modification** of values
--   You can see data structures as a collection of data values
--   In Python `lists` are a data structure that is:
-    -   mutable (you can change the values in it)
-    -   unordered -- you can have repeated elements in a list
-
-## Creating lists
-
-```{python}
-#| eval: true
-#| echo: true
-# empty list
-no_numbers = []
-
-# list of integers
-numbers = [1, 5, 2, 10, 7]
-
-# list of strings
-names = ['SZA', 'JVKE', 'Bruno Mars', 'Doechii']
-
-# mixed types list
-values = [2, 1.15, 7, 1.75, 'those']
-print(values[0] * values[1])
-```
-
-
-## Write a function
-
-Its name is `sum_all` that takes a list of `values` as an argument.
-It runs a loop that iterates through the number in `values` summing all numbers.
-It returns the sum of all numbers in `values`.
-HINT: a) create a variable that accumulate the sum and b) use `while`.
-
-Name your file `sum_list.py` and submit to Gradescope.
+-   A **while** loop allows a programmer to repeat code
+-   You can think of it as an if-statement with the potential to repeat
 
 ```{python}
 #| eval: false
 #| echo: true
-assert sum_all([2, 2, 2]) == 6
-assert sum_all([2, 1, 5, 2, 3]) == 13
-assert sum_all([]) == 0
+statements . . .
+
+while conditionA:
+    statementA
+    statementB
+    . . .
+    statementN
+
+statements . . .
 ```
 
+## What will happen?
+
+```{python}
+#| eval: false
+#| echo: true
+number = 15
+while number < 50:
+    print('number is less than 50')
+```
+
+## While loops
+
+-   What if the condition never evaluates to `False`?
+    -   Infinite loop!
+-   There are two ways around this:
+    -   Break (do not use in this class!)
+    -   Designing the code such that the condition will eventually become `False`
+
+## What will happen?
+
+To ensure our condition (`number < 50`) will eventually be evaluated as `False`, we need to updated `number` inside our loop:
+
+```{python}
+#| eval: false
+#| echo: true
+number = 15
+while number < 50:
+    print('number is less than 50')
+    number += 5
+print('End')
+```
+
+## While loops -- visualization
+
+Go to [Python Tutor](https://pythontutor.com/visualize.html#mode=edit) to visualize how the `while` loop runs.
+
+## While loop -- example
+
+Factorial: 5! = 1 * 2 * 3 * 4 * 5 = 120
+
+```{python}
+#| eval: true
+#| echo: true
+def factorial(n):
+  result = 1
+  current = 1
+  while current <= n:
+    result = result * current
+    current += 1
+  return result
+
+def main():
+  print( factorial(5) )
+  print( factorial(6) )
+  
+main()
+```
+
+## `while` loops table
+
+Consider `n = 5`, start with `result = 1`, `current = 1`:
+
+| `current <= 5`   | result = result * current | current += 1 |
+| :-------: |:-------: |:-------: |
+| True | result = 1 * 1 | current = 1 + 1 |
+| True | result = 1 * 2 | current = 2 + 1 |
+| True | result = 2 * 3 | current = 3 + 1 |
+| True | result = 6 * 4 | current = 4 + 1 |
+| True | result = 24 * 5 | current = 5 + 1 |
+| False | - | - |
+
+## Write a function
+
+Write a function called `add_up_to` that takes an numeric argument `n`.
+The function should add all numbers from 1 to `n` in a while loop, and then (outside the loop) return the sum
+
+```{python}
+#| eval: false
+#| echo: true
+print( add_up_to(5) ) # 15
+print( add_up_to(10) ) # 55
+```
+
+Name your file `sum_up.py` and submit it to attendance on gradescope
 
 ## Write a function -- solution
 
 ```{python}
 #| eval: true
 #| echo: true
-def sum_all(values):
-  total = 0
-  index = 0
-  while index < len(values):
-    total += values[index]
-    index += 1
-  return total
+def add_up_to(n):
+  sum = 0
+  current = 0
+  while current <= n:
+    sum += current
+    current += 1
+  return sum
 
 def main():
-  assert sum_all([2, 2, 2]) == 6
-  assert sum_all([2, 1, 5, 2, 3]) == 13
-  assert sum_all([]) == 0
+  print( add_up_to(5) )
+  print( add_up_to(10) )
+  
+main()
+```
+
+## Age milestones
+
+Modify `main` function: use a `while` loop to request a valid input from the user.
+
+```{python}
+#| eval: false
+#| echo: true
+def age_milestones(age):
+  message = ""
+  if age >= 18:
+      message += 'You may apply to join the military.'
+     
+  if age >= 21:
+      message += ' You may drink.'
+     
+  if age > 35:
+      message += ' You may run for president.'
+      
+  return message
+
+def validate_age(age):
+  return age.isnumeric()
+     
+def main():
+  str_age = input('How old are you?\n')
+  if validate_age(str_age):
+    age = int(str_age)
+    print(age_milestones(age))
+  else:
+    print("Invalid age entered.")
+ 
+main()
+```
+
+## Age milestones continued
+
+Program behavior in your standard output:
+```{=html}
+<pre style="font-size: 30px">
+How old are you?
+abc
+How old are you?
+10abc
+How old are you?
+55
+You may apply to join the military. You may drink. You may 
+run for president.
+</pre>
+```
+
+## Age milestones -- solution
+
+Modify `main` function: use a `while` loop to request a valid input from the user.
+
+```{python}
+#| eval: false
+#| echo: true
+def age_milestones(age):
+  message = ""
+  if age >= 18:
+      message += 'You may apply to join the military.'
+     
+  if age >= 21:
+      message += ' You may drink.'
+     
+  if age > 35:
+      message += ' You may run for president.'
+      
+  return message
+
+def validate_age(age):
+  return age.isnumeric()
+     
+def main():
+  str_age = input('How old are you?\n')
+  while validate_age(str_age) == False:
+    str_age = input('How old are you?\n')
+  age = int(str_age)
+  print(age_milestones(age))
+  
+main()
+```
+
+## Write functions
+
+1. Write a function `to_do` that takes a numeric argument `temp`.
+2. It returns
+    -   'go for a swim' if is greater equal to `86` and less than `104`
+    -   'go for a hike' if is greater equal to `68` and less than `86`
+    -   'stay at home' for all other cases
+3. Write a `main` function to request input from user until it is valid (only digits 0-9), print `"Let us"` and the message
+
+## Write functions continued
+
+Program behavior in your standard output:
+```{=html}
+<pre style="font-size: 30px">
+Enter a temperature:
+abc
+Enter a temperature:
+100abc
+Enter a temperature:
+89
+Let us go for a swim
+</pre>
+```
+
+## Write functions -- solution
+
+```{python}
+#| eval: false
+#| echo: true
+def to_do(temp):
+    if temp >= 86 and temp < 104:
+        return "go for a swim"
+    elif temp >= 68 and temp < 86:
+        return "go for a hike"
+    else:
+        return "stay at home"
     
-main()
-```
-
-## Loop Table
-
-We start with `index = 0` and `total = 0`:
-```{python}
-#| eval: false
-#| echo: true
-sum_all([2, 1, 5, 2, 3])
-```
-
-```{r}
-#| eval: true
-#| echo: false
-#| warning: false
-#| message: false
-library(knitr)
-library(tidyverse)
-data.frame(index = c(0:5),
-           condition = c("True", "True", "True", "True",
-                                               "True", "False"),
-           `item` = c("2", "1", "5", "2", "3", "-"),
-           total = c("0 + 2 = 2", "2 + 1 = 3", "3 + 5 = 8",
-                     "8 + 2 = 10", "10 + 3 = 13", "13")
-                    ) %>% 
-  kable(col.names = c("index", "index < len(values)", "values[index]", "total"))
-```
-
-## Loop Table
-
-Start with `index = 0` and `total = 0`:
-```{python}
-#| eval: false
-#| echo: true
-sum_all([2, 1, 3, 4])
-```
-
-```{r}
-#| eval: true
-#| echo: false
-#| warning: false
-#| message: false
-data.frame(index = c("|", "| ", "| ", "| ",
-                                               "| ", "| "),
-           condition = c(" ", " ", " ", " ",
-                                               " ", " "),
-           `item` = c(" ", " ", " ", " ", " ", " "),
-           total = c(" ", " ", " ",
-                     " ", " ", " ")
-                    ) %>% 
-  kable(col.names = c("index", "index < len(values)", "values[index]", "total"))
-```
-
-## Loop Table -- solution
-
-```{python}
-#| eval: false
-#| echo: true
-sum_all([2, 1, 3, 4])
-```
-
-```{r}
-#| eval: true
-#| echo: false
-#| warning: false
-#| message: false
-data.frame(index = c(0:4),
-           condition = c("True", "True", "True", "True",
-                                               "False"),
-           `item` = c("2", "1", "3", "4", "-"),
-           total = c("2", "3", "6",
-                     "10", "10")
-                    ) %>% 
-  kable(col.names = c("index", "index < len(numbers)", "numbers[index]", "total"))
-```
-
-# Python Tutor
-
-You can also visualize code in python on [Python Tutor](https://pythontutor.com/visualize.html#mode=edit)
-
-## Using a control variable
-
-Remember how to get the max of three numbers?
-
-```{python}
-#| eval: true
-#| echo: true
-def max3(x, y, z):
-  max = x # assume max is first number
-  if y > max:
-    max = y # assumption is incorrect, assume y is max
-  if z > max:
-    max = z # assumption is incorrect, z is max
-  return max
 
 def main():
-  print( max3(1, 2, 2) ) # 2
-  
-main()
-```
-
-Adapt this function (`max_list`) to take a list of numbers (for example `[1, 2, 2, 1, 3, 1, 1]`) instead of three numbers (use `while`). 
-
-## Max of list -- solution
-
-```{python}
-#| eval: true
-#| echo: true
-def max_list(numbers):
-  '''
-  Given a list of number, this function returns the highest number.
-  Args:
-    List of numeric values
-  Returns:
-    Max (float or integer, whatever value type is the highest)
-  '''
-  max = numbers[0]
-  index = 1
-  while index < len(numbers):
-    if numbers[index] > max:
-      max = numbers[index]
-    index += 1
-  return max
-
-def main():
-  print( max_list([1, 2, 2, 1, 3, 1, 1]) ) # 3
-  print( max_list([3, 2, 2, 1, 0, 1, 1]) ) # 3
-  
-main()
-```
-
-## Loop table
-
-We start with `index = 1` and `max = 2`:
-```{python}
-#| eval: false
-#| echo: true
-max_list([2, 1, 3, 1])
-```
-
-```{r}
-#| eval: true
-#| echo: false
-#| warning: false
-#| message: false
-data.frame(index = c("|", "| ", "| ", "| ",
-                                               "| ", "| "),
-           condition = c(" ", " ", " ", " ",
-                                               " ", " "),
-           `item` = c(" ", " ", " ", " ", " ", " "),
-           total = c(" ", " ", " ",
-                     " ", " ", " ")
-                    ) %>% 
-  kable(col.names = c("index", "index < len(numbers)", "numbers[index]", "max"))
-```
-
-## Loop table -- solution
-
-We start with `index = 1` and `max = 2`:
-```{python}
-#| eval: false
-#| echo: true
-max_list([2, 1, 3, 1])
-```
-
-```{r}
-#| eval: true
-#| echo: false
-#| warning: false
-#| message: false
-data.frame(index = c(1:4),
-           condition = c("True", "True", "True", "False"),
-           `item` = c("1", "3", "1", "-"),
-            max = c("2", "3", "3", "3")) %>% 
-  kable(col.names = c("index", "index < len(numbers)", "numbers[index]", "max"))
-```
-
-## Max solution
-
--   What about empty lists?
--   How to get the min instead?
-
-```{python}
-#| eval: false
-#| echo: true
-assert max_list([]) == None
-assert max_list([2, 1, 3, 1]) == 3
-```
-
-## Max solution - empty lists
-
-Can we swap the two expressions at `line 5`?
-```{python}
-#| eval: true
-#| echo: true
-def max_list(numbers):
-  max = None
-  index = 0
-  while index < len(numbers):
-    if max == None or numbers[index] > max:
-      max = numbers[index]
-    index += 1
-  return max
-
-def main():
-  print( max_list([2, 1, 3, 1]) ) # 3
-  print( max_list([]) ) # None
+    str_temp = input("Enter a temperature:\n")
+    while str_temp.isnumeric() == False:
+        str_temp =  input("Enter a temperature:\n")
+    message = to_do(int(str_temp))
+    print("Let us", message)
 
 main()
 ```
-
-## Updating lists
-
-```{python}
-#| eval: true
-#| echo: true
-names = ['SZA', 'JVKE', 'Bruno Mars']
-
-# mutate list using the index
-names[1] = "Billie Eilish"
-
-names
-```
-
-## Write a function
-
-Its name is `double` that takes a list of numeric variables as argument.
-It iterates over the list (use `while`) doubling (multiplying by two) each value in the list.
-It returns the modified list.
-
-
-```{python}
-#| eval: false
-#| echo: true
-assert double([0, 1, 2, 3]) == [0, 2, 4, 6]
-```
-
-## Write a function -- solution
-
-```{python}
-#| eval: false
-#| echo: true
-def double(numbers):
-  index = 0
-  while index < len(numbers):
-    numbers[index] *= 2
-    index += 1
-  return numbers
-
-def main():
-  original_list = [0, 1, 2, 3]
-  new_list = double(original_list)
-  assert original_list == new_list
-  assert original_list == [0, 2, 4, 6]
-  
-  print("Passed all tests")
-  
-main()
-```
-
-
-## Slicing lists
-
-* Range -- `list[2:4]`
-* Whole list -- `list[:]`
-* Everything but last character -- `list[:-1]`
-
-The same slicing can be done with strings

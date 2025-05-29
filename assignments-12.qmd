@@ -21,49 +21,40 @@ Short Programming projects are submitted during our weekly 45-minute in-person l
 
 # Programming Problems
 
-Programming Problems should be submitted to [gradescope](https://www.gradescope.com/courses/934148).
-
-## Programming Problem 23
-
 **Due date: `r assignments %>% filter(assessment == "Module 12 Programming Problems") %>% pull(formatted_date)` at 9pm**
 
-Write a Python function that does the following:
+## Programming Problem 21
 
-1.  Its name is `differences`
-2.  It takes two sets as arguments: `set_1` and `set_2`
-3.  It calculates and returns the number of elements that are different (not in common) between the two parameter sets
-4.  It returns an integer with the number of different elements
+
+Write a `remove_zero_sides` function that given a 2D list as argument, it **mutates** and returns the list removing any first and last values that are equal to zero. Name your file `filter.py`.
 
 Test cases:
-
 ```{python}
-#| echo: true
 #| eval: false
-print( differences({1, 2, 3}, {2, 3, 4, 5}) ) # 3
-print( differences({'john', 'mark', 'paul'}, {'john', 'mark'}) ) # 1
+#| echo: true
+numbers = [[0, 1, 2], [0], [], [2, 4, 0], [0, 0], [0, 20, 3, 10, 0]]
+remove_zero_sides(numbers)
+assert numbers ==  [[1, 2], [], [], [2, 4], [], [20, 3, 10]]
+
+more_numbers = [[0], [], [0, 0], [0, 1], [2, 0]]
+assert remove_zero_sides(more_numbers) == [[], [], [], [1], [2]]
 ```
 
-Name the program `differences.py`. Make sure that gradescope gives you the points for passing the test case.
 
-## Programming Problem 24
+## Programming Problem 22
 
-**Due date: `r assignments %>% filter(assessment == "Module 12 Programming Problems") %>% pull(formatted_date)` at 9pm**
+**Due date: `r assignments %>% filter(assessment == "Module 11 Programming Problems") %>% pull(formatted_date)` at 9pm**
 
-Write a Python function that does the following:
-
-1.  Its name is `has_duplicate`
-2.  It takes a single list as argument
-3.  It returns `True` if the list contains any duplicate values, `False` if all values are unique
+Write a `lowercase_items` function that given a 2D list of strings as argument, it **mutates** and returns the list lowercasing all strings in each sublist. You can assume all items in the lists are strings. You can use the `.lower()` string method. Name your file `lowercasing.py`
 
 Test cases:
-
 ```{python}
-#| echo: true
 #| eval: false
-print( has_duplicate([]) ) # False
-print( has_duplicate([1, 2, 3, 1]) ) # True
-print( has_duplicate([1, "a", "b", 4, 5]) ) # False
-print( has_duplicate([1, "a", "a", 2, 3, 4]) ) # True
-```
+#| echo: true
+words = [["A", "B", "C"], [], ["BANANA", "Apple", "pineapple"]]
+lowercase_items(words)
+assert words == [["a", "b", "c"], [], ["banana", "apple", "pineapple"]]
 
-Name the program `detect_duplicates.py`. Make sure that gradescope gives you the points for passing the test case.
+more_words = [["A"], ["Monica"]]
+assert lowercase_items(more_words) == [["a"], ["monica"]]
+```
