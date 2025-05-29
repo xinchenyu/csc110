@@ -128,11 +128,11 @@ Nov 2 is the last day instructors may administratively drop students. Check more
 
 # Makeup Policy for Students Who Register Late
 
-If you register after the first class meeting you may make up missed assignments within your first week of attendance. Ask questions on [Piazza](https://piazza.com/arizona/fall2025/csc110/home) when you have questions about assignments, quizzes, and exams (has private options). Email me when you have logistics-related questions.
+If you register after the first class meeting you may make up missed assignments within your first week of attendance. 
 
 # Course Communications
 
-All online communication will be conducted through my official UA e-mail address (xinchenyu\@arizona.edu), D2L, and Piazza.
+All online communication will be conducted through my official UA e-mail address (xinchenyu\@arizona.edu), D2L, and Piazza. Ask questions on [Piazza](https://piazza.com/arizona/fall2025/csc110/home) when you have questions about assignments, quizzes, and exams (has private options). Email the instructor only when you have logistics-related questions.
 
 
 # Required Texts or Readings
