@@ -2672,7 +2672,7 @@
     "href": "project-3.html",
     "title": "Programming Project 3",
     "section": "",
-    "text": "Programming Projects are to be submitted to gradescope\nDue date: Friday, September 26, 2025 at 9pm\nThis programming project is an adaptation of Ben Dicken’s Where’s the Money Programming Assignment.\nDo not import any modules for this assignment. Do not use built-in functions like max() (you have to write your own). You can use the built-in functions we covered in class: print(), round(), input(), len(), int(), float(), str() in addition to format().",
+    "text": "Programming Projects are to be submitted to gradescope.\nDue date: Friday, September 26, 2025 at 9pm\nIn this programming project you will implement a number of Python functions to validate or transform values conditionally. Make sure you follow the provided style guide (you will be graded on it!). You are allowed to use round(), str() and len(), but other than that you are not allowed to use any other built-in method or function from any Python library.\nAlso make sure you check the Academic Integrity and Common Gradescope Errors pages.\nName the program grades.py. Make sure that gradescope gives you the points for passing the test cases.",
     "crumbs": [
       "Programming Projects",
       "Programming Project 3"
@@ -5524,7 +5524,7 @@
     "href": "project-2.html",
     "title": "Programming Project 2",
     "section": "",
-    "text": "Programming Projects are to be submitted to gradescope.\nDue date: Friday, September 19, 2025 at 9pm\nIn this programming project you will implement a number of Python functions to validate or transform values conditionally. Make sure you follow the provided style guide (you will be graded on it!). You are allowed to use round(), str() and len(), but other than that you are not allowed to use any other built-in method or function from any Python library.\nAlso make sure you check the Academic Integrity and Common Gradescope Errors pages.\nName the program grades.py. Make sure that gradescope gives you the points for passing the test cases.",
+    "text": "Programming Projects are to be submitted to gradescope.\nDue date: Friday, September 19, 2025 at 9pm\nCredit for this programming project goes to Steven Truong, a former UGTA for CSC 110.\nIn this programming project you will implement a number of Python functions to print different types of burgers. Make sure you follow the provided style guide (you will be graded on it!). The only built-in function you can use is print(). You are not allowed to use any other built-in method or function from any Python library.\nAlso make sure you check the Academic Integrity and Common Gradescope Errors pages.\nName the program burgers.py. Make sure that gradescope gives you the points for passing the test cases.",
     "crumbs": [
       "Programming Projects",
       "Programming Project 2"
@@ -8730,6 +8730,105 @@
     "crumbs": [
       "Module 1 - Basics",
       "Module 1 Assignments"
+    ]
+  },
+  {
+    "objectID": "project-3.html#letter_grade",
+    "href": "project-3.html#letter_grade",
+    "title": "Programming Project 3",
+    "section": "letter_grade()",
+    "text": "letter_grade()\nThis function determines a letter grade (“A”, “B”, and so on) based on a float argument representing a percentage grade.\nIt returns a letter grade based on the following rules:\n-   Greater or equal to 90, return \"A\"\n-   Greater or equal to 80, return \"B\"\n-   Greater or equal to 70, return \"C\"\n-   Greater or equal to 60, return \"D\"\n-   Anything less, than 60 return \"E\" but greater or equal to 0\n-   If argument is negative or greater than 100, return \"X\"",
+    "crumbs": [
+      "Programming Projects",
+      "Programming Project 3"
+    ]
+  },
+  {
+    "objectID": "project-3.html#pass_or_fail",
+    "href": "project-3.html#pass_or_fail",
+    "title": "Programming Project 3",
+    "section": "pass_or_fail",
+    "text": "pass_or_fail\nThis function determines if a student passed or failed a class, based on their final letter grade. Letter grades equal to “A”, “B”, “C”, or “D” are passing grades (\"Pass\").",
+    "crumbs": [
+      "Programming Projects",
+      "Programming Project 3"
+    ]
+  },
+  {
+    "objectID": "project-3.html#calculate-percentage-point_grade-function",
+    "href": "project-3.html#calculate-percentage-point_grade-function",
+    "title": "Programming Project 3",
+    "section": "Calculate percentage – point_grade function",
+    "text": "Calculate percentage – point_grade function\nThis function calculates a percentage grade based on a score and total_points. It calculates the percentage grade by dividing score by total_points, and multiplies result by 100. It returns the calculated percentage as a float rounded at two decimals",
+    "crumbs": [
+      "Programming Projects",
+      "Programming Project 3"
+    ]
+  },
+  {
+    "objectID": "project-3.html#calculate-final-grade-get_grade_results-function",
+    "href": "project-3.html#calculate-final-grade-get_grade_results-function",
+    "title": "Programming Project 3",
+    "section": "Calculate final grade – get_grade_results function",
+    "text": "Calculate final grade – get_grade_results function\nThis function takes two score and total_points, and it calls the previous functions you’ve written – DO NOT recalculate percentage of grade, letter grade, etc. in this function. You are required to call the other functions. It returns a message similar to: Your grade is 92.34 (A - Pass) or Your grade is 35.78 (E - Fail)",
+    "crumbs": [
+      "Programming Projects",
+      "Programming Project 3"
+    ]
+  },
+  {
+    "objectID": "project-3.html#test-cases",
+    "href": "project-3.html#test-cases",
+    "title": "Programming Project 3",
+    "section": "Test Cases",
+    "text": "Test Cases\n\ndef main():\n  # test letter_grade function\n  assert letter_grade(90) == \"A\"\n  assert letter_grade(80) == \"B\"\n  assert letter_grade(70) == \"C\"\n  assert letter_grade(60) == \"D\"\n  assert letter_grade(59) == \"E\"\n  assert letter_grade(-59) == \"X\"\n  assert letter_grade(110) == \"X\"\n  \n  # test pass_or_fail function\n  assert pass_or_fail(\"B\") == \"Pass\"\n  assert pass_or_fail(\"E\") == \"Fail\"\n  assert pass_or_fail(\"ABCD\") == \"Error\"\n  \n  # test point_grade function\n  assert point_grade(0, 100) == 0.0\n  assert point_grade(100, 100) == 100.0\n  assert point_grade(45, 80) == 56.25\n  assert point_grade(37, 40) == 92.5\n  \n  # test get_grade_results function\n  assert get_grade_results(0, 100) == \"Your grade is 0.0 (E - Fail)\"\n  assert get_grade_results(45, 80) == \"Your grade is 56.25 (E - Fail)\"\n  assert get_grade_results(37, 40) == \"Your grade is 92.5 (A - Pass)\"\n  \nmain()",
+    "crumbs": [
+      "Programming Projects",
+      "Programming Project 3"
+    ]
+  },
+  {
+    "objectID": "project-2.html#ingredients",
+    "href": "project-2.html#ingredients",
+    "title": "Programming Project 2",
+    "section": "Ingredients",
+    "text": "Ingredients\nThere are a total of 8 ingredients.\ntop bun:\n   __________________________\n  /     &lt;&gt;            &lt;&gt;     \\\n /  &lt;&gt;       &lt;&gt;   &lt;&gt;      &lt;&gt;  \\\n \\____________________________/\n\nbottom bun:\n  ____________________________\n /                            \\\n \\____________________________/\n\npatty:\n   __________________________\n  |                          |\n  |__________________________|\n\nlettuce:\n  \\/^\\/^\\/^\\/^\\/^\\/^\\/^\\/^\\/^\\\n  \\/^\\/^\\/^\\/^\\/^\\/^\\/^\\/^\\/^\\\n\ntomato:\n  ()()()()()()()()()()()()()()\n  |                          |\n  ()()()()()()()()()()()()()()\n\nbacon:\n  ~~~~~~/\\~~~~~~/\\~~~~~~/\\~~~\n  ~~~~~~/\\~~~~~~/\\~~~~~~/\\~~~\n\nmushroom:\n  |  (o)   (o)   (o)   (o)   |\n\nonion:\n  |  @@@   @@@   @@@   @@@   |",
+    "crumbs": [
+      "Programming Projects",
+      "Programming Project 2"
+    ]
+  },
+  {
+    "objectID": "project-2.html#combinations-of-ingredients",
+    "href": "project-2.html#combinations-of-ingredients",
+    "title": "Programming Project 2",
+    "section": "Combinations of ingredients",
+    "text": "Combinations of ingredients\nNext, we can use the ingredients above to make different burgers.",
+    "crumbs": [
+      "Programming Projects",
+      "Programming Project 2"
+    ]
+  },
+  {
+    "objectID": "project-2.html#menu-combinations-of-ingredients",
+    "href": "project-2.html#menu-combinations-of-ingredients",
+    "title": "Programming Project 2",
+    "section": "Menu: combinations of ingredients",
+    "text": "Menu: combinations of ingredients\nNext, we can use the ingredients above to make different burgers.",
+    "crumbs": [
+      "Programming Projects",
+      "Programming Project 2"
+    ]
+  },
+  {
+    "objectID": "project-2.html#menu",
+    "href": "project-2.html#menu",
+    "title": "Programming Project 2",
+    "section": "Menu",
+    "text": "Menu\nNext, we can use the ingredients above to make the six types of burgers on the menu given by the order.\nFor example, when the order is \"plain\": top bun + patty + bottom bun\n   __________________________\n  /     &lt;&gt;            &lt;&gt;     \\\n /  &lt;&gt;       &lt;&gt;   &lt;&gt;      &lt;&gt;  \\\n \\____________________________/\n   __________________________\n  |                          |\n  |__________________________|\n  ____________________________\n /                            \\\n \\____________________________/\n\nAnother example is \"BLT\": top bun + bacon + lettuce + tomato + bottom bun\n   __________________________\n  /     &lt;&gt;            &lt;&gt;     \\\n /  &lt;&gt;       &lt;&gt;   &lt;&gt;      &lt;&gt;  \\\n \\____________________________/\n  ~~~~~~/\\~~~~~~/\\~~~~~~/\\~~~\n  ~~~~~~/\\~~~~~~/\\~~~~~~/\\~~~\n  \\/^\\/^\\/^\\/^\\/^\\/^\\/^\\/^\\/^\\\n  \\/^\\/^\\/^\\/^\\/^\\/^\\/^\\/^\\/^\\\n  ()()()()()()()()()()()()()()\n  |                          |\n  ()()()()()()()()()()()()()()\n  ____________________________\n /                            \\\n \\____________________________/\n\nWe list the other four options on the menu below:\nWhen the order is \"lettuce wrap\":\n  \\/^\\/^\\/^\\/^\\/^\\/^\\/^\\/^\\/^\\\n  \\/^\\/^\\/^\\/^\\/^\\/^\\/^\\/^\\/^\\\n  ~~~~~~/\\~~~~~~/\\~~~~~~/\\~~~\n  ~~~~~~/\\~~~~~~/\\~~~~~~/\\~~~\n   __________________________\n  |                          |\n  |__________________________|\n  ()()()()()()()()()()()()()()\n  |                          |\n  ()()()()()()()()()()()()()()\n  \\/^\\/^\\/^\\/^\\/^\\/^\\/^\\/^\\/^\\\n  \\/^\\/^\\/^\\/^\\/^\\/^\\/^\\/^\\/^\\\n\nWhen the order is \"double\":\n   __________________________\n  /     &lt;&gt;            &lt;&gt;     \\\n /  &lt;&gt;       &lt;&gt;   &lt;&gt;      &lt;&gt;  \\\n \\____________________________/\n   __________________________\n  |                          |\n  |__________________________|\n   __________________________\n  |                          |\n  |__________________________|\n  ____________________________\n /                            \\\n \\____________________________/\n\nWhen the order is \"double add onion\":\n   __________________________\n  /     &lt;&gt;            &lt;&gt;     \\\n /  &lt;&gt;       &lt;&gt;   &lt;&gt;      &lt;&gt;  \\\n \\____________________________/\n   __________________________\n  |                          |\n  |__________________________|\n  |  @@@   @@@   @@@   @@@   |\n   __________________________\n  |                          |\n  |__________________________|\n  ____________________________\n /                            \\\n \\____________________________/\n\nWhen the order is \"plain add mushroom\":\n   __________________________\n  /     &lt;&gt;            &lt;&gt;     \\\n /  &lt;&gt;       &lt;&gt;   &lt;&gt;      &lt;&gt;  \\\n \\____________________________/\n  |  (o)   (o)   (o)   (o)   |\n   __________________________\n  |                          |\n  |__________________________|\n  ____________________________\n /                            \\\n \\____________________________/",
+    "crumbs": [
+      "Programming Projects",
+      "Programming Project 2"
     ]
   }
 ]

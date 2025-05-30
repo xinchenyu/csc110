@@ -2,7 +2,6 @@
 title: "Programming Project 3"
 ---
 
-
 ```{r}
 #| echo: false
 #| message: false
@@ -13,190 +12,73 @@ assignments <- read_excel("assessment_schedule.xlsx") %>%
   mutate(formatted_date = format(due_date, "%A, %B %d, %Y"))
 ```
 
-
-Programming Projects are to be submitted to [gradescope](https://www.gradescope.com/courses/934148)
+Programming Projects are to be submitted to [gradescope](https://www.gradescope.com/courses/1044596).
 
 **Due date: `r assignments %>% filter(assessment == "Programming Project 3") %>% pull(formatted_date)` at 9pm**
 
+In this programming project you will implement a number of Python functions to validate or transform values conditionally. Make sure you follow the provided [style guide](style.html) (you will be graded on it!). You are allowed to use `round()`, `str()` and `len()`, but other than that you are **not** allowed to use any other built-in method or function from any Python library.
 
-This programming project is an adaptation of Ben Dicken's Where's the Money Programming Assignment.
+Also make sure you check the [Academic Integrity](academic-integrity.html) and [Common Gradescope Errors](gradescope-errors.html) pages.
 
-Do not import any modules for this assignment. Do not use built-in functions like max() (you have to
-write your own). You can use the built-in functions we covered in class: `print()`, `round()`, `input()`, `len()`, `int()`, `float()`, `str()` in addition to `format()`.
+Name the program `grades.py`. Make sure that gradescope gives you the points for passing the test cases.
 
-# Where's the Money
+## `letter_grade()`
 
-Budgeting and money management is very important both at the individual level, and for corporations and government. Having a clear understanding of where your money goes, how much you are saving, and how much you invest is important to financial success. As a famous author once wrote:
+This function determines a letter grade ("A", "B", and so on) based on a float argument representing a percentage grade.
 
-> Annual income twenty pounds, annual expenditure nineteen six, result happiness.
-> Annual income twenty pounds, annual expenditure twenty pound ought and six, result misery.
+It returns a letter grade based on the following rules:
 
-*–Charles Dickens*
+    -   Greater or equal to 90, return "A"
+    -   Greater or equal to 80, return "B"
+    -   Greater or equal to 70, return "C"
+    -   Greater or equal to 60, return "D"
+    -   Anything less, than 60 return "E" but greater or equal to 0
+    -   If argument is negative or greater than 100, return "X"
 
-In this assignment, you will be writing a program that helps a user visualize and understand how much money they spend of various categories of expenditures. Perhaps you will even find this program useful for your personal finances! You should name your program `wheres_the_money.py`. 
+## `pass_or_fail`
 
-# Overview of the program
+This function determines if a student passed or failed a class, based on their final letter grade.
+Letter grades equal to "A", "B", "C", or "D" are passing grades (`"Pass"`).
 
-This program takes a number of various arguments about how much someone makes, and how much they spend. The program will accept 5 argument values:
+## Calculate percentage -- `point_grade` function
 
-* Annual salary
-* Monthly mortgage or rent
-* Monthly bills
-* Weekly grocery/food expenses
-* Annual travel
+This function calculates a percentage grade based on a `score` and `total_points`. It calculates the percentage grade by dividing score by total_points, and multiplies result by 100. It returns the calculated percentage as a float rounded at two decimals
 
+## Calculate final grade -- `get_grade_results` function
 
-These 5 values will be used to generate a visualization of the financial situation that looks like so:
+This function takes two `score` and `total_points`, and it calls the previous functions you've written -- DO NOT recalculate percentage of grade, letter grade, etc. in this function. You are required to call the other functions.  It returns a message similar to: `Your grade is 92.34 (A - Pass)` or `Your grade is 35.78 (E - Fail)`
 
-<pre>
-------------------------------------------------------------------
-See the financial breakdown below, based on a salary of $50000
-------------------------------------------------------------------
-| mortgage/rent | $  12,000.00 |  24.0% | ########################
-|         bills | $   4,800.00 |   9.6% | #########
-|          food | $  10,400.00 |  20.8% | ####################
-|        travel | $   2,500.00 |   5.0% | #####
-|           tax | $  10,000.00 |  20.0% | ####################
-|         extra | $  10,300.00 |  20.6% | ####################
-------------------------------------------------------------------
-</pre>
-
-As you can see, the result is essentially a 6-row, 4-column grid that neatly shows that amounts and percentages of income go where.
-
-Each row represents an expense (or other category) where money goes to on a yearly basis. The first columns provides the name of the category. The second column shows the amount of money that goes to this category in dollars. The third columns shows the amount of money as a percentage of yearly income. The last column is a horizontal bard that correlates with the percentage of income. The number of # characters in this column should be the same as the percentage of income (rounded down).
-
-# Calculating the values
-
-The output provided above shows the kind of output this program should produce. Let’s talk a bit about how to compute these values.
-
-The basis for all of the percentages is the annual income argument. All of the percentages are calculated based on this. The next two arguments, rent and bills, are monthly expense values. In order to get the total spend on these categories annually, these numbers must be multiplied by the number of months in a year. Then, you can use this result to calculate the percentage. The fourth value is a weekly expense, so this must instead be multiplied by the number of weeks in a year. The fifth argument is already an annual value, so you don’t need to multiple by number of weeks or months.
-
-You need to write a `calculate_tax` function to calculate taxes. The tax percentage is dependent upon the amount of money a person make annually. The tax brackets are as follows:
-
-* [$0, $15k] annually: 10% tax
-* ($15k, $75k] annually: 20% tax
-* ($75k, $200k] annually: 25% tax
-* over $200k annually: 30% tax
-
-You should use one or more if / elif / else statements in the code to determine which tax percentage to use. You can store the tax percentage as an integer variable, with one of the following values: 10, 20, 25, or 30. You can compute the amount of the salary goes to taxes as a particular percentage with this formula:
+## Test Cases
 
 ```{python}
 #| eval: false
 #| echo: true
-annual_salary * ( tax_percentage / 100.0)
+def main():
+  # test letter_grade function
+  assert letter_grade(90) == "A"
+  assert letter_grade(80) == "B"
+  assert letter_grade(70) == "C"
+  assert letter_grade(60) == "D"
+  assert letter_grade(59) == "E"
+  assert letter_grade(-59) == "X"
+  assert letter_grade(110) == "X"
+  
+  # test pass_or_fail function
+  assert pass_or_fail("B") == "Pass"
+  assert pass_or_fail("E") == "Fail"
+  assert pass_or_fail("ABCD") == "Error"
+  
+  # test point_grade function
+  assert point_grade(0, 100) == 0.0
+  assert point_grade(100, 100) == 100.0
+  assert point_grade(45, 80) == 56.25
+  assert point_grade(37, 40) == 92.5
+  
+  # test get_grade_results function
+  assert get_grade_results(0, 100) == "Your grade is 0.0 (E - Fail)"
+  assert get_grade_results(45, 80) == "Your grade is 56.25 (E - Fail)"
+  assert get_grade_results(37, 40) == "Your grade is 92.5 (A - Pass)"
+  
+main()
 ```
-
-Here are some tests to verify you are calculating the taxes correctly:
-
-```{python}
-#| eval: false
-#| echo: true
-assert calculate_tax(40000) == 8000
-assert calculate_tax(10000) == 1000
-assert calculate_tax(20000) == 4000
-```
-
-
-After calculating all of these values programmatically, you should generate the output table. Print the table in the `wheres_the_money` function.
-
-Finally, after printing the table, two warnings are optional to print (overspending & tax limit).
-
-Overspending - what happens if the expenditures and taxes are more than the annual salary? This should be represented by negative values in the extra row. You should also print a warning after the chart. Below is an example of a financial situation in which the user spends more than they earn, resulting in a deficit in the extra row.
-
-```{python}
-#| eval: false
-#| echo: true
-# arguments: salary, mortgage/rent, bills, food, travel
-wheres_the_money(40000, 2000, 300, 150, 4000)
-```
-
-
-<pre>
-------------------------------------------------------------------------------------------------------
-See the financial breakdown below, based on a salary of $40000
-------------------------------------------------------------------------------------------------------
-| mortgage/rent | $  24,000.00 |  60.0% | ############################################################
-|         bills | $   3,600.00 |   9.0% | #########
-|          food | $   7,800.00 |  19.5% | ###################
-|        travel | $   4,000.00 |  10.0% | ##########
-|           tax | $   8,000.00 |  20.0% | ####################
-|         extra | $  -7,400.00 | -18.5% |
-------------------------------------------------------------------------------------------------------
->>> WARNING: DEFICIT <<<
-</pre>
-
-Tax limit - there is also a tax limit of `$75,000`. The tax should be capped at this value, and if the limit is reached, a message indicating this should be printed out after the chart. The message should say:
-
-<pre>
->>> TAX LIMIT REACHED <<<
-</pre>
-
-# Formatting a Number
-
-Notice that the numbers are formatted in a particular way in the output table. You must match this formatting exactly. In order to do so, you can use the format() function. This function was mentioned in the [Constants, variables, and comments
- reading](https://adrianapicoral.com/csc-110/basics.html#the-format-method). Here's an example of how you can use this function to match the formatting in the spec.
-
-Say we have a floating point number, like below:
-
-```{python}
-#| eval: false
-#| echo: true
-number = 134567.123
-```
-
-Perhaps this is a result you get for one of the dollar values after doing the necessary computations. When printing, you’ll want to adjust the way it is printed in several ways.
-
-## Add a comma
-
-* Set to stop at two decimal points
-* Add necessary spacing before the number, so that the table lines up
-
-## Examples for string method `.format()`
-
-Using the comma as a thousands separator:
-
-```{python}
-#| eval: true
-#| echo: true
-'{:,}'.format(1234567890)
-```
-
-Establishing numbers of digits to hold space for:
-
-```{python}
-#| eval: true
-#| echo: true
-'{:15,}'.format(10000)
-```
-
-Expressing floats with four decimals (the `4` is number of digits after the decimal point, the `f` means it's formatting a float):
-
-```{python}
-#| eval: true
-#| echo: true
-'{:.4f}'.format(4.2353635234)
-```
-
-
-Expressing a percentage with two decimals:
-
-```{python}
-#| eval: true
-#| echo: true
-points = 19
-total = 22
-'Correct answers: {:.2%}'.format(points/total)
-```
-
-Holding space and right aligning the numbers:
-```{python}
-#| eval: true
-#| echo: true
-point_1 = 20
-print('Correct answers: {:>5,}'.format(point_1))
-
-point_2 = 1000
-print('Correct answers: {:>5,}'.format(point_2))
-```
-
 

@@ -968,14 +968,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#wheres-the-money" id="toc-wheres-the-money" class="nav-link active" data-scroll-target="#wheres-the-money">Where’s the Money</a></li>
-  <li><a href="#overview-of-the-program" id="toc-overview-of-the-program" class="nav-link" data-scroll-target="#overview-of-the-program">Overview of the program</a></li>
-  <li><a href="#calculating-the-values" id="toc-calculating-the-values" class="nav-link" data-scroll-target="#calculating-the-values">Calculating the values</a></li>
-  <li><a href="#formatting-a-number" id="toc-formatting-a-number" class="nav-link" data-scroll-target="#formatting-a-number">Formatting a Number</a>
-  <ul class="collapse">
-  <li><a href="#add-a-comma" id="toc-add-a-comma" class="nav-link" data-scroll-target="#add-a-comma">Add a comma</a></li>
-  <li><a href="#examples-for-string-method-.format" id="toc-examples-for-string-method-.format" class="nav-link" data-scroll-target="#examples-for-string-method-.format">Examples for string method <code>.format()</code></a></li>
-  </ul></li>
+  <li><a href="#letter_grade" id="toc-letter_grade" class="nav-link active" data-scroll-target="#letter_grade"><code>letter_grade()</code></a></li>
+  <li><a href="#pass_or_fail" id="toc-pass_or_fail" class="nav-link" data-scroll-target="#pass_or_fail"><code>pass_or_fail</code></a></li>
+  <li><a href="#calculate-percentage-point_grade-function" id="toc-calculate-percentage-point_grade-function" class="nav-link" data-scroll-target="#calculate-percentage-point_grade-function">Calculate percentage – <code>point_grade</code> function</a></li>
+  <li><a href="#calculate-final-grade-get_grade_results-function" id="toc-calculate-final-grade-get_grade_results-function" class="nav-link" data-scroll-target="#calculate-final-grade-get_grade_results-function">Calculate final grade – <code>get_grade_results</code> function</a></li>
+  <li><a href="#test-cases" id="toc-test-cases" class="nav-link" data-scroll-target="#test-cases">Test Cases</a></li>
   </ul>
 </nav>
     </div>
@@ -1001,151 +998,67 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Programming Projects are to be submitted to <a href="https://www.gradescope.com/courses/934148">gradescope</a></p>
+<p>Programming Projects are to be submitted to <a href="https://www.gradescope.com/courses/1044596">gradescope</a>.</p>
 <p><strong>Due date: Friday, September 26, 2025 at 9pm</strong></p>
-<p>This programming project is an adaptation of Ben Dicken’s Where’s the Money Programming Assignment.</p>
-<p>Do not import any modules for this assignment. Do not use built-in functions like max() (you have to write your own). You can use the built-in functions we covered in class: <code>print()</code>, <code>round()</code>, <code>input()</code>, <code>len()</code>, <code>int()</code>, <code>float()</code>, <code>str()</code> in addition to <code>format()</code>.</p>
-<section id="wheres-the-money" class="level1">
-<h1>Where’s the Money</h1>
-<p>Budgeting and money management is very important both at the individual level, and for corporations and government. Having a clear understanding of where your money goes, how much you are saving, and how much you invest is important to financial success. As a famous author once wrote:</p>
-<blockquote class="blockquote">
-<p>Annual income twenty pounds, annual expenditure nineteen six, result happiness. Annual income twenty pounds, annual expenditure twenty pound ought and six, result misery.</p>
-</blockquote>
-<p><em>–Charles Dickens</em></p>
-<p>In this assignment, you will be writing a program that helps a user visualize and understand how much money they spend of various categories of expenditures. Perhaps you will even find this program useful for your personal finances! You should name your program <code>wheres_the_money.py</code>.</p>
+<p>In this programming project you will implement a number of Python functions to validate or transform values conditionally. Make sure you follow the provided <a href="style.html">style guide</a> (you will be graded on it!). You are allowed to use <code>round()</code>, <code>str()</code> and <code>len()</code>, but other than that you are <strong>not</strong> allowed to use any other built-in method or function from any Python library.</p>
+<p>Also make sure you check the <a href="academic-integrity.html">Academic Integrity</a> and <a href="gradescope-errors.html">Common Gradescope Errors</a> pages.</p>
+<p>Name the program <code>grades.py</code>. Make sure that gradescope gives you the points for passing the test cases.</p>
+<section id="letter_grade" class="level2">
+<h2 class="anchored" data-anchor-id="letter_grade"><code>letter_grade()</code></h2>
+<p>This function determines a letter grade (“A”, “B”, and so on) based on a float argument representing a percentage grade.</p>
+<p>It returns a letter grade based on the following rules:</p>
+<pre><code>-   Greater or equal to 90, return "A"
+-   Greater or equal to 80, return "B"
+-   Greater or equal to 70, return "C"
+-   Greater or equal to 60, return "D"
+-   Anything less, than 60 return "E" but greater or equal to 0
+-   If argument is negative or greater than 100, return "X"</code></pre>
 </section>
-<section id="overview-of-the-program" class="level1">
-<h1>Overview of the program</h1>
-<p>This program takes a number of various arguments about how much someone makes, and how much they spend. The program will accept 5 argument values:</p>
-<ul>
-<li>Annual salary</li>
-<li>Monthly mortgage or rent</li>
-<li>Monthly bills</li>
-<li>Weekly grocery/food expenses</li>
-<li>Annual travel</li>
-</ul>
-<p>These 5 values will be used to generate a visualization of the financial situation that looks like so:</p>
-<pre>------------------------------------------------------------------
-See the financial breakdown below, based on a salary of $50000
-------------------------------------------------------------------
-| mortgage/rent | $  12,000.00 |  24.0% | ########################
-|         bills | $   4,800.00 |   9.6% | #########
-|          food | $  10,400.00 |  20.8% | ####################
-|        travel | $   2,500.00 |   5.0% | #####
-|           tax | $  10,000.00 |  20.0% | ####################
-|         extra | $  10,300.00 |  20.6% | ####################
-------------------------------------------------------------------
-</pre>
-<p>As you can see, the result is essentially a 6-row, 4-column grid that neatly shows that amounts and percentages of income go where.</p>
-<p>Each row represents an expense (or other category) where money goes to on a yearly basis. The first columns provides the name of the category. The second column shows the amount of money that goes to this category in dollars. The third columns shows the amount of money as a percentage of yearly income. The last column is a horizontal bard that correlates with the percentage of income. The number of # characters in this column should be the same as the percentage of income (rounded down).</p>
+<section id="pass_or_fail" class="level2">
+<h2 class="anchored" data-anchor-id="pass_or_fail"><code>pass_or_fail</code></h2>
+<p>This function determines if a student passed or failed a class, based on their final letter grade. Letter grades equal to “A”, “B”, “C”, or “D” are passing grades (<code>"Pass"</code>).</p>
 </section>
-<section id="calculating-the-values" class="level1">
-<h1>Calculating the values</h1>
-<p>The output provided above shows the kind of output this program should produce. Let’s talk a bit about how to compute these values.</p>
-<p>The basis for all of the percentages is the annual income argument. All of the percentages are calculated based on this. The next two arguments, rent and bills, are monthly expense values. In order to get the total spend on these categories annually, these numbers must be multiplied by the number of months in a year. Then, you can use this result to calculate the percentage. The fourth value is a weekly expense, so this must instead be multiplied by the number of weeks in a year. The fifth argument is already an annual value, so you don’t need to multiple by number of weeks or months.</p>
-<p>You need to write a <code>calculate_tax</code> function to calculate taxes. The tax percentage is dependent upon the amount of money a person make annually. The tax brackets are as follows:</p>
-<ul>
-<li>[$0, $15k] annually: 10% tax</li>
-<li>($15k, $75k] annually: 20% tax</li>
-<li>($75k, $200k] annually: 25% tax</li>
-<li>over $200k annually: 30% tax</li>
-</ul>
-<p>You should use one or more if / elif / else statements in the code to determine which tax percentage to use. You can store the tax percentage as an integer variable, with one of the following values: 10, 20, 25, or 30. You can compute the amount of the salary goes to taxes as a particular percentage with this formula:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>annual_salary <span class="op">*</span> ( tax_percentage <span class="op">/</span> <span class="fl">100.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Here are some tests to verify you are calculating the taxes correctly:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> calculate_tax(<span class="dv">40000</span>) <span class="op">==</span> <span class="dv">8000</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> calculate_tax(<span class="dv">10000</span>) <span class="op">==</span> <span class="dv">1000</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> calculate_tax(<span class="dv">20000</span>) <span class="op">==</span> <span class="dv">4000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>After calculating all of these values programmatically, you should generate the output table. Print the table in the <code>wheres_the_money</code> function.</p>
-<p>Finally, after printing the table, two warnings are optional to print (overspending &amp; tax limit).</p>
-<p>Overspending - what happens if the expenditures and taxes are more than the annual salary? This should be represented by negative values in the extra row. You should also print a warning after the chart. Below is an example of a financial situation in which the user spends more than they earn, resulting in a deficit in the extra row.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># arguments: salary, mortgage/rent, bills, food, travel</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>wheres_the_money(<span class="dv">40000</span>, <span class="dv">2000</span>, <span class="dv">300</span>, <span class="dv">150</span>, <span class="dv">4000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<pre>------------------------------------------------------------------------------------------------------
-See the financial breakdown below, based on a salary of $40000
-------------------------------------------------------------------------------------------------------
-| mortgage/rent | $  24,000.00 |  60.0% | ############################################################
-|         bills | $   3,600.00 |   9.0% | #########
-|          food | $   7,800.00 |  19.5% | ###################
-|        travel | $   4,000.00 |  10.0% | ##########
-|           tax | $   8,000.00 |  20.0% | ####################
-|         extra | $  -7,400.00 | -18.5% |
-------------------------------------------------------------------------------------------------------
-&gt;&gt;&gt; WARNING: DEFICIT &lt;&lt;&lt;
-</pre>
-<p>Tax limit - there is also a tax limit of <code>$75,000</code>. The tax should be capped at this value, and if the limit is reached, a message indicating this should be printed out after the chart. The message should say:</p>
-<pre>&gt;&gt;&gt; TAX LIMIT REACHED &lt;&lt;&lt;
-</pre>
+<section id="calculate-percentage-point_grade-function" class="level2">
+<h2 class="anchored" data-anchor-id="calculate-percentage-point_grade-function">Calculate percentage – <code>point_grade</code> function</h2>
+<p>This function calculates a percentage grade based on a <code>score</code> and <code>total_points</code>. It calculates the percentage grade by dividing score by total_points, and multiplies result by 100. It returns the calculated percentage as a float rounded at two decimals</p>
 </section>
-<section id="formatting-a-number" class="level1">
-<h1>Formatting a Number</h1>
-<p>Notice that the numbers are formatted in a particular way in the output table. You must match this formatting exactly. In order to do so, you can use the format() function. This function was mentioned in the <a href="https://adrianapicoral.com/csc-110/basics.html#the-format-method">Constants, variables, and comments reading</a>. Here’s an example of how you can use this function to match the formatting in the spec.</p>
-<p>Say we have a floating point number, like below:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="fl">134567.123</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Perhaps this is a result you get for one of the dollar values after doing the necessary computations. When printing, you’ll want to adjust the way it is printed in several ways.</p>
-<section id="add-a-comma" class="level2">
-<h2 class="anchored" data-anchor-id="add-a-comma">Add a comma</h2>
-<ul>
-<li>Set to stop at two decimal points</li>
-<li>Add necessary spacing before the number, so that the table lines up</li>
-</ul>
+<section id="calculate-final-grade-get_grade_results-function" class="level2">
+<h2 class="anchored" data-anchor-id="calculate-final-grade-get_grade_results-function">Calculate final grade – <code>get_grade_results</code> function</h2>
+<p>This function takes two <code>score</code> and <code>total_points</code>, and it calls the previous functions you’ve written – DO NOT recalculate percentage of grade, letter grade, etc. in this function. You are required to call the other functions. It returns a message similar to: <code>Your grade is 92.34 (A - Pass)</code> or <code>Your grade is 35.78 (E - Fail)</code></p>
 </section>
-<section id="examples-for-string-method-.format" class="level2">
-<h2 class="anchored" data-anchor-id="examples-for-string-method-.format">Examples for string method <code>.format()</code></h2>
-<p>Using the comma as a thousands separator:</p>
+<section id="test-cases" class="level2">
+<h2 class="anchored" data-anchor-id="test-cases">Test Cases</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">'{:,}'</span>.<span class="bu">format</span>(<span class="dv">1234567890</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>'1,234,567,890'</code></pre>
-</div>
-</div>
-<p>Establishing numbers of digits to hold space for:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">'{:15,}'</span>.<span class="bu">format</span>(<span class="dv">10000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>'         10,000'</code></pre>
-</div>
-</div>
-<p>Expressing floats with four decimals (the <code>4</code> is number of digits after the decimal point, the <code>f</code> means it’s formatting a float):</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">'{:.4f}'</span>.<span class="bu">format</span>(<span class="fl">4.2353635234</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>'4.2354'</code></pre>
-</div>
-</div>
-<p>Expressing a percentage with two decimals:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>points <span class="op">=</span> <span class="dv">19</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">22</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">'Correct answers: {:.2%}'</span>.<span class="bu">format</span>(points<span class="op">/</span>total)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>'Correct answers: 86.36%'</code></pre>
-</div>
-</div>
-<p>Holding space and right aligning the numbers:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>point_1 <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Correct answers: </span><span class="sc">{:&gt;5,}</span><span class="st">'</span>.<span class="bu">format</span>(point_1))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Correct answers:    20</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>point_2 <span class="op">=</span> <span class="dv">1000</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Correct answers: </span><span class="sc">{:&gt;5,}</span><span class="st">'</span>.<span class="bu">format</span>(point_2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Correct answers: 1,000</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># test letter_grade function</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> letter_grade(<span class="dv">90</span>) <span class="op">==</span> <span class="st">"A"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> letter_grade(<span class="dv">80</span>) <span class="op">==</span> <span class="st">"B"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> letter_grade(<span class="dv">70</span>) <span class="op">==</span> <span class="st">"C"</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> letter_grade(<span class="dv">60</span>) <span class="op">==</span> <span class="st">"D"</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> letter_grade(<span class="dv">59</span>) <span class="op">==</span> <span class="st">"E"</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> letter_grade(<span class="op">-</span><span class="dv">59</span>) <span class="op">==</span> <span class="st">"X"</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> letter_grade(<span class="dv">110</span>) <span class="op">==</span> <span class="st">"X"</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># test pass_or_fail function</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> pass_or_fail(<span class="st">"B"</span>) <span class="op">==</span> <span class="st">"Pass"</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> pass_or_fail(<span class="st">"E"</span>) <span class="op">==</span> <span class="st">"Fail"</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> pass_or_fail(<span class="st">"ABCD"</span>) <span class="op">==</span> <span class="st">"Error"</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># test point_grade function</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> point_grade(<span class="dv">0</span>, <span class="dv">100</span>) <span class="op">==</span> <span class="fl">0.0</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> point_grade(<span class="dv">100</span>, <span class="dv">100</span>) <span class="op">==</span> <span class="fl">100.0</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> point_grade(<span class="dv">45</span>, <span class="dv">80</span>) <span class="op">==</span> <span class="fl">56.25</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> point_grade(<span class="dv">37</span>, <span class="dv">40</span>) <span class="op">==</span> <span class="fl">92.5</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># test get_grade_results function</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> get_grade_results(<span class="dv">0</span>, <span class="dv">100</span>) <span class="op">==</span> <span class="st">"Your grade is 0.0 (E - Fail)"</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> get_grade_results(<span class="dv">45</span>, <span class="dv">80</span>) <span class="op">==</span> <span class="st">"Your grade is 56.25 (E - Fail)"</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> get_grade_results(<span class="dv">37</span>, <span class="dv">40</span>) <span class="op">==</span> <span class="st">"Your grade is 92.5 (A - Pass)"</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

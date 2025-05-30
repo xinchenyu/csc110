@@ -968,11 +968,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#letter_grade" id="toc-letter_grade" class="nav-link active" data-scroll-target="#letter_grade"><code>letter_grade()</code></a></li>
-  <li><a href="#pass_or_fail" id="toc-pass_or_fail" class="nav-link" data-scroll-target="#pass_or_fail"><code>pass_or_fail</code></a></li>
-  <li><a href="#calculate-percentage-point_grade-function" id="toc-calculate-percentage-point_grade-function" class="nav-link" data-scroll-target="#calculate-percentage-point_grade-function">Calculate percentage – <code>point_grade</code> function</a></li>
-  <li><a href="#calculate-final-grade-get_grade_results-function" id="toc-calculate-final-grade-get_grade_results-function" class="nav-link" data-scroll-target="#calculate-final-grade-get_grade_results-function">Calculate final grade – <code>get_grade_results</code> function</a></li>
-  <li><a href="#test-cases" id="toc-test-cases" class="nav-link" data-scroll-target="#test-cases">Test Cases</a></li>
+  <li><a href="#burger-restaurant" id="toc-burger-restaurant" class="nav-link active" data-scroll-target="#burger-restaurant">Burger Restaurant</a>
+  <ul class="collapse">
+  <li><a href="#ingredients" id="toc-ingredients" class="nav-link" data-scroll-target="#ingredients">Ingredients</a></li>
+  <li><a href="#menu" id="toc-menu" class="nav-link" data-scroll-target="#menu">Menu</a></li>
+  </ul></li>
+  <li><a href="#development-strategy" id="toc-development-strategy" class="nav-link" data-scroll-target="#development-strategy">Development Strategy</a></li>
   </ul>
 </nav>
     </div>
@@ -998,65 +999,173 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Programming Projects are to be submitted to <a href="https://www.gradescope.com/courses/934148">gradescope</a>.</p>
+<p>Programming Projects are to be submitted to <a href="https://www.gradescope.com/courses/1044596">gradescope</a>.</p>
 <p><strong>Due date: Friday, September 19, 2025 at 9pm</strong></p>
-<p>In this programming project you will implement a number of Python functions to validate or transform values conditionally. Make sure you follow the provided <a href="style.html">style guide</a> (you will be graded on it!). You are allowed to use <code>round()</code>, <code>str()</code> and <code>len()</code>, but other than that you are <strong>not</strong> allowed to use any other built-in method or function from any Python library.</p>
+<p>Credit for this programming project goes to Steven Truong, a former UGTA for CSC 110.</p>
+<p>In this programming project you will implement a number of Python functions to print different types of burgers. Make sure you follow the provided <a href="style.html">style guide</a> (you will be graded on it!). The only built-in function you can use is <code>print()</code>. You are <strong>not</strong> allowed to use any other built-in method or function from any Python library.</p>
 <p>Also make sure you check the <a href="academic-integrity.html">Academic Integrity</a> and <a href="gradescope-errors.html">Common Gradescope Errors</a> pages.</p>
-<p>Name the program <code>grades.py</code>. Make sure that gradescope gives you the points for passing the test cases.</p>
-<section id="letter_grade" class="level2">
-<h2 class="anchored" data-anchor-id="letter_grade"><code>letter_grade()</code></h2>
-<p>This function determines a letter grade (“A”, “B”, and so on) based on a float argument representing a percentage grade.</p>
-<p>It returns a letter grade based on the following rules:</p>
-<pre><code>-   Greater or equal to 90, return "A"
--   Greater or equal to 80, return "B"
--   Greater or equal to 70, return "C"
--   Greater or equal to 60, return "D"
--   Anything less, than 60 return "E" but greater or equal to 0
--   If argument is negative or greater than 100, return "X"</code></pre>
+<p>Name the program <code>burgers.py</code>. Make sure that gradescope gives you the points for passing the test cases.</p>
+<section id="burger-restaurant" class="level1">
+<h1>Burger Restaurant</h1>
+<p>You are in-charge of a computer restaurant responsible for serving burgers to your customers. The restaurant menu only includes 6 types of burgers: plain, BLT, lettuce wrap, double, plain add mushroom, and double add onion. The order is taken as a string. For example, <code>"plain add mushroom"</code>.</p>
+<p>You will be given the ingredients as text symbols, and your task is to put them together to display the burgers using those symbols, and print the burger.</p>
+<section id="ingredients" class="level2">
+<h2 class="anchored" data-anchor-id="ingredients">Ingredients</h2>
+<p>There are a total of 8 ingredients.</p>
+<code>top bun</code>:
+<pre>   __________________________
+  /     &lt;&gt;            &lt;&gt;     \
+ /  &lt;&gt;       &lt;&gt;   &lt;&gt;      &lt;&gt;  \
+ \____________________________/
+</pre>
+<code>bottom bun</code>:
+<pre>  ____________________________
+ /                            \
+ \____________________________/
+</pre>
+<code>patty</code>:
+<pre>   __________________________
+  |                          |
+  |__________________________|
+</pre>
+<code>lettuce</code>:
+<pre>  \/^\/^\/^\/^\/^\/^\/^\/^\/^\
+  \/^\/^\/^\/^\/^\/^\/^\/^\/^\
+</pre>
+<code>tomato</code>:
+<pre>  ()()()()()()()()()()()()()()
+  |                          |
+  ()()()()()()()()()()()()()()
+</pre>
+<code>bacon</code>:
+<pre>  ~~~~~~/\~~~~~~/\~~~~~~/\~~~
+  ~~~~~~/\~~~~~~/\~~~~~~/\~~~
+</pre>
+<code>mushroom</code>:
+<pre>  |  (o)   (o)   (o)   (o)   |
+</pre>
+<code>onion</code>:
+<pre>  |  @@@   @@@   @@@   @@@   |
+</pre>
 </section>
-<section id="pass_or_fail" class="level2">
-<h2 class="anchored" data-anchor-id="pass_or_fail"><code>pass_or_fail</code></h2>
-<p>This function determines if a student passed or failed a class, based on their final letter grade. Letter grades equal to “A”, “B”, “C”, or “D” are passing grades (<code>"Pass"</code>).</p>
+<section id="menu" class="level2">
+<h2 class="anchored" data-anchor-id="menu">Menu</h2>
+<p>Next, we can use the ingredients above to make the six types of burgers on the menu given by the order.</p>
+For example, when the order is <code>"plain"</code>: <code>top bun</code> + <code>patty</code> + <code>bottom bun</code>
+<pre>   __________________________
+  /     &lt;&gt;            &lt;&gt;     \
+ /  &lt;&gt;       &lt;&gt;   &lt;&gt;      &lt;&gt;  \
+ \____________________________/
+   __________________________
+  |                          |
+  |__________________________|
+  ____________________________
+ /                            \
+ \____________________________/
+</pre>
+Another example is <code>"BLT"</code>: <code>top bun</code> + <code>bacon</code> + <code>lettuce</code> + <code>tomato</code> + <code>bottom bun</code>
+<pre>   __________________________
+  /     &lt;&gt;            &lt;&gt;     \
+ /  &lt;&gt;       &lt;&gt;   &lt;&gt;      &lt;&gt;  \
+ \____________________________/
+  ~~~~~~/\~~~~~~/\~~~~~~/\~~~
+  ~~~~~~/\~~~~~~/\~~~~~~/\~~~
+  \/^\/^\/^\/^\/^\/^\/^\/^\/^\
+  \/^\/^\/^\/^\/^\/^\/^\/^\/^\
+  ()()()()()()()()()()()()()()
+  |                          |
+  ()()()()()()()()()()()()()()
+  ____________________________
+ /                            \
+ \____________________________/
+</pre>
+<p>We list the other four options on the menu below:</p>
+When the order is <code>"lettuce wrap"</code>:
+<pre>  \/^\/^\/^\/^\/^\/^\/^\/^\/^\
+  \/^\/^\/^\/^\/^\/^\/^\/^\/^\
+  ~~~~~~/\~~~~~~/\~~~~~~/\~~~
+  ~~~~~~/\~~~~~~/\~~~~~~/\~~~
+   __________________________
+  |                          |
+  |__________________________|
+  ()()()()()()()()()()()()()()
+  |                          |
+  ()()()()()()()()()()()()()()
+  \/^\/^\/^\/^\/^\/^\/^\/^\/^\
+  \/^\/^\/^\/^\/^\/^\/^\/^\/^\
+</pre>
+When the order is <code>"double"</code>:
+<pre>   __________________________
+  /     &lt;&gt;            &lt;&gt;     \
+ /  &lt;&gt;       &lt;&gt;   &lt;&gt;      &lt;&gt;  \
+ \____________________________/
+   __________________________
+  |                          |
+  |__________________________|
+   __________________________
+  |                          |
+  |__________________________|
+  ____________________________
+ /                            \
+ \____________________________/
+</pre>
+When the order is <code>"double add onion"</code>:
+<pre>   __________________________
+  /     &lt;&gt;            &lt;&gt;     \
+ /  &lt;&gt;       &lt;&gt;   &lt;&gt;      &lt;&gt;  \
+ \____________________________/
+   __________________________
+  |                          |
+  |__________________________|
+  |  @@@   @@@   @@@   @@@   |
+   __________________________
+  |                          |
+  |__________________________|
+  ____________________________
+ /                            \
+ \____________________________/
+</pre>
+When the order is <code>"plain add mushroom"</code>:
+<pre>   __________________________
+  /     &lt;&gt;            &lt;&gt;     \
+ /  &lt;&gt;       &lt;&gt;   &lt;&gt;      &lt;&gt;  \
+ \____________________________/
+  |  (o)   (o)   (o)   (o)   |
+   __________________________
+  |                          |
+  |__________________________|
+  ____________________________
+ /                            \
+ \____________________________/
+</pre>
 </section>
-<section id="calculate-percentage-point_grade-function" class="level2">
-<h2 class="anchored" data-anchor-id="calculate-percentage-point_grade-function">Calculate percentage – <code>point_grade</code> function</h2>
-<p>This function calculates a percentage grade based on a <code>score</code> and <code>total_points</code>. It calculates the percentage grade by dividing score by total_points, and multiplies result by 100. It returns the calculated percentage as a float rounded at two decimals</p>
 </section>
-<section id="calculate-final-grade-get_grade_results-function" class="level2">
-<h2 class="anchored" data-anchor-id="calculate-final-grade-get_grade_results-function">Calculate final grade – <code>get_grade_results</code> function</h2>
-<p>This function takes two <code>score</code> and <code>total_points</code>, and it calls the previous functions you’ve written – DO NOT recalculate percentage of grade, letter grade, etc. in this function. You are required to call the other functions. It returns a message similar to: <code>Your grade is 92.34 (A - Pass)</code> or <code>Your grade is 35.78 (E - Fail)</code></p>
-</section>
-<section id="test-cases" class="level2">
-<h2 class="anchored" data-anchor-id="test-cases">Test Cases</h2>
+<section id="development-strategy" class="level1">
+<h1>Development Strategy</h1>
+<p>The <code>serve</code> function and the <code>main</code> function are already provided as below:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># test letter_grade function</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> letter_grade(<span class="dv">90</span>) <span class="op">==</span> <span class="st">"A"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> letter_grade(<span class="dv">80</span>) <span class="op">==</span> <span class="st">"B"</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> letter_grade(<span class="dv">70</span>) <span class="op">==</span> <span class="st">"C"</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> letter_grade(<span class="dv">60</span>) <span class="op">==</span> <span class="st">"D"</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> letter_grade(<span class="dv">59</span>) <span class="op">==</span> <span class="st">"E"</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> letter_grade(<span class="op">-</span><span class="dv">59</span>) <span class="op">==</span> <span class="st">"X"</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> letter_grade(<span class="dv">110</span>) <span class="op">==</span> <span class="st">"X"</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># test pass_or_fail function</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> pass_or_fail(<span class="st">"B"</span>) <span class="op">==</span> <span class="st">"Pass"</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> pass_or_fail(<span class="st">"E"</span>) <span class="op">==</span> <span class="st">"Fail"</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> pass_or_fail(<span class="st">"ABCD"</span>) <span class="op">==</span> <span class="st">"Error"</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># test point_grade function</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> point_grade(<span class="dv">0</span>, <span class="dv">100</span>) <span class="op">==</span> <span class="fl">0.0</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> point_grade(<span class="dv">100</span>, <span class="dv">100</span>) <span class="op">==</span> <span class="fl">100.0</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> point_grade(<span class="dv">45</span>, <span class="dv">80</span>) <span class="op">==</span> <span class="fl">56.25</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> point_grade(<span class="dv">37</span>, <span class="dv">40</span>) <span class="op">==</span> <span class="fl">92.5</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># test get_grade_results function</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> get_grade_results(<span class="dv">0</span>, <span class="dv">100</span>) <span class="op">==</span> <span class="st">"Your grade is 0.0 (E - Fail)"</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> get_grade_results(<span class="dv">45</span>, <span class="dv">80</span>) <span class="op">==</span> <span class="st">"Your grade is 56.25 (E - Fail)"</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="cf">assert</span> get_grade_results(<span class="dv">37</span>, <span class="dv">40</span>) <span class="op">==</span> <span class="st">"Your grade is 92.5 (A - Pass)"</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># All your functions are defined here</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> serve(order):</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> order <span class="op">==</span> <span class="st">"plain"</span>:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        plain()</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> order <span class="op">==</span> <span class="st">"blt"</span>:</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        blt()</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> order <span class="op">==</span> <span class="st">"lettuce wrap"</span>:</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        lettuce_wrap()</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> order <span class="op">==</span> <span class="st">"double"</span>:</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        double()</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> order <span class="op">==</span> <span class="st">"plain add muchroom"</span>:</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>       plain_add_muchroom()</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> order <span class="op">==</span> <span class="st">"double add onion"</span>:</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>       double_add_onion()</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    serve(<span class="st">"double"</span>) <span class="co"># you may change the argument to the others</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>You need to define your own functions to print the burger based on the order. For example, after running the code above, a <code>double</code> burger should be displayed in the console. In the <code>main</code> function, you can change the argument (e.g., “double”) in the <code>serve</code> function to print other burgers.</p>
+<p>You may also modify the code within the <code>serve</code> function. However, please ensure that its sole argument, <code>order</code>, is restricted to one of the following values: <code>"plain"</code>, <code>"blt"</code>, <code>"lettuce wrap"</code>, <code>"double"</code>, <code>"plain add muchroom"</code>, and <code>"double add onion"</code>.</p>
+<p>Note: Points will be deducted if your code lacks proper decomposition. For example, placing all print statements in just one or two functions without breaking down the logic appropriately.</p>
 
 
 </section>
