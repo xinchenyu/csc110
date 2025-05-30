@@ -20,8 +20,8 @@ This is for information only.
 * [Lab 06](labs/lab06.html): Oct 08 to Oct 14 ([slides](labs/lab06-slide.html))
 * [Lab 07](labs/lab07.html): oct 15 to Oct 21 ([slides](labs/lab07-slide.html))
 * CATCH UP WEEK: Oct 22 to Oct 28
-* [Lab 08](labs/lab08.html): Oct 29 to Nov 04
+* [Lab 08](labs/lab08.html): Oct 29 to Nov 04 ([slides](labs/lab08-slide.html))
 * [Lab 09](labs/lab09.html): Nov 05 to Nov 11
 * [Lab 10](labs/lab10.html): Nov 12 to Nov 18
 * [Lab 11](labs/lab11.html): Nov 19 to Nov 25
-* [Lab 12](): Dec 01 to Dec 04
+* [Lab 12](labs/lab12.html): Dec 01 to Dec 04 ([slides](labs/lab12-slide.html))

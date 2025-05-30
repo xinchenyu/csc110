@@ -1063,7 +1063,7 @@ margin-right: 0; }
 <li>Add parameters inside the parentheses in the function definition</li>
 <li>Return a value</li>
 </ul>
-<div id="14a63c8b" class="cell" data-execution_count="1">
+<div id="05536eca" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href></a><span class="kw">def</span> double(n):</span>
 <span id="cb1-2"><a href></a>  result <span class="op">=</span> n <span class="op">*</span> <span class="dv">2</span></span>
 <span id="cb1-3"><a href></a>  <span class="cf">return</span> result</span>
@@ -1081,52 +1081,52 @@ margin-right: 0; }
 <h2>Using <code>round()</code></h2>
 <p>Use the round() function to get a floating-point number rounded to the specified number of decimals.</p>
 <p>Syntax:</p>
-<div id="e04ed65c" class="cell" data-execution_count="2">
+<div id="e83eb12b" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href></a><span class="bu">round</span>(number, ndigits<span class="op">*</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The number of digits (<code>ndigits</code>) is optional, but we will often round number to two decimals:</p>
-<div id="290d332e" class="cell" data-execution_count="3">
+<div id="954470fd" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href></a><span class="bu">round</span>(<span class="fl">392.68750000000006</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>393</code></pre>
 </div>
 </div>
-<div id="25fd2e26" class="cell" data-execution_count="4">
+<div id="2fe702a9" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href></a><span class="bu">round</span>(<span class="fl">392.68750000000006</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="17">
 <pre><code>392.69</code></pre>
 </div>
 </div>
 </section>
 <section id="using-format" class="slide level2">
 <h2>Using <code>format()</code></h2>
-<div id="a55b44b9" class="cell" data-execution_count="5">
+<div id="fcdf57d7" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href></a>age <span class="op">=</span> <span class="dv">20</span></span>
 <span id="cb8-2"><a href></a>name <span class="op">=</span> <span class="st">&#39;Philip&#39;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Here’s how we can do concatenation using the <code>+</code> operator:</p>
-<div id="b6088aa9" class="cell" data-execution_count="6">
+<div id="18f2c8f3" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href></a>name <span class="op">+</span> <span class="st">&#39; is &#39;</span> <span class="op">+</span> <span class="bu">str</span>(age) <span class="op">+</span> <span class="st">&#39; years old&#39;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="19">
 <pre><code>&#39;Philip is 20 years old&#39;</code></pre>
 </div>
 </div>
 <p>We can do the same with the <code>.format()</code> method, using <code>{}</code> as place holders for our variables:</p>
-<div id="22780c84" class="cell" data-execution_count="7">
+<div id="bd716180" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href></a><span class="co">&#39;{} is {} years old&#39;</span>.<span class="bu">format</span>(name, age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>&#39;Philip is 20 years old&#39;</code></pre>
 </div>
 </div>
 </section>
 <section id="if-statements" class="slide level2">
 <h2>If statements</h2>
-<p>We can use logical expressions in <code>if</code> statements to return different things from a function:</p>
-<div id="c24797a3" class="cell" data-execution_count="8">
+<p>We can use logical expressions in <code>if</code> and <code>elif</code> statements to return different things from a function:</p>
+<div id="4d90ed28" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href></a><span class="kw">def</span> is_positive(number):</span>
 <span id="cb13-2"><a href></a>  <span class="cf">if</span> number <span class="op">&gt;</span> <span class="dv">0</span>:</span>
 <span id="cb13-3"><a href></a>    <span class="cf">return</span> <span class="st">&quot;Number is positive&quot;</span></span>
-<span id="cb13-4"><a href></a>  <span class="cf">if</span> number <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb13-4"><a href></a>  <span class="cf">elif</span> number <span class="op">&lt;</span> <span class="dv">0</span>:</span>
 <span id="cb13-5"><a href></a>    <span class="cf">return</span> <span class="st">&quot;Number is negative&quot;</span></span>
 <span id="cb13-6"><a href></a>  <span class="cf">return</span> <span class="st">&quot;Number is zero&quot;</span></span>
 <span id="cb13-7"><a href></a></span>
