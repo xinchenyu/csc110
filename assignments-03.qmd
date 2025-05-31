@@ -28,45 +28,30 @@ Programming Problems should be submitted to [gradescope](https://www.gradescope.
 
 Write two python functions. The first function does the following:
 
-1.  Its name is `kg_to_lbs`.
-2.  The function *prompts the user* to enter a value in `kilos` (use the `input()` function) -- your function should take no arguments
-3.  It converts the `kilos` entered to pounds (by multiplying `kilos` by 2.205)
-4.  It returns the converted weight in pounds with two decimals of precision
+1.  Its name is `get_digit`.
+2.  This function takes an integer as input. 
+3.  It returns the first digit (from the left) of a two-digit number. 
 
-The second function does the following:
+The second function `cube` takes an integer n as input. It returns the cube of that number (i.e., n * n * n).
 
-1.  Its name is `liters_to_gallons`
-2.  The function *prompts the user* to enter a value in `liters` (use the `input()` function) -- your function should take no arguments
-3.  It converts the `liters` entered to gallons (divide the quantity in `liters` by 3.785)
-4.  It returns the converted volume in gallons with two decimals of precision
+In the `main` function, call the `get_digit` to get the number and then call `cube` to calculate the cube of that number. Finally, print the result.
 
-Name the program `conversions.py`. Make sure that gradescope gives you the points for passing the test cases.
+Name the program `cube.py`. You are only allowed to use operations learned in the class. Make sure that gradescope gives you the points for passing the test cases.
 
 Development test cases:
 
 ```{python}
 #| echo: true
 #| eval: false
-print("Enter 1:")
-print( kg_to_lbs() ) # 2.21 
+print(get_digit(28)) # 2
+print(get_digit(91)) # 9
+print(get_digit(10)) # 1
 
-print("Enter 6:")
-print( kg_to_lbs() ) # 13.23
-
-print("Enter 120:")
-print( kg_to_lbs() ) # 264.6 
-
-print("Enter 1:")
-print( liters_to_gallons() ) # 0.26 
-
-print("Enter 3:")
-print( liters_to_gallons() ) # 0.79
-
-print("Enter 6:")
-print( liters_to_gallons() ) # 1.59 
+print(cube(2)) # 8
+print(cube(3)) # 27
+print(cube(1)) # 1
 ```
 
-You can also download the [ready-to-run script](test_scripts/test_conversions.py) to test your solution.
 
 ## Programming Problem 6
 
@@ -98,4 +83,3 @@ print("Enter -2:")
 print( is_even()) # True 
 ```
 
-You can also download the [ready-to-run script](test_scripts/test_even.py) to test your solution.

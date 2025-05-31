@@ -1012,40 +1012,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="programming-problem-5">Programming Problem 5</h2>
 <p>Write two python functions. The first function does the following:</p>
 <ol type="1">
-<li>Its name is <code>kg_to_lbs</code>.</li>
-<li>The function <em>prompts the user</em> to enter a value in <code>kilos</code> (use the <code>input()</code> function) – your function should take no arguments</li>
-<li>It converts the <code>kilos</code> entered to pounds (by multiplying <code>kilos</code> by 2.205)</li>
-<li>It returns the converted weight in pounds with two decimals of precision</li>
+<li>Its name is <code>get_digit</code>.</li>
+<li>This function takes an integer as input.</li>
+<li>It returns the first digit (from the left) of a two-digit number.</li>
 </ol>
-<p>The second function does the following:</p>
-<ol type="1">
-<li>Its name is <code>liters_to_gallons</code></li>
-<li>The function <em>prompts the user</em> to enter a value in <code>liters</code> (use the <code>input()</code> function) – your function should take no arguments</li>
-<li>It converts the <code>liters</code> entered to gallons (divide the quantity in <code>liters</code> by 3.785)</li>
-<li>It returns the converted volume in gallons with two decimals of precision</li>
-</ol>
-<p>Name the program <code>conversions.py</code>. Make sure that gradescope gives you the points for passing the test cases.</p>
+<p>The second function <code>cube</code> takes an integer n as input. It returns the cube of that number (i.e., n * n * n).</p>
+<p>In the <code>main</code> function, call the <code>get_digit</code> to get the number and then call <code>cube</code> to calculate the cube of that number. Finally, print the result.</p>
+<p>Name the program <code>cube.py</code>. You are only allowed to use operations learned in the class. Make sure that gradescope gives you the points for passing the test cases.</p>
 <p>Development test cases:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Enter 1:"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( kg_to_lbs() ) <span class="co"># 2.21 </span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Enter 6:"</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( kg_to_lbs() ) <span class="co"># 13.23</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Enter 120:"</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( kg_to_lbs() ) <span class="co"># 264.6 </span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Enter 1:"</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( liters_to_gallons() ) <span class="co"># 0.26 </span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Enter 3:"</span>)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( liters_to_gallons() ) <span class="co"># 0.79</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Enter 6:"</span>)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( liters_to_gallons() ) <span class="co"># 1.59 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(get_digit(<span class="dv">28</span>)) <span class="co"># 2</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(get_digit(<span class="dv">91</span>)) <span class="co"># 9</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(get_digit(<span class="dv">10</span>)) <span class="co"># 1</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cube(<span class="dv">2</span>)) <span class="co"># 8</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cube(<span class="dv">3</span>)) <span class="co"># 27</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cube(<span class="dv">1</span>)) <span class="co"># 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>You can also download the <a href="test_scripts/test_conversions.py">ready-to-run script</a> to test your solution.</p>
 </section>
 <section id="programming-problem-6" class="level2">
 <h2 class="anchored" data-anchor-id="programming-problem-6">Programming Problem 6</h2>
@@ -1071,7 +1054,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Enter -2:"</span>)</span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( is_even()) <span class="co"># True </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>You can also download the <a href="test_scripts/test_even.py">ready-to-run script</a> to test your solution.</p>
 
 
 </section>
