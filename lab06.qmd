@@ -1,0 +1,53 @@
+---
+title: "Short Project 6"
+format:
+  html:
+    embed-resources: true
+---
+
+# Move items in list
+
+In this short programming project you will be writing a function that takes a list, and index, and a direction (`"left"` or `"right"`) as arguments. The goal of the function is to move the item at index to the provided direction skipping over all zeros and taking the place of another item that is not zero. If reaching the end (either left or right end) and all of the items are zero, take place of the last item. 
+
+Name the program `move_item.py`. Make sure that gradescope gives you the points for passing the test cases.
+
+## Examples
+
+```{python}
+#| eval: false
+#| echo: true
+original_list = ["a", 0, 0, "b", "c", 0, 0]
+print( move_item(original_list, 3,  "left") )
+```
+
+<pre>
+['b', 0, 0, 0, 'c', 0, 0]
+</pre>
+
+```{python}
+#| eval: false
+#| echo: true
+original_list = ["a", 0, 0, "b", "c", 0, 0]
+print( move_item(original_list, 3, "right") )
+```
+
+<pre>
+['a', 0, 0, 0, 'b', 0, 0]
+</pre>
+
+```{python}
+#| eval: false
+#| echo: true
+# call the function again
+print( move_item(original_list, 4, "right") )
+```
+
+<pre>
+['a', 0, 0, 0, 0, 0, 'b']
+</pre>
+
+## Development Strategy
+
+The easiest way to implement this is using two while loops (one for going to the left, another for going to the right). You have the starting point of the item you want to move (the `"index"`) -- you need to find out where it needs to `end`. 
+
+Your first guess for the `end` index should be minus one on the `index` if you are going to the `left` or plus one on the `index` if you are going to the `right`. In your while loop you need to keep subtracting one or adding one (depending on your direction) until you reach your `end` destination -- meaning, you skip over the zeros until you either reach the beginning of the end of the list (depending on the direction you are going) or you found an item to replace (something that is different than zero).

@@ -1,0 +1,154 @@
+---
+title: "Short Project 11"
+format:
+  html:
+    embed-resources: true
+---
+
+# Going around in a point in a grid
+
+In this lab session we are going to focus on modularity.
+
+Name your file `look_around.py`
+
+You first will implement a function to make a grid (2D list) of all 'o' (single lower letter o character) of width (number of elements in each sublist) and height dimentions (number of rows).
+
+```{python}
+#| eval: false
+#| echo: true
+
+# make_grid(width, height)
+my_grid = make_grid(9, 9)
+assert my_grid == [['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+                   ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+                   ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+                   ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+                   ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+                   ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+                   ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+                   ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o'],
+                   ['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o']]
+```
+
+To make sure you can see the result of modifications on your grid, write a `print_grid` function to print each row of the grid:
+
+```{python}
+#| eval: false
+#| echo: true
+my_grid = make_grid(9, 9)
+print_grid(my_grid)
+```
+
+<pre>
+['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o']
+['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o']
+['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o']
+['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o']
+['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o']
+['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o']
+['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o']
+['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o']
+['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o']
+</pre>
+
+Here's the main part of the problem: given a grid (2D list of single characters), and given coordinates x and y, mutate the grid so that the coordinate and the positions around the coordinate hold the character `'x'`.
+
+Call your function `mark_around` because the idea is that you are marking the grid at `(x, y)` and around this position as well. The parameters for `mark_around` are the `grid`, `x` (row), and `y` (position inside row).
+
+```{python}
+#| eval: false
+#| echo: true
+my_grid = make_grid(9, 9)
+# mark_around(grid, x, y)
+mark_around(my_grid, 4, 4)
+print_grid(my_grid)
+```
+
+<pre>
+['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o']
+['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o']
+['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o']
+['o', 'o', 'o', 'x', 'x', 'x', 'o', 'o', 'o']
+['o', 'o', 'o', 'x', 'x', 'x', 'o', 'o', 'o']
+['o', 'o', 'o', 'x', 'x', 'x', 'o', 'o', 'o']
+['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o']
+['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o']
+['o', 'o', 'o', 'o', 'o', 'o', 'o', 'o', 'o']
+</pre>
+
+You should write not only the `mark_around` function, but another function that will be called inside `mark_around`. This function should be called `within_limits` and should return `False` and x or y are outside the limits of the grid. The parameters for `within_limits` are the `grid`, `x` (row), and `y` (position inside row).
+
+```{python}
+#| eval: false
+#| echo: true
+my_grid = make_grid(4, 6)
+assert within_limits(my_grid, -1, 0) == False
+assert within_limits(my_grid, 0, 0) == True
+assert within_limits(my_grid, 1, 2) == True
+assert within_limits(my_grid, 5, 5) == False
+assert within_limits(my_grid, 4, 6) == False
+assert within_limits(my_grid, 5, 3) == True
+assert within_limits(my_grid, 6, 4) == False
+```
+
+## Development strategy
+
+Once you have your  `within_limits` function written, you can create nested loops for `mark_around` with the outer loop starting at `x-1` and stopping at `x+1`. The inner loop should start at `y-1` and stop at `y+1`. As long as the `[i][j]` subsetting of your grid is within limits of the grid, assign `'x'` to that position.
+
+## Test cases
+
+```{python}
+#| eval: false
+#| echo: true
+my_grid = make_grid(6, 9)
+mark_around(my_grid, 3, 2)
+print_grid(my_grid)
+```
+
+<pre>
+['o', 'o', 'o', 'o', 'o', 'o']
+['o', 'o', 'o', 'o', 'o', 'o']
+['o', 'x', 'x', 'x', 'o', 'o']
+['o', 'x', 'x', 'x', 'o', 'o']
+['o', 'x', 'x', 'x', 'o', 'o']
+['o', 'o', 'o', 'o', 'o', 'o']
+['o', 'o', 'o', 'o', 'o', 'o']
+['o', 'o', 'o', 'o', 'o', 'o']
+['o', 'o', 'o', 'o', 'o', 'o']
+</pre>
+
+
+```{python}
+#| eval: false
+#| echo: true
+my_grid = make_grid(4, 6)
+mark_around(my_grid, 0, 0)
+print_grid(my_grid)
+```
+
+<pre>
+['x', 'x', 'o', 'o']
+['x', 'x', 'o', 'o']
+['o', 'o', 'o', 'o']
+['o', 'o', 'o', 'o']
+['o', 'o', 'o', 'o']
+['o', 'o', 'o', 'o']
+</pre>
+
+
+```{python}
+#| eval: false
+#| echo: true
+my_grid = make_grid(4, 6)
+mark_around(my_grid, 5, 3)
+print_grid(my_grid)
+```
+
+<pre>
+['o', 'o', 'o', 'o']
+['o', 'o', 'o', 'o']
+['o', 'o', 'o', 'o']
+['o', 'o', 'o', 'o']
+['o', 'o', 'x', 'x']
+['o', 'o', 'x', 'x']
+</pre>

@@ -1,0 +1,62 @@
+---
+title: "Short Project 12"
+format:
+  html:
+    embed-resources: true
+---
+
+# Simplified word search
+
+In this lab session, you will be tasked with writing a program that finds certain words within a word search grid and returns the word mapped to the line and starting character location of each word. The information of the board, and the words will be provided via files you will need to read in.
+
+You should name the file `simple_wordsearch.py`. Your code should have a function called search that returns a dictionary (see specification below).
+
+In this short project, you will write code to look for horizontal non-inverted words only.
+
+Do not use methods not covered in class. You can use `.find()` -- which is going to be covered during the lab session.
+
+## File with words to search
+
+Your python script should open up and read a text file name which determines which words you are searching for in your puzzle file! You can assume that each line in the input text file is formatted as follows: each line of the file is a word from the "word bank."
+
+Contents of `words.txt`:
+
+<pre>
+high
+america
+wood
+</pre>
+
+Your program should open and read the input text file into the program, and create a list with all the words.
+
+After you have read in the file and constructed this dictionary, you can use it to determine your word bank, which words you will need to look for within the puzzle.
+
+## Puzzle text file
+
+This file contains a grid of letters and hidden within those letters are certain words you will need to be searching for. You will use your newly created words dictionary to figure out what letter combination of words you need to find. This is an example of what this word-grid file would look like:
+
+<pre>
+W O O D W S M Z H 
+N R M E W A N D A 
+L Z H I G H K L H 
+S R E G N E V A V 
+I F R C X H C Q X 
+A H T Z B A Y K Q 
+A R A M E R I C A
+</pre>
+
+The puzzle file could have more or less Rows/Columns depending on each test case.
+
+## Output
+
+The program should return a dictionary with the starting row and column location for each word found. Your code should have a function called `simple_search` that returns this dictionary. The formatting of the return dictionary should be something like:
+
+```{python}
+#| echo: true
+#| eval: false
+{"high": [2, 2] , "america": [6, 2] , "wood": [0, 0]}
+```
+
+## Function names
+
+Gradescope will call the following functions `read_words(filename)`, `read_puzzle(filename)`, and `search(puzzle, words_to_search)`.

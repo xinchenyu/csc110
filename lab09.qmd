@@ -1,0 +1,93 @@
+---
+title: "Short Project 9"
+format:
+  html:
+    embed-resources: true
+---
+
+# Changing a data file
+
+In this lab session you are going to read two data files, that share a column in common (id). First you need to create a dictionary with the `.csv` (comma separated values) file, with the unique ids as keys and names as values. Then you will read the tab separated value, which contains a the id and a city name, and you will create an output file that contains three values separate by comma in each line: the unique id is the first value, the second value is the name associated with the unique id (use the dictionary to retrieve the name based on the unique id), and the third value is the name of the city associated with each id.
+
+Name your Python script `add_column.py`.
+
+Files you will need:
+
+* [`.csv` file with ids and names](ids_and_names.csv) (to create your dictionary with)
+* [`.txt` file that you will use to create your output file](ids_and_city.txt)
+
+Your output file that you are to write is the name of the `.txt` file preceded by the string `"output_"`. For example, if the `.txt` file is called `"cities.txt"` the output file your script will create should be called `"output_cities.txt"`
+
+## Test cases
+
+```{python}
+#| eval: false
+#| echo: true
+id_names = read_ids("ids_and_names.csv")
+print(id_names)
+```
+
+<pre>
+{'166': 'Sylvia Phillis', '339': 'Carina Roxanna', '440': 'Monday Devon', 
+ '393': 'Milford Elaine', '869': 'Garnet Guillermo', '471': 'Cassandra Ignacia', 
+ '197': 'Murray Tomás', '489': 'Jacinta Layla', '799': 'Verity Mathew', 
+ '251': 'Terance Mar', '259': 'Patrocinia Malcom', '464': 'Valentín Ximena', 
+ '707': 'Bridgette Tiburcio', '356': 'Osborne Otilia', '406': 'Otilia Delano', 
+ '123': 'Eneida Brennan', '332': 'Zackary Trenton', '743': 'Florencio Clotilde', 
+ '176': 'Ariel Tamara', '546': 'Miranda Pamelia', '830': 'Fiona Garey', 
+ '145': 'Verity Modesto', '585': 'Marvel Terrell', '479': 'Clarence Damon', 
+ '801': 'Linden Herbert', '915': 'January Sunday', '598': 'Guadalupe Margaret',
+ '538': 'Apolinar Olive', '789': 'Lisandro Agatha', '139': 'Mayra Sampson', 
+ '261': 'Omar Demetria', '626': 'Hugh Laraine', '216': 'Kip Delfina', 
+ '229': 'Godofredo Dutch', '983': 'Bevan Jarod', '604': 'Ellery Luján', 
+ '357': 'Paulina Valorie', '120': 'Milford Lamar', '805': 'Fern Valeria', 
+ '567': 'Mildred Paula', '665': 'Bernabé Mercy', '613': 'Ely Lindsay', 
+ '838': 'Una Kerry', '951': 'Misti Valerio', '703': 'Nikole Norman', 
+ '242': 'Melanie Edith', '810': 'Arlen Libertad', '722': 'Nola Virginia', 
+ '204': 'Ward Brice', '649': 'Cristopher Xavier'}
+</pre>
+
+
+Then, for the following function call:
+
+```{python}
+#| eval: false
+#| echo: true
+add_name_column("ids_and_city.txt", id_names)
+```
+
+A file named `"output_ids_and_city.txt"` should be created with the following contents:
+
+<pre>
+120,Milford Lamar,Ajo
+123,Eneida Brennan,Avondale
+139,Mayra Sampson,Avondale
+145,Verity Modesto,Casa
+166,Sylvia Phillis,Chandler
+176,Ariel Tamara,Clifton
+197,Murray Tomás,Douglas
+204,Ward Brice,Avondale
+216,Kip Delfina,Avondale
+229,Godofredo Dutch,Avondale
+242,Melanie Edith,Avondale
+251,Terance Mar,Avondale
+259,Patrocinia Malcom,Kingman
+261,Omar Demetria,Tucson
+332,Zackary Trenton,Mesa
+339,Carina Roxanna,Nogales
+356,Osborne Otilia,Nogales
+357,Paulina Valorie,Phoenix
+393,Milford Elaine,Prescott
+406,Otilia Delano,Scottsdale
+440,Monday Devon,Phoenix
+464,Valentín Ximena,Tempe
+471,Cassandra Ignacia,Phoenix
+479,Clarence Damon,Tucson
+489,Jacinta Layla,Tucson
+538,Apolinar Olive,Tucson
+546,Miranda Pamelia,Tucson
+567,Mildred Paula,Yuma
+
+</pre>
+
+There should be a line break at the end of every line, including the very last line that contains the three values.

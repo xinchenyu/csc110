@@ -1,0 +1,38 @@
+---
+title: "Short Project 7"
+format:
+  html:
+    embed-resources: true
+---
+
+# Creating a 2D list
+
+In this short project, you will create a 2D list or random integers using the `.append()` method and nested loops (meaning, a loop inside a loop).
+
+Name your file `create_two_d_list.py`.
+
+Remember to import `random` and set the seed to `123`.
+
+Your function should take a `width` and `length` as arguments. The length represents how many sublists you need in your main list. The width is the length of each individual sublist (they are all the same length). Each element in your sublist will be a random integer between 0 and 100.
+
+```{python}
+#| eval: false
+#| echo: true
+my_two_d_list = create_list(5, 3)
+print(my_two_d_list)
+```
+
+<pre>
+[[6, 34, 11, 98, 52], [34, 13, 4, 48, 68], [71, 42, 43, 6, 20]]
+</pre>
+
+```{python}
+#| eval: false
+#| echo: true
+my_two_d_list = create_list(3, 5)
+print(my_two_d_list)
+```
+
+<pre>
+[[6, 34, 11], [98, 52, 34], [13, 4, 48], [68, 71, 42], [43, 6, 20]]
+</pre>

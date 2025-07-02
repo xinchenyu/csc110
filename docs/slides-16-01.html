@@ -222,7 +222,7 @@
 <li><p>string is not mutable, means every string method will return a new string</p></li>
 <li><p>indexing a string</p></li>
 </ul>
-<div id="bf141705" class="cell" data-execution_count="1">
+<div id="315fe895" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>(<span class="st">"Jimmy42"</span>[<span class="dv">0</span>], <span class="st">"Jimmy42"</span>[<span class="op">-</span><span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>('J', '2')</code></pre>
@@ -231,7 +231,7 @@
 <ul>
 <li>slicing a string</li>
 </ul>
-<div id="ef21813d" class="cell" data-execution_count="2">
+<div id="a10be545" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>(<span class="st">"Jimmy42"</span>[:<span class="dv">2</span>], <span class="st">"Jimmy42"</span>[<span class="dv">1</span>:<span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>('Ji', 'im')</code></pre>
@@ -243,7 +243,7 @@
 <ul>
 <li><code>.isnumeric()</code> returns True if all the chars are numeric (0-9)</li>
 </ul>
-<div id="57340254" class="cell" data-execution_count="3">
+<div id="6517ea17" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>(<span class="st">"Jimmy42"</span>.isnumeric(), <span class="st">"42"</span>.isnumeric())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>(False, True)</code></pre>
@@ -253,7 +253,7 @@
 <li><p><code>.lower()</code> returns a string with all lowercase chars</p></li>
 <li><p><code>.strip()</code> removing chars in the beginning or end</p></li>
 </ul>
-<div id="c59136ea" class="cell" data-execution_count="4">
+<div id="5951d3b8" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="co">"Jimmy42"</span>.strip(<span class="st">'42'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>'Jimmy'</code></pre>
@@ -262,7 +262,7 @@
 <ul>
 <li><code>.split()</code> return a list by splitting strings by char</li>
 </ul>
-<div id="b022208a" class="cell" data-execution_count="5">
+<div id="7927ebc1" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="co">"Jimmy42Jimmy42Jimmy"</span>.split(<span class="st">'42'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>['Jimmy', 'Jimmy', 'Jimmy']</code></pre>
@@ -399,7 +399,7 @@
 <li><p>It takes two arguments, a set of strings and an integer n</p></li>
 <li><p>It returns a list that contains each string from the set repeated n times</p></li>
 </ol>
-<div id="7b852eff" class="cell" data-execution_count="6">
+<div id="a6ad0977" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>items <span class="op">=</span> {<span class="st">"banana"</span>, <span class="st">"apple"</span>, <span class="st">"pear"</span>}</span>
 <span id="cb11-2"><a></a><span class="bu">print</span>(create_list(items, <span class="dv">2</span>)) </span>
 <span id="cb11-3"><a></a><span class="co"># order does not matter</span></span>
@@ -408,7 +408,7 @@
 </section>
 <section id="write-a-function---solution" class="slide level2">
 <h2>write a function - solution</h2>
-<div id="f0d80e4e" class="cell" data-execution_count="7">
+<div id="6c64e300" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="kw">def</span> create_list(items, n):</span>
 <span id="cb12-2"><a></a>  new_list <span class="op">=</span> [ ]</span>
 <span id="cb12-3"><a></a>  <span class="cf">for</span> value <span class="kw">in</span> items:</span>
@@ -421,7 +421,7 @@
 <span id="cb12-10"><a></a>  </span>
 <span id="cb12-11"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>['banana', 'banana', 'apple', 'apple', 'pear', 'pear']</code></pre>
+<pre><code>['apple', 'apple', 'banana', 'banana', 'pear', 'pear']</code></pre>
 </div>
 </div>
 </section>
@@ -432,7 +432,7 @@
 <li>It takes a variable number of arguments: <code>*values</code></li>
 <li>It returns the highest value in <code>values</code></li>
 </ol>
-<div id="ce1e5085" class="cell" data-execution_count="8">
+<div id="3d05ce33" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a><span class="cf">assert</span> maximum(<span class="dv">1</span>) <span class="op">==</span> <span class="dv">1</span></span>
 <span id="cb14-2"><a></a><span class="cf">assert</span> maximum(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>) <span class="op">==</span> <span class="dv">6</span></span>
 <span id="cb14-3"><a></a><span class="cf">assert</span> maximum() <span class="op">==</span> <span class="va">None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -440,7 +440,7 @@
 </section>
 <section id="write-a-function-solution" class="slide level2">
 <h2>Write a function – solution</h2>
-<div id="779b795a" class="cell" data-execution_count="9">
+<div id="ba2f67ae" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a><span class="kw">def</span> maximum(<span class="op">*</span>values):</span>
 <span id="cb15-2"><a></a>  <span class="bu">max</span> <span class="op">=</span> <span class="va">None</span></span>
 <span id="cb15-3"><a></a>  <span class="cf">for</span> v <span class="kw">in</span> values:</span>

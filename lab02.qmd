@@ -1,0 +1,74 @@
+---
+title: "Short Project 2"
+format:
+  html:
+    embed-resources: true
+---
+
+# Print lyrics
+
+In this short project you will write a program that prints the lyrics for the nursery rhyme The Itsy Bitsy Spider. Here is the lyrics:
+
+<pre>
+The itsy bitsy spider climbed up the waterspout.
+Down came the rain and washed the spider out.
+Out came the sun and dried up all the rain.
+The itsy bitsy spider climbed up the waterspout.
+
+The big hairy spider climbed up the waterspout.
+Down came the rain and washed the spider out.
+Out came the sun and dried up all the rain.
+The big hairy spider climbed up the waterspout.
+
+The teeny tiny spider climbed up the waterspout.
+Down came the rain and washed the spider out.
+Out came the sun and dried up all the rain.
+The teeny tiny spider climbed up the waterspout.
+</pre>
+
+Name the program `spider.py`. Make sure that gradescope gives you the points for passing the test cases.
+
+## A bad solution
+```{python}
+#| eval: false
+#| echo: true
+def main():
+    print("The itsy bitsy spider climbed up the waterspout.")
+    print("Down came the rain and washed the spider out.")
+    print("Out came the sun and dried up all the rain.")
+    print("The itsy bitsy spider climbed up the waterspout.")
+    print()
+
+    print("The big hairy spider climbed up the waterspout.")
+    print("Down came the rain and washed the spider out.")
+    print("Out came the sun and dried up all the rain.")
+    print("The big hairy spider climbed up the waterspout.")
+    print()
+
+    print("The teeny tiny spider climbed up the waterspout.")
+    print("Down came the rain and washed the spider out.")
+    print("Out came the sun and dried up all the rain.")
+    print("The teeny tiny spider climbed up the waterspout.")
+    print()
+    
+main()
+```
+
+## Development strategy
+
+Each paragraph mentions one spider. This lyrics includes three types of spiders: `"itsy bitsy"`, `"big hairy"`, and `"teeny tiny"`, but we can add more types. You can define your own functions and call your functions within `verse` function. Note the `verse` function can only take one of the three arguments (e.g., `"big hairy"`).
+
+```{python}
+#| eval: false
+#| echo: true
+# All your functions are defined here
+
+def verse(spider_type):
+    # write your code here
+
+if __name__ == '__main__':
+    verse("itsy bitsy")
+    verse("big hairy")
+    verse("teeny tiny")
+```
+

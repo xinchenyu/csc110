@@ -1,0 +1,109 @@
+---
+title: "Short Project 8"
+format:
+  html:
+    embed-resources: true
+---
+
+# Counting Names
+
+In this lab session, you will be using [starter code](starter-code/count_names.py) which contains a function to read a file that contains names and numbers separated by comma (a csv or comma separated file). The function that reads the file and returns a list is already implemented for you. You also need to download [the text file with the data](starter-code/names_and_numbers.txt) to run your code (make sure your `.py` file and your `.txt` file are in the same folder, and that you have the folder open on VS code)
+
+You are to implement three other functions:
+
+* `count_names` that takes as argument a list of strings that could be converted to integers, floats, or are just names and returns a dictionary of **only the names** as keys, and counts as values
+* `find_name` that takes as argument the dictionary you returned from the previous function, and a string representing a name. This function returns two types of message (string) depending on whether the name argument is a key in the counts dictionary:
+  * The name X occurs N times.
+  * X not found.
+* `get_most_common_name` that takes as argument the dictionary of name counts, and returns a string with a message: `The name X occurs N times.`
+
+Here are some test cases:
+
+```{python}
+#| eval: false
+#| echo: true
+my_list = read_file("names_and_numbers.txt")
+my_counts = count_names(my_list)
+print( my_counts )
+```
+
+<pre>
+{'Ian': 7, 'Joseph': 17, 'Hunter': 7, 'Javier': 8, 'Emily': 11, 'Michael': 30,
+ 'Daniel': 16, 'Cole': 5, 'Kolbe': 4, 'Wang': 4, 'Kim': 5, 'Justin': 4, 
+ 'Paul': 5, 'Zach': 6, 'Renee': 4, 'Tucker': 5, 'Jacob': 22, 'Alan': 8, 
+ 'William': 23, 'Gabriel': 5, 'Singh': 9, 'Elliott': 5, 'Kumar': 5, 
+ 'Richard': 8, 'Max': 5, 'Reddy': 6, 'Claire': 4, 'Jake': 9, 'Robert': 12, 
+ 'Rose': 12, 'James': 31, 'Austin': 6, 'Aidan': 12, 'Joshua': 7, 'Chase': 9, 
+ 'Noah': 13, 'Isaac': 10, 'Scott': 7, 'Antonio': 6, 'Steven': 5, 'Emma': 9, 
+ 'Olivia': 4, 'Anthony': 12, 'Adriana': 4, 'Anna': 5, 'Lee': 13, 'Howard': 5, 
+ 'Shane': 4, 'Alexander': 17, 'Alex': 14, 'Megan': 5, 'Jesus': 5, 'Dev': 4, 
+ 'Eduardo': 8, 'Stephen': 5, 'David': 23, 'Ali': 6, 'Tran': 4, 'Jeremy': 5, 
+ 'Samuel': 7, 'Christopher': 7, 'Noel': 5, 'Ethan': 18, 'Lawrence': 4, 
+ 'Andrew': 26, 'Grace': 8, 'John': 17, 'Nate': 5, 'Taylor': 5, 'Jose': 11, 
+ 'Colin': 4, 'Thomas': 17, 'Sai': 4, 'Logan': 5, 'Tanner': 4, 'Aiden': 4, 
+ 'Lauren': 5, 'Connor': 7, 'Alejandro': 7, 'Nicole': 5, 'Ahmed': 5, 'Elise': 4, 
+ 'Jessica': 4, 'Rene': 6, 'Garcia': 7, 'Abel': 4, 'Hernandez': 4, 'Martinez': 9, 
+ 'Luke': 9, 'Andre': 7, 'Andres': 4, 'Gavin': 5, 'Mark': 10, 'Cameron': 4, 
+ 'Josh': 9, 'Victor': 4, 'Marie': 17, 'George': 4, 'Lucas': 7, 'Yan': 4, 
+ 'Dylan': 11, 'Will': 6, 'Brian': 5, 'Julian': 5, 'Drew': 4, 'Jordan': 11, 
+ 'Luis': 11, 'Ashley': 4, 'Diego': 11, 'Tyler': 11, 'Henry': 5, 'Elizabeth': 14, 
+ 'Sofia': 4, 'Matthew': 15, 'Williams': 7, 'Riley': 5, 'Lynn': 7, 'Ryan': 16, 
+ 'Al': 7, 'Allen': 5, 'Mason': 7, 'Carlos': 6, 'Sebastian': 4, 'Smith': 6, 
+ 'Charles': 8, 'Patrick': 8, 'Adrian': 9, 'Nathan': 11, 'Brandon': 8, 'Nick': 5, 
+ 'Derek': 5, 'Abdullah': 5, 'Zachary': 5, 'Edward': 5, 'Jean': 5, 'Sam': 9, 
+ 'Angel': 5, 'Chris': 6, 'Michelle': 6, 'Wayne': 4, 'Mohammed': 6, 'Trevor': 4, 
+ 'Jason': 9, 'Alec': 4, 'Li': 8, 'Martin': 4, 'Tiffany': 5, 'Peter': 6, 
+ 'Jack': 9, 'Maurice': 4, 'Elijah': 6, 'Ben': 9, 'Sean': 5, 'Anne': 4, 
+ 'Nguyen': 4, 'Eric': 5, 'Adam': 4, 'Xavier': 4, 'Chen': 4, 'Adnan': 4, 
+ 'Ava': 5, 'Caleb': 5, 'Sophia': 5, 'Hayden': 4, 'Paige': 6, 'Victoria': 4, 
+ 'Angelina': 4, 'Jasmine': 4, 'White': 4, 'Isaiah': 6, 'Soto': 5, 'Vivian': 4, 
+ 'Evan': 6, 'Jackson': 4}
+</pre>
+
+```{python}
+#| eval: false
+#| echo: true
+my_list = read_file("names_and_numbers.txt")
+my_counts = count_names(my_list)
+print( len(my_counts) )
+```
+
+<pre>
+174
+</pre>
+
+```{python}
+#| eval: false
+#| echo: true
+my_list = read_file("names_and_numbers.txt")
+my_counts = count_names(my_list)
+print( find_name(my_counts, "Adriana") )
+```
+
+<pre>
+The name Adriana occurs 4 times.
+</pre>
+
+```{python}
+#| eval: false
+#| echo: true
+my_list = read_file("names_and_numbers.txt")
+my_counts = count_names(my_list)
+print( find_name(my_counts, "Maria") )
+```
+
+<pre>
+Maria not found.
+</pre>
+
+```{python}
+#| eval: false
+#| echo: true
+my_list = read_file("names_and_numbers.txt")
+my_counts = count_names(my_list)
+print( get_most_common_name(my_counts) )
+```
+
+<pre>
+The name James occurs 31 times.
+</pre>

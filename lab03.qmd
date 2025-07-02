@@ -1,0 +1,79 @@
+---
+title: "Short Project 3"
+format:
+  html:
+    embed-resources: true
+---
+
+# Calculating areas
+
+In this short project you will write four functions to calculate the areas of different geometric shapes. Name the program `geometry.py`. Make sure that gradescope gives you the points for passing the test cases.
+
+## Area of a Rectangle -- `rectangle_area`
+
+This function returns the area of the rectangle with given `base` and `height`
+
+$$
+area = base \cdot height
+$$
+
+## Area of a Triangle -- `triangle_area`
+
+This function returns the area of three given triangle side lengths calculated according to Heron's formula (calculate the semiperimeter first, then use that to calculate the area):
+
+$$
+s = (a + b + c) / 2 
+$$
+
+$$
+area = \sqrt{s \cdot (s-a) \cdot (s-b) \cdot (s-c)}
+$$
+
+Do not use any built-in method or function for any Python library. Remember that roots are the opposite of an exponent. So you can calculate the square root of a number by using the exponent form $n^{1/2}$.
+
+## Area of a Trapezoid -- `trapezoid_area`
+
+This function returns the area of the trapezoid with given `base_1`, `base_2`, and `height`.
+
+$$
+area = {1/2} \cdot (base_1 + base_2) \cdot height
+$$
+
+## Area of a Circle -- `circle_area`
+
+This function returns the area of the circle with the given `radius`, rounded at two decimal places. Use the value `3.1415` for $\pi$.
+
+$$
+area = \pi \cdot radius^2
+$$
+
+## Any area -- `calculate_area`
+
+This function calls the other functions, based on a string argument: `"rectangle"`, `"triangle"`, or `"circle"`. It returns a string that looks like this:
+
+<pre>
+The area of the triangle is 6.0
+</pre>
+
+This function takes a total of four arguments, the first one is a string that tells the function which area to calculate, and the three other parameters are numeric. In the case of the circle, for example, only the first numeric argument is used.
+
+## Test cases
+
+```{python}
+#| eval: false
+#| echo: true
+def main():
+    print( rectangle_area(4, 4.5) ) # 18.0
+    print( triangle_area(3, 4, 5) ) # 6.0
+    print( trapezoid_area(4, 20, 10) ) # 120.0
+    assert circle_area(20) == 1256.6
+
+    message = calculate_area("trapezoid", 11, 25, 5)
+    print(message) # "The area of the trapezoid is 90.0"
+    
+    message = calculate_area("circle", 4, 0, 0)
+    print(message) # "The area of the circle is 50.26"
+  
+main()
+```
+

@@ -1,0 +1,80 @@
+---
+title: "Short Project 4"
+format:
+  html:
+    embed-resources: true
+---
+
+# CPU Category
+
+Though CPUs, and computer hardware in-general, are not the main focus of this course, it can be useful to know a thing or two about computer hardware. The CPU (Central Processing Unit) is generally the piece of hardware that carries out the instructions of the python programs that you run in this class.
+
+In this short project, you will write a program that takes a few input values related to CPU performance. The program should determine whether or not the specified CPU is within one of four categories: high-performance, medium-performance, low-performance, and in need of an upgrade. Name the file `cpu.py`. 
+
+Shown below is an example of the program prompting the user for two inputs, and then printing out the corresponding CPU performance category:
+
+```{python}
+#| eval: false
+#| echo: true
+def main():
+  gigahertz = 2.7
+  core_count = 2
+  result = get_result(gigahertz, core_count)
+  print(result)
+  
+main()
+```
+
+
+<pre>
+That is a low-performance CPU.
+</pre>
+
+
+* The first argument, Gigahertz, should be converted to a float
+* The second argument, core count, should be an integer
+
+
+The program should return one of 4 strings:
+
+* `That is a high-performance CPU.`
+* `That is a medium-performance CPU.`
+* `That is a low-performance CPU.`
+* `That CPU could use an upgrade.`
+
+How you determine which to return should be based on the below table:
+
+| performance level  | min GHz  | min cores  |
+|---|---|---|
+| high-performance  |  3.2 | 8  |
+| medium-performance  |  2.5 | 6  |
+| low-performance  | 2.0  |  2 |
+
+For example, a medium-performance CPU must satisfy both requirements: a) GHz no less than 2.5 and b) cores no less than 6.
+
+There's also one "special-case" rule: If a CPU has 20 or more cores, regardless of the other stats, it should be considered high-performance.
+
+## Test Cases
+
+Below are examples of program runs. There will be more tests on Gradescope.
+
+```{python}
+#| eval: false
+#| echo: true
+def main():
+  gigahertz = 2.0
+  core_count = 8
+  assert get_result(gigahertz, core_count) == "That is a low-performance CPU."
+  
+  gigahertz = 4.0
+  core_count = 7
+  assert get_result(gigahertz, core_count) == "That is a medium-performance CPU."
+  
+  gigahertz = 1.0
+  core_count = 10
+  assert get_result(gigahertz, core_count) == "That CPU could use an upgrade."
+  
+  print("End of tests")
+  
+main()
+```

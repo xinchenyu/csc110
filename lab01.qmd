@@ -1,0 +1,68 @@
+---
+title: "Short Project 1"
+format:
+  html:
+    embed-resources: true
+---
+
+# Vehicle -- Printing the Model-T
+
+In the this program, you will print out ASCII-art of one of the most famous vehicles of all time - the Model-T automobile! Name your program `modelt.py`. 
+
+Your program should be able to print different cars based on the width of the car. The number that your program accepts should control the width of the center part of the vehicle. A larger width value should make for a longer car, and vice-versa. The height of the vehicle will remain the same regardless of the width entered. Below are several examples of this program running with different values provided. Your program should match the look of the outputs exactly.
+
+```{python}
+#| eval: false
+#| echo: true
+width = 0
+car = build_car(width)
+print(car, end="")
+```
+
+<pre>
+.-----------.
+| ### ||  ###\
+| ### ||  ####\.
+D     ||  <>    |------+
+|  ______      /______ |
+ \/ /..\ \_____/ /..\ \|
+    \__/         \__/
+</pre>
+
+```{python}
+#| eval: false
+#| echo: true
+width = 5
+car = build_car(width)
+print(car, end="")
+```
+
+<pre>
+.----------------.
+| ### ||  ########\
+| ### ||  #########\.
+D     ||       <>    |------+
+|  ______           /______ |
+ \/ /..\ \__________/ /..\ \|
+    \__/              \__/
+</pre>
+
+```{python}
+#| eval: false
+#| echo: true
+width = 12
+car = build_car(width)
+print(car, end="")
+```
+
+<pre>
+.-----------------------.
+| ### ||  ###############\
+| ### ||  ################\.
+D     ||              <>    |------+
+|  ______                  /______ |
+ \/ /..\ \_________________/ /..\ \|
+    \__/                     \__/
+</pre>
+
+Any integer number 0 or greater should be supported. You don't need to worry about handling negative numbers, fractions, or numbers with decimals.

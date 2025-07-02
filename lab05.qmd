@@ -1,0 +1,67 @@
+---
+title: "Short Project 5"
+format:
+  html:
+    embed-resources: true
+---
+
+# Calculating Investments
+
+In this short project, you will calculate how many years it takes for an account balance to reach an investment goal.
+
+Name the program `investment.py`. Make sure that gradescope gives you the points for passing the test cases.
+
+## Description of the problem
+
+Here's the problem to solve:
+
+> Imagine you have X amount of dollars in an investment account that earns 5% interest per year. How long (in years) does it take for the account balance to be times Y the original investment?
+
+```{python}
+#| eval: false
+#| echo: true
+# X amount of dollars is $10,000
+initial_amount = 10000
+
+# times Y is 2
+goal_of_investment = 2
+
+message = investment_years(initial_amount, goal_of_investment)
+print(message)
+```
+
+<pre>
+The investment of $10,000 will be 2 times larger in 15 years.
+</pre>
+
+## Development strategy
+
+You will need to use a `while` loop to solve this problem. You need to calculate what the goal amount is, and you will calculate how much each passing year accrues until you get to the goal.
+
+You will also need to create a `year` variable to count how many years it takes to achieve the goal. Remember to increment `year` with every iteration.
+
+Calculate the interest (multiply balance by 0.05) and the balance (add interest to it) in each iteration as well. 
+
+
+## Test cases
+
+```{python}
+#| eval: false
+#| echo: true
+def main():
+    # X amount of dollars is $10,000
+  initial_amount = 10000
+
+  # times Y is 2
+  goal_of_investment = 2
+
+  message = investment_years(initial_amount, goal_of_investment)
+  print(message) 
+  # The investment of $10,000 will be 2 times larger in 15 years.
+
+  print(investment_years(50000, 10))
+  # The investment of $50,000 will be 10 times larger in 48 years.
+  
+main()
+```
+
