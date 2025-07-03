@@ -15,9 +15,9 @@ Your file name should be `word_types.py`.
 
 Test files:
 
-- [angelou.txt](../angelou.txt)
-- [atwood.txt](../atwood.txt)
-- [dickinson.txt](../dickinson.txt)
+- [angelou.txt](angelou.txt)
+- [atwood.txt](atwood.txt)
+- [dickinson.txt](dickinson.txt)
 
 ## Test cases
 
