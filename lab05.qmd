@@ -65,3 +65,71 @@ def main():
 main()
 ```
 
+::: {.callout-tip title="Before You Begin"}
+
+This section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.
+
+## How to write a `while` loop
+
+You need to determine two things:
+
+1. What's your condition to stop the iteration
+1. What variables do you need to update the condition in each iteration (so you don't fall into an infinite loop)
+
+## Example
+
+Write a while loop to count how many years until you can run for president (simplistic example, for illustration purposes only):
+
+```{python}
+#| eval: true
+#| echo: true
+def count_years(current_age, age_goal):
+  years = 0
+  age = current_age
+  while age < age_goal:
+    years += 1
+    age += 1
+  return years
+
+def main():
+  print( count_years(20, 35))
+  
+main()
+```
+
+## `.format()` method
+
+Let's update our function so it returns a string message instead of an integer:
+
+
+```{python}
+#| eval: true
+#| echo: true
+def count_years(current_age, age_goal):
+  years = 0
+  age = current_age
+  while age < age_goal:
+    years += 1
+    age += 1
+  message = "It will take {} years".format(years)
+  message += " for you to be able to run for president."
+  return message
+
+def main():
+  print( count_years(20, 35))
+  
+main()
+```
+
+## Formatting numbers
+
+Use `:` to specify formatting options,
+
+```{python}
+#| eval: true
+#| echo: true
+amount = 10000000
+print("I have ${:,} in my pocket.".format(amount))
+```
+
+::: 

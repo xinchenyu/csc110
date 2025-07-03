@@ -36,3 +36,99 @@ print(my_two_d_list)
 <pre>
 [[6, 34, 11], [98, 52, 34], [13, 4, 48], [68, 71, 42], [43, 6, 20]]
 </pre>
+
+::: {.callout-tip title="Before You Begin"}
+
+This section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.
+
+## List of lists (2D List)
+
+In a 2D list, each item is a list.
+
+```{python}
+#| eval: true
+#| echo: true
+groceries = [ ["apples",  "bananas"],
+            ["milk", "eggs"]]
+```
+
+How do we retrieve a sublist:
+
+```{python}
+#| eval: true
+#| echo: true
+groceries[0]
+```
+
+How to retrieve an item in a sublist:
+
+```{python}
+#| eval: true
+#| echo: true
+groceries[0][1]
+```
+
+## How to append sublists to a list - sol 1
+
+We will create 3 sublists of 5 items each, for that we need nested loops:
+
+```{python}
+#| eval: true
+#| echo: true
+# start with an empty list
+two_d_list = []
+repeat = 3
+while repeat > 0:
+  # each sublist starts as a new list
+  sublist = []
+  index = 0
+  while index < 5: # 5 items per list
+    sublist.append(index)
+    index += 1
+  # after the inner while loop, append the sublist to the main list
+  two_d_list.append(sublist)
+  repeat -= 1
+  
+print(two_d_list)
+```
+
+## How to append sublists to a list - sol 2
+
+```{python}
+#| eval: true
+#| echo: true
+two_d_list = []
+repeat = 0
+while repeat < 3:
+    sublist = []
+    index = 0
+    while index < 5:
+        sublist.append(index)
+        index += 1
+    two_d_list.append(sublist)
+    repeat += 1
+
+print(two_d_list)
+```
+
+## `random` module
+
+We start by importing `random`. 
+
+```{python}
+#| eval: true
+#| echo: true
+import random
+```
+
+Then we set a seed for replicable results and let's generate a random integer:
+
+```{python}
+#| eval: true
+#| echo: true
+random.seed(123)
+result = random.randint(1, 4)
+print(result)
+```
+
+::: 

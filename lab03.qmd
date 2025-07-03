@@ -77,3 +77,92 @@ def main():
 main()
 ```
 
+
+::: {.callout-tip title="Before You Begin"}
+
+This section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.
+
+## Writing a function
+
+* Start with `def` followed by the name of the function
+* Add parameters inside the parentheses in the function definition
+* Return a value
+
+```{python}
+#| echo: true
+def double(n):
+  result = n * 2
+  return result
+
+def main():
+  print( double(5) )
+
+main()
+```
+
+
+## Using `round()`
+
+Use the round() function to get a floating-point number rounded to the specified number of decimals.
+
+Syntax:
+
+```{python}
+#| echo: true
+#| eval: false
+round(number, ndigits*)
+```
+
+The number of digits (`ndigits`) is optional, but we will often round number to two decimals:
+
+```{python}
+#| echo: true
+#| eval: true
+round(392.68750000000006)
+```
+
+
+```{python}
+#| echo: true
+#| eval: true
+round(392.68750000000006, 2)
+```
+
+## Using `format()`
+
+We can do concatenation in two different ways: a) one using the  `+` operator and b) the other using `.format()` method, using `{}` as place holders for our variables:
+
+```{python}
+#| echo: true
+#| eval: true
+age = 20
+name = 'Philip'
+
+print(name + ' is ' + str(age) + ' years old')
+print('{} is {} years old'.format(name, age))
+```
+
+
+## If statements
+
+We can use logical expressions in `if` statements to return different things from a function:
+
+```{python}
+#| echo: true
+#| eval: true
+def is_positive(number):
+  if number > 0:
+    return "Number is positive"
+  if number < 0:
+    return "Number is negative"
+  return "Number is zero"
+
+def main():
+  print( is_positive(10) )
+  print( is_positive(0) )
+  print( is_positive(-10) )
+  
+main()
+```
+
+::: 

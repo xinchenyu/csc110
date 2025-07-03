@@ -5721,7 +5721,7 @@ The teeny tiny spider climbed up the waterspout.
 <p>Name the program <code>spider.py</code>. Make sure that gradescope gives you the points for passing the test cases.</p>
 <section id="a-bad-solution" class="level2">
 <h2 class="anchored" data-anchor-id="a-bad-solution">A bad solution</h2>
-<div id="d355cb11" class="cell" data-execution_count="1">
+<div id="5480f26c" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;The itsy bitsy spider climbed up the waterspout.&quot;</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Down came the rain and washed the spider out.&quot;</span>)</span>
@@ -5746,8 +5746,8 @@ The teeny tiny spider climbed up the waterspout.
 </section>
 <section id="development-strategy" class="level2">
 <h2 class="anchored" data-anchor-id="development-strategy">Development strategy</h2>
-<p>Each paragraph mentions one spider. This lyrics includes three types of spiders: <code>&quot;itsy bitsy&quot;</code>, <code>&quot;big hairy&quot;</code>, and <code>&quot;teeny tiny&quot;</code>, but we can add more types. You can define your own functions and call your functions within <code>verse</code> function. Note the <code>verse</code> function can only take one of the three arguments (e.g., <code>&quot;big hairy&quot;</code>).</p>
-<div id="ba598cb7" class="cell" data-execution_count="2">
+<p>Each paragraph mentions one spider. This lyrics includes three types of spiders: <code>&quot;itsy bitsy&quot;</code>, <code>&quot;big hairy&quot;</code>, and <code>&quot;teeny tiny&quot;</code>. You can define your own functions and call your functions within <code>verse</code> function. Note the <code>verse</code> function can only take one of the three arguments (e.g., <code>&quot;big hairy&quot;</code>).</p>
+<div id="727971d5" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># All your functions are defined here</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> verse(spider_type):</span>
@@ -5757,6 +5757,62 @@ The teeny tiny spider climbed up the waterspout.
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    verse(<span class="st">&quot;itsy bitsy&quot;</span>)</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    verse(<span class="st">&quot;big hairy&quot;</span>)</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    verse(<span class="st">&quot;teeny tiny&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Before You Begin">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Before You Begin
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.</p>
+<section id="writing-a-function" class="level2">
+<h2 class="anchored" data-anchor-id="writing-a-function">Writing a function</h2>
+<ul>
+<li>Start with <code>def</code> followed by the name of the function</li>
+<li>Add parameters inside the parentheses in the function definition</li>
+<li>Print a string within the function without return</li>
+</ul>
+<div id="fb105425" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_greeting(name):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&quot;Hello &quot;</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">&quot;!&quot;</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  print_greeting(<span class="st">&quot;Mickey&quot;</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  print_greeting(<span class="st">&quot;Minnie&quot;</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello Mickey!
+Hello Minnie!</code></pre>
+</div>
+</div>
+</section>
+<section id="using-format" class="level2">
+<h2 class="anchored" data-anchor-id="using-format">Using <code>format()</code></h2>
+<div id="68f0cd14" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">&#39;Philip&#39;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Here’s how we can do concatenation using the <code>+</code> operator:</p>
+<div id="7791a0ca" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">+</span> <span class="st">&#39; is &#39;</span> <span class="op">+</span> <span class="bu">str</span>(age) <span class="op">+</span> <span class="st">&#39; years old&#39;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>&#39;Philip is 20 years old&#39;</code></pre>
+</div>
+</div>
+<p>We can do the same with the <code>.format()</code> method, using <code>{}</code> as place holders for our variables:</p>
+<div id="2a463fbe" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">&#39;{} is {} years old&#39;</span>.<span class="bu">format</span>(name, age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>&#39;Philip is 20 years old&#39;</code></pre>
+</div>
+</div>
+</section>
+</div>
 </div>
 
 

@@ -7,7 +7,7 @@ format:
 
 # Counting Names
 
-In this lab session, you will be using [starter code](starter-code/count_names.py) which contains a function to read a file that contains names and numbers separated by comma (a csv or comma separated file). The function that reads the file and returns a list is already implemented for you. You also need to download [the text file with the data](starter-code/names_and_numbers.txt) to run your code (make sure your `.py` file and your `.txt` file are in the same folder, and that you have the folder open on VS code)
+In this lab session, you will be using [starter code](../count_names.py) which contains a function to read a file that contains names and numbers separated by comma (a csv or comma separated file). The function that reads the file and returns a list is already implemented for you. You also need to download [the text file with the data](../names_and_numbers.txt) to run your code (make sure your `.py` file and your `.txt` file are in the same folder, and that you have the folder open on VS code)
 
 You are to implement three other functions:
 
@@ -107,3 +107,45 @@ print( get_most_common_name(my_counts) )
 <pre>
 The name James occurs 31 times.
 </pre>
+
+::: {.callout-tip title="Before You Begin"}
+
+This section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.
+
+## How do we know a string is a number?
+
+Assume that for both short project 07 and programming project 07 you **won't** have strings that mix digits (for example `0` and `9`) and letters (for example `a` and `x`)
+
+How do we know the following strings are names vs. numbers (integers or floats)?
+
+* `"Petra"`
+* `"10.5"`
+* `"5"`
+
+## Check first character of a string
+
+Remember that you can retrieve the first character of a string using `[0]`
+
+```{python}
+#| eval: true
+#| echo: true
+name = "Petra"
+name[0].isnumeric()
+```
+
+
+```{python}
+#| eval: true
+#| echo: true
+number = "0.10"
+number[0].isnumeric()
+```
+
+```{python}
+#| eval: true
+#| echo: true
+number = "10"
+number[0].isnumeric()
+```
+
+::: 

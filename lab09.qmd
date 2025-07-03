@@ -13,8 +13,8 @@ Name your Python script `add_column.py`.
 
 Files you will need:
 
-* [`.csv` file with ids and names](ids_and_names.csv) (to create your dictionary with)
-* [`.txt` file that you will use to create your output file](ids_and_city.txt)
+* [`.csv` file with ids and names](../ids_and_names.csv) (to create your dictionary with)
+* [`.txt` file that you will use to create your output file](../ids_and_city.txt)
 
 Your output file that you are to write is the name of the `.txt` file preceded by the string `"output_"`. For example, if the `.txt` file is called `"cities.txt"` the output file your script will create should be called `"output_cities.txt"`
 

@@ -51,3 +51,79 @@ print( move_item(original_list, 4, "right") )
 The easiest way to implement this is using two while loops (one for going to the left, another for going to the right). You have the starting point of the item you want to move (the `"index"`) -- you need to find out where it needs to `end`. 
 
 Your first guess for the `end` index should be minus one on the `index` if you are going to the `left` or plus one on the `index` if you are going to the `right`. In your while loop you need to keep subtracting one or adding one (depending on your direction) until you reach your `end` destination -- meaning, you skip over the zeros until you either reach the beginning of the end of the list (depending on the direction you are going) or you found an item to replace (something that is different than zero).
+
+::: {.callout-tip title="Before You Begin"}
+
+This section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.
+
+## Lists
+
+You can access an item in a list using an index:
+
+```{python}
+#| eval: true
+#| echo: true
+my_list = [0, 0, 2, 0, 0, 1]
+```
+
+What's the index for value `2` and `1`?
+
+You can replace an item in a list using an index:
+
+```{python}
+#| eval: true
+#| echo: true
+my_list = [0, 0, 2, 0, 0, 1]
+my_list[1] = 5
+my_list
+```
+
+## Lists
+
+Here is the list: 
+
+```{python}
+#| eval: true
+#| echo: true
+my_list = [0, 0, 2, 0, 0, 1]
+```
+
+
+How do we move value `1` to where value `2` is, replacing `1` with zero so the list looks like this:
+
+```{python}
+#| eval: true
+#| echo: true
+my_list = [0, 0, 1, 0, 0, 0]
+```
+
+## Swapping list values
+
+We want to go from this: 
+
+```{python}
+#| eval: true
+#| echo: true
+my_list = [0, 0, 2, 0, 0, 1]
+```
+
+To this:
+
+```{python}
+#| eval: true
+#| echo: true
+my_list = [0, 0, 1, 0, 0, 0]
+```
+
+We do this:
+
+```{python}
+#| eval: true
+#| echo: true
+index_a = 2
+index_b = 5
+my_list[index_a] = my_list[index_b]
+my_list[index_b] = 0
+```
+
+::: 

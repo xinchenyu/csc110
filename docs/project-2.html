@@ -1226,6 +1226,40 @@ When the order is <code>"plain add mushroom"</code>:
 <p>You need to define your own functions to print the burger based on the order. For example, after running the code above, a <code>double</code> burger should be displayed in the console. In the <code>main</code> function, you can change the argument (e.g., “double”) in the <code>serve</code> function to print other burgers.</p>
 <p>You may also modify the code within the <code>serve</code> function. However, please ensure that its sole argument, <code>order</code>, is restricted to one of the following values: <code>"plain"</code>, <code>"blt"</code>, <code>"lettuce wrap"</code>, <code>"double"</code>, <code>"plain add muchroom"</code>, and <code>"double add onion"</code>.</p>
 <p>Note: Points will be deducted if your code lacks proper decomposition. For example, placing all print statements in just one or two functions without breaking down the logic appropriately.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Before You Begin">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Before You Begin
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We can use logical expressions in <code>if</code> and <code>elif</code> statements to return different things from a function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> is_positive(number):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> number <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Number is positive"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">elif</span> number <span class="op">&lt;</span> <span class="dv">0</span>:</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Number is negative"</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">elif</span> number <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Number is zero"</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>( is_positive(<span class="dv">10</span>) )</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>( is_positive(<span class="dv">0</span>) )</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>( is_positive(<span class="op">-</span><span class="dv">10</span>) )</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Number is positive
+Number is zero
+Number is negative</code></pre>
+</div>
+</div>
+</div>
+</div>
 
 
 </section>

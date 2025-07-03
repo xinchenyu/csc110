@@ -3290,7 +3290,7 @@
     "href": "lab12.html",
     "title": "Short Project 12",
     "section": "",
-    "text": "In this lab session, you will be tasked with writing a program that finds certain words within a word search grid and returns the word mapped to the line and starting character location of each word. The information of the board, and the words will be provided via files you will need to read in.\nYou should name the file simple_wordsearch.py. Your code should have a function called search that returns a dictionary (see specification below).\nIn this short project, you will write code to look for horizontal non-inverted words only.\nDo not use methods not covered in class. You can use .find() – which is going to be covered during the lab session.\n\n\nYour python script should open up and read a text file name which determines which words you are searching for in your puzzle file! You can assume that each line in the input text file is formatted as follows: each line of the file is a word from the “word bank.”\nContents of words.txt:\nhigh\namerica\nwood\n\nYour program should open and read the input text file into the program, and create a list with all the words.\nAfter you have read in the file and constructed this dictionary, you can use it to determine your word bank, which words you will need to look for within the puzzle.\n\n\n\nThis file contains a grid of letters and hidden within those letters are certain words you will need to be searching for. You will use your newly created words dictionary to figure out what letter combination of words you need to find. This is an example of what this word-grid file would look like:\nW O O D W S M Z H \nN R M E W A N D A \nL Z H I G H K L H \nS R E G N E V A V \nI F R C X H C Q X \nA H T Z B A Y K Q \nA R A M E R I C A\n\nThe puzzle file could have more or less Rows/Columns depending on each test case.\n\n\n\nThe program should return a dictionary with the starting row and column location for each word found. Your code should have a function called simple_search that returns this dictionary. The formatting of the return dictionary should be something like:\n\n{\"high\": [2, 2] , \"america\": [6, 2] , \"wood\": [0, 0]}\n\n\n\n\nGradescope will call the following functions read_words(filename), read_puzzle(filename), and search(puzzle, words_to_search).",
+    "text": "In this lab session, you will be tasked with writing a program that finds certain words within a word search grid and returns the word mapped to the line and starting character location of each word. The information of the board, and the words will be provided via files you will need to read in.\nYou should name the file simple_wordsearch.py. Your code should have a function called search that returns a dictionary (see specification below).\nIn this short project, you will write code to look for horizontal non-inverted words only.\nDo not use methods not covered in class. You can use .find() – which is going to be covered during the lab session.\n\n\nYour python script should open up and read a text file name which determines which words you are searching for in your puzzle file! You can assume that each line in the input text file is formatted as follows: each line of the file is a word from the “word bank.”\nContents of words.txt:\nhigh\namerica\nwood\n\nYour program should open and read the input text file into the program, and create a list with all the words.\nAfter you have read in the file and constructed this dictionary, you can use it to determine your word bank, which words you will need to look for within the puzzle.\n\n\n\nThis file contains a grid of letters and hidden within those letters are certain words you will need to be searching for. You will use your newly created words dictionary to figure out what letter combination of words you need to find. This is an example of what this word-grid file would look like:\nW O O D W S M Z H \nN R M E W A N D A \nL Z H I G H K L H \nS R E G N E V A V \nI F R C X H C Q X \nA H T Z B A Y K Q \nA R A M E R I C A\n\nThe puzzle file could have more or less Rows/Columns depending on each test case.\n\n\n\nThe program should return a dictionary with the starting row and column location for each word found. Your code should have a function called simple_search that returns this dictionary. The formatting of the return dictionary should be something like:\n\n{\"high\": [2, 2] , \"america\": [6, 2] , \"wood\": [0, 0]}\n\n\n\n\nGradescope will call the following functions read_words(filename), read_puzzle(filename), and search(puzzle, words_to_search).\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\nThe string method .find() returns an integer with the first position of the argument in the string.\n\nfull_string = \"August\"\nsub_string = \"gust\"\nposition = full_string.find(sub_string)\nprint(position)\n\n2\n\n\n\nfull_string = \"August\"\nsub_string = \"u\"\nposition = full_string.find(sub_string)\nprint(position)\n\n1\n\n\nThe string method .find() returns -1 when the sub-string is not found in the string.\n\nfull_string = \"August\"\nsub_string = \"wind\"\nposition = full_string.find(sub_string)\nprint(position)\n\n-1\n\n\n\n\n\nWe covered a number of string methods in this course, including:\n\n.upper() – makes all characters in the string uppercase\n.lower() – makes all characters in the string lower\n\n\n\n\nFor the short project, it would be helpful to write a function that given a list of characters, it returns one string with all characters concatenated together in one string.\nThis should be easy to write with a for loop and concatenation – do not use .join()",
     "crumbs": [
       "Short Projects",
       "Short Project 12"
@@ -3334,7 +3334,7 @@
     "href": "lab12.html#function-names",
     "title": "Short Project 12",
     "section": "",
-    "text": "Gradescope will call the following functions read_words(filename), read_puzzle(filename), and search(puzzle, words_to_search).",
+    "text": "Gradescope will call the following functions read_words(filename), read_puzzle(filename), and search(puzzle, words_to_search).\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\nThe string method .find() returns an integer with the first position of the argument in the string.\n\nfull_string = \"August\"\nsub_string = \"gust\"\nposition = full_string.find(sub_string)\nprint(position)\n\n2\n\n\n\nfull_string = \"August\"\nsub_string = \"u\"\nposition = full_string.find(sub_string)\nprint(position)\n\n1\n\n\nThe string method .find() returns -1 when the sub-string is not found in the string.\n\nfull_string = \"August\"\nsub_string = \"wind\"\nposition = full_string.find(sub_string)\nprint(position)\n\n-1\n\n\n\n\n\nWe covered a number of string methods in this course, including:\n\n.upper() – makes all characters in the string uppercase\n.lower() – makes all characters in the string lower\n\n\n\n\nFor the short project, it would be helpful to write a function that given a list of characters, it returns one string with all characters concatenated together in one string.\nThis should be easy to write with a for loop and concatenation – do not use .join()",
     "crumbs": [
       "Short Projects",
       "Short Project 12"
@@ -3466,7 +3466,7 @@
     "href": "lab07.html",
     "title": "Short Project 7",
     "section": "",
-    "text": "Creating a 2D list\nIn this short project, you will create a 2D list or random integers using the .append() method and nested loops (meaning, a loop inside a loop).\nName your file create_two_d_list.py.\nRemember to import random and set the seed to 123.\nYour function should take a width and length as arguments. The length represents how many sublists you need in your main list. The width is the length of each individual sublist (they are all the same length). Each element in your sublist will be a random integer between 0 and 100.\n\nmy_two_d_list = create_list(5, 3)\nprint(my_two_d_list)\n\n[[6, 34, 11, 98, 52], [34, 13, 4, 48, 68], [71, 42, 43, 6, 20]]\n\n\nmy_two_d_list = create_list(3, 5)\nprint(my_two_d_list)\n\n[[6, 34, 11], [98, 52, 34], [13, 4, 48], [68, 71, 42], [43, 6, 20]]",
+    "text": "In this short project, you will create a 2D list or random integers using the .append() method and nested loops (meaning, a loop inside a loop).\nName your file create_two_d_list.py.\nRemember to import random and set the seed to 123.\nYour function should take a width and length as arguments. The length represents how many sublists you need in your main list. The width is the length of each individual sublist (they are all the same length). Each element in your sublist will be a random integer between 0 and 100.\n\nmy_two_d_list = create_list(5, 3)\nprint(my_two_d_list)\n\n[[6, 34, 11, 98, 52], [34, 13, 4, 48, 68], [71, 42, 43, 6, 20]]\n\n\nmy_two_d_list = create_list(3, 5)\nprint(my_two_d_list)\n\n[[6, 34, 11], [98, 52, 34], [13, 4, 48], [68, 71, 42], [43, 6, 20]]\n\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\nIn a 2D list, each item is a list.\n\ngroceries = [ [\"apples\",  \"bananas\"],\n            [\"milk\", \"eggs\"]]\n\nHow do we retrieve a sublist:\n\ngroceries[0]\n\n['apples', 'bananas']\n\n\nHow to retrieve an item in a sublist:\n\ngroceries[0][1]\n\n'bananas'\n\n\n\n\n\nWe will create 3 sublists of 5 items each, for that we need nested loops:\n\n# start with an empty list\ntwo_d_list = []\nrepeat = 3\nwhile repeat &gt; 0:\n  # each sublist starts as a new list\n  sublist = []\n  index = 0\n  while index &lt; 5: # 5 items per list\n    sublist.append(index)\n    index += 1\n  # after the inner while loop, append the sublist to the main list\n  two_d_list.append(sublist)\n  repeat -= 1\n  \nprint(two_d_list)\n\n[[0, 1, 2, 3, 4], [0, 1, 2, 3, 4], [0, 1, 2, 3, 4]]\n\n\n\n\n\n\ntwo_d_list = []\nrepeat = 0\nwhile repeat &lt; 3:\n    sublist = []\n    index = 0\n    while index &lt; 5:\n        sublist.append(index)\n        index += 1\n    two_d_list.append(sublist)\n    repeat += 1\n\nprint(two_d_list)\n\n[[0, 1, 2, 3, 4], [0, 1, 2, 3, 4], [0, 1, 2, 3, 4]]\n\n\n\n\n\nWe start by importing random.\n\nimport random\n\nThen we set a seed for replicable results and let’s generate a random integer:\n\nrandom.seed(123)\nresult = random.randint(1, 4)\nprint(result)\n\n1",
     "crumbs": [
       "Short Projects",
       "Short Project 7"
@@ -4038,7 +4038,7 @@
     "href": "lab03.html",
     "title": "Short Project 3",
     "section": "",
-    "text": "In this short project you will write four functions to calculate the areas of different geometric shapes. Name the program geometry.py. Make sure that gradescope gives you the points for passing the test cases.\n\n\nThis function returns the area of the rectangle with given base and height\n\\[\narea = base \\cdot height\n\\]\n\n\n\nThis function returns the area of three given triangle side lengths calculated according to Heron’s formula (calculate the semiperimeter first, then use that to calculate the area):\n\\[\ns = (a + b + c) / 2\n\\]\n\\[\narea = \\sqrt{s \\cdot (s-a) \\cdot (s-b) \\cdot (s-c)}\n\\]\nDo not use any built-in method or function for any Python library. Remember that roots are the opposite of an exponent. So you can calculate the square root of a number by using the exponent form \\(n^{1/2}\\).\n\n\n\nThis function returns the area of the trapezoid with given base_1, base_2, and height.\n\\[\narea = {1/2} \\cdot (base_1 + base_2) \\cdot height\n\\]\n\n\n\nThis function returns the area of the circle with the given radius, rounded at two decimal places. Use the value 3.1415 for \\(\\pi\\).\n\\[\narea = \\pi \\cdot radius^2\n\\]\n\n\n\nThis function calls the other functions, based on a string argument: \"rectangle\", \"triangle\", or \"circle\". It returns a string that looks like this:\nThe area of the triangle is 6.0\n\nThis function takes a total of four arguments, the first one is a string that tells the function which area to calculate, and the three other parameters are numeric. In the case of the circle, for example, only the first numeric argument is used.\n\n\n\n\ndef main():\n    print( rectangle_area(4, 4.5) ) # 18.0\n    print( triangle_area(3, 4, 5) ) # 6.0\n    print( trapezoid_area(4, 20, 10) ) # 120.0\n    assert circle_area(20) == 1256.6\n\n    message = calculate_area(\"trapezoid\", 11, 25, 5)\n    print(message) # \"The area of the trapezoid is 90.0\"\n    \n    message = calculate_area(\"circle\", 4, 0, 0)\n    print(message) # \"The area of the circle is 50.26\"\n  \nmain()",
+    "text": "In this short project you will write four functions to calculate the areas of different geometric shapes. Name the program geometry.py. Make sure that gradescope gives you the points for passing the test cases.\n\n\nThis function returns the area of the rectangle with given base and height\n\\[\narea = base \\cdot height\n\\]\n\n\n\nThis function returns the area of three given triangle side lengths calculated according to Heron’s formula (calculate the semiperimeter first, then use that to calculate the area):\n\\[\ns = (a + b + c) / 2\n\\]\n\\[\narea = \\sqrt{s \\cdot (s-a) \\cdot (s-b) \\cdot (s-c)}\n\\]\nDo not use any built-in method or function for any Python library. Remember that roots are the opposite of an exponent. So you can calculate the square root of a number by using the exponent form \\(n^{1/2}\\).\n\n\n\nThis function returns the area of the trapezoid with given base_1, base_2, and height.\n\\[\narea = {1/2} \\cdot (base_1 + base_2) \\cdot height\n\\]\n\n\n\nThis function returns the area of the circle with the given radius, rounded at two decimal places. Use the value 3.1415 for \\(\\pi\\).\n\\[\narea = \\pi \\cdot radius^2\n\\]\n\n\n\nThis function calls the other functions, based on a string argument: \"rectangle\", \"triangle\", or \"circle\". It returns a string that looks like this:\nThe area of the triangle is 6.0\n\nThis function takes a total of four arguments, the first one is a string that tells the function which area to calculate, and the three other parameters are numeric. In the case of the circle, for example, only the first numeric argument is used.\n\n\n\n\ndef main():\n    print( rectangle_area(4, 4.5) ) # 18.0\n    print( triangle_area(3, 4, 5) ) # 6.0\n    print( trapezoid_area(4, 20, 10) ) # 120.0\n    assert circle_area(20) == 1256.6\n\n    message = calculate_area(\"trapezoid\", 11, 25, 5)\n    print(message) # \"The area of the trapezoid is 90.0\"\n    \n    message = calculate_area(\"circle\", 4, 0, 0)\n    print(message) # \"The area of the circle is 50.26\"\n  \nmain()\n\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\n\nStart with def followed by the name of the function\nAdd parameters inside the parentheses in the function definition\nReturn a value\n\n\ndef double(n):\n  result = n * 2\n  return result\n\ndef main():\n  print( double(5) )\n\nmain()\n\n10\n\n\n\n\n\nUse the round() function to get a floating-point number rounded to the specified number of decimals.\nSyntax:\n\nround(number, ndigits*)\n\nThe number of digits (ndigits) is optional, but we will often round number to two decimals:\n\nround(392.68750000000006)\n\n393\n\n\n\nround(392.68750000000006, 2)\n\n392.69\n\n\n\n\n\nWe can do concatenation in two different ways: a) one using the + operator and b) the other using .format() method, using {} as place holders for our variables:\n\nage = 20\nname = 'Philip'\n\nprint(name + ' is ' + str(age) + ' years old')\nprint('{} is {} years old'.format(name, age))\n\nPhilip is 20 years old\nPhilip is 20 years old\n\n\n\n\n\nWe can use logical expressions in if statements to return different things from a function:\n\ndef is_positive(number):\n  if number &gt; 0:\n    return \"Number is positive\"\n  if number &lt; 0:\n    return \"Number is negative\"\n  return \"Number is zero\"\n\ndef main():\n  print( is_positive(10) )\n  print( is_positive(0) )\n  print( is_positive(-10) )\n  \nmain()\n\nNumber is positive\nNumber is zero\nNumber is negative",
     "crumbs": [
       "Short Projects",
       "Short Project 3"
@@ -4104,7 +4104,7 @@
     "href": "lab03.html#test-cases",
     "title": "Short Project 3",
     "section": "",
-    "text": "def main():\n    print( rectangle_area(4, 4.5) ) # 18.0\n    print( triangle_area(3, 4, 5) ) # 6.0\n    print( trapezoid_area(4, 20, 10) ) # 120.0\n    assert circle_area(20) == 1256.6\n\n    message = calculate_area(\"trapezoid\", 11, 25, 5)\n    print(message) # \"The area of the trapezoid is 90.0\"\n    \n    message = calculate_area(\"circle\", 4, 0, 0)\n    print(message) # \"The area of the circle is 50.26\"\n  \nmain()",
+    "text": "def main():\n    print( rectangle_area(4, 4.5) ) # 18.0\n    print( triangle_area(3, 4, 5) ) # 6.0\n    print( trapezoid_area(4, 20, 10) ) # 120.0\n    assert circle_area(20) == 1256.6\n\n    message = calculate_area(\"trapezoid\", 11, 25, 5)\n    print(message) # \"The area of the trapezoid is 90.0\"\n    \n    message = calculate_area(\"circle\", 4, 0, 0)\n    print(message) # \"The area of the circle is 50.26\"\n  \nmain()\n\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\n\nStart with def followed by the name of the function\nAdd parameters inside the parentheses in the function definition\nReturn a value\n\n\ndef double(n):\n  result = n * 2\n  return result\n\ndef main():\n  print( double(5) )\n\nmain()\n\n10\n\n\n\n\n\nUse the round() function to get a floating-point number rounded to the specified number of decimals.\nSyntax:\n\nround(number, ndigits*)\n\nThe number of digits (ndigits) is optional, but we will often round number to two decimals:\n\nround(392.68750000000006)\n\n393\n\n\n\nround(392.68750000000006, 2)\n\n392.69\n\n\n\n\n\nWe can do concatenation in two different ways: a) one using the + operator and b) the other using .format() method, using {} as place holders for our variables:\n\nage = 20\nname = 'Philip'\n\nprint(name + ' is ' + str(age) + ' years old')\nprint('{} is {} years old'.format(name, age))\n\nPhilip is 20 years old\nPhilip is 20 years old\n\n\n\n\n\nWe can use logical expressions in if statements to return different things from a function:\n\ndef is_positive(number):\n  if number &gt; 0:\n    return \"Number is positive\"\n  if number &lt; 0:\n    return \"Number is negative\"\n  return \"Number is zero\"\n\ndef main():\n  print( is_positive(10) )\n  print( is_positive(0) )\n  print( is_positive(-10) )\n  \nmain()\n\nNumber is positive\nNumber is zero\nNumber is negative",
     "crumbs": [
       "Short Projects",
       "Short Project 3"
@@ -4137,7 +4137,7 @@
     "href": "lab02.html",
     "title": "Short Project 2",
     "section": "",
-    "text": "In this short project you will write a program that prints the lyrics for the nursery rhyme The Itsy Bitsy Spider. Here is the lyrics:\nThe itsy bitsy spider climbed up the waterspout.\nDown came the rain and washed the spider out.\nOut came the sun and dried up all the rain.\nThe itsy bitsy spider climbed up the waterspout.\n\nThe big hairy spider climbed up the waterspout.\nDown came the rain and washed the spider out.\nOut came the sun and dried up all the rain.\nThe big hairy spider climbed up the waterspout.\n\nThe teeny tiny spider climbed up the waterspout.\nDown came the rain and washed the spider out.\nOut came the sun and dried up all the rain.\nThe teeny tiny spider climbed up the waterspout.\n\nName the program spider.py. Make sure that gradescope gives you the points for passing the test cases.\n\n\n\ndef main():\n    print(\"The itsy bitsy spider climbed up the waterspout.\")\n    print(\"Down came the rain and washed the spider out.\")\n    print(\"Out came the sun and dried up all the rain.\")\n    print(\"The itsy bitsy spider climbed up the waterspout.\")\n    print()\n\n    print(\"The big hairy spider climbed up the waterspout.\")\n    print(\"Down came the rain and washed the spider out.\")\n    print(\"Out came the sun and dried up all the rain.\")\n    print(\"The big hairy spider climbed up the waterspout.\")\n    print()\n\n    print(\"The teeny tiny spider climbed up the waterspout.\")\n    print(\"Down came the rain and washed the spider out.\")\n    print(\"Out came the sun and dried up all the rain.\")\n    print(\"The teeny tiny spider climbed up the waterspout.\")\n    print()\n    \nmain()\n\n\n\n\nEach paragraph mentions one spider. This lyrics includes three types of spiders: \"itsy bitsy\", \"big hairy\", and \"teeny tiny\", but we can add more types. You can define your own functions and call your functions within verse function. Note the verse function can only take one of the three arguments (e.g., \"big hairy\").\n\n# All your functions are defined here\n\ndef verse(spider_type):\n    # write your code here\n\nif __name__ == '__main__':\n    verse(\"itsy bitsy\")\n    verse(\"big hairy\")\n    verse(\"teeny tiny\")",
+    "text": "In this short project you will write a program that prints the lyrics for the nursery rhyme The Itsy Bitsy Spider. Here is the lyrics:\nThe itsy bitsy spider climbed up the waterspout.\nDown came the rain and washed the spider out.\nOut came the sun and dried up all the rain.\nThe itsy bitsy spider climbed up the waterspout.\n\nThe big hairy spider climbed up the waterspout.\nDown came the rain and washed the spider out.\nOut came the sun and dried up all the rain.\nThe big hairy spider climbed up the waterspout.\n\nThe teeny tiny spider climbed up the waterspout.\nDown came the rain and washed the spider out.\nOut came the sun and dried up all the rain.\nThe teeny tiny spider climbed up the waterspout.\n\nName the program spider.py. Make sure that gradescope gives you the points for passing the test cases.\n\n\n\ndef main():\n    print(\"The itsy bitsy spider climbed up the waterspout.\")\n    print(\"Down came the rain and washed the spider out.\")\n    print(\"Out came the sun and dried up all the rain.\")\n    print(\"The itsy bitsy spider climbed up the waterspout.\")\n    print()\n\n    print(\"The big hairy spider climbed up the waterspout.\")\n    print(\"Down came the rain and washed the spider out.\")\n    print(\"Out came the sun and dried up all the rain.\")\n    print(\"The big hairy spider climbed up the waterspout.\")\n    print()\n\n    print(\"The teeny tiny spider climbed up the waterspout.\")\n    print(\"Down came the rain and washed the spider out.\")\n    print(\"Out came the sun and dried up all the rain.\")\n    print(\"The teeny tiny spider climbed up the waterspout.\")\n    print()\n    \nmain()\n\n\n\n\nEach paragraph mentions one spider. This lyrics includes three types of spiders: \"itsy bitsy\", \"big hairy\", and \"teeny tiny\". You can define your own functions and call your functions within verse function. Note the verse function can only take one of the three arguments (e.g., \"big hairy\").\n\n# All your functions are defined here\n\ndef verse(spider_type):\n    # write your code here\n\nif __name__ == '__main__':\n    verse(\"itsy bitsy\")\n    verse(\"big hairy\")\n    verse(\"teeny tiny\")\n\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\n\nStart with def followed by the name of the function\nAdd parameters inside the parentheses in the function definition\nPrint a string within the function without return\n\n\ndef print_greeting(name):\n  print(\"Hello \" + name + \"!\")\n\ndef main():\n  print_greeting(\"Mickey\")\n  print_greeting(\"Minnie\")\n\nmain()\n\nHello Mickey!\nHello Minnie!\n\n\n\n\n\n\nage = 20\nname = 'Philip'\n\nHere’s how we can do concatenation using the + operator:\n\nname + ' is ' + str(age) + ' years old'\n\n'Philip is 20 years old'\n\n\nWe can do the same with the .format() method, using {} as place holders for our variables:\n\n'{} is {} years old'.format(name, age)\n\n'Philip is 20 years old'",
     "crumbs": [
       "Short Projects",
       "Short Project 2"
@@ -4159,7 +4159,7 @@
     "href": "lab02.html#development-strategy",
     "title": "Short Project 2",
     "section": "",
-    "text": "Each paragraph mentions one spider. This lyrics includes three types of spiders: \"itsy bitsy\", \"big hairy\", and \"teeny tiny\", but we can add more types. You can define your own functions and call your functions within verse function. Note the verse function can only take one of the three arguments (e.g., \"big hairy\").\n\n# All your functions are defined here\n\ndef verse(spider_type):\n    # write your code here\n\nif __name__ == '__main__':\n    verse(\"itsy bitsy\")\n    verse(\"big hairy\")\n    verse(\"teeny tiny\")",
+    "text": "Each paragraph mentions one spider. This lyrics includes three types of spiders: \"itsy bitsy\", \"big hairy\", and \"teeny tiny\". You can define your own functions and call your functions within verse function. Note the verse function can only take one of the three arguments (e.g., \"big hairy\").\n\n# All your functions are defined here\n\ndef verse(spider_type):\n    # write your code here\n\nif __name__ == '__main__':\n    verse(\"itsy bitsy\")\n    verse(\"big hairy\")\n    verse(\"teeny tiny\")\n\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\n\nStart with def followed by the name of the function\nAdd parameters inside the parentheses in the function definition\nPrint a string within the function without return\n\n\ndef print_greeting(name):\n  print(\"Hello \" + name + \"!\")\n\ndef main():\n  print_greeting(\"Mickey\")\n  print_greeting(\"Minnie\")\n\nmain()\n\nHello Mickey!\nHello Minnie!\n\n\n\n\n\n\nage = 20\nname = 'Philip'\n\nHere’s how we can do concatenation using the + operator:\n\nname + ' is ' + str(age) + ' years old'\n\n'Philip is 20 years old'\n\n\nWe can do the same with the .format() method, using {} as place holders for our variables:\n\n'{} is {} years old'.format(name, age)\n\n'Philip is 20 years old'",
     "crumbs": [
       "Short Projects",
       "Short Project 2"
@@ -4522,7 +4522,7 @@
     "href": "lab01.html",
     "title": "Short Project 1",
     "section": "",
-    "text": "Vehicle – Printing the Model-T\nIn the this program, you will print out ASCII-art of one of the most famous vehicles of all time - the Model-T automobile! Name your program modelt.py.\nYour program should be able to print different cars based on the width of the car. The number that your program accepts should control the width of the center part of the vehicle. A larger width value should make for a longer car, and vice-versa. The height of the vehicle will remain the same regardless of the width entered. Below are several examples of this program running with different values provided. Your program should match the look of the outputs exactly.\n\nwidth = 0\ncar = build_car(width)\nprint(car, end=\"\")\n\n.-----------.\n| ### ||  ###\\\n| ### ||  ####\\.\nD     ||  &lt;&gt;    |------+\n|  ______      /______ |\n \\/ /..\\ \\_____/ /..\\ \\|\n    \\__/         \\__/\n\n\nwidth = 5\ncar = build_car(width)\nprint(car, end=\"\")\n\n.----------------.\n| ### ||  ########\\\n| ### ||  #########\\.\nD     ||       &lt;&gt;    |------+\n|  ______           /______ |\n \\/ /..\\ \\__________/ /..\\ \\|\n    \\__/              \\__/\n\n\nwidth = 12\ncar = build_car(width)\nprint(car, end=\"\")\n\n.-----------------------.\n| ### ||  ###############\\\n| ### ||  ################\\.\nD     ||              &lt;&gt;    |------+\n|  ______                  /______ |\n \\/ /..\\ \\_________________/ /..\\ \\|\n    \\__/                     \\__/\n\nAny integer number 0 or greater should be supported. You don’t need to worry about handling negative numbers, fractions, or numbers with decimals.",
+    "text": "In the this program, you will print out ASCII-art of one of the most famous vehicles of all time - the Model-T automobile! Name your program modelt.py.\nYour program should be able to print different cars based on the width of the car. The number that your program accepts should control the width of the center part of the vehicle. A larger width value should make for a longer car, and vice-versa. The height of the vehicle will remain the same regardless of the width entered. Below are several examples of this program running with different values provided. Your program should match the look of the outputs exactly.\n\nwidth = 0\ncar = build_car(width)\nprint(car, end=\"\")\n\n.-----------.\n| ### ||  ###\\\n| ### ||  ####\\.\nD     ||  &lt;&gt;    |------+\n|  ______      /______ |\n \\/ /..\\ \\_____/ /..\\ \\|\n    \\__/         \\__/\n\n\nwidth = 5\ncar = build_car(width)\nprint(car, end=\"\")\n\n.----------------.\n| ### ||  ########\\\n| ### ||  #########\\.\nD     ||       &lt;&gt;    |------+\n|  ______           /______ |\n \\/ /..\\ \\__________/ /..\\ \\|\n    \\__/              \\__/\n\n\nwidth = 12\ncar = build_car(width)\nprint(car, end=\"\")\n\n.-----------------------.\n| ### ||  ###############\\\n| ### ||  ################\\.\nD     ||              &lt;&gt;    |------+\n|  ______                  /______ |\n \\/ /..\\ \\_________________/ /..\\ \\|\n    \\__/                     \\__/\n\nAny integer number 0 or greater should be supported. You don’t need to worry about handling negative numbers, fractions, or numbers with decimals.\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\nAny sequence of characters enveloped in quotes (single, double, triple). Your opening quotes need to match your closing quotes.\nString literals:\n\n\"this is a string\"\n'this is also a string'\n\nUse variable names:\n\nmy_name = \"Julia Smith\"\n\n\n\n\nPrint string literals:\n\nprint(\"Hi there\")\n\nHi there\n\n\nPrint variables:\n\nmessage = \"Hi there\"\nprint(message)\n\nHi there\n\n\n\n\n\nUse the + operator to “glue” strings together:\n\nmessage = \"Hi there\"\npunctuation = \"!\"\nprint(message + punctuation)\n\nHi there!\n\n\nYou can also use += to change to retrieve the string assigned to a variable, “glue” another string to it, and assign it back to the same variable name:\n\nfull_message = \"\" # start with an empty string\nfull_message += \"Hi there\"\nfull_message += \"!\"\nprint(full_message)\n\nHi there!\n\n\n\n\n\nUse the keyword def to define a function use () after your function name to list all the parameters.\n\ndef repeat_message(message, n):\n  full_message = message * n\n  return full_message\n\nmessage = repeat_message(\"Hi there\", 5)\nprint(message)\n\nHi thereHi thereHi thereHi thereHi there\n\n\n\nWhat if I wanted to have a space between each string?\nWhat if I wanted to have a line break between each string?",
     "crumbs": [
       "Short Projects",
       "Short Project 1"
@@ -4709,7 +4709,7 @@
     "href": "lab04.html",
     "title": "Short Project 4",
     "section": "",
-    "text": "Though CPUs, and computer hardware in-general, are not the main focus of this course, it can be useful to know a thing or two about computer hardware. The CPU (Central Processing Unit) is generally the piece of hardware that carries out the instructions of the python programs that you run in this class.\nIn this short project, you will write a program that takes a few input values related to CPU performance. The program should determine whether or not the specified CPU is within one of four categories: high-performance, medium-performance, low-performance, and in need of an upgrade. Name the file cpu.py.\nShown below is an example of the program prompting the user for two inputs, and then printing out the corresponding CPU performance category:\n\ndef main():\n  gigahertz = 2.7\n  core_count = 2\n  result = get_result(gigahertz, core_count)\n  print(result)\n  \nmain()\n\nThat is a low-performance CPU.\n\n\nThe first argument, Gigahertz, should be converted to a float\nThe second argument, core count, should be an integer\n\nThe program should return one of 4 strings:\n\nThat is a high-performance CPU.\nThat is a medium-performance CPU.\nThat is a low-performance CPU.\nThat CPU could use an upgrade.\n\nHow you determine which to return should be based on the below table:\n\n\n\nperformance level\nmin GHz\nmin cores\n\n\n\n\nhigh-performance\n3.2\n8\n\n\nmedium-performance\n2.5\n6\n\n\nlow-performance\n2.0\n2\n\n\n\nFor example, a medium-performance CPU must satisfy both requirements: a) GHz no less than 2.5 and b) cores no less than 6.\nThere’s also one “special-case” rule: If a CPU has 20 or more cores, regardless of the other stats, it should be considered high-performance.\n\n\nBelow are examples of program runs. There will be more tests on Gradescope.\n\ndef main():\n  gigahertz = 2.0\n  core_count = 8\n  assert get_result(gigahertz, core_count) == \"That is a low-performance CPU.\"\n  \n  gigahertz = 4.0\n  core_count = 7\n  assert get_result(gigahertz, core_count) == \"That is a medium-performance CPU.\"\n  \n  gigahertz = 1.0\n  core_count = 10\n  assert get_result(gigahertz, core_count) == \"That CPU could use an upgrade.\"\n  \n  print(\"End of tests\")\n  \nmain()",
+    "text": "Though CPUs, and computer hardware in-general, are not the main focus of this course, it can be useful to know a thing or two about computer hardware. The CPU (Central Processing Unit) is generally the piece of hardware that carries out the instructions of the python programs that you run in this class.\nIn this short project, you will write a program that takes a few input values related to CPU performance. The program should determine whether or not the specified CPU is within one of four categories: high-performance, medium-performance, low-performance, and in need of an upgrade. Name the file cpu.py.\nShown below is an example of the program prompting the user for two inputs, and then printing out the corresponding CPU performance category:\n\ndef main():\n  gigahertz = 2.7\n  core_count = 2\n  result = get_result(gigahertz, core_count)\n  print(result)\n  \nmain()\n\nThat is a low-performance CPU.\n\n\nThe first argument, Gigahertz, should be converted to a float\nThe second argument, core count, should be an integer\n\nThe program should return one of 4 strings:\n\nThat is a high-performance CPU.\nThat is a medium-performance CPU.\nThat is a low-performance CPU.\nThat CPU could use an upgrade.\n\nHow you determine which to return should be based on the below table:\n\n\n\nperformance level\nmin GHz\nmin cores\n\n\n\n\nhigh-performance\n3.2\n8\n\n\nmedium-performance\n2.5\n6\n\n\nlow-performance\n2.0\n2\n\n\n\nFor example, a medium-performance CPU must satisfy both requirements: a) GHz no less than 2.5 and b) cores no less than 6.\nThere’s also one “special-case” rule: If a CPU has 20 or more cores, regardless of the other stats, it should be considered high-performance.\n\n\nBelow are examples of program runs. There will be more tests on Gradescope.\n\ndef main():\n  gigahertz = 2.0\n  core_count = 8\n  assert get_result(gigahertz, core_count) == \"That is a low-performance CPU.\"\n  \n  gigahertz = 4.0\n  core_count = 7\n  assert get_result(gigahertz, core_count) == \"That is a medium-performance CPU.\"\n  \n  gigahertz = 1.0\n  core_count = 10\n  assert get_result(gigahertz, core_count) == \"That CPU could use an upgrade.\"\n  \n  print(\"End of tests\")\n  \nmain()\n\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\nAn expression that evaluated to a Boolean value (True or False)\n\nage = 21\nage &gt;= 21\n\nTrue\n\n\n\nage &gt; 21\n\nFalse\n\n\n\nage &gt; 35\n\nFalse\n\n\n\n\n\nWe can use logical expressions in if-else statements:\n\nif age &gt; 15:\n  allowed_to_drive = True\nelse:\n  allowed_to_drive = False\n  \nprint(allowed_to_drive)\n\nTrue\n\n\nWhen the expression age &gt; 15 is evaluated to True lines 2 and 6 run, if it is evaluated to False line to is skipped over and lines 4 and 6 run.\n\n\n\nAdd elif statement if you need to check another condition:\n\nif age &gt;= 21:\n  allowed_to_drink = True\n  allowed_to_drive = True\nelif age &gt; 15:\n  allowed_to_drink = False\n  allowed_to_drive = True\nelse:\n  allowed_to_drink = False\n  allowed_to_drive = False\n  \nprint(allowed_to_drink, allowed_to_drive)\n\nWhen the expression age &gt;= 21 is evaluated to True lines 2, 3 and 11 run, if it is evaluated to False lines 2-3 are skipped over and then age &gt; 15 is evaluated. If age &gt; 15 is evaluated to True lines 5, 6 and 11 run, if it is evaluated to False lines 5-6 are skipped over and lines 8, 9, and 11 run.",
     "crumbs": [
       "Short Projects",
       "Short Project 4"
@@ -4720,7 +4720,7 @@
     "href": "lab04.html#test-cases",
     "title": "Short Project 4",
     "section": "",
-    "text": "Below are examples of program runs. There will be more tests on Gradescope.\n\ndef main():\n  gigahertz = 2.0\n  core_count = 8\n  assert get_result(gigahertz, core_count) == \"That is a low-performance CPU.\"\n  \n  gigahertz = 4.0\n  core_count = 7\n  assert get_result(gigahertz, core_count) == \"That is a medium-performance CPU.\"\n  \n  gigahertz = 1.0\n  core_count = 10\n  assert get_result(gigahertz, core_count) == \"That CPU could use an upgrade.\"\n  \n  print(\"End of tests\")\n  \nmain()",
+    "text": "Below are examples of program runs. There will be more tests on Gradescope.\n\ndef main():\n  gigahertz = 2.0\n  core_count = 8\n  assert get_result(gigahertz, core_count) == \"That is a low-performance CPU.\"\n  \n  gigahertz = 4.0\n  core_count = 7\n  assert get_result(gigahertz, core_count) == \"That is a medium-performance CPU.\"\n  \n  gigahertz = 1.0\n  core_count = 10\n  assert get_result(gigahertz, core_count) == \"That CPU could use an upgrade.\"\n  \n  print(\"End of tests\")\n  \nmain()\n\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\nAn expression that evaluated to a Boolean value (True or False)\n\nage = 21\nage &gt;= 21\n\nTrue\n\n\n\nage &gt; 21\n\nFalse\n\n\n\nage &gt; 35\n\nFalse\n\n\n\n\n\nWe can use logical expressions in if-else statements:\n\nif age &gt; 15:\n  allowed_to_drive = True\nelse:\n  allowed_to_drive = False\n  \nprint(allowed_to_drive)\n\nTrue\n\n\nWhen the expression age &gt; 15 is evaluated to True lines 2 and 6 run, if it is evaluated to False line to is skipped over and lines 4 and 6 run.\n\n\n\nAdd elif statement if you need to check another condition:\n\nif age &gt;= 21:\n  allowed_to_drink = True\n  allowed_to_drive = True\nelif age &gt; 15:\n  allowed_to_drink = False\n  allowed_to_drive = True\nelse:\n  allowed_to_drink = False\n  allowed_to_drive = False\n  \nprint(allowed_to_drink, allowed_to_drive)\n\nWhen the expression age &gt;= 21 is evaluated to True lines 2, 3 and 11 run, if it is evaluated to False lines 2-3 are skipped over and then age &gt; 15 is evaluated. If age &gt; 15 is evaluated to True lines 5, 6 and 11 run, if it is evaluated to False lines 5-6 are skipped over and lines 8, 9, and 11 run.",
     "crumbs": [
       "Short Projects",
       "Short Project 4"
@@ -4753,7 +4753,7 @@
     "href": "lab05.html",
     "title": "Short Project 5",
     "section": "",
-    "text": "In this short project, you will calculate how many years it takes for an account balance to reach an investment goal.\nName the program investment.py. Make sure that gradescope gives you the points for passing the test cases.\n\n\nHere’s the problem to solve:\n\nImagine you have X amount of dollars in an investment account that earns 5% interest per year. How long (in years) does it take for the account balance to be times Y the original investment?\n\n\n# X amount of dollars is $10,000\ninitial_amount = 10000\n\n# times Y is 2\ngoal_of_investment = 2\n\nmessage = investment_years(initial_amount, goal_of_investment)\nprint(message)\n\nThe investment of $10,000 will be 2 times larger in 15 years.\n\n\n\n\nYou will need to use a while loop to solve this problem. You need to calculate what the goal amount is, and you will calculate how much each passing year accrues until you get to the goal.\nYou will also need to create a year variable to count how many years it takes to achieve the goal. Remember to increment year with every iteration.\nCalculate the interest (multiply balance by 0.05) and the balance (add interest to it) in each iteration as well.\n\n\n\n\ndef main():\n    # X amount of dollars is $10,000\n  initial_amount = 10000\n\n  # times Y is 2\n  goal_of_investment = 2\n\n  message = investment_years(initial_amount, goal_of_investment)\n  print(message) \n  # The investment of $10,000 will be 2 times larger in 15 years.\n\n  print(investment_years(50000, 10))\n  # The investment of $50,000 will be 10 times larger in 48 years.\n  \nmain()",
+    "text": "In this short project, you will calculate how many years it takes for an account balance to reach an investment goal.\nName the program investment.py. Make sure that gradescope gives you the points for passing the test cases.\n\n\nHere’s the problem to solve:\n\nImagine you have X amount of dollars in an investment account that earns 5% interest per year. How long (in years) does it take for the account balance to be times Y the original investment?\n\n\n# X amount of dollars is $10,000\ninitial_amount = 10000\n\n# times Y is 2\ngoal_of_investment = 2\n\nmessage = investment_years(initial_amount, goal_of_investment)\nprint(message)\n\nThe investment of $10,000 will be 2 times larger in 15 years.\n\n\n\n\nYou will need to use a while loop to solve this problem. You need to calculate what the goal amount is, and you will calculate how much each passing year accrues until you get to the goal.\nYou will also need to create a year variable to count how many years it takes to achieve the goal. Remember to increment year with every iteration.\nCalculate the interest (multiply balance by 0.05) and the balance (add interest to it) in each iteration as well.\n\n\n\n\ndef main():\n    # X amount of dollars is $10,000\n  initial_amount = 10000\n\n  # times Y is 2\n  goal_of_investment = 2\n\n  message = investment_years(initial_amount, goal_of_investment)\n  print(message) \n  # The investment of $10,000 will be 2 times larger in 15 years.\n\n  print(investment_years(50000, 10))\n  # The investment of $50,000 will be 10 times larger in 48 years.\n  \nmain()\n\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\nYou need to determine two things:\n\nWhat’s your condition to stop the iteration\nWhat variables do you need to update the condition in each iteration (so you don’t fall into an infinite loop)\n\n\n\n\nWrite a while loop to count how many years until you can run for president (simplistic example, for illustration purposes only):\n\ndef count_years(current_age, age_goal):\n  years = 0\n  age = current_age\n  while age &lt; age_goal:\n    years += 1\n    age += 1\n  return years\n\ndef main():\n  print( count_years(20, 35))\n  \nmain()\n\n15\n\n\n\n\n\nLet’s update our function so it returns a string message instead of an integer:\n\ndef count_years(current_age, age_goal):\n  years = 0\n  age = current_age\n  while age &lt; age_goal:\n    years += 1\n    age += 1\n  message = \"It will take {} years\".format(years)\n  message += \" for you to be able to run for president.\"\n  return message\n\ndef main():\n  print( count_years(20, 35))\n  \nmain()\n\nIt will take 15 years for you to be able to run for president.\n\n\n\n\n\nUse : to specify formatting options,\n\namount = 10000000\nprint(\"I have ${:,} in my pocket.\".format(amount))\n\nI have $10,000,000 in my pocket.",
     "crumbs": [
       "Short Projects",
       "Short Project 5"
@@ -4786,7 +4786,7 @@
     "href": "lab05.html#test-cases",
     "title": "Short Project 5",
     "section": "",
-    "text": "def main():\n    # X amount of dollars is $10,000\n  initial_amount = 10000\n\n  # times Y is 2\n  goal_of_investment = 2\n\n  message = investment_years(initial_amount, goal_of_investment)\n  print(message) \n  # The investment of $10,000 will be 2 times larger in 15 years.\n\n  print(investment_years(50000, 10))\n  # The investment of $50,000 will be 10 times larger in 48 years.\n  \nmain()",
+    "text": "def main():\n    # X amount of dollars is $10,000\n  initial_amount = 10000\n\n  # times Y is 2\n  goal_of_investment = 2\n\n  message = investment_years(initial_amount, goal_of_investment)\n  print(message) \n  # The investment of $10,000 will be 2 times larger in 15 years.\n\n  print(investment_years(50000, 10))\n  # The investment of $50,000 will be 10 times larger in 48 years.\n  \nmain()\n\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\nYou need to determine two things:\n\nWhat’s your condition to stop the iteration\nWhat variables do you need to update the condition in each iteration (so you don’t fall into an infinite loop)\n\n\n\n\nWrite a while loop to count how many years until you can run for president (simplistic example, for illustration purposes only):\n\ndef count_years(current_age, age_goal):\n  years = 0\n  age = current_age\n  while age &lt; age_goal:\n    years += 1\n    age += 1\n  return years\n\ndef main():\n  print( count_years(20, 35))\n  \nmain()\n\n15\n\n\n\n\n\nLet’s update our function so it returns a string message instead of an integer:\n\ndef count_years(current_age, age_goal):\n  years = 0\n  age = current_age\n  while age &lt; age_goal:\n    years += 1\n    age += 1\n  message = \"It will take {} years\".format(years)\n  message += \" for you to be able to run for president.\"\n  return message\n\ndef main():\n  print( count_years(20, 35))\n  \nmain()\n\nIt will take 15 years for you to be able to run for president.\n\n\n\n\n\nUse : to specify formatting options,\n\namount = 10000000\nprint(\"I have ${:,} in my pocket.\".format(amount))\n\nI have $10,000,000 in my pocket.",
     "crumbs": [
       "Short Projects",
       "Short Project 5"
@@ -4962,7 +4962,7 @@
     "href": "lab06.html",
     "title": "Short Project 6",
     "section": "",
-    "text": "In this short programming project you will be writing a function that takes a list, and index, and a direction (\"left\" or \"right\") as arguments. The goal of the function is to move the item at index to the provided direction skipping over all zeros and taking the place of another item that is not zero. If reaching the end (either left or right end) and all of the items are zero, take place of the last item.\nName the program move_item.py. Make sure that gradescope gives you the points for passing the test cases.\n\n\n\noriginal_list = [\"a\", 0, 0, \"b\", \"c\", 0, 0]\nprint( move_item(original_list, 3,  \"left\") )\n\n['b', 0, 0, 0, 'c', 0, 0]\n\n\noriginal_list = [\"a\", 0, 0, \"b\", \"c\", 0, 0]\nprint( move_item(original_list, 3, \"right\") )\n\n['a', 0, 0, 0, 'b', 0, 0]\n\n\n# call the function again\nprint( move_item(original_list, 4, \"right\") )\n\n['a', 0, 0, 0, 0, 0, 'b']\n\n\n\n\nThe easiest way to implement this is using two while loops (one for going to the left, another for going to the right). You have the starting point of the item you want to move (the \"index\") – you need to find out where it needs to end.\nYour first guess for the end index should be minus one on the index if you are going to the left or plus one on the index if you are going to the right. In your while loop you need to keep subtracting one or adding one (depending on your direction) until you reach your end destination – meaning, you skip over the zeros until you either reach the beginning of the end of the list (depending on the direction you are going) or you found an item to replace (something that is different than zero).",
+    "text": "In this short programming project you will be writing a function that takes a list, and index, and a direction (\"left\" or \"right\") as arguments. The goal of the function is to move the item at index to the provided direction skipping over all zeros and taking the place of another item that is not zero. If reaching the end (either left or right end) and all of the items are zero, take place of the last item.\nName the program move_item.py. Make sure that gradescope gives you the points for passing the test cases.\n\n\n\noriginal_list = [\"a\", 0, 0, \"b\", \"c\", 0, 0]\nprint( move_item(original_list, 3,  \"left\") )\n\n['b', 0, 0, 0, 'c', 0, 0]\n\n\noriginal_list = [\"a\", 0, 0, \"b\", \"c\", 0, 0]\nprint( move_item(original_list, 3, \"right\") )\n\n['a', 0, 0, 0, 'b', 0, 0]\n\n\n# call the function again\nprint( move_item(original_list, 4, \"right\") )\n\n['a', 0, 0, 0, 0, 0, 'b']\n\n\n\n\nThe easiest way to implement this is using two while loops (one for going to the left, another for going to the right). You have the starting point of the item you want to move (the \"index\") – you need to find out where it needs to end.\nYour first guess for the end index should be minus one on the index if you are going to the left or plus one on the index if you are going to the right. In your while loop you need to keep subtracting one or adding one (depending on your direction) until you reach your end destination – meaning, you skip over the zeros until you either reach the beginning of the end of the list (depending on the direction you are going) or you found an item to replace (something that is different than zero).\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\nYou can access an item in a list using an index:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nWhat’s the index for value 2 and 1?\nYou can replace an item in a list using an index:\n\nmy_list = [0, 0, 2, 0, 0, 1]\nmy_list[1] = 5\nmy_list\n\n[0, 5, 2, 0, 0, 1]\n\n\n\n\n\nHere is the list:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nHow do we move value 1 to where value 2 is, replacing 1 with zero so the list looks like this:\n\nmy_list = [0, 0, 1, 0, 0, 0]\n\n\n\n\nWe want to go from this:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nTo this:\n\nmy_list = [0, 0, 1, 0, 0, 0]\n\nWe do this:\n\nindex_a = 2\nindex_b = 5\nmy_list[index_a] = my_list[index_b]\nmy_list[index_b] = 0",
     "crumbs": [
       "Short Projects",
       "Short Project 6"
@@ -4984,7 +4984,7 @@
     "href": "lab06.html#development-strategy",
     "title": "Short Project 6",
     "section": "",
-    "text": "The easiest way to implement this is using two while loops (one for going to the left, another for going to the right). You have the starting point of the item you want to move (the \"index\") – you need to find out where it needs to end.\nYour first guess for the end index should be minus one on the index if you are going to the left or plus one on the index if you are going to the right. In your while loop you need to keep subtracting one or adding one (depending on your direction) until you reach your end destination – meaning, you skip over the zeros until you either reach the beginning of the end of the list (depending on the direction you are going) or you found an item to replace (something that is different than zero).",
+    "text": "The easiest way to implement this is using two while loops (one for going to the left, another for going to the right). You have the starting point of the item you want to move (the \"index\") – you need to find out where it needs to end.\nYour first guess for the end index should be minus one on the index if you are going to the left or plus one on the index if you are going to the right. In your while loop you need to keep subtracting one or adding one (depending on your direction) until you reach your end destination – meaning, you skip over the zeros until you either reach the beginning of the end of the list (depending on the direction you are going) or you found an item to replace (something that is different than zero).\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\nYou can access an item in a list using an index:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nWhat’s the index for value 2 and 1?\nYou can replace an item in a list using an index:\n\nmy_list = [0, 0, 2, 0, 0, 1]\nmy_list[1] = 5\nmy_list\n\n[0, 5, 2, 0, 0, 1]\n\n\n\n\n\nHere is the list:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nHow do we move value 1 to where value 2 is, replacing 1 with zero so the list looks like this:\n\nmy_list = [0, 0, 1, 0, 0, 0]\n\n\n\n\nWe want to go from this:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nTo this:\n\nmy_list = [0, 0, 1, 0, 0, 0]\n\nWe do this:\n\nindex_a = 2\nindex_b = 5\nmy_list[index_a] = my_list[index_b]\nmy_list[index_b] = 0",
     "crumbs": [
       "Short Projects",
       "Short Project 6"
@@ -7598,7 +7598,7 @@
     "href": "lab08.html",
     "title": "Short Project 8",
     "section": "",
-    "text": "Counting Names\nIn this lab session, you will be using starter code which contains a function to read a file that contains names and numbers separated by comma (a csv or comma separated file). The function that reads the file and returns a list is already implemented for you. You also need to download the text file with the data to run your code (make sure your .py file and your .txt file are in the same folder, and that you have the folder open on VS code)\nYou are to implement three other functions:\n\ncount_names that takes as argument a list of strings that could be converted to integers, floats, or are just names and returns a dictionary of only the names as keys, and counts as values\nfind_name that takes as argument the dictionary you returned from the previous function, and a string representing a name. This function returns two types of message (string) depending on whether the name argument is a key in the counts dictionary:\n\nThe name X occurs N times.\nX not found.\n\nget_most_common_name that takes as argument the dictionary of name counts, and returns a string with a message: The name X occurs N times.\n\nHere are some test cases:\n\nmy_list = read_file(\"names_and_numbers.txt\")\nmy_counts = count_names(my_list)\nprint( my_counts )\n\n{'Ian': 7, 'Joseph': 17, 'Hunter': 7, 'Javier': 8, 'Emily': 11, 'Michael': 30,\n 'Daniel': 16, 'Cole': 5, 'Kolbe': 4, 'Wang': 4, 'Kim': 5, 'Justin': 4, \n 'Paul': 5, 'Zach': 6, 'Renee': 4, 'Tucker': 5, 'Jacob': 22, 'Alan': 8, \n 'William': 23, 'Gabriel': 5, 'Singh': 9, 'Elliott': 5, 'Kumar': 5, \n 'Richard': 8, 'Max': 5, 'Reddy': 6, 'Claire': 4, 'Jake': 9, 'Robert': 12, \n 'Rose': 12, 'James': 31, 'Austin': 6, 'Aidan': 12, 'Joshua': 7, 'Chase': 9, \n 'Noah': 13, 'Isaac': 10, 'Scott': 7, 'Antonio': 6, 'Steven': 5, 'Emma': 9, \n 'Olivia': 4, 'Anthony': 12, 'Adriana': 4, 'Anna': 5, 'Lee': 13, 'Howard': 5, \n 'Shane': 4, 'Alexander': 17, 'Alex': 14, 'Megan': 5, 'Jesus': 5, 'Dev': 4, \n 'Eduardo': 8, 'Stephen': 5, 'David': 23, 'Ali': 6, 'Tran': 4, 'Jeremy': 5, \n 'Samuel': 7, 'Christopher': 7, 'Noel': 5, 'Ethan': 18, 'Lawrence': 4, \n 'Andrew': 26, 'Grace': 8, 'John': 17, 'Nate': 5, 'Taylor': 5, 'Jose': 11, \n 'Colin': 4, 'Thomas': 17, 'Sai': 4, 'Logan': 5, 'Tanner': 4, 'Aiden': 4, \n 'Lauren': 5, 'Connor': 7, 'Alejandro': 7, 'Nicole': 5, 'Ahmed': 5, 'Elise': 4, \n 'Jessica': 4, 'Rene': 6, 'Garcia': 7, 'Abel': 4, 'Hernandez': 4, 'Martinez': 9, \n 'Luke': 9, 'Andre': 7, 'Andres': 4, 'Gavin': 5, 'Mark': 10, 'Cameron': 4, \n 'Josh': 9, 'Victor': 4, 'Marie': 17, 'George': 4, 'Lucas': 7, 'Yan': 4, \n 'Dylan': 11, 'Will': 6, 'Brian': 5, 'Julian': 5, 'Drew': 4, 'Jordan': 11, \n 'Luis': 11, 'Ashley': 4, 'Diego': 11, 'Tyler': 11, 'Henry': 5, 'Elizabeth': 14, \n 'Sofia': 4, 'Matthew': 15, 'Williams': 7, 'Riley': 5, 'Lynn': 7, 'Ryan': 16, \n 'Al': 7, 'Allen': 5, 'Mason': 7, 'Carlos': 6, 'Sebastian': 4, 'Smith': 6, \n 'Charles': 8, 'Patrick': 8, 'Adrian': 9, 'Nathan': 11, 'Brandon': 8, 'Nick': 5, \n 'Derek': 5, 'Abdullah': 5, 'Zachary': 5, 'Edward': 5, 'Jean': 5, 'Sam': 9, \n 'Angel': 5, 'Chris': 6, 'Michelle': 6, 'Wayne': 4, 'Mohammed': 6, 'Trevor': 4, \n 'Jason': 9, 'Alec': 4, 'Li': 8, 'Martin': 4, 'Tiffany': 5, 'Peter': 6, \n 'Jack': 9, 'Maurice': 4, 'Elijah': 6, 'Ben': 9, 'Sean': 5, 'Anne': 4, \n 'Nguyen': 4, 'Eric': 5, 'Adam': 4, 'Xavier': 4, 'Chen': 4, 'Adnan': 4, \n 'Ava': 5, 'Caleb': 5, 'Sophia': 5, 'Hayden': 4, 'Paige': 6, 'Victoria': 4, \n 'Angelina': 4, 'Jasmine': 4, 'White': 4, 'Isaiah': 6, 'Soto': 5, 'Vivian': 4, \n 'Evan': 6, 'Jackson': 4}\n\n\nmy_list = read_file(\"names_and_numbers.txt\")\nmy_counts = count_names(my_list)\nprint( len(my_counts) )\n\n174\n\n\nmy_list = read_file(\"names_and_numbers.txt\")\nmy_counts = count_names(my_list)\nprint( find_name(my_counts, \"Adriana\") )\n\nThe name Adriana occurs 4 times.\n\n\nmy_list = read_file(\"names_and_numbers.txt\")\nmy_counts = count_names(my_list)\nprint( find_name(my_counts, \"Maria\") )\n\nMaria not found.\n\n\nmy_list = read_file(\"names_and_numbers.txt\")\nmy_counts = count_names(my_list)\nprint( get_most_common_name(my_counts) )\n\nThe name James occurs 31 times.",
+    "text": "In this lab session, you will be using starter code which contains a function to read a file that contains names and numbers separated by comma (a csv or comma separated file). The function that reads the file and returns a list is already implemented for you. You also need to download the text file with the data to run your code (make sure your .py file and your .txt file are in the same folder, and that you have the folder open on VS code)\nYou are to implement three other functions:\n\ncount_names that takes as argument a list of strings that could be converted to integers, floats, or are just names and returns a dictionary of only the names as keys, and counts as values\nfind_name that takes as argument the dictionary you returned from the previous function, and a string representing a name. This function returns two types of message (string) depending on whether the name argument is a key in the counts dictionary:\n\nThe name X occurs N times.\nX not found.\n\nget_most_common_name that takes as argument the dictionary of name counts, and returns a string with a message: The name X occurs N times.\n\nHere are some test cases:\n\nmy_list = read_file(\"names_and_numbers.txt\")\nmy_counts = count_names(my_list)\nprint( my_counts )\n\n{'Ian': 7, 'Joseph': 17, 'Hunter': 7, 'Javier': 8, 'Emily': 11, 'Michael': 30,\n 'Daniel': 16, 'Cole': 5, 'Kolbe': 4, 'Wang': 4, 'Kim': 5, 'Justin': 4, \n 'Paul': 5, 'Zach': 6, 'Renee': 4, 'Tucker': 5, 'Jacob': 22, 'Alan': 8, \n 'William': 23, 'Gabriel': 5, 'Singh': 9, 'Elliott': 5, 'Kumar': 5, \n 'Richard': 8, 'Max': 5, 'Reddy': 6, 'Claire': 4, 'Jake': 9, 'Robert': 12, \n 'Rose': 12, 'James': 31, 'Austin': 6, 'Aidan': 12, 'Joshua': 7, 'Chase': 9, \n 'Noah': 13, 'Isaac': 10, 'Scott': 7, 'Antonio': 6, 'Steven': 5, 'Emma': 9, \n 'Olivia': 4, 'Anthony': 12, 'Adriana': 4, 'Anna': 5, 'Lee': 13, 'Howard': 5, \n 'Shane': 4, 'Alexander': 17, 'Alex': 14, 'Megan': 5, 'Jesus': 5, 'Dev': 4, \n 'Eduardo': 8, 'Stephen': 5, 'David': 23, 'Ali': 6, 'Tran': 4, 'Jeremy': 5, \n 'Samuel': 7, 'Christopher': 7, 'Noel': 5, 'Ethan': 18, 'Lawrence': 4, \n 'Andrew': 26, 'Grace': 8, 'John': 17, 'Nate': 5, 'Taylor': 5, 'Jose': 11, \n 'Colin': 4, 'Thomas': 17, 'Sai': 4, 'Logan': 5, 'Tanner': 4, 'Aiden': 4, \n 'Lauren': 5, 'Connor': 7, 'Alejandro': 7, 'Nicole': 5, 'Ahmed': 5, 'Elise': 4, \n 'Jessica': 4, 'Rene': 6, 'Garcia': 7, 'Abel': 4, 'Hernandez': 4, 'Martinez': 9, \n 'Luke': 9, 'Andre': 7, 'Andres': 4, 'Gavin': 5, 'Mark': 10, 'Cameron': 4, \n 'Josh': 9, 'Victor': 4, 'Marie': 17, 'George': 4, 'Lucas': 7, 'Yan': 4, \n 'Dylan': 11, 'Will': 6, 'Brian': 5, 'Julian': 5, 'Drew': 4, 'Jordan': 11, \n 'Luis': 11, 'Ashley': 4, 'Diego': 11, 'Tyler': 11, 'Henry': 5, 'Elizabeth': 14, \n 'Sofia': 4, 'Matthew': 15, 'Williams': 7, 'Riley': 5, 'Lynn': 7, 'Ryan': 16, \n 'Al': 7, 'Allen': 5, 'Mason': 7, 'Carlos': 6, 'Sebastian': 4, 'Smith': 6, \n 'Charles': 8, 'Patrick': 8, 'Adrian': 9, 'Nathan': 11, 'Brandon': 8, 'Nick': 5, \n 'Derek': 5, 'Abdullah': 5, 'Zachary': 5, 'Edward': 5, 'Jean': 5, 'Sam': 9, \n 'Angel': 5, 'Chris': 6, 'Michelle': 6, 'Wayne': 4, 'Mohammed': 6, 'Trevor': 4, \n 'Jason': 9, 'Alec': 4, 'Li': 8, 'Martin': 4, 'Tiffany': 5, 'Peter': 6, \n 'Jack': 9, 'Maurice': 4, 'Elijah': 6, 'Ben': 9, 'Sean': 5, 'Anne': 4, \n 'Nguyen': 4, 'Eric': 5, 'Adam': 4, 'Xavier': 4, 'Chen': 4, 'Adnan': 4, \n 'Ava': 5, 'Caleb': 5, 'Sophia': 5, 'Hayden': 4, 'Paige': 6, 'Victoria': 4, \n 'Angelina': 4, 'Jasmine': 4, 'White': 4, 'Isaiah': 6, 'Soto': 5, 'Vivian': 4, \n 'Evan': 6, 'Jackson': 4}\n\n\nmy_list = read_file(\"names_and_numbers.txt\")\nmy_counts = count_names(my_list)\nprint( len(my_counts) )\n\n174\n\n\nmy_list = read_file(\"names_and_numbers.txt\")\nmy_counts = count_names(my_list)\nprint( find_name(my_counts, \"Adriana\") )\n\nThe name Adriana occurs 4 times.\n\n\nmy_list = read_file(\"names_and_numbers.txt\")\nmy_counts = count_names(my_list)\nprint( find_name(my_counts, \"Maria\") )\n\nMaria not found.\n\n\nmy_list = read_file(\"names_and_numbers.txt\")\nmy_counts = count_names(my_list)\nprint( get_most_common_name(my_counts) )\n\nThe name James occurs 31 times.\n\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\nAssume that for both short project 07 and programming project 07 you won’t have strings that mix digits (for example 0 and 9) and letters (for example a and x)\nHow do we know the following strings are names vs. numbers (integers or floats)?\n\n\"Petra\"\n\"10.5\"\n\"5\"\n\n\n\n\nRemember that you can retrieve the first character of a string using [0]\n\nname = \"Petra\"\nname[0].isnumeric()\n\nFalse\n\n\n\nnumber = \"0.10\"\nnumber[0].isnumeric()\n\nTrue\n\n\n\nnumber = \"10\"\nnumber[0].isnumeric()\n\nTrue",
     "crumbs": [
       "Short Projects",
       "Short Project 8"
@@ -7847,7 +7847,7 @@
     "href": "short-projects.html",
     "title": "Short Projects Dates",
     "section": "",
-    "text": "Short programming projects are due on the same day as programming problems. While the instructions for programming problems are on the website, instructions for short projects will be available only during our weekly 50-minute in-person lab sessions.\nThe 2 lowest grade for short programming projects will be dropped at the end of the semester. There will be one lab session for you to work on a maximum of one short programming project submission you have missed.\nTo schedule your lab session go to the weekly lab session spreadsheet.\n\nLab Schedule\nThis is for information only.\n\nLab 01: Sep 03 to Sep 09 (slides)\nLab 02: Sep 10 to Sep 16 (slides)\nLab 03: Sep 17 to Sep 23 (slides)\nLab 04: Sep 24 to Sep 30 (slides)\nLab 05: Oct 01 to Oct 07 (slides)\nLab 06: Oct 08 to Oct 14 (slides)\nLab 07: oct 15 to Oct 21 (slides)\nCATCH UP WEEK: Oct 22 to Oct 28\nLab 08: Oct 29 to Nov 04 (slides)\nLab 09: Nov 05 to Nov 11\nLab 10: Nov 12 to Nov 18\nLab 11: Nov 19 to Nov 25\nLab 12: Dec 01 to Dec 04 (slides)",
+    "text": "Short programming projects are due on the same day as programming problems. While the instructions for programming problems are on the website, instructions for short projects will be available only during our weekly 50-minute in-person lab sessions.\nThe 2 lowest grade for short programming projects will be dropped at the end of the semester. There will be one lab session for you to work on a maximum of one short programming project submission you have missed.\nTo schedule your lab session go to the weekly lab session spreadsheet.\n\nLab Schedule\nThis is for information only.\n\nLab 01: Sep 03 to Sep 09\nLab 02: Sep 10 to Sep 16\nLab 03: Sep 17 to Sep 23\nLab 04: Sep 24 to Sep 30\nLab 05: Oct 01 to Oct 07\nLab 06: Oct 08 to Oct 14\nLab 07: oct 15 to Oct 21\nCATCH UP WEEK: Oct 22 to Oct 28\nLab 08: Oct 29 to Nov 04\nLab 09: Nov 05 to Nov 11\nLab 10: Nov 12 to Nov 18\nLab 11: Nov 19 to Nov 25\nLab 12: Dec 01 to Dec 04",
     "crumbs": [
       "Short Projects",
       "Short Projects Dates"
@@ -9104,6 +9104,369 @@
     "crumbs": [
       "Module 1 - Basics",
       "Module 1 Assignments"
+    ]
+  },
+  {
+    "objectID": "lab01.html#what-are-strings",
+    "href": "lab01.html#what-are-strings",
+    "title": "Short Project 1",
+    "section": "",
+    "text": "Any sequence of characters enveloped in quotes (single, double, triple). Your opening quotes need to match your closing quotes.\nString literals:\n\n\"this is a string\"\n'this is also a string'\n\nUse variable names:\n\nmy_name = \"Julia Smith\"",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 1"
+    ]
+  },
+  {
+    "objectID": "lab01.html#print-function",
+    "href": "lab01.html#print-function",
+    "title": "Short Project 1",
+    "section": "",
+    "text": "Print string literals:\n\nprint(\"Hi there\")\n\nHi there\n\n\nPrint variables:\n\nmessage = \"Hi there\"\nprint(message)\n\nHi there",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 1"
+    ]
+  },
+  {
+    "objectID": "lab01.html#concatenate-strings",
+    "href": "lab01.html#concatenate-strings",
+    "title": "Short Project 1",
+    "section": "",
+    "text": "Use the + operator to “glue” strings together:\n\nmessage = \"Hi there\"\npunctuation = \"!\"\nprint(message + punctuation)\n\nHi there!\n\n\nYou can also use += to change to retrieve the string assigned to a variable, “glue” another string to it, and assign it back to the same variable name:\n\nfull_message = \"\" # start with an empty string\nfull_message += \"Hi there\"\nfull_message += \"!\"\nprint(full_message)\n\nHi there!",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 1"
+    ]
+  },
+  {
+    "objectID": "lab01.html#writing-your-own-function",
+    "href": "lab01.html#writing-your-own-function",
+    "title": "Short Project 1",
+    "section": "",
+    "text": "Use the keyword def to define a function use () after your function name to list all the parameters.\n\ndef repeat_message(message, n):\n  full_message = message * n\n  return full_message\n\nmessage = repeat_message(\"Hi there\", 5)\nprint(message)\n\nHi thereHi thereHi thereHi thereHi there\n\n\n\nWhat if I wanted to have a space between each string?\nWhat if I wanted to have a line break between each string?",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 1"
+    ]
+  },
+  {
+    "objectID": "project-2.html#if-statements",
+    "href": "project-2.html#if-statements",
+    "title": "Programming Project 2",
+    "section": "If statements",
+    "text": "If statements\nWe can use logical expressions in if and elif statements to return different things from a function:\n\ndef is_positive(number):\n  if number &gt; 0:\n    return \"Number is positive\"\n  elif number &lt; 0:\n    return \"Number is negative\"\n  elif number == 0:\n    return \"Number is zero\"\n\ndef main():\n  print( is_positive(10) )\n  print( is_positive(0) )\n  print( is_positive(-10) )\n  \nmain()\n\nNumber is positive\nNumber is zero\nNumber is negative",
+    "crumbs": [
+      "Programming Projects",
+      "Programming Project 2"
+    ]
+  },
+  {
+    "objectID": "lab02.html#writing-a-function",
+    "href": "lab02.html#writing-a-function",
+    "title": "Short Project 2",
+    "section": "",
+    "text": "Start with def followed by the name of the function\nAdd parameters inside the parentheses in the function definition\nPrint a string within the function without return\n\n\ndef print_greeting(name):\n  print(\"Hello \" + name + \"!\")\n\ndef main():\n  print_greeting(\"Mickey\")\n  print_greeting(\"Minnie\")\n\nmain()\n\nHello Mickey!\nHello Minnie!",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 2"
+    ]
+  },
+  {
+    "objectID": "lab02.html#using-round",
+    "href": "lab02.html#using-round",
+    "title": "Short Project 2",
+    "section": "",
+    "text": "Use the round() function to get a floating-point number rounded to the specified number of decimals.\nSyntax:\n\nround(number, ndigits*)\n\nThe number of digits (ndigits) is optional, but we will often round number to two decimals:\n\nround(392.68750000000006)\n\n393\n\n\n\nround(392.68750000000006, 2)\n\n392.69",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 2"
+    ]
+  },
+  {
+    "objectID": "lab02.html#using-format",
+    "href": "lab02.html#using-format",
+    "title": "Short Project 2",
+    "section": "",
+    "text": "age = 20\nname = 'Philip'\n\nHere’s how we can do concatenation using the + operator:\n\nname + ' is ' + str(age) + ' years old'\n\n'Philip is 20 years old'\n\n\nWe can do the same with the .format() method, using {} as place holders for our variables:\n\n'{} is {} years old'.format(name, age)\n\n'Philip is 20 years old'",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 2"
+    ]
+  },
+  {
+    "objectID": "lab02.html#if-statements",
+    "href": "lab02.html#if-statements",
+    "title": "Short Project 2",
+    "section": "",
+    "text": "We can use logical expressions in if and elif statements to return different things from a function:\n\ndef is_positive(number):\n  if number &gt; 0:\n    return \"Number is positive\"\n  elif number &lt; 0:\n    return \"Number is negative\"\n  elif number == 0:\n    return \"Number is zero\"\n\ndef main():\n  print( is_positive(10) )\n  print( is_positive(0) )\n  print( is_positive(-10) )\n  \nmain()\n\nNumber is positive\nNumber is zero\nNumber is negative",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 2"
+    ]
+  },
+  {
+    "objectID": "lab03.html#writing-a-function",
+    "href": "lab03.html#writing-a-function",
+    "title": "Short Project 3",
+    "section": "",
+    "text": "Start with def followed by the name of the function\nAdd parameters inside the parentheses in the function definition\nReturn a value\n\n\ndef double(n):\n  result = n * 2\n  return result\n\ndef main():\n  print( double(5) )\n\nmain()\n\n10",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 3"
+    ]
+  },
+  {
+    "objectID": "lab03.html#using-round",
+    "href": "lab03.html#using-round",
+    "title": "Short Project 3",
+    "section": "",
+    "text": "Use the round() function to get a floating-point number rounded to the specified number of decimals.\nSyntax:\n\nround(number, ndigits*)\n\nThe number of digits (ndigits) is optional, but we will often round number to two decimals:\n\nround(392.68750000000006)\n\n393\n\n\n\nround(392.68750000000006, 2)\n\n392.69",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 3"
+    ]
+  },
+  {
+    "objectID": "lab03.html#using-format",
+    "href": "lab03.html#using-format",
+    "title": "Short Project 3",
+    "section": "",
+    "text": "We can do concatenation in two different ways: a) one using the + operator and b) the other using .format() method, using {} as place holders for our variables:\n\nage = 20\nname = 'Philip'\n\nprint(name + ' is ' + str(age) + ' years old')\nprint('{} is {} years old'.format(name, age))\n\nPhilip is 20 years old\nPhilip is 20 years old",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 3"
+    ]
+  },
+  {
+    "objectID": "lab03.html#if-statements",
+    "href": "lab03.html#if-statements",
+    "title": "Short Project 3",
+    "section": "",
+    "text": "We can use logical expressions in if statements to return different things from a function:\n\ndef is_positive(number):\n  if number &gt; 0:\n    return \"Number is positive\"\n  if number &lt; 0:\n    return \"Number is negative\"\n  return \"Number is zero\"\n\ndef main():\n  print( is_positive(10) )\n  print( is_positive(0) )\n  print( is_positive(-10) )\n  \nmain()\n\nNumber is positive\nNumber is zero\nNumber is negative",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 3"
+    ]
+  },
+  {
+    "objectID": "lab04.html#logical-expressions",
+    "href": "lab04.html#logical-expressions",
+    "title": "Short Project 4",
+    "section": "",
+    "text": "An expression that evaluated to a Boolean value (True or False)\n\nage = 21\nage &gt;= 21\n\nTrue\n\n\n\nage &gt; 21\n\nFalse\n\n\n\nage &gt; 35\n\nFalse",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 4"
+    ]
+  },
+  {
+    "objectID": "lab04.html#if-statements",
+    "href": "lab04.html#if-statements",
+    "title": "Short Project 4",
+    "section": "",
+    "text": "We can use logical expressions in if-else statements:\n\nif age &gt; 15:\n  allowed_to_drive = True\nelse:\n  allowed_to_drive = False\n  \nprint(allowed_to_drive)\n\nTrue\n\n\nWhen the expression age &gt; 15 is evaluated to True lines 2 and 6 run, if it is evaluated to False line to is skipped over and lines 4 and 6 run.",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 4"
+    ]
+  },
+  {
+    "objectID": "lab04.html#if-statements-1",
+    "href": "lab04.html#if-statements-1",
+    "title": "Short Project 4",
+    "section": "",
+    "text": "Add elif statement if you need to check another condition:\n\nif age &gt;= 21:\n  allowed_to_drink = True\n  allowed_to_drive = True\nelif age &gt; 15:\n  allowed_to_drink = False\n  allowed_to_drive = True\nelse:\n  allowed_to_drink = False\n  allowed_to_drive = False\n  \nprint(allowed_to_drink, allowed_to_drive)\n\nWhen the expression age &gt;= 21 is evaluated to True lines 2, 3 and 11 run, if it is evaluated to False lines 2-3 are skipped over and then age &gt; 15 is evaluated. If age &gt; 15 is evaluated to True lines 5, 6 and 11 run, if it is evaluated to False lines 5-6 are skipped over and lines 8, 9, and 11 run.",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 4"
+    ]
+  },
+  {
+    "objectID": "lab05.html#how-to-write-a-while-loop",
+    "href": "lab05.html#how-to-write-a-while-loop",
+    "title": "Short Project 5",
+    "section": "",
+    "text": "You need to determine two things:\n\nWhat’s your condition to stop the iteration\nWhat variables do you need to update the condition in each iteration (so you don’t fall into an infinite loop)",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 5"
+    ]
+  },
+  {
+    "objectID": "lab05.html#example",
+    "href": "lab05.html#example",
+    "title": "Short Project 5",
+    "section": "",
+    "text": "Write a while loop to count how many years until you can run for president (simplistic example, for illustration purposes only):\n\ndef count_years(current_age, age_goal):\n  years = 0\n  age = current_age\n  while age &lt; age_goal:\n    years += 1\n    age += 1\n  return years\n\ndef main():\n  print( count_years(20, 35))\n  \nmain()\n\n15",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 5"
+    ]
+  },
+  {
+    "objectID": "lab05.html#format-method",
+    "href": "lab05.html#format-method",
+    "title": "Short Project 5",
+    "section": "",
+    "text": "Let’s update our function so it returns a string message instead of an integer:\n\ndef count_years(current_age, age_goal):\n  years = 0\n  age = current_age\n  while age &lt; age_goal:\n    years += 1\n    age += 1\n  message = \"It will take {} years\".format(years)\n  message += \" for you to be able to run for president.\"\n  return message\n\ndef main():\n  print( count_years(20, 35))\n  \nmain()\n\nIt will take 15 years for you to be able to run for president.",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 5"
+    ]
+  },
+  {
+    "objectID": "lab05.html#formatting-numbers",
+    "href": "lab05.html#formatting-numbers",
+    "title": "Short Project 5",
+    "section": "",
+    "text": "Use : to specify formatting options,\n\namount = 10000000\nprint(\"I have ${:,} in my pocket.\".format(amount))\n\nI have $10,000,000 in my pocket.",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 5"
+    ]
+  },
+  {
+    "objectID": "lab06.html#lists",
+    "href": "lab06.html#lists",
+    "title": "Short Project 6",
+    "section": "",
+    "text": "You can access an item in a list using an index:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nWhat’s the index for value 2 and 1?\nYou can replace an item in a list using an index:\n\nmy_list = [0, 0, 2, 0, 0, 1]\nmy_list[1] = 5\nmy_list\n\n[0, 5, 2, 0, 0, 1]",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 6"
+    ]
+  },
+  {
+    "objectID": "lab06.html#lists-1",
+    "href": "lab06.html#lists-1",
+    "title": "Short Project 6",
+    "section": "",
+    "text": "Here is the list:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nHow do we move value 1 to where value 2 is, replacing 1 with zero so the list looks like this:\n\nmy_list = [0, 0, 1, 0, 0, 0]",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 6"
+    ]
+  },
+  {
+    "objectID": "lab06.html#swapping-list-values",
+    "href": "lab06.html#swapping-list-values",
+    "title": "Short Project 6",
+    "section": "",
+    "text": "We want to go from this:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nTo this:\n\nmy_list = [0, 0, 1, 0, 0, 0]\n\nWe do this:\n\nindex_a = 2\nindex_b = 5\nmy_list[index_a] = my_list[index_b]\nmy_list[index_b] = 0",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 6"
+    ]
+  },
+  {
+    "objectID": "lab07.html#list-of-lists-2d-list",
+    "href": "lab07.html#list-of-lists-2d-list",
+    "title": "Short Project 7",
+    "section": "",
+    "text": "In a 2D list, each item is a list.\n\ngroceries = [ [\"apples\",  \"bananas\"],\n            [\"milk\", \"eggs\"]]\n\nHow do we retrieve a sublist:\n\ngroceries[0]\n\n['apples', 'bananas']\n\n\nHow to retrieve an item in a sublist:\n\ngroceries[0][1]\n\n'bananas'",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 7"
+    ]
+  },
+  {
+    "objectID": "lab07.html#how-to-append-sublists-to-a-list---sol-1",
+    "href": "lab07.html#how-to-append-sublists-to-a-list---sol-1",
+    "title": "Short Project 7",
+    "section": "",
+    "text": "We will create 3 sublists of 5 items each, for that we need nested loops:\n\n# start with an empty list\ntwo_d_list = []\nrepeat = 3\nwhile repeat &gt; 0:\n  # each sublist starts as a new list\n  sublist = []\n  index = 0\n  while index &lt; 5: # 5 items per list\n    sublist.append(index)\n    index += 1\n  # after the inner while loop, append the sublist to the main list\n  two_d_list.append(sublist)\n  repeat -= 1\n  \nprint(two_d_list)\n\n[[0, 1, 2, 3, 4], [0, 1, 2, 3, 4], [0, 1, 2, 3, 4]]",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 7"
+    ]
+  },
+  {
+    "objectID": "lab07.html#how-to-append-sublists-to-a-list---sol-2",
+    "href": "lab07.html#how-to-append-sublists-to-a-list---sol-2",
+    "title": "Short Project 7",
+    "section": "",
+    "text": "two_d_list = []\nrepeat = 0\nwhile repeat &lt; 3:\n    sublist = []\n    index = 0\n    while index &lt; 5:\n        sublist.append(index)\n        index += 1\n    two_d_list.append(sublist)\n    repeat += 1\n\nprint(two_d_list)\n\n[[0, 1, 2, 3, 4], [0, 1, 2, 3, 4], [0, 1, 2, 3, 4]]",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 7"
+    ]
+  },
+  {
+    "objectID": "lab07.html#random-module",
+    "href": "lab07.html#random-module",
+    "title": "Short Project 7",
+    "section": "",
+    "text": "We start by importing random.\n\nimport random\n\nThen we set a seed for replicable results and let’s generate a random integer:\n\nrandom.seed(123)\nresult = random.randint(1, 4)\nprint(result)\n\n1",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 7"
+    ]
+  },
+  {
+    "objectID": "lab08.html#how-do-we-know-a-string-is-a-number",
+    "href": "lab08.html#how-do-we-know-a-string-is-a-number",
+    "title": "Short Project 8",
+    "section": "",
+    "text": "Assume that for both short project 07 and programming project 07 you won’t have strings that mix digits (for example 0 and 9) and letters (for example a and x)\nHow do we know the following strings are names vs. numbers (integers or floats)?\n\n\"Petra\"\n\"10.5\"\n\"5\"",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 8"
+    ]
+  },
+  {
+    "objectID": "lab08.html#check-first-character-of-a-string",
+    "href": "lab08.html#check-first-character-of-a-string",
+    "title": "Short Project 8",
+    "section": "",
+    "text": "Remember that you can retrieve the first character of a string using [0]\n\nname = \"Petra\"\nname[0].isnumeric()\n\nFalse\n\n\n\nnumber = \"0.10\"\nnumber[0].isnumeric()\n\nTrue\n\n\n\nnumber = \"10\"\nnumber[0].isnumeric()\n\nTrue",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 8"
+    ]
+  },
+  {
+    "objectID": "lab12.html#find",
+    "href": "lab12.html#find",
+    "title": "Short Project 12",
+    "section": "",
+    "text": "The string method .find() returns an integer with the first position of the argument in the string.\n\nfull_string = \"August\"\nsub_string = \"gust\"\nposition = full_string.find(sub_string)\nprint(position)\n\n2\n\n\n\nfull_string = \"August\"\nsub_string = \"u\"\nposition = full_string.find(sub_string)\nprint(position)\n\n1\n\n\nThe string method .find() returns -1 when the sub-string is not found in the string.\n\nfull_string = \"August\"\nsub_string = \"wind\"\nposition = full_string.find(sub_string)\nprint(position)\n\n-1",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 12"
+    ]
+  },
+  {
+    "objectID": "lab12.html#find-1",
+    "href": "lab12.html#find-1",
+    "title": "Short Project 12",
+    "section": "",
+    "text": "The string method .find() returns -1 when the sub-string is not found in the string.\n\nfull_string = \"August\"\nsub_string = \"wind\"\nposition = full_string.find(sub_string)\nprint(position)\n\n-1",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 12"
+    ]
+  },
+  {
+    "objectID": "lab12.html#string-methods",
+    "href": "lab12.html#string-methods",
+    "title": "Short Project 12",
+    "section": "",
+    "text": "We covered a number of string methods in this course, including:\n\n.upper() – makes all characters in the string uppercase\n.lower() – makes all characters in the string lower",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 12"
+    ]
+  },
+  {
+    "objectID": "lab12.html#helper-function",
+    "href": "lab12.html#helper-function",
+    "title": "Short Project 12",
+    "section": "",
+    "text": "For the short project, it would be helpful to write a function that given a list of characters, it returns one string with all characters concatenated together in one string.\nThis should be easy to write with a for loop and concatenation – do not use .join()",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 12"
     ]
   }
 ]

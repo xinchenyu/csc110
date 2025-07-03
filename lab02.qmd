@@ -56,7 +56,7 @@ main()
 
 ## Development strategy
 
-Each paragraph mentions one spider. This lyrics includes three types of spiders: `"itsy bitsy"`, `"big hairy"`, and `"teeny tiny"`, but we can add more types. You can define your own functions and call your functions within `verse` function. Note the `verse` function can only take one of the three arguments (e.g., `"big hairy"`).
+Each paragraph mentions one spider. This lyrics includes three types of spiders: `"itsy bitsy"`, `"big hairy"`, and `"teeny tiny"`. You can define your own functions and call your functions within `verse` function. Note the `verse` function can only take one of the three arguments (e.g., `"big hairy"`).
 
 ```{python}
 #| eval: false
@@ -72,3 +72,55 @@ if __name__ == '__main__':
     verse("teeny tiny")
 ```
 
+::: {.callout-tip title="Before You Begin"}
+
+This section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.
+
+## Writing a function
+
+* Start with `def` followed by the name of the function
+* Add parameters inside the parentheses in the function definition
+* Print a string within the function without return
+
+```{python}
+#| echo: true
+def print_greeting(name):
+  print("Hello " + name + "!")
+
+def main():
+  print_greeting("Mickey")
+  print_greeting("Minnie")
+
+main()
+```
+
+
+## Using `format()`
+
+
+```{python}
+#| echo: true
+#| eval: true
+age = 20
+name = 'Philip'
+```
+
+Here's how we can do concatenation using the  `+` operator:
+
+```{python}
+#| echo: true
+#| eval: true
+name + ' is ' + str(age) + ' years old'
+```
+
+We can do the same with the `.format()` method, using `{}` as place holders for our variables:
+
+```{python}
+#| echo: true
+#| eval: true
+'{} is {} years old'.format(name, age)
+```
+
+
+
+::: 

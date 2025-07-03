@@ -5711,7 +5711,7 @@ vertical-align: -.125em;
 <blockquote class="blockquote">
 <p>Imagine you have X amount of dollars in an investment account that earns 5% interest per year. How long (in years) does it take for the account balance to be times Y the original investment?</p>
 </blockquote>
-<div id="50bb6d76" class="cell" data-execution_count="1">
+<div id="612ef71e" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># X amount of dollars is $10,000</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>initial_amount <span class="op">=</span> <span class="dv">10000</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -5732,7 +5732,7 @@ vertical-align: -.125em;
 </section>
 <section id="test-cases" class="level2">
 <h2 class="anchored" data-anchor-id="test-cases">Test cases</h2>
-<div id="9fe90065" class="cell" data-execution_count="2">
+<div id="9c179124" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># X amount of dollars is $10,000</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  initial_amount <span class="op">=</span> <span class="dv">10000</span></span>
@@ -5748,6 +5748,82 @@ vertical-align: -.125em;
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The investment of $50,000 will be 10 times larger in 48 years.</span></span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Before You Begin">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Before You Begin
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.</p>
+<section id="how-to-write-a-while-loop" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-write-a-while-loop">How to write a <code>while</code> loop</h2>
+<p>You need to determine two things:</p>
+<ol type="1">
+<li>What’s your condition to stop the iteration</li>
+<li>What variables do you need to update the condition in each iteration (so you don’t fall into an infinite loop)</li>
+</ol>
+</section>
+<section id="example" class="level2">
+<h2 class="anchored" data-anchor-id="example">Example</h2>
+<p>Write a while loop to count how many years until you can run for president (simplistic example, for illustration purposes only):</p>
+<div id="6db2f231" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> count_years(current_age, age_goal):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  years <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  age <span class="op">=</span> current_age</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> age <span class="op">&lt;</span> age_goal:</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    years <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    age <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> years</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>( count_years(<span class="dv">20</span>, <span class="dv">35</span>))</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>15</code></pre>
+</div>
+</div>
+</section>
+<section id="format-method" class="level2">
+<h2 class="anchored" data-anchor-id="format-method"><code>.format()</code> method</h2>
+<p>Let’s update our function so it returns a string message instead of an integer:</p>
+<div id="2eecd2fe" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> count_years(current_age, age_goal):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  years <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  age <span class="op">=</span> current_age</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> age <span class="op">&lt;</span> age_goal:</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    years <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    age <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  message <span class="op">=</span> <span class="st">&quot;It will take </span><span class="sc">{}</span><span class="st"> years&quot;</span>.<span class="bu">format</span>(years)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  message <span class="op">+=</span> <span class="st">&quot; for you to be able to run for president.&quot;</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> message</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>( count_years(<span class="dv">20</span>, <span class="dv">35</span>))</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>It will take 15 years for you to be able to run for president.</code></pre>
+</div>
+</div>
+</section>
+<section id="formatting-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="formatting-numbers">Formatting numbers</h2>
+<p>Use <code>:</code> to specify formatting options,</p>
+<div id="5b4f3f96" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>amount <span class="op">=</span> <span class="dv">10000000</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;I have $</span><span class="sc">{:,}</span><span class="st"> in my pocket.&quot;</span>.<span class="bu">format</span>(amount))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>I have $10,000,000 in my pocket.</code></pre>
+</div>
+</div>
+</section>
+</div>
 </div>
 
 

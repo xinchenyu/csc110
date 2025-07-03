@@ -66,3 +66,92 @@ D     ||              <>    |------+
 </pre>
 
 Any integer number 0 or greater should be supported. You don't need to worry about handling negative numbers, fractions, or numbers with decimals.
+
+
+::: {.callout-tip title="Before You Begin"}
+
+This section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.
+
+## What are strings?
+
+Any sequence of characters enveloped in quotes (single, double, triple). Your opening quotes need to match your closing quotes.
+
+String literals:
+
+```{python}
+#| eval: false
+#| echo: true
+"this is a string"
+'this is also a string'
+```
+
+Use variable names:
+
+```{python}
+#| eval: true
+#| echo: true
+my_name = "Julia Smith"
+```
+
+
+## `print()` function
+
+Print string literals:
+
+```{python}
+#| eval: true
+#| echo: true
+print("Hi there")
+```
+
+Print variables:
+
+```{python}
+#| eval: true
+#| echo: true
+message = "Hi there"
+print(message)
+```
+
+## Concatenate strings
+
+Use the `+` operator to "glue" strings together:
+
+```{python}
+#| eval: true
+#| echo: true
+message = "Hi there"
+punctuation = "!"
+print(message + punctuation)
+```
+
+You can also use `+=` to change to retrieve the string assigned to a variable, "glue" another string to it, and assign it back to the same variable name:
+
+```{python}
+#| eval: true
+#| echo: true
+full_message = "" # start with an empty string
+full_message += "Hi there"
+full_message += "!"
+print(full_message)
+```
+
+## Writing your own function
+
+Use the keyword `def` to define a function use `()` after your function name to list all the parameters.
+
+```{python}
+#| eval: true
+#| echo: true
+def repeat_message(message, n):
+  full_message = message * n
+  return full_message
+
+message = repeat_message("Hi there", 5)
+print(message)
+```
+
+* What if I wanted to have a space between each string?
+* What if I wanted to have a line break between each string?
+
+:::

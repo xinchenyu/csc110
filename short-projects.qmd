@@ -12,16 +12,16 @@ To schedule your lab session go to [the weekly lab session spreadsheet]().
 
 This is for information only. 
 
-* [Lab 01](lab01.html): Sep 03 to Sep 09 ([slides](labs/lab01-slide.html))
-* [Lab 02](lab02.html): Sep 10 to Sep 16 ([slides](labs/lab02-slide.html))
-* [Lab 03](lab03.html): Sep 17 to Sep 23 ([slides](labs/lab03-slide.html))
-* [Lab 04](lab04.html): Sep 24 to Sep 30 ([slides](labs/lab04-slide.html))
-* [Lab 05](lab05.html): Oct 01 to Oct 07 ([slides](labs/lab05-slide.html))
-* [Lab 06](lab06.html): Oct 08 to Oct 14 ([slides](labs/lab06-slide.html))
-* [Lab 07](lab07.html): oct 15 to Oct 21 ([slides](labs/lab07-slide.html))
+* [Lab 01](lab01.html): Sep 03 to Sep 09 
+* [Lab 02](lab02.html): Sep 10 to Sep 16 
+* [Lab 03](lab03.html): Sep 17 to Sep 23 
+* [Lab 04](lab04.html): Sep 24 to Sep 30 
+* [Lab 05](lab05.html): Oct 01 to Oct 07 
+* [Lab 06](lab06.html): Oct 08 to Oct 14 
+* [Lab 07](lab07.html): oct 15 to Oct 21 
 * CATCH UP WEEK: Oct 22 to Oct 28
-* [Lab 08](lab08.html): Oct 29 to Nov 04 ([slides](labs/lab08-slide.html))
+* [Lab 08](lab08.html): Oct 29 to Nov 04 
 * [Lab 09](lab09.html): Nov 05 to Nov 11
 * [Lab 10](lab10.html): Nov 12 to Nov 18
 * [Lab 11](lab11.html): Nov 19 to Nov 25
-* [Lab 12](lab12.html): Dec 01 to Dec 04 ([slides](labs/lab12-slide.html))
+* [Lab 12](lab12.html): Dec 01 to Dec 04

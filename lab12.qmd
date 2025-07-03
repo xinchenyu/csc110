@@ -60,3 +60,55 @@ The program should return a dictionary with the starting row and column location
 ## Function names
 
 Gradescope will call the following functions `read_words(filename)`, `read_puzzle(filename)`, and `search(puzzle, words_to_search)`.
+
+::: {.callout-tip title="Before You Begin"}
+
+This section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.
+
+## `.find()`
+
+The string method `.find()` returns an integer with the first position of the argument in the string.
+
+```{python}
+#| eval: true
+#| echo: true
+full_string = "August"
+sub_string = "gust"
+position = full_string.find(sub_string)
+print(position)
+```
+
+```{python}
+#| eval: true
+#| echo: true
+full_string = "August"
+sub_string = "u"
+position = full_string.find(sub_string)
+print(position)
+```
+
+The string method `.find()` returns -1 when the sub-string is not found in the string.
+
+```{python}
+#| eval: true
+#| echo: true
+full_string = "August"
+sub_string = "wind"
+position = full_string.find(sub_string)
+print(position)
+```
+
+## String methods
+
+We covered a number of string methods in this course, including:
+
+* `.upper()` -- makes all characters in the string uppercase
+* `.lower()` -- makes all characters in the string lower
+
+## Helper function
+
+For the short project, it would be helpful to write a function that given a list of characters, it returns one string with all characters concatenated together in one string.
+
+This should be easy to write with a for loop and concatenation -- do not use `.join()`
+
+:::

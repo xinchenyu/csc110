@@ -78,3 +78,72 @@ def main():
   
 main()
 ```
+
+::: {.callout-tip title="Before You Begin"}
+
+This section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.
+
+## Logical Expressions
+
+An expression that evaluated to a Boolean value (`True` or `False`)
+
+```{python}
+#| echo: true
+#| eval: true
+age = 21
+age >= 21
+```
+
+```{python}
+#| echo: true
+#| eval: true
+age > 21
+```
+
+```{python}
+#| echo: true
+#| eval: true
+age > 35
+```
+
+## If statements
+
+We can use logical expressions in `if-else` statements:
+
+```{python}
+#| echo: true
+#| eval: true
+if age > 15:
+  allowed_to_drive = True
+else:
+  allowed_to_drive = False
+  
+print(allowed_to_drive)
+```
+
+When the expression `age > 15` is evaluated to `True` lines `2` and `6` run, if it is evaluated to `False` line to is skipped over and lines `4` and `6` run.
+
+## If statements
+
+Add `elif` statement if you need to check another condition:
+
+```{python}
+#| echo: true
+#| eval: false
+if age >= 21:
+  allowed_to_drink = True
+  allowed_to_drive = True
+elif age > 15:
+  allowed_to_drink = False
+  allowed_to_drive = True
+else:
+  allowed_to_drink = False
+  allowed_to_drive = False
+  
+print(allowed_to_drink, allowed_to_drive)
+```
+
+When the expression `age >= 21` is evaluated to `True` lines `2`, `3` and `11` run, if it is evaluated to `False` lines `2-3` are skipped over and then `age > 15` is evaluated.
+If `age > 15` is evaluated to `True` lines `5`, `6` and `11` run, if it is evaluated to `False` lines `5-6` are skipped over and lines `8`, `9`, and `11` run.
+
+::: 
