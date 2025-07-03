@@ -422,7 +422,7 @@ main()
 
 ## Discussion
 
-Download and run [old guitar file](../guitar_old.py) and [new guitar file](../guitar_new.py):
+Download and run [old guitar file](guitar_old.py) and [new guitar file](guitar_new.py):
 
 -   Which version is more readable?
 

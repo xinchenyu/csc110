@@ -252,7 +252,7 @@ print(name.strip('$').split('-'))
 
 -   It returns a list of lists, where each inner-list is a line containing all the words in that line
 
-Test case ([download text file](../info.txt)):
+Test case ([download text file](info.txt)):
 
 ```{python}
 #| eval: false

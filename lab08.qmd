@@ -7,7 +7,7 @@ format:
 
 # Counting Names
 
-In this lab session, you will be using [starter code](../count_names.py) which contains a function to read a file that contains names and numbers separated by comma (a csv or comma separated file). The function that reads the file and returns a list is already implemented for you. You also need to download [the text file with the data](../names_and_numbers.txt) to run your code (make sure your `.py` file and your `.txt` file are in the same folder, and that you have the folder open on VS code)
+In this lab session, you will be using [starter code](count_names.py) which contains a function to read a file that contains names and numbers separated by comma (a csv or comma separated file). The function that reads the file and returns a list is already implemented for you. You also need to download [the text file with the data](names_and_numbers.txt) to run your code (make sure your `.py` file and your `.txt` file are in the same folder, and that you have the folder open on VS code)
 
 You are to implement three other functions:
 

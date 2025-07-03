@@ -32,6 +32,7 @@ project:
     - random_numbers.csv
     - stocks.csv
     - duck.jpeg
+    - list_key_value.png
 
 reticulate:
   python: "/Users/xinchen/miniforge3/envs/qenv/bin/python"

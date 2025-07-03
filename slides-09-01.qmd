@@ -43,7 +43,7 @@ df-print: kable
 
 -   Keys (indices) are used to acess or modify the elements in the list
 
-![](../list_key_value.png)
+![](list_key_value.png)
 
 ## Mapping and Lists
 

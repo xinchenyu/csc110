@@ -108,10 +108,10 @@ By choosing the seed `125`, you should get the same results if you follow the st
 
 ##  Test cases
 
-* [sample.txt](../sample.txt)
-* [poem.txt](../poem.txt)
-* [few-steps.txt](../few-steps.txt)
-* [many-steps.txt](../many-steps.txt)
+* [sample.txt](sample.txt)
+* [poem.txt](poem.txt)
+* [few-steps.txt](few-steps.txt)
+* [many-steps.txt](many-steps.txt)
 
 
 Call for `encrypter.py`: 
