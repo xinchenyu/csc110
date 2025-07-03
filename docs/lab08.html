@@ -5710,7 +5710,7 @@ vertical-align: -.125em;
 <li><code>get_most_common_name</code> that takes as argument the dictionary of name counts, and returns a string with a message: <code>The name X occurs N times.</code></li>
 </ul>
 <p>Here are some test cases:</p>
-<div id="f3191780" class="cell" data-execution_count="1">
+<div id="c856a0cb" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> read_file(<span class="st">&quot;names_and_numbers.txt&quot;</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>my_counts <span class="op">=</span> count_names(my_list)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( my_counts )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5746,28 +5746,28 @@ vertical-align: -.125em;
  &#39;Angelina&#39;: 4, &#39;Jasmine&#39;: 4, &#39;White&#39;: 4, &#39;Isaiah&#39;: 6, &#39;Soto&#39;: 5, &#39;Vivian&#39;: 4, 
  &#39;Evan&#39;: 6, &#39;Jackson&#39;: 4}
 </pre>
-<div id="3049da50" class="cell" data-execution_count="2">
+<div id="dd55ea8c" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> read_file(<span class="st">&quot;names_and_numbers.txt&quot;</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>my_counts <span class="op">=</span> count_names(my_list)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( <span class="bu">len</span>(my_counts) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <pre>174
 </pre>
-<div id="16ed366d" class="cell" data-execution_count="3">
+<div id="2aa13039" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> read_file(<span class="st">&quot;names_and_numbers.txt&quot;</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>my_counts <span class="op">=</span> count_names(my_list)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( find_name(my_counts, <span class="st">&quot;Adriana&quot;</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <pre>The name Adriana occurs 4 times.
 </pre>
-<div id="61c5ff63" class="cell" data-execution_count="4">
+<div id="6f720737" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> read_file(<span class="st">&quot;names_and_numbers.txt&quot;</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>my_counts <span class="op">=</span> count_names(my_list)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( find_name(my_counts, <span class="st">&quot;Maria&quot;</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <pre>Maria not found.
 </pre>
-<div id="5865d74d" class="cell" data-execution_count="5">
+<div id="595153db" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> read_file(<span class="st">&quot;names_and_numbers.txt&quot;</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>my_counts <span class="op">=</span> count_names(my_list)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( get_most_common_name(my_counts) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5798,21 +5798,21 @@ Before You Begin
 <section id="check-first-character-of-a-string" class="level2">
 <h2 class="anchored" data-anchor-id="check-first-character-of-a-string">Check first character of a string</h2>
 <p>Remember that you can retrieve the first character of a string using <code>[0]</code></p>
-<div id="33ff413a" class="cell" data-execution_count="6">
+<div id="cdc33475" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">&quot;Petra&quot;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>name[<span class="dv">0</span>].isnumeric()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>False</code></pre>
 </div>
 </div>
-<div id="c9316b27" class="cell" data-execution_count="7">
+<div id="f389e520" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="st">&quot;0.10&quot;</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>number[<span class="dv">0</span>].isnumeric()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="ee911716" class="cell" data-execution_count="8">
+<div id="d49b2fd4" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>number <span class="op">=</span> <span class="st">&quot;10&quot;</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>number[<span class="dv">0</span>].isnumeric()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">

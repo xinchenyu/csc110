@@ -1,6 +1,37 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - atwood.txt
+    - alien.txt
+    - angelou.txt
+    - atwood.txt
+    - dickinson.txt
+    - few-steps.txt
+    - fiveByFive.txt
+    - ids_and_city.txt
+    - info.txt
+    - many-steps.txt
+    - names_and_numbers.txt
+    - names.txt
+    - numbers.txt
+    - out_alien.txt
+    - poem.txt
+    - sample.txt
+    - tenSquare.txt
+    - weather.txt
+    - words.txt
+    - count_names.py
+    - cross_stitch.py
+    - guitar_new.py
+    - guitar_old.py
+    - 2d_list.png
+    - ids_and_names.csv
+    - places.csv
+    - populations.csv
+    - random_numbers.csv
+    - stocks.csv
+    - duck.jpeg
 
 reticulate:
   python: "/Users/xinchen/miniforge3/envs/qenv/bin/python"

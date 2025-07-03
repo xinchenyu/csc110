@@ -5721,7 +5721,7 @@ The teeny tiny spider climbed up the waterspout.
 <p>Name the program <code>spider.py</code>. Make sure that gradescope gives you the points for passing the test cases.</p>
 <section id="a-bad-solution" class="level2">
 <h2 class="anchored" data-anchor-id="a-bad-solution">A bad solution</h2>
-<div id="75fc4b7b" class="cell" data-execution_count="1">
+<div id="3932cbfb" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;The itsy bitsy spider climbed up the waterspout.&quot;</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Down came the rain and washed the spider out.&quot;</span>)</span>
@@ -5747,7 +5747,7 @@ The teeny tiny spider climbed up the waterspout.
 <section id="development-strategy" class="level2">
 <h2 class="anchored" data-anchor-id="development-strategy">Development strategy</h2>
 <p>Each paragraph mentions one spider. This lyrics includes three types of spiders: <code>&quot;itsy bitsy&quot;</code>, <code>&quot;big hairy&quot;</code>, and <code>&quot;teeny tiny&quot;</code>. You can define your own functions and call your functions within <code>verse</code> function. Note the <code>verse</code> function can only take one of the three arguments (e.g., <code>&quot;big hairy&quot;</code>).</p>
-<div id="d3c43c69" class="cell" data-execution_count="2">
+<div id="10fc1c6b" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># All your functions are defined here</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> verse(spider_type):</span>
@@ -5776,7 +5776,7 @@ Before You Begin
 <li>Add parameters inside the parentheses in the function definition</li>
 <li>Print a string within the function without return</li>
 </ul>
-<div id="98cf37ba" class="cell" data-execution_count="3">
+<div id="7cbd3bfa" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_greeting(name):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&quot;Hello &quot;</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">&quot;!&quot;</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -5793,19 +5793,19 @@ Hello Minnie!</code></pre>
 </section>
 <section id="using-format" class="level2">
 <h2 class="anchored" data-anchor-id="using-format">Using <code>format()</code></h2>
-<div id="fd892f4c" class="cell" data-execution_count="4">
+<div id="cb5d33c6" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">20</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">&#39;Philip&#39;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Here’s how we can do concatenation using the <code>+</code> operator:</p>
-<div id="ba5704f4" class="cell" data-execution_count="5">
+<div id="f44c9446" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">+</span> <span class="st">&#39; is &#39;</span> <span class="op">+</span> <span class="bu">str</span>(age) <span class="op">+</span> <span class="st">&#39; years old&#39;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>&#39;Philip is 20 years old&#39;</code></pre>
 </div>
 </div>
 <p>We can do the same with the <code>.format()</code> method, using <code>{}</code> as place holders for our variables:</p>
-<div id="a01bddff" class="cell" data-execution_count="6">
+<div id="deb1090c" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">&#39;{} is {} years old&#39;</span>.<span class="bu">format</span>(name, age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>&#39;Philip is 20 years old&#39;</code></pre>
