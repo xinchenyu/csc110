@@ -143,7 +143,7 @@ Examples of breaches of academic integrity:
 ## How to get help?
 
 **Before you ask for help:** try [rubber duck debugging](https://rubberduckdebugging.com/)
-![duck](images/duck.jpeg)
+![duck](../duck.jpeg)
 
 ## How to get help?
 

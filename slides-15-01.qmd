@@ -101,7 +101,7 @@ main()
 1. It takes a string for a file name
 1. It opens the file in read mode, it splits the lines by space
 1. It returns a list with all float numbers in the file
-1. [Download test file](data/weather.txt)
+1. [Download test file](../weather.txt)
 
 ```{python}
 #| echo: true

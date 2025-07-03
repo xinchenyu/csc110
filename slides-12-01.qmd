@@ -52,7 +52,7 @@ lists = [[9,  8,  7,  8],
          [5,  50, 55, 4]]
 ```
 
-![](images/2d_list.png)
+![](../2d_list.png)
 
 ## Evaluate the Expressions
 

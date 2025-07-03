@@ -515,17 +515,6 @@
     "text": "Write a function – solution\n\ndef detect_duplicate(list_a, list_b):\n  # for every index in the second list\n  for index in range(len(list_b)):\n    # check if item at index in second list is in first list\n    if list_b[index] in list_a:\n      return True\n  # for loop ran without returning True\n  return False\n\ndef main():\n  assert detect_duplicate([], []) == False\n  assert detect_duplicate([\"a\", \"b\"], [\"c\", \"d\", \"a\"]) == True\n  assert detect_duplicate([0, 3, 2, 1, 2, 4], [5, 6, 0]) == True\n  \nmain()"
   },
   {
-    "objectID": "slides-10-01.html#announcements",
-    "href": "slides-10-01.html#announcements",
-    "title": "files (slides)",
-    "section": "Announcements",
-    "text": "Announcements\n\nMidterm 2 on March 26, next Wednesday\n\nmodules 1 - 8\nstudy guide 2",
-    "crumbs": [
-      "Module 10 - Reading and Writing Text Files",
-      "files (slides)"
-    ]
-  },
-  {
     "objectID": "slides-10-01.html#key-concepts",
     "href": "slides-10-01.html#key-concepts",
     "title": "files (slides)",
@@ -3341,6 +3330,39 @@
     ]
   },
   {
+    "objectID": "lab12.html#find",
+    "href": "lab12.html#find",
+    "title": "Short Project 12",
+    "section": "",
+    "text": "The string method .find() returns an integer with the first position of the argument in the string.\n\nfull_string = \"August\"\nsub_string = \"gust\"\nposition = full_string.find(sub_string)\nprint(position)\n\n2\n\n\n\nfull_string = \"August\"\nsub_string = \"u\"\nposition = full_string.find(sub_string)\nprint(position)\n\n1\n\n\nThe string method .find() returns -1 when the sub-string is not found in the string.\n\nfull_string = \"August\"\nsub_string = \"wind\"\nposition = full_string.find(sub_string)\nprint(position)\n\n-1",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 12"
+    ]
+  },
+  {
+    "objectID": "lab12.html#string-methods",
+    "href": "lab12.html#string-methods",
+    "title": "Short Project 12",
+    "section": "",
+    "text": "We covered a number of string methods in this course, including:\n\n.upper() – makes all characters in the string uppercase\n.lower() – makes all characters in the string lower",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 12"
+    ]
+  },
+  {
+    "objectID": "lab12.html#helper-function",
+    "href": "lab12.html#helper-function",
+    "title": "Short Project 12",
+    "section": "",
+    "text": "For the short project, it would be helpful to write a function that given a list of characters, it returns one string with all characters concatenated together in one string.\nThis should be easy to write with a for loop and concatenation – do not use .join()",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 12"
+    ]
+  },
+  {
     "objectID": "practice-01.html",
     "href": "practice-01.html",
     "title": "Practice Problems",
@@ -3467,6 +3489,50 @@
     "title": "Short Project 7",
     "section": "",
     "text": "In this short project, you will create a 2D list or random integers using the .append() method and nested loops (meaning, a loop inside a loop).\nName your file create_two_d_list.py.\nRemember to import random and set the seed to 123.\nYour function should take a width and length as arguments. The length represents how many sublists you need in your main list. The width is the length of each individual sublist (they are all the same length). Each element in your sublist will be a random integer between 0 and 100.\n\nmy_two_d_list = create_list(5, 3)\nprint(my_two_d_list)\n\n[[6, 34, 11, 98, 52], [34, 13, 4, 48, 68], [71, 42, 43, 6, 20]]\n\n\nmy_two_d_list = create_list(3, 5)\nprint(my_two_d_list)\n\n[[6, 34, 11], [98, 52, 34], [13, 4, 48], [68, 71, 42], [43, 6, 20]]\n\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\nIn a 2D list, each item is a list.\n\ngroceries = [ [\"apples\",  \"bananas\"],\n            [\"milk\", \"eggs\"]]\n\nHow do we retrieve a sublist:\n\ngroceries[0]\n\n['apples', 'bananas']\n\n\nHow to retrieve an item in a sublist:\n\ngroceries[0][1]\n\n'bananas'\n\n\n\n\n\nWe will create 3 sublists of 5 items each, for that we need nested loops:\n\n# start with an empty list\ntwo_d_list = []\nrepeat = 3\nwhile repeat &gt; 0:\n  # each sublist starts as a new list\n  sublist = []\n  index = 0\n  while index &lt; 5: # 5 items per list\n    sublist.append(index)\n    index += 1\n  # after the inner while loop, append the sublist to the main list\n  two_d_list.append(sublist)\n  repeat -= 1\n  \nprint(two_d_list)\n\n[[0, 1, 2, 3, 4], [0, 1, 2, 3, 4], [0, 1, 2, 3, 4]]\n\n\n\n\n\n\ntwo_d_list = []\nrepeat = 0\nwhile repeat &lt; 3:\n    sublist = []\n    index = 0\n    while index &lt; 5:\n        sublist.append(index)\n        index += 1\n    two_d_list.append(sublist)\n    repeat += 1\n\nprint(two_d_list)\n\n[[0, 1, 2, 3, 4], [0, 1, 2, 3, 4], [0, 1, 2, 3, 4]]\n\n\n\n\n\nWe start by importing random.\n\nimport random\n\nThen we set a seed for replicable results and let’s generate a random integer:\n\nrandom.seed(123)\nresult = random.randint(1, 4)\nprint(result)\n\n1",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 7"
+    ]
+  },
+  {
+    "objectID": "lab07.html#list-of-lists-2d-list",
+    "href": "lab07.html#list-of-lists-2d-list",
+    "title": "Short Project 7",
+    "section": "",
+    "text": "In a 2D list, each item is a list.\n\ngroceries = [ [\"apples\",  \"bananas\"],\n            [\"milk\", \"eggs\"]]\n\nHow do we retrieve a sublist:\n\ngroceries[0]\n\n['apples', 'bananas']\n\n\nHow to retrieve an item in a sublist:\n\ngroceries[0][1]\n\n'bananas'",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 7"
+    ]
+  },
+  {
+    "objectID": "lab07.html#how-to-append-sublists-to-a-list---sol-1",
+    "href": "lab07.html#how-to-append-sublists-to-a-list---sol-1",
+    "title": "Short Project 7",
+    "section": "",
+    "text": "We will create 3 sublists of 5 items each, for that we need nested loops:\n\n# start with an empty list\ntwo_d_list = []\nrepeat = 3\nwhile repeat &gt; 0:\n  # each sublist starts as a new list\n  sublist = []\n  index = 0\n  while index &lt; 5: # 5 items per list\n    sublist.append(index)\n    index += 1\n  # after the inner while loop, append the sublist to the main list\n  two_d_list.append(sublist)\n  repeat -= 1\n  \nprint(two_d_list)\n\n[[0, 1, 2, 3, 4], [0, 1, 2, 3, 4], [0, 1, 2, 3, 4]]",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 7"
+    ]
+  },
+  {
+    "objectID": "lab07.html#how-to-append-sublists-to-a-list---sol-2",
+    "href": "lab07.html#how-to-append-sublists-to-a-list---sol-2",
+    "title": "Short Project 7",
+    "section": "",
+    "text": "two_d_list = []\nrepeat = 0\nwhile repeat &lt; 3:\n    sublist = []\n    index = 0\n    while index &lt; 5:\n        sublist.append(index)\n        index += 1\n    two_d_list.append(sublist)\n    repeat += 1\n\nprint(two_d_list)\n\n[[0, 1, 2, 3, 4], [0, 1, 2, 3, 4], [0, 1, 2, 3, 4]]",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 7"
+    ]
+  },
+  {
+    "objectID": "lab07.html#random-module",
+    "href": "lab07.html#random-module",
+    "title": "Short Project 7",
+    "section": "",
+    "text": "We start by importing random.\n\nimport random\n\nThen we set a seed for replicable results and let’s generate a random integer:\n\nrandom.seed(123)\nresult = random.randint(1, 4)\nprint(result)\n\n1",
     "crumbs": [
       "Short Projects",
       "Short Project 7"
@@ -4111,6 +4177,50 @@
     ]
   },
   {
+    "objectID": "lab03.html#writing-a-function",
+    "href": "lab03.html#writing-a-function",
+    "title": "Short Project 3",
+    "section": "",
+    "text": "Start with def followed by the name of the function\nAdd parameters inside the parentheses in the function definition\nReturn a value\n\n\ndef double(n):\n  result = n * 2\n  return result\n\ndef main():\n  print( double(5) )\n\nmain()\n\n10",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 3"
+    ]
+  },
+  {
+    "objectID": "lab03.html#using-round",
+    "href": "lab03.html#using-round",
+    "title": "Short Project 3",
+    "section": "",
+    "text": "Use the round() function to get a floating-point number rounded to the specified number of decimals.\nSyntax:\n\nround(number, ndigits*)\n\nThe number of digits (ndigits) is optional, but we will often round number to two decimals:\n\nround(392.68750000000006)\n\n393\n\n\n\nround(392.68750000000006, 2)\n\n392.69",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 3"
+    ]
+  },
+  {
+    "objectID": "lab03.html#using-format",
+    "href": "lab03.html#using-format",
+    "title": "Short Project 3",
+    "section": "",
+    "text": "We can do concatenation in two different ways: a) one using the + operator and b) the other using .format() method, using {} as place holders for our variables:\n\nage = 20\nname = 'Philip'\n\nprint(name + ' is ' + str(age) + ' years old')\nprint('{} is {} years old'.format(name, age))\n\nPhilip is 20 years old\nPhilip is 20 years old",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 3"
+    ]
+  },
+  {
+    "objectID": "lab03.html#if-statements",
+    "href": "lab03.html#if-statements",
+    "title": "Short Project 3",
+    "section": "",
+    "text": "We can use logical expressions in if statements to return different things from a function:\n\ndef is_positive(number):\n  if number &gt; 0:\n    return \"Number is positive\"\n  if number &lt; 0:\n    return \"Number is negative\"\n  return \"Number is zero\"\n\ndef main():\n  print( is_positive(10) )\n  print( is_positive(0) )\n  print( is_positive(-10) )\n  \nmain()\n\nNumber is positive\nNumber is zero\nNumber is negative",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 3"
+    ]
+  },
+  {
     "objectID": "input.html",
     "href": "input.html",
     "title": "Input from user",
@@ -4160,6 +4270,28 @@
     "title": "Short Project 2",
     "section": "",
     "text": "Each paragraph mentions one spider. This lyrics includes three types of spiders: \"itsy bitsy\", \"big hairy\", and \"teeny tiny\". You can define your own functions and call your functions within verse function. Note the verse function can only take one of the three arguments (e.g., \"big hairy\").\n\n# All your functions are defined here\n\ndef verse(spider_type):\n    # write your code here\n\nif __name__ == '__main__':\n    verse(\"itsy bitsy\")\n    verse(\"big hairy\")\n    verse(\"teeny tiny\")\n\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\n\nStart with def followed by the name of the function\nAdd parameters inside the parentheses in the function definition\nPrint a string within the function without return\n\n\ndef print_greeting(name):\n  print(\"Hello \" + name + \"!\")\n\ndef main():\n  print_greeting(\"Mickey\")\n  print_greeting(\"Minnie\")\n\nmain()\n\nHello Mickey!\nHello Minnie!\n\n\n\n\n\n\nage = 20\nname = 'Philip'\n\nHere’s how we can do concatenation using the + operator:\n\nname + ' is ' + str(age) + ' years old'\n\n'Philip is 20 years old'\n\n\nWe can do the same with the .format() method, using {} as place holders for our variables:\n\n'{} is {} years old'.format(name, age)\n\n'Philip is 20 years old'",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 2"
+    ]
+  },
+  {
+    "objectID": "lab02.html#writing-a-function",
+    "href": "lab02.html#writing-a-function",
+    "title": "Short Project 2",
+    "section": "",
+    "text": "Start with def followed by the name of the function\nAdd parameters inside the parentheses in the function definition\nPrint a string within the function without return\n\n\ndef print_greeting(name):\n  print(\"Hello \" + name + \"!\")\n\ndef main():\n  print_greeting(\"Mickey\")\n  print_greeting(\"Minnie\")\n\nmain()\n\nHello Mickey!\nHello Minnie!",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 2"
+    ]
+  },
+  {
+    "objectID": "lab02.html#using-format",
+    "href": "lab02.html#using-format",
+    "title": "Short Project 2",
+    "section": "",
+    "text": "age = 20\nname = 'Philip'\n\nHere’s how we can do concatenation using the + operator:\n\nname + ' is ' + str(age) + ' years old'\n\n'Philip is 20 years old'\n\n\nWe can do the same with the .format() method, using {} as place holders for our variables:\n\n'{} is {} years old'.format(name, age)\n\n'Philip is 20 years old'",
     "crumbs": [
       "Short Projects",
       "Short Project 2"
@@ -4529,6 +4661,50 @@
     ]
   },
   {
+    "objectID": "lab01.html#what-are-strings",
+    "href": "lab01.html#what-are-strings",
+    "title": "Short Project 1",
+    "section": "",
+    "text": "Any sequence of characters enveloped in quotes (single, double, triple). Your opening quotes need to match your closing quotes.\nString literals:\n\n\"this is a string\"\n'this is also a string'\n\nUse variable names:\n\nmy_name = \"Julia Smith\"",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 1"
+    ]
+  },
+  {
+    "objectID": "lab01.html#print-function",
+    "href": "lab01.html#print-function",
+    "title": "Short Project 1",
+    "section": "",
+    "text": "Print string literals:\n\nprint(\"Hi there\")\n\nHi there\n\n\nPrint variables:\n\nmessage = \"Hi there\"\nprint(message)\n\nHi there",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 1"
+    ]
+  },
+  {
+    "objectID": "lab01.html#concatenate-strings",
+    "href": "lab01.html#concatenate-strings",
+    "title": "Short Project 1",
+    "section": "",
+    "text": "Use the + operator to “glue” strings together:\n\nmessage = \"Hi there\"\npunctuation = \"!\"\nprint(message + punctuation)\n\nHi there!\n\n\nYou can also use += to change to retrieve the string assigned to a variable, “glue” another string to it, and assign it back to the same variable name:\n\nfull_message = \"\" # start with an empty string\nfull_message += \"Hi there\"\nfull_message += \"!\"\nprint(full_message)\n\nHi there!",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 1"
+    ]
+  },
+  {
+    "objectID": "lab01.html#writing-your-own-function",
+    "href": "lab01.html#writing-your-own-function",
+    "title": "Short Project 1",
+    "section": "",
+    "text": "Use the keyword def to define a function use () after your function name to list all the parameters.\n\ndef repeat_message(message, n):\n  full_message = message * n\n  return full_message\n\nmessage = repeat_message(\"Hi there\", 5)\nprint(message)\n\nHi thereHi thereHi thereHi thereHi there\n\n\n\nWhat if I wanted to have a space between each string?\nWhat if I wanted to have a line break between each string?",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 1"
+    ]
+  },
+  {
     "objectID": "slides-05-02.html#expression-vs-statement",
     "href": "slides-05-02.html#expression-vs-statement",
     "title": "if statements (slides)",
@@ -4727,6 +4903,39 @@
     ]
   },
   {
+    "objectID": "lab04.html#logical-expressions",
+    "href": "lab04.html#logical-expressions",
+    "title": "Short Project 4",
+    "section": "",
+    "text": "An expression that evaluated to a Boolean value (True or False)\n\nage = 21\nage &gt;= 21\n\nTrue\n\n\n\nage &gt; 21\n\nFalse\n\n\n\nage &gt; 35\n\nFalse",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 4"
+    ]
+  },
+  {
+    "objectID": "lab04.html#if-statements",
+    "href": "lab04.html#if-statements",
+    "title": "Short Project 4",
+    "section": "",
+    "text": "We can use logical expressions in if-else statements:\n\nif age &gt; 15:\n  allowed_to_drive = True\nelse:\n  allowed_to_drive = False\n  \nprint(allowed_to_drive)\n\nTrue\n\n\nWhen the expression age &gt; 15 is evaluated to True lines 2 and 6 run, if it is evaluated to False line to is skipped over and lines 4 and 6 run.",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 4"
+    ]
+  },
+  {
+    "objectID": "lab04.html#if-statements-1",
+    "href": "lab04.html#if-statements-1",
+    "title": "Short Project 4",
+    "section": "",
+    "text": "Add elif statement if you need to check another condition:\n\nif age &gt;= 21:\n  allowed_to_drink = True\n  allowed_to_drive = True\nelif age &gt; 15:\n  allowed_to_drink = False\n  allowed_to_drive = True\nelse:\n  allowed_to_drink = False\n  allowed_to_drive = False\n  \nprint(allowed_to_drink, allowed_to_drive)\n\nWhen the expression age &gt;= 21 is evaluated to True lines 2, 3 and 11 run, if it is evaluated to False lines 2-3 are skipped over and then age &gt; 15 is evaluated. If age &gt; 15 is evaluated to True lines 5, 6 and 11 run, if it is evaluated to False lines 5-6 are skipped over and lines 8, 9, and 11 run.",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 4"
+    ]
+  },
+  {
     "objectID": "mutability.html",
     "href": "mutability.html",
     "title": "Mutability",
@@ -4793,11 +5002,55 @@
     ]
   },
   {
+    "objectID": "lab05.html#how-to-write-a-while-loop",
+    "href": "lab05.html#how-to-write-a-while-loop",
+    "title": "Short Project 5",
+    "section": "",
+    "text": "You need to determine two things:\n\nWhat’s your condition to stop the iteration\nWhat variables do you need to update the condition in each iteration (so you don’t fall into an infinite loop)",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 5"
+    ]
+  },
+  {
+    "objectID": "lab05.html#example",
+    "href": "lab05.html#example",
+    "title": "Short Project 5",
+    "section": "",
+    "text": "Write a while loop to count how many years until you can run for president (simplistic example, for illustration purposes only):\n\ndef count_years(current_age, age_goal):\n  years = 0\n  age = current_age\n  while age &lt; age_goal:\n    years += 1\n    age += 1\n  return years\n\ndef main():\n  print( count_years(20, 35))\n  \nmain()\n\n15",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 5"
+    ]
+  },
+  {
+    "objectID": "lab05.html#format-method",
+    "href": "lab05.html#format-method",
+    "title": "Short Project 5",
+    "section": "",
+    "text": "Let’s update our function so it returns a string message instead of an integer:\n\ndef count_years(current_age, age_goal):\n  years = 0\n  age = current_age\n  while age &lt; age_goal:\n    years += 1\n    age += 1\n  message = \"It will take {} years\".format(years)\n  message += \" for you to be able to run for president.\"\n  return message\n\ndef main():\n  print( count_years(20, 35))\n  \nmain()\n\nIt will take 15 years for you to be able to run for president.",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 5"
+    ]
+  },
+  {
+    "objectID": "lab05.html#formatting-numbers",
+    "href": "lab05.html#formatting-numbers",
+    "title": "Short Project 5",
+    "section": "",
+    "text": "Use : to specify formatting options,\n\namount = 10000000\nprint(\"I have ${:,} in my pocket.\".format(amount))\n\nI have $10,000,000 in my pocket.",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 5"
+    ]
+  },
+  {
     "objectID": "slides-07-02.html#random-module",
     "href": "slides-07-02.html#random-module",
     "title": "random (slides)",
     "section": "random module",
-    "text": "random module\nWe need to import the module random\nWhat do the functions .random() and .randint() return?\n\nimport random\n\nn = random.random() #returns a random float between 0 and 1\nprint(n)\n\nn = random.randint(0, 9) #returns a random integer betweem 0 and 9.\n\n\nprint(n)\n\n0.5196516316374618\n1",
+    "text": "random module\nWe need to import the module random\nWhat do the functions .random() and .randint() return?\n\nimport random\n\nn = random.random() #returns a random float between 0 and 1\nprint(n)\n\nn = random.randint(0, 9) #returns a random integer betweem 0 and 9.\n\n\nprint(n)\n\n0.9747811132689153\n8",
     "crumbs": [
       "Module 7 - Data Structures (lists)",
       "random (slides)"
@@ -4819,7 +5072,7 @@
     "href": "slides-07-02.html#write-a-function-solution",
     "title": "random (slides)",
     "section": "Write a function – solution",
-    "text": "Write a function – solution\n\nimport random\n\ndef pick_winner(names):\n  index = random.randint(0, len(names) - 1)\n  return names[index]\n\nif __name__ == \"__main__\":\n  winner = pick_winner([\"Peter\", \"Joan\", \"Mary\", \"June\"])\n  print(winner)\n\nJoan",
+    "text": "Write a function – solution\n\nimport random\n\ndef pick_winner(names):\n  index = random.randint(0, len(names) - 1)\n  return names[index]\n\nif __name__ == \"__main__\":\n  winner = pick_winner([\"Peter\", \"Joan\", \"Mary\", \"June\"])\n  print(winner)\n\nJune",
     "crumbs": [
       "Module 7 - Data Structures (lists)",
       "random (slides)"
@@ -4985,6 +5238,39 @@
     "title": "Short Project 6",
     "section": "",
     "text": "The easiest way to implement this is using two while loops (one for going to the left, another for going to the right). You have the starting point of the item you want to move (the \"index\") – you need to find out where it needs to end.\nYour first guess for the end index should be minus one on the index if you are going to the left or plus one on the index if you are going to the right. In your while loop you need to keep subtracting one or adding one (depending on your direction) until you reach your end destination – meaning, you skip over the zeros until you either reach the beginning of the end of the list (depending on the direction you are going) or you found an item to replace (something that is different than zero).\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\nYou can access an item in a list using an index:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nWhat’s the index for value 2 and 1?\nYou can replace an item in a list using an index:\n\nmy_list = [0, 0, 2, 0, 0, 1]\nmy_list[1] = 5\nmy_list\n\n[0, 5, 2, 0, 0, 1]\n\n\n\n\n\nHere is the list:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nHow do we move value 1 to where value 2 is, replacing 1 with zero so the list looks like this:\n\nmy_list = [0, 0, 1, 0, 0, 0]\n\n\n\n\nWe want to go from this:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nTo this:\n\nmy_list = [0, 0, 1, 0, 0, 0]\n\nWe do this:\n\nindex_a = 2\nindex_b = 5\nmy_list[index_a] = my_list[index_b]\nmy_list[index_b] = 0",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 6"
+    ]
+  },
+  {
+    "objectID": "lab06.html#lists",
+    "href": "lab06.html#lists",
+    "title": "Short Project 6",
+    "section": "",
+    "text": "You can access an item in a list using an index:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nWhat’s the index for value 2 and 1?\nYou can replace an item in a list using an index:\n\nmy_list = [0, 0, 2, 0, 0, 1]\nmy_list[1] = 5\nmy_list\n\n[0, 5, 2, 0, 0, 1]",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 6"
+    ]
+  },
+  {
+    "objectID": "lab06.html#lists-1",
+    "href": "lab06.html#lists-1",
+    "title": "Short Project 6",
+    "section": "",
+    "text": "Here is the list:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nHow do we move value 1 to where value 2 is, replacing 1 with zero so the list looks like this:\n\nmy_list = [0, 0, 1, 0, 0, 0]",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 6"
+    ]
+  },
+  {
+    "objectID": "lab06.html#swapping-list-values",
+    "href": "lab06.html#swapping-list-values",
+    "title": "Short Project 6",
+    "section": "",
+    "text": "We want to go from this:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nTo this:\n\nmy_list = [0, 0, 1, 0, 0, 0]\n\nWe do this:\n\nindex_a = 2\nindex_b = 5\nmy_list[index_a] = my_list[index_b]\nmy_list[index_b] = 0",
     "crumbs": [
       "Short Projects",
       "Short Project 6"
@@ -7605,6 +7891,28 @@
     ]
   },
   {
+    "objectID": "lab08.html#how-do-we-know-a-string-is-a-number",
+    "href": "lab08.html#how-do-we-know-a-string-is-a-number",
+    "title": "Short Project 8",
+    "section": "",
+    "text": "Assume that for both short project 07 and programming project 07 you won’t have strings that mix digits (for example 0 and 9) and letters (for example a and x)\nHow do we know the following strings are names vs. numbers (integers or floats)?\n\n\"Petra\"\n\"10.5\"\n\"5\"",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 8"
+    ]
+  },
+  {
+    "objectID": "lab08.html#check-first-character-of-a-string",
+    "href": "lab08.html#check-first-character-of-a-string",
+    "title": "Short Project 8",
+    "section": "",
+    "text": "Remember that you can retrieve the first character of a string using [0]\n\nname = \"Petra\"\nname[0].isnumeric()\n\nFalse\n\n\n\nnumber = \"0.10\"\nnumber[0].isnumeric()\n\nTrue\n\n\n\nnumber = \"10\"\nnumber[0].isnumeric()\n\nTrue",
+    "crumbs": [
+      "Short Projects",
+      "Short Project 8"
+    ]
+  },
+  {
     "objectID": "assignments-12.html",
     "href": "assignments-12.html",
     "title": "Module 12 Assignments",
@@ -9104,369 +9412,6 @@
     "crumbs": [
       "Module 1 - Basics",
       "Module 1 Assignments"
-    ]
-  },
-  {
-    "objectID": "lab01.html#what-are-strings",
-    "href": "lab01.html#what-are-strings",
-    "title": "Short Project 1",
-    "section": "",
-    "text": "Any sequence of characters enveloped in quotes (single, double, triple). Your opening quotes need to match your closing quotes.\nString literals:\n\n\"this is a string\"\n'this is also a string'\n\nUse variable names:\n\nmy_name = \"Julia Smith\"",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 1"
-    ]
-  },
-  {
-    "objectID": "lab01.html#print-function",
-    "href": "lab01.html#print-function",
-    "title": "Short Project 1",
-    "section": "",
-    "text": "Print string literals:\n\nprint(\"Hi there\")\n\nHi there\n\n\nPrint variables:\n\nmessage = \"Hi there\"\nprint(message)\n\nHi there",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 1"
-    ]
-  },
-  {
-    "objectID": "lab01.html#concatenate-strings",
-    "href": "lab01.html#concatenate-strings",
-    "title": "Short Project 1",
-    "section": "",
-    "text": "Use the + operator to “glue” strings together:\n\nmessage = \"Hi there\"\npunctuation = \"!\"\nprint(message + punctuation)\n\nHi there!\n\n\nYou can also use += to change to retrieve the string assigned to a variable, “glue” another string to it, and assign it back to the same variable name:\n\nfull_message = \"\" # start with an empty string\nfull_message += \"Hi there\"\nfull_message += \"!\"\nprint(full_message)\n\nHi there!",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 1"
-    ]
-  },
-  {
-    "objectID": "lab01.html#writing-your-own-function",
-    "href": "lab01.html#writing-your-own-function",
-    "title": "Short Project 1",
-    "section": "",
-    "text": "Use the keyword def to define a function use () after your function name to list all the parameters.\n\ndef repeat_message(message, n):\n  full_message = message * n\n  return full_message\n\nmessage = repeat_message(\"Hi there\", 5)\nprint(message)\n\nHi thereHi thereHi thereHi thereHi there\n\n\n\nWhat if I wanted to have a space between each string?\nWhat if I wanted to have a line break between each string?",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 1"
-    ]
-  },
-  {
-    "objectID": "project-2.html#if-statements",
-    "href": "project-2.html#if-statements",
-    "title": "Programming Project 2",
-    "section": "If statements",
-    "text": "If statements\nWe can use logical expressions in if and elif statements to return different things from a function:\n\ndef is_positive(number):\n  if number &gt; 0:\n    return \"Number is positive\"\n  elif number &lt; 0:\n    return \"Number is negative\"\n  elif number == 0:\n    return \"Number is zero\"\n\ndef main():\n  print( is_positive(10) )\n  print( is_positive(0) )\n  print( is_positive(-10) )\n  \nmain()\n\nNumber is positive\nNumber is zero\nNumber is negative",
-    "crumbs": [
-      "Programming Projects",
-      "Programming Project 2"
-    ]
-  },
-  {
-    "objectID": "lab02.html#writing-a-function",
-    "href": "lab02.html#writing-a-function",
-    "title": "Short Project 2",
-    "section": "",
-    "text": "Start with def followed by the name of the function\nAdd parameters inside the parentheses in the function definition\nPrint a string within the function without return\n\n\ndef print_greeting(name):\n  print(\"Hello \" + name + \"!\")\n\ndef main():\n  print_greeting(\"Mickey\")\n  print_greeting(\"Minnie\")\n\nmain()\n\nHello Mickey!\nHello Minnie!",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 2"
-    ]
-  },
-  {
-    "objectID": "lab02.html#using-round",
-    "href": "lab02.html#using-round",
-    "title": "Short Project 2",
-    "section": "",
-    "text": "Use the round() function to get a floating-point number rounded to the specified number of decimals.\nSyntax:\n\nround(number, ndigits*)\n\nThe number of digits (ndigits) is optional, but we will often round number to two decimals:\n\nround(392.68750000000006)\n\n393\n\n\n\nround(392.68750000000006, 2)\n\n392.69",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 2"
-    ]
-  },
-  {
-    "objectID": "lab02.html#using-format",
-    "href": "lab02.html#using-format",
-    "title": "Short Project 2",
-    "section": "",
-    "text": "age = 20\nname = 'Philip'\n\nHere’s how we can do concatenation using the + operator:\n\nname + ' is ' + str(age) + ' years old'\n\n'Philip is 20 years old'\n\n\nWe can do the same with the .format() method, using {} as place holders for our variables:\n\n'{} is {} years old'.format(name, age)\n\n'Philip is 20 years old'",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 2"
-    ]
-  },
-  {
-    "objectID": "lab02.html#if-statements",
-    "href": "lab02.html#if-statements",
-    "title": "Short Project 2",
-    "section": "",
-    "text": "We can use logical expressions in if and elif statements to return different things from a function:\n\ndef is_positive(number):\n  if number &gt; 0:\n    return \"Number is positive\"\n  elif number &lt; 0:\n    return \"Number is negative\"\n  elif number == 0:\n    return \"Number is zero\"\n\ndef main():\n  print( is_positive(10) )\n  print( is_positive(0) )\n  print( is_positive(-10) )\n  \nmain()\n\nNumber is positive\nNumber is zero\nNumber is negative",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 2"
-    ]
-  },
-  {
-    "objectID": "lab03.html#writing-a-function",
-    "href": "lab03.html#writing-a-function",
-    "title": "Short Project 3",
-    "section": "",
-    "text": "Start with def followed by the name of the function\nAdd parameters inside the parentheses in the function definition\nReturn a value\n\n\ndef double(n):\n  result = n * 2\n  return result\n\ndef main():\n  print( double(5) )\n\nmain()\n\n10",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 3"
-    ]
-  },
-  {
-    "objectID": "lab03.html#using-round",
-    "href": "lab03.html#using-round",
-    "title": "Short Project 3",
-    "section": "",
-    "text": "Use the round() function to get a floating-point number rounded to the specified number of decimals.\nSyntax:\n\nround(number, ndigits*)\n\nThe number of digits (ndigits) is optional, but we will often round number to two decimals:\n\nround(392.68750000000006)\n\n393\n\n\n\nround(392.68750000000006, 2)\n\n392.69",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 3"
-    ]
-  },
-  {
-    "objectID": "lab03.html#using-format",
-    "href": "lab03.html#using-format",
-    "title": "Short Project 3",
-    "section": "",
-    "text": "We can do concatenation in two different ways: a) one using the + operator and b) the other using .format() method, using {} as place holders for our variables:\n\nage = 20\nname = 'Philip'\n\nprint(name + ' is ' + str(age) + ' years old')\nprint('{} is {} years old'.format(name, age))\n\nPhilip is 20 years old\nPhilip is 20 years old",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 3"
-    ]
-  },
-  {
-    "objectID": "lab03.html#if-statements",
-    "href": "lab03.html#if-statements",
-    "title": "Short Project 3",
-    "section": "",
-    "text": "We can use logical expressions in if statements to return different things from a function:\n\ndef is_positive(number):\n  if number &gt; 0:\n    return \"Number is positive\"\n  if number &lt; 0:\n    return \"Number is negative\"\n  return \"Number is zero\"\n\ndef main():\n  print( is_positive(10) )\n  print( is_positive(0) )\n  print( is_positive(-10) )\n  \nmain()\n\nNumber is positive\nNumber is zero\nNumber is negative",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 3"
-    ]
-  },
-  {
-    "objectID": "lab04.html#logical-expressions",
-    "href": "lab04.html#logical-expressions",
-    "title": "Short Project 4",
-    "section": "",
-    "text": "An expression that evaluated to a Boolean value (True or False)\n\nage = 21\nage &gt;= 21\n\nTrue\n\n\n\nage &gt; 21\n\nFalse\n\n\n\nage &gt; 35\n\nFalse",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 4"
-    ]
-  },
-  {
-    "objectID": "lab04.html#if-statements",
-    "href": "lab04.html#if-statements",
-    "title": "Short Project 4",
-    "section": "",
-    "text": "We can use logical expressions in if-else statements:\n\nif age &gt; 15:\n  allowed_to_drive = True\nelse:\n  allowed_to_drive = False\n  \nprint(allowed_to_drive)\n\nTrue\n\n\nWhen the expression age &gt; 15 is evaluated to True lines 2 and 6 run, if it is evaluated to False line to is skipped over and lines 4 and 6 run.",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 4"
-    ]
-  },
-  {
-    "objectID": "lab04.html#if-statements-1",
-    "href": "lab04.html#if-statements-1",
-    "title": "Short Project 4",
-    "section": "",
-    "text": "Add elif statement if you need to check another condition:\n\nif age &gt;= 21:\n  allowed_to_drink = True\n  allowed_to_drive = True\nelif age &gt; 15:\n  allowed_to_drink = False\n  allowed_to_drive = True\nelse:\n  allowed_to_drink = False\n  allowed_to_drive = False\n  \nprint(allowed_to_drink, allowed_to_drive)\n\nWhen the expression age &gt;= 21 is evaluated to True lines 2, 3 and 11 run, if it is evaluated to False lines 2-3 are skipped over and then age &gt; 15 is evaluated. If age &gt; 15 is evaluated to True lines 5, 6 and 11 run, if it is evaluated to False lines 5-6 are skipped over and lines 8, 9, and 11 run.",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 4"
-    ]
-  },
-  {
-    "objectID": "lab05.html#how-to-write-a-while-loop",
-    "href": "lab05.html#how-to-write-a-while-loop",
-    "title": "Short Project 5",
-    "section": "",
-    "text": "You need to determine two things:\n\nWhat’s your condition to stop the iteration\nWhat variables do you need to update the condition in each iteration (so you don’t fall into an infinite loop)",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 5"
-    ]
-  },
-  {
-    "objectID": "lab05.html#example",
-    "href": "lab05.html#example",
-    "title": "Short Project 5",
-    "section": "",
-    "text": "Write a while loop to count how many years until you can run for president (simplistic example, for illustration purposes only):\n\ndef count_years(current_age, age_goal):\n  years = 0\n  age = current_age\n  while age &lt; age_goal:\n    years += 1\n    age += 1\n  return years\n\ndef main():\n  print( count_years(20, 35))\n  \nmain()\n\n15",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 5"
-    ]
-  },
-  {
-    "objectID": "lab05.html#format-method",
-    "href": "lab05.html#format-method",
-    "title": "Short Project 5",
-    "section": "",
-    "text": "Let’s update our function so it returns a string message instead of an integer:\n\ndef count_years(current_age, age_goal):\n  years = 0\n  age = current_age\n  while age &lt; age_goal:\n    years += 1\n    age += 1\n  message = \"It will take {} years\".format(years)\n  message += \" for you to be able to run for president.\"\n  return message\n\ndef main():\n  print( count_years(20, 35))\n  \nmain()\n\nIt will take 15 years for you to be able to run for president.",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 5"
-    ]
-  },
-  {
-    "objectID": "lab05.html#formatting-numbers",
-    "href": "lab05.html#formatting-numbers",
-    "title": "Short Project 5",
-    "section": "",
-    "text": "Use : to specify formatting options,\n\namount = 10000000\nprint(\"I have ${:,} in my pocket.\".format(amount))\n\nI have $10,000,000 in my pocket.",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 5"
-    ]
-  },
-  {
-    "objectID": "lab06.html#lists",
-    "href": "lab06.html#lists",
-    "title": "Short Project 6",
-    "section": "",
-    "text": "You can access an item in a list using an index:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nWhat’s the index for value 2 and 1?\nYou can replace an item in a list using an index:\n\nmy_list = [0, 0, 2, 0, 0, 1]\nmy_list[1] = 5\nmy_list\n\n[0, 5, 2, 0, 0, 1]",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 6"
-    ]
-  },
-  {
-    "objectID": "lab06.html#lists-1",
-    "href": "lab06.html#lists-1",
-    "title": "Short Project 6",
-    "section": "",
-    "text": "Here is the list:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nHow do we move value 1 to where value 2 is, replacing 1 with zero so the list looks like this:\n\nmy_list = [0, 0, 1, 0, 0, 0]",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 6"
-    ]
-  },
-  {
-    "objectID": "lab06.html#swapping-list-values",
-    "href": "lab06.html#swapping-list-values",
-    "title": "Short Project 6",
-    "section": "",
-    "text": "We want to go from this:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nTo this:\n\nmy_list = [0, 0, 1, 0, 0, 0]\n\nWe do this:\n\nindex_a = 2\nindex_b = 5\nmy_list[index_a] = my_list[index_b]\nmy_list[index_b] = 0",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 6"
-    ]
-  },
-  {
-    "objectID": "lab07.html#list-of-lists-2d-list",
-    "href": "lab07.html#list-of-lists-2d-list",
-    "title": "Short Project 7",
-    "section": "",
-    "text": "In a 2D list, each item is a list.\n\ngroceries = [ [\"apples\",  \"bananas\"],\n            [\"milk\", \"eggs\"]]\n\nHow do we retrieve a sublist:\n\ngroceries[0]\n\n['apples', 'bananas']\n\n\nHow to retrieve an item in a sublist:\n\ngroceries[0][1]\n\n'bananas'",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 7"
-    ]
-  },
-  {
-    "objectID": "lab07.html#how-to-append-sublists-to-a-list---sol-1",
-    "href": "lab07.html#how-to-append-sublists-to-a-list---sol-1",
-    "title": "Short Project 7",
-    "section": "",
-    "text": "We will create 3 sublists of 5 items each, for that we need nested loops:\n\n# start with an empty list\ntwo_d_list = []\nrepeat = 3\nwhile repeat &gt; 0:\n  # each sublist starts as a new list\n  sublist = []\n  index = 0\n  while index &lt; 5: # 5 items per list\n    sublist.append(index)\n    index += 1\n  # after the inner while loop, append the sublist to the main list\n  two_d_list.append(sublist)\n  repeat -= 1\n  \nprint(two_d_list)\n\n[[0, 1, 2, 3, 4], [0, 1, 2, 3, 4], [0, 1, 2, 3, 4]]",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 7"
-    ]
-  },
-  {
-    "objectID": "lab07.html#how-to-append-sublists-to-a-list---sol-2",
-    "href": "lab07.html#how-to-append-sublists-to-a-list---sol-2",
-    "title": "Short Project 7",
-    "section": "",
-    "text": "two_d_list = []\nrepeat = 0\nwhile repeat &lt; 3:\n    sublist = []\n    index = 0\n    while index &lt; 5:\n        sublist.append(index)\n        index += 1\n    two_d_list.append(sublist)\n    repeat += 1\n\nprint(two_d_list)\n\n[[0, 1, 2, 3, 4], [0, 1, 2, 3, 4], [0, 1, 2, 3, 4]]",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 7"
-    ]
-  },
-  {
-    "objectID": "lab07.html#random-module",
-    "href": "lab07.html#random-module",
-    "title": "Short Project 7",
-    "section": "",
-    "text": "We start by importing random.\n\nimport random\n\nThen we set a seed for replicable results and let’s generate a random integer:\n\nrandom.seed(123)\nresult = random.randint(1, 4)\nprint(result)\n\n1",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 7"
-    ]
-  },
-  {
-    "objectID": "lab08.html#how-do-we-know-a-string-is-a-number",
-    "href": "lab08.html#how-do-we-know-a-string-is-a-number",
-    "title": "Short Project 8",
-    "section": "",
-    "text": "Assume that for both short project 07 and programming project 07 you won’t have strings that mix digits (for example 0 and 9) and letters (for example a and x)\nHow do we know the following strings are names vs. numbers (integers or floats)?\n\n\"Petra\"\n\"10.5\"\n\"5\"",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 8"
-    ]
-  },
-  {
-    "objectID": "lab08.html#check-first-character-of-a-string",
-    "href": "lab08.html#check-first-character-of-a-string",
-    "title": "Short Project 8",
-    "section": "",
-    "text": "Remember that you can retrieve the first character of a string using [0]\n\nname = \"Petra\"\nname[0].isnumeric()\n\nFalse\n\n\n\nnumber = \"0.10\"\nnumber[0].isnumeric()\n\nTrue\n\n\n\nnumber = \"10\"\nnumber[0].isnumeric()\n\nTrue",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 8"
-    ]
-  },
-  {
-    "objectID": "lab12.html#find",
-    "href": "lab12.html#find",
-    "title": "Short Project 12",
-    "section": "",
-    "text": "The string method .find() returns an integer with the first position of the argument in the string.\n\nfull_string = \"August\"\nsub_string = \"gust\"\nposition = full_string.find(sub_string)\nprint(position)\n\n2\n\n\n\nfull_string = \"August\"\nsub_string = \"u\"\nposition = full_string.find(sub_string)\nprint(position)\n\n1\n\n\nThe string method .find() returns -1 when the sub-string is not found in the string.\n\nfull_string = \"August\"\nsub_string = \"wind\"\nposition = full_string.find(sub_string)\nprint(position)\n\n-1",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 12"
-    ]
-  },
-  {
-    "objectID": "lab12.html#find-1",
-    "href": "lab12.html#find-1",
-    "title": "Short Project 12",
-    "section": "",
-    "text": "The string method .find() returns -1 when the sub-string is not found in the string.\n\nfull_string = \"August\"\nsub_string = \"wind\"\nposition = full_string.find(sub_string)\nprint(position)\n\n-1",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 12"
-    ]
-  },
-  {
-    "objectID": "lab12.html#string-methods",
-    "href": "lab12.html#string-methods",
-    "title": "Short Project 12",
-    "section": "",
-    "text": "We covered a number of string methods in this course, including:\n\n.upper() – makes all characters in the string uppercase\n.lower() – makes all characters in the string lower",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 12"
-    ]
-  },
-  {
-    "objectID": "lab12.html#helper-function",
-    "href": "lab12.html#helper-function",
-    "title": "Short Project 12",
-    "section": "",
-    "text": "For the short project, it would be helpful to write a function that given a list of characters, it returns one string with all characters concatenated together in one string.\nThis should be easy to write with a for loop and concatenation – do not use .join()",
-    "crumbs": [
-      "Short Projects",
-      "Short Project 12"
     ]
   }
 ]

@@ -161,7 +161,7 @@ numbers_set # evaluate this line
 ## Write a function
 
 1.  Its name is `count_names`
-2.  It opens in read mode [a file that contains a name per line](data/names.txt), with repeated names
+2.  It opens in read mode [a file that contains a name per line](../names.txt), with repeated names
 3.  It counts how many unique names there are in the file
 4.  It returns an **integer** with the count
 5.  Use a **set** for this

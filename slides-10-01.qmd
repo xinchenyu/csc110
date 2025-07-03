@@ -6,14 +6,6 @@ df-print: kable
 ---
 
 
-## Announcements
-
--   Midterm 2 on March 26, next Wednesday
-
-    - modules 1 - 8
-    
-    - [study guide 2](https://xinchenyu.github.io/csc110-spring2025/practice-01.html)
-
 ## Key Concepts
 
 -   iterating a string/list/dictionary (+ if statements)
@@ -260,7 +252,7 @@ print(name.strip('$').split('-'))
 
 -   It returns a list of lists, where each inner-list is a line containing all the words in that line
 
-Test case ([download text file](data/info.txt)):
+Test case ([download text file](../info.txt)):
 
 ```{python}
 #| eval: false

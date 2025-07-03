@@ -138,7 +138,7 @@ Return:
 
 ### update_grid
 
-Takes in a single 2D list where every value is either "X" or "0" (Note the formatting is going to be the same as the list returned by read_file). The function should then replace all the 0’s with the number of adjacent mines, which is some cases will still be 0. As we are modifying an already existing list nothing is to be returned by the function. For example, if passed in the result of reading [fiveByFive.txt](data/fiveByFive.txt)
+Takes in a single 2D list where every value is either "X" or "0" (Note the formatting is going to be the same as the list returned by read_file). The function should then replace all the 0’s with the number of adjacent mines, which is some cases will still be 0. As we are modifying an already existing list nothing is to be returned by the function. For example, if passed in the result of reading [fiveByFive.txt](../fiveByFive.txt)
 
 Which is:
 
@@ -186,7 +186,7 @@ It returns the number of spots on the grid that have not been revealed by the pl
 
 ### print_grid
 
-Takes in a 2D list and prints it out to standard output. For example printing the initial user view (remember the user view is the blank grid made from `make_empty_grid`) of the grid from [tenSquare.txt](data/tenSquare.txt) should output:
+Takes in a 2D list and prints it out to standard output. For example printing the initial user view (remember the user view is the blank grid made from `make_empty_grid`) of the grid from [tenSquare.txt](../tenSquare.txt) should output:
 
 <pre>
 10[ ][ ][ ][ ][ ][ ][ ][ ][ ][ ][ ]
@@ -215,8 +215,8 @@ This function should return a boolean which is `True` if the game should continu
 
 Files:
 
-* [fiveByFive.txt](data/fiveByFive.txt)
-* [tenSquare.txt](data/tenSquare.txt)
+* [fiveByFive.txt](../fiveByFive.txt)
+* [tenSquare.txt](../tenSquare.txt)
 
 
 ## Full game win

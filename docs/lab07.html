@@ -5702,13 +5702,13 @@ vertical-align: -.125em;
 <p>Name your file <code>create_two_d_list.py</code>.</p>
 <p>Remember to import <code>random</code> and set the seed to <code>123</code>.</p>
 <p>Your function should take a <code>width</code> and <code>length</code> as arguments. The length represents how many sublists you need in your main list. The width is the length of each individual sublist (they are all the same length). Each element in your sublist will be a random integer between 0 and 100.</p>
-<div id="2b6d2376" class="cell" data-execution_count="1">
+<div id="732b3984" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_two_d_list <span class="op">=</span> create_list(<span class="dv">5</span>, <span class="dv">3</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_two_d_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <pre>[[6, 34, 11, 98, 52], [34, 13, 4, 48, 68], [71, 42, 43, 6, 20]]
 </pre>
-<div id="4f8afd17" class="cell" data-execution_count="2">
+<div id="6ce707dc" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>my_two_d_list <span class="op">=</span> create_list(<span class="dv">3</span>, <span class="dv">5</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_two_d_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -5728,19 +5728,19 @@ Before You Begin
 <section id="list-of-lists-2d-list" class="level2">
 <h2 class="anchored" data-anchor-id="list-of-lists-2d-list">List of lists (2D List)</h2>
 <p>In a 2D list, each item is a list.</p>
-<div id="c914fb25" class="cell" data-execution_count="3">
+<div id="dc9356b9" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>groceries <span class="op">=</span> [ [<span class="st">&quot;apples&quot;</span>,  <span class="st">&quot;bananas&quot;</span>],</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>            [<span class="st">&quot;milk&quot;</span>, <span class="st">&quot;eggs&quot;</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>How do we retrieve a sublist:</p>
-<div id="074b7a9c" class="cell" data-execution_count="4">
+<div id="3aceb874" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>groceries[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>[&#39;apples&#39;, &#39;bananas&#39;]</code></pre>
 </div>
 </div>
 <p>How to retrieve an item in a sublist:</p>
-<div id="2e0a8760" class="cell" data-execution_count="5">
+<div id="1d65fa9b" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>groceries[<span class="dv">0</span>][<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>&#39;bananas&#39;</code></pre>
@@ -5750,7 +5750,7 @@ Before You Begin
 <section id="how-to-append-sublists-to-a-list---sol-1" class="level2">
 <h2 class="anchored" data-anchor-id="how-to-append-sublists-to-a-list---sol-1">How to append sublists to a list - sol 1</h2>
 <p>We will create 3 sublists of 5 items each, for that we need nested loops:</p>
-<div id="f9873398" class="cell" data-execution_count="6">
+<div id="e6798873" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># start with an empty list</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>two_d_list <span class="op">=</span> []</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>repeat <span class="op">=</span> <span class="dv">3</span></span>
@@ -5773,7 +5773,7 @@ Before You Begin
 </section>
 <section id="how-to-append-sublists-to-a-list---sol-2" class="level2">
 <h2 class="anchored" data-anchor-id="how-to-append-sublists-to-a-list---sol-2">How to append sublists to a list - sol 2</h2>
-<div id="d1565320" class="cell" data-execution_count="7">
+<div id="fe737fe8" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>two_d_list <span class="op">=</span> []</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>repeat <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> repeat <span class="op">&lt;</span> <span class="dv">3</span>:</span>
@@ -5794,11 +5794,11 @@ Before You Begin
 <section id="random-module" class="level2">
 <h2 class="anchored" data-anchor-id="random-module"><code>random</code> module</h2>
 <p>We start by importing <code>random</code>.</p>
-<div id="e9da618e" class="cell" data-execution_count="8">
+<div id="37ae5c8e" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Then we set a seed for replicable results and let’s generate a random integer:</p>
-<div id="1b5cc674" class="cell" data-execution_count="9">
+<div id="a7585b42" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>random.seed(<span class="dv">123</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">4</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

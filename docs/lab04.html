@@ -5704,7 +5704,7 @@ vertical-align: -.125em;
 <p>Though CPUs, and computer hardware in-general, are not the main focus of this course, it can be useful to know a thing or two about computer hardware. The CPU (Central Processing Unit) is generally the piece of hardware that carries out the instructions of the python programs that you run in this class.</p>
 <p>In this short project, you will write a program that takes a few input values related to CPU performance. The program should determine whether or not the specified CPU is within one of four categories: high-performance, medium-performance, low-performance, and in need of an upgrade. Name the file <code>cpu.py</code>.</p>
 <p>Shown below is an example of the program prompting the user for two inputs, and then printing out the corresponding CPU performance category:</p>
-<div id="e68030ab" class="cell" data-execution_count="1">
+<div id="763c1878" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  gigahertz <span class="op">=</span> <span class="fl">2.7</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  core_count <span class="op">=</span> <span class="dv">2</span></span>
@@ -5758,7 +5758,7 @@ vertical-align: -.125em;
 <section id="test-cases" class="level2">
 <h2 class="anchored" data-anchor-id="test-cases">Test Cases</h2>
 <p>Below are examples of program runs. There will be more tests on Gradescope.</p>
-<div id="95e988e6" class="cell" data-execution_count="2">
+<div id="f0f2f45f" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  gigahertz <span class="op">=</span> <span class="fl">2.0</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  core_count <span class="op">=</span> <span class="dv">8</span></span>
@@ -5790,20 +5790,20 @@ Before You Begin
 <section id="logical-expressions" class="level2">
 <h2 class="anchored" data-anchor-id="logical-expressions">Logical Expressions</h2>
 <p>An expression that evaluated to a Boolean value (<code>True</code> or <code>False</code>)</p>
-<div id="5d432d69" class="cell" data-execution_count="3">
+<div id="512e1fa0" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> <span class="dv">21</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>age <span class="op">&gt;=</span> <span class="dv">21</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="1252218d" class="cell" data-execution_count="4">
+<div id="e34282f0" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">&gt;</span> <span class="dv">21</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>False</code></pre>
 </div>
 </div>
-<div id="d0c9c74b" class="cell" data-execution_count="5">
+<div id="ba250a66" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>age <span class="op">&gt;</span> <span class="dv">35</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>False</code></pre>
@@ -5813,7 +5813,7 @@ Before You Begin
 <section id="if-statements" class="level2">
 <h2 class="anchored" data-anchor-id="if-statements">If statements</h2>
 <p>We can use logical expressions in <code>if-else</code> statements:</p>
-<div id="4a1d81e9" class="cell" data-execution_count="6">
+<div id="015b33fe" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> age <span class="op">&gt;</span> <span class="dv">15</span>:</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  allowed_to_drive <span class="op">=</span> <span class="va">True</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
@@ -5829,7 +5829,7 @@ Before You Begin
 <section id="if-statements-1" class="level2">
 <h2 class="anchored" data-anchor-id="if-statements-1">If statements</h2>
 <p>Add <code>elif</code> statement if you need to check another condition:</p>
-<div id="cfc9fe79" class="cell" data-execution_count="7">
+<div id="ec4f3ee3" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> age <span class="op">&gt;=</span> <span class="dv">21</span>:</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  allowed_to_drink <span class="op">=</span> <span class="va">True</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  allowed_to_drive <span class="op">=</span> <span class="va">True</span></span>

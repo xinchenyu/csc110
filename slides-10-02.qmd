@@ -28,7 +28,7 @@ info.close()
 
 ## Write a function
 
-It reads the file with filename, iterates over each line in the [numbers.txt](data/numbers.txt) and return the sum. Submit your attendance.
+It reads the file with filename, iterates over each line in the [numbers.txt](../numbers.txt) and return the sum. Submit your attendance.
 
 numbers.txt
 ```{html}
@@ -249,7 +249,7 @@ end
 *   Both functions takes a string `file_name` as argument: 
     *  `count_words` count frequency of each lowercase word, return a dictionary.
     *  `write_word_count` call `count_words`, iterate it and write a comma separated file ("out_" + `file_name`). 
-*   [Download test file](data/alien.txt). Name your file as `read_and_write.py`.
+*   [Download test file](../alien.txt). Name your file as `read_and_write.py`.
 
 Test case:
 
