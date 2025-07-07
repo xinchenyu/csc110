@@ -1092,27 +1092,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="programming-problem-6" class="level2">
 <h2 class="anchored" data-anchor-id="programming-problem-6">Programming Problem 6</h2>
-<p>Write a python function that does the following:</p>
+<p>Write two python functions.</p>
 <ol type="1">
-<li>Its name is <code>is_even</code></li>
-<li>It takes an input <code>number</code> from the user</li>
-<li>It returns <code>True</code> if the <code>number</code> entered is even, <code>False</code> if <code>number</code> is odd</li>
+<li><p>The first function, <code>calculate_tax</code>, takes an integer as input. It uses a tax rate of <code>0.07</code> and returns the product of the input and the tax rate.</p></li>
+<li><p>The second function, <code>calculate_total</code>, takes three integers as input: the number of <code>cupcakes</code>, <code>croissants</code>, and <code>bagels</code>. The price of a cupcake is <code>3.5</code>, a croissant is <code>5.0</code>, and a bagel is <code>2.5</code>. It calculates the total cost of the items a customer will buy, including tax. The function returns the total rounded to two decimal places.</p></li>
 </ol>
-<p>Remember that the modulus operator (<code>%</code>) returns the remainder of an integer division. Also, <code>0</code> is interpreted as <code>False</code> and <code>1</code> as <code>True</code>.</p>
-<p>Name the program <code>even.py</code>. Make sure that gradescope gives you the points for passing the test cases.</p>
+<p>In the <code>main</code> function, call the <code>calculate_total</code> to get the total cost and print the result.</p>
+<p>Name the program <code>bakery.py</code>. You are only allowed to use operations learned in the class. Make sure that gradescope gives you the points for passing the test cases.</p>
 <p>Development test cases:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Enter 0:"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( is_even() ) <span class="co"># True </span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Enter 1:"</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( is_even()) <span class="co"># False </span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Enter 2:"</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( is_even()) <span class="co"># True </span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Enter -2:"</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( is_even()) <span class="co"># True </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>total_after_tax <span class="op">=</span> calculate_total(<span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">6</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(total_after_tax) <span class="co"># 40.12</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(calculate_total(<span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">0</span>)) <span class="co"># 16.05</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

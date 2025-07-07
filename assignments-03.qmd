@@ -55,31 +55,23 @@ print(cube(1)) # 1
 
 ## Programming Problem 6
 
-Write a python function that does the following:
+Write two python functions. 
 
-1.  Its name is `is_even`
-2.  It takes an input `number` from the user
-3.  It returns `True` if the `number` entered is even, `False` if `number` is odd
+1.  The first function, `calculate_tax`, takes an integer as input. It uses a tax rate of `0.07` and returns the product of the input and the tax rate.
 
-Remember that the modulus operator (`%`) returns the remainder of an integer division. Also, `0` is interpreted as `False` and `1` as `True`.
+2.  The second function, `calculate_total`, takes three integers as input: the number of `cupcakes`, `croissants`, and `bagels`. The price of a cupcake is `3.5`, a croissant is `5.0`, and a bagel is `2.5`. It calculates the total cost of the items a customer will buy, including tax. The function returns the total rounded to two decimal places.
 
-Name the program `even.py`. Make sure that gradescope gives you the points for passing the test cases.
+In the `main` function, call the `calculate_total` to get the total cost and print the result.
+
+Name the program `bakery.py`. You are only allowed to use operations learned in the class. Make sure that gradescope gives you the points for passing the test cases.
 
 Development test cases:
 
 ```{python}
 #| echo: true
 #| eval: false
-print("Enter 0:")
-print( is_even() ) # True 
-
-print("Enter 1:")
-print( is_even()) # False 
-
-print("Enter 2:")
-print( is_even()) # True 
-
-print("Enter -2:")
-print( is_even()) # True 
+total_after_tax = calculate_total(5, 1, 6)
+print(total_after_tax) # 40.12
+print(calculate_total(0, 3, 0)) # 16.05
 ```
 
