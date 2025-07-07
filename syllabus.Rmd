@@ -50,8 +50,9 @@ The prerequisite is a C or better in College Algebra or CSc 101 or appropriate m
         -   Email: xinchenyu\@arizona.edu
         -   Instructor Website: [xinchenyu.github.io](https://xinchenyu.github.io/)
         -   Office hours (open door, drop in, my office [GS](https://goo.gl/maps/h8Vyf7RNQiMAScDY6) 829):
-            -   Thursday 1:00pm to 2:00am
-
+            -   `Thursday 12:00pm-2:00pm`. 
+            -   You are welcome to drop in at any time during this period. However, students in this course will be given priority from `12:00pm-1:00pm`. If you arrive outside of this priority window, please understand that wait times may vary depending on whether students from another course are being helped.
+            
 There will also be many undergraduate TAs. See [TAs and Office Hours](tas.html)!
 
 # Course Format and Teaching Methods
@@ -165,20 +166,21 @@ You must keep theses dates available. Do not schedule any flights, travel plans,
 
 Weekly quizzes will be held every Tuesday (unless otherwise noted). There will be a total of 12 quizzes. Make-up quizzes will not be offered, however, your 2 lowest quiz scores will be dropped when calculating your final grade. 
 
-What counts as advanced code:
+::: {.callout-important}
+## What counts as advanced code
 
-Students are only permitted to use content covered in class or assigned readings when completing programming projects. The use of material beyond this scope is considered advanced code and is not allowed.
+Students must complete programming projects using only the concepts and materials covered in class or assigned readings. Using external or advanced code beyond this scope is not permitted unless explicitly approved by the instructor or teaching assistants.
 
 Both an autograder and manual review will be used to detect unauthorized advanced content. Deductions will be applied accordingly. In cases where these deductions result in a negative score, the project grade will be adjusted to zero. Otherwise, your Gradescope score will be your final grade.
-
+:::
 
 ## Late Work
 
-For programming problems, short projects and long projects, late work is NOT accepted
+For programming problems, short projects and long projects, late work is NOT accepted.
 
 ## Extra Credit
 
-Up to 1 point of extra credit will be awarded to students who come to office hours in person. Check our office hours schedule on the website <https://xinchenyu.github.io/csc110-spring2025/tas.html> and ask the TA or instructor to submit your points to gradescope. 
+Up to 1 point of extra credit will be awarded to students who come to office hours in person. Check our office hours schedule on the website [TAs and Office Hours](tas.html) and ask the TA or instructor to submit your points to gradescope. 
 
 You are required to ask a question and/or work on an assignment or practice problem with the TA or instructor to receive 0.5 points for each office hour attendance. It is your responsibility to ensure the TA or instructor enter your 0.5 points on gradescope during the session. Instructors will not award you these points at a later date, do not email instructors about getting points at a later date (for example, if you forget to ask the TA to enter your office hour points on gradescope). 
 

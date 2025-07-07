@@ -6278,7 +6278,7 @@
     "href": "index.html",
     "title": "CSc 110 Computer Programming I",
     "section": "",
-    "text": "Welcome to CSc 110!\nThis is an introduction to programming with an emphasis on solving problems drawn from a variety of domains. Topics include basic control and data structures, problem solving strategies, and software development tools and techniques. Specifically, the Python programming language will be taught.\n\nD2L: d2l\nGradescope: Gradescope\nPiazza: Piazza (Access code: wildcats)\n\nWhere to start:\n\nSyllabus\nSchedule\n\n\n\nInstructor Information\n\nXinchen Yu\n\nOffice: Gould-Simpson 829\nEmail: xinchenyu@arizona.edu\nInstructor Website: xinchenyu.github.io\nOffice hours (open door, drop in, my office GS 829):\n\nThursday 1:00pm to 2:00pm"
+    "text": "Welcome to CSc 110!\nThis is an introduction to programming with an emphasis on solving problems drawn from a variety of domains. Topics include basic control and data structures, problem solving strategies, and software development tools and techniques. Specifically, the Python programming language will be taught.\n\nD2L: d2l\nGradescope: Gradescope\nPiazza: Piazza (Access code: wildcats)\n\nWhere to start:\n\nSyllabus\nSchedule\n\n\n\nInstructor Information\n\nXinchen Yu\n\nOffice: Gould-Simpson 829\nEmail: xinchenyu@arizona.edu\nInstructor Website: xinchenyu.github.io\nOffice hours (open door, drop in, my office GS 829):\n\nThursday 12:00pm-2:00pm.\nYou are welcome to drop in at any time during this period. However, students in this course will be given priority from 12:00pm-1:00pm. If you arrive outside of this priority window, please understand that wait times may vary depending on whether students from another course are being helped."
   },
   {
     "objectID": "slides-13-03.html#set-methods",
@@ -9255,7 +9255,7 @@
     "href": "syllabus.html#late-work",
     "title": "Syllabus",
     "section": "Late Work",
-    "text": "Late Work\nFor programming problems, short projects and long projects, late work is NOT accepted",
+    "text": "Late Work\nFor programming problems, short projects and long projects, late work is NOT accepted.",
     "crumbs": [
       "Start Here",
       "Syllabus"
@@ -9266,7 +9266,7 @@
     "href": "syllabus.html#extra-credit",
     "title": "Syllabus",
     "section": "Extra Credit",
-    "text": "Extra Credit\nUp to 1 point of extra credit will be awarded to students who come to office hours in person. Check our office hours schedule on the website https://xinchenyu.github.io/csc110-spring2025/tas.html and ask the TA or instructor to submit your points to gradescope.\nYou are required to ask a question and/or work on an assignment or practice problem with the TA or instructor to receive 0.5 points for each office hour attendance. It is your responsibility to ensure the TA or instructor enter your 0.5 points on gradescope during the session. Instructors will not award you these points at a later date, do not email instructors about getting points at a later date (for example, if you forget to ask the TA to enter your office hour points on gradescope).\nYour first TA office visit should take place before the Midterm 1 date, and the second visit should take place before the Midterm 2 date.",
+    "text": "Extra Credit\nUp to 1 point of extra credit will be awarded to students who come to office hours in person. Check our office hours schedule on the website TAs and Office Hours and ask the TA or instructor to submit your points to gradescope.\nYou are required to ask a question and/or work on an assignment or practice problem with the TA or instructor to receive 0.5 points for each office hour attendance. It is your responsibility to ensure the TA or instructor enter your 0.5 points on gradescope during the session. Instructors will not award you these points at a later date, do not email instructors about getting points at a later date (for example, if you forget to ask the TA to enter your office hour points on gradescope).\nYour first TA office visit should take place before the Midterm 1 date, and the second visit should take place before the Midterm 2 date.",
     "crumbs": [
       "Start Here",
       "Syllabus"
