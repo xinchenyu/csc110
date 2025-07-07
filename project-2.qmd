@@ -223,23 +223,23 @@ Note: Points will be deducted if your code lacks proper decomposition. For examp
 
 ::: {.callout-tip title="Before You Begin"}
 
-We can use logical expressions in `if` and `elif` statements to return different things from a function:
+We can use logical expressions in `if` and `elif` statements to print different things from a function:
 
 ```{python}
 #| echo: true
 #| eval: true
 def is_positive(number):
   if number > 0:
-    return "Number is positive"
+    print("Number is positive")
   elif number < 0:
-    return "Number is negative"
+    print("Number is negative")
   elif number == 0:
-    return "Number is zero"
+    print("Number is zero")
 
 def main():
-  print( is_positive(10) )
-  print( is_positive(0) )
-  print( is_positive(-10) )
+  is_positive(10)
+  is_positive(0)
+  is_positive(-10)
   
 main()
 ```
