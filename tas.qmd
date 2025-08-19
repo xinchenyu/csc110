@@ -10,26 +10,21 @@ The best way to talk with a particular TA is via office hours, so check the sche
 
 Course coordinators are experienced UGTAs that assist the instructor with course management and will have a supervisory role with the course UGTAs.
 
--   Miro Vanek
 -   Pearl McNabb
+-   Lilian Wei
 
 # TAs
 
 Undergraduate Teaching Assistants (UGTAs) in the Department of Computer Science assist instructors in delivering undergraduate computer science courses. CS introductory courses utilize active learning and collaborative learning spaces to provide a collaborative and supportive environment for students learning programming skills. All teaching assistants have taken and excelled in the courses they support and are familiar with the material to mentor new students as they learn.
 
--   Aidan Linder
--   Adan Baca
--   Pri Vaghela
--   Lilian Wei
--   Apurbo Barua
 -   Ethan Holley
--   Chance Krueger
 -   Ram Adithya Muthukumarasamy
+-   Apurbo Barua
 -   Devyansh Shandilya
--   Ruby Gilliland
--   Steven Truong
--   Chahat Walia
--   Dilpreet Choudhary 
+-   Munazza Habib 
+-   Zifeng Zhou 
+-   Emily Bauman 
+-   Johanna Delgado 
 
 Interested in becoming a TA in the future? Check out [more information about what TAs do and how to apply](https://www.cs.arizona.edu/ugta).
 
