@@ -5,6 +5,18 @@ format:
     embed-resources: true
 ---
 
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(tidyverse)
+library(readxl)
+assignments <- read_excel("assessment_schedule.xlsx") %>% 
+  mutate(formatted_date = format(due_date, "%A, %B %d, %Y"))
+```
+
+**Due date: `r assignments %>% filter(assessment == "Short Programming Project 5") %>% pull(formatted_date)` at 9pm**
+
 # Calculating Investments
 
 In this short project, you will calculate how many years it takes for an account balance to reach an investment goal.

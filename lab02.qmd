@@ -5,6 +5,18 @@ format:
     embed-resources: true
 ---
 
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(tidyverse)
+library(readxl)
+assignments <- read_excel("assessment_schedule.xlsx") %>% 
+  mutate(formatted_date = format(due_date, "%A, %B %d, %Y"))
+```
+
+**Due date: `r assignments %>% filter(assessment == "Short Programming Project 2") %>% pull(formatted_date)` at 9pm**
+
 # Print lyrics
 
 In this short project you will write a program that prints the lyrics for the nursery rhyme The Itsy Bitsy Spider. Here is the lyrics:

@@ -5,6 +5,18 @@ format:
     embed-resources: true
 ---
 
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(tidyverse)
+library(readxl)
+assignments <- read_excel("assessment_schedule.xlsx") %>% 
+  mutate(formatted_date = format(due_date, "%A, %B %d, %Y"))
+```
+
+**Due date: `r assignments %>% filter(assessment == "Short Programming Project 3") %>% pull(formatted_date)` at 9pm**
+
 # Calculating areas
 
 In this short project you will write four functions to calculate the areas of different geometric shapes. Name the program `geometry.py`. Make sure that gradescope gives you the points for passing the test cases.

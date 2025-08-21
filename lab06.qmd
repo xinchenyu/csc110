@@ -5,6 +5,18 @@ format:
     embed-resources: true
 ---
 
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(tidyverse)
+library(readxl)
+assignments <- read_excel("assessment_schedule.xlsx") %>% 
+  mutate(formatted_date = format(due_date, "%A, %B %d, %Y"))
+```
+
+**Due date: `r assignments %>% filter(assessment == "Short Programming Project 6") %>% pull(formatted_date)` at 9pm**
+
 # Move items in list
 
 In this short programming project you will be writing a function that takes a list, and index, and a direction (`"left"` or `"right"`) as arguments. The goal of the function is to move the item at index to the provided direction skipping over all zeros and taking the place of another item that is not zero. If reaching the end (either left or right end) and all of the items are zero, take place of the last item. 

@@ -5,6 +5,18 @@ format:
     embed-resources: true
 ---
 
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(tidyverse)
+library(readxl)
+assignments <- read_excel("assessment_schedule.xlsx") %>% 
+  mutate(formatted_date = format(due_date, "%A, %B %d, %Y"))
+```
+
+**Due date: `r assignments %>% filter(assessment == "Short Programming Project 1") %>% pull(formatted_date)` at 9pm**
+
 # Vehicle -- Printing the Model-T
 
 In the this program, you will print out ASCII-art of one of the most famous vehicles of all time - the Model-T automobile! Name your program `modelt.py`. 

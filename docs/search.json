@@ -4104,7 +4104,7 @@
     "href": "lab03.html",
     "title": "Short Project 3",
     "section": "",
-    "text": "In this short project you will write four functions to calculate the areas of different geometric shapes. Name the program geometry.py. Make sure that gradescope gives you the points for passing the test cases.\n\n\nThis function returns the area of the rectangle with given base and height\n\\[\narea = base \\cdot height\n\\]\n\n\n\nThis function returns the area of three given triangle side lengths calculated according to Heron’s formula (calculate the semiperimeter first, then use that to calculate the area):\n\\[\ns = (a + b + c) / 2\n\\]\n\\[\narea = \\sqrt{s \\cdot (s-a) \\cdot (s-b) \\cdot (s-c)}\n\\]\nDo not use any built-in method or function for any Python library. Remember that roots are the opposite of an exponent. So you can calculate the square root of a number by using the exponent form \\(n^{1/2}\\).\n\n\n\nThis function returns the area of the trapezoid with given base_1, base_2, and height.\n\\[\narea = {1/2} \\cdot (base_1 + base_2) \\cdot height\n\\]\n\n\n\nThis function returns the area of the circle with the given radius, rounded at two decimal places. Use the value 3.1415 for \\(\\pi\\).\n\\[\narea = \\pi \\cdot radius^2\n\\]\n\n\n\nThis function calls the other functions, based on a string argument: \"rectangle\", \"triangle\", or \"circle\". It returns a string that looks like this:\nThe area of the triangle is 6.0\n\nThis function takes a total of four arguments, the first one is a string that tells the function which area to calculate, and the three other parameters are numeric. In the case of the circle, for example, only the first numeric argument is used.\n\n\n\n\ndef main():\n    print( rectangle_area(4, 4.5) ) # 18.0\n    print( triangle_area(3, 4, 5) ) # 6.0\n    print( trapezoid_area(4, 20, 10) ) # 120.0\n    assert circle_area(20) == 1256.6\n\n    message = calculate_area(\"trapezoid\", 11, 25, 5)\n    print(message) # \"The area of the trapezoid is 90.0\"\n    \n    message = calculate_area(\"circle\", 4, 0, 0)\n    print(message) # \"The area of the circle is 50.26\"\n  \nmain()\n\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\n\nStart with def followed by the name of the function\nAdd parameters inside the parentheses in the function definition\nReturn a value\n\n\ndef double(n):\n  result = n * 2\n  return result\n\ndef main():\n  print( double(5) )\n\nmain()\n\n10\n\n\n\n\n\nUse the round() function to get a floating-point number rounded to the specified number of decimals.\nSyntax:\n\nround(number, ndigits*)\n\nThe number of digits (ndigits) is optional, but we will often round number to two decimals:\n\nround(392.68750000000006)\n\n393\n\n\n\nround(392.68750000000006, 2)\n\n392.69\n\n\n\n\n\nWe can do concatenation in two different ways: a) one using the + operator and b) the other using .format() method, using {} as place holders for our variables:\n\nage = 20\nname = 'Philip'\n\nprint(name + ' is ' + str(age) + ' years old')\nprint('{} is {} years old'.format(name, age))\n\nPhilip is 20 years old\nPhilip is 20 years old\n\n\n\n\n\nWe can use logical expressions in if statements to return different things from a function:\n\ndef is_positive(number):\n  if number &gt; 0:\n    return \"Number is positive\"\n  if number &lt; 0:\n    return \"Number is negative\"\n  return \"Number is zero\"\n\ndef main():\n  print( is_positive(10) )\n  print( is_positive(0) )\n  print( is_positive(-10) )\n  \nmain()\n\nNumber is positive\nNumber is zero\nNumber is negative",
+    "text": "Due date: Wednesday, September 24, 2025 at 9pm",
     "crumbs": [
       "Short Projects",
       "Short Project 3"
@@ -4114,8 +4114,8 @@
     "objectID": "lab03.html#area-of-a-rectangle-rectangle_area",
     "href": "lab03.html#area-of-a-rectangle-rectangle_area",
     "title": "Short Project 3",
-    "section": "",
-    "text": "This function returns the area of the rectangle with given base and height\n\\[\narea = base \\cdot height\n\\]",
+    "section": "Area of a Rectangle – rectangle_area",
+    "text": "Area of a Rectangle – rectangle_area\nThis function returns the area of the rectangle with given base and height\n\\[\narea = base \\cdot height\n\\]",
     "crumbs": [
       "Short Projects",
       "Short Project 3"
@@ -4125,8 +4125,8 @@
     "objectID": "lab03.html#area-of-a-triangle-triangle_area",
     "href": "lab03.html#area-of-a-triangle-triangle_area",
     "title": "Short Project 3",
-    "section": "",
-    "text": "This function returns the area of three given triangle side lengths calculated according to Heron’s formula (calculate the semiperimeter first, then use that to calculate the area):\n\\[\ns = (a + b + c) / 2\n\\]\n\\[\narea = \\sqrt{s \\cdot (s-a) \\cdot (s-b) \\cdot (s-c)}\n\\]\nDo not use any built-in method or function for any Python library. Remember that roots are the opposite of an exponent. So you can calculate the square root of a number by using the exponent form \\(n^{1/2}\\).",
+    "section": "Area of a Triangle – triangle_area",
+    "text": "Area of a Triangle – triangle_area\nThis function returns the area of three given triangle side lengths calculated according to Heron’s formula (calculate the semiperimeter first, then use that to calculate the area):\n\\[\ns = (a + b + c) / 2\n\\]\n\\[\narea = \\sqrt{s \\cdot (s-a) \\cdot (s-b) \\cdot (s-c)}\n\\]\nDo not use any built-in method or function for any Python library. Remember that roots are the opposite of an exponent. So you can calculate the square root of a number by using the exponent form \\(n^{1/2}\\).",
     "crumbs": [
       "Short Projects",
       "Short Project 3"
@@ -4136,8 +4136,8 @@
     "objectID": "lab03.html#area-of-a-trapezoid-trapezoid_area",
     "href": "lab03.html#area-of-a-trapezoid-trapezoid_area",
     "title": "Short Project 3",
-    "section": "",
-    "text": "This function returns the area of the trapezoid with given base_1, base_2, and height.\n\\[\narea = {1/2} \\cdot (base_1 + base_2) \\cdot height\n\\]",
+    "section": "Area of a Trapezoid – trapezoid_area",
+    "text": "Area of a Trapezoid – trapezoid_area\nThis function returns the area of the trapezoid with given base_1, base_2, and height.\n\\[\narea = {1/2} \\cdot (base_1 + base_2) \\cdot height\n\\]",
     "crumbs": [
       "Short Projects",
       "Short Project 3"
@@ -4147,8 +4147,8 @@
     "objectID": "lab03.html#area-of-a-circle-circle_area",
     "href": "lab03.html#area-of-a-circle-circle_area",
     "title": "Short Project 3",
-    "section": "",
-    "text": "This function returns the area of the circle with the given radius, rounded at two decimal places. Use the value 3.1415 for \\(\\pi\\).\n\\[\narea = \\pi \\cdot radius^2\n\\]",
+    "section": "Area of a Circle – circle_area",
+    "text": "Area of a Circle – circle_area\nThis function returns the area of the circle with the given radius, rounded at two decimal places. Use the value 3.1415 for \\(\\pi\\).\n\\[\narea = \\pi \\cdot radius^2\n\\]",
     "crumbs": [
       "Short Projects",
       "Short Project 3"
@@ -4158,8 +4158,8 @@
     "objectID": "lab03.html#any-area-calculate_area",
     "href": "lab03.html#any-area-calculate_area",
     "title": "Short Project 3",
-    "section": "",
-    "text": "This function calls the other functions, based on a string argument: \"rectangle\", \"triangle\", or \"circle\". It returns a string that looks like this:\nThe area of the triangle is 6.0\n\nThis function takes a total of four arguments, the first one is a string that tells the function which area to calculate, and the three other parameters are numeric. In the case of the circle, for example, only the first numeric argument is used.",
+    "section": "Any area – calculate_area",
+    "text": "Any area – calculate_area\nThis function calls the other functions, based on a string argument: \"rectangle\", \"triangle\", or \"circle\". It returns a string that looks like this:\nThe area of the triangle is 6.0\n\nThis function takes a total of four arguments, the first one is a string that tells the function which area to calculate, and the three other parameters are numeric. In the case of the circle, for example, only the first numeric argument is used.",
     "crumbs": [
       "Short Projects",
       "Short Project 3"
@@ -4169,8 +4169,8 @@
     "objectID": "lab03.html#test-cases",
     "href": "lab03.html#test-cases",
     "title": "Short Project 3",
-    "section": "",
-    "text": "def main():\n    print( rectangle_area(4, 4.5) ) # 18.0\n    print( triangle_area(3, 4, 5) ) # 6.0\n    print( trapezoid_area(4, 20, 10) ) # 120.0\n    assert circle_area(20) == 1256.6\n\n    message = calculate_area(\"trapezoid\", 11, 25, 5)\n    print(message) # \"The area of the trapezoid is 90.0\"\n    \n    message = calculate_area(\"circle\", 4, 0, 0)\n    print(message) # \"The area of the circle is 50.26\"\n  \nmain()\n\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\n\nStart with def followed by the name of the function\nAdd parameters inside the parentheses in the function definition\nReturn a value\n\n\ndef double(n):\n  result = n * 2\n  return result\n\ndef main():\n  print( double(5) )\n\nmain()\n\n10\n\n\n\n\n\nUse the round() function to get a floating-point number rounded to the specified number of decimals.\nSyntax:\n\nround(number, ndigits*)\n\nThe number of digits (ndigits) is optional, but we will often round number to two decimals:\n\nround(392.68750000000006)\n\n393\n\n\n\nround(392.68750000000006, 2)\n\n392.69\n\n\n\n\n\nWe can do concatenation in two different ways: a) one using the + operator and b) the other using .format() method, using {} as place holders for our variables:\n\nage = 20\nname = 'Philip'\n\nprint(name + ' is ' + str(age) + ' years old')\nprint('{} is {} years old'.format(name, age))\n\nPhilip is 20 years old\nPhilip is 20 years old\n\n\n\n\n\nWe can use logical expressions in if statements to return different things from a function:\n\ndef is_positive(number):\n  if number &gt; 0:\n    return \"Number is positive\"\n  if number &lt; 0:\n    return \"Number is negative\"\n  return \"Number is zero\"\n\ndef main():\n  print( is_positive(10) )\n  print( is_positive(0) )\n  print( is_positive(-10) )\n  \nmain()\n\nNumber is positive\nNumber is zero\nNumber is negative",
+    "section": "Test cases",
+    "text": "Test cases\n\ndef main():\n    print( rectangle_area(4, 4.5) ) # 18.0\n    print( triangle_area(3, 4, 5) ) # 6.0\n    print( trapezoid_area(4, 20, 10) ) # 120.0\n    assert circle_area(20) == 1256.6\n\n    message = calculate_area(\"trapezoid\", 11, 25, 5)\n    print(message) # \"The area of the trapezoid is 90.0\"\n    \n    message = calculate_area(\"circle\", 4, 0, 0)\n    print(message) # \"The area of the circle is 50.26\"\n  \nmain()\n\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\nWriting a function\n\nStart with def followed by the name of the function\nAdd parameters inside the parentheses in the function definition\nReturn a value\n\n\ndef double(n):\n  result = n * 2\n  return result\n\ndef main():\n  print( double(5) )\n\nmain()\n\n10\n\n\n\n\nUsing round()\nUse the round() function to get a floating-point number rounded to the specified number of decimals.\nSyntax:\n\nround(number, ndigits*)\n\nThe number of digits (ndigits) is optional, but we will often round number to two decimals:\n\nround(392.68750000000006)\n\n393\n\n\n\nround(392.68750000000006, 2)\n\n392.69\n\n\n\n\nUsing format()\nWe can do concatenation in two different ways: a) one using the + operator and b) the other using .format() method, using {} as place holders for our variables:\n\nage = 20\nname = 'Philip'\n\nprint(name + ' is ' + str(age) + ' years old')\n\nPhilip is 20 years old\n\nprint('{} is {} years old'.format(name, age))\n\nPhilip is 20 years old\n\n\n\n\nIf statements\nWe can use logical expressions in if statements to return different things from a function:\n\ndef is_positive(number):\n  if number &gt; 0:\n    return \"Number is positive\"\n  if number &lt; 0:\n    return \"Number is negative\"\n  return \"Number is zero\"\n\ndef main():\n  print( is_positive(10) )\n  print( is_positive(0) )\n  print( is_positive(-10) )\n  \nmain()\n\nNumber is positive\nNumber is zero\nNumber is negative",
     "crumbs": [
       "Short Projects",
       "Short Project 3"
@@ -4180,8 +4180,8 @@
     "objectID": "lab03.html#writing-a-function",
     "href": "lab03.html#writing-a-function",
     "title": "Short Project 3",
-    "section": "",
-    "text": "Start with def followed by the name of the function\nAdd parameters inside the parentheses in the function definition\nReturn a value\n\n\ndef double(n):\n  result = n * 2\n  return result\n\ndef main():\n  print( double(5) )\n\nmain()\n\n10",
+    "section": "Writing a function",
+    "text": "Writing a function\n\nStart with def followed by the name of the function\nAdd parameters inside the parentheses in the function definition\nReturn a value\n\n\ndef double(n):\n  result = n * 2\n  return result\n\ndef main():\n  print( double(5) )\n\nmain()\n\n10",
     "crumbs": [
       "Short Projects",
       "Short Project 3"
@@ -4191,8 +4191,8 @@
     "objectID": "lab03.html#using-round",
     "href": "lab03.html#using-round",
     "title": "Short Project 3",
-    "section": "",
-    "text": "Use the round() function to get a floating-point number rounded to the specified number of decimals.\nSyntax:\n\nround(number, ndigits*)\n\nThe number of digits (ndigits) is optional, but we will often round number to two decimals:\n\nround(392.68750000000006)\n\n393\n\n\n\nround(392.68750000000006, 2)\n\n392.69",
+    "section": "Using round()",
+    "text": "Using round()\nUse the round() function to get a floating-point number rounded to the specified number of decimals.\nSyntax:\n\nround(number, ndigits*)\n\nThe number of digits (ndigits) is optional, but we will often round number to two decimals:\n\nround(392.68750000000006)\n\n393\n\n\n\nround(392.68750000000006, 2)\n\n392.69",
     "crumbs": [
       "Short Projects",
       "Short Project 3"
@@ -4202,8 +4202,8 @@
     "objectID": "lab03.html#using-format",
     "href": "lab03.html#using-format",
     "title": "Short Project 3",
-    "section": "",
-    "text": "We can do concatenation in two different ways: a) one using the + operator and b) the other using .format() method, using {} as place holders for our variables:\n\nage = 20\nname = 'Philip'\n\nprint(name + ' is ' + str(age) + ' years old')\nprint('{} is {} years old'.format(name, age))\n\nPhilip is 20 years old\nPhilip is 20 years old",
+    "section": "Using format()",
+    "text": "Using format()\nWe can do concatenation in two different ways: a) one using the + operator and b) the other using .format() method, using {} as place holders for our variables:\n\nage = 20\nname = 'Philip'\n\nprint(name + ' is ' + str(age) + ' years old')\n\nPhilip is 20 years old\n\nprint('{} is {} years old'.format(name, age))\n\nPhilip is 20 years old",
     "crumbs": [
       "Short Projects",
       "Short Project 3"
@@ -4213,8 +4213,8 @@
     "objectID": "lab03.html#if-statements",
     "href": "lab03.html#if-statements",
     "title": "Short Project 3",
-    "section": "",
-    "text": "We can use logical expressions in if statements to return different things from a function:\n\ndef is_positive(number):\n  if number &gt; 0:\n    return \"Number is positive\"\n  if number &lt; 0:\n    return \"Number is negative\"\n  return \"Number is zero\"\n\ndef main():\n  print( is_positive(10) )\n  print( is_positive(0) )\n  print( is_positive(-10) )\n  \nmain()\n\nNumber is positive\nNumber is zero\nNumber is negative",
+    "section": "If statements",
+    "text": "If statements\nWe can use logical expressions in if statements to return different things from a function:\n\ndef is_positive(number):\n  if number &gt; 0:\n    return \"Number is positive\"\n  if number &lt; 0:\n    return \"Number is negative\"\n  return \"Number is zero\"\n\ndef main():\n  print( is_positive(10) )\n  print( is_positive(0) )\n  print( is_positive(-10) )\n  \nmain()\n\nNumber is positive\nNumber is zero\nNumber is negative",
     "crumbs": [
       "Short Projects",
       "Short Project 3"
@@ -4247,7 +4247,7 @@
     "href": "lab02.html",
     "title": "Short Project 2",
     "section": "",
-    "text": "In this short project you will write a program that prints the lyrics for the nursery rhyme The Itsy Bitsy Spider. Here is the lyrics:\nThe itsy bitsy spider climbed up the waterspout.\nDown came the rain and washed the spider out.\nOut came the sun and dried up all the rain.\nThe itsy bitsy spider climbed up the waterspout.\n\nThe big hairy spider climbed up the waterspout.\nDown came the rain and washed the spider out.\nOut came the sun and dried up all the rain.\nThe big hairy spider climbed up the waterspout.\n\nThe teeny tiny spider climbed up the waterspout.\nDown came the rain and washed the spider out.\nOut came the sun and dried up all the rain.\nThe teeny tiny spider climbed up the waterspout.\n\nName the program spider.py. Make sure that gradescope gives you the points for passing the test cases.\n\n\n\ndef main():\n    print(\"The itsy bitsy spider climbed up the waterspout.\")\n    print(\"Down came the rain and washed the spider out.\")\n    print(\"Out came the sun and dried up all the rain.\")\n    print(\"The itsy bitsy spider climbed up the waterspout.\")\n    print()\n\n    print(\"The big hairy spider climbed up the waterspout.\")\n    print(\"Down came the rain and washed the spider out.\")\n    print(\"Out came the sun and dried up all the rain.\")\n    print(\"The big hairy spider climbed up the waterspout.\")\n    print()\n\n    print(\"The teeny tiny spider climbed up the waterspout.\")\n    print(\"Down came the rain and washed the spider out.\")\n    print(\"Out came the sun and dried up all the rain.\")\n    print(\"The teeny tiny spider climbed up the waterspout.\")\n    print()\n    \nmain()\n\n\n\n\nEach paragraph mentions one spider. This lyrics includes three types of spiders: \"itsy bitsy\", \"big hairy\", and \"teeny tiny\". You can define your own functions and call your functions within verse function. Note the verse function can only take one of the three arguments (e.g., \"big hairy\").\n\n# All your functions are defined here\n\ndef verse(spider_type):\n    # write your code here\n\nif __name__ == '__main__':\n    verse(\"itsy bitsy\")\n    verse(\"big hairy\")\n    verse(\"teeny tiny\")\n\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\n\nStart with def followed by the name of the function\nAdd parameters inside the parentheses in the function definition\nPrint a string within the function without return\n\n\ndef print_greeting(name):\n  print(\"Hello \" + name + \"!\")\n\ndef main():\n  print_greeting(\"Mickey\")\n  print_greeting(\"Minnie\")\n\nmain()\n\nHello Mickey!\nHello Minnie!\n\n\n\n\n\n\nage = 20\nname = 'Philip'\n\nHere’s how we can do concatenation using the + operator:\n\nname + ' is ' + str(age) + ' years old'\n\n'Philip is 20 years old'\n\n\nWe can do the same with the .format() method, using {} as place holders for our variables:\n\n'{} is {} years old'.format(name, age)\n\n'Philip is 20 years old'",
+    "text": "Due date: Wednesday, September 17, 2025 at 9pm",
     "crumbs": [
       "Short Projects",
       "Short Project 2"
@@ -4257,8 +4257,8 @@
     "objectID": "lab02.html#a-bad-solution",
     "href": "lab02.html#a-bad-solution",
     "title": "Short Project 2",
-    "section": "",
-    "text": "def main():\n    print(\"The itsy bitsy spider climbed up the waterspout.\")\n    print(\"Down came the rain and washed the spider out.\")\n    print(\"Out came the sun and dried up all the rain.\")\n    print(\"The itsy bitsy spider climbed up the waterspout.\")\n    print()\n\n    print(\"The big hairy spider climbed up the waterspout.\")\n    print(\"Down came the rain and washed the spider out.\")\n    print(\"Out came the sun and dried up all the rain.\")\n    print(\"The big hairy spider climbed up the waterspout.\")\n    print()\n\n    print(\"The teeny tiny spider climbed up the waterspout.\")\n    print(\"Down came the rain and washed the spider out.\")\n    print(\"Out came the sun and dried up all the rain.\")\n    print(\"The teeny tiny spider climbed up the waterspout.\")\n    print()\n    \nmain()",
+    "section": "A bad solution",
+    "text": "A bad solution\n\ndef main():\n    print(\"The itsy bitsy spider climbed up the waterspout.\")\n    print(\"Down came the rain and washed the spider out.\")\n    print(\"Out came the sun and dried up all the rain.\")\n    print(\"The itsy bitsy spider climbed up the waterspout.\")\n    print()\n\n    print(\"The big hairy spider climbed up the waterspout.\")\n    print(\"Down came the rain and washed the spider out.\")\n    print(\"Out came the sun and dried up all the rain.\")\n    print(\"The big hairy spider climbed up the waterspout.\")\n    print()\n\n    print(\"The teeny tiny spider climbed up the waterspout.\")\n    print(\"Down came the rain and washed the spider out.\")\n    print(\"Out came the sun and dried up all the rain.\")\n    print(\"The teeny tiny spider climbed up the waterspout.\")\n    print()\n    \nmain()",
     "crumbs": [
       "Short Projects",
       "Short Project 2"
@@ -4268,8 +4268,8 @@
     "objectID": "lab02.html#development-strategy",
     "href": "lab02.html#development-strategy",
     "title": "Short Project 2",
-    "section": "",
-    "text": "Each paragraph mentions one spider. This lyrics includes three types of spiders: \"itsy bitsy\", \"big hairy\", and \"teeny tiny\". You can define your own functions and call your functions within verse function. Note the verse function can only take one of the three arguments (e.g., \"big hairy\").\n\n# All your functions are defined here\n\ndef verse(spider_type):\n    # write your code here\n\nif __name__ == '__main__':\n    verse(\"itsy bitsy\")\n    verse(\"big hairy\")\n    verse(\"teeny tiny\")\n\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\n\nStart with def followed by the name of the function\nAdd parameters inside the parentheses in the function definition\nPrint a string within the function without return\n\n\ndef print_greeting(name):\n  print(\"Hello \" + name + \"!\")\n\ndef main():\n  print_greeting(\"Mickey\")\n  print_greeting(\"Minnie\")\n\nmain()\n\nHello Mickey!\nHello Minnie!\n\n\n\n\n\n\nage = 20\nname = 'Philip'\n\nHere’s how we can do concatenation using the + operator:\n\nname + ' is ' + str(age) + ' years old'\n\n'Philip is 20 years old'\n\n\nWe can do the same with the .format() method, using {} as place holders for our variables:\n\n'{} is {} years old'.format(name, age)\n\n'Philip is 20 years old'",
+    "section": "Development strategy",
+    "text": "Development strategy\nEach paragraph mentions one spider. This lyrics includes three types of spiders: \"itsy bitsy\", \"big hairy\", and \"teeny tiny\". You can define your own functions and call your functions within verse function. Note the verse function can only take one of the three arguments (e.g., \"big hairy\").\n\n# All your functions are defined here\n\ndef verse(spider_type):\n    # write your code here\n\nif __name__ == '__main__':\n    verse(\"itsy bitsy\")\n    verse(\"big hairy\")\n    verse(\"teeny tiny\")\n\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\nWriting a function\n\nStart with def followed by the name of the function\nAdd parameters inside the parentheses in the function definition\nPrint a string within the function without return\n\n\ndef print_greeting(name):\n  print(\"Hello \" + name + \"!\")\n\ndef main():\n  print_greeting(\"Mickey\")\n  print_greeting(\"Minnie\")\n\nmain()\n\nHello Mickey!\nHello Minnie!\n\n\n\n\nUsing format()\n\nage = 20\nname = 'Philip'\n\nHere’s how we can do concatenation using the + operator:\n\nname + ' is ' + str(age) + ' years old'\n\n'Philip is 20 years old'\n\n\nWe can do the same with the .format() method, using {} as place holders for our variables:\n\n'{} is {} years old'.format(name, age)\n\n'Philip is 20 years old'",
     "crumbs": [
       "Short Projects",
       "Short Project 2"
@@ -4279,8 +4279,8 @@
     "objectID": "lab02.html#writing-a-function",
     "href": "lab02.html#writing-a-function",
     "title": "Short Project 2",
-    "section": "",
-    "text": "Start with def followed by the name of the function\nAdd parameters inside the parentheses in the function definition\nPrint a string within the function without return\n\n\ndef print_greeting(name):\n  print(\"Hello \" + name + \"!\")\n\ndef main():\n  print_greeting(\"Mickey\")\n  print_greeting(\"Minnie\")\n\nmain()\n\nHello Mickey!\nHello Minnie!",
+    "section": "Writing a function",
+    "text": "Writing a function\n\nStart with def followed by the name of the function\nAdd parameters inside the parentheses in the function definition\nPrint a string within the function without return\n\n\ndef print_greeting(name):\n  print(\"Hello \" + name + \"!\")\n\ndef main():\n  print_greeting(\"Mickey\")\n  print_greeting(\"Minnie\")\n\nmain()\n\nHello Mickey!\nHello Minnie!",
     "crumbs": [
       "Short Projects",
       "Short Project 2"
@@ -4290,8 +4290,8 @@
     "objectID": "lab02.html#using-format",
     "href": "lab02.html#using-format",
     "title": "Short Project 2",
-    "section": "",
-    "text": "age = 20\nname = 'Philip'\n\nHere’s how we can do concatenation using the + operator:\n\nname + ' is ' + str(age) + ' years old'\n\n'Philip is 20 years old'\n\n\nWe can do the same with the .format() method, using {} as place holders for our variables:\n\n'{} is {} years old'.format(name, age)\n\n'Philip is 20 years old'",
+    "section": "Using format()",
+    "text": "Using format()\n\nage = 20\nname = 'Philip'\n\nHere’s how we can do concatenation using the + operator:\n\nname + ' is ' + str(age) + ' years old'\n\n'Philip is 20 years old'\n\n\nWe can do the same with the .format() method, using {} as place holders for our variables:\n\n'{} is {} years old'.format(name, age)\n\n'Philip is 20 years old'",
     "crumbs": [
       "Short Projects",
       "Short Project 2"
@@ -4654,7 +4654,7 @@
     "href": "lab01.html",
     "title": "Short Project 1",
     "section": "",
-    "text": "In the this program, you will print out ASCII-art of one of the most famous vehicles of all time - the Model-T automobile! Name your program modelt.py.\nYour program should be able to print different cars based on the width of the car. The number that your program accepts should control the width of the center part of the vehicle. A larger width value should make for a longer car, and vice-versa. The height of the vehicle will remain the same regardless of the width entered. Below are several examples of this program running with different values provided. Your program should match the look of the outputs exactly.\n\nwidth = 0\ncar = build_car(width)\nprint(car, end=\"\")\n\n.-----------.\n| ### ||  ###\\\n| ### ||  ####\\.\nD     ||  &lt;&gt;    |------+\n|  ______      /______ |\n \\/ /..\\ \\_____/ /..\\ \\|\n    \\__/         \\__/\n\n\nwidth = 5\ncar = build_car(width)\nprint(car, end=\"\")\n\n.----------------.\n| ### ||  ########\\\n| ### ||  #########\\.\nD     ||       &lt;&gt;    |------+\n|  ______           /______ |\n \\/ /..\\ \\__________/ /..\\ \\|\n    \\__/              \\__/\n\n\nwidth = 12\ncar = build_car(width)\nprint(car, end=\"\")\n\n.-----------------------.\n| ### ||  ###############\\\n| ### ||  ################\\.\nD     ||              &lt;&gt;    |------+\n|  ______                  /______ |\n \\/ /..\\ \\_________________/ /..\\ \\|\n    \\__/                     \\__/\n\nAny integer number 0 or greater should be supported. You don’t need to worry about handling negative numbers, fractions, or numbers with decimals.\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\nAny sequence of characters enveloped in quotes (single, double, triple). Your opening quotes need to match your closing quotes.\nString literals:\n\n\"this is a string\"\n'this is also a string'\n\nUse variable names:\n\nmy_name = \"Julia Smith\"\n\n\n\n\nPrint string literals:\n\nprint(\"Hi there\")\n\nHi there\n\n\nPrint variables:\n\nmessage = \"Hi there\"\nprint(message)\n\nHi there\n\n\n\n\n\nUse the + operator to “glue” strings together:\n\nmessage = \"Hi there\"\npunctuation = \"!\"\nprint(message + punctuation)\n\nHi there!\n\n\nYou can also use += to change to retrieve the string assigned to a variable, “glue” another string to it, and assign it back to the same variable name:\n\nfull_message = \"\" # start with an empty string\nfull_message += \"Hi there\"\nfull_message += \"!\"\nprint(full_message)\n\nHi there!\n\n\n\n\n\nUse the keyword def to define a function use () after your function name to list all the parameters.\n\ndef repeat_message(message, n):\n  full_message = message * n\n  return full_message\n\nmessage = repeat_message(\"Hi there\", 5)\nprint(message)\n\nHi thereHi thereHi thereHi thereHi there\n\n\n\nWhat if I wanted to have a space between each string?\nWhat if I wanted to have a line break between each string?",
+    "text": "Due date: Wednesday, September 10, 2025 at 9pm",
     "crumbs": [
       "Short Projects",
       "Short Project 1"
@@ -4664,8 +4664,8 @@
     "objectID": "lab01.html#what-are-strings",
     "href": "lab01.html#what-are-strings",
     "title": "Short Project 1",
-    "section": "",
-    "text": "Any sequence of characters enveloped in quotes (single, double, triple). Your opening quotes need to match your closing quotes.\nString literals:\n\n\"this is a string\"\n'this is also a string'\n\nUse variable names:\n\nmy_name = \"Julia Smith\"",
+    "section": "What are strings?",
+    "text": "What are strings?\nAny sequence of characters enveloped in quotes (single, double, triple). Your opening quotes need to match your closing quotes.\nString literals:\n\n\"this is a string\"\n'this is also a string'\n\nUse variable names:\n\nmy_name = \"Julia Smith\"",
     "crumbs": [
       "Short Projects",
       "Short Project 1"
@@ -4675,8 +4675,8 @@
     "objectID": "lab01.html#print-function",
     "href": "lab01.html#print-function",
     "title": "Short Project 1",
-    "section": "",
-    "text": "Print string literals:\n\nprint(\"Hi there\")\n\nHi there\n\n\nPrint variables:\n\nmessage = \"Hi there\"\nprint(message)\n\nHi there",
+    "section": "print() function",
+    "text": "print() function\nPrint string literals:\n\nprint(\"Hi there\")\n\nHi there\n\n\nPrint variables:\n\nmessage = \"Hi there\"\nprint(message)\n\nHi there",
     "crumbs": [
       "Short Projects",
       "Short Project 1"
@@ -4686,8 +4686,8 @@
     "objectID": "lab01.html#concatenate-strings",
     "href": "lab01.html#concatenate-strings",
     "title": "Short Project 1",
-    "section": "",
-    "text": "Use the + operator to “glue” strings together:\n\nmessage = \"Hi there\"\npunctuation = \"!\"\nprint(message + punctuation)\n\nHi there!\n\n\nYou can also use += to change to retrieve the string assigned to a variable, “glue” another string to it, and assign it back to the same variable name:\n\nfull_message = \"\" # start with an empty string\nfull_message += \"Hi there\"\nfull_message += \"!\"\nprint(full_message)\n\nHi there!",
+    "section": "Concatenate strings",
+    "text": "Concatenate strings\nUse the + operator to “glue” strings together:\n\nmessage = \"Hi there\"\npunctuation = \"!\"\nprint(message + punctuation)\n\nHi there!\n\n\nYou can also use += to change to retrieve the string assigned to a variable, “glue” another string to it, and assign it back to the same variable name:\n\nfull_message = \"\" # start with an empty string\nfull_message += \"Hi there\"\nfull_message += \"!\"\nprint(full_message)\n\nHi there!",
     "crumbs": [
       "Short Projects",
       "Short Project 1"
@@ -4697,8 +4697,8 @@
     "objectID": "lab01.html#writing-your-own-function",
     "href": "lab01.html#writing-your-own-function",
     "title": "Short Project 1",
-    "section": "",
-    "text": "Use the keyword def to define a function use () after your function name to list all the parameters.\n\ndef repeat_message(message, n):\n  full_message = message * n\n  return full_message\n\nmessage = repeat_message(\"Hi there\", 5)\nprint(message)\n\nHi thereHi thereHi thereHi thereHi there\n\n\n\nWhat if I wanted to have a space between each string?\nWhat if I wanted to have a line break between each string?",
+    "section": "Writing your own function",
+    "text": "Writing your own function\nUse the keyword def to define a function use () after your function name to list all the parameters.\n\ndef repeat_message(message, n):\n  full_message = message * n\n  return full_message\n\nmessage = repeat_message(\"Hi there\", 5)\nprint(message)\n\nHi thereHi thereHi thereHi thereHi there\n\n\n\nWhat if I wanted to have a space between each string?\nWhat if I wanted to have a line break between each string?",
     "crumbs": [
       "Short Projects",
       "Short Project 1"
@@ -4885,7 +4885,7 @@
     "href": "lab04.html",
     "title": "Short Project 4",
     "section": "",
-    "text": "Though CPUs, and computer hardware in-general, are not the main focus of this course, it can be useful to know a thing or two about computer hardware. The CPU (Central Processing Unit) is generally the piece of hardware that carries out the instructions of the python programs that you run in this class.\nIn this short project, you will write a program that takes a few input values related to CPU performance. The program should determine whether or not the specified CPU is within one of four categories: high-performance, medium-performance, low-performance, and in need of an upgrade. Name the file cpu.py.\nShown below is an example of the program prompting the user for two inputs, and then printing out the corresponding CPU performance category:\n\ndef main():\n  gigahertz = 2.7\n  core_count = 2\n  result = get_result(gigahertz, core_count)\n  print(result)\n  \nmain()\n\nThat is a low-performance CPU.\n\n\nThe first argument, Gigahertz, should be converted to a float\nThe second argument, core count, should be an integer\n\nThe program should return one of 4 strings:\n\nThat is a high-performance CPU.\nThat is a medium-performance CPU.\nThat is a low-performance CPU.\nThat CPU could use an upgrade.\n\nHow you determine which to return should be based on the below table:\n\n\n\nperformance level\nmin GHz\nmin cores\n\n\n\n\nhigh-performance\n3.2\n8\n\n\nmedium-performance\n2.5\n6\n\n\nlow-performance\n2.0\n2\n\n\n\nFor example, a medium-performance CPU must satisfy both requirements: a) GHz no less than 2.5 and b) cores no less than 6.\nThere’s also one “special-case” rule: If a CPU has 20 or more cores, regardless of the other stats, it should be considered high-performance.\n\n\nBelow are examples of program runs. There will be more tests on Gradescope.\n\ndef main():\n  gigahertz = 2.0\n  core_count = 8\n  assert get_result(gigahertz, core_count) == \"That is a low-performance CPU.\"\n  \n  gigahertz = 4.0\n  core_count = 7\n  assert get_result(gigahertz, core_count) == \"That is a medium-performance CPU.\"\n  \n  gigahertz = 1.0\n  core_count = 10\n  assert get_result(gigahertz, core_count) == \"That CPU could use an upgrade.\"\n  \n  print(\"End of tests\")\n  \nmain()\n\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\nAn expression that evaluated to a Boolean value (True or False)\n\nage = 21\nage &gt;= 21\n\nTrue\n\n\n\nage &gt; 21\n\nFalse\n\n\n\nage &gt; 35\n\nFalse\n\n\n\n\n\nWe can use logical expressions in if-else statements:\n\nif age &gt; 15:\n  allowed_to_drive = True\nelse:\n  allowed_to_drive = False\n  \nprint(allowed_to_drive)\n\nTrue\n\n\nWhen the expression age &gt; 15 is evaluated to True lines 2 and 6 run, if it is evaluated to False line to is skipped over and lines 4 and 6 run.\n\n\n\nAdd elif statement if you need to check another condition:\n\nif age &gt;= 21:\n  allowed_to_drink = True\n  allowed_to_drive = True\nelif age &gt; 15:\n  allowed_to_drink = False\n  allowed_to_drive = True\nelse:\n  allowed_to_drink = False\n  allowed_to_drive = False\n  \nprint(allowed_to_drink, allowed_to_drive)\n\nWhen the expression age &gt;= 21 is evaluated to True lines 2, 3 and 11 run, if it is evaluated to False lines 2-3 are skipped over and then age &gt; 15 is evaluated. If age &gt; 15 is evaluated to True lines 5, 6 and 11 run, if it is evaluated to False lines 5-6 are skipped over and lines 8, 9, and 11 run.",
+    "text": "Due date: Wednesday, October 01, 2025 at 9pm",
     "crumbs": [
       "Short Projects",
       "Short Project 4"
@@ -4895,8 +4895,8 @@
     "objectID": "lab04.html#test-cases",
     "href": "lab04.html#test-cases",
     "title": "Short Project 4",
-    "section": "",
-    "text": "Below are examples of program runs. There will be more tests on Gradescope.\n\ndef main():\n  gigahertz = 2.0\n  core_count = 8\n  assert get_result(gigahertz, core_count) == \"That is a low-performance CPU.\"\n  \n  gigahertz = 4.0\n  core_count = 7\n  assert get_result(gigahertz, core_count) == \"That is a medium-performance CPU.\"\n  \n  gigahertz = 1.0\n  core_count = 10\n  assert get_result(gigahertz, core_count) == \"That CPU could use an upgrade.\"\n  \n  print(\"End of tests\")\n  \nmain()\n\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\nAn expression that evaluated to a Boolean value (True or False)\n\nage = 21\nage &gt;= 21\n\nTrue\n\n\n\nage &gt; 21\n\nFalse\n\n\n\nage &gt; 35\n\nFalse\n\n\n\n\n\nWe can use logical expressions in if-else statements:\n\nif age &gt; 15:\n  allowed_to_drive = True\nelse:\n  allowed_to_drive = False\n  \nprint(allowed_to_drive)\n\nTrue\n\n\nWhen the expression age &gt; 15 is evaluated to True lines 2 and 6 run, if it is evaluated to False line to is skipped over and lines 4 and 6 run.\n\n\n\nAdd elif statement if you need to check another condition:\n\nif age &gt;= 21:\n  allowed_to_drink = True\n  allowed_to_drive = True\nelif age &gt; 15:\n  allowed_to_drink = False\n  allowed_to_drive = True\nelse:\n  allowed_to_drink = False\n  allowed_to_drive = False\n  \nprint(allowed_to_drink, allowed_to_drive)\n\nWhen the expression age &gt;= 21 is evaluated to True lines 2, 3 and 11 run, if it is evaluated to False lines 2-3 are skipped over and then age &gt; 15 is evaluated. If age &gt; 15 is evaluated to True lines 5, 6 and 11 run, if it is evaluated to False lines 5-6 are skipped over and lines 8, 9, and 11 run.",
+    "section": "Test Cases",
+    "text": "Test Cases\nBelow are examples of program runs. There will be more tests on Gradescope.\n\ndef main():\n  gigahertz = 2.0\n  core_count = 8\n  assert get_result(gigahertz, core_count) == \"That is a low-performance CPU.\"\n  \n  gigahertz = 4.0\n  core_count = 7\n  assert get_result(gigahertz, core_count) == \"That is a medium-performance CPU.\"\n  \n  gigahertz = 1.0\n  core_count = 10\n  assert get_result(gigahertz, core_count) == \"That CPU could use an upgrade.\"\n  \n  print(\"End of tests\")\n  \nmain()\n\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\nLogical Expressions\nAn expression that evaluated to a Boolean value (True or False)\n\nage = 21\nage &gt;= 21\n\nTrue\n\n\n\nage &gt; 21\n\nFalse\n\n\n\nage &gt; 35\n\nFalse\n\n\n\n\nIf statements\nWe can use logical expressions in if-else statements:\n\nif age &gt; 15:\n  allowed_to_drive = True\nelse:\n  allowed_to_drive = False\n  \nprint(allowed_to_drive)\n\nTrue\n\n\nWhen the expression age &gt; 15 is evaluated to True lines 2 and 6 run, if it is evaluated to False line to is skipped over and lines 4 and 6 run.\n\n\nIf statements\nAdd elif statement if you need to check another condition:\n\nif age &gt;= 21:\n  allowed_to_drink = True\n  allowed_to_drive = True\nelif age &gt; 15:\n  allowed_to_drink = False\n  allowed_to_drive = True\nelse:\n  allowed_to_drink = False\n  allowed_to_drive = False\n  \nprint(allowed_to_drink, allowed_to_drive)\n\nWhen the expression age &gt;= 21 is evaluated to True lines 2, 3 and 11 run, if it is evaluated to False lines 2-3 are skipped over and then age &gt; 15 is evaluated. If age &gt; 15 is evaluated to True lines 5, 6 and 11 run, if it is evaluated to False lines 5-6 are skipped over and lines 8, 9, and 11 run.",
     "crumbs": [
       "Short Projects",
       "Short Project 4"
@@ -4906,8 +4906,8 @@
     "objectID": "lab04.html#logical-expressions",
     "href": "lab04.html#logical-expressions",
     "title": "Short Project 4",
-    "section": "",
-    "text": "An expression that evaluated to a Boolean value (True or False)\n\nage = 21\nage &gt;= 21\n\nTrue\n\n\n\nage &gt; 21\n\nFalse\n\n\n\nage &gt; 35\n\nFalse",
+    "section": "Logical Expressions",
+    "text": "Logical Expressions\nAn expression that evaluated to a Boolean value (True or False)\n\nage = 21\nage &gt;= 21\n\nTrue\n\n\n\nage &gt; 21\n\nFalse\n\n\n\nage &gt; 35\n\nFalse",
     "crumbs": [
       "Short Projects",
       "Short Project 4"
@@ -4917,8 +4917,8 @@
     "objectID": "lab04.html#if-statements",
     "href": "lab04.html#if-statements",
     "title": "Short Project 4",
-    "section": "",
-    "text": "We can use logical expressions in if-else statements:\n\nif age &gt; 15:\n  allowed_to_drive = True\nelse:\n  allowed_to_drive = False\n  \nprint(allowed_to_drive)\n\nTrue\n\n\nWhen the expression age &gt; 15 is evaluated to True lines 2 and 6 run, if it is evaluated to False line to is skipped over and lines 4 and 6 run.",
+    "section": "If statements",
+    "text": "If statements\nWe can use logical expressions in if-else statements:\n\nif age &gt; 15:\n  allowed_to_drive = True\nelse:\n  allowed_to_drive = False\n  \nprint(allowed_to_drive)\n\nTrue\n\n\nWhen the expression age &gt; 15 is evaluated to True lines 2 and 6 run, if it is evaluated to False line to is skipped over and lines 4 and 6 run.",
     "crumbs": [
       "Short Projects",
       "Short Project 4"
@@ -4928,8 +4928,8 @@
     "objectID": "lab04.html#if-statements-1",
     "href": "lab04.html#if-statements-1",
     "title": "Short Project 4",
-    "section": "",
-    "text": "Add elif statement if you need to check another condition:\n\nif age &gt;= 21:\n  allowed_to_drink = True\n  allowed_to_drive = True\nelif age &gt; 15:\n  allowed_to_drink = False\n  allowed_to_drive = True\nelse:\n  allowed_to_drink = False\n  allowed_to_drive = False\n  \nprint(allowed_to_drink, allowed_to_drive)\n\nWhen the expression age &gt;= 21 is evaluated to True lines 2, 3 and 11 run, if it is evaluated to False lines 2-3 are skipped over and then age &gt; 15 is evaluated. If age &gt; 15 is evaluated to True lines 5, 6 and 11 run, if it is evaluated to False lines 5-6 are skipped over and lines 8, 9, and 11 run.",
+    "section": "If statements",
+    "text": "If statements\nAdd elif statement if you need to check another condition:\n\nif age &gt;= 21:\n  allowed_to_drink = True\n  allowed_to_drive = True\nelif age &gt; 15:\n  allowed_to_drink = False\n  allowed_to_drive = True\nelse:\n  allowed_to_drink = False\n  allowed_to_drive = False\n  \nprint(allowed_to_drink, allowed_to_drive)\n\nWhen the expression age &gt;= 21 is evaluated to True lines 2, 3 and 11 run, if it is evaluated to False lines 2-3 are skipped over and then age &gt; 15 is evaluated. If age &gt; 15 is evaluated to True lines 5, 6 and 11 run, if it is evaluated to False lines 5-6 are skipped over and lines 8, 9, and 11 run.",
     "crumbs": [
       "Short Projects",
       "Short Project 4"
@@ -4962,7 +4962,7 @@
     "href": "lab05.html",
     "title": "Short Project 5",
     "section": "",
-    "text": "In this short project, you will calculate how many years it takes for an account balance to reach an investment goal.\nName the program investment.py. Make sure that gradescope gives you the points for passing the test cases.\n\n\nHere’s the problem to solve:\n\nImagine you have X amount of dollars in an investment account that earns 5% interest per year. How long (in years) does it take for the account balance to be times Y the original investment?\n\n\n# X amount of dollars is $10,000\ninitial_amount = 10000\n\n# times Y is 2\ngoal_of_investment = 2\n\nmessage = investment_years(initial_amount, goal_of_investment)\nprint(message)\n\nThe investment of $10,000 will be 2 times larger in 15 years.\n\n\n\n\nYou will need to use a while loop to solve this problem. You need to calculate what the goal amount is, and you will calculate how much each passing year accrues until you get to the goal.\nYou will also need to create a year variable to count how many years it takes to achieve the goal. Remember to increment year with every iteration.\nCalculate the interest (multiply balance by 0.05) and the balance (add interest to it) in each iteration as well.\n\n\n\n\ndef main():\n    # X amount of dollars is $10,000\n  initial_amount = 10000\n\n  # times Y is 2\n  goal_of_investment = 2\n\n  message = investment_years(initial_amount, goal_of_investment)\n  print(message) \n  # The investment of $10,000 will be 2 times larger in 15 years.\n\n  print(investment_years(50000, 10))\n  # The investment of $50,000 will be 10 times larger in 48 years.\n  \nmain()\n\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\nYou need to determine two things:\n\nWhat’s your condition to stop the iteration\nWhat variables do you need to update the condition in each iteration (so you don’t fall into an infinite loop)\n\n\n\n\nWrite a while loop to count how many years until you can run for president (simplistic example, for illustration purposes only):\n\ndef count_years(current_age, age_goal):\n  years = 0\n  age = current_age\n  while age &lt; age_goal:\n    years += 1\n    age += 1\n  return years\n\ndef main():\n  print( count_years(20, 35))\n  \nmain()\n\n15\n\n\n\n\n\nLet’s update our function so it returns a string message instead of an integer:\n\ndef count_years(current_age, age_goal):\n  years = 0\n  age = current_age\n  while age &lt; age_goal:\n    years += 1\n    age += 1\n  message = \"It will take {} years\".format(years)\n  message += \" for you to be able to run for president.\"\n  return message\n\ndef main():\n  print( count_years(20, 35))\n  \nmain()\n\nIt will take 15 years for you to be able to run for president.\n\n\n\n\n\nUse : to specify formatting options,\n\namount = 10000000\nprint(\"I have ${:,} in my pocket.\".format(amount))\n\nI have $10,000,000 in my pocket.",
+    "text": "Due date: Friday, October 10, 2025 at 9pm",
     "crumbs": [
       "Short Projects",
       "Short Project 5"
@@ -4972,8 +4972,8 @@
     "objectID": "lab05.html#description-of-the-problem",
     "href": "lab05.html#description-of-the-problem",
     "title": "Short Project 5",
-    "section": "",
-    "text": "Here’s the problem to solve:\n\nImagine you have X amount of dollars in an investment account that earns 5% interest per year. How long (in years) does it take for the account balance to be times Y the original investment?\n\n\n# X amount of dollars is $10,000\ninitial_amount = 10000\n\n# times Y is 2\ngoal_of_investment = 2\n\nmessage = investment_years(initial_amount, goal_of_investment)\nprint(message)\n\nThe investment of $10,000 will be 2 times larger in 15 years.",
+    "section": "Description of the problem",
+    "text": "Description of the problem\nHere’s the problem to solve:\n\nImagine you have X amount of dollars in an investment account that earns 5% interest per year. How long (in years) does it take for the account balance to be times Y the original investment?\n\n\n# X amount of dollars is $10,000\ninitial_amount = 10000\n\n# times Y is 2\ngoal_of_investment = 2\n\nmessage = investment_years(initial_amount, goal_of_investment)\nprint(message)\n\nThe investment of $10,000 will be 2 times larger in 15 years.",
     "crumbs": [
       "Short Projects",
       "Short Project 5"
@@ -4983,8 +4983,8 @@
     "objectID": "lab05.html#development-strategy",
     "href": "lab05.html#development-strategy",
     "title": "Short Project 5",
-    "section": "",
-    "text": "You will need to use a while loop to solve this problem. You need to calculate what the goal amount is, and you will calculate how much each passing year accrues until you get to the goal.\nYou will also need to create a year variable to count how many years it takes to achieve the goal. Remember to increment year with every iteration.\nCalculate the interest (multiply balance by 0.05) and the balance (add interest to it) in each iteration as well.",
+    "section": "Development strategy",
+    "text": "Development strategy\nYou will need to use a while loop to solve this problem. You need to calculate what the goal amount is, and you will calculate how much each passing year accrues until you get to the goal.\nYou will also need to create a year variable to count how many years it takes to achieve the goal. Remember to increment year with every iteration.\nCalculate the interest (multiply balance by 0.05) and the balance (add interest to it) in each iteration as well.",
     "crumbs": [
       "Short Projects",
       "Short Project 5"
@@ -4994,8 +4994,8 @@
     "objectID": "lab05.html#test-cases",
     "href": "lab05.html#test-cases",
     "title": "Short Project 5",
-    "section": "",
-    "text": "def main():\n    # X amount of dollars is $10,000\n  initial_amount = 10000\n\n  # times Y is 2\n  goal_of_investment = 2\n\n  message = investment_years(initial_amount, goal_of_investment)\n  print(message) \n  # The investment of $10,000 will be 2 times larger in 15 years.\n\n  print(investment_years(50000, 10))\n  # The investment of $50,000 will be 10 times larger in 48 years.\n  \nmain()\n\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\nYou need to determine two things:\n\nWhat’s your condition to stop the iteration\nWhat variables do you need to update the condition in each iteration (so you don’t fall into an infinite loop)\n\n\n\n\nWrite a while loop to count how many years until you can run for president (simplistic example, for illustration purposes only):\n\ndef count_years(current_age, age_goal):\n  years = 0\n  age = current_age\n  while age &lt; age_goal:\n    years += 1\n    age += 1\n  return years\n\ndef main():\n  print( count_years(20, 35))\n  \nmain()\n\n15\n\n\n\n\n\nLet’s update our function so it returns a string message instead of an integer:\n\ndef count_years(current_age, age_goal):\n  years = 0\n  age = current_age\n  while age &lt; age_goal:\n    years += 1\n    age += 1\n  message = \"It will take {} years\".format(years)\n  message += \" for you to be able to run for president.\"\n  return message\n\ndef main():\n  print( count_years(20, 35))\n  \nmain()\n\nIt will take 15 years for you to be able to run for president.\n\n\n\n\n\nUse : to specify formatting options,\n\namount = 10000000\nprint(\"I have ${:,} in my pocket.\".format(amount))\n\nI have $10,000,000 in my pocket.",
+    "section": "Test cases",
+    "text": "Test cases\n\ndef main():\n    # X amount of dollars is $10,000\n  initial_amount = 10000\n\n  # times Y is 2\n  goal_of_investment = 2\n\n  message = investment_years(initial_amount, goal_of_investment)\n  print(message) \n  # The investment of $10,000 will be 2 times larger in 15 years.\n\n  print(investment_years(50000, 10))\n  # The investment of $50,000 will be 10 times larger in 48 years.\n  \nmain()\n\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\nHow to write a while loop\nYou need to determine two things:\n\nWhat’s your condition to stop the iteration\nWhat variables do you need to update the condition in each iteration (so you don’t fall into an infinite loop)\n\n\n\nExample\nWrite a while loop to count how many years until you can run for president (simplistic example, for illustration purposes only):\n\ndef count_years(current_age, age_goal):\n  years = 0\n  age = current_age\n  while age &lt; age_goal:\n    years += 1\n    age += 1\n  return years\n\ndef main():\n  print( count_years(20, 35))\n  \nmain()\n\n15\n\n\n\n\n.format() method\nLet’s update our function so it returns a string message instead of an integer:\n\ndef count_years(current_age, age_goal):\n  years = 0\n  age = current_age\n  while age &lt; age_goal:\n    years += 1\n    age += 1\n  message = \"It will take {} years\".format(years)\n  message += \" for you to be able to run for president.\"\n  return message\n\ndef main():\n  print( count_years(20, 35))\n  \nmain()\n\nIt will take 15 years for you to be able to run for president.\n\n\n\n\nFormatting numbers\nUse : to specify formatting options,\n\namount = 10000000\nprint(\"I have ${:,} in my pocket.\".format(amount))\n\nI have $10,000,000 in my pocket.",
     "crumbs": [
       "Short Projects",
       "Short Project 5"
@@ -5005,8 +5005,8 @@
     "objectID": "lab05.html#how-to-write-a-while-loop",
     "href": "lab05.html#how-to-write-a-while-loop",
     "title": "Short Project 5",
-    "section": "",
-    "text": "You need to determine two things:\n\nWhat’s your condition to stop the iteration\nWhat variables do you need to update the condition in each iteration (so you don’t fall into an infinite loop)",
+    "section": "How to write a while loop",
+    "text": "How to write a while loop\nYou need to determine two things:\n\nWhat’s your condition to stop the iteration\nWhat variables do you need to update the condition in each iteration (so you don’t fall into an infinite loop)",
     "crumbs": [
       "Short Projects",
       "Short Project 5"
@@ -5016,8 +5016,8 @@
     "objectID": "lab05.html#example",
     "href": "lab05.html#example",
     "title": "Short Project 5",
-    "section": "",
-    "text": "Write a while loop to count how many years until you can run for president (simplistic example, for illustration purposes only):\n\ndef count_years(current_age, age_goal):\n  years = 0\n  age = current_age\n  while age &lt; age_goal:\n    years += 1\n    age += 1\n  return years\n\ndef main():\n  print( count_years(20, 35))\n  \nmain()\n\n15",
+    "section": "Example",
+    "text": "Example\nWrite a while loop to count how many years until you can run for president (simplistic example, for illustration purposes only):\n\ndef count_years(current_age, age_goal):\n  years = 0\n  age = current_age\n  while age &lt; age_goal:\n    years += 1\n    age += 1\n  return years\n\ndef main():\n  print( count_years(20, 35))\n  \nmain()\n\n15",
     "crumbs": [
       "Short Projects",
       "Short Project 5"
@@ -5027,8 +5027,8 @@
     "objectID": "lab05.html#format-method",
     "href": "lab05.html#format-method",
     "title": "Short Project 5",
-    "section": "",
-    "text": "Let’s update our function so it returns a string message instead of an integer:\n\ndef count_years(current_age, age_goal):\n  years = 0\n  age = current_age\n  while age &lt; age_goal:\n    years += 1\n    age += 1\n  message = \"It will take {} years\".format(years)\n  message += \" for you to be able to run for president.\"\n  return message\n\ndef main():\n  print( count_years(20, 35))\n  \nmain()\n\nIt will take 15 years for you to be able to run for president.",
+    "section": ".format() method",
+    "text": ".format() method\nLet’s update our function so it returns a string message instead of an integer:\n\ndef count_years(current_age, age_goal):\n  years = 0\n  age = current_age\n  while age &lt; age_goal:\n    years += 1\n    age += 1\n  message = \"It will take {} years\".format(years)\n  message += \" for you to be able to run for president.\"\n  return message\n\ndef main():\n  print( count_years(20, 35))\n  \nmain()\n\nIt will take 15 years for you to be able to run for president.",
     "crumbs": [
       "Short Projects",
       "Short Project 5"
@@ -5038,8 +5038,8 @@
     "objectID": "lab05.html#formatting-numbers",
     "href": "lab05.html#formatting-numbers",
     "title": "Short Project 5",
-    "section": "",
-    "text": "Use : to specify formatting options,\n\namount = 10000000\nprint(\"I have ${:,} in my pocket.\".format(amount))\n\nI have $10,000,000 in my pocket.",
+    "section": "Formatting numbers",
+    "text": "Formatting numbers\nUse : to specify formatting options,\n\namount = 10000000\nprint(\"I have ${:,} in my pocket.\".format(amount))\n\nI have $10,000,000 in my pocket.",
     "crumbs": [
       "Short Projects",
       "Short Project 5"
@@ -5215,7 +5215,7 @@
     "href": "lab06.html",
     "title": "Short Project 6",
     "section": "",
-    "text": "In this short programming project you will be writing a function that takes a list, and index, and a direction (\"left\" or \"right\") as arguments. The goal of the function is to move the item at index to the provided direction skipping over all zeros and taking the place of another item that is not zero. If reaching the end (either left or right end) and all of the items are zero, take place of the last item.\nName the program move_item.py. Make sure that gradescope gives you the points for passing the test cases.\n\n\n\noriginal_list = [\"a\", 0, 0, \"b\", \"c\", 0, 0]\nprint( move_item(original_list, 3,  \"left\") )\n\n['b', 0, 0, 0, 'c', 0, 0]\n\n\noriginal_list = [\"a\", 0, 0, \"b\", \"c\", 0, 0]\nprint( move_item(original_list, 3, \"right\") )\n\n['a', 0, 0, 0, 'b', 0, 0]\n\n\n# call the function again\nprint( move_item(original_list, 4, \"right\") )\n\n['a', 0, 0, 0, 0, 0, 'b']\n\n\n\n\nThe easiest way to implement this is using two while loops (one for going to the left, another for going to the right). You have the starting point of the item you want to move (the \"index\") – you need to find out where it needs to end.\nYour first guess for the end index should be minus one on the index if you are going to the left or plus one on the index if you are going to the right. In your while loop you need to keep subtracting one or adding one (depending on your direction) until you reach your end destination – meaning, you skip over the zeros until you either reach the beginning of the end of the list (depending on the direction you are going) or you found an item to replace (something that is different than zero).\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\nYou can access an item in a list using an index:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nWhat’s the index for value 2 and 1?\nYou can replace an item in a list using an index:\n\nmy_list = [0, 0, 2, 0, 0, 1]\nmy_list[1] = 5\nmy_list\n\n[0, 5, 2, 0, 0, 1]\n\n\n\n\n\nHere is the list:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nHow do we move value 1 to where value 2 is, replacing 1 with zero so the list looks like this:\n\nmy_list = [0, 0, 1, 0, 0, 0]\n\n\n\n\nWe want to go from this:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nTo this:\n\nmy_list = [0, 0, 1, 0, 0, 0]\n\nWe do this:\n\nindex_a = 2\nindex_b = 5\nmy_list[index_a] = my_list[index_b]\nmy_list[index_b] = 0",
+    "text": "Due date: Wednesday, October 15, 2025 at 9pm",
     "crumbs": [
       "Short Projects",
       "Short Project 6"
@@ -5225,8 +5225,8 @@
     "objectID": "lab06.html#examples",
     "href": "lab06.html#examples",
     "title": "Short Project 6",
-    "section": "",
-    "text": "original_list = [\"a\", 0, 0, \"b\", \"c\", 0, 0]\nprint( move_item(original_list, 3,  \"left\") )\n\n['b', 0, 0, 0, 'c', 0, 0]\n\n\noriginal_list = [\"a\", 0, 0, \"b\", \"c\", 0, 0]\nprint( move_item(original_list, 3, \"right\") )\n\n['a', 0, 0, 0, 'b', 0, 0]\n\n\n# call the function again\nprint( move_item(original_list, 4, \"right\") )\n\n['a', 0, 0, 0, 0, 0, 'b']",
+    "section": "Examples",
+    "text": "Examples\n\noriginal_list = [\"a\", 0, 0, \"b\", \"c\", 0, 0]\nprint( move_item(original_list, 3,  \"left\") )\n\n['b', 0, 0, 0, 'c', 0, 0]\n\n\noriginal_list = [\"a\", 0, 0, \"b\", \"c\", 0, 0]\nprint( move_item(original_list, 3, \"right\") )\n\n['a', 0, 0, 0, 'b', 0, 0]\n\n\n# call the function again\nprint( move_item(original_list, 4, \"right\") )\n\n['a', 0, 0, 0, 0, 0, 'b']",
     "crumbs": [
       "Short Projects",
       "Short Project 6"
@@ -5236,8 +5236,8 @@
     "objectID": "lab06.html#development-strategy",
     "href": "lab06.html#development-strategy",
     "title": "Short Project 6",
-    "section": "",
-    "text": "The easiest way to implement this is using two while loops (one for going to the left, another for going to the right). You have the starting point of the item you want to move (the \"index\") – you need to find out where it needs to end.\nYour first guess for the end index should be minus one on the index if you are going to the left or plus one on the index if you are going to the right. In your while loop you need to keep subtracting one or adding one (depending on your direction) until you reach your end destination – meaning, you skip over the zeros until you either reach the beginning of the end of the list (depending on the direction you are going) or you found an item to replace (something that is different than zero).\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\n\nYou can access an item in a list using an index:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nWhat’s the index for value 2 and 1?\nYou can replace an item in a list using an index:\n\nmy_list = [0, 0, 2, 0, 0, 1]\nmy_list[1] = 5\nmy_list\n\n[0, 5, 2, 0, 0, 1]\n\n\n\n\n\nHere is the list:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nHow do we move value 1 to where value 2 is, replacing 1 with zero so the list looks like this:\n\nmy_list = [0, 0, 1, 0, 0, 0]\n\n\n\n\nWe want to go from this:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nTo this:\n\nmy_list = [0, 0, 1, 0, 0, 0]\n\nWe do this:\n\nindex_a = 2\nindex_b = 5\nmy_list[index_a] = my_list[index_b]\nmy_list[index_b] = 0",
+    "section": "Development Strategy",
+    "text": "Development Strategy\nThe easiest way to implement this is using two while loops (one for going to the left, another for going to the right). You have the starting point of the item you want to move (the \"index\") – you need to find out where it needs to end.\nYour first guess for the end index should be minus one on the index if you are going to the left or plus one on the index if you are going to the right. In your while loop you need to keep subtracting one or adding one (depending on your direction) until you reach your end destination – meaning, you skip over the zeros until you either reach the beginning of the end of the list (depending on the direction you are going) or you found an item to replace (something that is different than zero).\n\n\n\n\n\n\nBefore You Begin\n\n\n\nThis section gives you a quick recap of what we covered in class or introduces any new tips or examples that might help you complete the assignment. Take a few minutes to read through it before you begin.\n\nLists\nYou can access an item in a list using an index:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nWhat’s the index for value 2 and 1?\nYou can replace an item in a list using an index:\n\nmy_list = [0, 0, 2, 0, 0, 1]\nmy_list[1] = 5\nmy_list\n\n[0, 5, 2, 0, 0, 1]\n\n\n\n\nLists\nHere is the list:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nHow do we move value 1 to where value 2 is, replacing 1 with zero so the list looks like this:\n\nmy_list = [0, 0, 1, 0, 0, 0]\n\n\n\nSwapping list values\nWe want to go from this:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nTo this:\n\nmy_list = [0, 0, 1, 0, 0, 0]\n\nWe do this:\n\nindex_a = 2\nindex_b = 5\nmy_list[index_a] = my_list[index_b]\nmy_list[index_b] = 0",
     "crumbs": [
       "Short Projects",
       "Short Project 6"
@@ -5247,8 +5247,8 @@
     "objectID": "lab06.html#lists",
     "href": "lab06.html#lists",
     "title": "Short Project 6",
-    "section": "",
-    "text": "You can access an item in a list using an index:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nWhat’s the index for value 2 and 1?\nYou can replace an item in a list using an index:\n\nmy_list = [0, 0, 2, 0, 0, 1]\nmy_list[1] = 5\nmy_list\n\n[0, 5, 2, 0, 0, 1]",
+    "section": "Lists",
+    "text": "Lists\nYou can access an item in a list using an index:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nWhat’s the index for value 2 and 1?\nYou can replace an item in a list using an index:\n\nmy_list = [0, 0, 2, 0, 0, 1]\nmy_list[1] = 5\nmy_list\n\n[0, 5, 2, 0, 0, 1]",
     "crumbs": [
       "Short Projects",
       "Short Project 6"
@@ -5258,8 +5258,8 @@
     "objectID": "lab06.html#lists-1",
     "href": "lab06.html#lists-1",
     "title": "Short Project 6",
-    "section": "",
-    "text": "Here is the list:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nHow do we move value 1 to where value 2 is, replacing 1 with zero so the list looks like this:\n\nmy_list = [0, 0, 1, 0, 0, 0]",
+    "section": "Lists",
+    "text": "Lists\nHere is the list:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nHow do we move value 1 to where value 2 is, replacing 1 with zero so the list looks like this:\n\nmy_list = [0, 0, 1, 0, 0, 0]",
     "crumbs": [
       "Short Projects",
       "Short Project 6"
@@ -5269,8 +5269,8 @@
     "objectID": "lab06.html#swapping-list-values",
     "href": "lab06.html#swapping-list-values",
     "title": "Short Project 6",
-    "section": "",
-    "text": "We want to go from this:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nTo this:\n\nmy_list = [0, 0, 1, 0, 0, 0]\n\nWe do this:\n\nindex_a = 2\nindex_b = 5\nmy_list[index_a] = my_list[index_b]\nmy_list[index_b] = 0",
+    "section": "Swapping list values",
+    "text": "Swapping list values\nWe want to go from this:\n\nmy_list = [0, 0, 2, 0, 0, 1]\n\nTo this:\n\nmy_list = [0, 0, 1, 0, 0, 0]\n\nWe do this:\n\nindex_a = 2\nindex_b = 5\nmy_list[index_a] = my_list[index_b]\nmy_list[index_b] = 0",
     "crumbs": [
       "Short Projects",
       "Short Project 6"

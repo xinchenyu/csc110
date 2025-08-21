@@ -5,6 +5,18 @@ format:
     embed-resources: true
 ---
 
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(tidyverse)
+library(readxl)
+assignments <- read_excel("assessment_schedule.xlsx") %>% 
+  mutate(formatted_date = format(due_date, "%A, %B %d, %Y"))
+```
+
+**Due date: `r assignments %>% filter(assessment == "Short Programming Project 4") %>% pull(formatted_date)` at 9pm**
+
 # CPU Category
 
 Though CPUs, and computer hardware in-general, are not the main focus of this course, it can be useful to know a thing or two about computer hardware. The CPU (Central Processing Unit) is generally the piece of hardware that carries out the instructions of the python programs that you run in this class.
