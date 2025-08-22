@@ -51,11 +51,11 @@ This is the intro course sequence for the CS department:
 
 <p>CSc 101 - Intro to Computer Science</p>
 
-<img src="images/arrow_down.gif" width="50" align="center"/>
+<img src="arrow_down.gif" width="50" align="center"/>
 
 <p>CSc 110 - Intro to Computer Programming I</p>
 
-<img src="images/arrow_down.gif" width="50" align="center"/>
+<img src="arrow_down.gif" width="50" align="center"/>
 
 <p>CSc 120 - Intro to Computer Programming II</p>
 
