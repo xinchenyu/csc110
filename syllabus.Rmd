@@ -3,7 +3,6 @@ title: "Syllabus"
 author: "Xinchen Yu (she/her/hers)"
 date: "Fall 2025"
 output:
-  html_document: default
   pdf_document: default
 subtitle: CSc 110 Computer Programming I
 ---
@@ -190,7 +189,7 @@ Your first TA office visit should take place before the Midterm 1 date, and the 
 
 The final exam is worth 15%.
 
-The final exam date, time and room is: `r schedule %>% filter(exam == "Final Exam 1pm Section" & term == "fall 2025") %>% pull(formatted_date)` -- `r schedule %>% filter(exam == "Final Exam 1pm Section" & term == "fall 2025") %>% pull(time)`
+The final exam date, time and room is: `r schedule %>% filter(exam == "Final Exam" & term == "fall 2025") %>% pull(formatted_date)` -- `r schedule %>% filter(exam == "Final Exam" & term == "fall 2025") %>% pull(time)`
 
 You must keep this time available. Do not schedule any flights, travel plans, or other conflicts with this exam.
 
