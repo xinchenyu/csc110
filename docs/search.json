@@ -5948,7 +5948,7 @@
     "href": "slides-01-01.html#assessment-structure",
     "title": "course introduction (slides)",
     "section": "Assessment structure",
-    "text": "Assessment structure\n\nProgramming Problems\nShort Projects (to be completed in the lab sessions)\nProjects\nWeekly Quizzes on Wednesday (on paper)\nMidterms and Final Exam (on paper)",
+    "text": "Assessment structure\n\nProgramming Problems\nShort Projects (to be completed in the lab sessions)\nProjects\nWeekly Quizzes on Tuesday (on paper)\nMidterms and Final Exam (on paper)",
     "crumbs": [
       "Module 1 - Basics",
       "course introduction (slides)"
@@ -9412,6 +9412,28 @@
     "crumbs": [
       "Module 1 - Basics",
       "Module 1 Assignments"
+    ]
+  },
+  {
+    "objectID": "slides-01-01.html#in-class-activity-1",
+    "href": "slides-01-01.html#in-class-activity-1",
+    "title": "course introduction (slides)",
+    "section": "In-class activity 1",
+    "text": "In-class activity 1\n\n👥 Pair with a partner at your table\n🔄 Share one thing you’re willing to try, fail at, and eventually succeed in\n💬 Be ready to share your partner’s story!",
+    "crumbs": [
+      "Module 1 - Basics",
+      "course introduction (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-01-01.html#in-class-activity-2",
+    "href": "slides-01-01.html#in-class-activity-2",
+    "title": "course introduction (slides)",
+    "section": "In-class activity 2",
+    "text": "In-class activity 2\nCourse website: xinchenyu.github.io/csc110\nAccess gradescope, discuss with your group members and work on quiz 01. Answers can be found at:\n\nSyllabus\nTAs and Office Hours\nOnline discussion and office hours",
+    "crumbs": [
+      "Module 1 - Basics",
+      "course introduction (slides)"
     ]
   }
 ]

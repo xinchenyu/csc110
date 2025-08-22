@@ -61,6 +61,14 @@ This is the intro course sequence for the CS department:
 
 </center>
 
+## In-class activity 1
+
+- 👥 Pair with a partner at your table
+
+- 🔄 Share one thing you're willing to try, fail at, and eventually succeed in
+
+- 💬 Be ready to share your partner's story!
+
 
 ## What do you need to succeed in this class?
 
@@ -91,7 +99,7 @@ A willingness to:
 
 -   Projects
 
--   Weekly Quizzes on Wednesday (on paper)
+-   Weekly Quizzes on Tuesday (on paper)
 
 -   Midterms and Final Exam (on paper)
 
@@ -103,7 +111,9 @@ Exams are on paper. Why?
 -   You are able to show what you learned
 -   Whiteboard coding interviews are common
 
-## Quiz 01
+## In-class activity 2
+
+Course website: [xinchenyu.github.io/csc110](https://xinchenyu.github.io/csc110/)
 
 Access gradescope, discuss with your group members and work on quiz 01. Answers can be found at:
 
