@@ -6,16 +6,11 @@ slide-number: true
 
 # CSc 110 Python Basics
 
-## CS Buddy Mentor Program Sign-Up
-
-![sign-up QR Code](images/csBuddy.jpeg)
 
 ## Announcements
 
--   Sign-up for your lab session at [xinchenyu.github.io/csc110-spring2025/short-projects.html](https://xinchenyu.github.io/csc110-spring2025/short-projects.html)
--   My office hours changed to Wednesday 10:30am-12:00pm.
--   Full schedule for office hours can be found at [xinchenyu.github.io/csc110-spring2025/tas.html](https://xinchenyu.github.io/csc110-spring2025/tas.html)
--   Next lecture is Jan 22, next Wednesday.
+-   Sign-up for your lab session at [xinchenyu.github.io/csc110-spring2025/short-projects.html](https://xinchenyu.github.io/csc110/short-projects.html)
+-   Full schedule for office hours can be found at [xinchenyu.github.io/csc110/tas.html](https://xinchenyu.github.io/csc110/tas.html)
 
 ## Did you set up your workspace?
 
@@ -381,13 +376,4 @@ print(area)
 -  What if we want to get the area of circles when the radius is 1, 2, 3, 4 and 5?
 -  Can we do it more efficiently?
 
-
-## Quiz 02
-
-<center>
-<div class="cleanslate w24tz-current-time w24tz-large" style="display: inline-block !important; visibility: hidden !important; min-width:300px !important; min-height:145px !important;"><a href="//24timezones.com/Tucson/time" style="text-decoration: none" class="clock24" id="tz24-1695057604-c1393-eyJob3VydHlwZSI6IjEyIiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIwIiwiY29udGFpbmVyX2lkIjoiY2xvY2tfYmxvY2tfY2I2NTA4ODZjNDg0OWVlIiwidHlwZSI6ImRiIiwibGFuZyI6ImVuIn0=" title="World Time :: Tucson" target="_blank" rel="nofollow"></a>current time<div id="clock_block_cb650886c4849ee"></div></div>
-<script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
-</center>
-
-You have 5 minutes to complete the quiz.
 
