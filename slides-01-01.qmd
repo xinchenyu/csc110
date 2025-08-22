@@ -18,7 +18,8 @@ slide-number: true
 
 -   Xinchen Yu (you can call me Xinchen or Dr. Yu)
 -   Office: Gould-Simpson 829
--   Office hours: Wednesday 10:30am - 12:00pm
+-   Office hours: Thursday 12:00pm - 2:00pm
+    -   Priority window: 12:00pm -  1:00pm
 
 ## Who are the teaching assistants? (TAs)
 
@@ -110,11 +111,10 @@ Access gradescope, discuss with your group members and work on quiz 01. Answers 
 -   TAs and Office Hours
 -   Online discussion and office hours
 
-
 ## Other Important Dates
 
--   Last day for students to add themselves to a course using UAccess is Jan 22
--   Last day for students to drop without a grade of W (withdraw) is Jan 28
+-   Last day for students to add themselves to a course using UAccess is Sep 1
+-   Last day for students to drop without a grade of W (withdraw) is Sep 21
 
 ## Academic integrity
 
@@ -126,7 +126,6 @@ Examples of breaches of academic integrity:
 -   Using generative AI (for example, ChatGPT) solve the assignments for you
 -   Copying a solution from the internet
 -   Sharing code is cheating
-
 
 ## Materials
 
@@ -175,15 +174,17 @@ Come to office hours but come prepared!
 -   TAs do not debug for you (you wouldn't learn to solve them yourself if you are always asking other people to do it for you)
 
 
-
 ## How to get help?
 
 -   Come to office hours!
     -   1 point of extra credit if you show up to office hours (read the syllabus for specifics on this)
--   Join [Piazza](https://piazza.com/class/m57b63l0btd7k7) 
+-   Join [Piazza](https://piazza.com/class/max71mnllwh238) 
     -   ask on Piazza: questions about assignments, quizzes, and exams (has private options)
     -   email me: only logistics-related questions
 
+# Creating a Supportive Classroom
+
+In this class, I want us to build a supportive and inclusive environment where everyone feels valued. That means being thoughtful and respectful toward classmates, TAs, and the instructor. 
 
 # This is a difficult course, but we are here to help you succeed
 
