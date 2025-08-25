@@ -107,9 +107,8 @@ A willingness to:
 
 Exams are on paper. Why?
 
--   Important skill to develop
--   You are able to show what you learned
--   Whiteboard coding interviews are common
+-   Important skill to develop: whiteboard coding interviews are common
+-   Gives you the chance to see for yourself what you have or haven’t learned
 
 ## In-class activity 2
 
@@ -142,12 +141,6 @@ Examples of breaches of academic integrity:
 -   Readings, videos, exercises, slides, assignment instructions will be available on the website
 -   HOWEVER, you are still responsible for things said/announced in class
 
-## How to get help?
-
-**Before you ask for help:**
-
--   Check for typos (read your error messages)
--   Google is your friend (use it wisely). Copy and paste the exact error message on a Google search. (this step also includes read the documentation on the functions you're trying to use).
 
 ## How to get help?
 
@@ -156,26 +149,15 @@ Examples of breaches of academic integrity:
 
 ## How to get help?
 
-**Before you ask for help:**
--   Try [rubber duck debugging](https://rubberduckdebugging.com/). 
+**Before you ask for help:** try [rubber duck debugging](https://rubberduckdebugging.com/). 
 
-Describe the problem aloud, explaining it line-by-line, to a rubber duck or another person (who might not have any experience with programming). This is also a good preparation step to asking other people for help (next section).
-
-## How to get help?
-
-Once you read your error messages, tried different things, read the Python documentation, and have the line-by-line explanation of what you are trying to do, then ask other people for help.
-
-**Be precise and informative**.
-
-The more context you can provide about what you're trying to do and what errors you're getting, the better.
-
-Also describe the steps you took to try to solve the problem yourself.
+Describe the problem aloud, explaining it line-by-line, to a rubber duck or another person (who might not have any experience with programming). This is also a good preparation step to asking other people for help (see next).
 
 ## How to get help?
 
 Come to office hours but come prepared!
 
-👍  start early, check typo, google, rubber duck...
+👍  start early, check typo, rubber duck, provide enough context 
 
 👎  start late, ask vague questions, ask TA to debug for you
 

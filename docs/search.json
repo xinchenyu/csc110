@@ -5959,7 +5959,7 @@
     "href": "slides-01-01.html#exams-and-quizzes",
     "title": "course introduction (slides)",
     "section": "Exams and Quizzes",
-    "text": "Exams and Quizzes\nExams are on paper. Why?\n\nImportant skill to develop\nYou are able to show what you learned\nWhiteboard coding interviews are common",
+    "text": "Exams and Quizzes\nExams are on paper. Why?\n\nImportant skill to develop: whiteboard coding interviews are common\nGives you the chance to see for yourself what you have or haven’t learned",
     "crumbs": [
       "Module 1 - Basics",
       "course introduction (slides)"
@@ -6014,7 +6014,7 @@
     "href": "slides-01-01.html#how-to-get-help",
     "title": "course introduction (slides)",
     "section": "How to get help?",
-    "text": "How to get help?\nBefore you ask for help:\n\nCheck for typos (read your error messages)\nGoogle is your friend (use it wisely). Copy and paste the exact error message on a Google search. (this step also includes read the documentation on the functions you’re trying to use).",
+    "text": "How to get help?\nBefore you ask for help: try rubber duck debugging",
     "crumbs": [
       "Module 1 - Basics",
       "course introduction (slides)"
@@ -6025,7 +6025,7 @@
     "href": "slides-01-01.html#how-to-get-help-1",
     "title": "course introduction (slides)",
     "section": "How to get help?",
-    "text": "How to get help?\nBefore you ask for help: try rubber duck debugging",
+    "text": "How to get help?\nBefore you ask for help: try rubber duck debugging.\nDescribe the problem aloud, explaining it line-by-line, to a rubber duck or another person (who might not have any experience with programming). This is also a good preparation step to asking other people for help (see next).",
     "crumbs": [
       "Module 1 - Basics",
       "course introduction (slides)"
@@ -6036,7 +6036,7 @@
     "href": "slides-01-01.html#how-to-get-help-2",
     "title": "course introduction (slides)",
     "section": "How to get help?",
-    "text": "How to get help?\nBefore you ask for help: - Try rubber duck debugging.\nDescribe the problem aloud, explaining it line-by-line, to a rubber duck or another person (who might not have any experience with programming). This is also a good preparation step to asking other people for help (next section).",
+    "text": "How to get help?\nCome to office hours but come prepared!\n👍 start early, check typo, rubber duck, provide enough context\n👎 start late, ask vague questions, ask TA to debug for you\n\nTAs help answer clarification questions\nTAs do not debug for you (you wouldn’t learn to solve them yourself if you are always asking other people to do it for you)",
     "crumbs": [
       "Module 1 - Basics",
       "course introduction (slides)"
@@ -6047,7 +6047,7 @@
     "href": "slides-01-01.html#how-to-get-help-3",
     "title": "course introduction (slides)",
     "section": "How to get help?",
-    "text": "How to get help?\nOnce you read your error messages, tried different things, read the Python documentation, and have the line-by-line explanation of what you are trying to do, then ask other people for help.\nBe precise and informative.\nThe more context you can provide about what you’re trying to do and what errors you’re getting, the better.\nAlso describe the steps you took to try to solve the problem yourself.",
+    "text": "How to get help?\n\nCome to office hours!\n\n1 point of extra credit if you show up to office hours (read the syllabus for specifics on this)\n\nJoin Piazza\n\nask on Piazza: questions about assignments, quizzes, and exams (has private options)\nemail me: only logistics-related questions",
     "crumbs": [
       "Module 1 - Basics",
       "course introduction (slides)"
