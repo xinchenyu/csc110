@@ -25,9 +25,9 @@ slide-number: true
 
 The TAs are responsible for:
 
--   Helping you, the students, succeed
+-   Helping you on office hours
 -   Grading assignments, quizzes, and exams
--   Helping students on office hours
+-   Giving you feedback on grading 
 
 . . . So get to know them!
 
