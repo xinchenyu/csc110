@@ -992,7 +992,7 @@
     "href": "slides-02-01.html#round-1",
     "title": "operations (slides)",
     "section": "round()",
-    "text": "round()\nUse the round() function to get a floating-point number rounded to the specified number of decimals.\nSyntax:\n\nround(number, ndigits*)\n\nRounding is done toward the nearest even choice:\n\nprint(round(51.6))\nprint(round(51.4))\nprint(round(51.5))\nprint(round(50.5))\n\n52\n51\n52\n50",
+    "text": "round()\n\nRun the following code on your laptop\nDiscuss with your partner how the output is calculated\n\n\nprint(round(51.6))\nprint(round(51.4))\nprint(round(51.5))\nprint(round(50.5))",
     "crumbs": [
       "Module 2 - Functions, Operators, and Expressions",
       "operations (slides)"
@@ -1047,7 +1047,7 @@
     "href": "slides-02-01.html#quiz-02",
     "title": "operations (slides)",
     "section": "Quiz 02",
-    "text": "Quiz 02\n\n\ncurrent time\n\n\n\n\n\n\nYou have 5 minutes to complete the quiz.",
+    "text": "Quiz 02\n\n\ncurrent time\n\n\n\n\n\n\nYou have 10 minutes to complete the quiz.",
     "crumbs": [
       "Module 2 - Functions, Operators, and Expressions",
       "operations (slides)"
@@ -9434,6 +9434,28 @@
     "crumbs": [
       "Module 1 - Basics",
       "course introduction (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-02-01.html#using-functions",
+    "href": "slides-02-01.html#using-functions",
+    "title": "operations (slides)",
+    "section": "Using functions",
+    "text": "Using functions\nFill in the missing code in the function below:\n\ndef calculate_area(radius):\n  area =    # write code here\n  return round(area, 2)\n\ndef main():\n  print(calculate_area(3)) # 28.27\n  print(calculate_area(6)) # 113.09\n  \nmain()",
+    "crumbs": [
+      "Module 2 - Functions, Operators, and Expressions",
+      "operations (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-02-01.html#round-2",
+    "href": "slides-02-01.html#round-2",
+    "title": "operations (slides)",
+    "section": "round()",
+    "text": "round()\nUse the round() function to get a floating-point number rounded to the specified number of decimals.\nSyntax:\n\nround(number, ndigits*)\n\nRounding is done toward the nearest even choice:\n\nprint(round(51.6))\nprint(round(51.4))\nprint(round(51.5))\nprint(round(50.5))\n\n52\n51\n52\n50",
+    "crumbs": [
+      "Module 2 - Functions, Operators, and Expressions",
+      "operations (slides)"
     ]
   }
 ]

@@ -119,6 +119,20 @@ round(392.68750000000006, 2)
 
 ## `round()`
 
+- Run the following code on your laptop
+
+- Discuss with your partner how the output is calculated
+```{python}
+#| echo: true
+#| eval: false
+print(round(51.6))
+print(round(51.4))
+print(round(51.5))
+print(round(50.5))
+```
+
+## `round()`
+
 Use the round() function to get a floating-point number rounded to the specified number of decimals.
 
 Syntax:
@@ -189,6 +203,22 @@ print(area)
 -  What if we want to get the area of circles when the radius is 1, 2, 3, 4 and 5?
 -  Can we do it more efficiently?
 
+## Using functions
+
+Fill in the missing code in the function below:
+```{python}
+#| echo: true
+#| eval: false
+def calculate_area(radius):
+  area =    # write code here
+  return round(area, 2)
+
+def main():
+  print(calculate_area(3)) # 28.27
+  print(calculate_area(6)) # 113.09
+  
+main()
+```
 
 ## Quiz 02
 
@@ -197,5 +227,5 @@ print(area)
 <script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
 </center>
 
-You have 5 minutes to complete the quiz.
+You have 10 minutes to complete the quiz.
 

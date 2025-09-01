@@ -222,7 +222,7 @@
 </section>
 <section id="operations---examples" class="slide level2">
 <h2>Operations - examples</h2>
-<div id="e53ca022" class="cell" data-execution_count="1">
+<div id="6e39438d" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="bu">print</span>(<span class="dv">10</span> <span class="op">+</span> <span class="dv">5</span> <span class="op">-</span> <span class="dv">5</span>) <span class="co"># addition and subtraction</span></span>
 <span id="cb1-2"><a></a><span class="bu">print</span>(<span class="dv">10</span> <span class="op">*</span> <span class="dv">5</span> <span class="op">/</span> <span class="dv">4</span>) <span class="co"># multiplication and division</span></span>
 <span id="cb1-3"><a></a><span class="bu">print</span>(<span class="dv">25</span> <span class="op">**</span> <span class="dv">2</span>) <span class="co"># square </span></span>
@@ -271,7 +271,7 @@ c = (3 // (4 // 5)) + 1
 </section>
 <section id="pemdas-answer" class="slide level2">
 <h2>PEMDAS – answer</h2>
-<div id="93938632" class="cell" data-execution_count="2">
+<div id="48d9c7ef" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>a1 <span class="op">=</span> <span class="dv">5</span> <span class="op">/</span>  <span class="dv">5</span> <span class="op">*</span> <span class="dv">10</span>  <span class="op">*</span> <span class="dv">5</span></span>
 <span id="cb3-2"><a></a>a2 <span class="op">=</span> <span class="dv">5</span> <span class="op">/</span> (<span class="dv">5</span> <span class="op">*</span> <span class="dv">10</span>) <span class="op">*</span> <span class="dv">5</span></span>
 <span id="cb3-3"><a></a></span>
@@ -302,30 +302,43 @@ c = (3 // (4 // 5)) + 1
 <h2><code>round()</code></h2>
 <p>Use the round() function to get a floating-point number rounded to the specified number of decimals.</p>
 <p>Syntax:</p>
-<div id="cd3d3f37" class="cell" data-execution_count="3">
+<div id="cfd0bd5c" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="bu">round</span>(number, ndigits<span class="op">*</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The number of digits (<code>ndigits</code>) is optional, but we will often round number to two decimals:</p>
-<div id="2e81a0bb" class="cell" data-execution_count="4">
+<div id="01a1f326" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="bu">round</span>(<span class="fl">392.68750000000006</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>392.69</code></pre>
 </div>
 </div>
 </section>
 <section id="round-1" class="slide level2">
 <h2><code>round()</code></h2>
+<ul>
+<li><p>Run the following code on your laptop</p></li>
+<li><p>Discuss with your partner how the output is calculated</p></li>
+</ul>
+<div id="f33895e0" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="bu">print</span>(<span class="bu">round</span>(<span class="fl">51.6</span>))</span>
+<span id="cb8-2"><a></a><span class="bu">print</span>(<span class="bu">round</span>(<span class="fl">51.4</span>))</span>
+<span id="cb8-3"><a></a><span class="bu">print</span>(<span class="bu">round</span>(<span class="fl">51.5</span>))</span>
+<span id="cb8-4"><a></a><span class="bu">print</span>(<span class="bu">round</span>(<span class="fl">50.5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="round-2" class="slide level2">
+<h2><code>round()</code></h2>
 <p>Use the round() function to get a floating-point number rounded to the specified number of decimals.</p>
 <p>Syntax:</p>
-<div id="fa4dbfe2" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="bu">round</span>(number, ndigits<span class="op">*</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="59983783" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="bu">round</span>(number, ndigits<span class="op">*</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Rounding is done toward the nearest even choice:</p>
-<div id="23394d03" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="bu">print</span>(<span class="bu">round</span>(<span class="fl">51.6</span>))</span>
-<span id="cb9-2"><a></a><span class="bu">print</span>(<span class="bu">round</span>(<span class="fl">51.4</span>))</span>
-<span id="cb9-3"><a></a><span class="bu">print</span>(<span class="bu">round</span>(<span class="fl">51.5</span>))</span>
-<span id="cb9-4"><a></a><span class="bu">print</span>(<span class="bu">round</span>(<span class="fl">50.5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="9fe8b229" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="bu">print</span>(<span class="bu">round</span>(<span class="fl">51.6</span>))</span>
+<span id="cb10-2"><a></a><span class="bu">print</span>(<span class="bu">round</span>(<span class="fl">51.4</span>))</span>
+<span id="cb10-3"><a></a><span class="bu">print</span>(<span class="bu">round</span>(<span class="fl">51.5</span>))</span>
+<span id="cb10-4"><a></a><span class="bu">print</span>(<span class="bu">round</span>(<span class="fl">50.5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>52
 51
@@ -338,11 +351,11 @@ c = (3 // (4 // 5)) + 1
 <h2>Operations and Variable Assignments</h2>
 <p>Variable assignments are not like math — they can appear in equations that make no mathematical sense.</p>
 <p><br></p>
-<div id="bf1964a7" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>x <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb11-2"><a></a><span class="bu">print</span>(x)</span>
-<span id="cb11-3"><a></a>x <span class="op">=</span> x <span class="op">+</span> <span class="dv">2</span></span>
-<span id="cb11-4"><a></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="b506face" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>x <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb12-2"><a></a><span class="bu">print</span>(x)</span>
+<span id="cb12-3"><a></a>x <span class="op">=</span> x <span class="op">+</span> <span class="dv">2</span></span>
+<span id="cb12-4"><a></a><span class="bu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <p><code>x = x + 2</code> means “take the current value of x, add it with 2, and assign the resulting value (7) to x as its new value.”</p>
@@ -359,13 +372,13 @@ c = (3 // (4 // 5)) + 1
 <section id="comments" class="slide level2">
 <h2>Comments</h2>
 <p>Comments are text that is meant to be read, but not executed. The purpose is to improve readability.</p>
-<div id="321fe949" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="co"># assign a radius value</span></span>
-<span id="cb12-2"><a></a>radius <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb12-3"><a></a><span class="co"># compute the area of a circle and round to two decimals</span></span>
-<span id="cb12-4"><a></a>area <span class="op">=</span> <span class="bu">round</span>(<span class="fl">3.1415</span> <span class="op">*</span> radius <span class="op">**</span> <span class="dv">2</span>, <span class="dv">2</span>)</span>
-<span id="cb12-5"><a></a><span class="co"># print the area</span></span>
-<span id="cb12-6"><a></a><span class="bu">print</span>(area)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="4e0bee3a" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a><span class="co"># assign a radius value</span></span>
+<span id="cb13-2"><a></a>radius <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb13-3"><a></a><span class="co"># compute the area of a circle and round to two decimals</span></span>
+<span id="cb13-4"><a></a>area <span class="op">=</span> <span class="bu">round</span>(<span class="fl">3.1415</span> <span class="op">*</span> radius <span class="op">**</span> <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb13-5"><a></a><span class="co"># print the area</span></span>
+<span id="cb13-6"><a></a><span class="bu">print</span>(area)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>28.27</code></pre>
 </div>
@@ -378,6 +391,21 @@ c = (3 // (4 // 5)) + 1
 <li>Can we do it more efficiently?</li>
 </ul>
 </section>
+<section id="using-functions" class="slide level2">
+<h2>Using functions</h2>
+<p>Fill in the missing code in the function below:</p>
+<div id="6fb44e5a" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a><span class="kw">def</span> calculate_area(radius):</span>
+<span id="cb15-2"><a></a>  area <span class="op">=</span>    <span class="co"># write code here</span></span>
+<span id="cb15-3"><a></a>  <span class="cf">return</span> <span class="bu">round</span>(area, <span class="dv">2</span>)</span>
+<span id="cb15-4"><a></a></span>
+<span id="cb15-5"><a></a><span class="kw">def</span> main():</span>
+<span id="cb15-6"><a></a>  <span class="bu">print</span>(calculate_area(<span class="dv">3</span>)) <span class="co"># 28.27</span></span>
+<span id="cb15-7"><a></a>  <span class="bu">print</span>(calculate_area(<span class="dv">6</span>)) <span class="co"># 113.09</span></span>
+<span id="cb15-8"><a></a>  </span>
+<span id="cb15-9"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 <section id="quiz-02" class="slide level2">
 <h2>Quiz 02</h2>
 <center>
@@ -389,7 +417,7 @@ c = (3 // (4 // 5)) + 1
 </div>
 <script type="text/javascript" src="//w.24timezones.com/l.js" async=""></script>
 </center>
-<p>You have 5 minutes to complete the quiz.</p>
+<p>You have 10 minutes to complete the quiz.</p>
 
 
 </section></section>
