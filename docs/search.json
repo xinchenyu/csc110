@@ -937,7 +937,7 @@
     "href": "slides-02-01.html#operations---examples",
     "title": "operations (slides)",
     "section": "Operations - examples",
-    "text": "Operations - examples\n\nprint(10 + 5 - 5) # addition and subtraction\nprint(10 * 5 / 4) # multiplication and division\nprint(25 ** 2) # square \nprint(25 ** 0.5) # square root \nprint(13 // 4) # division and round down to the nearest integer\nprint(13 % 4) # remainder \n\n10\n12.5\n625\n5.0\n3\n1",
+    "text": "Operations - examples\nThink of the whiteboard as your program’s console. Write down what would display as the output for the following code:\n\nprint(10 + 5 - 5) \nprint(10 * 5 / 4)\nprint(25 ** 2)  \nprint(25 ** 0.5) \nprint(13 // 4) \nprint(13 % 4)",
     "crumbs": [
       "Module 2 - Functions, Operators, and Expressions",
       "operations (slides)"
@@ -9453,6 +9453,17 @@
     "title": "operations (slides)",
     "section": "round()",
     "text": "round()\nUse the round() function to get a floating-point number rounded to the specified number of decimals.\nSyntax:\n\nround(number, ndigits*)\n\nRounding is done toward the nearest even choice:\n\nprint(round(51.6))\nprint(round(51.4))\nprint(round(51.5))\nprint(round(50.5))\n\n52\n51\n52\n50",
+    "crumbs": [
+      "Module 2 - Functions, Operators, and Expressions",
+      "operations (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-02-01.html#operations---answers",
+    "href": "slides-02-01.html#operations---answers",
+    "title": "operations (slides)",
+    "section": "Operations - answers",
+    "text": "Operations - answers\n\nprint(10 + 5 - 5) # addition and subtraction\nprint(10 * 5 / 4) # multiplication and division\nprint(25 ** 2) # square \nprint(25 ** 0.5) # square root \nprint(13 // 4) # division and round down to the nearest integer\nprint(13 % 4) # remainder \n\n10\n12.5\n625\n5.0\n3\n1",
     "crumbs": [
       "Module 2 - Functions, Operators, and Expressions",
       "operations (slides)"

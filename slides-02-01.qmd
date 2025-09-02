@@ -35,6 +35,21 @@ Use the function `type()` with each literal type.
 
 ## Operations - examples
 
+Think of the whiteboard as your program’s console. 
+Write down what would display as the output for the following code:
+```{python}
+#| echo: true
+#| eval: false
+print(10 + 5 - 5) 
+print(10 * 5 / 4)
+print(25 ** 2)  
+print(25 ** 0.5) 
+print(13 // 4) 
+print(13 % 4) 
+```
+
+## Operations - answers
+
 ```{python}
 #| echo: true
 #| eval: true
@@ -203,22 +218,6 @@ print(area)
 -  What if we want to get the area of circles when the radius is 1, 2, 3, 4 and 5?
 -  Can we do it more efficiently?
 
-## Using functions
-
-Fill in the missing code in the function below:
-```{python}
-#| echo: true
-#| eval: false
-def calculate_area(radius):
-  area =    # write code here
-  return round(area, 2)
-
-def main():
-  print(calculate_area(3)) # 28.27
-  print(calculate_area(6)) # 113.09
-  
-main()
-```
 
 ## Quiz 02
 
