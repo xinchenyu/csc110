@@ -8001,7 +8001,7 @@
     "href": "slides-02-02.html#function-to-calculate-area-of-a-circle",
     "title": "functions (slides)",
     "section": "Function to calculate area of a circle",
-    "text": "Function to calculate area of a circle\nRemember this from the last set of slides?\n\n# assign a radius value\nradius = 3\n# compute the rounded area of a circle\narea = round(3.1415 * radius ** 2, 2)\n# print the area\nprint(area)",
+    "text": "Function to calculate area of a circle\nRemeber the code from previous slides?\n\n# assign a radius value\nradius = 3\n# compute the rounded area of a circle\narea = round(3.1415 * radius ** 2, 2)\n# print the area\nprint(area)",
     "crumbs": [
       "Module 2 - Functions, Operators, and Expressions",
       "functions (slides)"
@@ -8089,7 +8089,7 @@
     "href": "slides-02-02.html#write-a-function-3",
     "title": "functions (slides)",
     "section": "Write a function",
-    "text": "Write a function\nWrite a Python function named hypotenuse that takes two arguments: a and b representing the length of the two non-hypotenuse sides of a right triangle. The function calculate the hypotenuse according to the Pythagorean theorem: \\(c = \\sqrt(a^2 + b^2)\\). Return it rounded at two decimals.\nTest cases: hypotenuse(3, 4) should return 5.0, hypotenuse(10, 10) should return 14.14\nName your file hypotenuse.py and submit to gradescope.",
+    "text": "Write a function\n\ndef sqrt(n):\n  '''\n  This function calculates the square root of a number\n  Args:\n    n: integer or float\n  Returns:\n    The square root of n\n  '''\n  return n**0.5\n\ndef hypotenuse(a, b):\n  '''\n  This function calculates the hypotenuse of a right angle triangle.\n  Args:\n    a: number (integer or float) representing one of the non-hypotenuse sides\n    b: number (integer or float) representing one of the non-hypotenuse sides\n  Returns:\n    Float representing the length of the hypotenuse given a and b\n  ''' \n  h = sqrt(a**2 + b**2)\n  return round(h, 2)\n\ndef main():\n  '''\n  This function calls the hypotenuse function to calculate and then\n  print out the hypotenuse of a right angle triangle of sides 3 and 4\n  and the hypotenuse of a right angle triange of sides 10 and 10\n  '''\n  result = hypotenuse(3, 4)\n  print(result)\n  \n  result = hypotenuse(10, 10)\n  print(result)\n  \nmain()\n\n5.0\n14.14",
     "crumbs": [
       "Module 2 - Functions, Operators, and Expressions",
       "functions (slides)"
@@ -9467,6 +9467,39 @@
     "crumbs": [
       "Module 2 - Functions, Operators, and Expressions",
       "operations (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-02-02.html#another-example-1",
+    "href": "slides-02-02.html#another-example-1",
+    "title": "functions (slides)",
+    "section": "Another example",
+    "text": "Another example\n\ndef cook_food(order):\n  message = \"Your \" + order + \" is ready!\"\n  return message\n\ndef main():\n  meal = cook_food(\"pasta\")\n  print(meal)\n  meal = cook_food(\"burger\")\n  print(meal)\n  \nmain()\n\nYour pasta is ready!\nYour burger is ready!",
+    "crumbs": [
+      "Module 2 - Functions, Operators, and Expressions",
+      "functions (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-02-02.html#write-a-function---gradescope-attendance",
+    "href": "slides-02-02.html#write-a-function---gradescope-attendance",
+    "title": "functions (slides)",
+    "section": "Write a function - Gradescope Attendance",
+    "text": "Write a function - Gradescope Attendance\nWrite a Python function named hypotenuse that takes two arguments: a and b representing the length of the two non-hypotenuse sides of a right triangle. The function calculate the hypotenuse according to the Pythagorean theorem: \\(c = \\sqrt(a^2 + b^2)\\). Return it rounded at two decimals.\nTest cases: hypotenuse(3, 4) should return 5.0, hypotenuse(10, 10) should return 14.14\nName your file hypotenuse.py and submit to gradescope.",
+    "crumbs": [
+      "Module 2 - Functions, Operators, and Expressions",
+      "functions (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-02-02.html#work-on-gradescope-attendance",
+    "href": "slides-02-02.html#work-on-gradescope-attendance",
+    "title": "functions (slides)",
+    "section": "Work on gradescope attendance",
+    "text": "Work on gradescope attendance\nWrite a Python function named hypotenuse that takes two arguments: a and b representing the length of the two non-hypotenuse sides of a right triangle. The function calculate the hypotenuse according to the Pythagorean theorem: \\(c = \\sqrt(a^2 + b^2)\\). Return it rounded at two decimals.\nTest cases: hypotenuse(3, 4) should return 5.0, hypotenuse(10, 10) should return 14.14\nName your file hypotenuse.py and submit to gradescope.",
+    "crumbs": [
+      "Module 2 - Functions, Operators, and Expressions",
+      "functions (slides)"
     ]
   }
 ]

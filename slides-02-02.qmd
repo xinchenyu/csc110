@@ -64,10 +64,27 @@ print(meal)
 -   The returned message is stored in the `meal` variable. 
 -   Finally, `print` function displays that message to the caller.
 
+## Another example
+
+```{python}
+#| echo: true
+#| eval: true
+def cook_food(order):
+  message = "Your " + order + " is ready!"
+  return message
+
+def main():
+  meal = cook_food("pasta")
+  print(meal)
+  meal = cook_food("burger")
+  print(meal)
+  
+main()
+```
+
 ## Function to calculate area of a circle
 
-Remember this from the last set of slides?
-
+Remeber the code from previous slides?
 ```{python}
 #| echo: true
 #| eval: false
@@ -212,7 +229,7 @@ def main():
 main()
 ```
 
-## Write a function
+## Work on gradescope attendance
 
 Write a Python function named `hypotenuse` that takes two arguments: `a` and `b` representing the length of the two non-hypotenuse sides of a right triangle.
 The function calculate the hypotenuse according to the Pythagorean theorem: $c = \sqrt(a^2 + b^2)$. Return it rounded at two decimals.
