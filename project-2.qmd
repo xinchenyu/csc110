@@ -206,8 +206,8 @@ def serve(order):
         lettuce_wrap()
     elif order == "double":
         double()
-    elif order == "plain add muchroom":
-       plain_add_muchroom()
+    elif order == "plain add mushroom":
+       plain_add_mushroom()
     elif order == "double add onion":
        double_add_onion()
 
@@ -217,7 +217,7 @@ if __name__ == '__main__':
 
 You need to define your own functions to print the burger based on the order. For example, after running the code above, a `double` burger should be displayed in the console. In the `main` function, you can change the argument (e.g., "double") in the `serve` function to print other burgers. 
 
-You may also modify the code within the `serve` function. However, please ensure that its sole argument,     `order`, is restricted to one of the following values: `"plain"`, `"blt"`, `"lettuce wrap"`, `"double"`, `"plain add muchroom"`, and `"double add onion"`.
+You may also modify the code within the `serve` function. However, please ensure that its sole argument, `order`, is restricted to one of the following values: `"plain"`, `"blt"`, `"lettuce wrap"`, `"double"`, `"plain add mushroom"`, and `"double add onion"`.
 
 Note: Points will be deducted if your code lacks proper decomposition. For example, placing all print statements in just one or two functions without breaking down the logic appropriately.
 
