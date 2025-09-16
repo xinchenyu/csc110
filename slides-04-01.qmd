@@ -128,18 +128,6 @@ main()
 
 
 
-## Quiz 03
-
-<center>
-<div class="cleanslate w24tz-current-time w24tz-large" style="display: inline-block !important; visibility: hidden !important; min-width:300px !important; min-height:145px !important;"><a href="//24timezones.com/Tucson/time" style="text-decoration: none" class="clock24" id="tz24-1695057604-c1393-eyJob3VydHlwZSI6IjEyIiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIwIiwiY29udGFpbmVyX2lkIjoiY2xvY2tfYmxvY2tfY2I2NTA4ODZjNDg0OWVlIiwidHlwZSI6ImRiIiwibGFuZyI6ImVuIn0=" title="World Time :: Tucson" target="_blank" rel="nofollow"></a>current time<div id="clock_block_cb650886c4849ee"></div></div>
-<script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
-</center>
-
-You have 10 minutes to complete the quiz.
-
-Your formula in your function should be Python code (in other words, do not just copy the formula in the instructions, make it so it uses **actual symbols for Python operators**)
-
-
 ## `int()` function
 
 -   The `int()` function can be used to convert a string to an integer type
@@ -196,6 +184,39 @@ def calculate_year_born():
 
 def main():
     print(calculate_year_born())
+
+main()
+```
+
+
+## Write a function - solution
+
+Write a Python function `mars_weight` with no parameters. It prompts user to enter their weight `input()`. 
+
+Then calculate their weight on Mars using `weight * 0.38`.
+
+It returns the weight on Mars rounded at integer.
+
+
+```{python}
+#| echo: true
+#| eval: false
+print( mars_weight() ) # user enters 150, function returns 57
+```
+
+## Write a function - solution
+
+```{python}
+#| echo: true
+#| eval: false
+def mars_weight():
+    str_weight = input("what's your weight?\n")
+    weight = float(str_weight)
+    mars_weight = weight * 0.38
+    return round(mars_weight)
+
+def main():
+    print(mars_weight())
 
 main()
 ```

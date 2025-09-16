@@ -9515,5 +9515,27 @@
     "title": "Exam Instructions",
     "section": "",
     "text": "current time\n\n\n\n\n\n\nExam starts at 1:00pm and ends at 3:00pm\nNo breaks during the exam.\n\nYou are only allowed to use functions and methods covered in the class materials. No need to write comments.\nWrite with a blue or black pen, or pencil. If you have a question, please raise your hand.\nRaise your hand when you are done, a TA will check your ID."
+  },
+  {
+    "objectID": "slides-04-01.html#write-a-function---solution",
+    "href": "slides-04-01.html#write-a-function---solution",
+    "title": "built-in functions (slides)",
+    "section": "Write a function - solution",
+    "text": "Write a function - solution\nWrite a Python function mars_weight with no parameters. It prompts user to enter their weight input().\nThen calculate their weight on Mars using weight * 0.38.\nIt returns the weight on Mars rounded at integer.\n\nprint( mars_weight() ) # user enters 150, function returns 57",
+    "crumbs": [
+      "Module 4 - Built-In Functions and Decomposition",
+      "built-in functions (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-04-01.html#write-a-function---solution-1",
+    "href": "slides-04-01.html#write-a-function---solution-1",
+    "title": "built-in functions (slides)",
+    "section": "Write a function - solution",
+    "text": "Write a function - solution\n\ndef mars_weight():\n    str_weight = input(\"what's your weight?\\n\")\n    weight = float(str_weight)\n    mars_weight = weight * 0.38\n    return round(mars_weight)\n\ndef main():\n    print(mars_weight())\n\nmain()",
+    "crumbs": [
+      "Module 4 - Built-In Functions and Decomposition",
+      "built-in functions (slides)"
+    ]
   }
 ]
