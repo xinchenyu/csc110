@@ -136,7 +136,7 @@ website:
         - slides-06-01.qmd
         - slides-06-02.qmd
         - slides-06-03.qmd
-        - assignments-05.qmd
+        - assignments-06.qmd
       - section: "Module 7 - Data Structures (lists)"
         contents:
         - data_structures_list.md

@@ -484,21 +484,33 @@
     "href": "assignments-06.html",
     "title": "Module 6 Assignments",
     "section": "",
-    "text": "Due date: Friday, October 10, 2025 at 9pm\nShort Programming projects are submitted during our weekly 45-minute in-person lab sessions. Each lab sessions is guided by two TAs. The instructions for the short project will be available only during the lab sessions. To schedule your lab session go to the weekly lab session spreadsheet in Short Project Dates and Instructions."
+    "text": "Due date: Friday, October 10, 2025 at 9pm\nShort Programming projects are submitted during our weekly 45-minute in-person lab sessions. Each lab sessions is guided by two TAs. The instructions for the short project will be available only during the lab sessions. To schedule your lab session go to the weekly lab session spreadsheet in Short Project Dates and Instructions.",
+    "crumbs": [
+      "Module 6 - Control Flow (while statements)",
+      "Module 6 Assignments"
+    ]
   },
   {
     "objectID": "assignments-06.html#programming-problem-11",
     "href": "assignments-06.html#programming-problem-11",
     "title": "Module 6 Assignments",
     "section": "Programming Problem 11",
-    "text": "Programming Problem 11\nWrite a Python function that does the following:\n\nIts name is count_vowels\nIt takes one string as argument\nIt counts how many vowels there are in the string using a while loop\nIt returns an integer representing the number of vowels (a, e i, o, u – both lowercase and uppercase) found in the argument\nYou can (and should) use the operator in\nYou are not allowed to use built-in count methods or functions\n\nName the program vowels.py. Make sure that gradescope gives you the points for passing the test cases.\nTest cases for development:\n\ndef main():\n  print( count_vowels(\"\") ) # 0\n  print( count_vowels(\"aaa\") ) # 3\n  print( count_vowels(\"AEIOU\") ) # 5\n  print( count_vowels(\"cysts\") ) # 0\n  \nmain()"
+    "text": "Programming Problem 11\nWrite a Python function that does the following:\n\nIts name is count_vowels\nIt takes one string as argument\nIt counts how many vowels there are in the string using a while loop\nIt returns an integer representing the number of vowels (a, e i, o, u – both lowercase and uppercase) found in the argument\nYou can (and should) use the operator in\nYou are not allowed to use built-in count methods or functions\n\nName the program vowels.py. Make sure that gradescope gives you the points for passing the test cases.\nTest cases for development:\n\ndef main():\n  print( count_vowels(\"\") ) # 0\n  print( count_vowels(\"aaa\") ) # 3\n  print( count_vowels(\"AEIOU\") ) # 5\n  print( count_vowels(\"cysts\") ) # 0\n  \nmain()",
+    "crumbs": [
+      "Module 6 - Control Flow (while statements)",
+      "Module 6 Assignments"
+    ]
   },
   {
     "objectID": "assignments-06.html#programming-problem-12",
     "href": "assignments-06.html#programming-problem-12",
     "title": "Module 6 Assignments",
     "section": "Programming Problem 12",
-    "text": "Programming Problem 12\nWrite a Python function that does the following:\n\nIts name is reverse_string\nIt takes one string as argument\nUsing a while loop, it builds a new string that is the reverse of the original string\nIt returns the reversed string\n\nWrite a Python function that does the following:\n\nIts name is remove_spaces\nIt takes one string as argument\nUsing a while loop to create a string with no spaces\nReturn the news string with no spaces\n\nWrite a Python function that does the following:\n\nIts name is is_palindrome\nIt takes one string as argument\nIt checks whether the string is a palindrome. A Palindrome reads the same backward and forward. For example: madam, and nurses run\nIt returns True if the string is a palindrome, and False otherwise\nUse your remove_spaces function to remove spaces from the argument before you check if the string is a palindrome\nUse your reverse_string function to reverse the string and then compare the result to the original string\n\nName the program palindrome.py. Make sure that gradescope gives you the points for passing the test cases.\n\ndef main():\n  print( reverse_string(\"aeiou\") ) # uoiea\n  print( remove_spaces(\"ae io ua\") ) # aeioua\n  \n  print( is_palindrome(\"noon\") ) # True\n  print( is_palindrome(\"deified\") ) # True\n  print( is_palindrome(\"go deliver a dare vile dog\") ) # True\n  \nmain()"
+    "text": "Programming Problem 12\nWrite a Python function that does the following:\n\nIts name is reverse_string\nIt takes one string as argument\nUsing a while loop, it builds a new string that is the reverse of the original string\nIt returns the reversed string\n\nWrite a Python function that does the following:\n\nIts name is remove_spaces\nIt takes one string as argument\nUsing a while loop to create a string with no spaces\nReturn the news string with no spaces\n\nWrite a Python function that does the following:\n\nIts name is is_palindrome\nIt takes one string as argument\nIt checks whether the string is a palindrome. A Palindrome reads the same backward and forward. For example: madam, and nurses run\nIt returns True if the string is a palindrome, and False otherwise\nUse your remove_spaces function to remove spaces from the argument before you check if the string is a palindrome\nUse your reverse_string function to reverse the string and then compare the result to the original string\n\nName the program palindrome.py. Make sure that gradescope gives you the points for passing the test cases.\n\ndef main():\n  print( reverse_string(\"aeiou\") ) # uoiea\n  print( remove_spaces(\"ae io ua\") ) # aeioua\n  \n  print( is_palindrome(\"noon\") ) # True\n  print( is_palindrome(\"deified\") ) # True\n  print( is_palindrome(\"go deliver a dare vile dog\") ) # True\n  \nmain()",
+    "crumbs": [
+      "Module 6 - Control Flow (while statements)",
+      "Module 6 Assignments"
+    ]
   },
   {
     "objectID": "test.html#write-a-function",
@@ -746,171 +758,6 @@
     ]
   },
   {
-    "objectID": "slides-02-01.html#cs-buddy-mentor-program-sign-up",
-    "href": "slides-02-01.html#cs-buddy-mentor-program-sign-up",
-    "title": "operations (slides)",
-    "section": "CS Buddy Mentor Program Sign-Up",
-    "text": "CS Buddy Mentor Program Sign-Up\n\nsign-up QR Code",
-    "crumbs": [
-      "Module 2 - Functions, Operators, and Expressions",
-      "operations (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-02-01.html#announcements",
-    "href": "slides-02-01.html#announcements",
-    "title": "operations (slides)",
-    "section": "Announcements",
-    "text": "Announcements\n\nSign-up for your lab session at xinchenyu.github.io/csc110-spring2025/short-projects.html\nMy office hours changed to Wednesday 10:30am-12:00pm.\nFull schedule for office hours can be found at xinchenyu.github.io/csc110-spring2025/tas.html\nNext lecture is Jan 22, next Wednesday.",
-    "crumbs": [
-      "Module 2 - Functions, Operators, and Expressions",
-      "operations (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-02-01.html#did-you-set-up-your-workspace",
-    "href": "slides-02-01.html#did-you-set-up-your-workspace",
-    "title": "operations (slides)",
-    "section": "Did you set up your workspace?",
-    "text": "Did you set up your workspace?\n\nDid you download Python 3?\nDid you download VS Code (or PyCharm, or Mu)?\nIf not, that’s fine, you can use vscode.dev",
-    "crumbs": [
-      "Module 2 - Functions, Operators, and Expressions",
-      "operations (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-02-01.html#the-print-function",
-    "href": "slides-02-01.html#the-print-function",
-    "title": "operations (slides)",
-    "section": "The print function",
-    "text": "The print function\n\nWhat does the print function do?",
-    "crumbs": [
-      "Module 2 - Functions, Operators, and Expressions",
-      "operations (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-02-01.html#the-print-function-1",
-    "href": "slides-02-01.html#the-print-function-1",
-    "title": "operations (slides)",
-    "section": "The print function",
-    "text": "The print function\n\nprint() sends characters (strings) to the standard output\nBy default, the standard output of a python program goes to the console.\n\n\nprint(\"some characters\")\n\nsome characters\n\n\n\n\nprint('some characters')\n\nsome characters",
-    "crumbs": [
-      "Module 2 - Functions, Operators, and Expressions",
-      "operations (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-02-01.html#string-operations",
-    "href": "slides-02-01.html#string-operations",
-    "title": "operations (slides)",
-    "section": "String operations",
-    "text": "String operations\nString concatenation:\n\nWhat will the standard output display when the code below is run?\n\n\nprint(\"hello\" + \"world\")",
-    "crumbs": [
-      "Module 2 - Functions, Operators, and Expressions",
-      "operations (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-02-01.html#string-operations-1",
-    "href": "slides-02-01.html#string-operations-1",
-    "title": "operations (slides)",
-    "section": "String operations",
-    "text": "String operations\nIn your groups, try the following operations:\n\nString repetition: \"abc\" * 4\nString concatenation with + and ,. What is the difference?\nCombine both repetition and concatenation to print the following:\n\n\n\nThey sang AaAaAaAaAaAaAaAaAaAa",
-    "crumbs": [
-      "Module 2 - Functions, Operators, and Expressions",
-      "operations (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-02-01.html#string-operations-2",
-    "href": "slides-02-01.html#string-operations-2",
-    "title": "operations (slides)",
-    "section": "String operations",
-    "text": "String operations\nsolution 1:\n\nprint(\"They sang\", \"Aa\" * 10)\n\nThey sang AaAaAaAaAaAaAaAaAaAa\n\n\nsolution 2:\n\nprint(\"They\", \"sang\", \"Aa\" * 10)\n\nThey sang AaAaAaAaAaAaAaAaAaAa\n\n\nsolution 3:\n\nprint(\"They\" + \" \"  + \"sang\" + \" \" + \"Aa\" * 10)\n\nThey sang AaAaAaAaAaAaAaAaAaAa",
-    "crumbs": [
-      "Module 2 - Functions, Operators, and Expressions",
-      "operations (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-02-01.html#multiple-print-statements",
-    "href": "slides-02-01.html#multiple-print-statements",
-    "title": "operations (slides)",
-    "section": "Multiple print statements",
-    "text": "Multiple print statements\n\nWhat will the standard output display when the code below is run?\n\n\nprint('Are')\nprint('You')\nprint('In')\nprint('College?')",
-    "crumbs": [
-      "Module 2 - Functions, Operators, and Expressions",
-      "operations (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-02-01.html#multiple-print-statements-1",
-    "href": "slides-02-01.html#multiple-print-statements-1",
-    "title": "operations (slides)",
-    "section": "Multiple print statements",
-    "text": "Multiple print statements\n\nBy default, the print function moves the cursor to the next line after printing, unless you specify otherwise.\n\n\nprint('Are', end = ' ')\nprint('You', end = ' ')\nprint('In', end = ' ')\nprint('College?', end = ' ')\n\nAre You In College? \n\n\nWhat other characters can you use for values for the end parameter?",
-    "crumbs": [
-      "Module 2 - Functions, Operators, and Expressions",
-      "operations (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-02-01.html#dealing-with-special-characters",
-    "href": "slides-02-01.html#dealing-with-special-characters",
-    "title": "operations (slides)",
-    "section": "Dealing with special characters",
-    "text": "Dealing with special characters\nWrite a simple program that prints the following output to the python console:\n\n   He said, \"What's up?\" \n   Joe's friend didn't reply.",
-    "crumbs": [
-      "Module 2 - Functions, Operators, and Expressions",
-      "operations (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-02-01.html#dealing-with-special-characters-1",
-    "href": "slides-02-01.html#dealing-with-special-characters-1",
-    "title": "operations (slides)",
-    "section": "Dealing with special characters",
-    "text": "Dealing with special characters\ndouble quotes:\n\nprint(\"He said, \\\"What's up?\\\"\")\nprint(\"Joe's friend didn't reply.\")\n\nHe said, \"What's up?\"\nJoe's friend didn't reply.\n\n\nsingle quotes:\n\nprint('He said, \"What\\'s up?\"')\nprint('Joe\\'s friend didn\\'t reply.')\n\nHe said, \"What's up?\"\nJoe's friend didn't reply.",
-    "crumbs": [
-      "Module 2 - Functions, Operators, and Expressions",
-      "operations (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-02-01.html#variables-and-assignment",
-    "href": "slides-02-01.html#variables-and-assignment",
-    "title": "operations (slides)",
-    "section": "Variables and assignment",
-    "text": "Variables and assignment\n\nVariables are names in a program that represent a stored value\nWe can assign names to particular values in our program\nWhen we give a value a name, or update the value stored in a variable, this is called assigning a variable",
-    "crumbs": [
-      "Module 2 - Functions, Operators, and Expressions",
-      "operations (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-02-01.html#demonstration-of-variable-assignment",
-    "href": "slides-02-01.html#demonstration-of-variable-assignment",
-    "title": "operations (slides)",
-    "section": "Demonstration of variable assignment",
-    "text": "Demonstration of variable assignment\nVariable assignment does not produce any output to the console. Run the following code:\n\nfirst_name = \"Mary\"\nfamily_name = \"Silva\"\n\nHow would we print these variables?",
-    "crumbs": [
-      "Module 2 - Functions, Operators, and Expressions",
-      "operations (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-02-01.html#variables-improve-readability",
-    "href": "slides-02-01.html#variables-improve-readability",
-    "title": "operations (slides)",
-    "section": "Variables improve readability",
-    "text": "Variables improve readability\nWithout variables:\n\nprint(\"The total price is\", 100 * 1.08)\n\nThe total price is 108.0\n\n\nWith variables:\n\nbase_price = 100\ntax_rate = 1.08\ntotal_price = base_price * tax_rate\nprint(\"The total price is\", total_price)\n\nThe total price is 108.0",
-    "crumbs": [
-      "Module 2 - Functions, Operators, and Expressions",
-      "operations (slides)"
-    ]
-  },
-  {
     "objectID": "slides-02-01.html#basic-types",
     "href": "slides-02-01.html#basic-types",
     "title": "operations (slides)",
@@ -938,6 +785,17 @@
     "title": "operations (slides)",
     "section": "Operations - examples",
     "text": "Operations - examples\nThink of the whiteboard as your program’s console. Write down what would display as the output for the following code:\n\nprint(10 + 5 - 5) \nprint(10 * 5 / 4)\nprint(25 ** 2)  \nprint(25 ** 0.5) \nprint(13 // 4) \nprint(13 % 4)",
+    "crumbs": [
+      "Module 2 - Functions, Operators, and Expressions",
+      "operations (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-02-01.html#operations---answers",
+    "href": "slides-02-01.html#operations---answers",
+    "title": "operations (slides)",
+    "section": "Operations - answers",
+    "text": "Operations - answers\n\nprint(10 + 5 - 5) # addition and subtraction\nprint(10 * 5 / 4) # multiplication and division\nprint(25 ** 2) # square \nprint(25 ** 0.5) # square root \nprint(13 // 4) # division and round down to the nearest integer\nprint(13 % 4) # remainder \n\n10\n12.5\n625\n5.0\n3\n1",
     "crumbs": [
       "Module 2 - Functions, Operators, and Expressions",
       "operations (slides)"
@@ -993,6 +851,17 @@
     "title": "operations (slides)",
     "section": "round()",
     "text": "round()\n\nRun the following code on your laptop\nDiscuss with your partner how the output is calculated\n\n\nprint(round(51.6))\nprint(round(51.4))\nprint(round(51.5))\nprint(round(50.5))",
+    "crumbs": [
+      "Module 2 - Functions, Operators, and Expressions",
+      "operations (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-02-01.html#round-2",
+    "href": "slides-02-01.html#round-2",
+    "title": "operations (slides)",
+    "section": "round()",
+    "text": "round()\nUse the round() function to get a floating-point number rounded to the specified number of decimals.\nSyntax:\n\nround(number, ndigits*)\n\nRounding is done toward the nearest even choice:\n\nprint(round(51.6))\nprint(round(51.4))\nprint(round(51.5))\nprint(round(50.5))\n\n52\n51\n52\n50",
     "crumbs": [
       "Module 2 - Functions, Operators, and Expressions",
       "operations (slides)"
@@ -2223,17 +2092,6 @@
     ]
   },
   {
-    "objectID": "slides-01-02.html#cs-buddy-mentor-program-sign-up",
-    "href": "slides-01-02.html#cs-buddy-mentor-program-sign-up",
-    "title": "python basics (slides)",
-    "section": "CS Buddy Mentor Program Sign-Up",
-    "text": "CS Buddy Mentor Program Sign-Up\n\nsign-up QR Code",
-    "crumbs": [
-      "Module 1 - Basics",
-      "python basics (slides)"
-    ]
-  },
-  {
     "objectID": "slides-01-02.html#announcements",
     "href": "slides-01-02.html#announcements",
     "title": "python basics (slides)",
@@ -2382,149 +2240,6 @@
     "title": "python basics (slides)",
     "section": "Variables improve readability",
     "text": "Variables improve readability\nWithout variables:\n\nprint(\"The total price is\", 100 * 1.08)\n\nThe total price is 108.0\n\n\nWith variables:\n\nbase_price = 100\ntax_rate = 1.08\ntotal_price = base_price * tax_rate\nprint(\"The total price is\", total_price)\n\nThe total price is 108.0",
-    "crumbs": [
-      "Module 1 - Basics",
-      "python basics (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-01-02.html#basic-types",
-    "href": "slides-01-02.html#basic-types",
-    "title": "python basics (slides)",
-    "section": "Basic Types",
-    "text": "Basic Types\n\nstring: \"hello\" or 'hello'\ninteger: 3\nfloat: 3.14\nbool: True or False\n\nUse the function type() with each literal type.",
-    "crumbs": [
-      "Module 1 - Basics",
-      "python basics (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-01-02.html#operations",
-    "href": "slides-01-02.html#operations",
-    "title": "python basics (slides)",
-    "section": "Operations",
-    "text": "Operations\n\n+ : plus\n- : minus\n* : multiple\n/ : divide\n** : power\n// : divide and floor\n% : modulos",
-    "crumbs": [
-      "Module 1 - Basics",
-      "python basics (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-01-02.html#operations---examples",
-    "href": "slides-01-02.html#operations---examples",
-    "title": "python basics (slides)",
-    "section": "Operations - examples",
-    "text": "Operations - examples\n\nprint(10 + 5 - 5) # addition and subtraction\nprint(10 * 5 / 4) # multiplication and division\nprint(25 ** 2) # square \nprint(25 ** 0.5) # square root \nprint(13 // 4) # division and round down to the nearest integer\nprint(13 % 4) # remainder \n\n10\n12.5\n625\n5.0\n3\n1",
-    "crumbs": [
-      "Module 1 - Basics",
-      "python basics (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-01-02.html#pemdas",
-    "href": "slides-01-02.html#pemdas",
-    "title": "python basics (slides)",
-    "section": "PEMDAS",
-    "text": "PEMDAS\n\nWhat does PEMDAS stand for?\nThe operator precedence:\n\nParentheses\nExponentiation\nMultiplication and Division (including // and %)\nAddition and Subtraction",
-    "crumbs": [
-      "Module 1 - Basics",
-      "python basics (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-01-02.html#pemdas-1",
-    "href": "slides-01-02.html#pemdas-1",
-    "title": "python basics (slides)",
-    "section": "PEMDAS",
-    "text": "PEMDAS\nWhat value will each of these variables take on? No computers!\na1 = 5 /  5 * 10  * 5\na2 = 5 / (5 * 10) * 5\n\nb1 = 5 *  10 - 2\nb2 = 5 * (10 - 2)\n\nc = (3 // (4 // 5)) + 1",
-    "crumbs": [
-      "Module 1 - Basics",
-      "python basics (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-01-02.html#pemdas-answer",
-    "href": "slides-01-02.html#pemdas-answer",
-    "title": "python basics (slides)",
-    "section": "PEMDAS – answer",
-    "text": "PEMDAS – answer\n\na1 = 5 /  5 * 10  * 5\na2 = 5 / (5 * 10) * 5\n\nb1 = 5 *  10 - 2\nb2 = 5 * (10 - 2)\n\n# c = (3 // (4 // 5)) + 1 ERROR -- Zero Division\n\nprint(a1)\nprint(a2)\nprint(b1)\nprint(b2)\n\n50.0\n0.5\n48\n40\n\n\nNote that the division operator returns a float even when both numerator and denominator are integers",
-    "crumbs": [
-      "Module 1 - Basics",
-      "python basics (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-01-02.html#round",
-    "href": "slides-01-02.html#round",
-    "title": "python basics (slides)",
-    "section": "round()",
-    "text": "round()\nUse the round() function to get a floating-point number rounded to the specified number of decimals.\nSyntax:\n\nround(number, ndigits*)\n\nThe number of digits (ndigits) is optional, but we will often round number to two decimals:\n\nround(392.68750000000006, 2)\n\n392.69",
-    "crumbs": [
-      "Module 1 - Basics",
-      "python basics (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-01-02.html#round-1",
-    "href": "slides-01-02.html#round-1",
-    "title": "python basics (slides)",
-    "section": "round()",
-    "text": "round()\nUse the round() function to get a floating-point number rounded to the specified number of decimals.\nSyntax:\n\nround(number, ndigits*)\n\nRounding is done toward the nearest even choice:\n\nprint(round(51.6))\nprint(round(51.4))\nprint(round(51.5))\nprint(round(50.5))\n\n52\n51\n52\n50",
-    "crumbs": [
-      "Module 1 - Basics",
-      "python basics (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-01-02.html#operations-and-variable-assignments",
-    "href": "slides-01-02.html#operations-and-variable-assignments",
-    "title": "python basics (slides)",
-    "section": "Operations and Variable Assignments",
-    "text": "Operations and Variable Assignments\nVariable assignments are not like math — they can appear in equations that make no mathematical sense.\n\n\nx = 5\nprint(x)\nx = x + 2\nprint(x)\n\n\nx = x + 2 means “take the current value of x, add it with 2, and assign the resulting value (7) to x as its new value.”",
-    "crumbs": [
-      "Module 1 - Basics",
-      "python basics (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-01-02.html#combining-variables-and-operations",
-    "href": "slides-01-02.html#combining-variables-and-operations",
-    "title": "python basics (slides)",
-    "section": "Combining variables and operations",
-    "text": "Combining variables and operations\nWrite code to calculate the area of a circle when radius is 3:\n\nAssign integer 3 to radius\nCalculate the area (use \\(\\pi\\) as 3.1415) and round it to two decimals\nPrint the area",
-    "crumbs": [
-      "Module 1 - Basics",
-      "python basics (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-01-02.html#comments",
-    "href": "slides-01-02.html#comments",
-    "title": "python basics (slides)",
-    "section": "Comments",
-    "text": "Comments\nComments are text that is meant to be read, but not executed. The purpose is to improve readability.\n\n# assign a radius value\nradius = 3\n# compute the area of a circle and round to two decimals\narea = round(3.1415 * radius ** 2, 2)\n# print the area\nprint(area)\n\n28.27",
-    "crumbs": [
-      "Module 1 - Basics",
-      "python basics (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-01-02.html#questions",
-    "href": "slides-01-02.html#questions",
-    "title": "python basics (slides)",
-    "section": "Questions",
-    "text": "Questions\n\nWhat if we want to get the area of circles when the radius is 1, 2, 3, 4 and 5?\nCan we do it more efficiently?",
-    "crumbs": [
-      "Module 1 - Basics",
-      "python basics (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-01-02.html#quiz-02",
-    "href": "slides-01-02.html#quiz-02",
-    "title": "python basics (slides)",
-    "section": "Quiz 02",
-    "text": "Quiz 02\n\n\ncurrent time\n\n\n\n\n\n\nYou have 5 minutes to complete the quiz.",
     "crumbs": [
       "Module 1 - Basics",
       "python basics (slides)"
@@ -3038,17 +2753,6 @@
     "title": "More on Functions (class slides)",
     "section": "Write a function",
     "text": "Write a function\nWrite a Python function called hypotenuse that takes two parameters: a and b representing the length of the two non-hypotenuse sides of a right triangle. The function should calculate the hypotenuse according to the Pythagorean theorem: \\(c = \\sqrt(a^2 + b^2)\\). Return it rounded at two decimals.\nTest cases: hypotenuse(3, 4) should return 5.0, hypotenuse(10, 10) should return 14.14\nName your file hypotenuse.py to gradescope for attendance",
-    "crumbs": [
-      "Module 3 - Decomposition and More on Functions",
-      "More on Functions (class slides)"
-    ]
-  },
-  {
-    "objectID": "slides-03-02.html#submit-attendance",
-    "href": "slides-03-02.html#submit-attendance",
-    "title": "More on Functions (class slides)",
-    "section": "Submit attendance",
-    "text": "Submit attendance\nSubmit your hypotenuse.py file with your solution to gradescope for attendance",
     "crumbs": [
       "Module 3 - Decomposition and More on Functions",
       "More on Functions (class slides)"
@@ -5050,7 +4754,7 @@
     "href": "slides-07-02.html#random-module",
     "title": "random (slides)",
     "section": "random module",
-    "text": "random module\nWe need to import the module random\nWhat do the functions .random() and .randint() return?\n\nimport random\n\nn = random.random() #returns a random float between 0 and 1\nprint(n)\n\nn = random.randint(0, 9) #returns a random integer betweem 0 and 9.\n\n\nprint(n)\n\n0.7806656000661353\n3",
+    "text": "random module\nWe need to import the module random\nWhat do the functions .random() and .randint() return?\n\nimport random\n\nn = random.random() #returns a random float between 0 and 1\nprint(n)\n\nn = random.randint(0, 9) #returns a random integer betweem 0 and 9.\n\n\nprint(n)\n\n0.8808875355240093\n8",
     "crumbs": [
       "Module 7 - Data Structures (lists)",
       "random (slides)"
@@ -5911,6 +5615,17 @@
     ]
   },
   {
+    "objectID": "slides-01-01.html#in-class-activity-1",
+    "href": "slides-01-01.html#in-class-activity-1",
+    "title": "course introduction (slides)",
+    "section": "In-class activity 1",
+    "text": "In-class activity 1\n\n👥 Pair with a partner at your table\n🔄 Share one thing you’re willing to try, fail at, and eventually succeed in\n💬 Be ready to share your partner’s story!",
+    "crumbs": [
+      "Module 1 - Basics",
+      "course introduction (slides)"
+    ]
+  },
+  {
     "objectID": "slides-01-01.html#what-do-you-need-to-succeed-in-this-class",
     "href": "slides-01-01.html#what-do-you-need-to-succeed-in-this-class",
     "title": "course introduction (slides)",
@@ -5966,11 +5681,11 @@
     ]
   },
   {
-    "objectID": "slides-01-01.html#quiz-01",
-    "href": "slides-01-01.html#quiz-01",
+    "objectID": "slides-01-01.html#in-class-activity-2",
+    "href": "slides-01-01.html#in-class-activity-2",
     "title": "course introduction (slides)",
-    "section": "Quiz 01",
-    "text": "Quiz 01\nAccess gradescope, discuss with your group members and work on quiz 01. Answers can be found at:\n\nSyllabus\nTAs and Office Hours\nOnline discussion and office hours",
+    "section": "In-class activity 2",
+    "text": "In-class activity 2\nCourse website: xinchenyu.github.io/csc110\nAccess gradescope, discuss with your group members and work on quiz 01. Answers can be found at:\n\nSyllabus\nTAs and Office Hours\nOnline discussion and office hours",
     "crumbs": [
       "Module 1 - Basics",
       "course introduction (slides)"
@@ -6045,28 +5760,6 @@
   {
     "objectID": "slides-01-01.html#how-to-get-help-3",
     "href": "slides-01-01.html#how-to-get-help-3",
-    "title": "course introduction (slides)",
-    "section": "How to get help?",
-    "text": "How to get help?\n\nCome to office hours!\n\n1 point of extra credit if you show up to office hours (read the syllabus for specifics on this)\n\nJoin Piazza\n\nask on Piazza: questions about assignments, quizzes, and exams (has private options)\nemail me: only logistics-related questions",
-    "crumbs": [
-      "Module 1 - Basics",
-      "course introduction (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-01-01.html#how-to-get-help-4",
-    "href": "slides-01-01.html#how-to-get-help-4",
-    "title": "course introduction (slides)",
-    "section": "How to get help?",
-    "text": "How to get help?\nCome to office hours but come prepared!\n👍 start early, check typo, google, rubber duck…\n👎 start late, ask vague questions, ask TA to debug for you\n\nTAs help answer clarification questions\nTAs do not debug for you (you wouldn’t learn to solve them yourself if you are always asking other people to do it for you)",
-    "crumbs": [
-      "Module 1 - Basics",
-      "course introduction (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-01-01.html#how-to-get-help-5",
-    "href": "slides-01-01.html#how-to-get-help-5",
     "title": "course introduction (slides)",
     "section": "How to get help?",
     "text": "How to get help?\n\nCome to office hours!\n\n1 point of extra credit if you show up to office hours (read the syllabus for specifics on this)\n\nJoin Piazza\n\nask on Piazza: questions about assignments, quizzes, and exams (has private options)\nemail me: only logistics-related questions",
@@ -6655,17 +6348,6 @@
     ]
   },
   {
-    "objectID": "slides-04-01.html#quiz-03",
-    "href": "slides-04-01.html#quiz-03",
-    "title": "built-in functions (slides)",
-    "section": "Quiz 03",
-    "text": "Quiz 03\n\n\ncurrent time\n\n\n\n\n\n\nYou have 10 minutes to complete the quiz.\nYour formula in your function should be Python code (in other words, do not just copy the formula in the instructions, make it so it uses actual symbols for Python operators)",
-    "crumbs": [
-      "Module 4 - Built-In Functions and Decomposition",
-      "built-in functions (slides)"
-    ]
-  },
-  {
     "objectID": "slides-04-01.html#int-function",
     "href": "slides-04-01.html#int-function",
     "title": "built-in functions (slides)",
@@ -6704,6 +6386,28 @@
     "title": "built-in functions (slides)",
     "section": "Write a function",
     "text": "Write a function\n\ndef calculate_year_born():\n    str_age = input(\"what's your age?\\n\")\n    age = int(str_age)\n    year_born = 2025 - age\n    return year_born\n\ndef main():\n    print(calculate_year_born())\n\nmain()",
+    "crumbs": [
+      "Module 4 - Built-In Functions and Decomposition",
+      "built-in functions (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-04-01.html#write-a-function---solution",
+    "href": "slides-04-01.html#write-a-function---solution",
+    "title": "built-in functions (slides)",
+    "section": "Write a function - solution",
+    "text": "Write a function - solution\nWrite a Python function mars_weight with no parameters. It prompts user to enter their weight input().\nThen calculate their weight on Mars using weight * 0.38.\nIt returns the weight on Mars rounded at integer.\n\nprint( mars_weight() ) # user enters 150, function returns 57",
+    "crumbs": [
+      "Module 4 - Built-In Functions and Decomposition",
+      "built-in functions (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-04-01.html#write-a-function---solution-1",
+    "href": "slides-04-01.html#write-a-function---solution-1",
+    "title": "built-in functions (slides)",
+    "section": "Write a function - solution",
+    "text": "Write a function - solution\n\ndef mars_weight():\n    str_weight = input(\"what's your weight?\\n\")\n    weight = float(str_weight)\n    mars_weight = weight * 0.38\n    return round(mars_weight)\n\ndef main():\n    print(mars_weight())\n\nmain()",
     "crumbs": [
       "Module 4 - Built-In Functions and Decomposition",
       "built-in functions (slides)"
@@ -6857,7 +6561,7 @@
     "href": "slides-16-01.html#write-a-function---solution",
     "title": "final exam review (slides)",
     "section": "write a function - solution",
-    "text": "write a function - solution\n\ndef create_list(items, n):\n  new_list = [ ]\n  for value in items:\n    new_list.extend([value] * n)\n  return new_list\n\ndef main():\n  items = {\"banana\", \"apple\", \"pear\"}\n  print(create_list(items, 2))  \n  \nmain()\n\n['apple', 'apple', 'banana', 'banana', 'pear', 'pear']",
+    "text": "write a function - solution\n\ndef create_list(items, n):\n  new_list = [ ]\n  for value in items:\n    new_list.extend([value] * n)\n  return new_list\n\ndef main():\n  items = {\"banana\", \"apple\", \"pear\"}\n  print(create_list(items, 2))  \n  \nmain()\n\n['pear', 'pear', 'apple', 'apple', 'banana', 'banana']",
     "crumbs": [
       "Module 16 - Review",
       "final exam review (slides)"
@@ -7946,6 +7650,20 @@
     ]
   },
   {
+    "objectID": "exam-instructions.html#quiz",
+    "href": "exam-instructions.html#quiz",
+    "title": "Exam Instructions",
+    "section": "Quiz",
+    "text": "Quiz\n\n\ncurrent time\n\n\n\n\n\n\nYou have 10 minutes to complete the quiz."
+  },
+  {
+    "objectID": "exam-instructions.html#section",
+    "href": "exam-instructions.html#section",
+    "title": "Exam Instructions",
+    "section": "",
+    "text": "current time\n\n\n\n\n\n\nExam starts at 1:00pm and ends at 3:00pm\nNo breaks during the exam.\n\nYou are only allowed to use functions and methods covered in the class materials. No need to write comments.\nWrite with a blue or black pen, or pencil. If you have a question, please raise your hand.\nRaise your hand when you are done, a TA will check your ID."
+  },
+  {
     "objectID": "exam-instructions.html#exam-instructions",
     "href": "exam-instructions.html#exam-instructions",
     "title": "Exam Instructions",
@@ -7991,6 +7709,17 @@
     "title": "functions (slides)",
     "section": "Another example",
     "text": "Another example\n\ndef cook_food(order):\n  message = \"Your \" + order + \" is ready!\"\n  return message\n\nmeal = cook_food(\"pasta\")\nprint(meal)\nmeal = cook_food(\"burger\")\nprint(meal)\n\nYour pasta is ready!\nYour burger is ready!\n\n\n\nThe function cook_food prepares a meal.\nThen returns a string that says the meal is ready.\nThe returned message is stored in the meal variable.\nFinally, print function displays that message to the caller.",
+    "crumbs": [
+      "Module 2 - Functions, Operators, and Expressions",
+      "functions (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-02-02.html#another-example-1",
+    "href": "slides-02-02.html#another-example-1",
+    "title": "functions (slides)",
+    "section": "Another example",
+    "text": "Another example\n\ndef cook_food(order):\n  message = \"Your \" + order + \" is ready!\"\n  return message\n\ndef main():\n  meal = cook_food(\"pasta\")\n  print(meal)\n  meal = cook_food(\"burger\")\n  print(meal)\n  \nmain()\n\nYour pasta is ready!\nYour burger is ready!",
     "crumbs": [
       "Module 2 - Functions, Operators, and Expressions",
       "functions (slides)"
@@ -8085,19 +7814,19 @@
     ]
   },
   {
-    "objectID": "slides-02-02.html#write-a-function-3",
-    "href": "slides-02-02.html#write-a-function-3",
+    "objectID": "slides-02-02.html#work-on-gradescope-attendance",
+    "href": "slides-02-02.html#work-on-gradescope-attendance",
     "title": "functions (slides)",
-    "section": "Write a function",
-    "text": "Write a function\n\ndef sqrt(n):\n  '''\n  This function calculates the square root of a number\n  Args:\n    n: integer or float\n  Returns:\n    The square root of n\n  '''\n  return n**0.5\n\ndef hypotenuse(a, b):\n  '''\n  This function calculates the hypotenuse of a right angle triangle.\n  Args:\n    a: number (integer or float) representing one of the non-hypotenuse sides\n    b: number (integer or float) representing one of the non-hypotenuse sides\n  Returns:\n    Float representing the length of the hypotenuse given a and b\n  ''' \n  h = sqrt(a**2 + b**2)\n  return round(h, 2)\n\ndef main():\n  '''\n  This function calls the hypotenuse function to calculate and then\n  print out the hypotenuse of a right angle triangle of sides 3 and 4\n  and the hypotenuse of a right angle triange of sides 10 and 10\n  '''\n  result = hypotenuse(3, 4)\n  print(result)\n  \n  result = hypotenuse(10, 10)\n  print(result)\n  \nmain()\n\n5.0\n14.14",
+    "section": "Work on gradescope attendance",
+    "text": "Work on gradescope attendance\nWrite a Python function named hypotenuse that takes two arguments: a and b representing the length of the two non-hypotenuse sides of a right triangle. The function calculate the hypotenuse according to the Pythagorean theorem: \\(c = \\sqrt(a^2 + b^2)\\). Return it rounded at two decimals.\nTest cases: hypotenuse(3, 4) should return 5.0, hypotenuse(10, 10) should return 14.14\nName your file hypotenuse.py and submit to gradescope.",
     "crumbs": [
       "Module 2 - Functions, Operators, and Expressions",
       "functions (slides)"
     ]
   },
   {
-    "objectID": "slides-02-02.html#write-a-function-4",
-    "href": "slides-02-02.html#write-a-function-4",
+    "objectID": "slides-02-02.html#write-a-function-3",
+    "href": "slides-02-02.html#write-a-function-3",
     "title": "functions (slides)",
     "section": "Write a function",
     "text": "Write a function\n\ndef sqrt(n):\n  '''\n  This function calculates the square root of a number\n  Args:\n    n: integer or float\n  Returns:\n    The square root of n\n  '''\n  return n**0.5\n\ndef hypotenuse(a, b):\n  '''\n  This function calculates the hypotenuse of a right angle triangle.\n  Args:\n    a: number (integer or float) representing one of the non-hypotenuse sides\n    b: number (integer or float) representing one of the non-hypotenuse sides\n  Returns:\n    Float representing the length of the hypotenuse given a and b\n  ''' \n  h = sqrt(a**2 + b**2)\n  return round(h, 2)\n\ndef main():\n  '''\n  This function calls the hypotenuse function to calculate and then\n  print out the hypotenuse of a right angle triangle of sides 3 and 4\n  and the hypotenuse of a right angle triange of sides 10 and 10\n  '''\n  result = hypotenuse(3, 4)\n  print(result)\n  \n  result = hypotenuse(10, 10)\n  print(result)\n  \nmain()\n\n5.0\n14.14",
@@ -9412,130 +9141,6 @@
     "crumbs": [
       "Module 1 - Basics",
       "Module 1 Assignments"
-    ]
-  },
-  {
-    "objectID": "slides-01-01.html#in-class-activity-1",
-    "href": "slides-01-01.html#in-class-activity-1",
-    "title": "course introduction (slides)",
-    "section": "In-class activity 1",
-    "text": "In-class activity 1\n\n👥 Pair with a partner at your table\n🔄 Share one thing you’re willing to try, fail at, and eventually succeed in\n💬 Be ready to share your partner’s story!",
-    "crumbs": [
-      "Module 1 - Basics",
-      "course introduction (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-01-01.html#in-class-activity-2",
-    "href": "slides-01-01.html#in-class-activity-2",
-    "title": "course introduction (slides)",
-    "section": "In-class activity 2",
-    "text": "In-class activity 2\nCourse website: xinchenyu.github.io/csc110\nAccess gradescope, discuss with your group members and work on quiz 01. Answers can be found at:\n\nSyllabus\nTAs and Office Hours\nOnline discussion and office hours",
-    "crumbs": [
-      "Module 1 - Basics",
-      "course introduction (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-02-01.html#using-functions",
-    "href": "slides-02-01.html#using-functions",
-    "title": "operations (slides)",
-    "section": "Using functions",
-    "text": "Using functions\nFill in the missing code in the function below:\n\ndef calculate_area(radius):\n  area =    # write code here\n  return round(area, 2)\n\ndef main():\n  print(calculate_area(3)) # 28.27\n  print(calculate_area(6)) # 113.09\n  \nmain()",
-    "crumbs": [
-      "Module 2 - Functions, Operators, and Expressions",
-      "operations (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-02-01.html#round-2",
-    "href": "slides-02-01.html#round-2",
-    "title": "operations (slides)",
-    "section": "round()",
-    "text": "round()\nUse the round() function to get a floating-point number rounded to the specified number of decimals.\nSyntax:\n\nround(number, ndigits*)\n\nRounding is done toward the nearest even choice:\n\nprint(round(51.6))\nprint(round(51.4))\nprint(round(51.5))\nprint(round(50.5))\n\n52\n51\n52\n50",
-    "crumbs": [
-      "Module 2 - Functions, Operators, and Expressions",
-      "operations (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-02-01.html#operations---answers",
-    "href": "slides-02-01.html#operations---answers",
-    "title": "operations (slides)",
-    "section": "Operations - answers",
-    "text": "Operations - answers\n\nprint(10 + 5 - 5) # addition and subtraction\nprint(10 * 5 / 4) # multiplication and division\nprint(25 ** 2) # square \nprint(25 ** 0.5) # square root \nprint(13 // 4) # division and round down to the nearest integer\nprint(13 % 4) # remainder \n\n10\n12.5\n625\n5.0\n3\n1",
-    "crumbs": [
-      "Module 2 - Functions, Operators, and Expressions",
-      "operations (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-02-02.html#another-example-1",
-    "href": "slides-02-02.html#another-example-1",
-    "title": "functions (slides)",
-    "section": "Another example",
-    "text": "Another example\n\ndef cook_food(order):\n  message = \"Your \" + order + \" is ready!\"\n  return message\n\ndef main():\n  meal = cook_food(\"pasta\")\n  print(meal)\n  meal = cook_food(\"burger\")\n  print(meal)\n  \nmain()\n\nYour pasta is ready!\nYour burger is ready!",
-    "crumbs": [
-      "Module 2 - Functions, Operators, and Expressions",
-      "functions (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-02-02.html#write-a-function---gradescope-attendance",
-    "href": "slides-02-02.html#write-a-function---gradescope-attendance",
-    "title": "functions (slides)",
-    "section": "Write a function - Gradescope Attendance",
-    "text": "Write a function - Gradescope Attendance\nWrite a Python function named hypotenuse that takes two arguments: a and b representing the length of the two non-hypotenuse sides of a right triangle. The function calculate the hypotenuse according to the Pythagorean theorem: \\(c = \\sqrt(a^2 + b^2)\\). Return it rounded at two decimals.\nTest cases: hypotenuse(3, 4) should return 5.0, hypotenuse(10, 10) should return 14.14\nName your file hypotenuse.py and submit to gradescope.",
-    "crumbs": [
-      "Module 2 - Functions, Operators, and Expressions",
-      "functions (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-02-02.html#work-on-gradescope-attendance",
-    "href": "slides-02-02.html#work-on-gradescope-attendance",
-    "title": "functions (slides)",
-    "section": "Work on gradescope attendance",
-    "text": "Work on gradescope attendance\nWrite a Python function named hypotenuse that takes two arguments: a and b representing the length of the two non-hypotenuse sides of a right triangle. The function calculate the hypotenuse according to the Pythagorean theorem: \\(c = \\sqrt(a^2 + b^2)\\). Return it rounded at two decimals.\nTest cases: hypotenuse(3, 4) should return 5.0, hypotenuse(10, 10) should return 14.14\nName your file hypotenuse.py and submit to gradescope.",
-    "crumbs": [
-      "Module 2 - Functions, Operators, and Expressions",
-      "functions (slides)"
-    ]
-  },
-  {
-    "objectID": "exam-instructions.html#quiz",
-    "href": "exam-instructions.html#quiz",
-    "title": "Exam Instructions",
-    "section": "Quiz",
-    "text": "Quiz\n\n\ncurrent time\n\n\n\n\n\n\nYou have 10 minutes to complete the quiz."
-  },
-  {
-    "objectID": "exam-instructions.html#section",
-    "href": "exam-instructions.html#section",
-    "title": "Exam Instructions",
-    "section": "",
-    "text": "current time\n\n\n\n\n\n\nExam starts at 1:00pm and ends at 3:00pm\nNo breaks during the exam.\n\nYou are only allowed to use functions and methods covered in the class materials. No need to write comments.\nWrite with a blue or black pen, or pencil. If you have a question, please raise your hand.\nRaise your hand when you are done, a TA will check your ID."
-  },
-  {
-    "objectID": "slides-04-01.html#write-a-function---solution",
-    "href": "slides-04-01.html#write-a-function---solution",
-    "title": "built-in functions (slides)",
-    "section": "Write a function - solution",
-    "text": "Write a function - solution\nWrite a Python function mars_weight with no parameters. It prompts user to enter their weight input().\nThen calculate their weight on Mars using weight * 0.38.\nIt returns the weight on Mars rounded at integer.\n\nprint( mars_weight() ) # user enters 150, function returns 57",
-    "crumbs": [
-      "Module 4 - Built-In Functions and Decomposition",
-      "built-in functions (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-04-01.html#write-a-function---solution-1",
-    "href": "slides-04-01.html#write-a-function---solution-1",
-    "title": "built-in functions (slides)",
-    "section": "Write a function - solution",
-    "text": "Write a function - solution\n\ndef mars_weight():\n    str_weight = input(\"what's your weight?\\n\")\n    weight = float(str_weight)\n    mars_weight = weight * 0.38\n    return round(mars_weight)\n\ndef main():\n    print(mars_weight())\n\nmain()",
-    "crumbs": [
-      "Module 4 - Built-In Functions and Decomposition",
-      "built-in functions (slides)"
     ]
   }
 ]
