@@ -4754,7 +4754,7 @@
     "href": "slides-07-02.html#random-module",
     "title": "random (slides)",
     "section": "random module",
-    "text": "random module\nWe need to import the module random\nWhat do the functions .random() and .randint() return?\n\nimport random\n\nn = random.random() #returns a random float between 0 and 1\nprint(n)\n\nn = random.randint(0, 9) #returns a random integer betweem 0 and 9.\n\n\nprint(n)\n\n0.8808875355240093\n8",
+    "text": "random module\nWe need to import the module random\nWhat do the functions .random() and .randint() return?\n\nimport random\n\nn = random.random() #returns a random float between 0 and 1\nprint(n)\n\nn = random.randint(0, 9) #returns a random integer betweem 0 and 9.\n\n\nprint(n)\n\n0.11172613855316116\n5",
     "crumbs": [
       "Module 7 - Data Structures (lists)",
       "random (slides)"
@@ -4822,7 +4822,7 @@
     "section": "",
     "text": "Due date: Wednesday, October 29, 2025 at 9pm\n\n\nWrite a Python function that does the following:\n\nIts name is count_vowels\nIt takes as argument a string\nIt iterates over the string (either with a while or for loop) counting how many lowercase and uppercase vowels the string has\nIt returns a dictionary with vowels are the keys, and integer counts as the values\n\nTest cases:\n\nprint( count_vowels(\"\") ) # {\"a\": 0, \"e\": 0, \"i\": 0, \"o\": 0, \"u\": 0,\n                          #  \"A\": 0, \"E\": 0, \"I\": 0, \"O\": 0, \"U\": 0}\n                \nprint( count_vowels(\"banana\") ) # {\"a\": 3, \"e\": 0, \"i\": 0, \"o\": 0, \"u\": 0,\n                                #  \"A\": 0, \"E\": 0, \"I\": 0, \"O\": 0, \"U\": 0}\n                                \nprint( count_vowels(\"Adriana\") ) # {\"a\": 2, \"e\": 0, \"i\": 1, \"o\": 0, \"u\": 0,\n                                 #  \"A\": 1, \"E\": 0, \"I\": 0, \"O\": 0, \"U\": 0}\n                                 \nprint( count_vowels(\"Hello World!\") ) # {\"a\": 0, \"e\": 1, \"i\": 0, \"o\": 2, \"u\": 0,\n                                      #  \"A\": 0, \"E\": 0, \"I\": 0, \"O\": 0, \"U\": 0}\n\nName the program vowel_counting.py. Make sure that gradescope gives you the points for passing the test case.\n\n\n\nWrite a Python function that does the following:\n\nIts name is invert_dictionary\nIt takes a single dictionary as a parameter\nIt returns a new dictionary with the original dictionary values mapped as keys, and its original keys mapped as lists of values\n\nTest cases:\n\nprint( invert_dictionary({\"a\": 7, \"b\": 8}) ) # { 7: [\"a\"], 8: [\"b\"] }\nprint( invert_dictionary({\"a\": 2, \"b\": 2}) ) # { 2: [\"a\", \"b\"] }\nprint( invert_dictionary({}) ) # {}\n\nName the program inversion.py. Make sure that gradescope gives you the points for passing the test case.",
     "crumbs": [
-      "Module 10 - Reading and Writing Text Files",
+      "Module 9 - Data Structures (dictionaries)",
       "Module 9 Assignments"
     ]
   },
@@ -4833,7 +4833,7 @@
     "section": "",
     "text": "Write a Python function that does the following:\n\nIts name is count_vowels\nIt takes as argument a string\nIt iterates over the string (either with a while or for loop) counting how many lowercase and uppercase vowels the string has\nIt returns a dictionary with vowels are the keys, and integer counts as the values\n\nTest cases:\n\nprint( count_vowels(\"\") ) # {\"a\": 0, \"e\": 0, \"i\": 0, \"o\": 0, \"u\": 0,\n                          #  \"A\": 0, \"E\": 0, \"I\": 0, \"O\": 0, \"U\": 0}\n                \nprint( count_vowels(\"banana\") ) # {\"a\": 3, \"e\": 0, \"i\": 0, \"o\": 0, \"u\": 0,\n                                #  \"A\": 0, \"E\": 0, \"I\": 0, \"O\": 0, \"U\": 0}\n                                \nprint( count_vowels(\"Adriana\") ) # {\"a\": 2, \"e\": 0, \"i\": 1, \"o\": 0, \"u\": 0,\n                                 #  \"A\": 1, \"E\": 0, \"I\": 0, \"O\": 0, \"U\": 0}\n                                 \nprint( count_vowels(\"Hello World!\") ) # {\"a\": 0, \"e\": 1, \"i\": 0, \"o\": 2, \"u\": 0,\n                                      #  \"A\": 0, \"E\": 0, \"I\": 0, \"O\": 0, \"U\": 0}\n\nName the program vowel_counting.py. Make sure that gradescope gives you the points for passing the test case.",
     "crumbs": [
-      "Module 10 - Reading and Writing Text Files",
+      "Module 9 - Data Structures (dictionaries)",
       "Module 9 Assignments"
     ]
   },
@@ -4844,7 +4844,7 @@
     "section": "",
     "text": "Write a Python function that does the following:\n\nIts name is invert_dictionary\nIt takes a single dictionary as a parameter\nIt returns a new dictionary with the original dictionary values mapped as keys, and its original keys mapped as lists of values\n\nTest cases:\n\nprint( invert_dictionary({\"a\": 7, \"b\": 8}) ) # { 7: [\"a\"], 8: [\"b\"] }\nprint( invert_dictionary({\"a\": 2, \"b\": 2}) ) # { 2: [\"a\", \"b\"] }\nprint( invert_dictionary({}) ) # {}\n\nName the program inversion.py. Make sure that gradescope gives you the points for passing the test case.",
     "crumbs": [
-      "Module 10 - Reading and Writing Text Files",
+      "Module 9 - Data Structures (dictionaries)",
       "Module 9 Assignments"
     ]
   },
@@ -6561,7 +6561,7 @@
     "href": "slides-16-01.html#write-a-function---solution",
     "title": "final exam review (slides)",
     "section": "write a function - solution",
-    "text": "write a function - solution\n\ndef create_list(items, n):\n  new_list = [ ]\n  for value in items:\n    new_list.extend([value] * n)\n  return new_list\n\ndef main():\n  items = {\"banana\", \"apple\", \"pear\"}\n  print(create_list(items, 2))  \n  \nmain()\n\n['pear', 'pear', 'apple', 'apple', 'banana', 'banana']",
+    "text": "write a function - solution\n\ndef create_list(items, n):\n  new_list = [ ]\n  for value in items:\n    new_list.extend([value] * n)\n  return new_list\n\ndef main():\n  items = {\"banana\", \"apple\", \"pear\"}\n  print(create_list(items, 2))  \n  \nmain()\n\n['apple', 'apple', 'pear', 'pear', 'banana', 'banana']",
     "crumbs": [
       "Module 16 - Review",
       "final exam review (slides)"
@@ -7485,21 +7485,33 @@
     "href": "assignments-10.html",
     "title": "Module 10 Assignments",
     "section": "",
-    "text": "Due date: Wednesday, November 05, 2025 at 9pm\nShort Programming projects are submitted during our weekly 45-minute in-person lab sessions. Each lab sessions is guided by two TAs. The instructions for the short project will be available only during the lab sessions. To schedule your lab session go to the weekly lab session spreadsheet in Short Project Dates and Instructions."
+    "text": "Due date: Wednesday, November 05, 2025 at 9pm\nShort Programming projects are submitted during our weekly 45-minute in-person lab sessions. Each lab sessions is guided by two TAs. The instructions for the short project will be available only during the lab sessions. To schedule your lab session go to the weekly lab session spreadsheet in Short Project Dates and Instructions.",
+    "crumbs": [
+      "Module 10 - Reading and Writing Text Files",
+      "Module 10 Assignments"
+    ]
   },
   {
     "objectID": "assignments-10.html#programming-problem-19",
     "href": "assignments-10.html#programming-problem-19",
     "title": "Module 10 Assignments",
     "section": "Programming Problem 19",
-    "text": "Programming Problem 19\nWrite a Python function that does the following:\n\nIts name is read_csv\nIt takes a string as argument called file_name\nIt opens the file with file_name in read mode\nIt iterates over each line in the file, splitting each line by \",\"\nIt creates a dictionary where the keys are the first item in each line, and the values are the other values (in a list)\nIt returns the dictionary\n\nTest cases:\ncontents of stipends.csv:\n\nPeter,1000\nJoan,50500\nMary,2400\n\n\nprint( read_csv(\"stipends.csv\") ) # {\"Peter\": [1000], \n                                  #  \"Joan\": [50500],\n                                  #  \"Mary\": [2400]}\n\ncontents of population.csv:\n\nCountry,United States,Brazil,Mexico,Canada\nPopulation (in mil),331.00,212.56,128.93,37.74\n\n\nprint( read_csv(\"population.csv\") ) # {\"Country\": [\"United States\", \"Brazil\", \"Mexico\", \"Canada\"],\n                                    #  \"Population (in mil)\": [331.00, 212.56, 128.93, 37.74]}\n\nName the program read_data_file.py. Make sure that gradescope gives you the points for passing the test case."
+    "text": "Programming Problem 19\nWrite a Python function that does the following:\n\nIts name is read_csv\nIt takes a string as argument called file_name\nIt opens the file with file_name in read mode\nIt iterates over each line in the file, splitting each line by \",\"\nIt creates a dictionary where the keys are the first item in each line, and the values are the other values (in a list)\nIt returns the dictionary\n\nTest cases:\ncontents of stipends.csv:\n\nPeter,1000\nJoan,50500\nMary,2400\n\n\nprint( read_csv(\"stipends.csv\") ) # {\"Peter\": [1000], \n                                  #  \"Joan\": [50500],\n                                  #  \"Mary\": [2400]}\n\ncontents of population.csv:\n\nCountry,United States,Brazil,Mexico,Canada\nPopulation (in mil),331.00,212.56,128.93,37.74\n\n\nprint( read_csv(\"population.csv\") ) # {\"Country\": [\"United States\", \"Brazil\", \"Mexico\", \"Canada\"],\n                                    #  \"Population (in mil)\": [331.00, 212.56, 128.93, 37.74]}\n\nName the program read_data_file.py. Make sure that gradescope gives you the points for passing the test case.",
+    "crumbs": [
+      "Module 10 - Reading and Writing Text Files",
+      "Module 10 Assignments"
+    ]
   },
   {
     "objectID": "assignments-10.html#programming-problem-20",
     "href": "assignments-10.html#programming-problem-20",
     "title": "Module 10 Assignments",
     "section": "Programming Problem 20",
-    "text": "Programming Problem 20\nWrite a Python function that does the following:\n\nIts name is write_csv\nIt takes a dictionary and a string file_name as arguments\nIt opens the file with file_name in write mode\nIt iterates over the dictionary to write lines to the opened .csv\nEach key is the first element of the line, the values are lists that contain the other values in the line\n\nTest cases:\n\nmy_data = {\"Peter\": [1000], \"Joan\": [50500], \"Mary\": [2400]}\nwrite_csv(my_data, \"stipends.csv\")\n\nThis is what stipends.csv should contain:\n\nPeter,1000\nJoan,50500\nMary,2400\n\n\nmy_data = {\"Country\": [\"United States\", \"Brazil\", \"Mexico\", \"Canada\"],\n           \"Population (in mil)\": [331.00, 212.56, 128.93, 37.74]}\nwrite_csv(my_data, \"population.csv\")\n\nThis is what population.csv should contain:\n\nCountry,United States,Brazil,Mexico,Canada\nPopulation (in mil),331.0,212.56,128.93,37.74\n\nName the program write_data_file.py. Make sure that gradescope gives you the points for passing the test case."
+    "text": "Programming Problem 20\nWrite a Python function that does the following:\n\nIts name is write_csv\nIt takes a dictionary and a string file_name as arguments\nIt opens the file with file_name in write mode\nIt iterates over the dictionary to write lines to the opened .csv\nEach key is the first element of the line, the values are lists that contain the other values in the line\n\nTest cases:\n\nmy_data = {\"Peter\": [1000], \"Joan\": [50500], \"Mary\": [2400]}\nwrite_csv(my_data, \"stipends.csv\")\n\nThis is what stipends.csv should contain:\n\nPeter,1000\nJoan,50500\nMary,2400\n\n\nmy_data = {\"Country\": [\"United States\", \"Brazil\", \"Mexico\", \"Canada\"],\n           \"Population (in mil)\": [331.00, 212.56, 128.93, 37.74]}\nwrite_csv(my_data, \"population.csv\")\n\nThis is what population.csv should contain:\n\nCountry,United States,Brazil,Mexico,Canada\nPopulation (in mil),331.0,212.56,128.93,37.74\n\nName the program write_data_file.py. Make sure that gradescope gives you the points for passing the test case.",
+    "crumbs": [
+      "Module 10 - Reading and Writing Text Files",
+      "Module 10 Assignments"
+    ]
   },
   {
     "objectID": "assignments-04.html",

@@ -155,13 +155,13 @@ website:
         - data_structures_dict.md
         - slides-09-01.qmd
         - slides-09-02.qmd
-        - assignments-08.qmd
+        - assignments-09.qmd
       - section: "Module 10 - Reading and Writing Text Files"
         contents:
         - io.md
         - slides-10-01.qmd
         - slides-10-02.qmd
-        - assignments-09.qmd
+        - assignments-10.qmd
       - section: "Module 11 - Data Structures (tuples)"
         contents:
         - data_structures_tuples.md
