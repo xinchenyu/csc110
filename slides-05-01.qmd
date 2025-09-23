@@ -141,7 +141,7 @@ Order of operations: arithmetic operators come before comparison operators.
 
 ## Evaluate the expressions
 
-Evaluation the expressions on your whiteboard and answer attendance questions on Gradescope.
+Evaluation the expressions on your whiteboard.
 ```{python}
 #| eval: false
 #| echo: true
@@ -151,6 +151,17 @@ Evaluation the expressions on your whiteboard and answer attendance questions on
 14 % 2 != 15 % 2
 ```
 
+## Evaluate the expressions - answers
+
+Evaluation the expressions on your whiteboard.
+```{python}
+#| eval: true
+#| echo: true
+print(3**2 < 25**0.5)
+print(9 % 3 == 8 % 2)
+print(10 // 3 > 9 // 3)
+print(14 % 2 != 15 % 2)
+```
 
 ## Evaluation order
 

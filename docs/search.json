@@ -4094,7 +4094,7 @@
     "href": "slides-05-01.html#evaluate-the-expressions",
     "title": "more expressions (slides)",
     "section": "Evaluate the expressions",
-    "text": "Evaluate the expressions\nEvaluation the expressions on your whiteboard and answer attendance questions on Gradescope.\n\n3**2 &lt; 25**0.5\n9 % 3 == 8 % 2\n10 // 3 &gt; 9 // 3\n14 % 2 != 15 % 2",
+    "text": "Evaluate the expressions\nEvaluation the expressions on your whiteboard.\n\n3**2 &lt; 25**0.5\n9 % 3 == 8 % 2\n10 // 3 &gt; 9 // 3\n14 % 2 != 15 % 2",
     "crumbs": [
       "Module 5 - Control Flow (if statements)",
       "more expressions (slides)"
@@ -9153,6 +9153,17 @@
     "crumbs": [
       "Module 1 - Basics",
       "Module 1 Assignments"
+    ]
+  },
+  {
+    "objectID": "slides-05-01.html#evaluate-the-expressions---answers",
+    "href": "slides-05-01.html#evaluate-the-expressions---answers",
+    "title": "more expressions (slides)",
+    "section": "Evaluate the expressions - answers",
+    "text": "Evaluate the expressions - answers\nEvaluation the expressions on your whiteboard.\n\nprint(3**2 &lt; 25**0.5)\nprint(9 % 3 == 8 % 2)\nprint(10 // 3 &gt; 9 // 3)\nprint(14 % 2 != 15 % 2)\n\nFalse\nTrue\nFalse\nTrue",
+    "crumbs": [
+      "Module 5 - Control Flow (if statements)",
+      "more expressions (slides)"
     ]
   }
 ]
