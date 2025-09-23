@@ -65,7 +65,7 @@ main()
 
 ## Improve the function
 
-Instead of checking if the name entered is "Bond", also check whether the name is "James Bond".
+Instead of checking if the name entered is "Bond", also check whether the name is "James Bond" using bolean `OR` operator.
 
 ## Conditional execution
 

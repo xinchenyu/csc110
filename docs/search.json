@@ -4446,7 +4446,7 @@
     "href": "slides-05-02.html#improve-the-function",
     "title": "if statements (slides)",
     "section": "Improve the function",
-    "text": "Improve the function\nInstead of checking if the name entered is “Bond”, also check whether the name is “James Bond”.",
+    "text": "Improve the function\nInstead of checking if the name entered is “Bond”, also check whether the name is “James Bond” using bolean OR operator.",
     "crumbs": [
       "Module 5 - Control Flow (if statements)",
       "if statements (slides)"
