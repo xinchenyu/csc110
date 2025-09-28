@@ -8,8 +8,7 @@ slide-number: true
 
 ## Announcements
 
-* Midterm 1 Febuary 19 -- BRING PHOTO ID
-* Modules 1 to 5 -- study guide under [practice problems](practice-01.html) page on website
+* Midterm 1 Oct 7 -- BRING PHOTO ID
 
 ## While loops
 
@@ -112,8 +111,6 @@ The function should add all numbers from 1 to `n` in a while loop, and then (out
 print( add_up_to(5) ) # 15
 print( add_up_to(10) ) # 55
 ```
-
-Name your file `sum_up.py` and submit it to attendance on gradescope
 
 ## Write a function -- solution
 
@@ -218,50 +215,3 @@ def main():
 main()
 ```
 
-## Write functions
-
-1. Write a function `to_do` that takes a numeric argument `temp`.
-2. It returns
-    -   'go for a swim' if is greater equal to `86` and less than `104`
-    -   'go for a hike' if is greater equal to `68` and less than `86`
-    -   'stay at home' for all other cases
-3. Write a `main` function to request input from user until it is valid (only digits 0-9), print `"Let us"` and the message
-
-## Write functions continued
-
-Program behavior in your standard output:
-```{=html}
-<pre style="font-size: 30px">
-Enter a temperature:
-abc
-Enter a temperature:
-100abc
-Enter a temperature:
-89
-Let us go for a swim
-</pre>
-```
-
-## Write functions -- solution
-
-```{python}
-#| eval: false
-#| echo: true
-def to_do(temp):
-    if temp >= 86 and temp < 104:
-        return "go for a swim"
-    elif temp >= 68 and temp < 86:
-        return "go for a hike"
-    else:
-        return "stay at home"
-    
-
-def main():
-    str_temp = input("Enter a temperature:\n")
-    while str_temp.isnumeric() == False:
-        str_temp =  input("Enter a temperature:\n")
-    message = to_do(int(str_temp))
-    print("Let us", message)
-
-main()
-```

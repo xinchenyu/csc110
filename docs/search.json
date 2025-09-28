@@ -1304,7 +1304,7 @@
     "href": "slides-06-01.html#announcements",
     "title": "while loop intro (slides)",
     "section": "Announcements",
-    "text": "Announcements\n\nMidterm 1 Febuary 19 – BRING PHOTO ID\nModules 1 to 5 – study guide under practice problems page on website",
+    "text": "Announcements\n\nMidterm 1 Oct 7 – BRING PHOTO ID",
     "crumbs": [
       "Module 6 - Control Flow (while statements)",
       "while loop intro (slides)"
@@ -1392,7 +1392,7 @@
     "href": "slides-06-01.html#write-a-function",
     "title": "while loop intro (slides)",
     "section": "Write a function",
-    "text": "Write a function\nWrite a function called add_up_to that takes an numeric argument n. The function should add all numbers from 1 to n in a while loop, and then (outside the loop) return the sum\n\nprint( add_up_to(5) ) # 15\nprint( add_up_to(10) ) # 55\n\nName your file sum_up.py and submit it to attendance on gradescope",
+    "text": "Write a function\nWrite a function called add_up_to that takes an numeric argument n. The function should add all numbers from 1 to n in a while loop, and then (outside the loop) return the sum\n\nprint( add_up_to(5) ) # 15\nprint( add_up_to(10) ) # 55",
     "crumbs": [
       "Module 6 - Control Flow (while statements)",
       "while loop intro (slides)"
@@ -6979,7 +6979,7 @@
     "href": "slides-06-02.html#question",
     "title": "loops + strings (slides)",
     "section": "Question",
-    "text": "Question\nHow to check if a string can be converted to an integer or float?\n\n\"BladeRunner2049\" will return False\n\"2049\" will return True\n\"12.5\" will return True",
+    "text": "Question\nHow to check if a string can be converted to an integer or float?\nCan we use the string method.isnumeric()?\n\nuser_input = \"BladeRunner2049\"\nuser_input.isnumeric()\n\nFalse\n\n\n\nuser_input = \"2049\"\nuser_input.isnumeric()\n\nTrue\n\n\n\nuser_input = \"12.5\"\nuser_input.isnumeric()\n\nFalse",
     "crumbs": [
       "Module 6 - Control Flow (while statements)",
       "loops + strings (slides)"
@@ -7023,7 +7023,7 @@
     "href": "slides-06-02.html#write-a-function-1",
     "title": "loops + strings (slides)",
     "section": "Write a function",
-    "text": "Write a function\nFunction name is_numeric that takes one string argument of any length (assume length &gt; 0).\nIt returns True if every character in the argument is a digit (0-9) or a period (.), False otherwise.\nUse in operator instead of built-in function isnumeric().\n\nassert is_numeric(\"BladeRunner2049\") == False\nassert is_numeric(\"2049\") == True\nassert is_numeric(\"12.5\") == True",
+    "text": "Write a function\nFunction name is_numeric that takes one string argument of any length (assume length &gt; 0).\nIt returns True if every character in the argument is a digit (0-9) or a period (.), False otherwise.\nUse in operator instead of built-in function isnumeric().\n\nassert is_numeric(\"BladeRunner2049\") == False\nassert is_numeric(\"2049\") == True\nassert is_numeric(\"12.5\") == True\nassert is_numeric(\"1.2.5\") == False",
     "crumbs": [
       "Module 6 - Control Flow (while statements)",
       "loops + strings (slides)"
@@ -7033,8 +7033,8 @@
     "objectID": "slides-06-02.html#is_numeric-solution",
     "href": "slides-06-02.html#is_numeric-solution",
     "title": "loops + strings (slides)",
-    "section": "is_numeric() solution",
-    "text": "is_numeric() solution\nHow do we change our function so that the last test case (“1.2.3”) returns False instead?\n\ndef is_numeric(my_string):\n  index = 0\n  while index &lt; len(my_string):\n    if my_string[index] not in \"0123456789.\":\n      return False\n    index += 1\n  return True\n\ndef main():\n  assert is_numeric(\"BladeRunner2049\") == False\n  assert is_numeric(\"2049\") == True\n  assert is_numeric(\"12.5\") == True\n  assert is_numeric(\"1.2.3\") == True # how to return False?\n  \nmain()",
+    "section": "is_numeric() – solution",
+    "text": "is_numeric() – solution\n\ndef is_numeric(my_string):\n  index = 0\n  count_period = 0\n  while index &lt; len(my_string):\n    if my_string[index] == \".\":\n      count_period += 1\n    if my_string[index] not in \"0123456789.\" or count_period &gt; 1:\n      return False\n    index += 1\n  return True\n\ndef main():\n  assert is_numeric(\"234\") == True\n  assert is_numeric(\"abc\") == False\n  assert is_numeric(\"12c\") ==  False\n  assert is_numeric(\"12.3\") == True\n  assert is_numeric(\"1.2.3\") == False\n  \nmain()",
     "crumbs": [
       "Module 6 - Control Flow (while statements)",
       "loops + strings (slides)"
@@ -7144,7 +7144,7 @@
     "href": "slides-06-03.html#write-a-function-2",
     "title": "while loop aggregation (slides)",
     "section": "Write a function",
-    "text": "Write a function\nIts name is factorial and takes a numeric argument number. It returns the factorial of number. The factorial of a number is the product of that number and every number that comes before it, down to one.\nFor example, factorial of 4: 1 * 2 * 3 * 4 = 24.\nName your file factorial.py and submit to Gradescope.\n\nassert factorial(4) == 24\nassert factorial(5) == 120\nassert factorial(0) == 1",
+    "text": "Write a function\n\nIts name is power\nIt takes two numeric arguments: base and exp\nIt returns the base to the power of exp\nDon’t use the ** operator, use a while loop (define an index before the loop, use index in the while condition, change index inside the loop)\n\n\nassert power(2, 4) == 16\nassert power(3, 2) == 9",
     "crumbs": [
       "Module 6 - Control Flow (while statements)",
       "while loop aggregation (slides)"
@@ -7155,7 +7155,7 @@
     "href": "slides-06-03.html#write-a-function-solution-2",
     "title": "while loop aggregation (slides)",
     "section": "Write a function – solution",
-    "text": "Write a function – solution\n\ndef factorial(number):\n  result = 1\n  index = 1\n  while index &lt;= number:\n    result *= index\n    index += 1\n  return result\n\ndef main():\n  assert factorial(4) == 24\n  assert factorial(5) == 120\n  assert factorial(0) == 1\n  \nmain()",
+    "text": "Write a function – solution\nWrite more test cases for this function.\n\ndef power(base, exp):\n  result = 1\n  index = 1\n  while index &lt;= exp:\n    result *= base\n    index += 1\n  return result\n\ndef main():\n  assert power(2, 4) == 16\n  assert power(3, 2) == 9\n    \nmain()",
     "crumbs": [
       "Module 6 - Control Flow (while statements)",
       "while loop aggregation (slides)"
@@ -7166,7 +7166,7 @@
     "href": "slides-06-03.html#write-a-function-3",
     "title": "while loop aggregation (slides)",
     "section": "Write a function",
-    "text": "Write a function\n\nIts name is power\nIt takes two numeric arguments: base and exp\nIt returns the base to the power of exp\nDon’t use the ** operator, use a while loop (define an index before the loop, use index in the while condition, change index inside the loop)\n\n\nassert power(2, 4) == 16\nassert power(3, 2) == 9",
+    "text": "Write a function\n\nIts name is vowels_only\nIt takes a string argument\nIt builds a new string containing only the vowels in the string argument\nIt returns new string with vowels only (define an index before the loop, use index in the while condition, change index inside the loop)\n\n\nprint( vowels_only(\"banana\") ) # \"aaa\"\nprint( vowels_only(\"fly\") ) # \"\"",
     "crumbs": [
       "Module 6 - Control Flow (while statements)",
       "while loop aggregation (slides)"
@@ -7177,7 +7177,7 @@
     "href": "slides-06-03.html#write-a-function-solution-3",
     "title": "while loop aggregation (slides)",
     "section": "Write a function – solution",
-    "text": "Write a function – solution\nWrite more test cases for this function.\n\ndef power(base, exp):\n  result = 1\n  index = 1\n  while index &lt;= exp:\n    result *= base\n    index += 1\n  return result\n\ndef main():\n  assert power(2, 4) == 16\n  assert power(3, 2) == 9\n    \nmain()",
+    "text": "Write a function – solution\n\ndef vowels_only(string):\n  new_string = \"\"\n  index = 0\n  while index &lt; len(string):\n    if string[index] in \"aeiou\":\n      new_string += string[index]\n    index += 1\n  return new_string\n\ndef main():\n  print( vowels_only(\"banana\") ) # \"aaa\"\n  \nmain()\n\naaa",
     "crumbs": [
       "Module 6 - Control Flow (while statements)",
       "while loop aggregation (slides)"

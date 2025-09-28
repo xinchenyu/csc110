@@ -116,15 +116,6 @@ not "b" in "aeiou"
 "10.0" in  "0987654321."
 ```
 
-## Question
-
-How to check if a string can be converted to an integer or float? 
-
--   `"BladeRunner2049"` will return `False`  
-
--   `"2049"` will return `True`
-
--   `"12.5"` will return `True`
 
 ## Question
 
@@ -152,7 +143,6 @@ user_input.isnumeric()
 user_input = "12.5"
 user_input.isnumeric()
 ```
-
 
 
 ## Iterating a string
@@ -192,35 +182,11 @@ Use `in` operator instead of built-in function `isnumeric()`.
 assert is_numeric("BladeRunner2049") == False
 assert is_numeric("2049") == True
 assert is_numeric("12.5") == True
-```
-
-## `is_numeric()` solution
-
-How do we change our function so that the last test case ("1.2.3") returns `False` instead?
-
-```{python}
-#| eval: true
-#| echo: true
-def is_numeric(my_string):
-  index = 0
-  while index < len(my_string):
-    if my_string[index] not in "0123456789.":
-      return False
-    index += 1
-  return True
-
-def main():
-  assert is_numeric("BladeRunner2049") == False
-  assert is_numeric("2049") == True
-  assert is_numeric("12.5") == True
-  assert is_numeric("1.2.3") == True # how to return False?
-  
-main()
+assert is_numeric("1.2.5") == False
 ```
 
 
-
-## `is_numeric()` -- solution 1
+## `is_numeric()` -- solution 
 
 ```{python}
 #| eval: true
@@ -246,38 +212,3 @@ def main():
 main()
 ```
 
-## `is_numeric()` -- solution 2
-
-```{python}
-#| eval: true
-#| echo: true
-def is_numeric(my_string):
-  # create control variable for one decimal point
-  decimal_point = False
-  # create index variable
-  index = 0
-  while index < len(my_string):
-    # first check, can character be found in a number?
-    if my_string[index] not in "0123456789.":
-      return False
-    # second check, if a period, has a period been found before?
-    if my_string[index] == ".":
-      if decimal_point: # a previous period was detected
-        return False
-      else: # first period detected
-        decimal_point = True
-    # increment index  
-    index += 1
-  # while loop executed without returning False
-  # that means every character is valid, so return True
-  return True
-
-def main():
-  assert is_numeric("234") == True
-  assert is_numeric("abc") == False
-  assert is_numeric("12c") ==  False
-  assert is_numeric("12.3") == True
-  assert is_numeric("1.2.3") == False
-  
-main()
-```

@@ -121,46 +121,6 @@ main()
 ```
 
 
-## Write a function
-
-Its name is `factorial` and takes a numeric argument `number`.
-It returns the factorial of `number`. 
-The factorial of a number is the product of that number and every number that comes before it, down to one. 
-
-For example, factorial of 4: `1 * 2 * 3 * 4 = 24`.
-
-Name your file `factorial.py` and submit to Gradescope.
-
-```{python}
-#| eval: false
-#| echo: true
-assert factorial(4) == 24
-assert factorial(5) == 120
-assert factorial(0) == 1
-```
-
-
-## Write a function -- solution
-
-```{python}
-#| eval: true
-#| echo: true
-def factorial(number):
-  result = 1
-  index = 1
-  while index <= number:
-    result *= index
-    index += 1
-  return result
-
-def main():
-  assert factorial(4) == 24
-  assert factorial(5) == 120
-  assert factorial(0) == 1
-  
-main()
-```
-
 
 ## Write a function
 
