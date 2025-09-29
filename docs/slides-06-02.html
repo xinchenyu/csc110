@@ -213,10 +213,10 @@
 <li>Strings are sequences in Python</li>
 <li>We can retrieve values in a sequence using <code>[ ]</code></li>
 </ul>
-<div id="712755b1" class="cell" data-execution_count="1">
+<div id="f4a86f64" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>name <span class="op">=</span> <span class="st">"Xinchen"</span></span>
 <span id="cb1-2"><a></a>name[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell-output cell-output-display" data-execution_count="33">
 <pre><code>'X'</code></pre>
 </div>
 </div>
@@ -225,21 +225,21 @@
 <section id="string-indexing-1" class="slide level2">
 <h2>String indexing</h2>
 <p>Since the first index of a sequence is <code>zero</code>, the last index is going to be the length of the string <code>minus 1</code></p>
-<div id="600df86f" class="cell" data-execution_count="2">
+<div id="06f44a95" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>name <span class="op">=</span> <span class="st">"Xinchen"</span></span>
 <span id="cb3-2"><a></a><span class="bu">len</span>(name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="20">
+<div class="cell-output cell-output-display" data-execution_count="34">
 <pre><code>7</code></pre>
 </div>
 </div>
-<div id="95bdbbf1" class="cell" data-execution_count="3">
+<div id="79968510" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>name <span class="op">=</span> <span class="st">"Xinchen"</span></span>
 <span id="cb5-2"><a></a>name[<span class="dv">6</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="21">
+<div class="cell-output cell-output-display" data-execution_count="35">
 <pre><code>'n'</code></pre>
 </div>
 </div>
-<div id="ac87e37b" class="cell" data-execution_count="4">
+<div id="0e883b1b" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>name <span class="op">=</span> <span class="st">"Xinchen"</span></span>
 <span id="cb7-2"><a></a>name[<span class="dv">7</span>] <span class="co"># this will throw an error</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -247,51 +247,49 @@
 <section id="in-operator" class="slide level2">
 <h2><code>in</code> operator</h2>
 <p>The <code>in</code> operator determines whether a given value is a constituent element of a sequence (such as a string)</p>
-<div id="ba5713e6" class="cell" data-execution_count="5">
+<div id="f6d7c349" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="co">"i"</span> <span class="kw">in</span> <span class="st">"aeiou"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="22">
+<div class="cell-output cell-output-display" data-execution_count="36">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="f8d6217c" class="cell" data-execution_count="6">
+<div id="6e85a338" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a><span class="co">"eio"</span> <span class="kw">in</span> <span class="st">"aeiou"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="23">
+<div class="cell-output cell-output-display" data-execution_count="37">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="17cbbbf7" class="cell" data-execution_count="7">
+<div id="8bc1c3dc" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a><span class="kw">not</span> <span class="st">"b"</span> <span class="kw">in</span> <span class="st">"aeiou"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="24">
+<div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="1b991db9" class="cell" data-execution_count="8">
+<div id="1e52bffc" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a><span class="co">"0"</span> <span class="kw">in</span>  <span class="st">"0987654321."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="25">
+<div class="cell-output cell-output-display" data-execution_count="39">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="c54a673c" class="cell" data-execution_count="9">
+<div id="330c7913" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a><span class="co">"10.0"</span> <span class="kw">in</span>  <span class="st">"0987654321."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="26">
+<div class="cell-output cell-output-display" data-execution_count="40">
 <pre><code>False</code></pre>
 </div>
 </div>
-</section></section>
-<section id="write-a-function" class="title-slide slide level1 center">
-<h1>Write a function</h1>
+</section>
+<section id="write-a-function" class="slide level2">
+<h2>Write a function</h2>
 <p>Write a function <code>count_nondigits</code> to return the number of characters that are not digits (0-9) in a string.</p>
-<div id="ea712d68" class="cell" data-execution_count="10">
+<div id="89203bc3" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a><span class="cf">assert</span> count_nondigits(<span class="st">"BladeRunner2049"</span>) <span class="op">==</span> <span class="dv">11</span></span>
 <span id="cb18-2"><a></a><span class="cf">assert</span> count_nondigits(<span class="st">"2049"</span>) <span class="op">==</span> <span class="dv">0</span></span>
 <span id="cb18-3"><a></a><span class="cf">assert</span> count_nondigits(<span class="st">"abc0123"</span>) <span class="op">==</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-
-<section>
-<section id="write-a-function---solution" class="title-slide slide level1 center">
-<h1>Write a function - solution</h1>
-<div id="06bb3bb3" class="cell" data-execution_count="11">
+<section id="write-a-function---solution" class="slide level2">
+<h2>Write a function - solution</h2>
+<div id="c71da737" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a><span class="kw">def</span> count_nondigits(string):</span>
 <span id="cb19-2"><a></a>  index <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb19-3"><a></a>  count <span class="op">=</span> <span class="dv">0</span></span>
@@ -313,59 +311,25 @@
 <h2>Question</h2>
 <p>How to check if a string can be converted to an integer or float?</p>
 <p>Can we use the string method<code>.isnumeric()</code>?</p>
-<div id="e1845b97" class="cell" data-execution_count="12">
+<div id="9b1bfe1f" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a>user_input <span class="op">=</span> <span class="st">"BladeRunner2049"</span></span>
 <span id="cb20-2"><a></a>user_input.isnumeric()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="28">
+<div class="cell-output cell-output-display" data-execution_count="42">
 <pre><code>False</code></pre>
 </div>
 </div>
-<div id="f208967c" class="cell" data-execution_count="13">
+<div id="7b55bd93" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a>user_input <span class="op">=</span> <span class="st">"2049"</span></span>
 <span id="cb22-2"><a></a>user_input.isnumeric()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="29">
+<div class="cell-output cell-output-display" data-execution_count="43">
 <pre><code>True</code></pre>
 </div>
 </div>
-<div id="54e87d6b" class="cell" data-execution_count="14">
+<div id="b2857e39" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a>user_input <span class="op">=</span> <span class="st">"12.5"</span></span>
 <span id="cb24-2"><a></a>user_input.isnumeric()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="30">
+<div class="cell-output cell-output-display" data-execution_count="44">
 <pre><code>False</code></pre>
-</div>
-</div>
-</section>
-<section id="iterating-a-string" class="slide level2">
-<h2>Iterating a string</h2>
-<ul>
-<li>One technique that can be used to control the number of loop iterations is using an <code>index</code> variable</li>
-<li>For while loops, an index variable is:
-<ul>
-<li>Defined before the loop</li>
-<li>Used in the condition of the loop</li>
-<li>Incremented within the loop</li>
-</ul></li>
-</ul>
-</section>
-<section id="iterating-a-string-1" class="slide level2">
-<h2>Iterating a string</h2>
-<p>Print characters at even indices.</p>
-<div id="78b693d1" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a></a>word <span class="op">=</span> <span class="st">"BladeRunner2049"</span></span>
-<span id="cb26-2"><a></a>index <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb26-3"><a></a><span class="cf">while</span> index <span class="op">&lt;</span> <span class="bu">len</span>(word):</span>
-<span id="cb26-4"><a></a>    <span class="bu">print</span>(word[index])</span>
-<span id="cb26-5"><a></a>    <span class="co"># Can add other lines here too</span></span>
-<span id="cb26-6"><a></a>    index <span class="op">=</span> index <span class="op">+</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>B
-a
-e
-u
-n
-r
-0
-9</code></pre>
 </div>
 </div>
 </section>
@@ -374,35 +338,35 @@ r
 <p>Function name <code>is_numeric</code> that takes one <code>string</code> argument of any length (assume length &gt; 0).</p>
 <p>It returns <code>True</code> if every character in the argument is a digit (0-9) or a period (.), <code>False</code> otherwise.</p>
 <p>Use <code>in</code> operator instead of built-in function <code>isnumeric()</code>.</p>
-<div id="e0d9b2ea" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a></a><span class="cf">assert</span> is_numeric(<span class="st">"BladeRunner2049"</span>) <span class="op">==</span> <span class="va">False</span></span>
-<span id="cb28-2"><a></a><span class="cf">assert</span> is_numeric(<span class="st">"2049"</span>) <span class="op">==</span> <span class="va">True</span></span>
-<span id="cb28-3"><a></a><span class="cf">assert</span> is_numeric(<span class="st">"12.5"</span>) <span class="op">==</span> <span class="va">True</span></span>
-<span id="cb28-4"><a></a><span class="cf">assert</span> is_numeric(<span class="st">"1.2.5"</span>) <span class="op">==</span> <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="df6dac9b" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a></a><span class="cf">assert</span> is_numeric(<span class="st">"BladeRunner2049"</span>) <span class="op">==</span> <span class="va">False</span></span>
+<span id="cb26-2"><a></a><span class="cf">assert</span> is_numeric(<span class="st">"2049"</span>) <span class="op">==</span> <span class="va">True</span></span>
+<span id="cb26-3"><a></a><span class="cf">assert</span> is_numeric(<span class="st">"12.5"</span>) <span class="op">==</span> <span class="va">True</span></span>
+<span id="cb26-4"><a></a><span class="cf">assert</span> is_numeric(<span class="st">"1.2.5"</span>) <span class="op">==</span> <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="is_numeric-solution" class="slide level2">
 <h2><code>is_numeric()</code> – solution</h2>
-<div id="41991d16" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a></a><span class="kw">def</span> is_numeric(my_string):</span>
-<span id="cb29-2"><a></a>  index <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb29-3"><a></a>  count_period <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb29-4"><a></a>  <span class="cf">while</span> index <span class="op">&lt;</span> <span class="bu">len</span>(my_string):</span>
-<span id="cb29-5"><a></a>    <span class="cf">if</span> my_string[index] <span class="op">==</span> <span class="st">"."</span>:</span>
-<span id="cb29-6"><a></a>      count_period <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb29-7"><a></a>    <span class="cf">if</span> my_string[index] <span class="kw">not</span> <span class="kw">in</span> <span class="st">"0123456789."</span> <span class="kw">or</span> count_period <span class="op">&gt;</span> <span class="dv">1</span>:</span>
-<span id="cb29-8"><a></a>      <span class="cf">return</span> <span class="va">False</span></span>
-<span id="cb29-9"><a></a>    index <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb29-10"><a></a>  <span class="cf">return</span> <span class="va">True</span></span>
-<span id="cb29-11"><a></a></span>
-<span id="cb29-12"><a></a><span class="kw">def</span> main():</span>
-<span id="cb29-13"><a></a>  <span class="cf">assert</span> is_numeric(<span class="st">"234"</span>) <span class="op">==</span> <span class="va">True</span></span>
-<span id="cb29-14"><a></a>  <span class="cf">assert</span> is_numeric(<span class="st">"abc"</span>) <span class="op">==</span> <span class="va">False</span></span>
-<span id="cb29-15"><a></a>  <span class="cf">assert</span> is_numeric(<span class="st">"12c"</span>) <span class="op">==</span>  <span class="va">False</span></span>
-<span id="cb29-16"><a></a>  <span class="cf">assert</span> is_numeric(<span class="st">"12.3"</span>) <span class="op">==</span> <span class="va">True</span></span>
-<span id="cb29-17"><a></a>  <span class="cf">assert</span> is_numeric(<span class="st">"1.2.3"</span>) <span class="op">==</span> <span class="va">False</span></span>
-<span id="cb29-18"><a></a>  </span>
-<span id="cb29-19"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="58bd8801" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a></a><span class="kw">def</span> is_numeric(my_string):</span>
+<span id="cb27-2"><a></a>  index <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb27-3"><a></a>  count_period <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb27-4"><a></a>  <span class="cf">while</span> index <span class="op">&lt;</span> <span class="bu">len</span>(my_string):</span>
+<span id="cb27-5"><a></a>    <span class="cf">if</span> my_string[index] <span class="op">==</span> <span class="st">"."</span>:</span>
+<span id="cb27-6"><a></a>      count_period <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb27-7"><a></a>    <span class="cf">if</span> my_string[index] <span class="kw">not</span> <span class="kw">in</span> <span class="st">"0123456789."</span> <span class="kw">or</span> count_period <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb27-8"><a></a>      <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb27-9"><a></a>    index <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb27-10"><a></a>  <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb27-11"><a></a></span>
+<span id="cb27-12"><a></a><span class="kw">def</span> main():</span>
+<span id="cb27-13"><a></a>  <span class="cf">assert</span> is_numeric(<span class="st">"234"</span>) <span class="op">==</span> <span class="va">True</span></span>
+<span id="cb27-14"><a></a>  <span class="cf">assert</span> is_numeric(<span class="st">"abc"</span>) <span class="op">==</span> <span class="va">False</span></span>
+<span id="cb27-15"><a></a>  <span class="cf">assert</span> is_numeric(<span class="st">"12c"</span>) <span class="op">==</span>  <span class="va">False</span></span>
+<span id="cb27-16"><a></a>  <span class="cf">assert</span> is_numeric(<span class="st">"12.3"</span>) <span class="op">==</span> <span class="va">True</span></span>
+<span id="cb27-17"><a></a>  <span class="cf">assert</span> is_numeric(<span class="st">"1.2.3"</span>) <span class="op">==</span> <span class="va">False</span></span>
+<span id="cb27-18"><a></a>  </span>
+<span id="cb27-19"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
