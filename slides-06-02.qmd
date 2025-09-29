@@ -48,39 +48,6 @@ name[7] # this will throw an error
 ```
 
 
-## Write a function
-
-Function `four_letter_anagram` takes a `string`, and four integers `a`, `b`, `c` and `d`.
-It returns the anagram of the string according to the indices `a`, `b`, `c` and `d` -- concatenate the individual characters.
-
-
-Test cases:
-```{python}
-#| eval: false
-#| echo: true
-assert four_letter_anagram("balm", 2, 1, 3, 0) == 'lamb'
-assert four_letter_anagram("loin", 0, 2, 1, 3) == 'lion'
-assert four_letter_anagram("reap", 3, 1, 2, 0) == 'pear'
-```
-
-
-## Write a function - solution 
-
-```{python}
-#| echo: true
-#| eval: true
-def four_letter_anagram(word, a, b, c, d):
-  return word[a] + word[b] + word[c] + word[d]
-
-def main():
-  assert four_letter_anagram("balm", 2, 1, 3, 0) == 'lamb'
-  assert four_letter_anagram("loin", 0, 2, 1, 3) == 'lion'
-  assert four_letter_anagram("reap", 3, 1, 2, 0) == 'pear'
-
-main()
-```
-
-
 ## `in` operator
 
 The `in` operator determines whether a given value is a constituent element of a sequence (such as a string)
@@ -116,6 +83,40 @@ not "b" in "aeiou"
 "10.0" in  "0987654321."
 ```
 
+# Write a function
+
+Write a function `count_nondigits` to return the number of characters that are not digits (0-9) in a string.
+
+```{python}
+#| echo: true
+#| eval: false
+assert count_nondigits("BladeRunner2049") == 11
+assert count_nondigits("2049") == 0
+assert count_nondigits("abc0123") == 3
+```
+
+
+# Write a function - solution
+
+```{python}
+#| eval: true
+#| echo: true
+def count_nondigits(string):
+  index = 0
+  count = 0
+  while index < len(string):
+    if string[index] not in "0123456789":
+      count += 1
+    index += 1
+  return count
+
+def main():
+  assert count_nondigits("BladeRunner2049") == 11
+  assert count_nondigits("2049") == 0
+  assert count_nondigits("abc0123") == 3
+  
+main()
+```
 
 ## Question
 
