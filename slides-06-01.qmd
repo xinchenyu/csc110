@@ -9,7 +9,7 @@ slide-number: true
 ## Announcements
 
 * Midterm 1 Oct 7, Tuesday -- BRING PHOTO ID
-  * Time ana room: same as regular lecture
+  * Time and room: same as regular lecture
 * Module 1 to Module 6
 * [Study guide](https://xinchenyu.github.io/csc110/practice-01.html)
 
