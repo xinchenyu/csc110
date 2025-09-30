@@ -2,6 +2,18 @@
 title: "Practice Problems"
 ---
 
+# Midterm Study Guide
+Midterm 1 (Modules 1-6), [Study Guide 1](midterm-1-study-guide.pdf)
+
+-   operations
+-   built-in functions such as `round()`, `input()`, `.isnumeric()`, etc.
+-   if elif else statements
+-   while loop + strings
+-   decomposition: define your own functions and main function
+-   combinations of above (for example, using `input()` in the while loop)
+
+
+# Extra Practice Problems 
 I've created a Google colab notebook with practice exercises, and test cases. Here are the instructions to use the notebook:
 
 1.  Access [notebook on google colab](https://colab.research.google.com/drive/1MbDAENQkgXuCXwZWkb7ru589U-0pWEuf?usp=sharing) -- you need to be signed in with a google account

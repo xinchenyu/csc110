@@ -1,0 +1,66 @@
+---
+title: "Honor's Contract Assignment"
+---
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(tidyverse)
+library(readxl)
+assignments <- read_excel("assessment_schedule.xlsx") %>% 
+  mutate(formatted_date = format(due_date, "%A, %B %d, %Y"))
+```
+
+
+# Honor's Contract Assignment
+
+## Pokemon Study
+
+**Due date: December 5th at 9pm**
+
+This project will involve importing data into a Python program, performing statistic-oriented manipulations on it, and writing up a brief report based on your findings.
+
+Download the [Pokemon.csv file](Pokemon.csv). Open the file in a spreadsheet-viewer of your choice, and take some time to examine it. Briefly, it is a list of Pokemon, with details about each, including their type, combat-related statistics, when they were introduced to the franchise (generation), and whether or not they are considered a 'Legendary' Pokemon. You are not permitted to change any values in the csv file for this project.
+
+First, write a Python function that does the following:
+
+1.  Its name is `get_data`
+2.  It takes one argument: a `file_name` as a string meant to represent the file to strip data from (in our case "Pokemon.csv")
+3.  It returns a list containing lists as values. Specifically, each list within the returned list should have all the data associated with a single Pokemon. The returned list should therefore have 800 lists contained within it, each of the 800 lists containing 13 values. The 13 values should be represented as the data type most appropriate to store them, ie "Bulbasaur" is a string, and "49" is an integer. Do not store the 'header' data, ie the first line of the csv file.
+
+For this project, you may use the csv.reader function from the "csv" library of Python. However, you should read the Python [documentation](https://docs.python.org/3/library/csv.html) directly to figure out how to use the csv.reader function. **No other libraries may be imported.**
+
+Name the program `pokemon_analysis.py`. Test the program yourself, printing out a few of the stored lists to make sure the data has been imported correctly.
+
+Now that you have the data stored, you may start manipulating it. You will create a few functions to get statistics out of the data you've imported.
+
+Write a Python function that does the following: 
+
+1.  Its name is `get_max`
+2.  It takes three arguments: `data` as the list of all our imported data, `include_legendary` as a Boolean indicating whether to include Legendary Pokemon (a Pokemon for whom their thirteenth column says 'TRUE'), and a `category_number` with an integer meant to represent the list index of the data we're interested in. For example, a `category_number` of 5 would indicate we're interested in the 'Total' data column (the 5th column of the spreadsheet).
+3.  It returns a list of strings containing the names of the Pokemon that have the highest values for the selected `category_number`, as well as the maximum value as a float, appended to the end of the list of strings.
+
+Write a similar function that finds the Pokemon with the lowest values for a selected category, call it 'get_min'.
+
+Now you'll need to write a few more functions that get other relevant statistics from the data. Write functions that find the mean, standard deviation, and median for a given `category_number`. Call them `get_mean` , `get_std` , and `get_median` respectively. Each function should also have the `include_legendary` Boolean argument, just like for `get_max` and `get_min`.
+
+You should use these methods to familiarize yourself with how the numbers of different categories are different, ie how the 'Attack' statistic differs from the 'HP' statistic, etc.
+
+Now that you've gotten familiar with the data, it's time to analyze specific Pokemon. Write a Python function does the following:
+
+1.  Its name is `analyze_pokemon`
+2.  It takes two arguments: `data` as the list of all our imported data, and a `name` as a string meant to represent the name of the Pokemon.
+3.  It returns a list of floats containing the percentiles of where the Pokemon falls in each of the following categories: 'Total' , 'HP' , 'Attack' , 'Defense' , 'Sp.Atk' , 'Sp.Def' , and 'Speed'. The percentile for a given category is calculated as follows: the number of values strictly below the targeted value divided by the total number of values in the category.
+
+Now that you've made all these statistical tools, it's time to analyze some Pokemon!
+
+Identify three Pokemon that could be contenders for the 'best' Pokemon (in terms of combat potential based on the relevant statistics). These Pokemon may not be Legendary Pokemon (which is why we've been writing our statistical functions with the `include_legendary` argument). Similarly, identify three Pokemon that could be contenders for the 'worst' Pokemon. You're free to choose based on whatever criteria you'd like, but keep in mind that simply selecting based on the 'Total' category won't tell you the whole story on the Pokemon's potential!
+
+Now that you've selected six Pokemon, write up a report explaining your reasoning for your choices. You should use the statistical functions you've made to find numbers to support your arguments. The report should be at least 500 words, double-spaced, and include at least the following:
+
+1. Your choices of best and worst Pokemon, and your rationale behind each choice.
+2. A comparison between the three Pokemon for both categories, and a 'final' choice for each category with rationale.
+3. A summary of what you feel you've learned about data analysis and programming by completing this project.
+
+When you've completed the report, send it to my email, along with your `pokemon_analysis.py` file with the subject line: "Honor's Contract Assignment Submission".
