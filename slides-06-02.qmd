@@ -83,6 +83,21 @@ not "b" in "aeiou"
 "10.0" in  "0987654321."
 ```
 
+## String + while + if
+
+Print only digits, one at a time.
+```{python}
+#| echo: true
+#| eval: true
+
+string = "BladeRunner2049"
+i = 0
+while i < len(string):
+  if string[i] in "0123456789":
+    print(string[i])
+  i += 1
+```
+
 ## Write a function
 
 Write a function `count_nondigits` to return the number of characters that are not digits (0-9) in a string.
