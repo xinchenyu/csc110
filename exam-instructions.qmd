@@ -18,7 +18,7 @@ You have 10 minutes to complete the quiz.
 <script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
 </center>
 
-Exam starts at 1:00pm and ends at 3:00pm
+Exam starts at 3:30pm and ends at 4:40pm
 
 <font color="red">No breaks during the exam.</font>
 
