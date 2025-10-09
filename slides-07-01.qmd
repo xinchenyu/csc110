@@ -7,14 +7,6 @@ df-print: kable
 
 # CSc 110 - Lists
 
-## Announcement
-
-Review session tomorrow (Tuesday, Feb 18) 
-
--   Location: Gittings 129b 
-
--   Time: 5 - 7 : 00 pm
-
 ## Sequences
 
 We've worked with `strings`, which are sequences in Python. Sequences can be indexed with `[ ]`:
@@ -43,12 +35,12 @@ numbers[0] # returns first item in list
 
 ## Data Structures
 
--   Data structures is a way to organize data when coding
--   Data structures allow for easy access and **modification** of values
--   You can see data structures as a collection of data values
--   In Python `lists` are a data structure that is:
-    -   mutable (you can change the values in it)
-    -   unordered -- you can have repeated elements in a list
+-   Data structure is a way to organize data when coding
+-   Data structure allows for easy access and **modification** of values
+-   You can see data structure as a collection of data values
+-   In Python `lists` are a data structure that:
+    -  is mutable (you can change the values in it)
+    -  allows repeated elements
 
 ## Creating lists
 
@@ -111,32 +103,6 @@ main()
 
 ## Loop Table
 
-We start with `index = 0` and `total = 0`:
-```{python}
-#| eval: false
-#| echo: true
-sum_all([2, 1, 5, 2, 3])
-```
-
-```{r}
-#| eval: true
-#| echo: false
-#| warning: false
-#| message: false
-library(knitr)
-library(tidyverse)
-data.frame(index = c(0:5),
-           condition = c("True", "True", "True", "True",
-                                               "True", "False"),
-           `item` = c("2", "1", "5", "2", "3", "-"),
-           total = c("0 + 2 = 2", "2 + 1 = 3", "3 + 5 = 8",
-                     "8 + 2 = 10", "10 + 3 = 13", "13")
-                    ) %>% 
-  kable(col.names = c("index", "index < len(values)", "values[index]", "total"))
-```
-
-## Loop Table
-
 Start with `index = 0` and `total = 0`:
 ```{python}
 #| eval: false
@@ -149,6 +115,8 @@ sum_all([2, 1, 3, 4])
 #| echo: false
 #| warning: false
 #| message: false
+library(knitr)
+library(tidyverse)
 data.frame(index = c("|", "| ", "| ", "| ",
                                                "| ", "| "),
            condition = c(" ", " ", " ", " ",
