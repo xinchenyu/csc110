@@ -9,11 +9,11 @@ df-print: kable
 
 ## Lists vs strings
 
--   Lists are **mutable**
+-   Strings are **not mutable**: cannot change a string
 
--   Strings are **not**
+-   Lists are **mutable**: can change items in a list
 
--   In addition to retrieving an item from a `list`, we can remove or change it (which is **not** something you can do with strings)
+-   once a list is changed **inside** a function, that **change persists** when the function has finished running
 
 ```{python}
 #| echo: true
@@ -29,33 +29,10 @@ songs[0] = "Flowers"
 songs
 ```
 
-## Lists are mutable
 
-(strings are not)
+## Read a function 
 
-Because lists are mutable:
-
--   once a list is changed **inside** a function, that **change persists** when the function has finished running
-
-
-## Write a function
-
-1.  Its name is `make_even`
-2.  It takes one argument, a list of `integers`
-3.  It iterates over the list, changing odd numbers to even number (even up)
-
-Name your file  `make_even.py` and submit to Gradescope.
-```{python}
-#| eval: false
-#| echo: true
-integers = [1, 2, 3, 4]
-make_even(integers)
-assert integers == [2, 2, 4, 4] # change persists
-```
-
-
-## Write a function -- solution 1
-
+Visualize this on [Python Tutor](https://pythontutor.com/visualize.html#mode=edit)
 ```{python}
 #| eval: true
 #| echo: true
@@ -75,9 +52,9 @@ def main():
 main()
 ```
 
-Let's visualize this on [Python Tutor](https://pythontutor.com/visualize.html#mode=edit)
+What does the function do? If we remove the `return` statement on line 7, will the function still work properly?
 
-## Write a function -- solution 2
+## make_even: another solution
 
 ```{python}
 #| eval: true
@@ -97,14 +74,12 @@ def main():
 main()
 ```
 
-If we remove the `return` statement on line 6, will the function still work properly?
-
 
 ## Object References
 
 -   A variable doesn't store values, it stores a reference to an object that lives in your computer memory (RAM)
 
--   If you assign a value to an existing object, the variable references that object
+-   When assigning a value to an existing object: the variable references that object
 ```{python}
 #| eval: true
 #| echo: true
@@ -112,7 +87,7 @@ last_name = "Brown"
 name = last_name # both reference the same object "Brown"
 ```
    
--   If you assign it to a new object, the object is created, placed in memory, and then the variable references it
+-   When assigning it to a new object: the object is created, placed in memory, and then the variable references it
     
 ```{python}
 #| eval: true
@@ -366,13 +341,3 @@ def main():
 main()
 ```
 
-## Quiz 06
-
-<center>
-<div class="cleanslate w24tz-current-time w24tz-large" style="display: inline-block !important; visibility: hidden !important; min-width:300px !important; min-height:145px !important;"><a href="//24timezones.com/Tucson/time" style="text-decoration: none" class="clock24" id="tz24-1695057604-c1393-eyJob3VydHlwZSI6IjEyIiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIwIiwiY29udGFpbmVyX2lkIjoiY2xvY2tfYmxvY2tfY2I2NTA4ODZjNDg0OWVlIiwidHlwZSI6ImRiIiwibGFuZyI6ImVuIn0=" title="World Time :: Tucson" target="_blank" rel="nofollow"></a>current time<div id="clock_block_cb650886c4849ee"></div></div>
-<script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
-</center>
-
-You have 10 minutes to complete the quiz.
-
-No need to write `main()` function.

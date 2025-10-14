@@ -1656,7 +1656,7 @@
     "href": "slides-08-01.html#lists-vs-strings",
     "title": "mutability (slides)",
     "section": "Lists vs strings",
-    "text": "Lists vs strings\n\nLists are mutable\nStrings are not\nIn addition to retrieving an item from a list, we can remove or change it (which is not something you can do with strings)\n\n\nsongs = [\"Lavender Haze\", \"Calm Down\", \"As It Was\", \"About Damn Time\"]\nsongs\n\n['Lavender Haze', 'Calm Down', 'As It Was', 'About Damn Time']\n\n\n\nsongs[0] = \"Flowers\"\nsongs\n\n['Flowers', 'Calm Down', 'As It Was', 'About Damn Time']",
+    "text": "Lists vs strings\n\nStrings are not mutable: cannot change a string\nLists are mutable: can change items in a list\nonce a list is changed inside a function, that change persists when the function has finished running\n\n\nsongs = [\"Lavender Haze\", \"Calm Down\", \"As It Was\", \"About Damn Time\"]\nsongs\n\n['Lavender Haze', 'Calm Down', 'As It Was', 'About Damn Time']\n\n\n\nsongs[0] = \"Flowers\"\nsongs\n\n['Flowers', 'Calm Down', 'As It Was', 'About Damn Time']",
     "crumbs": [
       "Module 8 - Control Flow (for statements)",
       "mutability (slides)"
@@ -1678,7 +1678,7 @@
     "href": "slides-08-01.html#write-a-function",
     "title": "mutability (slides)",
     "section": "Write a function",
-    "text": "Write a function\n\nIts name is make_even\nIt takes one argument, a list of integers\nIt iterates over the list, changing odd numbers to even number (even up)\n\nName your file make_even.py and submit to Gradescope.\n\nintegers = [1, 2, 3, 4]\nmake_even(integers)\nassert integers == [2, 2, 4, 4] # change persists",
+    "text": "Write a function\nIt returns a list of integers that represent the indices of the vowels in the original list.\nTest cases:\n\nassert indices_of_vowels(\"hello\") == [1, 4]\nassert indices_of_vowels(\"\") == []\nassert indices_of_vowels(\"aeiou\") == [0, 1, 2, 3, 4]",
     "crumbs": [
       "Module 8 - Control Flow (for statements)",
       "mutability (slides)"
@@ -1688,8 +1688,8 @@
     "objectID": "slides-08-01.html#write-a-function-solution-1",
     "href": "slides-08-01.html#write-a-function-solution-1",
     "title": "mutability (slides)",
-    "section": "Write a function – solution 1",
-    "text": "Write a function – solution 1\n\ndef make_even(integers):\n  index = 0\n  while index &lt; len(integers):\n    if integers[index] % 2 == 1:\n      integers[index] += 1\n    index += 1\n  return integers\n      \ndef main():\n  integers = [1, 2, 3, 4]\n  make_even(integers)\n  assert integers == [2, 2, 4, 4]\n  \nmain()\n\nLet’s visualize this on Python Tutor",
+    "section": "Write a function – solution",
+    "text": "Write a function – solution\n\ndef reverse_list(items):\n  index = len(items) - 1 # initialize index\n  inverted_list = []\n  while index &gt;= 0:\n    inverted_list.append(items[index])\n    index -= 1\n  return inverted_list\n    \ndef main():\n  strings = [\"banana\", \"apple\", \"grape\"]\n  assert reverse_list(strings) == [\"grape\", \"apple\", \"banana\"]\n  assert strings == [\"banana\", \"apple\", \"grape\"]\n  print(\"Passed test\")\n  \nmain()\n\nPassed test",
     "crumbs": [
       "Module 8 - Control Flow (for statements)",
       "mutability (slides)"
@@ -1711,7 +1711,7 @@
     "href": "slides-08-01.html#object-references",
     "title": "mutability (slides)",
     "section": "Object References",
-    "text": "Object References\n\nA variable doesn’t store values, it stores a reference to an object that lives in your computer memory (RAM)\nIf you assign a value to an existing object, the variable references that object\n\n\nlast_name = \"Brown\"\nname = last_name # both reference the same object \"Brown\"\n\n\nIf you assign it to a new object, the object is created, placed in memory, and then the variable references it\n\n\ntitle = \"Dr.\"\ntitle = \"Ms.\" # \"Dr.\" object will be removed from memory",
+    "text": "Object References\n\nA variable doesn’t store values, it stores a reference to an object that lives in your computer memory (RAM)\nWhen assigning a value to an existing object: the variable references that object\n\n\nlast_name = \"Brown\"\nname = last_name # both reference the same object \"Brown\"\n\n\nWhen assigning it to a new object: the object is created, placed in memory, and then the variable references it\n\n\ntitle = \"Dr.\"\ntitle = \"Ms.\" # \"Dr.\" object will be removed from memory",
     "crumbs": [
       "Module 8 - Control Flow (for statements)",
       "mutability (slides)"
@@ -1821,7 +1821,7 @@
     "href": "slides-08-01.html#write-a-function-1",
     "title": "mutability (slides)",
     "section": "Write a function",
-    "text": "Write a function\nIt returns a list of integers that represent the indices of the vowels in the original list.\nTest cases:\n\nassert indices_of_vowels(\"hello\") == [1, 4]\nassert indices_of_vowels(\"\") == []\nassert indices_of_vowels(\"aeiou\") == [0, 1, 2, 3, 4]",
+    "text": "Write a function\nIt returns a new list with the items of the original list inverted.\nTest case:\n\nstrings = [\"banana\", \"apple\", \"grape\"]\nassert reverse_list(strings) == [\"grape\", \"apple\", \"banana\"]\nassert strings == [\"banana\", \"apple\", \"grape\"] # original list unchanged",
     "crumbs": [
       "Module 8 - Control Flow (for statements)",
       "mutability (slides)"
@@ -4754,7 +4754,7 @@
     "href": "slides-07-02.html#random-module",
     "title": "random (slides)",
     "section": "random module",
-    "text": "random module\nWe need to import the module random\nWhat do the functions .random() and .randint() return?\n\nimport random\n\nn = random.random() #returns a random float between 0 and 1\nprint(n)\n\nn = random.randint(0, 9) #returns a random integer betweem 0 and 9.\n\n\nprint(n)\n\n0.11172613855316116\n5",
+    "text": "random module\nWe need to import the module random\nWhat do the functions .random() and .randint() return?\n\nimport random\n\nn = random.random() #returns a random float between 0 and 1\nprint(n)\n\nn = random.randint(0, 9) #returns a random integer betweem 0 and 9.\n\n\nprint(n)\n\n0.49952921191375055\n0",
     "crumbs": [
       "Module 7 - Data Structures (lists)",
       "random (slides)"
@@ -4765,7 +4765,7 @@
     "href": "slides-07-02.html#write-a-function",
     "title": "random (slides)",
     "section": "Write a function",
-    "text": "Write a function\n\nFunction name is pick_winner\nIt takes a list as argument\nIt generates a random index, and returns the item at that position\n\n\nwinner = pick_winner([\"Peter\", \"Joan\", \"Mary\", \"June\"])\nprint(winner)",
+    "text": "Write a function\nWrite a function random_list that takes as argument a list of numbers. Iterate over each list element, replacing each integer with a random number between zero and the original number. Set the seed as 123 in your function.\nName your file random_list.py and submit to Gradescope.\n\n# test case\nassert random_list([3, 2, 1, 3, 5]) == [0, 1, 0, 3, 2]",
     "crumbs": [
       "Module 7 - Data Structures (lists)",
       "random (slides)"
@@ -4776,7 +4776,7 @@
     "href": "slides-07-02.html#write-a-function-solution",
     "title": "random (slides)",
     "section": "Write a function – solution",
-    "text": "Write a function – solution\n\nimport random\n\ndef pick_winner(names):\n  index = random.randint(0, len(names) - 1)\n  return names[index]\n\nif __name__ == \"__main__\":\n  winner = pick_winner([\"Peter\", \"Joan\", \"Mary\", \"June\"])\n  print(winner)\n\nMary",
+    "text": "Write a function – solution\n\nimport random\n\ndef random_list(numbers):\n  random.seed(123)\n  index = 0\n  while index &lt; len(numbers):\n    item = numbers[index]\n    numbers[index] = random.randint(0, item)\n    index += 1\n  return numbers\n\nif __name__ == \"__main__\":\n  assert random_list([3, 2, 1, 3, 5]) == [0, 1, 0, 3, 2]\n  print(\"pass the test\")\n\npass the test",
     "crumbs": [
       "Module 7 - Data Structures (lists)",
       "random (slides)"
@@ -9215,5 +9215,38 @@
     "title": "Exam Instructions",
     "section": "Exam",
     "text": "Exam\n\n\ncurrent time\n\n\n\n\n\n\nExam starts at 3:30pm and ends at 4:40pm\nNo breaks during the exam.\n\nYou are only allowed to use functions and methods covered in the class materials. No need to write comments.\nWrite with a blue or black pen, or pencil. If you have a question, please raise your hand.\nRaise your hand when you are done, a TA will check your ID."
+  },
+  {
+    "objectID": "slides-07-02.html#read-the-function",
+    "href": "slides-07-02.html#read-the-function",
+    "title": "random (slides)",
+    "section": "Read the function",
+    "text": "Read the function\nWhat does the function do?\n\nimport random\n\ndef pick_winner(names):\n  index = random.randint(0, len(names) - 1)\n  return names[index]\n\nif __name__ == \"__main__\":\n  winner = pick_winner([\"Peter\", \"Joan\", \"Mary\", \"June\"])\n  print(winner)\n\nJoan",
+    "crumbs": [
+      "Module 7 - Data Structures (lists)",
+      "random (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-08-01.html#read-a-function",
+    "href": "slides-08-01.html#read-a-function",
+    "title": "mutability (slides)",
+    "section": "Read a function",
+    "text": "Read a function\nVisualize this on Python Tutor\n\ndef make_even(integers):\n  index = 0\n  while index &lt; len(integers):\n    if integers[index] % 2 == 1:\n      integers[index] += 1\n    index += 1\n  return integers\n      \ndef main():\n  integers = [1, 2, 3, 4]\n  make_even(integers)\n  assert integers == [2, 2, 4, 4]\n  \nmain()\n\nWhat does the function do? If we remove the return statement on line 7, will the function still work properly?",
+    "crumbs": [
+      "Module 8 - Control Flow (for statements)",
+      "mutability (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-08-01.html#make_even-another-solution",
+    "href": "slides-08-01.html#make_even-another-solution",
+    "title": "mutability (slides)",
+    "section": "make_even: another solution",
+    "text": "make_even: another solution\n\ndef make_even(integers):\n  index = 0\n  while index &lt; len(integers):\n    integers[index] += integers[index] % 2\n    index += 1\n  return integers\n      \ndef main():\n  test_integers = [1, 2, 3, 4]\n  make_even(test_integers)\n  assert test_integers == [2, 2, 4, 4]\n  \nmain()",
+    "crumbs": [
+      "Module 8 - Control Flow (for statements)",
+      "mutability (slides)"
+    ]
   }
 ]

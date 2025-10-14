@@ -26,21 +26,9 @@ n = random.randint(0, 9) #returns a random integer betweem 0 and 9.
 print(n)
 ```
 
-## Write a function
+## Read the function 
 
-1. Function name is `pick_winner`
-1. It takes a list as argument
-1. It generates a random index, and returns the item at that position
-
-```{python}
-#| eval: false
-#| echo: true
-winner = pick_winner(["Peter", "Joan", "Mary", "June"])
-print(winner)
-```
-
-## Write a function -- solution
-
+What does the function do?
 ```{python}
 #| eval: true
 #| echo: true
@@ -79,7 +67,7 @@ if __name__ == "__main__":
 
 ## Write a function
 
-Write a function `random_list` that takes as argument a list of `numbers`. Iterate over each list element (with a `while` loop), replacing each integer with a random number between zero and the original number. Set the seed as `123` in your function.
+Write a function `random_list` that takes as argument a list of `numbers`. Iterate over each list element, replacing each integer with a random number between zero and the original number. Set the seed as `123` in your function.
 
 Name your file `random_list.py` and submit to Gradescope.
 
