@@ -54,7 +54,7 @@ main()
 
 What does the function do? If we remove the `return` statement on line 7, will the function still work properly?
 
-## make_even: another solution
+## `make_even`: another solution
 
 ```{python}
 #| eval: true

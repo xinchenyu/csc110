@@ -48,22 +48,8 @@ for index in range(len(values)):
   print(values[index])
 ```
 
-## Write a function
 
-It iterates over the list, changing odd numbers to even number (even up). 
-
-Use a `for` loop.
-
-```{python}
-#| eval: false
-#| echo: true 
-test_integers = [1, 2, 3, 4]
-assert make_all_even(test_integers) == [2, 2, 4, 4]
-assert test_integers == [2, 2, 4, 4] # change persists
-```
-
-
-## Write a function -- solution
+## Function to convert all odd numbers to even
 
 ```{python}
 #| eval: true
@@ -153,42 +139,6 @@ for n in range(0, 5, 2): # step is 2
 for n in range(5, 0, -2): # step is -2
   print(n)
 ```
-## Write a function
-
-It returns a new string with items at even indices in `characters` concatenated together.
-
-Use a `for` loop.
-
-Test cases:
-
-```{python}
-#| eval: false
-#| echo: true
-characters = ["a", "e", "p", "o", "p", "w", "l", "i", "e", "f"]
-assert every_two_together(characters) == "apple"
-assert every_two_together([]) == ""
-```
-
-## Write a function -- solution
-
-
-```{python}
-#| eval: true
-#| echo: true
-def every_two_together(chars):
-  new_string = ""
-  for i in range(0, len(chars), 2):
-    new_string += chars[i]
-  return new_string
-
-def main():
-  characters = ["a", "e", "p", "o", "p", "w", "l", "i", "e", "f"]
-  assert every_two_together(characters) == "apple"
-  assert every_two_together([]) == ""
-  
-main()
-```
-
 
 ## Write a function
 
@@ -226,31 +176,3 @@ def main():
 main()
 ```
 
-## Write a function
-
-Test cases:
-
-```{python}
-#| eval: false
-#| echo: true
-my_numbers = [0, 1, 0, 3, 0]
-assert add_every_two(my_numbers) == 0
-```
-
-## Write a function -- solution
-
-```{python}
-#| eval: true
-#| echo: true
-def add_every_two(numbers):
-  result = 0
-  for i in range(0, len(numbers), 2):
-    result += numbers[i]
-  return result
-
-def main():
-  my_numbers = [0, 1, 0, 3, 0]
-  assert add_every_two(my_numbers) == 0
-  
-main()
-```

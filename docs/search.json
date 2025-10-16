@@ -6099,7 +6099,7 @@
     "href": "slides-08-02.html#write-a-function",
     "title": "for loops with range (slides)",
     "section": "Write a function",
-    "text": "Write a function\nIt iterates over the list, changing odd numbers to even number (even up).\nUse a for loop.\n\ntest_integers = [1, 2, 3, 4]\nassert make_all_even(test_integers) == [2, 2, 4, 4]\nassert test_integers == [2, 2, 4, 4] # change persists",
+    "text": "Write a function\nIt returns a list of integers that represent the indices of the vowels in the string\nName file indices_of_vowels.py and submit to Gradescope.\nUse a for loop.\nTest cases:\n\nassert indices_of_vowels(\"hello\") == [1, 4]\nassert indices_of_vowels(\"\") == []\nassert indices_of_vowels(\"aeiou\") == [0, 1, 2, 3, 4]",
     "crumbs": [
       "Module 8 - Control Flow (for statements)",
       "for loops with range (slides)"
@@ -6110,7 +6110,7 @@
     "href": "slides-08-02.html#write-a-function-solution",
     "title": "for loops with range (slides)",
     "section": "Write a function – solution",
-    "text": "Write a function – solution\n\ndef make_all_even(integers):\n  # for each index in list\n  for index in range(len(integers)):\n    integers[index] += integers[index] % 2 # add zero if even, one if odd\n  return integers\n      \ndef main():\n  test_integers = [1, 2, 3, 4]\n  assert make_all_even(test_integers) == [2, 2, 4, 4]\n  assert test_integers == [2, 2, 4, 4]\n  print(test_integers) \n  \nmain()\n\n[2, 2, 4, 4]",
+    "text": "Write a function – solution\n\ndef indices_of_vowels(string):\n  result = [] # initialize empty list to hold indices\n  # for every index in list\n  for index in range(len(string)):\n    if string[index] in \"aeiou\": # check if character is vowel\n      result.append(index) # append index to result\n  return result\n\ndef main():\n  assert indices_of_vowels(\"hello\") == [1, 4]\n  assert indices_of_vowels(\"\") == []\n  assert indices_of_vowels(\"aeiou\") == [0, 1, 2, 3, 4]\n\nmain()",
     "crumbs": [
       "Module 8 - Control Flow (for statements)",
       "for loops with range (slides)"
@@ -6121,7 +6121,7 @@
     "href": "slides-08-02.html#write-a-function-1",
     "title": "for loops with range (slides)",
     "section": "Write a function",
-    "text": "Write a function\nIt returns a list of integers that represent the indices of the vowels in the string\nName file indices_of_vowels.py and submit to Gradescope.\nUse a for loop.\nTest cases:\n\nassert indices_of_vowels(\"hello\") == [1, 4]\nassert indices_of_vowels(\"\") == []\nassert indices_of_vowels(\"aeiou\") == [0, 1, 2, 3, 4]",
+    "text": "Write a function\nIt returns a new list in reversed order, containing items at every other index in the original list.\nUse a for loop.\nTest cases:\n\ncharacters = [\"o\", \"e\", \"k\", \"l\", \"c\", \"p\", \"l\", \"p\", \"m\", \"a\"]\nassert every_two(characters) == [\"a\", \"p\", \"p\", \"l\", \"e\"]\nassert every_two([\"y\", \"e\", \"o\", \"e\", \"j\"]) == [\"j\", \"o\", \"y\"]",
     "crumbs": [
       "Module 8 - Control Flow (for statements)",
       "for loops with range (slides)"
@@ -6132,7 +6132,7 @@
     "href": "slides-08-02.html#write-a-function-solution-1",
     "title": "for loops with range (slides)",
     "section": "Write a function – solution",
-    "text": "Write a function – solution\n\ndef indices_of_vowels(string):\n  result = [] # initialize empty list to hold indices\n  # for every index in list\n  for index in range(len(string)):\n    if string[index] in \"aeiou\": # check if character is vowel\n      result.append(index) # append index to result\n  return result\n\ndef main():\n  assert indices_of_vowels(\"hello\") == [1, 4]\n  assert indices_of_vowels(\"\") == []\n  assert indices_of_vowels(\"aeiou\") == [0, 1, 2, 3, 4]\n\nmain()",
+    "text": "Write a function – solution\n\ndef every_two(chars):\n  result = []\n  for i in range(len(chars)-1, -1, -2):\n    result.append(chars[i])\n  return result\n\ndef main():\n  characters = [\"o\", \"e\", \"k\", \"l\", \"c\", \"p\", \"l\", \"p\", \"m\", \"a\"]\n  assert every_two(characters) == [\"a\", \"p\", \"p\", \"l\", \"e\"]\n  assert every_two([\"y\", \"e\", \"o\", \"e\", \"j\"]) == [\"j\", \"o\", \"y\"]\n  print(\"pass the test case\")\n  \nmain()\n\npass the test case",
     "crumbs": [
       "Module 8 - Control Flow (for statements)",
       "for loops with range (slides)"
@@ -6165,7 +6165,7 @@
     "href": "slides-08-02.html#write-a-function-2",
     "title": "for loops with range (slides)",
     "section": "Write a function",
-    "text": "Write a function\nIt returns a new string with items at even indices in characters concatenated together.\nUse a for loop.\nTest cases:\n\ncharacters = [\"a\", \"e\", \"p\", \"o\", \"p\", \"w\", \"l\", \"i\", \"e\", \"f\"]\nassert every_two_together(characters) == \"apple\"\nassert every_two_together([]) == \"\"",
+    "text": "Write a function\nIt returns a new list in reversed order, containing items at every other index in the original list.\nUse a for loop.\nTest cases:\n\ncharacters = [\"o\", \"e\", \"k\", \"l\", \"c\", \"p\", \"l\", \"p\", \"m\", \"a\"]\nassert every_two(characters) == [\"a\", \"p\", \"p\", \"l\", \"e\"]\nassert every_two([\"y\", \"e\", \"o\", \"e\", \"j\"]) == [\"j\", \"o\", \"y\"]",
     "crumbs": [
       "Module 8 - Control Flow (for statements)",
       "for loops with range (slides)"
@@ -6176,7 +6176,7 @@
     "href": "slides-08-02.html#write-a-function-solution-2",
     "title": "for loops with range (slides)",
     "section": "Write a function – solution",
-    "text": "Write a function – solution\n\ndef every_two_together(chars):\n  new_string = \"\"\n  for i in range(0, len(chars), 2):\n    new_string += chars[i]\n  return new_string\n\ndef main():\n  characters = [\"a\", \"e\", \"p\", \"o\", \"p\", \"w\", \"l\", \"i\", \"e\", \"f\"]\n  assert every_two_together(characters) == \"apple\"\n  assert every_two_together([]) == \"\"\n  \nmain()",
+    "text": "Write a function – solution\n\ndef every_two(chars):\n  result = []\n  for i in range(len(chars)-1, -1, -2):\n    result.append(chars[i])\n  return result\n\ndef main():\n  characters = [\"o\", \"e\", \"k\", \"l\", \"c\", \"p\", \"l\", \"p\", \"m\", \"a\"]\n  assert every_two(characters) == [\"a\", \"p\", \"p\", \"l\", \"e\"]\n  assert every_two([\"y\", \"e\", \"o\", \"e\", \"j\"]) == [\"j\", \"o\", \"y\"]\n  print(\"pass the test case\")\n  \nmain()\n\npass the test case",
     "crumbs": [
       "Module 8 - Control Flow (for statements)",
       "for loops with range (slides)"
@@ -6187,7 +6187,7 @@
     "href": "slides-08-02.html#write-a-function-3",
     "title": "for loops with range (slides)",
     "section": "Write a function",
-    "text": "Write a function\nIt returns a new list in reversed order, containing items at every other index in the original list.\nUse a for loop.\nTest cases:\n\ncharacters = [\"o\", \"e\", \"k\", \"l\", \"c\", \"p\", \"l\", \"p\", \"m\", \"a\"]\nassert every_two(characters) == [\"a\", \"p\", \"p\", \"l\", \"e\"]\nassert every_two([\"y\", \"e\", \"o\", \"e\", \"j\"]) == [\"j\", \"o\", \"y\"]",
+    "text": "Write a function\nIt returns a new string with items at even indices in characters concatenated together.\nUse a for loop.\nTest cases:\n\ncharacters = [\"a\", \"e\", \"p\", \"o\", \"p\", \"w\", \"l\", \"i\", \"e\", \"f\"]\nassert every_two_together(characters) == \"apple\"\nassert every_two_together([]) == \"\"",
     "crumbs": [
       "Module 8 - Control Flow (for statements)",
       "for loops with range (slides)"
@@ -6198,7 +6198,7 @@
     "href": "slides-08-02.html#write-a-function-solution-3",
     "title": "for loops with range (slides)",
     "section": "Write a function – solution",
-    "text": "Write a function – solution\n\ndef every_two(chars):\n  result = []\n  for i in range(len(chars)-1, -1, -2):\n    result.append(chars[i])\n  return result\n\ndef main():\n  characters = [\"o\", \"e\", \"k\", \"l\", \"c\", \"p\", \"l\", \"p\", \"m\", \"a\"]\n  assert every_two(characters) == [\"a\", \"p\", \"p\", \"l\", \"e\"]\n  assert every_two([\"y\", \"e\", \"o\", \"e\", \"j\"]) == [\"j\", \"o\", \"y\"]\n  print(\"pass the test case\")\n  \nmain()\n\npass the test case",
+    "text": "Write a function – solution\n\ndef every_two_together(chars):\n  new_string = \"\"\n  for i in range(0, len(chars), 2):\n    new_string += chars[i]\n  return new_string\n\ndef main():\n  characters = [\"a\", \"e\", \"p\", \"o\", \"p\", \"w\", \"l\", \"i\", \"e\", \"f\"]\n  assert every_two_together(characters) == \"apple\"\n  assert every_two_together([]) == \"\"\n  \nmain()",
     "crumbs": [
       "Module 8 - Control Flow (for statements)",
       "for loops with range (slides)"
@@ -9247,6 +9247,28 @@
     "crumbs": [
       "Module 8 - Control Flow (for statements)",
       "mutability (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-08-02.html#a-function-to-convert-all-odd-numbers-to-even",
+    "href": "slides-08-02.html#a-function-to-convert-all-odd-numbers-to-even",
+    "title": "for loops with range (slides)",
+    "section": "A function to convert all odd numbers to even",
+    "text": "A function to convert all odd numbers to even\n\ndef make_all_even(integers):\n  # for each index in list\n  for index in range(len(integers)):\n    integers[index] += integers[index] % 2 # add zero if even, one if odd\n  return integers\n      \ndef main():\n  test_integers = [1, 2, 3, 4]\n  assert make_all_even(test_integers) == [2, 2, 4, 4]\n  assert test_integers == [2, 2, 4, 4]\n  print(test_integers) \n  \nmain()\n\n[2, 2, 4, 4]",
+    "crumbs": [
+      "Module 8 - Control Flow (for statements)",
+      "for loops with range (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-08-02.html#function-to-convert-all-odd-numbers-to-even",
+    "href": "slides-08-02.html#function-to-convert-all-odd-numbers-to-even",
+    "title": "for loops with range (slides)",
+    "section": "Function to convert all odd numbers to even",
+    "text": "Function to convert all odd numbers to even\n\ndef make_all_even(integers):\n  # for each index in list\n  for index in range(len(integers)):\n    integers[index] += integers[index] % 2 # add zero if even, one if odd\n  return integers\n      \ndef main():\n  test_integers = [1, 2, 3, 4]\n  assert make_all_even(test_integers) == [2, 2, 4, 4]\n  assert test_integers == [2, 2, 4, 4]\n  print(test_integers) \n  \nmain()\n\n[2, 2, 4, 4]",
+    "crumbs": [
+      "Module 8 - Control Flow (for statements)",
+      "for loops with range (slides)"
     ]
   }
 ]
