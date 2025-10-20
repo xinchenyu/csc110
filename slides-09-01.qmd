@@ -7,11 +7,6 @@ df-print: kable
 
 # CSc 110 - dictionaries
 
-## Announcements
-
-* Last lab for short project 06 is Today -- no lab this week, we re-start lab sessions Tuesday Mar 18 
-
-
 
 ## Data Structure
 
@@ -138,10 +133,6 @@ word_count["cannot"]
 #| echo: true
 word_count["foot"]
 ```
-
-
-## Attendance
-Attendance Evaluate the expression on Gradescope.
 
 
 ## Review: list methods
