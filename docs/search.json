@@ -3346,7 +3346,7 @@
     "href": "slides-09-02.html#write-a-function",
     "title": "for loops – iterating over items (slides)",
     "section": "Write a function",
-    "text": "Write a function\nModify your count_chars function. Use for x in string instead of for x in range(len(string)).\n\nassert count_chars(\"\") == {}\nassert count_chars(\"banana\") == {\"b\": 1, \"a\": 3, \"n\": 2}",
+    "text": "Write a function\nIt returns a dictionary that maps each negative value in numbers to its frequency in numbers. Use for x in list:\n\nassert tally_negatives([1, -2, 0, -4, -2]) == {-2: 2, -4: 1}\nassert tally_negatives([]) == {}",
     "crumbs": [
       "Module 9 - Data Structures (dictionaries)",
       "for loops -- iterating over items (slides)"
@@ -3357,7 +3357,7 @@
     "href": "slides-09-02.html#write-a-function-solution",
     "title": "for loops – iterating over items (slides)",
     "section": "Write a function – solution",
-    "text": "Write a function – solution\n\ndef count_chars(string):\n  counts = {}\n  for char in string:\n    if char in counts:\n      counts[char] += 1\n    else:\n      counts[char] = 1\n      \n  return counts\n\ndef main():\n  assert count_chars(\"\") == {}\n  assert count_chars(\"banana\") == {\"b\": 1, \"a\": 3, \"n\": 2}\n  print(\"Passed all tests.\")\n\nmain()\n\nPassed all tests.",
+    "text": "Write a function – solution\n\ndef tally_negatives(numbers):\n  tally = {}\n  for n in numbers:\n    if n &lt; 0:\n      if n not in tally:\n        tally[n] = 0\n      tally[n] += 1\n  return tally\n\ndef main():\n  assert tally_negatives([1, -2, 0, -4, -2]) == {-2: 2, -4: 1}\n  assert tally_negatives([]) == {}\n  print(\"Passed all tests.\")\n  \nmain()\n\nPassed all tests.",
     "crumbs": [
       "Module 9 - Data Structures (dictionaries)",
       "for loops -- iterating over items (slides)"
@@ -3368,7 +3368,7 @@
     "href": "slides-09-02.html#a-note-on-two-methods",
     "title": "for loops – iterating over items (slides)",
     "section": "A Note on two methods",
-    "text": "A Note on two methods\nfor i in range(len(list)): VS. for x in list:\n\nMutate the list: option 1 (need to use index i to mutate)\n\n\nnumbers = [2, 1, 4]\nfor i in range(len(numbers)):\n  numbers[i] += 1\nnumbers\n\n[3, 2, 5]\n\n\n\nGet the values: both options\n\n\nnumbers = [2, 1, 4]\nfor n in numbers:\n  print(n)\n\n2\n1\n4",
+    "text": "A Note on two methods\nfor i in range(len(list)): VS. for x in list:\n\noption 1 if you want to mutate the value (need index i)\n\n\nnumbers = [2, 1, 4]\nfor i in range(len(numbers)):\n  numbers[i] += 1\nnumbers\n\n[3, 2, 5]\n\n\n\nboth options if you want to get the value\n\n\nnumbers = [2, 1, 4]\nfor n in numbers:\n  print(n)\n\n2\n1\n4",
     "crumbs": [
       "Module 9 - Data Structures (dictionaries)",
       "for loops -- iterating over items (slides)"
@@ -3379,7 +3379,7 @@
     "href": "slides-09-02.html#write-a-function-1",
     "title": "for loops – iterating over items (slides)",
     "section": "Write a function",
-    "text": "Write a function\nIt returns a dictionary that maps each negative value in numbers to its frequency in numbers.\n\nassert tally_negatives([1, -2, 0, -4, -2]) == {-2: 2, -4: 1}\nassert tally_negatives([]) == {}",
+    "text": "Write a function\nIt returns a list with all the keys and values in the dictionary.\nTest cases:\n\nassert keys_and_values({'A': 10, 'B': 25, 'C': 27, 'D': 10, 'E': 5}) == \\\n    ['A', 10, 'B', 25, 'C', 27, 'D', 10, 'E', 5]",
     "crumbs": [
       "Module 9 - Data Structures (dictionaries)",
       "for loops -- iterating over items (slides)"
@@ -3390,7 +3390,7 @@
     "href": "slides-09-02.html#write-a-function-solution-1",
     "title": "for loops – iterating over items (slides)",
     "section": "Write a function – solution",
-    "text": "Write a function – solution\n\ndef tally_negatives(numbers):\n  tally = {}\n  for n in numbers:\n    if n &lt; 0:\n      if n not in tally:\n        tally[n] = 0\n      tally[n] += 1\n  return tally\n\ndef main():\n  assert tally_negatives([1, -2, 0, -4, -2]) == {-2: 2, -4: 1}\n  assert tally_negatives([]) == {}\n  print(\"Passed all tests.\")\n  \nmain()\n\nPassed all tests.",
+    "text": "Write a function – solution\n\ndef keys_and_values(dictionary):\n  new_list = []\n  for key, value in dictionary.items():\n    new_list.append(key)\n    new_list.append(value)\n  return new_list\n\ndef main():\n  assert keys_and_values({'A': 10, 'B': 25, 'C': 27, 'D': 10, 'E': 5}) == ['A', 10, 'B', 25, 'C', 27, 'D', 10, 'E', 5]\n  \nmain()",
     "crumbs": [
       "Module 9 - Data Structures (dictionaries)",
       "for loops -- iterating over items (slides)"
@@ -3423,7 +3423,7 @@
     "href": "slides-09-02.html#write-a-function-2",
     "title": "for loops – iterating over items (slides)",
     "section": "Write a function",
-    "text": "Write a function\nIt returns a list with all the keys and values in the dictionary.\nTest cases:\n\nassert keys_and_values({'A': 10, 'B': 25, 'C': 27, 'D': 10, 'E': 5}) == \\\n    ['A', 10, 'B', 25, 'C', 27, 'D', 10, 'E', 5]",
+    "text": "Write a function\nIt mutates dict_1, by adding to it all key-values pairs in dict_2. If a key is in both dictionaries, the values are added.\nTest cases:\n\ndict_1 = {\"a\": 20, \"e\": 5}\ndict_2 = {\"e\": 10, \"i\": 2}\nassert merge_dictionaries(dict_1, dict_2) == {\"a\": 20, \"e\": 15, \"i\": 2}",
     "crumbs": [
       "Module 9 - Data Structures (dictionaries)",
       "for loops -- iterating over items (slides)"
@@ -3434,7 +3434,7 @@
     "href": "slides-09-02.html#write-a-function-solution-2",
     "title": "for loops – iterating over items (slides)",
     "section": "Write a function – solution",
-    "text": "Write a function – solution\n\ndef keys_and_values(dictionary):\n  new_list = []\n  for key, value in dictionary.items():\n    new_list.append(key)\n    new_list.append(value)\n  return new_list\n\ndef main():\n  assert keys_and_values({'A': 10, 'B': 25, 'C': 27, 'D': 10, 'E': 5}) == ['A', 10, 'B', 25, 'C', 27, 'D', 10, 'E', 5]\n  \nmain()",
+    "text": "Write a function – solution\n\ndef merge_dictionaries(dict_1, dict_2):\n  for key, value in dict_2.items():\n    if key in dict_1:\n      dict_1[key] += value\n    else:\n      dict_1[key] = value\n  return dict_1\n      \ndef main():\n  dict_1 = {\"a\": 20, \"e\": 5}\n  dict_2 = {\"e\": 10, \"i\": 2}\n  assert merge_dictionaries(dict_1, dict_2) == {\"a\": 20, \"e\": 15, \"i\": 2}\n  \nmain()",
     "crumbs": [
       "Module 9 - Data Structures (dictionaries)",
       "for loops -- iterating over items (slides)"
@@ -3456,7 +3456,7 @@
     "href": "slides-09-02.html#write-a-function-3",
     "title": "for loops – iterating over items (slides)",
     "section": "Write a function",
-    "text": "Write a function\nIt mutates dict_1, by adding to it all key-values pairs in dict_2. If a key is in both dictionaries, the values are added.\nTest cases:\n\ndict_1 = {\"a\": 20, \"e\": 5}\ndict_2 = {\"e\": 10, \"i\": 2}\nassert merge_dictionaries(dict_1, dict_2) == {\"a\": 20, \"e\": 15, \"i\": 2}",
+    "text": "Write a function\nIt mutate the list, multiply every number by 2. It returns the highest value in the mutated list.\nTest cases:\n\nassert max_list([2, 2, 1]) == 4\nassert max_list([5, 2, 1]) == 10\nassert max_list([]) == None",
     "crumbs": [
       "Module 9 - Data Structures (dictionaries)",
       "for loops -- iterating over items (slides)"
@@ -3467,7 +3467,7 @@
     "href": "slides-09-02.html#write-a-function-solution-3",
     "title": "for loops – iterating over items (slides)",
     "section": "Write a function – solution",
-    "text": "Write a function – solution\n\ndef merge_dictionaries(dict_1, dict_2):\n  for key, value in dict_2.items():\n    if key in dict_1:\n      dict_1[key] += value\n    else:\n      dict_1[key] = value\n  return dict_1\n      \ndef main():\n  dict_1 = {\"a\": 20, \"e\": 5}\n  dict_2 = {\"e\": 10, \"i\": 2}\n  assert merge_dictionaries(dict_1, dict_2) == {\"a\": 20, \"e\": 15, \"i\": 2}\n  \nmain()",
+    "text": "Write a function – solution\n\ndef max_list(numbers):\n    max = None\n    for i in range(len(numbers)):\n        numbers[i] *= 2\n    for n in numbers:\n        if max == None or n &gt; max:\n            max =  n\n    return max\n\ndef main():\n  assert max_list([2, 2, 1]) == 4\n  assert max_list([5, 2, 1]) == 10\n  assert max_list([]) == None\n  print(\"pass\")\n  \nmain()\n\npass",
     "crumbs": [
       "Module 9 - Data Structures (dictionaries)",
       "for loops -- iterating over items (slides)"
@@ -9269,6 +9269,39 @@
     "crumbs": [
       "Module 8 - Control Flow (for statements)",
       "for loops with range (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-09-02.html#write-a-function-solution-continue",
+    "href": "slides-09-02.html#write-a-function-solution-continue",
+    "title": "for loops – iterating over items (slides)",
+    "section": "Write a function – solution continue",
+    "text": "Write a function – solution continue\n\nline 3: can we use for x in list?\nline 5: can we use for i in range(len(list))?\n\n\ndef max_list(numbers):\n    max = None\n    for i in range(len(numbers)):\n        numbers[i] *= 2\n    for n in numbers:\n        if max == None or n &gt; max:\n            max =  n\n    return max",
+    "crumbs": [
+      "Module 9 - Data Structures (dictionaries)",
+      "for loops -- iterating over items (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-09-02.html#attendancce",
+    "href": "slides-09-02.html#attendancce",
+    "title": "for loops – iterating over items (slides)",
+    "section": "Attendancce",
+    "text": "Attendancce\nGo to gradescope and answer questions:\n\nis the solution correct or not?\nline 3: can we use for x in list?\n\n\ndef max_list(numbers):\n    max = None\n    for i in range(len(numbers)):\n        numbers[i] *= 2\n        if max == None or numbers[i] &gt; max:\n            max = numbers[i]\n    return max",
+    "crumbs": [
+      "Module 9 - Data Structures (dictionaries)",
+      "for loops -- iterating over items (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-09-02.html#attendance",
+    "href": "slides-09-02.html#attendance",
+    "title": "for loops – iterating over items (slides)",
+    "section": "Attendance",
+    "text": "Attendance\nGo to gradescope and answer questions:\n\nis the solution correct or not?\nline 3: can we use for x in list?\n\n\ndef max_list(numbers):\n    max = None\n    for i in range(len(numbers)):\n        numbers[i] *= 2\n        if max == None or numbers[i] &gt; max:\n            max = numbers[i]\n    return max",
+    "crumbs": [
+      "Module 9 - Data Structures (dictionaries)",
+      "for loops -- iterating over items (slides)"
     ]
   }
 ]

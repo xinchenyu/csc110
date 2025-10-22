@@ -44,47 +44,12 @@ for n in numbers:
   print(n)
 ```
 
-## Write a function
-
-Modify your `count_chars` function.
-Use `for x in string` instead of `for x in range(len(string))`.
-
-```{python}
-#| eval: false
-#| echo: true
-assert count_chars("") == {}
-assert count_chars("banana") == {"b": 1, "a": 3, "n": 2}
-```
-
-
-## Write a function -- solution
-
-```{python}
-#| eval: true
-#| echo: true
-def count_chars(string):
-  counts = {}
-  for char in string:
-    if char in counts:
-      counts[char] += 1
-    else:
-      counts[char] = 1
-      
-  return counts
-
-def main():
-  assert count_chars("") == {}
-  assert count_chars("banana") == {"b": 1, "a": 3, "n": 2}
-  print("Passed all tests.")
-
-main()
-```
 
 ## A Note on two methods
 
 `for i in range(len(list)):` VS. `for x in list:`
 
--   Mutate the list: `option 1` (need to use index `i` to mutate)
+-   `option 1` if you want to mutate the value (need index `i`)
 
 ```{python}
 #| echo: true
@@ -95,7 +60,7 @@ for i in range(len(numbers)):
 numbers
 ```
 
--   Get the values: `both options`
+-   `both options` if you want to get the value 
 
 ```{python}
 #| echo: true
@@ -108,7 +73,7 @@ for n in numbers:
 
 ## Write a function
 
-It returns a dictionary that maps each negative value in `numbers` to its frequency in `numbers`.
+It returns a dictionary that maps each negative value in `numbers` to its frequency in `numbers`. Use `for x in list:`
 
 ```{python}
 #| eval: false
@@ -263,7 +228,7 @@ assert max_list([5, 2, 1]) == 10
 assert max_list([]) == None
 ```
 
-## Write a function -- solution 1
+## Write a function -- solution 
 
 ```{python}
 #| eval: true
@@ -286,7 +251,7 @@ def main():
 main()
 ```
 
-## Write a function -- solution 1 continue
+## Write a function -- solution continue
 
 -   line 3: can we use `for x in list`?
 
@@ -304,29 +269,12 @@ def max_list(numbers):
     return max
 ```
 
-## Write a function -- solution 2
 
-```{python}
-#| eval: true
-#| echo: true
-def max_list(numbers):
-    max = None
-    for i in range(len(numbers)):
-        numbers[i] *= 2
-        if max == None or numbers[i] > max:
-            max = numbers[i]
-    return max
+## Attendance 
 
-def main():
-  assert max_list([2, 2, 1]) == 4
-  assert max_list([5, 2, 1]) == 10
-  assert max_list([]) == None
-  print("pass")
-  
-main()
-```
+Go to gradescope and answer questions:
 
-## Write a function -- solution 2 continue
+-   is the solution correct or not?
 
 -   line 3: can we use `for x in list`?
 
