@@ -12,6 +12,15 @@ Midterm 1 (Modules 1-6), [Study Guide 1](midterm-1-study-guide.pdf)
 -   decomposition: define your own functions and main function
 -   combinations of above (for example, using `input()` in the while loop)
 
+Midterm 2 (Modules 1-10 with a focus on Modules 7-10), [Study Guide 2](midterm-2-study-guide.pdf)
+
+-   if elif else statements
+-   draw loop table based on functions
+-   while loop 
+-   for loop (2 ways of for loops)
+-   list: mutability, iterating a list (to find max, total, etc)
+-   dictionary: mutability
+-   combinations of above
 
 # Extra Practice Problems 
 I've created a Google colab notebook with practice exercises, and test cases. Here are the instructions to use the notebook:
