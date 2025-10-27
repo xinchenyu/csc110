@@ -111,11 +111,17 @@ print(info.readline())
 info.close()
 ```
 
-# Write a function
+## Write a function
 
 Function name `read_first_line`: given a `filename` string, open file in read (`'r'`) mode, read one line, close file, return that line.
 
 Name your file `first_read.py` and submit to gradescope.
+
+```{python}
+#| eval: false
+#| echo: true
+assert read_first_line('info.txt') == "The quick brown fox\n"
+```
 
 ## Reading a line example
 
@@ -157,23 +163,10 @@ assert read_first_line('info.txt') == "The quick brown fox\n"
 
     -   returns one string
 
-## Iterating over a file
 
-Use `readlines()`:
+## Iterating over a file 
 
-```{python}
-#| eval: true
-#| echo: true
-info = open('info.txt', 'r')
-for line in info.readlines():
-    print(line)
-info.close()
-```
-
-
-## Iterating over a file -- an easier way
-
-Here `info` is iterable, so we can use `for x in file` loop:
+`info` is iterable, so we can use `for x in file`:
 
 ```{python}
 #| eval: true
@@ -244,45 +237,6 @@ name = "The-quick-brown-fox$"
 print(name.strip('$').split('-'))
 ```
 
-## Write a function
-
--   It opens the file in read mode.
-
--   It iterates over the lines, stripping the line breaks and splitting each line by space.
-
--   It returns a list of lists, where each inner-list is a line containing all the words in that line
-
-Test case ([download text file](info.txt)):
-
-```{python}
-#| eval: false
-#| echo: true
-assert lines_and_words("info.txt") == [ ['The', 'quick', 'brown', 'fox'], 
-                                        ['jumped', 'over'], ['the', 'lazy'],
-                                        ['bear'], ['sitting', 'by', 'the', 'tree'] ]
-```
-
-## Write a function -- solution
-
-```{python}
-#| eval: true
-#| echo: true
-def lines_and_words(file_name):
-  f = open(file_name, "r")
-  all_words = []
-  for line in f:
-    all_words.append(line.strip("\n").split(" "))
-  f.close()
-  return all_words
-  
-  
-def main():
-  assert lines_and_words("info.txt") == [ ['The', 'quick', 'brown', 'fox'], 
-                                          ['jumped', 'over'], ['the', 'lazy'],
-                                          ['bear'], ['sitting', 'by', 'the', 'tree'] ]
-                                     
-main()
-```
 
 ## Write a function
 
@@ -328,13 +282,3 @@ def main():
 main()
 ```
 
-## Quiz 08
-
-<center>
-<div class="cleanslate w24tz-current-time w24tz-large" style="display: inline-block !important; visibility: hidden !important; min-width:300px !important; min-height:145px !important;"><a href="//24timezones.com/Tucson/time" style="text-decoration: none" class="clock24" id="tz24-1695057604-c1393-eyJob3VydHlwZSI6IjEyIiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIwIiwiY29udGFpbmVyX2lkIjoiY2xvY2tfYmxvY2tfY2I2NTA4ODZjNDg0OWVlIiwidHlwZSI6ImRiIiwibGFuZyI6ImVuIn0=" title="World Time :: Tucson" target="_blank" rel="nofollow"></a>current time<div id="clock_block_cb650886c4849ee"></div></div>
-<script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
-</center>
-
-You have 10 minutes to complete the quiz.
-
-No need to write `main()` function.

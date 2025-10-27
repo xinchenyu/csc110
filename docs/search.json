@@ -630,7 +630,7 @@
     "href": "slides-10-01.html#iterating-over-a-file",
     "title": "files (slides)",
     "section": "Iterating over a file",
-    "text": "Iterating over a file\nUse readlines():\n\ninfo = open('info.txt', 'r')\nfor line in info.readlines():\n    print(line)\ninfo.close()\n\nThe quick brown fox\n\njumped over\n\nthe lazy\n\nbear\n\nsitting by the tree",
+    "text": "Iterating over a file\ninfo is iterable, so we can use for x in file:\n\ninfo = open('info.txt', 'r')\nfor line in info:\n    print(line)\ninfo.close()\n\nThe quick brown fox\n\njumped over\n\nthe lazy\n\nbear\n\nsitting by the tree",
     "crumbs": [
       "Module 10 - Reading and Writing Text Files",
       "files (slides)"
@@ -696,7 +696,7 @@
     "href": "slides-10-01.html#write-a-function-1",
     "title": "files (slides)",
     "section": "Write a function",
-    "text": "Write a function\n\nIt opens the file in read mode.\nIt iterates over the lines, stripping the line breaks and splitting each line by space.\nIt returns a list of lists, where each inner-list is a line containing all the words in that line\n\nTest case (download text file):\n\nassert lines_and_words(\"info.txt\") == [ ['The', 'quick', 'brown', 'fox'], \n                                        ['jumped', 'over'], ['the', 'lazy'],\n                                        ['bear'], ['sitting', 'by', 'the', 'tree'] ]",
+    "text": "Write a function\nIt takes a string file_name as argument and returns a dictionary with word counts.\nUse str.lower() to convert a string to lowercase.\nTest case:\n\nassert count_words(\"info.txt\") == {\"the\": 3, \"quick\": 1, \"brown\": 1,\n                                   \"fox\": 1 , \"jumped\": 1, \"over\": 1, \n                                   \"lazy\": 1, \"bear\": 1, \"sitting\": 1,\n                                   \"by\": 1, \"tree\": 1}",
     "crumbs": [
       "Module 10 - Reading and Writing Text Files",
       "files (slides)"
@@ -707,7 +707,7 @@
     "href": "slides-10-01.html#write-a-function-solution",
     "title": "files (slides)",
     "section": "Write a function – solution",
-    "text": "Write a function – solution\n\ndef lines_and_words(file_name):\n  f = open(file_name, \"r\")\n  all_words = []\n  for line in f:\n    all_words.append(line.strip(\"\\n\").split(\" \"))\n  f.close()\n  return all_words\n  \n  \ndef main():\n  assert lines_and_words(\"info.txt\") == [ ['The', 'quick', 'brown', 'fox'], \n                                          ['jumped', 'over'], ['the', 'lazy'],\n                                          ['bear'], ['sitting', 'by', 'the', 'tree'] ]\n                                     \nmain()",
+    "text": "Write a function – solution\n\ndef count_words(file_name):\n  f = open(file_name, \"r\")\n  counts = {}\n  for line in f:\n    words = line.strip(\"\\n\").split(\" \")\n    for w in words:\n      lower_case_w = w.lower()\n      if lower_case_w not in counts:\n        counts[lower_case_w] = 1\n      else:\n        counts[lower_case_w] += 1\n  return counts\n\ndef main():\n  assert count_words(\"info.txt\") == {\"the\": 3, \"quick\": 1, \"brown\": 1,\n                                     \"fox\": 1 , \"jumped\": 1, \"over\": 1, \n                                     \"lazy\": 1, \"bear\": 1, \"sitting\": 1,\n                                     \"by\": 1, \"tree\": 1}\n                                 \nmain()",
     "crumbs": [
       "Module 10 - Reading and Writing Text Files",
       "files (slides)"
@@ -9302,6 +9302,17 @@
     "crumbs": [
       "Module 9 - Data Structures (dictionaries)",
       "for loops -- iterating over items (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-10-01.html#write-a-function",
+    "href": "slides-10-01.html#write-a-function",
+    "title": "files (slides)",
+    "section": "Write a function",
+    "text": "Write a function\nFunction name read_first_line: given a filename string, open file in read ('r') mode, read one line, close file, return that line.\nName your file first_read.py and submit to gradescope.\n\nassert read_first_line('info.txt') == \"The quick brown fox\\n\"",
+    "crumbs": [
+      "Module 10 - Reading and Writing Text Files",
+      "files (slides)"
     ]
   }
 ]
