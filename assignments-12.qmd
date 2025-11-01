@@ -23,7 +23,7 @@ Short Programming projects are submitted during our weekly 45-minute in-person l
 
 **Due date: `r assignments %>% filter(assessment == "Module 12 Programming Problems") %>% pull(formatted_date)` at 9pm**
 
-## Programming Problem 21
+## Programming Problem 23
 
 
 Write a `remove_zero_sides` function that given a 2D list as argument, it **mutates** and returns the list removing any first and last values that are equal to zero. Name your file `filter.py`.
@@ -41,7 +41,7 @@ assert remove_zero_sides(more_numbers) == [[], [], [], [1], [2]]
 ```
 
 
-## Programming Problem 22
+## Programming Problem 24
 
 **Due date: `r assignments %>% filter(assessment == "Module 11 Programming Problems") %>% pull(formatted_date)` at 9pm**
 
