@@ -5487,7 +5487,7 @@
     "href": "slides-13-01.html#write-a-function",
     "title": "data structures – review (slides)",
     "section": "Write a function",
-    "text": "Write a function\n\nIts name is count_names that opens in read mode a file that contains a name per line, with repeated names\nIt counts how many unique names there are in the file\nIt returns an integer with the count\nUse a list for this\n\nName your file names.py and submit to Gradescope.\n\nassert count_names(\"names.txt\") == 11",
+    "text": "Write a function\n\nIts name is count_names\nIt opens in read mode a file that contains a name per line, with repeated names\nIt counts how many unique names there are in the file\nIt returns an integer with the count\nUse a dictionary for this\n\n\nassert count_names(\"names.txt\") == 11",
     "crumbs": [
       "Module 13 - Data Structures (sets)",
       "data structures -- review (slides)"
@@ -9335,6 +9335,61 @@
     "crumbs": [
       "Module 12 - Data Structures (2D lists)",
       "Module 12 Assignments"
+    ]
+  },
+  {
+    "objectID": "slides-13-01.html#submit-gradescope-attendance---part-one",
+    "href": "slides-13-01.html#submit-gradescope-attendance---part-one",
+    "title": "data structures – review (slides)",
+    "section": "Submit Gradescope attendance - part one",
+    "text": "Submit Gradescope attendance - part one\nWrite ERROR when errors are thrown.\n\nmy_list = [2, 3, 1, 2]\nmy_list.append(3)\nmy_list.insert(0, 1)\nmy_list[3] = 4\nmy_list[2] # evaluate\n\nmy_tuple = (3, 4, 1)\nmy_tuple.append(3) # evaluate\n\nmy_dictionary = {3: 4, 1: 2, 5: 4}\nmy_dictionary[5] = 10\nmy_dictionary[5] + my_dictionary[1] # evaluate\n\nmy_dictionary.append(4: 5) # evaluate",
+    "crumbs": [
+      "Module 13 - Data Structures (sets)",
+      "data structures -- review (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-13-01.html#submit-gradescope-attendance---part-two",
+    "href": "slides-13-01.html#submit-gradescope-attendance---part-two",
+    "title": "data structures – review (slides)",
+    "section": "Submit Gradescope attendance - part two",
+    "text": "Submit Gradescope attendance - part two\n\nIts name is count_names that opens in read mode a file that contains a name per line, with repeated names\nIt counts how many unique names there are in the file\nIt returns an integer with the count\nUse a list for this\n\nName your file names.py and submit your attendance - part two.\n\nassert count_names(\"names.txt\") == 11",
+    "crumbs": [
+      "Module 13 - Data Structures (sets)",
+      "data structures -- review (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-13-01.html#submit-attendance---part-one",
+    "href": "slides-13-01.html#submit-attendance---part-one",
+    "title": "data structures – review (slides)",
+    "section": "Submit attendance - part one",
+    "text": "Submit attendance - part one\nWrite ERROR when errors are thrown.\n\nmy_list = [2, 3, 1, 2]\nmy_list.append(3)\nmy_list.insert(0, 1)\nmy_list[3] = 4\nmy_list[2] # evaluate\n\nmy_tuple = (3, 4, 1)\nmy_tuple.append(3) # evaluate\n\nmy_dictionary = {3: 4, 1: 2, 5: 4}\nmy_dictionary[5] = 10\nmy_dictionary[5] + my_dictionary[1] # evaluate\n\nmy_dictionary.append(4: 5) # evaluate",
+    "crumbs": [
+      "Module 13 - Data Structures (sets)",
+      "data structures -- review (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-13-01.html#submit-attendance---part-two",
+    "href": "slides-13-01.html#submit-attendance---part-two",
+    "title": "data structures – review (slides)",
+    "section": "Submit attendance - part two",
+    "text": "Submit attendance - part two\n\nIts name is count_names that opens in read mode a file that contains a name per line, with repeated names\nIt counts how many unique names there are in the file\nIt returns an integer with the count\nUse a list for this\n\nName file names.py and submit your attendance - part two.\n\nassert count_names(\"names.txt\") == 11",
+    "crumbs": [
+      "Module 13 - Data Structures (sets)",
+      "data structures -- review (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-13-01.html#submit-attendance---part-three",
+    "href": "slides-13-01.html#submit-attendance---part-three",
+    "title": "data structures – review (slides)",
+    "section": "Submit attendance - part three",
+    "text": "Submit attendance - part three\nGo to Python Tutor, visualize the execution, and submit your attendance.\n\nRemove values using for x in list:\n\n\nmy_list = [2, 3, 1, 2]\nfor value in my_list:\n  my_list.remove(value)\n\n\nAppend values using for x in list:\n\n\nmy_list = [2, 3, 1, 2]\nfor value in my_list:\n  my_list.append(value + 1)",
+    "crumbs": [
+      "Module 13 - Data Structures (sets)",
+      "data structures -- review (slides)"
     ]
   }
 ]

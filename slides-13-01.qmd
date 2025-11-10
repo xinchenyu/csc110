@@ -140,9 +140,9 @@ my_dict
 -   `.items()`
 -   `.pop()`
 
-## Evaluate the code
+## Submit attendance - part one
 
-Indicate when errors are thrown
+Write ERROR when errors are thrown.
 
 ```{python}
 #| eval: false
@@ -151,58 +151,18 @@ my_list = [2, 3, 1, 2]
 my_list.append(3)
 my_list.insert(0, 1)
 my_list[3] = 4
-my_list[6] = 10
-my_list # evaluate what this list holds at this point
+my_list[2] # evaluate
 
 my_tuple = (3, 4, 1)
-my_tuple.append(3)
-my_tuple # evaluate what this tuple holds at this point
+my_tuple.append(3) # evaluate
 
 my_dictionary = {3: 4, 1: 2, 5: 4}
 my_dictionary[5] = 10
-my_dictionary # evaluate what this dictionary holds at this point
+my_dictionary[5] + my_dictionary[1] # evaluate
 
-my_dictionary.append(4: 5)
-my_dictionary # evaluate what this dictionary holds at this point
+my_dictionary.append(4: 5) # evaluate
 ```
 
-## Evaluate the code
-
-Indicate when errors are thrown
-
-```{python}
-#| eval: true
-#| echo: true
-my_list = [2, 3, 1, 2]
-my_list.append(3)
-my_list.insert(0, 1)
-my_list[3] = 4
-# error --- my_list[6] = 10
-my_list # evaluate what this list holds at this point
-```
-
-```{python}
-#| eval: true
-#| echo: true
-my_tuple = (3, 4, 1)
-# error --- my_tupple.append(3)
-my_tuple # evaluate what this tuple holds at this point
-```
-
-```{python}
-#| eval: true
-#| echo: true
-my_dictionary = {3: 4, 1: 2, 5: 4}
-my_dictionary[5] = 10
-my_dictionary # evaluate what this dictionary holds at this point
-```
-
-```{python}
-#| eval: true
-#| echo: true
-# error --- my_dictionary.append(4: 5)
-my_dictionary # evaluate what this dictionary holds at this point
-```
 
 ## Iterating over data structures
 
@@ -267,14 +227,14 @@ for key, value in my_dictionary.items():
 ```
 
 
-## Write a function
+## Submit attendance - part two
 
-1.  Its name is `count_names` that opens in read mode [a file that contains a name per line](data/names.txt), with repeated names
+1.  Its name is `count_names` that opens in read mode [a file that contains a name per line](names.txt), with repeated names
 3.  It counts how many unique names there are in the file
 4.  It returns an **integer** with the count
 5.  Use a **list** for this
 
-Name your file `names.py` and submit to Gradescope.
+Name file `names.py` and submit your attendance - part two.
 
 ```{python}
 #| eval: false
@@ -308,7 +268,7 @@ main()
 ## Write a function
 
 1.  Its name is `count_names`
-2.  It opens in read mode [a file that contains a name per line](data/names.txt), with repeated names
+2.  It opens in read mode [a file that contains a name per line](names.txt), with repeated names
 3.  It counts how many unique names there are in the file
 4.  It returns an **integer** with the count
 5.  Use a **dictionary** for this
@@ -341,9 +301,9 @@ def main():
 main()
 ```
 
-## Can we change size while iterating?
+## Submit attendance - part three
 
-Go to [Python Tutor](https://pythontutor.com/) and visualize the execution. 
+Go to [Python Tutor](https://pythontutor.com/), visualize the execution, and submit your attendance. 
 
 -   Remove values using `for x in list`:
 ```{python}

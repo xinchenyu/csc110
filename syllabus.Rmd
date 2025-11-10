@@ -3,7 +3,6 @@ title: "Syllabus"
 author: "Xinchen Yu (she/her/hers)"
 date: "Fall 2025"
 output:
-  html_document: default
   pdf_document: default
 subtitle: CSc 110 Computer Programming I
 ---
@@ -57,13 +56,15 @@ There will also be many undergraduate TAs. See [TAs and Office Hours](tas.html)!
 
 # Course Format and Teaching Methods
 
-The course will have three required meeting times per-week. The in-class experience will consist of a combination of lecture, programming demonstrations (live coding), and in-class activities. This course will use active learning, peer-teaching, and flipped-classroom teaching techniques.
+- The course will have three required meeting times per-week. The in-class experience will consist of a combination of lecture, programming demonstrations (live coding), and in-class activities. This course will use active learning, peer-teaching, and flipped-classroom teaching techniques.
 
-By active learning, I mean that class time won't be just 50 minutes of me talking. Instead, class meetings will include a number of in-class activities (ICAs) for you to work on individually and/or in a group. Thus, you can spend some time **actively** learning (instead of passively listening to the instructor).
+- Each student must attend a weekly 50-minute discussion session that gives students the opportunity to practice additional problems in a smaller group setting of approximately 35 students.  Guidance will be provided by the TAs. In addition, the students will be able to collaborate with neighboring students. Discussion sections are held in-person as a separate class meeting. Discussion section attendance is mandatory. The discussion section activities/problems will be graded for correctness. 
 
-By peer-teaching, I mean that you will have opportunities to learn from your classmates, and vice-versa. In many of the in-class activities, you will be able to work on groups and help each-other when necessary.
+- By active learning, I mean that class time won't be just 50 minutes of me talking. Instead, class meetings will include a number of in-class activities (ICAs) for you to work on individually and/or in a group. Thus, you can spend some time **actively** learning (instead of passively listening to the instructor).
 
-By flipped-classroom, I mean that you will often be assigned reading or other material to complete before attending each class meeting time. By doing this, you will come to class with (at least some) preparation. This will hopefully result in more class time allocated towards active learning!
+- By peer-teaching, I mean that you will have opportunities to learn from your classmates, and vice-versa. In many of the in-class activities, you will be able to work on groups and help each-other when necessary.
+
+- By flipped-classroom, I mean that you will often be assigned reading or other material to complete before attending each class meeting time. By doing this, you will come to class with (at least some) preparation. This will hopefully result in more class time allocated towards active learning!
 
 # Obtaining Help
 
@@ -152,7 +153,7 @@ The breakdown of grades in this course is as follows:
 -   45% exams
 -   20% weekly quizzes
 -   10% programming problems
--   10% short programming projects
+-   10% short programming projects (Discussion section activities)
 -   15% programming projects
 
 There will be three exams (each 15%) throughout the course (including two midterms and one final exam), for a total of 45%. These exams may cover material from class, the programming assignments, the projects, and the readings. If you score higher on Midterm 2 than on Midterm 1, we will use your Midterm 2 grade for both. However, we will not do the reverse — a higher Midterm 1 grade will not replace a lower Midterm 2 grade. If you would like an exam regraded, we reserve the right to regrade the entire exam, not only the parts you might question.
