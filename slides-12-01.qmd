@@ -156,8 +156,6 @@ main()
 
 It takes an argument, `lists`, which is a 2D list of numbers (floats or integers) and calculates the average of each sublist, and returns the highest average.
 
-Name file `two_d_highest_average.py` and submit to gradescope.
-
 ```{python}
 #| eval: false
 #| echo: true

@@ -178,47 +178,8 @@ def nested_max(lists):
   return max
 
 def main():
-  assert nested_max([[1, 2, 3, 2, 1],
-                     [],
-                     [5, 1]]) == 5
+  assert nested_max([[1, 2, 3, 2, 1], [], [5, 1]]) == 5
 
-main()
-```
-
-## Write a function
-
-It returns the lowest number in all inner lists.
-
-Test cases:
-```{python}
-#| eval: false
-#| echo: true
-assert nested_min([[], []]) == None
-assert nested_min([[1, 2, 3, 2, 1],
-                   [2, 3, 2, 1, 5],
-                   [0, 1]]) == 0
-```
-
-## Write a function -- solution
-
-
-```{python}
-#| eval: true
-#| echo: true
-def nested_min(lists):
-  min = None
-  for i in range(len(lists)):
-    for j in range(len(lists[i])):
-      if min == None or lists[i][j] < min:
-        min = lists[i][j]
-  return min
-
-def main():
-  assert nested_min([[], []]) == None
-  assert nested_min([[1, 2, 3, 2, 1],
-                     [2, 3, 2, 1, 5],
-                     [0, 1]]) == 0
-  print("Passed all tests")
 main()
 ```
 
