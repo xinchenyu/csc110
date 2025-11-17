@@ -131,8 +131,8 @@ Note for the percentages please keep two decimal places. For example, `3/8` in p
 
 Below are some resource files you might find interesting to run your program with.
 
-* [poem.txt](data/poem.txt)
-* [Cat_in_the_Hat.txt](data/Cat_in_the_Hat.txt)
+* [poem.txt](poem.txt)
+* [Cat_in_the_Hat.txt](Cat_in_the_Hat.txt)
 
 If you'd like to try the program on other books, you can visit [gutenberg.org](https://gutenberg.org/).
 
