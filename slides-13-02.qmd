@@ -54,8 +54,32 @@ df-print: kable
 
 -   use curly brackets (`{}`) for creating a set with values
 
+```{python}
+#| eval: true
+#| echo: true
+info = {2, 5, 3, 1}
+```
+
+
+## Iterating a set
+
 -   use `for x in set` to iterate over the elements in a set
 
+```{python}
+#| eval: false
+#| echo: true
+for item in set:
+  print(item)
+```
+
+-   do NOT use `for i in range(len(set))` since `set[i]` would result in error
+
+```{python}
+#| eval: false
+#| echo: true
+for i in range(len(set)):
+  print(set[i]) # ERROR
+```
 
 ## Set methods
 

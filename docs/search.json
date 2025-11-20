@@ -5850,7 +5850,7 @@
     "href": "slides-13-02.html#sets",
     "title": "intro to sets (slides)",
     "section": "Sets",
-    "text": "Sets\n\nstore:\n\ndo NOT store items in the order you created them\nCANNOT use square brackets to retrieve an item\ndo NOT allow repeated items to be stored\n\nuse set() to initiate an empty set\nuse curly brackets ({}) for creating a set with values\nuse for x in set to iterate over the elements in a set",
+    "text": "Sets\n\nstore:\n\ndo NOT store items in the order you created them\nCANNOT use square brackets to retrieve an item\ndo NOT allow repeated items to be stored\n\nuse set() to initiate an empty set\nuse curly brackets ({}) for creating a set with values\n\n\ninfo = {2, 5, 3, 1}",
     "crumbs": [
       "Module 13 - Data Structures (sets)",
       "intro to sets (slides)"
@@ -9390,6 +9390,17 @@
     "crumbs": [
       "Module 13 - Data Structures (sets)",
       "data structures -- review (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-13-02.html#iterating-a-set",
+    "href": "slides-13-02.html#iterating-a-set",
+    "title": "intro to sets (slides)",
+    "section": "Iterating a set",
+    "text": "Iterating a set\n\nuse for x in set to iterate over the elements in a set\n\n\nfor item in set:\n  print(item)\n\n\ndo NOT use for i in range(len(set)) since set[i] would result in error\n\n\nfor i in range(len(set)):\n  print(set[i]) # ERROR",
+    "crumbs": [
+      "Module 13 - Data Structures (sets)",
+      "intro to sets (slides)"
     ]
   }
 ]
