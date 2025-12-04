@@ -6726,7 +6726,7 @@
     "href": "slides-14-02.html#write-a-function",
     "title": "mutating dictionaries (slides)",
     "section": "Write a function",
-    "text": "Write a function\nIt mutates the dictionary, multiplying each value by 0.056 and rounding the result to two decimals\nName file as sales_tax.py and submit to Gradescope\n\ngroceries = {\"banana\": 2.50, \"milk\": 4.25, \"bread\": 3.68}\nsales_tax(groceries)\nassert groceries == {'banana': 0.14, 'milk': 0.24, 'bread': 0.21}",
+    "text": "Write a function\nIt mutates the dictionary, multiplying each value by 0.056 and rounding the result to two decimals\n\ngroceries = {\"banana\": 2.50, \"milk\": 4.25, \"bread\": 3.68}\nsales_tax(groceries)\nassert groceries == {'banana': 0.14, 'milk': 0.24, 'bread': 0.21}",
     "crumbs": [
       "Module 14 - Control Flow with different Data Structures",
       "mutating dictionaries (slides)"
@@ -7287,7 +7287,7 @@
     "href": "slides-14-03.html#announcements",
     "title": "more on lists (slides)",
     "section": "Announcements",
-    "text": "Announcements\n\nFill out SCS at scsonline.ucatt.arizona.edu\nIf 80% of students complete the survey, one of your lowest quizzes grade will be replaced with full points (2.5/2.5 pts)\nReview session next Tuesday at 5pm.\nMidterm 3 next Wednesday, Apr 23.",
+    "text": "Announcements\n\nFill out SCS at scsonline.ucatt.arizona.edu\nIf 80% of students complete the survey, one of your lowest quizzes grade will be replaced with full points (2.5/2.5 pts)",
     "crumbs": [
       "Module 14 - Control Flow with different Data Structures",
       "more on lists (slides)"
