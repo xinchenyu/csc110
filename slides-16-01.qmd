@@ -13,9 +13,8 @@ df-print: kable
 
 Final exam 
 
--   1pm: Monday May 12, **1:00 - 3:00pm**,  **GITT 129B**
 
--   2pm: Friday May 09, **1:00 - 3:00pm**,  **GITT 129B**
+-   Friday Dec 12, **6:00 - 6:00pm**,  **MLNG (Modern Languages) 350**
 
 -   Bring your photo ID
 
@@ -72,36 +71,29 @@ Final exam
 
 ## string: concatenation
 
--   [age_milestones](slides-04-02.html#/write-a-function-1)
+-   [age_milestones](slides-06-01.html?#/age-milestones)
 
--   [four_letter_anagram](slides-05-02.html#/write-a-function)
+-   [remove_vowels_string](slides-08-01.html#/write-two-functions-solution)
 
--   [remove_vowels_string](slides-07-01.html#/write-two-functions)
+-   [write_word_count](slides-10-02.html#/write-two-functions-solution)
 
--   [every_two_together](slides-07-02.html#/write-a-function-2)
-
--   [write_word_count](slides-09-02.html#/write-two-functions)
-
--   [concatenate](slides-10-02.html#/variable-length-parameter-2)
-
--   [censor_consonants](slides-14-01.html#/write-functions-side-by-side-1)
+-   [concatenate](slides-11-02.html#/variable-length-parameter-2)
 
 
 ## string: iteration
 
--   [is_numeric](slides-05-02.html#/write-a-function-1)
+-   [is_numeric](slides-06-02.html#/is_numeric-solution)
 
--   [count_vowels](slides-05-03.html#/write-a-function-1)
+-   [count_vowels](slides-09-01.html#/write-a-function)
 
--   [vowels_only](slides-05-03.html#/write-a-function-4)
+-   [vowels_only](slides-06-03.html#/write-a-function-solution-3)
 
--   [remove_vowels_string](slides-07-01.html#/write-two-functions)
+-   [remove_vowels_string](slides-08-01.html#/write-two-functions)
 
--   [indices_of_vowels](slides-07-01.html#/write-a-function-1)
+-   [indices_of_vowels](slides-08-01.html#/write-a-function)
 
--   [count_chars](slides-08-01.html#/write-a-function-1)
+-   [count_chars](slides-09-01.html#/write-a-function-1)
 
--   [censor_consonants](slides-14-01.html#/write-functions-side-by-side-1)
 
 # Review of lists
 
@@ -119,45 +111,40 @@ Final exam
 
 -   `.extend(list_b)` concatenate with another list
 
--   `list[index_a:index_b]` [list slicing](slides-06-01.html?q=slici#/slicing-lists)
+-   `list[index_a:index_b]` [list slicing](slides-07-01.html#/slicing-lists)
 
 -    2D lists
 
 ## list: iterate with mutation
 
--   [double](slides-06-01.html#/write-a-function-1)
+-   [double](slides-07-01.html#/write-a-function-1)
 
--   [make_even](slides-07-01.html#/write-a-function)
+-   [make_even](slides-08-01.html#/make_even-another-solution)
 
--   [make_all_even](slides-07-02.html#/write-a-function-solution)
+-   [make_all_even](slides-08-02.html#/function-to-convert-all-odd-numbers-to-even)
 
--   [max_list](slides-08-02.html#/write-a-function-4)
+-   [total_mean](slides-14-01.html#/write-a-function-solution)
 
--   [total_mean](slides-13-01.html#/write-a-function)
+-   [remove_names](slides-14-01.html#/write-a-function-solution-1-1)
 
--   [remove_names](slides-13-01.html#/write-a-function-1)
+-   [remove_odds](slides-14-01.html#/write-a-function-2)
 
--   [remove_odds](slides-13-01.html#/write-a-function-2)
-
--   [replace_consonants](slides-14-01.html#/write-functions-side-by-side-1)
 
 ## list: iterate without mutation
 
--   [max_list](slides-06-01.html#/max-of-list-solution)
+-   [max_list](slides-07-01.html#/max-of-list-solution)
 
--   [sum_all](slides-06-01.html?q=sum_all#/write-a-function)
+-   [sum_all](slides-07-01.html?#/write-a-function-solution)
 
--   [every_two_together](slides-07-02.html#/write-a-function-2)
+-   [every_two](slides-08-02.html#/write-a-function-solution-1)
 
--   [every_two](slides-07-02.html#/write-a-function-3)
+-   [count_words](slides-10-02.html#/write-two-functions)
 
--   [count_words](slides-09-01.html#/write-a-function-2)
+-   [descr_stats](slides-11-01.html#/write-a-function)
 
--   [descr_stats](slides-10-01.html#/write-a-function)
+-   [flatten](slides-12-01.html#/write-a-function-solution)
 
--   [flatten](slides-11-01.html#/write-a-function)
-
--   [get_highest_average](slides-11-01.html#/write-a-function-1)
+-   [get_highest_average](slides-12-01.html#/write-a-function-1)
 
 
 # Review of dictionaries
@@ -178,39 +165,48 @@ Final exam
 
 ## mutating a dictionary
 
--   [count_vowels](slides-08-01.html#/write-a-function)
+-   [count_vowels](slides-09-01.html#/write-a-function)
 
--   [sales_tax](slides-13-02.html#/write-a-function)
+-   [sales_tax](slides-14-02.html#/write-a-function)
 
--   [remove_records](slides-13-02.html#/write-a-function-1)
+-   [remove_records](slides-14-02.html#/write-a-function-solution-1)
 
--   [repetition](slides-13-02.html#/write-a-function-2)
+-   [repetition](slides-14-02.html#/write-a-function-solution-2)
 
 
 ## adding to a dictionary
 
--   [count_chars](slides-08-01.html#/write-a-function-1)
+-   [count_chars](slides-09-01.html#/write-a-function-1)
 
--   [count_words](slides-09-01.html#/write-a-function-2)
+-   [count_words](slides-10-02.html#/write-two-functions)
 
--   [count_names](slides-12-01.html#/write-a-function-solution-1)
+-   [count_names](slides-13-01.html#/write-a-function-solution-1)
 
--   [create_dictionary](slides-13-03.html#/write-python-code-solution)
-
+-   [create_dictionary](slides-14-03.html#/write-python-code-solution)
 
 ## iterating a dictionary
 
--   [merge_dictionaries](slides-08-02.html#/write-a-function-3)
+-   [merge_dictionaries](slides-09-02.html#/write-a-function-2)
 
--   [sum_and_multiplication](slides-10-01.html#/write-a-function-1)
+-   [sum_and_multiplication](slides-11-01.html#/write-a-function-1)
 
--   [get_names](slides-13-02.html#/write-a-function-solution-3)
+-   [get_names](slides-14-02.html#/write-a-function-solution-3)
 
--   [repetition](slides-13-02.html#/write-a-function-2)
+-   [repetition](slides-14-02.html#/write-a-function-solution-2)
 
--   [sales_tax](slides-13-02.html#/write-a-function)
+-   [sales_tax](slides-14-02.html#/write-a-function)
 
-# Final exam also includes reading, aggregating or writing to files, and sortings
+# Notes
+
+Final exam also includes: 
+
+-   reading, aggregating or writing to files - you need to write code
+
+-   loop table for iterating a 2D list
+
+-   understand properties of tuple, set (evaluate code)
+
+-   decomposition (check Q3 in mock final exam)
 
 # More practice problems
 
