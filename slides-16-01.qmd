@@ -14,7 +14,7 @@ df-print: kable
 Final exam 
 
 
--   Friday Dec 12, **6:00 - 6:00pm**,  **MLNG (Modern Languages) 350**
+-   Friday Dec 12, **6:00 - 8:00pm**,  **MLNG (Modern Languages) 350**
 
 -   Bring your photo ID
 

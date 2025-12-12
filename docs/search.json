@@ -6418,7 +6418,7 @@
     "href": "slides-16-01.html#announcements",
     "title": "final exam review (slides)",
     "section": "Announcements",
-    "text": "Announcements\nFinal exam\n\nFriday Dec 12, 6:00 - 6:00pm, MLNG (Modern Languages) 350\nBring your photo ID",
+    "text": "Announcements\nFinal exam\n\nFriday Dec 12, 6:00 - 8:00pm, MLNG (Modern Languages) 350\nBring your photo ID",
     "crumbs": [
       "Module 16 - Review",
       "final exam review (slides)"
@@ -6561,7 +6561,7 @@
     "href": "slides-16-01.html#write-a-function---solution",
     "title": "final exam review (slides)",
     "section": "write a function - solution",
-    "text": "write a function - solution\n\ndef create_list(items, n):\n  new_list = [ ]\n  for value in items:\n    new_list.extend([value] * n)\n  return new_list\n\ndef main():\n  items = {\"banana\", \"apple\", \"pear\"}\n  print(create_list(items, 2))  \n  \nmain()\n\n['banana', 'banana', 'apple', 'apple', 'pear', 'pear']",
+    "text": "write a function - solution\n\ndef create_list(items, n):\n  new_list = [ ]\n  for value in items:\n    new_list.extend([value] * n)\n  return new_list\n\ndef main():\n  items = {\"banana\", \"apple\", \"pear\"}\n  print(create_list(items, 2))  \n  \nmain()\n\n['pear', 'pear', 'apple', 'apple', 'banana', 'banana']",
     "crumbs": [
       "Module 16 - Review",
       "final exam review (slides)"
