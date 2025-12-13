@@ -12,9 +12,7 @@ format: revealjs
 
 Exam starts at 6:00pm and ends at 8:00pm
 
-<font color="red">No breaks during the exam.</font>
-
-* Please check the box corresponding to your section: Xinchen’s or Hudson’s. 
+* <font color="red">Check the box corresponding to your section</font> : Xinchen’s or Hudson’s. 
 * You are only allowed to use functions and methods covered in the class materials. 
 * If you have a question, please raise your hand.
 * Raise your hand when you are done, a TA will check your ID. 
