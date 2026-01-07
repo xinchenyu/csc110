@@ -81,19 +81,17 @@ You can also have an `else` clause associated with a `try..except` block. The `e
 
 In the next example, we will also see how to get the exception object so that we can retrieve additional information.
 
-
-## The with statement {#with}
-
-Acquiring a resource in the `try` block and subsequently releasing the resource in the `finally` block is a common pattern. Hence, there is also a `with` statement that enables this to be done in a clean manner:
+Acquiring a resource in the `try` block and subsequently releasing the resource in the `finally` block is a common pattern. In this example, we manually open and close a file using `open` and `close`:
 
 ``` python
-with open("poem.txt") as f:
-    for line in f:
-        print(line, end='')
+f = open("poem.txt", "r")
+for line in f:
+    print(line, end='')
+f.close()
 ```
 
 **How It Works**
 
-We are using here the `open` function with the `with` statement - we leave the closing of the file to be done automatically by `with open`.
+We use the `open` function to open the file for reading. The variable f refers to the file object returned by open. We can iterate over the file line by line using a for loop.
 
-What happens behind the scenes is that there is a protocol used by the `with` statement. It fetches the object returned by the `open` statement, let's call it "thefile" in this case.
+Because we are not using a with statement, the file is not closed automatically. Therefore, it is important to explicitly call `close` after we are done reading the file. This releases the system resource associated with the file and is good programming practice.

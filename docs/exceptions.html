@@ -1033,7 +1033,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#errors" id="toc-errors" class="nav-link" data-scroll-target="#errors">Errors</a></li>
   <li><a href="#exceptions-1" id="toc-exceptions-1" class="nav-link" data-scroll-target="#exceptions-1">Exceptions</a></li>
   <li><a href="#handling-exceptions" id="toc-handling-exceptions" class="nav-link" data-scroll-target="#handling-exceptions">Handling Exceptions</a></li>
-  <li><a href="#with" id="toc-with" class="nav-link" data-scroll-target="#with">The with statement</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1101,16 +1100,14 @@ You entered No exceptions
 <p>If any error or exception is not handled, then the default Python handler is called which just stops the execution of the program and prints an error message. We have already seen this in action above.</p>
 <p>You can also have an <code>else</code> clause associated with a <code>try..except</code> block. The <code>else</code> clause is executed if no exception occurs.</p>
 <p>In the next example, we will also see how to get the exception object so that we can retrieve additional information.</p>
-</section>
-<section id="with" class="level2">
-<h2 class="anchored" data-anchor-id="with">The with statement</h2>
-<p>Acquiring a resource in the <code>try</code> block and subsequently releasing the resource in the <code>finally</code> block is a common pattern. Hence, there is also a <code>with</code> statement that enables this to be done in a clean manner:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"poem.txt"</span>) <span class="im">as</span> f:</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> line <span class="kw">in</span> f:</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(line, end<span class="op">=</span><span class="st">''</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Acquiring a resource in the <code>try</code> block and subsequently releasing the resource in the <code>finally</code> block is a common pattern. In this example, we manually open and close a file using <code>open</code> and <code>close</code>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> <span class="bu">open</span>(<span class="st">"poem.txt"</span>, <span class="st">"r"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> line <span class="kw">in</span> f:</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(line, end<span class="op">=</span><span class="st">''</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>f.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>How It Works</strong></p>
-<p>We are using here the <code>open</code> function with the <code>with</code> statement - we leave the closing of the file to be done automatically by <code>with open</code>.</p>
-<p>What happens behind the scenes is that there is a protocol used by the <code>with</code> statement. It fetches the object returned by the <code>open</code> statement, let’s call it “thefile” in this case.</p>
+<p>We use the <code>open</code> function to open the file for reading. The variable f refers to the file object returned by open. We can iterate over the file line by line using a for loop.</p>
+<p>Because we are not using a with statement, the file is not closed automatically. Therefore, it is important to explicitly call <code>close</code> after we are done reading the file. This releases the system resource associated with the file and is good programming practice.</p>
 
 
 </section>
