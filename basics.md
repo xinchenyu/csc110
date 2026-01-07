@@ -151,17 +151,6 @@ print('Why is {name} playing with that python?'.format(name=name))
 
 which will give the same exact output as the previous program.
 
-Python 3.6 introduced a shorter way to do named parameters, called "f-strings":
-
-``` python
-age = 20
-name = 'Swaroop'
-
-print(f'{name} was {age} years old when he wrote this book')  # notice the 'f' before the string
-print(f'Why is {name} playing with that python?')  # notice the 'f' before the string
-```
-
-which will give the same exact output as the previous program.
 
 What Python does in the `format` method is that it substitutes each argument value into the place of the specification. There can be more detailed specifications such as:
 

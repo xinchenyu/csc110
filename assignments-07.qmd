@@ -41,16 +41,16 @@ Test cases:
 #| echo: true
 def main():
   value = sum_all([])
-  assert value == 0, f"expected return value was 0, but function returned {value}" 
+  assert value == 0, "expected return value was 0, but function returned {}".format(value)
 
   value = sum_all([0, 0, 0, 0, 0])
-  assert value == 0, f"expected return value was 0, but function returned {value}" 
+  assert value == 0, "expected return value was 0, but function returned {}".format(value)
 
   value = sum_all([1, -1, 2, -2, 3, -3])
-  assert value == 0, f"expected return value was 0, but function returned {value}" 
+  assert value == 0, "expected return value was 0, but function returned {}".format(value)
 
   value = sum_all([1, 2, 3, 4, 5])
-  assert value == 15, f"expected return value was 15, but function returned {value}" 
+  assert value == 15, "expected return value was 15, but function returned {}".format(value)
 
   print("All tests passed.")
 
@@ -76,15 +76,15 @@ Test cases:
 def main():
   value = concatenate([])
   assert value == "", \
-      f"expected return value was an empty string, but function returned {value}" 
+      "expected return value was an empty string, but function returned {}".format(value)
 
   value = concatenate(["", "", ""])
   assert value == "  ", \
-      f"expected return value was an \"  \", but function returned {value}" 
+      "expected return value was an \"  \", but function returned {}".format(value)
   
   value = concatenate(["Hi", "there"])
   assert value == "Hi there", \
-      f"expected return value was an \"Hi There\", but function returned {value}" 
+      "expected return value was an \"Hi There\", but function returned {}".format(value)
 
   print("All tests passed.")
 
