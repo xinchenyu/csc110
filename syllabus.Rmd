@@ -1,8 +1,9 @@
 ---
 title: "Syllabus"
 author: "Xinchen Yu (she/her/hers)"
-date: "Fall 2025"
+date: "Spring 2026"
 output:
+  html_document: default
   pdf_document: default
 subtitle: CSc 110 Computer Programming I
 ---
@@ -87,7 +88,7 @@ This successful CSc 110 student will be able to:
 -   Find bugs when code is not working as expected using print statements and computational thinking skills, and will be able to understand and resolve errors.
 -   Write clean, well-structured, and readable code.
 -   Follow a provided style guide to write clean, well-structured, and readable code.
--   Explain the conceptual memory model underlying the data types covered in class, and demonstrate the ability to convert integers and text to and from binary.
+-   Explain the conceptual memory model underlying the data types covered in class.
 
 (These learning outcomes are derived from ones developed by Allison Obourn, Ben Dicken, Adriana Picoral and other faculty at the UA).
 
@@ -107,16 +108,15 @@ Absences pre-approved by the UA Dean of Students (or dean's designee) will be ho
 
 ## Administrative Drops
 
-Every semester, students enroll in introductory CS classes but do not submit any work, resulting in a grade of `E` at the end of the term. To prevent this, at the end of the **second week** (Sep 5), all students who have not submitted/completed **three or more** of the following will be administratively dropped:
+Every semester, students enroll in introductory CS classes but do not submit any work, resulting in a grade of `E` at the end of the term. To prevent this, at the end of the **second week** (Jan 23), all students who have not submitted/completed **three or more** of the following will be administratively dropped:
 
-1.  Aug 26 quiz
-2.  Class presence on Aug 28
-3.  Sep 2 quiz
-4.  Class presence on Sep 4
-5.  [Module 1 Programming Problem 1](assignments-01.html)
-6.  [Module 1 Programming Problem 2](assignments-01.html)
+1.  Jan 15 quiz
+2.  Class presence on Jan 20
+3.  Jan 22 quiz
+4.  [Module 1 Programming Problem 1](assignments-01.html)
+5.  [Module 1 Programming Problem 2](assignments-01.html)
 
-Nov 2 is the last day instructors may administratively drop students. Check more important dates [here](https://registrar.arizona.edu/dates-and-deadlines).
+Mar 31 is the last day instructors may administratively drop students. Check more important dates [here](https://registrar.arizona.edu/dates-and-deadlines).
 
 ## Illnesses and Emergencies
 
@@ -134,17 +134,17 @@ If you register after the first class meeting you may make up missed assignments
 
 # Course Communications
 
-All online communication will be conducted through my official UA e-mail address (xinchenyu\@arizona.edu), D2L, and Piazza. Ask questions on [Piazza](https://piazza.com/arizona/fall2025/csc110/home) when you have questions about assignments, quizzes, and exams (has private options). Email the instructor only when you have logistics-related questions.
+All online communication will be conducted through my official UA e-mail address (xinchenyu\@arizona.edu), D2L, and Piazza. Ask questions on [Piazza](https://piazza.com/arizona/spring2026/csc110002) when you have questions about assignments, quizzes, and exams (has private options). Email the instructor only when you have logistics-related questions.
 
 
 # Required Texts or Readings
 
 All readings, videos, and assignment instructions will be available in the course website.
 
--   Course D2L: <https://d2l.arizona.edu/d2l/home/1616799>
--   Course Gradescope: <https://www.gradescope.com/courses/1044596>
+-   Course D2L: <https://d2l.arizona.edu/d2l/home/1720122>
+-   Course Gradescope: <https://www.gradescope.com/courses/1213866>
 -   Course website: <https://xinchenyu.github.io/csc110/>
--   Piazza: <https://piazza.com/arizona/fall2025/csc110/home> (Access code: wildcats)
+-   Piazza: <https://piazza.com/arizona/spring2026/csc110002> (Access code: wildcats)
 
 # Assignments and Examinations: Schedule/Due Dates
 
@@ -160,12 +160,12 @@ There will be three exams (each 15%) throughout the course (including two midter
 
 The midterm exams will be on:
 
--   Midterm Exam 1 - `r schedule %>% filter(exam == "Midterm 1" & term == "fall 2025") %>% pull(formatted_date)`
--   Midterm Exam 2 - `r schedule %>% filter(exam == "Midterm 2" & term == "fall 2025") %>% pull(formatted_date)`
+-   Midterm Exam 1 - `r schedule %>% filter(exam == "Midterm 1" & term == "spring 2026") %>% pull(formatted_date)`
+-   Midterm Exam 2 - `r schedule %>% filter(exam == "Midterm 2" & term == "spring 2026") %>% pull(formatted_date)`
 
 You must keep theses dates available. Do not schedule any flights, travel plans, or other conflicts with these exams.
 
-Weekly quizzes will be held every Tuesday (unless otherwise noted). There will be a total of 12 quizzes. Make-up quizzes will not be offered, however, your 2 lowest quiz scores will be dropped when calculating your final grade. 
+Weekly quizzes will usually be held every Tuesday (unless otherwise noted). There will be a total of 12 quizzes. Make-up quizzes will not be offered, however, your 2 lowest quiz scores will be dropped when calculating your final grade. 
 
 ::: {.callout-important}
 ## What counts as advanced code
@@ -173,6 +173,8 @@ Weekly quizzes will be held every Tuesday (unless otherwise noted). There will b
 Students must complete programming projects using only the concepts and materials covered in class or assigned readings. Using external or advanced code beyond this scope is not permitted unless explicitly approved by the instructor or teaching assistants.
 
 Both an autograder and manual review will be used to detect unauthorized advanced content. Deductions will be applied accordingly. In cases where these deductions result in a negative score, the project grade will be adjusted to zero. Otherwise, your Gradescope score will be your final grade.
+
+Please note that you should wait for the autograder to display your score, as only the points reported by the autograder will be used as your grade.
 :::
 
 ## Late Work
@@ -183,7 +185,7 @@ For programming problems, short projects and long projects, late work is NOT acc
 
 Up to 1 point of extra credit will be awarded to students who come to office hours in person. Check our office hours schedule on the website [TAs and Office Hours](tas.html) and ask the TA or instructor to submit your points to gradescope. 
 
-You are required to ask a question and/or work on an assignment or practice problem with the TA or instructor to receive 0.5 points for each office hour attendance. It is your responsibility to ensure the TA or instructor enter your 0.5 points on gradescope during the session. Instructors will not award you these points at a later date, do not email instructors about getting points at a later date (for example, if you forget to ask the TA to enter your office hour points on gradescope). 
+You are required to ask a question and/or work on an assignment or practice problem with the TA or instructor to receive 0.5 points for each office hour attendance. It is your responsibility to ensure the TA or instructor enter your 0.5 points on gradescope during the session. Instructors will not award you these points at a later date, do not email instructors about getting points at a later date (for example, if you forget to ask the TA to enter your office hour points on Gradescope). 
 
 Your first TA office visit should take place before the Midterm 1 date, and the second visit should take place before the Midterm 2 date.
 
@@ -191,7 +193,7 @@ Your first TA office visit should take place before the Midterm 1 date, and the 
 
 The final exam is worth 15%.
 
-The final exam date, time and room is: `r schedule %>% filter(exam == "Final Exam" & term == "fall 2025") %>% pull(formatted_date)` -- `r schedule %>% filter(exam == "Final Exam" & term == "fall 2025") %>% pull(time)` in [MLNG 350](https://classrooms.registrar.arizona.edu/67/350).
+The final exam date, time and room is: `r schedule %>% filter(exam == "Final Exam" & term == "spring 2026") %>% pull(formatted_date)` -- `r schedule %>% filter(exam == "Final Exam" & term == "spring 2026") %>% pull(time)`.
 
 You must keep this time available. Do not schedule any flights, travel plans, or other conflicts with this exam.
 
@@ -230,7 +232,7 @@ List topics in logical units in a weekly/daily schedule, including assignment du
 
 ```{r}
 schedule %>% 
-  filter(term == "fall 2025") %>% 
+  filter(term == "spring 2026") %>% 
   select(week_number, formatted_start, module, topic) %>% 
   kable(col.names = c("Week", "Start Date", "Module", "Topic"))
 ```
@@ -241,7 +243,7 @@ We won't have classes due to university-wide holidays on the following dates:
 
 ```{r}
 schedule %>% 
-  filter(!is.na(holiday) & term == "fall 2025") %>% 
+  filter(!is.na(holiday) & term == "spring 2026") %>% 
   select(week_number, formatted_date, holiday) %>% 
   kable(col.names = c("Week", "Date", "Holiday"))
 ```

@@ -326,3 +326,13 @@ Should output:
  0[ ][1][0][ ][ ]
    a  b  c  d  e  
 </pre>
+
+::: {.callout-important}
+# What counts as advanced code
+
+Students must complete programming projects using only the concepts and materials covered in class or assigned readings. Using external or advanced code beyond this scope is not permitted unless explicitly approved by the instructor or teaching assistants.
+
+Both an autograder and manual review will be used to detect unauthorized advanced content. Deductions will be applied accordingly. In cases where these deductions result in a negative score, the project grade will be adjusted to zero. Otherwise, your Gradescope score will be your final grade.
+
+Please note that you should wait for the autograder to display your score, as only the points reported by the autograder will be used as your grade.
+:::
