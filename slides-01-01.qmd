@@ -9,6 +9,12 @@ slide-number: true
 
 # CSc 110 Computer Programming I -- Course Intro
 
+# Let’s Get Seated
+
+This course includes frequent collaborative activities.
+Please choose seats at the center tables and leave tables along the walls empty. 
+When possible, sit with others rather than alone.
+
 ## **Welcome to CSc 110**
 
 -   This is CSc 110, Introduction to Computer Programming I
@@ -27,7 +33,7 @@ The TAs are responsible for:
 
 -   Helping you on office hours
 -   Grading assignments, quizzes, and exams
--   Giving you feedback on grading 
+-   Giving you feedback on grading or your solutions
 
 . . . So get to know them!
 
@@ -79,9 +85,9 @@ A willingness to:
 
 ## What do you need to succeed in this class?
 
--   Access to a computer with internet (you can get one from the library)
--   Install Python and an IDE/editor (Visual Studio Code is recommended)
--   Do the readings, watch the videos, come to class, come to lab sessions, come to office hours, do the assignments yourself 
+-   Access to a computer with internet (you can get one from the library). Install Python and an IDE/editor (Visual Studio Code is recommended)
+-   Do the readings, come to class (twice a week), lab sessions (once a week), and office hours
+-   Do the assignments yourself 
 
 
 ## How is the structure of this class designed to help you succeed?
@@ -99,7 +105,7 @@ A willingness to:
 
 -   Projects
 
--   Weekly Quizzes on Tuesday (on paper)
+-   Weekly Quizzes (on paper)
 
 -   Midterms and Final Exam (on paper)
 
@@ -114,7 +120,7 @@ Exams are on paper. Why?
 
 Course website: [xinchenyu.github.io/csc110](https://xinchenyu.github.io/csc110/)
 
-Access gradescope, discuss with your group members and work on quiz 01. Answers can be found at:
+Access [gradescope](https://www.gradescope.com/courses/1213866), discuss with your group members and work on quiz 01. Answers can be found at:
 
 -   Syllabus
 -   TAs and Office Hours
@@ -122,8 +128,8 @@ Access gradescope, discuss with your group members and work on quiz 01. Answers 
 
 ## Other Important Dates
 
--   Last day for students to add themselves to a course using UAccess is Sep 1
--   Last day for students to drop without a grade of W (withdraw) is Sep 21
+-   Last day for students to add themselves to a course using UAccess is Jan 21
+-   Last day for students to drop without a grade of W (withdraw) is Jan 27
 
 ## Academic integrity
 
@@ -170,8 +176,8 @@ Come to office hours but come prepared!
 
 -   Come to office hours!
     -   1 point of extra credit if you show up to office hours (read the syllabus for specifics on this)
--   Join [Piazza](https://piazza.com/class/max71mnllwh238) 
-    -   ask on Piazza: questions about assignments, quizzes, and exams (has private options)
+-   Ask on [Piazza](https://piazza.com/class/mk3c0x143v2wf) 
+    -   ask on Piazza: questions about in-class activities, assignments, quizzes, and exams (has private options)
     -   email me: only logistics-related questions
 
 # Creating a Supportive Classroom

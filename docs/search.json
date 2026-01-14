@@ -5391,7 +5391,7 @@
     "href": "slides-01-01.html#who-are-the-teaching-assistants-tas",
     "title": "course introduction (slides)",
     "section": "Who are the teaching assistants? (TAs)",
-    "text": "Who are the teaching assistants? (TAs)\nThe TAs are responsible for:\n\nHelping you on office hours\nGrading assignments, quizzes, and exams\nGiving you feedback on grading\n\n. . . So get to know them!",
+    "text": "Who are the teaching assistants? (TAs)\nThe TAs are responsible for:\n\nHelping you on office hours\nGrading assignments, quizzes, and exams\nGiving you feedback on grading or your solutions\n\n. . . So get to know them!",
     "crumbs": [
       "Module 1 - Basics",
       "course introduction (slides)"
@@ -5446,7 +5446,7 @@
     "href": "slides-01-01.html#what-do-you-need-to-succeed-in-this-class-1",
     "title": "course introduction (slides)",
     "section": "What do you need to succeed in this class?",
-    "text": "What do you need to succeed in this class?\n\nAccess to a computer with internet (you can get one from the library)\nInstall Python and an IDE/editor (Visual Studio Code is recommended)\nDo the readings, watch the videos, come to class, come to lab sessions, come to office hours, do the assignments yourself",
+    "text": "What do you need to succeed in this class?\n\nAccess to a computer with internet (you can get one from the library). Install Python and an IDE/editor (Visual Studio Code is recommended)\nDo the readings, come to class (twice a week), lab sessions (once a week), and office hours\nDo the assignments yourself",
     "crumbs": [
       "Module 1 - Basics",
       "course introduction (slides)"
@@ -5468,7 +5468,7 @@
     "href": "slides-01-01.html#assessment-structure",
     "title": "course introduction (slides)",
     "section": "Assessment structure",
-    "text": "Assessment structure\n\nProgramming Problems\nShort Projects (to be completed in the lab sessions)\nProjects\nWeekly Quizzes on Tuesday (on paper)\nMidterms and Final Exam (on paper)",
+    "text": "Assessment structure\n\nProgramming Problems\nShort Projects (to be completed in the lab sessions)\nProjects\nWeekly Quizzes (on paper)\nMidterms and Final Exam (on paper)",
     "crumbs": [
       "Module 1 - Basics",
       "course introduction (slides)"
@@ -5501,7 +5501,7 @@
     "href": "slides-01-01.html#other-important-dates",
     "title": "course introduction (slides)",
     "section": "Other Important Dates",
-    "text": "Other Important Dates\n\nLast day for students to add themselves to a course using UAccess is Sep 1\nLast day for students to drop without a grade of W (withdraw) is Sep 21",
+    "text": "Other Important Dates\n\nLast day for students to add themselves to a course using UAccess is Jan 21\nLast day for students to drop without a grade of W (withdraw) is Jan 27",
     "crumbs": [
       "Module 1 - Basics",
       "course introduction (slides)"
@@ -5567,7 +5567,7 @@
     "href": "slides-01-01.html#how-to-get-help-3",
     "title": "course introduction (slides)",
     "section": "How to get help?",
-    "text": "How to get help?\n\nCome to office hours!\n\n1 point of extra credit if you show up to office hours (read the syllabus for specifics on this)\n\nJoin Piazza\n\nask on Piazza: questions about assignments, quizzes, and exams (has private options)\nemail me: only logistics-related questions",
+    "text": "How to get help?\n\nCome to office hours!\n\n1 point of extra credit if you show up to office hours (read the syllabus for specifics on this)\n\nAsk on Piazza\n\nask on Piazza: questions about in-class activities, assignments, quizzes, and exams (has private options)\nemail me: only logistics-related questions",
     "crumbs": [
       "Module 1 - Basics",
       "course introduction (slides)"
@@ -8779,6 +8779,17 @@
     "crumbs": [
       "Module 1 - Basics",
       "Module 1 Assignments"
+    ]
+  },
+  {
+    "objectID": "slides-01-01.html#this-course-includes-frequent-collaborative-activities.-please-choose-seats-at-the-center-tables-sit-with-others-and-leave-seats-along-the-walls-empty.",
+    "href": "slides-01-01.html#this-course-includes-frequent-collaborative-activities.-please-choose-seats-at-the-center-tables-sit-with-others-and-leave-seats-along-the-walls-empty.",
+    "title": "course introduction (slides)",
+    "section": "This course includes frequent collaborative activities. Please choose seats at the center tables, sit with others, and leave seats along the walls empty.",
+    "text": "This course includes frequent collaborative activities. Please choose seats at the center tables, sit with others, and leave seats along the walls empty.",
+    "crumbs": [
+      "Module 1 - Basics",
+      "course introduction (slides)"
     ]
   }
 ]
