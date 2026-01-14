@@ -13,7 +13,7 @@ READ THE INFORMATION BELOW, IT'S **VERY** IMPORTANT.
 
 -   Do **not** direct message (DM) TAs.
 
--   Do **not** share code solutions. You are free to share error messages, but not code. TAs and instructors can access your submission on gradescope.
+-   Do **not** share code solutions except questions on in-class activities. You are free to share error messages, but not code. TAs and instructors can access your submission on gradescope.
 
 -   It is expected that everyone will participate in the online discussion in a mature and respectful manner. Do not demean or embarrass others. Do not make sexist, racist, xenophobic, homophobic, transphobic, or victim-blaming comments. Immature, aggressive, or disrespectful behavior will not be tolerated. If you see anyone breaking this rule, report that person to me (xinchenyu\@arizona.edu)
 
