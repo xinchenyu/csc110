@@ -261,7 +261,7 @@
 <li><p>use <code>set()</code> to initiate an empty set</p></li>
 <li><p>use curly brackets (<code>{}</code>) for creating a set with values</p></li>
 </ul>
-<div id="7d3b1e5f" class="cell" data-execution_count="1">
+<div id="85ffc1d4" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>info <span class="op">=</span> {<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">1</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -270,14 +270,14 @@
 <ul>
 <li>use <code>for x in set</code> to iterate over the elements in a set</li>
 </ul>
-<div id="ae29ea5d" class="cell" data-execution_count="2">
+<div id="24161b48" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a><span class="cf">for</span> item <span class="kw">in</span> <span class="bu">set</span>:</span>
 <span id="cb2-2"><a></a>  <span class="bu">print</span>(item)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>do NOT use <code>for i in range(len(set))</code> since <code>set[i]</code> would result in error</li>
 </ul>
-<div id="4768e0f0" class="cell" data-execution_count="3">
+<div id="c4d5cd7b" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(<span class="bu">set</span>)):</span>
 <span id="cb3-2"><a></a>  <span class="bu">print</span>(<span class="bu">set</span>[i]) <span class="co"># ERROR</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -295,7 +295,7 @@
 <ul>
 <li><code>set()</code> to convert a list/tuple into a set</li>
 </ul>
-<div id="176432c8" class="cell" data-execution_count="4">
+<div id="5d1ae89f" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="bu">print</span>(<span class="bu">set</span>([<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>]), <span class="bu">set</span>((<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{1, 2, 3} {1, 2, 3}</code></pre>
@@ -304,7 +304,7 @@
 <ul>
 <li><code>list()</code> to convert a set/tuple into a list</li>
 </ul>
-<div id="efd460e3" class="cell" data-execution_count="5">
+<div id="21faac9b" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="bu">print</span>(<span class="bu">list</span>({<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>}), <span class="bu">list</span>((<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1, 2, 3] [3, 2, 2, 1]</code></pre>
@@ -313,7 +313,7 @@
 <ul>
 <li><code>tuple()</code> to convert a list/set into a tuple</li>
 </ul>
-<div id="029cb076" class="cell" data-execution_count="6">
+<div id="9a09a232" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="bu">print</span>(<span class="bu">tuple</span>({<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>}), <span class="bu">tuple</span>([<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>(1, 2, 3) (3, 2, 2, 1)</code></pre>
@@ -322,7 +322,7 @@
 </section>
 <section id="evaluate-the-code" class="slide level2">
 <h2>Evaluate the code</h2>
-<div id="f61c179f" class="cell" data-execution_count="7">
+<div id="b8a2254f" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>numbers_list <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">1</span>]</span>
 <span id="cb10-2"><a></a>numbers_list <span class="co"># evaluate this line</span></span>
 <span id="cb10-3"><a></a></span>
@@ -343,21 +343,21 @@
 </section>
 <section id="evaluate-the-code-1" class="slide level2">
 <h2>Evaluate the code</h2>
-<div id="c1ac64cd" class="cell" data-execution_count="8">
+<div id="f3f52179" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>numbers_list <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">1</span>]</span>
 <span id="cb11-2"><a></a>numbers_list <span class="co"># evaluate this line</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>[2, 1, 2, 1, 3, 4, 1]</code></pre>
 </div>
 </div>
-<div id="056fd576" class="cell" data-execution_count="9">
+<div id="13fd485a" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>numbers_set <span class="op">=</span> <span class="bu">set</span>(numbers_list)</span>
 <span id="cb13-2"><a></a>numbers_set <span class="co"># evaluate this line</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>{1, 2, 3, 4}</code></pre>
 </div>
 </div>
-<div id="e2302db8" class="cell" data-execution_count="10">
+<div id="6c69f4ac" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a>numbers_set.add(<span class="dv">1</span>)</span>
 <span id="cb15-2"><a></a>numbers_set.add(<span class="dv">2</span>)</span>
 <span id="cb15-3"><a></a>numbers_set <span class="co"># evaluate this line</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -365,14 +365,14 @@
 <pre><code>{1, 2, 3, 4}</code></pre>
 </div>
 </div>
-<div id="7d17841e" class="cell" data-execution_count="11">
+<div id="2737b1fe" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>numbers_set.add(<span class="dv">5</span>)</span>
 <span id="cb17-2"><a></a>numbers_set <span class="co"># evaluate this line</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>{1, 2, 3, 4, 5}</code></pre>
 </div>
 </div>
-<div id="a6301a84" class="cell" data-execution_count="12">
+<div id="869e96c1" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a>numbers_set.discard(<span class="dv">6</span>)</span>
 <span id="cb19-2"><a></a>numbers_set.discard(<span class="dv">1</span>)</span>
 <span id="cb19-3"><a></a>numbers_set <span class="co"># evaluate this line</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -390,13 +390,13 @@
 <li>It returns an <strong>integer</strong> with the count</li>
 <li>Use a <strong>set</strong> for this</li>
 </ol>
-<div id="fbacc2b5" class="cell" data-execution_count="13">
+<div id="553c2e6f" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a><span class="cf">assert</span> count_names(<span class="st">"names.txt"</span>) <span class="op">==</span> <span class="dv">11</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="write-a-function-solution" class="slide level2">
 <h2>Write a function – solution</h2>
-<div id="6fc4c3e8" class="cell" data-execution_count="14">
+<div id="9ab4af27" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a><span class="kw">def</span> count_names(file_name):</span>
 <span id="cb22-2"><a></a>  f <span class="op">=</span> <span class="bu">open</span>(file_name, <span class="st">"r"</span>)</span>
 <span id="cb22-3"><a></a>  name_set <span class="op">=</span> <span class="bu">set</span>()</span>
@@ -420,14 +420,14 @@
 <li>It takes a variable number of arguments: <code>*values</code></li>
 <li>It returns <code>True</code> if there are repeated elements in <code>values</code>, <code>False</code> otherwise</li>
 </ol>
-<div id="a2136664" class="cell" data-execution_count="15">
+<div id="8a31d533" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a><span class="cf">assert</span> has_duplicates(<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>) <span class="op">==</span> <span class="va">True</span></span>
 <span id="cb23-2"><a></a><span class="cf">assert</span> has_duplicates(<span class="dv">3</span>, <span class="dv">20</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">13</span>) <span class="op">==</span> <span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="write-a-function-solution-1" class="slide level2">
 <h2>Write a function – solution 1</h2>
-<div id="61524bb1" class="cell" data-execution_count="16">
+<div id="7476dae6" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a><span class="kw">def</span> has_duplicates(<span class="op">*</span>values):</span>
 <span id="cb24-2"><a></a>  values_set <span class="op">=</span> <span class="bu">set</span>(values)</span>
 <span id="cb24-3"><a></a>  <span class="cf">return</span> <span class="bu">len</span>(values) <span class="op">&gt;</span> <span class="bu">len</span>(values_set)</span>
@@ -441,7 +441,7 @@
 </section>
 <section id="write-a-function-solution-2" class="slide level2">
 <h2>Write a function – solution 2</h2>
-<div id="d9a7fdb8" class="cell" data-execution_count="17">
+<div id="ac2cf6a5" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a><span class="kw">def</span> has_duplicates(<span class="op">*</span>values):</span>
 <span id="cb25-2"><a></a>  unique_values <span class="op">=</span> <span class="bu">set</span>()</span>
 <span id="cb25-3"><a></a>  <span class="cf">for</span> v <span class="kw">in</span> values:</span>

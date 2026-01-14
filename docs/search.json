@@ -817,18 +817,7 @@
     "href": "slides-02-01.html#round-1",
     "title": "operations (slides)",
     "section": "round()",
-    "text": "round()\n\nRun the following code on your laptop\nDiscuss with your partner how the output is calculated\n\n\nprint(round(51.6))\nprint(round(51.4))\nprint(round(51.5))\nprint(round(50.5))",
-    "crumbs": [
-      "Module 2 - Functions, Operators, and Expressions",
-      "operations (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-02-01.html#round-2",
-    "href": "slides-02-01.html#round-2",
-    "title": "operations (slides)",
-    "section": "round()",
-    "text": "round()\nUse the round() function to get a floating-point number rounded to the specified number of decimals.\nSyntax:\n\nround(number, ndigits*)\n\nRounding is done toward the nearest even choice:\n\nprint(round(51.6))\nprint(round(51.4))\nprint(round(51.5))\nprint(round(50.5))\n\n52\n51\n52\n50",
+    "text": "round()\nIf we do not specify ndigits, rounding is done toward the nearest even choice:\n\nprint(round(51.6))\nprint(round(51.4))\nprint(round(51.5))\nprint(round(50.5))\n\n52\n51\n52\n50",
     "crumbs": [
       "Module 2 - Functions, Operators, and Expressions",
       "operations (slides)"
@@ -873,17 +862,6 @@
     "title": "operations (slides)",
     "section": "Questions",
     "text": "Questions\n\nWhat if we want to get the area of circles when the radius is 1, 2, 3, 4 and 5?\nCan we do it more efficiently?",
-    "crumbs": [
-      "Module 2 - Functions, Operators, and Expressions",
-      "operations (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-02-01.html#quiz-02",
-    "href": "slides-02-01.html#quiz-02",
-    "title": "operations (slides)",
-    "section": "Quiz 02",
-    "text": "Quiz 02\n\n\ncurrent time\n\n\n\n\n\n\nYou have 10 minutes to complete the quiz.",
     "crumbs": [
       "Module 2 - Functions, Operators, and Expressions",
       "operations (slides)"
@@ -2723,7 +2701,7 @@
     "href": "project-4.html",
     "title": "Programming Project 4",
     "section": "",
-    "text": "Programming Projects are to be submitted to gradescope\nDue date: Friday, February 20, 2026 at 9pm\nThis programming project is an adaptation of Ben Dicken’s Where’s the Money Programming Assignment.\nDo not import any modules for this assignment. Do not use built-in functions like max() (you have to write your own). You can use the built-in functions we covered in class: print(), round(), input(), len(), int(), float(), str() in addition to format().",
+    "text": "Programming Projects are to be submitted to gradescope.\nDue date: Friday, February 20, 2026 at 9pm\nThis programming project is an adaptation of Ben Dicken’s Where’s the Money Programming Assignment.\nDo not import any modules for this assignment. Do not use built-in functions like max() (you have to write your own). You can use the built-in functions we covered in class: print(), round(), input(), len(), int(), float(), str() in addition to format().",
     "crumbs": [
       "Programming Projects",
       "Programming Project 4"
@@ -2972,7 +2950,7 @@
     "href": "slides-07-02.html#random-module",
     "title": "random (slides)",
     "section": "random module",
-    "text": "random module\nWe need to import the module random\nWhat do the functions .random() and .randint() return?\n\nimport random\n\nn = random.random() #returns a random float between 0 and 1\nprint(n)\n\nn = random.randint(0, 9) #returns a random integer betweem 0 and 9.\n\n\nprint(n)\n\n0.2803028974058872\n6",
+    "text": "random module\nWe need to import the module random\nWhat do the functions .random() and .randint() return?\n\nimport random\n\nn = random.random() #returns a random float between 0 and 1\nprint(n)\n\nn = random.randint(0, 9) #returns a random integer betweem 0 and 9.\n\n\nprint(n)\n\n0.24695309117255293\n3",
     "crumbs": [
       "Module 7 - Data Structures (lists)",
       "random (slides)"
@@ -2983,7 +2961,7 @@
     "href": "slides-07-02.html#read-the-function",
     "title": "random (slides)",
     "section": "Read the function",
-    "text": "Read the function\nWhat does the function do?\n\nimport random\n\ndef pick_winner(names):\n  index = random.randint(0, len(names) - 1)\n  return names[index]\n\nif __name__ == \"__main__\":\n  winner = pick_winner([\"Peter\", \"Joan\", \"Mary\", \"June\"])\n  print(winner)\n\nPeter",
+    "text": "Read the function\nWhat does the function do?\n\nimport random\n\ndef pick_winner(names):\n  index = random.randint(0, len(names) - 1)\n  return names[index]\n\nif __name__ == \"__main__\":\n  winner = pick_winner([\"Peter\", \"Joan\", \"Mary\", \"June\"])\n  print(winner)\n\nMary",
     "crumbs": [
       "Module 7 - Data Structures (lists)",
       "random (slides)"
@@ -3985,17 +3963,6 @@
     "title": "Exceptions",
     "section": "",
     "text": "We can handle exceptions using the try..except statement. We basically put our usual statements within the try-block and put all our error handlers in the except-block.\nExample (save as exceptions_handle.py):\nExample:\ntry:\n    text = input('Enter something --&gt; ')\nexcept EOFError:\n    print('Why did you do an EOF on me?')\nexcept KeyboardInterrupt:\n    print('You cancelled the operation.')\nelse:\n    print('You entered', text)\nOutput:\n\n# Press ctrl + d\n$ python exceptions_handle.py\nEnter something --&gt; Why did you do an EOF on me?\n\n# Press ctrl + c\n$ python exceptions_handle.py\nEnter something --&gt; ^CYou cancelled the operation.\n\n$ python exceptions_handle.py\nEnter something --&gt; No exceptions\nYou entered No exceptions\n\nHow It Works\nWe put all the statements that might raise exceptions/errors inside the try block and then put handlers for the appropriate errors/exceptions in the except clause/block. The except clause can handle a single specified error or exception, or a parenthesized list of errors/exceptions. If no names of errors or exceptions are supplied, it will handle all errors and exceptions.\nNote that there has to be at least one except clause associated with every try clause. Otherwise, what’s the point of having a try block?\nIf any error or exception is not handled, then the default Python handler is called which just stops the execution of the program and prints an error message. We have already seen this in action above.\nYou can also have an else clause associated with a try..except block. The else clause is executed if no exception occurs.\nIn the next example, we will also see how to get the exception object so that we can retrieve additional information.\nAcquiring a resource in the try block and subsequently releasing the resource in the finally block is a common pattern. In this example, we manually open and close a file using open and close:\nf = open(\"poem.txt\", \"r\")\nfor line in f:\n    print(line, end='')\nf.close()\nHow It Works\nWe use the open function to open the file for reading. The variable f refers to the file object returned by open. We can iterate over the file line by line using a for loop.\nBecause we are not using a with statement, the file is not closed automatically. Therefore, it is important to explicitly call close after we are done reading the file. This releases the system resource associated with the file and is good programming practice.",
-    "crumbs": [
-      "Module 15 - Handling Exceptions",
-      "Exceptions"
-    ]
-  },
-  {
-    "objectID": "exceptions.html#with",
-    "href": "exceptions.html#with",
-    "title": "Exceptions",
-    "section": "",
-    "text": "Acquiring a resource in the try block and subsequently releasing the resource in the finally block is a common pattern. Hence, there is also a with statement that enables this to be done in a clean manner:\nwith open(\"poem.txt\") as f:\n    for line in f:\n        print(line, end='')\nHow It Works\nWe are using here the open function with the with statement - we leave the closing of the file to be done automatically by with open.\nWhat happens behind the scenes is that there is a protocol used by the with statement. It fetches the object returned by the open statement, let’s call it “thefile” in this case.",
     "crumbs": [
       "Module 15 - Handling Exceptions",
       "Exceptions"
@@ -6311,7 +6278,7 @@
     "href": "slides-16-01.html#write-a-function---solution",
     "title": "final exam review (slides)",
     "section": "write a function - solution",
-    "text": "write a function - solution\n\ndef create_list(items, n):\n  new_list = [ ]\n  for value in items:\n    new_list.extend([value] * n)\n  return new_list\n\ndef main():\n  items = {\"banana\", \"apple\", \"pear\"}\n  print(create_list(items, 2))  \n  \nmain()\n\n['apple', 'apple', 'banana', 'banana', 'pear', 'pear']",
+    "text": "write a function - solution\n\ndef create_list(items, n):\n  new_list = [ ]\n  for value in items:\n    new_list.extend([value] * n)\n  return new_list\n\ndef main():\n  items = {\"banana\", \"apple\", \"pear\"}\n  print(create_list(items, 2))  \n  \nmain()\n\n['banana', 'banana', 'apple', 'apple', 'pear', 'pear']",
     "crumbs": [
       "Module 16 - Review",
       "final exam review (slides)"
@@ -7375,22 +7342,11 @@
     ]
   },
   {
-    "objectID": "slides-02-02.html#another-example",
-    "href": "slides-02-02.html#another-example",
+    "objectID": "slides-02-02.html#example-of-a-simple-function-1",
+    "href": "slides-02-02.html#example-of-a-simple-function-1",
     "title": "functions (slides)",
-    "section": "Another example",
-    "text": "Another example\n\ndef cook_food(order):\n  message = \"Your \" + order + \" is ready!\"\n  return message\n\nmeal = cook_food(\"pasta\")\nprint(meal)\nmeal = cook_food(\"burger\")\nprint(meal)\n\nYour pasta is ready!\nYour burger is ready!\n\n\n\nThe function cook_food prepares a meal.\nThen returns a string that says the meal is ready.\nThe returned message is stored in the meal variable.\nFinally, print function displays that message to the caller.",
-    "crumbs": [
-      "Module 2 - Functions, Operators, and Expressions",
-      "functions (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-02-02.html#another-example-1",
-    "href": "slides-02-02.html#another-example-1",
-    "title": "functions (slides)",
-    "section": "Another example",
-    "text": "Another example\n\ndef cook_food(order):\n  message = \"Your \" + order + \" is ready!\"\n  return message\n\ndef main():\n  meal = cook_food(\"pasta\")\n  print(meal)\n  meal = cook_food(\"burger\")\n  print(meal)\n  \nmain()\n\nYour pasta is ready!\nYour burger is ready!",
+    "section": "Example of a simple function",
+    "text": "Example of a simple function\n\ndef cook_food(order):\n  message = \"Your \" + order + \" is ready!\"\n  return message\n\ndef main():\n  meal = cook_food(\"pasta\")\n  print(meal)\n  meal = cook_food(\"burger\")\n  print(meal)\n  \nmain()\n\nYour pasta is ready!\nYour burger is ready!\n\n\n\nThe function cook_food prepares a meal and returns a string that says the meal is ready.\nThe returned message is stored in the meal variable.\nFinally, print function displays that message to the caller.",
     "crumbs": [
       "Module 2 - Functions, Operators, and Expressions",
       "functions (slides)"
@@ -7962,18 +7918,7 @@
     "href": "schedule.html#class-slides",
     "title": "Schedule",
     "section": "Class slides",
-    "text": "Class slides\n\nCourse Introduction\nPython Basics",
-    "crumbs": [
-      "Start Here",
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "schedule.html#assignments",
-    "href": "schedule.html#assignments",
-    "title": "Schedule",
-    "section": "Assignments",
-    "text": "Assignments\n\nModule 1 Programming Problems – Due date: Friday, January 23, 2026 at 9pm",
+    "text": "Class slides\n\nCourse Introduction",
     "crumbs": [
       "Start Here",
       "Schedule"
@@ -8006,18 +7951,18 @@
     "href": "schedule.html#class-slides-1",
     "title": "Schedule",
     "section": "Class slides",
-    "text": "Class slides\n\nOperations\nFunctions",
+    "text": "Class slides\n\nPython Basics\nOperations\nFunctions",
     "crumbs": [
       "Start Here",
       "Schedule"
     ]
   },
   {
-    "objectID": "schedule.html#assignments-1",
-    "href": "schedule.html#assignments-1",
+    "objectID": "schedule.html#assignments",
+    "href": "schedule.html#assignments",
     "title": "Schedule",
     "section": "Assignments",
-    "text": "Assignments\n\nModule 2 Programming Problems – Due date: Wednesday, January 28, 2026 at 9pm\nShort Project 1 – Due date: Wednesday, January 28, 2026 at 9pm\nProgramming Project 1 – Due date: Friday, January 30, 2026 at 9pm",
+    "text": "Assignments\n\nModule 1 Programming Problems – Due date: Friday, January 23, 2026 at 9pm\nModule 2 Programming Problems – Due date: Wednesday, January 28, 2026 at 9pm\nShort Project 1 – Due date: Wednesday, January 28, 2026 at 9pm\nProgramming Project 1 – Due date: Friday, January 30, 2026 at 9pm",
     "crumbs": [
       "Start Here",
       "Schedule"
@@ -8057,8 +8002,8 @@
     ]
   },
   {
-    "objectID": "schedule.html#assignments-2",
-    "href": "schedule.html#assignments-2",
+    "objectID": "schedule.html#assignments-1",
+    "href": "schedule.html#assignments-1",
     "title": "Schedule",
     "section": "Assignments",
     "text": "Assignments\n\nModule 3 Programming Problems – Due date: Wednesday, February 04, 2026 at 9pm\nShort Project 2 – Due date: Wednesday, February 04, 2026 at 9pm\nProgramming Project 2 – Due date: Friday, February 06, 2026 at 9pm",
@@ -8101,8 +8046,8 @@
     ]
   },
   {
-    "objectID": "schedule.html#assignments-3",
-    "href": "schedule.html#assignments-3",
+    "objectID": "schedule.html#assignments-2",
+    "href": "schedule.html#assignments-2",
     "title": "Schedule",
     "section": "Assignments",
     "text": "Assignments\n\nModule 4 Programming Problems – Due date: Wednesday, February 11, 2026 at 9pm\nShort Project 3 – Due date: Wednesday, February 11, 2026 at 9pm\nProgramming Project 3 – Due date: Friday, February 13, 2026 at 9pm",
@@ -8145,8 +8090,8 @@
     ]
   },
   {
-    "objectID": "schedule.html#assignments-4",
-    "href": "schedule.html#assignments-4",
+    "objectID": "schedule.html#assignments-3",
+    "href": "schedule.html#assignments-3",
     "title": "Schedule",
     "section": "Assignments",
     "text": "Assignments\n\nModule 5 Programming Problems – Due date: Wednesday, February 18, 2026 at 9pm\nShort Project 4 – Due date: Wednesday, February 18, 2026 at 9pm\nProgramming Project 4 – Due date: Friday, February 20, 2026 at 9pm",
@@ -8189,8 +8134,8 @@
     ]
   },
   {
-    "objectID": "schedule.html#assignments-5",
-    "href": "schedule.html#assignments-5",
+    "objectID": "schedule.html#assignments-4",
+    "href": "schedule.html#assignments-4",
     "title": "Schedule",
     "section": "Assignments",
     "text": "Assignments\n\nModule 6 Programming Problems – Due date: Friday, February 27, 2026 at 9pm\nShort Project 5 – Due date: Friday, February 27, 2026 at 9pm\nProgramming Project 5 – Due date: Monday, March 02, 2026 at 9pm",
@@ -8233,8 +8178,8 @@
     ]
   },
   {
-    "objectID": "schedule.html#assignments-6",
-    "href": "schedule.html#assignments-6",
+    "objectID": "schedule.html#assignments-5",
+    "href": "schedule.html#assignments-5",
     "title": "Schedule",
     "section": "Assignments",
     "text": "Assignments\n\nModule 7 Programming Problems – Due date: Wednesday, March 04, 2026 at 9pm\nShort Project 6 – Due date: Wednesday, March 04, 2026 at 9pm\nProgramming Project 6 – Due date: Friday, March 06, 2026 at 9pm",
@@ -8277,8 +8222,8 @@
     ]
   },
   {
-    "objectID": "schedule.html#assignments-7",
-    "href": "schedule.html#assignments-7",
+    "objectID": "schedule.html#assignments-6",
+    "href": "schedule.html#assignments-6",
     "title": "Schedule",
     "section": "Assignments",
     "text": "Assignments\n\nModule 8 Programming Problems – Due date: Wednesday, March 18, 2026 at 9pm\nShort Project 7 – Due date: Wednesday, March 18, 2026 at 9pm\nProgramming Project 7 – Due date: Friday, March 20, 2026 at 9pm",
@@ -8321,8 +8266,8 @@
     ]
   },
   {
-    "objectID": "schedule.html#assignments-8",
-    "href": "schedule.html#assignments-8",
+    "objectID": "schedule.html#assignments-7",
+    "href": "schedule.html#assignments-7",
     "title": "Schedule",
     "section": "Assignments",
     "text": "Assignments\n\nModule 9 Programming Problems – Due date: Wednesday, March 25, 2026 at 9pm",
@@ -8365,8 +8310,8 @@
     ]
   },
   {
-    "objectID": "schedule.html#assignments-9",
-    "href": "schedule.html#assignments-9",
+    "objectID": "schedule.html#assignments-8",
+    "href": "schedule.html#assignments-8",
     "title": "Schedule",
     "section": "Assignments",
     "text": "Assignments\n\nModule 10 Programming Problems – Due date: Wednesday, April 01, 2026 at 9pm\nShort Project 8 – Due date: Wednesday, April 01, 2026 at 9pm\nProgramming Project 8 – Due date: Friday, April 03, 2026 at 9pm",
@@ -8409,8 +8354,8 @@
     ]
   },
   {
-    "objectID": "schedule.html#assignments-10",
-    "href": "schedule.html#assignments-10",
+    "objectID": "schedule.html#assignments-9",
+    "href": "schedule.html#assignments-9",
     "title": "Schedule",
     "section": "Assignments",
     "text": "Assignments\n\nModule 11 Programming Problems – Due date: Wednesday, April 08, 2026 at 9pm\nShort Project 9 – Due date: Wednesday, April 08, 2026 at 9pm\nProgramming Project 9 – Due date: Friday, April 10, 2026 at 9pm",
@@ -8431,8 +8376,8 @@
     ]
   },
   {
-    "objectID": "schedule.html#assignments-11",
-    "href": "schedule.html#assignments-11",
+    "objectID": "schedule.html#assignments-10",
+    "href": "schedule.html#assignments-10",
     "title": "Schedule",
     "section": "Assignments",
     "text": "Assignments\n\nModule 12 Programming Problems – Due date: Wednesday, April 15, 2026 at 9pm\nShort Project 10 – Due date: Wednesday, April 15, 2026 at 9pm\nProgramming Project 10 – Due date: Friday, April 17, 2026 at 9pm",
@@ -8475,8 +8420,8 @@
     ]
   },
   {
-    "objectID": "schedule.html#assignments-12",
-    "href": "schedule.html#assignments-12",
+    "objectID": "schedule.html#assignments-11",
+    "href": "schedule.html#assignments-11",
     "title": "Schedule",
     "section": "Assignments",
     "text": "Assignments\n\nModule 13 Programming Problems – Due date: Wednesday, April 22, 2026 at 9pm\nShort Project 11 – Due date: Wednesday, April 22, 2026 at 9pm\nProgramming Project 11 – Due date: Friday, April 24, 2026 at 9pm",
@@ -8519,8 +8464,8 @@
     ]
   },
   {
-    "objectID": "schedule.html#assignments-13",
-    "href": "schedule.html#assignments-13",
+    "objectID": "schedule.html#assignments-12",
+    "href": "schedule.html#assignments-12",
     "title": "Schedule",
     "section": "Assignments",
     "text": "Assignments\n\nModule 14 Programming Problems – Due date: Wednesday, April 29, 2026 at 9pm\nShort Project 12 – Due date: Wednesday, April 29, 2026 at 9pm\nProgramming Project 12 – Due date: Friday, May 01, 2026 at 9pm",
@@ -8644,7 +8589,7 @@
     "href": "syllabus.html#final-examination",
     "title": "Syllabus",
     "section": "Final Examination",
-    "text": "Final Examination\nThe final exam is worth 15%.\nThe final exam date, time and room is: Fri, May 08 – 3:30pm - 5:30pm.\nYou must keep this time available. Do not schedule any flights, travel plans, or other conflicts with this exam.\nSee also Final Exam Regulations and Schedule: https://registrar.arizona.edu/finals",
+    "text": "Final Examination\nThe final exam is worth 15%.\nThe final exam date and time is: Fri, May 08 – 3:30pm - 5:30pm.\nYou must keep this time available. Do not schedule any flights, travel plans, or other conflicts with this exam.\nSee also Final Exam Regulations and Schedule: https://registrar.arizona.edu/finals",
     "crumbs": [
       "Start Here",
       "Syllabus"
@@ -8775,21 +8720,10 @@
     "href": "assignments-01.html",
     "title": "Module 1 Assignments",
     "section": "",
-    "text": "Programming Problems should be submitted to gradescope.\nIf you need instructions on how to submit your .py files to gradescope, watch the video at the end of this page.\n\nProgramming Problems\nDue date: Friday, January 23, 2026 at 9pm\n\n\nProgramming Problem 1\nWrite a python program that prints out the string “Hello World!”. Be careful with capitalization and punctuation. Remember to write code inside a function called main().\nThe exact output of the program should be:\nHello World!\n\nName the program hello.py. Make sure that gradescope gives you the points for passing the test case.\n\n\nProgramming Problem 2\nWrite a python program that prints out the following excerpt from Amanda Gorman’s poem, “The Hill We Climb”:\nWhen day comes, we ask ourselves, where can we find light in this never-ending shade?\n\nThe loss we carry. A sea we must wade.\nWe braved the belly of the beast.\n\nWe've learned that quiet isn't always peace, \nand the norms and notions of what \"just\" is isn't always justice.\n\nAnd yet the dawn is ours before we knew it.\n\nSomehow we do it.\n\nName the program poem.py. Remember to write code inside a function called main(). Make sure that gradescope gives you the points for passing the test case. You can submit your solution to gradescope as many times as you want before the deadline.\nHINT: print() has a parameter called end which is set as end=\"\\n\" by default – change that to end=\"\" to remove the last newline character.\nMake sure you do the reading for this module, especially the section on Escape Sequences\n\n\nHow to submit to gradescope video",
+    "text": "Programming Problems should be submitted to gradescope.\nIf you need instructions on how to submit your .py files to gradescope, watch the video at the end of this page.\n\nProgramming Problems\nDue date: Friday, January 23, 2026 at 9pm\n\n\nProgramming Problem 1\nWrite a python program that prints out the string “Hello World!”. Be careful with capitalization and punctuation. Remember to write code inside a function called main():\n\ndef main():\n    # write your print statement here\n    \nmain()\n\nThe exact output of the program should be:\nHello World!\n\nName the program hello.py. Make sure that gradescope gives you the points for passing the test case.\n\n\nProgramming Problem 2\nWrite a python program that prints out the following excerpt from Amanda Gorman’s poem, “The Hill We Climb”:\nWhen day comes, we ask ourselves, where can we find light in this never-ending shade?\n\nThe loss we carry. A sea we must wade.\nWe braved the belly of the beast.\n\nWe've learned that quiet isn't always peace, \nand the norms and notions of what \"just\" is isn't always justice.\n\nAnd yet the dawn is ours before we knew it.\n\nSomehow we do it.\n\nName the program poem.py. Remember to write code inside a function called main(). Make sure that gradescope gives you the points for passing the test case. You can submit your solution to gradescope as many times as you want before the deadline.\nHINT: print() has a parameter called end which is set as end=\"\\n\" by default – change that to end=\"\" to remove the last newline character.\nMake sure you do the reading for this module, especially the section on Escape Sequences\n\n\nHow to submit to gradescope video",
     "crumbs": [
       "Module 1 - Basics",
       "Module 1 Assignments"
-    ]
-  },
-  {
-    "objectID": "slides-01-01.html#this-course-includes-frequent-collaborative-activities.-please-choose-seats-at-the-center-tables-sit-with-others-and-leave-seats-along-the-walls-empty.",
-    "href": "slides-01-01.html#this-course-includes-frequent-collaborative-activities.-please-choose-seats-at-the-center-tables-sit-with-others-and-leave-seats-along-the-walls-empty.",
-    "title": "course introduction (slides)",
-    "section": "This course includes frequent collaborative activities. Please choose seats at the center tables, sit with others, and leave seats along the walls empty.",
-    "text": "This course includes frequent collaborative activities. Please choose seats at the center tables, sit with others, and leave seats along the walls empty.",
-    "crumbs": [
-      "Module 1 - Basics",
-      "course introduction (slides)"
     ]
   }
 ]

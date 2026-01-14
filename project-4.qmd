@@ -14,7 +14,7 @@ assignments <- read_excel("assessment_schedule.xlsx") %>%
 ```
 
 
-Programming Projects are to be submitted to [gradescope](https://www.gradescope.com/courses/934148)
+Programming Projects are to be submitted to gradescope.
 
 **Due date: `r assignments %>% filter(assessment == "Programming Project 4") %>% pull(formatted_date)` at 9pm**
 

@@ -134,31 +134,7 @@ round(392.68750000000006, 2)
 
 ## `round()`
 
-- Run the following code on your laptop
-
-- Discuss with your partner how the output is calculated
-```{python}
-#| echo: true
-#| eval: false
-print(round(51.6))
-print(round(51.4))
-print(round(51.5))
-print(round(50.5))
-```
-
-## `round()`
-
-Use the round() function to get a floating-point number rounded to the specified number of decimals.
-
-Syntax:
-
-```{python}
-#| echo: true
-#| eval: false
-round(number, ndigits*)
-```
-
-Rounding is done toward the nearest even choice:
+If we do not specify `ndigits`, rounding is done toward the nearest even choice:
 
 ```{python}
 #| echo: true
@@ -219,12 +195,4 @@ print(area)
 -  Can we do it more efficiently?
 
 
-## Quiz 02
-
-<center>
-<div class="cleanslate w24tz-current-time w24tz-large" style="display: inline-block !important; visibility: hidden !important; min-width:300px !important; min-height:145px !important;"><a href="//24timezones.com/Tucson/time" style="text-decoration: none" class="clock24" id="tz24-1695057604-c1393-eyJob3VydHlwZSI6IjEyIiwic2hvd2RhdGUiOiIwIiwic2hvd3NlY29uZHMiOiIwIiwiY29udGFpbmVyX2lkIjoiY2xvY2tfYmxvY2tfY2I2NTA4ODZjNDg0OWVlIiwidHlwZSI6ImRiIiwibGFuZyI6ImVuIn0=" title="World Time :: Tucson" target="_blank" rel="nofollow"></a>current time<div id="clock_block_cb650886c4849ee"></div></div>
-<script type="text/javascript" src="//w.24timezones.com/l.js" async></script>
-</center>
-
-You have 10 minutes to complete the quiz.
 

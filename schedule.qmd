@@ -44,11 +44,7 @@ All assignments that are submitted on Gradescope are due at 9pm (Wednesdays for 
 ## Class slides
 
 -   [Course Introduction](slides-01-01.html)
--   [Python Basics](slides-01-02.html)
 
-## Assignments
-
--   [Module 1 Programming Problems](assignments-01.html) -- Due date: `r assignments %>% filter(assessment == "Module 1 Programming Problems") %>% pull(formatted_date)` at 9pm
 
 # Week 2 (`r schedule %>% filter(week_number == 2 & term == "spring 2026") %>% pull(formatted_start)`)
 
@@ -61,11 +57,13 @@ All assignments that are submitted on Gradescope are due at 9pm (Wednesdays for 
 
 ## Class slides
 
+-   [Python Basics](slides-01-02.html)
 -   [Operations](slides-02-01.html)
 -   [Functions](slides-02-02.html)
 
 ## Assignments
 
+-   [Module 1 Programming Problems](assignments-01.html) -- Due date: `r assignments %>% filter(assessment == "Module 1 Programming Problems") %>% pull(formatted_date)` at 9pm
 -   [Module 2 Programming Problems](assignments-02.html) -- Due date: `r assignments %>% filter(assessment == "Module 2 Programming Problems") %>% pull(formatted_date)` at 9pm
 -   [Short Project 1](labs/lab01.html) -- Due date: `r assignments %>% filter(assessment == "Short Programming Project 1") %>% pull(formatted_date)` at 9pm
 -   [Programming Project 1](project-1.html) -- Due date: `r assignments %>% filter(assessment == "Programming Project 1") %>% pull(formatted_date)` at 9pm
