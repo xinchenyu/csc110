@@ -15,7 +15,7 @@ slide-number: true
 ## Did you set up your workspace?
 
 -   Did you download Python 3?
--   Did you download VS Code (or PyCharm, or Mu)?
+-   Did you download VS Code?
 -   If not, that's fine, you can use [vscode.dev](https://vscode.dev/)
 
 # What is a program?
