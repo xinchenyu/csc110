@@ -1986,7 +1986,7 @@
     "href": "slides-01-02.html#did-you-set-up-your-workspace",
     "title": "python basics (slides)",
     "section": "Did you set up your workspace?",
-    "text": "Did you set up your workspace?\n\nDid you download Python 3?\nDid you download VS Code (or PyCharm, or Mu)?\nIf not, that’s fine, you can use vscode.dev",
+    "text": "Did you set up your workspace?\n\nDid you download Python 3?\nDid you download VS Code?\nIf not, that’s fine, you can use vscode.dev",
     "crumbs": [
       "Module 1 - Basics",
       "python basics (slides)"
@@ -1997,7 +1997,7 @@
     "href": "slides-01-02.html#the-print-function",
     "title": "python basics (slides)",
     "section": "The print function",
-    "text": "The print function\n\nWhat does the print function do?",
+    "text": "The print function\n\nprint() sends characters (strings) to the standard output\nBy default, the standard output of a python program goes to the console.\n\n\nprint(\"some characters\")\n\nsome characters\n\n\n\n\nprint('some characters')\n\nsome characters",
     "crumbs": [
       "Module 1 - Basics",
       "python basics (slides)"

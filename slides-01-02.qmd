@@ -22,10 +22,6 @@ slide-number: true
 
 ## The `print` function
 
--   What does the print function do?
-
-## The `print` function
-
 -   `print()` sends characters (strings) to the **standard output**
 -   By default, the **standard output** of a python program goes to the console.
 
