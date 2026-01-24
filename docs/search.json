@@ -8725,5 +8725,16 @@
       "Module 1 - Basics",
       "Module 1 Assignments"
     ]
+  },
+  {
+    "objectID": "slides-03-02.html#compare-functions",
+    "href": "slides-03-02.html#compare-functions",
+    "title": "More on Functions (class slides)",
+    "section": "Compare Functions",
+    "text": "Compare Functions\n\ndef cook_food_one(order):\n  message = \"Your \" + order + \" is ready!\"\n\ndef cook_food_two(order):\n  message = \"Your \" + order + \" is ready!\"\n  return message\n\ndef cook_food_three(order):\n  message = \"Your \" + order + \" is ready!\"\n  print(message)\n\ndef main():\n  print(cook_food_one(\"pasta\"))\n  print(cook_food_two(\"burger\"))\n  print(cook_food_three(\"fries\"))\n  \nmain()\n\nNone\nYour burger is ready!\nYour fries is ready!\nNone",
+    "crumbs": [
+      "Module 3 - Decomposition and More on Functions",
+      "More on Functions (class slides)"
+    ]
   }
 ]

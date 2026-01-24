@@ -211,7 +211,7 @@
 </section>
 <section id="function-comments-1" class="slide level2">
 <h2>Function Comments</h2>
-<div id="99e5f180" class="cell" data-execution_count="1">
+<div id="e07231bb" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="co">'''</span></span>
 <span id="cb1-2"><a></a><span class="co">Xinchen Yu</span></span>
 <span id="cb1-3"><a></a><span class="co">CSC110</span></span>
@@ -286,7 +286,7 @@
 </section>
 <section id="global-or-local" class="slide level2">
 <h2>Global or Local?</h2>
-<div id="823b27d3" class="cell" data-execution_count="2">
+<div id="c1af7100" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>a <span class="op">=</span> <span class="dv">10</span>               <span class="co"># What are the global and local variables?</span></span>
 <span id="cb3-2"><a></a>b <span class="op">=</span> <span class="dv">5</span>                <span class="co"># Is the output of the two programs the same </span></span>
 <span id="cb3-3"><a></a>                     <span class="co"># or different?</span></span>
@@ -299,7 +299,7 @@
 <span id="cb3-10"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>vs.</p>
-<div id="01c2967c" class="cell" data-execution_count="3">
+<div id="4ad6c4b7" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="kw">def</span> <span class="bu">sum</span>(a, b):</span>
 <span id="cb4-2"><a></a>  <span class="cf">return</span> a <span class="op">+</span> b</span>
 <span id="cb4-3"><a></a></span>
@@ -319,7 +319,7 @@
 </section>
 <section id="argument-or-parameter" class="slide level2">
 <h2>Argument or Parameter?</h2>
-<div id="85a28556" class="cell" data-execution_count="4">
+<div id="e2c9cdb9" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="co"># The parameters are a and b</span></span>
 <span id="cb5-2"><a></a><span class="kw">def</span> add(a, b):</span>
 <span id="cb5-3"><a></a>    <span class="cf">return</span> a<span class="op">+</span>b</span>
@@ -328,53 +328,31 @@
 <span id="cb5-6"><a></a>add(<span class="dv">5</span>, <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="write-a-function" class="slide level2">
-<h2>Write a function</h2>
-<p>Write a Python function called <code>hypotenuse</code> that takes two parameters: <code>a</code> and <code>b</code> representing the length of the two non-hypotenuse sides of a right triangle. The function should calculate the hypotenuse according to the Pythagorean theorem: <span class="math inline">\(c = \sqrt(a^2 + b^2)\)</span>. Return it rounded at two decimals.</p>
-<p>Test cases: <code>hypotenuse(3, 4)</code> should return <code>5.0</code>, <code>hypotenuse(10, 10)</code> should return <code>14.14</code></p>
-<p>Name your file <code>hypotenuse.py</code> to gradescope for attendance</p>
-</section>
-<section id="write-a-function-1" class="slide level2">
-<h2>Write a function</h2>
-<div id="425c4bba" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">def</span> sqrt(n):</span>
-<span id="cb6-2"><a></a>  <span class="co">'''</span></span>
-<span id="cb6-3"><a></a><span class="co">  This function calculates the square root of a number</span></span>
-<span id="cb6-4"><a></a><span class="co">  Args:</span></span>
-<span id="cb6-5"><a></a><span class="co">    n: integer or float</span></span>
-<span id="cb6-6"><a></a><span class="co">  Returns:</span></span>
-<span id="cb6-7"><a></a><span class="co">    The square root of n</span></span>
-<span id="cb6-8"><a></a><span class="co">  '''</span></span>
-<span id="cb6-9"><a></a>  <span class="cf">return</span> n<span class="op">**</span><span class="fl">.5</span></span>
-<span id="cb6-10"><a></a></span>
-<span id="cb6-11"><a></a><span class="kw">def</span> hypotenuse(a, b):</span>
-<span id="cb6-12"><a></a>  <span class="co">'''</span></span>
-<span id="cb6-13"><a></a><span class="co">  This function calculates the hypotenuse of a right angle triangle.</span></span>
-<span id="cb6-14"><a></a><span class="co">  Args:</span></span>
-<span id="cb6-15"><a></a><span class="co">    a: number (integer or float) representing one of the non-hypotenuse sides</span></span>
-<span id="cb6-16"><a></a><span class="co">    b: number (integer or float) representing one of the non-hypotenuse sides</span></span>
-<span id="cb6-17"><a></a><span class="co">  Returns:</span></span>
-<span id="cb6-18"><a></a><span class="co">    Float representing the length of the hypotenuse given a and b</span></span>
-<span id="cb6-19"><a></a><span class="co">  '''</span> </span>
-<span id="cb6-20"><a></a>  h <span class="op">=</span> sqrt(a<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> b<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb6-21"><a></a>  <span class="cf">return</span> <span class="bu">round</span>(h, <span class="dv">2</span>)</span>
-<span id="cb6-22"><a></a></span>
-<span id="cb6-23"><a></a><span class="kw">def</span> main():</span>
-<span id="cb6-24"><a></a>  <span class="co">'''</span></span>
-<span id="cb6-25"><a></a><span class="co">  This function calls the hypotenuse function to calculate and then</span></span>
-<span id="cb6-26"><a></a><span class="co">  print out the hypotenuse of a right angle triangle of sides 3 and 4</span></span>
-<span id="cb6-27"><a></a><span class="co">  and the hypotenuse of a right angle triange of sides 10 and 10</span></span>
-<span id="cb6-28"><a></a><span class="co">  '''</span></span>
-<span id="cb6-29"><a></a>  result <span class="op">=</span> hypotenuse(<span class="dv">3</span>, <span class="dv">4</span>)</span>
-<span id="cb6-30"><a></a>  <span class="bu">print</span>(result)</span>
-<span id="cb6-31"><a></a>  </span>
-<span id="cb6-32"><a></a>  result <span class="op">=</span> hypotenuse(<span class="dv">10</span>, <span class="dv">10</span>)</span>
-<span id="cb6-33"><a></a>  <span class="bu">print</span>(result)</span>
-<span id="cb6-34"><a></a>  </span>
-<span id="cb6-35"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="compare-functions" class="slide level2">
+<h2>Compare Functions</h2>
+<div id="8a49d6f2" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">def</span> cook_food_one(order):</span>
+<span id="cb6-2"><a></a>  message <span class="op">=</span> <span class="st">"Your "</span> <span class="op">+</span> order <span class="op">+</span> <span class="st">" is ready!"</span></span>
+<span id="cb6-3"><a></a></span>
+<span id="cb6-4"><a></a><span class="kw">def</span> cook_food_two(order):</span>
+<span id="cb6-5"><a></a>  message <span class="op">=</span> <span class="st">"Your "</span> <span class="op">+</span> order <span class="op">+</span> <span class="st">" is ready!"</span></span>
+<span id="cb6-6"><a></a>  <span class="cf">return</span> message</span>
+<span id="cb6-7"><a></a></span>
+<span id="cb6-8"><a></a><span class="kw">def</span> cook_food_three(order):</span>
+<span id="cb6-9"><a></a>  message <span class="op">=</span> <span class="st">"Your "</span> <span class="op">+</span> order <span class="op">+</span> <span class="st">" is ready!"</span></span>
+<span id="cb6-10"><a></a>  <span class="bu">print</span>(message)</span>
+<span id="cb6-11"><a></a></span>
+<span id="cb6-12"><a></a><span class="kw">def</span> main():</span>
+<span id="cb6-13"><a></a>  <span class="bu">print</span>(cook_food_one(<span class="st">"pasta"</span>))</span>
+<span id="cb6-14"><a></a>  <span class="bu">print</span>(cook_food_two(<span class="st">"burger"</span>))</span>
+<span id="cb6-15"><a></a>  <span class="bu">print</span>(cook_food_three(<span class="st">"fries"</span>))</span>
+<span id="cb6-16"><a></a>  </span>
+<span id="cb6-17"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>5.0
-14.14</code></pre>
+<pre><code>None
+Your burger is ready!
+Your fries is ready!
+None</code></pre>
 </div>
 </div>
 
