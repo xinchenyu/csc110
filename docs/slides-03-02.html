@@ -211,7 +211,7 @@
 </section>
 <section id="function-comments-1" class="slide level2">
 <h2>Function Comments</h2>
-<div id="e07231bb" class="cell" data-execution_count="1">
+<div id="652f589b" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="co">'''</span></span>
 <span id="cb1-2"><a></a><span class="co">Xinchen Yu</span></span>
 <span id="cb1-3"><a></a><span class="co">CSC110</span></span>
@@ -265,28 +265,14 @@
 <section id="global-vs.-local-variables-scope" class="slide level2">
 <h2>Global vs.&nbsp;Local variables (scope)</h2>
 <ul>
-<li>Every variable that is created has a particular scope</li>
-<li>The scope of a variable is the region in the code where the variable can be used or modified</li>
-</ul>
-</section>
-<section id="global-vs.-local-variables-scope-1" class="slide level2">
-<h2>Global vs.&nbsp;Local variables (scope)</h2>
-<ul>
+<li>Every variable has a scope: the region where the variable can be used or modified</li>
 <li><strong>Local Variables</strong> have local scope – for example, a variable assigned inside a function can only be used or modified within that function</li>
 <li><strong>Global Variables</strong> have global scope – for example, a variable delcared outside a function can be accessed or modified across multiple functions</li>
 </ul>
 </section>
-<section id="global-vs.-local-variables-scope-2" class="slide level2">
-<h2>Global vs.&nbsp;Local variables (scope)</h2>
-<ul>
-<li>In the previous program we wrote (volume and area of sphere), <code>r</code>, <code>v</code> and <code>a</code> are local variables within the <code>main()</code> function.</li>
-<li>The variable <code>radius</code> and <code>area</code> are local within the <code>sphere_area(radius)</code> function scope.</li>
-<li>The variable <code>radius</code> and <code>volume</code> are local within <code>sphere_volume(radius)</code></li>
-</ul>
-</section>
 <section id="global-or-local" class="slide level2">
 <h2>Global or Local?</h2>
-<div id="c1af7100" class="cell" data-execution_count="2">
+<div id="cee5aca8" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>a <span class="op">=</span> <span class="dv">10</span>               <span class="co"># What are the global and local variables?</span></span>
 <span id="cb3-2"><a></a>b <span class="op">=</span> <span class="dv">5</span>                <span class="co"># Is the output of the two programs the same </span></span>
 <span id="cb3-3"><a></a>                     <span class="co"># or different?</span></span>
@@ -299,7 +285,7 @@
 <span id="cb3-10"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>vs.</p>
-<div id="4ad6c4b7" class="cell" data-execution_count="3">
+<div id="e1650af6" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="kw">def</span> <span class="bu">sum</span>(a, b):</span>
 <span id="cb4-2"><a></a>  <span class="cf">return</span> a <span class="op">+</span> b</span>
 <span id="cb4-3"><a></a></span>
@@ -308,6 +294,14 @@
 <span id="cb4-6"><a></a>  </span>
 <span id="cb4-7"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="global-vs.-local-variables-scope-1" class="slide level2">
+<h2>Global vs.&nbsp;Local variables (scope)</h2>
+<ul>
+<li>In the previous program we wrote (volume and area of sphere), <code>r</code>, <code>v</code> and <code>a</code> are local variables within the <code>main()</code> function.</li>
+<li>The variable <code>radius</code> and <code>area</code> are local within the <code>sphere_area(radius)</code> function scope.</li>
+<li>The variable <code>radius</code> and <code>volume</code> are local within <code>sphere_volume(radius)</code></li>
+</ul>
 </section>
 <section id="argument-vs.-parameter" class="slide level2">
 <h2>Argument vs.&nbsp;Parameter</h2>
@@ -319,7 +313,7 @@
 </section>
 <section id="argument-or-parameter" class="slide level2">
 <h2>Argument or Parameter?</h2>
-<div id="e2c9cdb9" class="cell" data-execution_count="4">
+<div id="059cd7ce" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="co"># The parameters are a and b</span></span>
 <span id="cb5-2"><a></a><span class="kw">def</span> add(a, b):</span>
 <span id="cb5-3"><a></a>    <span class="cf">return</span> a<span class="op">+</span>b</span>
@@ -330,7 +324,7 @@
 </section>
 <section id="compare-functions" class="slide level2">
 <h2>Compare Functions</h2>
-<div id="8a49d6f2" class="cell" data-execution_count="5">
+<div id="4be430b3" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="kw">def</span> cook_food_one(order):</span>
 <span id="cb6-2"><a></a>  message <span class="op">=</span> <span class="st">"Your "</span> <span class="op">+</span> order <span class="op">+</span> <span class="st">" is ready!"</span></span>
 <span id="cb6-3"><a></a></span>
