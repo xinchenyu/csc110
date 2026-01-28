@@ -68,15 +68,15 @@ print("  '.       .'")
 print("   '-------'")
 ```
 
-## Print a retro head long neck guitar
+## Print a long neck guitar
 
 ```{python}
 #| echo: true
 #| eval: false
-print("     ._-_.")
-print("    +|\G/|+")
-print("    +|\./|+")
-print("    +|\./|+")
+print("      ___")
+print("    o|* *|o")
+print("    o|* *|o")
+print("    o|* *|o")
 print("     \===/")
 print("      |||")
 print("      |||")
@@ -105,36 +105,57 @@ Compare different types of guitar, write your asnwers:
 
 -   which parts of code are different?
 
-## Class activity one -- answers
-
-Classic guitar vs. Retro head guitar:
+## Classic guitar vs. Retro head guitar
 
 -   which parts of code are the same?
 
-    -   the neck
-    
-    -   the body
+    -   the neck and the body
 
 -   which parts of code are different?
 
     -   the head: line 1-4
     
+```{python}
+#| echo: true
+#| eval: false
+def print_classic_guitar():
+    print_head()
+    print_neck()
+    print_body()
 
-## Class activity one -- answers
+def print_retro_guitar():
+    print_retro_head()
+    print_neck()
+    print_body()
+```
 
-Retro head guitar vs. Retro head long neck guitar:
+## Classic guitar vs. Long neck guitar 
 
 -   which parts of code are the same?
 
-    -   the head
-    
-    -   the body
+    -   the head and the body
 
 -   which parts of code are different?
 
     -   the neck
+    
 
-## Decomposition
+```{python}
+#| echo: true
+#| eval: false
+def print_classic_guitar():
+    print_head()
+    print_neck()
+    print_body()
+    
+def print_long_guitar():
+    print_head()
+    print_neck()
+    print_neck()
+    print_body()
+```
+
+## Decompose a program into functions
 
 ```{python}
 #| echo: true
@@ -214,7 +235,34 @@ Read the code for classic guitar, answer the questions:
     -   in the neck: line 6 - 7
     
     -   in the body: line 9 - 10 and line 14 - 15
-    
+
+## Class activity two -- answers
+
+```{python}
+#| echo: true
+#| eval: false
+print("      ___")
+print("    o|* *|o") # head
+print("    o|* *|o") # head
+print("    o|* *|o") # head
+print("     \===/")
+print("      |||") # neck
+print("      |||") # neck
+print("   ___|||___")
+print("  /   |||   \ ") # body
+print(" /    |||    \ ") # body
+print("|     |||     |")
+print(" \   (|||)   /")
+print("  |   |||   |")
+print("  /   |||   \ ") # body
+print(" /    |||    \ ") # body
+print("/     |||     \ ")
+print("|    [===]    |")
+print(" \           /")
+print("  '.       .'")
+print("   '-------'")
+```
+
 ## Write functions
 
 Write functions `print_head`, `print_neck`, and `print_body`:
@@ -337,28 +385,8 @@ main()
 ```
 
 
-## Write a function
 
-Write `print_retro_head`:
-
-```{python}
-#| echo: true
-#| eval: false
-def print_retro_guitar():
-    print_retro_head()
-    print_neck()
-    print_body()
-
-def main():
-    print_classic_guitar() # print classic guitar
-    print_long_guitar() # print long neck guitar
-    print_retro_guitar() # print retro head guitar
-
-main()
-```
-
-
-## Write a function -- answer
+## Add function print_retro_head
 
 ```{python}
 #| echo: true
