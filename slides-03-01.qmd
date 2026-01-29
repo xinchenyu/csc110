@@ -99,7 +99,7 @@ print("   '-------'")
 
 ## Class activity one
 
-Compare different types of guitar, write your asnwers:
+Compare different types of guitar, write your answers:
 
 -   which parts of code are the same?
 
