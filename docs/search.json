@@ -6091,7 +6091,7 @@
     "href": "slides-04-01.html#write-a-function-5",
     "title": "built-in functions (slides)",
     "section": "Write a function",
-    "text": "Write a function\nWrite a Python function calculate_year_born with no parameters. It prompts user to enter their age input().\nIt converts user’s age to integer and calculates (imperfectly) the year a person of age was born by subtracting age from 2025.\nIt returns an integer representing the approximate year person of age was born.\n\nprint( calculate_year_born() ) # user enters 60, function returns 1965",
+    "text": "Write a function\nWrite a Python function calculate_year_born with no parameters. It prompts user to enter their age input().\nIt converts user’s age to integer and calculates (imperfectly) the year a person of age was born by subtracting age from 2026.\nIt returns an integer representing the approximate year person of age was born.\n\nprint( calculate_year_born() ) # user enters 61, function returns 1965",
     "crumbs": [
       "Module 4 - Built-In Functions and Decomposition",
       "built-in functions (slides)"
@@ -6102,7 +6102,7 @@
     "href": "slides-04-01.html#write-a-function-6",
     "title": "built-in functions (slides)",
     "section": "Write a function",
-    "text": "Write a function\n\ndef calculate_year_born():\n    str_age = input(\"what's your age?\\n\")\n    age = int(str_age)\n    year_born = 2025 - age\n    return year_born\n\ndef main():\n    print(calculate_year_born())\n\nmain()",
+    "text": "Write a function\n\ndef calculate_year_born():\n    str_age = input(\"what's your age?\\n\")\n    age = int(str_age)\n    year_born = 2026 - age\n    return year_born\n\ndef main():\n    print(calculate_year_born())\n\nmain()",
     "crumbs": [
       "Module 4 - Built-In Functions and Decomposition",
       "built-in functions (slides)"

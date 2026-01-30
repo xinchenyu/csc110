@@ -159,7 +159,7 @@ print(type(age), type(age_float))
 
 Write a Python function `calculate_year_born` with no parameters. It prompts user to enter their age `input()`. 
 
-It converts user's `age` to integer and calculates (imperfectly) the year a person of `age` was born by subtracting `age` from `2025`. 
+It converts user's `age` to integer and calculates (imperfectly) the year a person of `age` was born by subtracting `age` from `2026`. 
 
 It returns an integer representing the approximate year person of `age` was born.
 
@@ -167,7 +167,7 @@ It returns an integer representing the approximate year person of `age` was born
 ```{python}
 #| echo: true
 #| eval: false
-print( calculate_year_born() ) # user enters 60, function returns 1965
+print( calculate_year_born() ) # user enters 61, function returns 1965
 ```
 
 
@@ -179,7 +179,7 @@ print( calculate_year_born() ) # user enters 60, function returns 1965
 def calculate_year_born():
     str_age = input("what's your age?\n")
     age = int(str_age)
-    year_born = 2025 - age
+    year_born = 2026 - age
     return year_born
 
 def main():
