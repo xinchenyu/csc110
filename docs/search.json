@@ -1865,7 +1865,7 @@
     "href": "slides-04-02.html#activity-two",
     "title": "more on decomposition (slides)",
     "section": "Activity two",
-    "text": "Activity two\nRead the code and write the questions:\n\nwhich lines of code are similar?\nwhich lines of code are unique?\nwhich lines can be grouped together into a function? what does the function do?",
+    "text": "Activity two\nRead the code and write the questions:\n\nwhich lines of code are similar?\nwhich lines of code are unique?",
     "crumbs": [
       "Module 4 - Built-In Functions and Decomposition",
       "more on decomposition (slides)"
@@ -1876,7 +1876,7 @@
     "href": "slides-04-02.html#rubiks-cubes-1",
     "title": "more on decomposition (slides)",
     "section": "Rubik’s Cubes",
-    "text": "Rubik’s Cubes\n\ncube_len = int(input(\"Cube length? \"))\nbox_w = int(input(\"Box width? \")) \nbox_h = int(input(\"Box height? \"))\nbox_l = int(input(\"Box length? \"))\n\nfit_w = box_w // cube_len\nfit_h = box_h // cube_len\nfit_l = box_l // cube_len\n\nprint(str(fit_w) + \" Rubik's cubes will fit width-wise.\")\nprint(str(fit_h) + \" Rubik's cubes will fit height-wise.\")\nprint(str(fit_l) + \" Rubik's cubes will fit length-wise.\")\n\nres = fit_w * fit_h * fit_l\nprint(str(res)+\" Rubik's cubes will fit in that container.\")",
+    "text": "Rubik’s Cubes\n\ncube_len = int(input(\"Cube length? \")) # unique\nbox_w = int(input(\"Box width? \"))  # similar\nbox_h = int(input(\"Box height? \")) # similar\nbox_l = int(input(\"Box length? \")) # similar\n\nfit_w = box_w // cube_len # similar\nfit_h = box_h // cube_len # similar\nfit_l = box_l // cube_len # similar\n\nprint(str(fit_w) + \" Rubik's cubes will fit width-wise.\") # similar\nprint(str(fit_h) + \" Rubik's cubes will fit height-wise.\") # similar\nprint(str(fit_l) + \" Rubik's cubes will fit length-wise.\") # similar\n\nres = fit_w * fit_h * fit_l # unique\nprint(str(res)+\" Rubik's cubes will fit in that container.\") # unique",
     "crumbs": [
       "Module 4 - Built-In Functions and Decomposition",
       "more on decomposition (slides)"
@@ -1887,7 +1887,7 @@
     "href": "slides-04-02.html#activity-two-answers",
     "title": "more on decomposition (slides)",
     "section": "Activity two – answers",
-    "text": "Activity two – answers\nRead the code and write the questions:\n\nwhich lines of code are similar?\n\nline 2-4, line 6-8, line 10-12\n\nwhich lines of code are unique?\n\nline 1, line 14-15",
+    "text": "Activity two – answers\n\nwhich lines of code are similar?\n\nline 2-4, line 6-8, line 10-12\n\nwhich lines of code are unique?\n\nline 1, line 14-15",
     "crumbs": [
       "Module 4 - Built-In Functions and Decomposition",
       "more on decomposition (slides)"
@@ -1898,7 +1898,7 @@
     "href": "slides-04-02.html#activity-two-continued",
     "title": "more on decomposition (slides)",
     "section": "Activity two – continued",
-    "text": "Activity two – continued\nWhich lines can be grouped together into a function?\n\nline 2, 6, 10:\n\n\nbox_w = int(input(\"Box width? \")) \n\nfit_w = box_w // cube_len\n\nprint(str(fit_w) + \" Rubik's cubes will fit width-wise.\")\n\nWhat are the parameters of this function? In other words, what information must be known beforehand?",
+    "text": "Activity two – continued\nWhich lines can be grouped together into a function?\n\nline 2, 6, 10:\n\n\nbox_w = int(input(\"Box width? \")) \nfit_w = box_w // cube_len\nprint(str(fit_w) + \" Rubik's cubes will fit width-wise.\")",
     "crumbs": [
       "Module 4 - Built-In Functions and Decomposition",
       "more on decomposition (slides)"
@@ -8812,6 +8812,61 @@
     "crumbs": [
       "Module 3 - Decomposition and More on Functions",
       "decomposition (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-04-02.html#activity-two-continued-1",
+    "href": "slides-04-02.html#activity-two-continued-1",
+    "title": "more on decomposition (slides)",
+    "section": "Activity two – continued",
+    "text": "Activity two – continued\nCompare two blocks of code:\n\nline 2, 6, 10:\n\n\nbox_w = int(input(\"Box width? \")) \nfit_w = box_w // cube_len\nprint(str(fit_w) + \" Rubik's cubes will fit width-wise.\")\n\n\nline 3, 7, 1:\n\n\nbox_h = int(input(\"Box height? \")) \nfit_h = box_h // cube_len\nprint(str(fit_h) + \" Rubik's cubes will fit height-wise.\")\n\nWhat are the parameters of this function? In other words, what information must be known beforehand?",
+    "crumbs": [
+      "Module 4 - Built-In Functions and Decomposition",
+      "more on decomposition (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-04-02.html#activity-three",
+    "href": "slides-04-02.html#activity-three",
+    "title": "more on decomposition (slides)",
+    "section": "Activity three",
+    "text": "Activity three\nCompare two blocks of code:\n\nline 2, 6, 10:\n\n\nbox_w = int(input(\"Box width? \")) \nfit_w = box_w // cube_len\nprint(str(fit_w) + \" Rubik's cubes will fit width-wise.\")\n\n\nline 3, 7, 1:\n\n\nbox_h = int(input(\"Box height? \")) \nfit_h = box_h // cube_len\nprint(str(fit_h) + \" Rubik's cubes will fit height-wise.\")\n\nWhat are the parameters of this function? In other words, what information must be known beforehand?",
+    "crumbs": [
+      "Module 4 - Built-In Functions and Decomposition",
+      "more on decomposition (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-04-02.html#activity-three-1",
+    "href": "slides-04-02.html#activity-three-1",
+    "title": "more on decomposition (slides)",
+    "section": "Activity three",
+    "text": "Activity three\nCompare two blocks of code:\n\nline 2, 6, 10:\n\n\nbox_w = int(input(\"Box width? \")) \nfit_w = box_w // cube_len\nprint(str(fit_w) + \" Rubik's cubes will fit width-wise.\")\n\n\nline 3, 7, 1:\n\n\nbox_h = int(input(\"Box height? \")) \nfit_h = box_h // cube_len\nprint(str(fit_h) + \" Rubik's cubes will fit height-wise.\")\n\nWhat are the parameters of this function? In other words, what information must be known beforehand?",
+    "crumbs": [
+      "Module 4 - Built-In Functions and Decomposition",
+      "more on decomposition (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-04-02.html#comparing-three-blocks-of-code",
+    "href": "slides-04-02.html#comparing-three-blocks-of-code",
+    "title": "more on decomposition (slides)",
+    "section": "Comparing three blocks of code",
+    "text": "Comparing three blocks of code\nWhat does this function do? What are the parameters?\n\nline 2, 6, 10:\n\n\nbox_w = int(input(\"Box width? \")) \nfit_w = box_w // cube_len\nprint(str(fit_w) + \" Rubik's cubes will fit width-wise.\")\n\n\nline 3, 7, 11:\n\n\nbox_h = int(input(\"Box height? \")) \nfit_h = box_h // cube_len\nprint(str(fit_h) + \" Rubik's cubes will fit height-wise.\")\n\n\nline 4, 8, 12:\n\n\nbox_l = int(input(\"Box length? \"))\nfit_l = box_l // cube_len\nprint(str(fit_l) + \" Rubik's cubes will fit length-wise.\")",
+    "crumbs": [
+      "Module 4 - Built-In Functions and Decomposition",
+      "more on decomposition (slides)"
+    ]
+  },
+  {
+    "objectID": "slides-04-02.html#comparing-code-answers",
+    "href": "slides-04-02.html#comparing-code-answers",
+    "title": "more on decomposition (slides)",
+    "section": "Comparing code – answers",
+    "text": "Comparing code – answers\nGiven the length of a cube and the name of a box side:\n\nIt prompts you to the enter the length of the side\nIt calculates the number of cube that can fit in the side\nIt print the message and return the number.",
+    "crumbs": [
+      "Module 4 - Built-In Functions and Decomposition",
+      "more on decomposition (slides)"
     ]
   }
 ]
