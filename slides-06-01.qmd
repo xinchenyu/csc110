@@ -8,7 +8,7 @@ slide-number: true
 
 ## Announcements
 
-* Midterm 1 Oct 7, Tuesday -- BRING PHOTO ID
+* Midterm 1 Feb 24, Tuesday -- BRING PHOTO ID
   * Time and room: same as regular lecture
   * Module 1 to Module 6
 * Review session

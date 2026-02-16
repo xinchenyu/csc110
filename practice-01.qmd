@@ -3,7 +3,7 @@ title: "Practice Problems"
 ---
 
 # Midterm Study Guide
-Midterm 1 (Modules 1-6), [Study Guide 1]()
+Midterm 1 (Modules 1-6), [Study Guide 1](midterm-1-study-guide.pdf)
 
 -   operations
 -   built-in functions such as `round()`, `input()`, `.isnumeric()`, etc.
