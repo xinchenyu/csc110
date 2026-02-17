@@ -1337,7 +1337,7 @@
     "href": "slides-06-01.html#write-a-function",
     "title": "while loop intro (slides)",
     "section": "Write a function",
-    "text": "Write a function\nWrite a function called add_up_to that takes an numeric argument n. The function should add all numbers from 1 to n in a while loop, and then (outside the loop) return the sum\n\nprint( add_up_to(5) ) # 15\nprint( add_up_to(10) ) # 55",
+    "text": "Write a function\nWrite a function called add_up_to that takes an numeric argument n. The function should add all numbers from 0 to n in a while loop, and then (outside the loop) return the sum\n\nprint( add_up_to(5) ) # 15\nprint( add_up_to(10) ) # 55",
     "crumbs": [
       "Module 6 - Control Flow (while statements)",
       "while loop intro (slides)"

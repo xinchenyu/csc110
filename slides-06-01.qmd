@@ -109,7 +109,7 @@ Consider `n = 5`, start with `result = 1`, `current = 1`:
 ## Write a function
 
 Write a function called `add_up_to` that takes an numeric argument `n`.
-The function should add all numbers from 1 to `n` in a while loop, and then (outside the loop) return the sum
+The function should add all numbers from 0 to `n` in a while loop, and then (outside the loop) return the sum
 
 ```{python}
 #| eval: false
