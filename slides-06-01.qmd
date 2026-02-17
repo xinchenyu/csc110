@@ -12,8 +12,8 @@ slide-number: true
   * Time and room: same as regular lecture
   * Module 1 to Module 6
 * Review session
-  * Time: Oct 6, Monday 5:00 - 6:30pm
-  * Room: same as regular lecture
+  * Time: Feb 23, Monday 5:00 - 6:30pm
+  * Room: TBD
 * [Study guide](https://xinchenyu.github.io/csc110/practice-01.html)
 
 ## While loops
