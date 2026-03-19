@@ -8868,5 +8868,16 @@
       "Module 4 - Built-In Functions and Decomposition",
       "more on decomposition (slides)"
     ]
+  },
+  {
+    "objectID": "slides-09-02.html#correct-or-not",
+    "href": "slides-09-02.html#correct-or-not",
+    "title": "for loops – iterating over items (slides)",
+    "section": "Correct or not?",
+    "text": "Correct or not?\nIs the solution correct or not?\nLine 3: can we use for x in list?\n\ndef max_list(numbers):\n    max = None\n    for i in range(len(numbers)):\n        numbers[i] *= 2\n        if max == None or numbers[i] &gt; max:\n            max = numbers[i]\n    return max",
+    "crumbs": [
+      "Module 9 - Data Structures (dictionaries)",
+      "for loops -- iterating over items (slides)"
+    ]
   }
 ]
