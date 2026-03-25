@@ -1894,22 +1894,22 @@
     ]
   },
   {
-    "objectID": "slides-04-02.html#activity-two-continued",
-    "href": "slides-04-02.html#activity-two-continued",
+    "objectID": "slides-04-02.html#comparing-three-blocks-of-code",
+    "href": "slides-04-02.html#comparing-three-blocks-of-code",
     "title": "more on decomposition (slides)",
-    "section": "Activity two – continued",
-    "text": "Activity two – continued\nWhich lines can be grouped together into a function?\n\nline 2, 6, 10:\n\n\nbox_w = int(input(\"Box width? \")) \nfit_w = box_w // cube_len\nprint(str(fit_w) + \" Rubik's cubes will fit width-wise.\")",
+    "section": "Comparing three blocks of code",
+    "text": "Comparing three blocks of code\nWhat does this function do? What are the parameters?\n\nline 2, 6, 10:\n\n\nbox_w = int(input(\"Box width? \")) \nfit_w = box_w // cube_len\nprint(str(fit_w) + \" Rubik's cubes will fit width-wise.\")\n\n\nline 3, 7, 11:\n\n\nbox_h = int(input(\"Box height? \")) \nfit_h = box_h // cube_len\nprint(str(fit_h) + \" Rubik's cubes will fit height-wise.\")\n\n\nline 4, 8, 12:\n\n\nbox_l = int(input(\"Box length? \"))\nfit_l = box_l // cube_len\nprint(str(fit_l) + \" Rubik's cubes will fit length-wise.\")",
     "crumbs": [
       "Module 4 - Built-In Functions and Decomposition",
       "more on decomposition (slides)"
     ]
   },
   {
-    "objectID": "slides-04-02.html#activity-two-answers-continued",
-    "href": "slides-04-02.html#activity-two-answers-continued",
+    "objectID": "slides-04-02.html#comparing-code-answers",
+    "href": "slides-04-02.html#comparing-code-answers",
     "title": "more on decomposition (slides)",
-    "section": "Activity two – answers continued",
-    "text": "Activity two – answers continued\nGiven the length of a cube and the name of a box side:\n\nIt prompts you to the enter the length of the side\nIt calculates the number of cube that can fit in the side\nIt print the message and return the number.",
+    "section": "Comparing code – answers",
+    "text": "Comparing code – answers\nGiven the length of a cube and the name of a box side:\n\nIt prompts you to the enter the length of the side\nIt calculates the number of cube that can fit in the side\nIt print the message and return the number.",
     "crumbs": [
       "Module 4 - Built-In Functions and Decomposition",
       "more on decomposition (slides)"
@@ -1995,17 +1995,6 @@
   {
     "objectID": "slides-01-02.html#the-print-function",
     "href": "slides-01-02.html#the-print-function",
-    "title": "python basics (slides)",
-    "section": "The print function",
-    "text": "The print function\n\nprint() sends characters (strings) to the standard output\nBy default, the standard output of a python program goes to the console.\n\n\nprint(\"some characters\")\n\nsome characters\n\n\n\n\nprint('some characters')\n\nsome characters",
-    "crumbs": [
-      "Module 1 - Basics",
-      "python basics (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-01-02.html#the-print-function-1",
-    "href": "slides-01-02.html#the-print-function-1",
     "title": "python basics (slides)",
     "section": "The print function",
     "text": "The print function\n\nprint() sends characters (strings) to the standard output\nBy default, the standard output of a python program goes to the console.\n\n\nprint(\"some characters\")\n\nsome characters\n\n\n\n\nprint('some characters')\n\nsome characters",
@@ -2950,7 +2939,7 @@
     "href": "slides-07-02.html#random-module",
     "title": "random (slides)",
     "section": "random module",
-    "text": "random module\nWe need to import the module random\nWhat do the functions .random() and .randint() return?\n\nimport random\n\nn = random.random() #returns a random float between 0 and 1\nprint(n)\n\nn = random.randint(0, 9) #returns a random integer betweem 0 and 9.\n\n\nprint(n)\n\n0.24695309117255293\n3",
+    "text": "random module\nWe need to import the module random\nWhat do the functions .random() and .randint() return?\n\nimport random\n\nn = random.random() #returns a random float between 0 and 1\nprint(n)\n\nn = random.randint(0, 9) #returns a random integer betweem 0 and 9.\n\n\nprint(n)\n\n0.2516964224973526\n4",
     "crumbs": [
       "Module 7 - Data Structures (lists)",
       "random (slides)"
@@ -2961,7 +2950,7 @@
     "href": "slides-07-02.html#read-the-function",
     "title": "random (slides)",
     "section": "Read the function",
-    "text": "Read the function\nWhat does the function do?\n\nimport random\n\ndef pick_winner(names):\n  index = random.randint(0, len(names) - 1)\n  return names[index]\n\nif __name__ == \"__main__\":\n  winner = pick_winner([\"Peter\", \"Joan\", \"Mary\", \"June\"])\n  print(winner)\n\nMary",
+    "text": "Read the function\nWhat does the function do?\n\nimport random\n\ndef pick_winner(names):\n  index = random.randint(0, len(names) - 1)\n  return names[index]\n\nif __name__ == \"__main__\":\n  winner = pick_winner([\"Peter\", \"Joan\", \"Mary\", \"June\"])\n  print(winner)\n\nPeter",
     "crumbs": [
       "Module 7 - Data Structures (lists)",
       "random (slides)"
@@ -4354,11 +4343,11 @@
     ]
   },
   {
-    "objectID": "slides-09-02.html#attendance",
-    "href": "slides-09-02.html#attendance",
+    "objectID": "slides-09-02.html#correct-or-not",
+    "href": "slides-09-02.html#correct-or-not",
     "title": "for loops – iterating over items (slides)",
-    "section": "Attendance",
-    "text": "Attendance\nGo to gradescope and answer questions:\n\nis the solution correct or not?\nline 3: can we use for x in list?\n\n\ndef max_list(numbers):\n    max = None\n    for i in range(len(numbers)):\n        numbers[i] *= 2\n        if max == None or numbers[i] &gt; max:\n            max = numbers[i]\n    return max",
+    "section": "Correct or not?",
+    "text": "Correct or not?\nIs the solution correct or not?\nLine 3: can we use for x in list?\n\ndef max_list(numbers):\n    max = None\n    for i in range(len(numbers)):\n        numbers[i] *= 2\n        if max == None or numbers[i] &gt; max:\n            max = numbers[i]\n    return max",
     "crumbs": [
       "Module 9 - Data Structures (dictionaries)",
       "for loops -- iterating over items (slides)"
@@ -4915,33 +4904,22 @@
     ]
   },
   {
-    "objectID": "slides-03-02.html#global-vs.-local-variables-scope-1",
-    "href": "slides-03-02.html#global-vs.-local-variables-scope-1",
-    "title": "More on Functions (class slides)",
-    "section": "Global vs. Local variables (scope)",
-    "text": "Global vs. Local variables (scope)\n\nIn the previous program we wrote (volume and area of sphere), r, v and a are local variables within the main() function.\nThe variable radius and area are local within the sphere_area(radius) function scope.\nThe variable radius and volume are local within sphere_volume(radius)",
-    "crumbs": [
-      "Module 3 - Decomposition and More on Functions",
-      "More on Functions (class slides)"
-    ]
-  },
-  {
-    "objectID": "slides-03-02.html#global-vs.-local-variables-scope-2",
-    "href": "slides-03-02.html#global-vs.-local-variables-scope-2",
-    "title": "More on Functions (class slides)",
-    "section": "Global vs. Local variables (scope)",
-    "text": "Global vs. Local variables (scope)\n\nIn the previous program we wrote (volume and area of sphere), r, v and a are local variables within the main() function.\nThe variable radius and area are local within the sphere_area(radius) function scope.\nThe variable radius and volume are local within sphere_volume(radius)",
-    "crumbs": [
-      "Module 3 - Decomposition and More on Functions",
-      "More on Functions (class slides)"
-    ]
-  },
-  {
     "objectID": "slides-03-02.html#global-or-local",
     "href": "slides-03-02.html#global-or-local",
     "title": "More on Functions (class slides)",
     "section": "Global or Local?",
     "text": "Global or Local?\n\na = 10               # What are the global and local variables?\nb = 5                # Is the output of the two programs the same \n                     # or different?\ndef sum():\n  return a + b\n\ndef main():\n  print(sum())\n  \nmain()\n\nvs.\n\ndef sum(a, b):\n  return a + b\n\ndef main():\n  print(sum(10, 5))\n  \nmain()",
+    "crumbs": [
+      "Module 3 - Decomposition and More on Functions",
+      "More on Functions (class slides)"
+    ]
+  },
+  {
+    "objectID": "slides-03-02.html#global-vs.-local-variables-scope-1",
+    "href": "slides-03-02.html#global-vs.-local-variables-scope-1",
+    "title": "More on Functions (class slides)",
+    "section": "Global vs. Local variables (scope)",
+    "text": "Global vs. Local variables (scope)\n\nIn the previous program we wrote (volume and area of sphere), r, v and a are local variables within the main() function.\nThe variable radius and area are local within the sphere_area(radius) function scope.\nThe variable radius and volume are local within sphere_volume(radius)",
     "crumbs": [
       "Module 3 - Decomposition and More on Functions",
       "More on Functions (class slides)"
@@ -4970,22 +4948,11 @@
     ]
   },
   {
-    "objectID": "slides-03-02.html#write-a-function",
-    "href": "slides-03-02.html#write-a-function",
+    "objectID": "slides-03-02.html#compare-functions",
+    "href": "slides-03-02.html#compare-functions",
     "title": "More on Functions (class slides)",
-    "section": "Write a function",
-    "text": "Write a function\nWrite a Python function called hypotenuse that takes two parameters: a and b representing the length of the two non-hypotenuse sides of a right triangle. The function should calculate the hypotenuse according to the Pythagorean theorem: \\(c = \\sqrt(a^2 + b^2)\\). Return it rounded at two decimals.\nTest cases: hypotenuse(3, 4) should return 5.0, hypotenuse(10, 10) should return 14.14\nName your file hypotenuse.py to gradescope for attendance",
-    "crumbs": [
-      "Module 3 - Decomposition and More on Functions",
-      "More on Functions (class slides)"
-    ]
-  },
-  {
-    "objectID": "slides-03-02.html#write-a-function-1",
-    "href": "slides-03-02.html#write-a-function-1",
-    "title": "More on Functions (class slides)",
-    "section": "Write a function",
-    "text": "Write a function\n\ndef sqrt(n):\n  '''\n  This function calculates the square root of a number\n  Args:\n    n: integer or float\n  Returns:\n    The square root of n\n  '''\n  return n**.5\n\ndef hypotenuse(a, b):\n  '''\n  This function calculates the hypotenuse of a right angle triangle.\n  Args:\n    a: number (integer or float) representing one of the non-hypotenuse sides\n    b: number (integer or float) representing one of the non-hypotenuse sides\n  Returns:\n    Float representing the length of the hypotenuse given a and b\n  ''' \n  h = sqrt(a**2 + b**2)\n  return round(h, 2)\n\ndef main():\n  '''\n  This function calls the hypotenuse function to calculate and then\n  print out the hypotenuse of a right angle triangle of sides 3 and 4\n  and the hypotenuse of a right angle triange of sides 10 and 10\n  '''\n  result = hypotenuse(3, 4)\n  print(result)\n  \n  result = hypotenuse(10, 10)\n  print(result)\n  \nmain()\n\n5.0\n14.14",
+    "section": "Compare Functions",
+    "text": "Compare Functions\n\ndef cook_food_one(order):\n  message = \"Your \" + order + \" is ready!\"\n\ndef cook_food_two(order):\n  message = \"Your \" + order + \" is ready!\"\n  return message\n\ndef cook_food_three(order):\n  message = \"Your \" + order + \" is ready!\"\n  print(message)\n\ndef main():\n  print(cook_food_one(\"pasta\"))\n  print(cook_food_two(\"burger\"))\n  print(cook_food_three(\"fries\"))\n  \nmain()\n\nNone\nYour burger is ready!\nYour fries is ready!\nNone",
     "crumbs": [
       "Module 3 - Decomposition and More on Functions",
       "More on Functions (class slides)"
@@ -5080,11 +5047,11 @@
     ]
   },
   {
-    "objectID": "slides-03-01.html#print-a-retro-head-long-neck-guitar",
-    "href": "slides-03-01.html#print-a-retro-head-long-neck-guitar",
+    "objectID": "slides-03-01.html#print-a-long-neck-guitar",
+    "href": "slides-03-01.html#print-a-long-neck-guitar",
     "title": "decomposition (slides)",
-    "section": "Print a retro head long neck guitar",
-    "text": "Print a retro head long neck guitar\n\nprint(\"     ._-_.\")\nprint(\"    +|\\G/|+\")\nprint(\"    +|\\./|+\")\nprint(\"    +|\\./|+\")\nprint(\"     \\===/\")\nprint(\"      |||\")\nprint(\"      |||\")\nprint(\"      |||\")\nprint(\"      |||\")\nprint(\"   ___|||___\")\nprint(\"  /   |||   \\ \")\nprint(\" /    |||    \\ \")\nprint(\"|     |||     |\")\nprint(\" \\   (|||)   /\")\nprint(\"  |   |||   |\")\nprint(\"  /   |||   \\ \")\nprint(\" /    |||    \\ \")\nprint(\"/     |||     \\ \")\nprint(\"|    [===]    |\")\nprint(\" \\           /\")\nprint(\"  '.       .'\")\nprint(\"   '-------'\")",
+    "section": "Print a long neck guitar",
+    "text": "Print a long neck guitar\n\nprint(\"      ___\")\nprint(\"    o|* *|o\")\nprint(\"    o|* *|o\")\nprint(\"    o|* *|o\")\nprint(\"     \\===/\")\nprint(\"      |||\")\nprint(\"      |||\")\nprint(\"      |||\")\nprint(\"      |||\")\nprint(\"   ___|||___\")\nprint(\"  /   |||   \\ \")\nprint(\" /    |||    \\ \")\nprint(\"|     |||     |\")\nprint(\" \\   (|||)   /\")\nprint(\"  |   |||   |\")\nprint(\"  /   |||   \\ \")\nprint(\" /    |||    \\ \")\nprint(\"/     |||     \\ \")\nprint(\"|    [===]    |\")\nprint(\" \\           /\")\nprint(\"  '.       .'\")\nprint(\"   '-------'\")",
     "crumbs": [
       "Module 3 - Decomposition and More on Functions",
       "decomposition (slides)"
@@ -5102,33 +5069,33 @@
     ]
   },
   {
-    "objectID": "slides-03-01.html#class-activity-one-answers",
-    "href": "slides-03-01.html#class-activity-one-answers",
+    "objectID": "slides-03-01.html#classic-guitar-vs.-retro-head-guitar",
+    "href": "slides-03-01.html#classic-guitar-vs.-retro-head-guitar",
     "title": "decomposition (slides)",
-    "section": "Class activity one – answers",
-    "text": "Class activity one – answers\nRetro head guitar vs. Retro head long neck guitar:\n\nwhich parts of code are the same?\n\nthe head\nthe body\n\nwhich parts of code are different?\n\nthe neck",
+    "section": "Classic guitar vs. Retro head guitar",
+    "text": "Classic guitar vs. Retro head guitar\n\nwhich parts of code are the same?\n\nthe neck and the body\n\nwhich parts of code are different?\n\nthe head: line 1-4\n\n\n\ndef print_classic_guitar():\n    print_head()\n    print_neck()\n    print_body()\n\ndef print_retro_guitar():\n    print_retro_head()\n    print_neck()\n    print_body()",
     "crumbs": [
       "Module 3 - Decomposition and More on Functions",
       "decomposition (slides)"
     ]
   },
   {
-    "objectID": "slides-03-01.html#class-activity-one-answers-1",
-    "href": "slides-03-01.html#class-activity-one-answers-1",
+    "objectID": "slides-03-01.html#classic-guitar-vs.-long-neck-guitar",
+    "href": "slides-03-01.html#classic-guitar-vs.-long-neck-guitar",
     "title": "decomposition (slides)",
-    "section": "Class activity one – answers",
-    "text": "Class activity one – answers\nRetro head guitar vs. Retro head long neck guitar:\n\nwhich parts of code are the same?\n\nthe head\nthe body\n\nwhich parts of code are different?\n\nthe neck",
+    "section": "Classic guitar vs. Long neck guitar",
+    "text": "Classic guitar vs. Long neck guitar\n\nwhich parts of code are the same?\n\nthe head and the body\n\nwhich parts of code are different?\n\nthe neck\n\n\n\ndef print_classic_guitar():\n    print_head()\n    print_neck()\n    print_body()\n    \ndef print_long_guitar():\n    print_head()\n    print_neck()\n    print_neck()\n    print_body()",
     "crumbs": [
       "Module 3 - Decomposition and More on Functions",
       "decomposition (slides)"
     ]
   },
   {
-    "objectID": "slides-03-01.html#decomposition",
-    "href": "slides-03-01.html#decomposition",
+    "objectID": "slides-03-01.html#decompose-a-program-into-functions",
+    "href": "slides-03-01.html#decompose-a-program-into-functions",
     "title": "decomposition (slides)",
-    "section": "Decomposition",
-    "text": "Decomposition\n\ndef print_classic_guitar():\n    print_head()\n    print_neck()\n    print_body()\n\ndef print_retro_guitar():\n    print_retro_head()\n    print_neck()\n    print_body()\n    \ndef print_long_guitar():\n    print_head()\n    print_neck()\n    print_neck()\n    print_body()\n\ndef main():\n    print_classic_guitar() # print classic guitar\n    print_retro_guitar() # print retro head guitar\n    print_long_guitar() # print long neck guitar\n\nmain()",
+    "section": "Decompose a program into functions",
+    "text": "Decompose a program into functions\n\ndef print_classic_guitar():\n    print_head()\n    print_neck()\n    print_body()\n\ndef print_retro_guitar():\n    print_retro_head()\n    print_neck()\n    print_body()\n    \ndef print_long_guitar():\n    print_head()\n    print_neck()\n    print_neck()\n    print_body()\n\ndef main():\n    print_classic_guitar() # print classic guitar\n    print_retro_guitar() # print retro head guitar\n    print_long_guitar() # print long neck guitar\n\nmain()",
     "crumbs": [
       "Module 3 - Decomposition and More on Functions",
       "decomposition (slides)"
@@ -5168,6 +5135,17 @@
     ]
   },
   {
+    "objectID": "slides-03-01.html#class-activity-two-answers-1",
+    "href": "slides-03-01.html#class-activity-two-answers-1",
+    "title": "decomposition (slides)",
+    "section": "Class activity two – answers",
+    "text": "Class activity two – answers\n\nprint(\"      ___\")\nprint(\"    o|* *|o\") # head\nprint(\"    o|* *|o\") # head\nprint(\"    o|* *|o\") # head\nprint(\"     \\===/\")\nprint(\"      |||\") # neck\nprint(\"      |||\") # neck\nprint(\"   ___|||___\")\nprint(\"  /   |||   \\ \") # body\nprint(\" /    |||    \\ \") # body\nprint(\"|     |||     |\")\nprint(\" \\   (|||)   /\")\nprint(\"  |   |||   |\")\nprint(\"  /   |||   \\ \") # body\nprint(\" /    |||    \\ \") # body\nprint(\"/     |||     \\ \")\nprint(\"|    [===]    |\")\nprint(\" \\           /\")\nprint(\"  '.       .'\")\nprint(\"   '-------'\")",
+    "crumbs": [
+      "Module 3 - Decomposition and More on Functions",
+      "decomposition (slides)"
+    ]
+  },
+  {
     "objectID": "slides-03-01.html#write-functions",
     "href": "slides-03-01.html#write-functions",
     "title": "decomposition (slides)",
@@ -5201,22 +5179,11 @@
     ]
   },
   {
-    "objectID": "slides-03-01.html#write-a-function",
-    "href": "slides-03-01.html#write-a-function",
+    "objectID": "slides-03-01.html#add-function-print_retro_head",
+    "href": "slides-03-01.html#add-function-print_retro_head",
     "title": "decomposition (slides)",
-    "section": "Write a function",
-    "text": "Write a function\nWrite print_retro_head:\n\ndef print_retro_guitar():\n    print_retro_head()\n    print_neck()\n    print_body()\n\ndef main():\n    print_classic_guitar() # print classic guitar\n    print_long_guitar() # print long neck guitar\n    print_retro_guitar() # print retro head guitar\n\nmain()",
-    "crumbs": [
-      "Module 3 - Decomposition and More on Functions",
-      "decomposition (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-03-01.html#write-a-function-answer",
-    "href": "slides-03-01.html#write-a-function-answer",
-    "title": "decomposition (slides)",
-    "section": "Write a function – answer",
-    "text": "Write a function – answer\n\ndef print_head():\n    print(\"      ___\")\n    pattern = \"    o|* *|o\"\n    print(pattern)\n    print(pattern)\n    print(pattern)\n    print(\"     \\===/\")\n\ndef print_retro_head():\n    print(\"     ._-_.\")\n    print(\"    +|\\G/|+\")\n    pattern = \"    +|\\./|+\"\n    print(pattern)\n    print(pattern)\n    print(\"     \\===/\")\n\ndef print_neck():\n    print(\"      |||\" + \"\\n\" + \"      |||\")\n    \ndef print_body():\n    print(\"   ___|||___\")\n    pattern = \"  /   |||   \\ \" + \"\\n\" + \" /    |||    \\ \" \n    print(pattern)\n    print(\"|     |||     |\")\n    print(\" \\   (|||)   /\")\n    print(\"  |   |||   |\")\n    print(pattern)\n    print(\"/     |||     \\ \")\n    print(\"|    [===]    |\")\n    print(\" \\           /\")\n    print(\"  '.       .'\")\n    print(\"   '-------'\")\n\ndef print_classic_guitar():\n    print_head()\n    print_neck()\n    print_body()\n\ndef print_retro_guitar():\n    print_retro_head()\n    print_neck()\n    print_body()\n    \ndef print_long_guitar():\n    print_head()\n    print_neck()\n    print_neck()\n    print_body()\n\ndef main():\n    print_classic_guitar() # print classic guitar\n    print_retro_guitar() # print retro head guitar\n    print_long_guitar() # print long neck guitar\n\nmain()\n\n      ___\n    o|* *|o\n    o|* *|o\n    o|* *|o\n     \\===/\n      |||\n      |||\n   ___|||___\n  /   |||   \\ \n /    |||    \\ \n|     |||     |\n \\   (|||)   /\n  |   |||   |\n  /   |||   \\ \n /    |||    \\ \n/     |||     \\ \n|    [===]    |\n \\           /\n  '.       .'\n   '-------'\n     ._-_.\n    +|\\G/|+\n    +|\\./|+\n    +|\\./|+\n     \\===/\n      |||\n      |||\n   ___|||___\n  /   |||   \\ \n /    |||    \\ \n|     |||     |\n \\   (|||)   /\n  |   |||   |\n  /   |||   \\ \n /    |||    \\ \n/     |||     \\ \n|    [===]    |\n \\           /\n  '.       .'\n   '-------'\n      ___\n    o|* *|o\n    o|* *|o\n    o|* *|o\n     \\===/\n      |||\n      |||\n      |||\n      |||\n   ___|||___\n  /   |||   \\ \n /    |||    \\ \n|     |||     |\n \\   (|||)   /\n  |   |||   |\n  /   |||   \\ \n /    |||    \\ \n/     |||     \\ \n|    [===]    |\n \\           /\n  '.       .'\n   '-------'",
+    "section": "Add function print_retro_head",
+    "text": "Add function print_retro_head\n\ndef print_head():\n    print(\"      ___\")\n    pattern = \"    o|* *|o\"\n    print(pattern)\n    print(pattern)\n    print(pattern)\n    print(\"     \\===/\")\n\ndef print_retro_head():\n    print(\"     ._-_.\")\n    print(\"    +|\\G/|+\")\n    pattern = \"    +|\\./|+\"\n    print(pattern)\n    print(pattern)\n    print(\"     \\===/\")\n\ndef print_neck():\n    print(\"      |||\" + \"\\n\" + \"      |||\")\n    \ndef print_body():\n    print(\"   ___|||___\")\n    pattern = \"  /   |||   \\ \" + \"\\n\" + \" /    |||    \\ \" \n    print(pattern)\n    print(\"|     |||     |\")\n    print(\" \\   (|||)   /\")\n    print(\"  |   |||   |\")\n    print(pattern)\n    print(\"/     |||     \\ \")\n    print(\"|    [===]    |\")\n    print(\" \\           /\")\n    print(\"  '.       .'\")\n    print(\"   '-------'\")\n\ndef print_classic_guitar():\n    print_head()\n    print_neck()\n    print_body()\n\ndef print_retro_guitar():\n    print_retro_head()\n    print_neck()\n    print_body()\n    \ndef print_long_guitar():\n    print_head()\n    print_neck()\n    print_neck()\n    print_body()\n\ndef main():\n    print_classic_guitar() # print classic guitar\n    print_retro_guitar() # print retro head guitar\n    print_long_guitar() # print long neck guitar\n\nmain()\n\n      ___\n    o|* *|o\n    o|* *|o\n    o|* *|o\n     \\===/\n      |||\n      |||\n   ___|||___\n  /   |||   \\ \n /    |||    \\ \n|     |||     |\n \\   (|||)   /\n  |   |||   |\n  /   |||   \\ \n /    |||    \\ \n/     |||     \\ \n|    [===]    |\n \\           /\n  '.       .'\n   '-------'\n     ._-_.\n    +|\\G/|+\n    +|\\./|+\n    +|\\./|+\n     \\===/\n      |||\n      |||\n   ___|||___\n  /   |||   \\ \n /    |||    \\ \n|     |||     |\n \\   (|||)   /\n  |   |||   |\n  /   |||   \\ \n /    |||    \\ \n/     |||     \\ \n|    [===]    |\n \\           /\n  '.       .'\n   '-------'\n      ___\n    o|* *|o\n    o|* *|o\n    o|* *|o\n     \\===/\n      |||\n      |||\n      |||\n      |||\n   ___|||___\n  /   |||   \\ \n /    |||    \\ \n|     |||     |\n \\   (|||)   /\n  |   |||   |\n  /   |||   \\ \n /    |||    \\ \n/     |||     \\ \n|    [===]    |\n \\           /\n  '.       .'\n   '-------'",
     "crumbs": [
       "Module 3 - Decomposition and More on Functions",
       "decomposition (slides)"
@@ -8724,160 +8691,6 @@
     "crumbs": [
       "Module 1 - Basics",
       "Module 1 Assignments"
-    ]
-  },
-  {
-    "objectID": "slides-03-02.html#compare-functions",
-    "href": "slides-03-02.html#compare-functions",
-    "title": "More on Functions (class slides)",
-    "section": "Compare Functions",
-    "text": "Compare Functions\n\ndef cook_food_one(order):\n  message = \"Your \" + order + \" is ready!\"\n\ndef cook_food_two(order):\n  message = \"Your \" + order + \" is ready!\"\n  return message\n\ndef cook_food_three(order):\n  message = \"Your \" + order + \" is ready!\"\n  print(message)\n\ndef main():\n  print(cook_food_one(\"pasta\"))\n  print(cook_food_two(\"burger\"))\n  print(cook_food_three(\"fries\"))\n  \nmain()\n\nNone\nYour burger is ready!\nYour fries is ready!\nNone",
-    "crumbs": [
-      "Module 3 - Decomposition and More on Functions",
-      "More on Functions (class slides)"
-    ]
-  },
-  {
-    "objectID": "slides-03-01.html#classic-guitar-vs.-retro-head-guitar",
-    "href": "slides-03-01.html#classic-guitar-vs.-retro-head-guitar",
-    "title": "decomposition (slides)",
-    "section": "Classic guitar vs. Retro head guitar",
-    "text": "Classic guitar vs. Retro head guitar\n\nwhich parts of code are the same?\n\nthe neck and the body\n\nwhich parts of code are different?\n\nthe head: line 1-4\n\n\n\ndef print_classic_guitar():\n    print_head()\n    print_neck()\n    print_body()\n\ndef print_retro_guitar():\n    print_retro_head()\n    print_neck()\n    print_body()",
-    "crumbs": [
-      "Module 3 - Decomposition and More on Functions",
-      "decomposition (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-03-01.html#print-a-long-neck-guitar",
-    "href": "slides-03-01.html#print-a-long-neck-guitar",
-    "title": "decomposition (slides)",
-    "section": "Print a long neck guitar",
-    "text": "Print a long neck guitar\n\nprint(\"      ___\")\nprint(\"    o|* *|o\")\nprint(\"    o|* *|o\")\nprint(\"    o|* *|o\")\nprint(\"     \\===/\")\nprint(\"      |||\")\nprint(\"      |||\")\nprint(\"      |||\")\nprint(\"      |||\")\nprint(\"   ___|||___\")\nprint(\"  /   |||   \\ \")\nprint(\" /    |||    \\ \")\nprint(\"|     |||     |\")\nprint(\" \\   (|||)   /\")\nprint(\"  |   |||   |\")\nprint(\"  /   |||   \\ \")\nprint(\" /    |||    \\ \")\nprint(\"/     |||     \\ \")\nprint(\"|    [===]    |\")\nprint(\" \\           /\")\nprint(\"  '.       .'\")\nprint(\"   '-------'\")",
-    "crumbs": [
-      "Module 3 - Decomposition and More on Functions",
-      "decomposition (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-03-01.html#classic-guitar-vs.-long-neck-guitar",
-    "href": "slides-03-01.html#classic-guitar-vs.-long-neck-guitar",
-    "title": "decomposition (slides)",
-    "section": "Classic guitar vs. Long neck guitar",
-    "text": "Classic guitar vs. Long neck guitar\n\nwhich parts of code are the same?\n\nthe head and the body\n\nwhich parts of code are different?\n\nthe neck\n\n\n\ndef print_classic_guitar():\n    print_head()\n    print_neck()\n    print_body()\n    \ndef print_long_guitar():\n    print_head()\n    print_neck()\n    print_neck()\n    print_body()",
-    "crumbs": [
-      "Module 3 - Decomposition and More on Functions",
-      "decomposition (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-03-01.html#class-activity-two-answers-1",
-    "href": "slides-03-01.html#class-activity-two-answers-1",
-    "title": "decomposition (slides)",
-    "section": "Class activity two – answers",
-    "text": "Class activity two – answers\n\nprint(\"      ___\")\nprint(\"    o|* *|o\") # head\nprint(\"    o|* *|o\") # head\nprint(\"    o|* *|o\") # head\nprint(\"     \\===/\")\nprint(\"      |||\") # neck\nprint(\"      |||\") # neck\nprint(\"   ___|||___\")\nprint(\"  /   |||   \\ \") # body\nprint(\" /    |||    \\ \") # body\nprint(\"|     |||     |\")\nprint(\" \\   (|||)   /\")\nprint(\"  |   |||   |\")\nprint(\"  /   |||   \\ \") # body\nprint(\" /    |||    \\ \") # body\nprint(\"/     |||     \\ \")\nprint(\"|    [===]    |\")\nprint(\" \\           /\")\nprint(\"  '.       .'\")\nprint(\"   '-------'\")",
-    "crumbs": [
-      "Module 3 - Decomposition and More on Functions",
-      "decomposition (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-03-01.html#decomposing-a-program-into-functions",
-    "href": "slides-03-01.html#decomposing-a-program-into-functions",
-    "title": "decomposition (slides)",
-    "section": "Decomposing a Program into Functions",
-    "text": "Decomposing a Program into Functions\n\ndef print_classic_guitar():\n    print_head()\n    print_neck()\n    print_body()\n\ndef print_retro_guitar():\n    print_retro_head()\n    print_neck()\n    print_body()\n    \ndef print_long_guitar():\n    print_head()\n    print_neck()\n    print_neck()\n    print_body()\n\ndef main():\n    print_classic_guitar() # print classic guitar\n    print_retro_guitar() # print retro head guitar\n    print_long_guitar() # print long neck guitar\n\nmain()",
-    "crumbs": [
-      "Module 3 - Decomposition and More on Functions",
-      "decomposition (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-03-01.html#decompose-a-program-into-functions",
-    "href": "slides-03-01.html#decompose-a-program-into-functions",
-    "title": "decomposition (slides)",
-    "section": "Decompose a program into functions",
-    "text": "Decompose a program into functions\n\ndef print_classic_guitar():\n    print_head()\n    print_neck()\n    print_body()\n\ndef print_retro_guitar():\n    print_retro_head()\n    print_neck()\n    print_body()\n    \ndef print_long_guitar():\n    print_head()\n    print_neck()\n    print_neck()\n    print_body()\n\ndef main():\n    print_classic_guitar() # print classic guitar\n    print_retro_guitar() # print retro head guitar\n    print_long_guitar() # print long neck guitar\n\nmain()",
-    "crumbs": [
-      "Module 3 - Decomposition and More on Functions",
-      "decomposition (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-03-01.html#add-function-print_retro_head",
-    "href": "slides-03-01.html#add-function-print_retro_head",
-    "title": "decomposition (slides)",
-    "section": "Add function print_retro_head",
-    "text": "Add function print_retro_head\n\ndef print_head():\n    print(\"      ___\")\n    pattern = \"    o|* *|o\"\n    print(pattern)\n    print(pattern)\n    print(pattern)\n    print(\"     \\===/\")\n\ndef print_retro_head():\n    print(\"     ._-_.\")\n    print(\"    +|\\G/|+\")\n    pattern = \"    +|\\./|+\"\n    print(pattern)\n    print(pattern)\n    print(\"     \\===/\")\n\ndef print_neck():\n    print(\"      |||\" + \"\\n\" + \"      |||\")\n    \ndef print_body():\n    print(\"   ___|||___\")\n    pattern = \"  /   |||   \\ \" + \"\\n\" + \" /    |||    \\ \" \n    print(pattern)\n    print(\"|     |||     |\")\n    print(\" \\   (|||)   /\")\n    print(\"  |   |||   |\")\n    print(pattern)\n    print(\"/     |||     \\ \")\n    print(\"|    [===]    |\")\n    print(\" \\           /\")\n    print(\"  '.       .'\")\n    print(\"   '-------'\")\n\ndef print_classic_guitar():\n    print_head()\n    print_neck()\n    print_body()\n\ndef print_retro_guitar():\n    print_retro_head()\n    print_neck()\n    print_body()\n    \ndef print_long_guitar():\n    print_head()\n    print_neck()\n    print_neck()\n    print_body()\n\ndef main():\n    print_classic_guitar() # print classic guitar\n    print_retro_guitar() # print retro head guitar\n    print_long_guitar() # print long neck guitar\n\nmain()\n\n      ___\n    o|* *|o\n    o|* *|o\n    o|* *|o\n     \\===/\n      |||\n      |||\n   ___|||___\n  /   |||   \\ \n /    |||    \\ \n|     |||     |\n \\   (|||)   /\n  |   |||   |\n  /   |||   \\ \n /    |||    \\ \n/     |||     \\ \n|    [===]    |\n \\           /\n  '.       .'\n   '-------'\n     ._-_.\n    +|\\G/|+\n    +|\\./|+\n    +|\\./|+\n     \\===/\n      |||\n      |||\n   ___|||___\n  /   |||   \\ \n /    |||    \\ \n|     |||     |\n \\   (|||)   /\n  |   |||   |\n  /   |||   \\ \n /    |||    \\ \n/     |||     \\ \n|    [===]    |\n \\           /\n  '.       .'\n   '-------'\n      ___\n    o|* *|o\n    o|* *|o\n    o|* *|o\n     \\===/\n      |||\n      |||\n      |||\n      |||\n   ___|||___\n  /   |||   \\ \n /    |||    \\ \n|     |||     |\n \\   (|||)   /\n  |   |||   |\n  /   |||   \\ \n /    |||    \\ \n/     |||     \\ \n|    [===]    |\n \\           /\n  '.       .'\n   '-------'",
-    "crumbs": [
-      "Module 3 - Decomposition and More on Functions",
-      "decomposition (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-04-02.html#activity-two-continued-1",
-    "href": "slides-04-02.html#activity-two-continued-1",
-    "title": "more on decomposition (slides)",
-    "section": "Activity two – continued",
-    "text": "Activity two – continued\nCompare two blocks of code:\n\nline 2, 6, 10:\n\n\nbox_w = int(input(\"Box width? \")) \nfit_w = box_w // cube_len\nprint(str(fit_w) + \" Rubik's cubes will fit width-wise.\")\n\n\nline 3, 7, 1:\n\n\nbox_h = int(input(\"Box height? \")) \nfit_h = box_h // cube_len\nprint(str(fit_h) + \" Rubik's cubes will fit height-wise.\")\n\nWhat are the parameters of this function? In other words, what information must be known beforehand?",
-    "crumbs": [
-      "Module 4 - Built-In Functions and Decomposition",
-      "more on decomposition (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-04-02.html#activity-three",
-    "href": "slides-04-02.html#activity-three",
-    "title": "more on decomposition (slides)",
-    "section": "Activity three",
-    "text": "Activity three\nCompare two blocks of code:\n\nline 2, 6, 10:\n\n\nbox_w = int(input(\"Box width? \")) \nfit_w = box_w // cube_len\nprint(str(fit_w) + \" Rubik's cubes will fit width-wise.\")\n\n\nline 3, 7, 1:\n\n\nbox_h = int(input(\"Box height? \")) \nfit_h = box_h // cube_len\nprint(str(fit_h) + \" Rubik's cubes will fit height-wise.\")\n\nWhat are the parameters of this function? In other words, what information must be known beforehand?",
-    "crumbs": [
-      "Module 4 - Built-In Functions and Decomposition",
-      "more on decomposition (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-04-02.html#activity-three-1",
-    "href": "slides-04-02.html#activity-three-1",
-    "title": "more on decomposition (slides)",
-    "section": "Activity three",
-    "text": "Activity three\nCompare two blocks of code:\n\nline 2, 6, 10:\n\n\nbox_w = int(input(\"Box width? \")) \nfit_w = box_w // cube_len\nprint(str(fit_w) + \" Rubik's cubes will fit width-wise.\")\n\n\nline 3, 7, 1:\n\n\nbox_h = int(input(\"Box height? \")) \nfit_h = box_h // cube_len\nprint(str(fit_h) + \" Rubik's cubes will fit height-wise.\")\n\nWhat are the parameters of this function? In other words, what information must be known beforehand?",
-    "crumbs": [
-      "Module 4 - Built-In Functions and Decomposition",
-      "more on decomposition (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-04-02.html#comparing-three-blocks-of-code",
-    "href": "slides-04-02.html#comparing-three-blocks-of-code",
-    "title": "more on decomposition (slides)",
-    "section": "Comparing three blocks of code",
-    "text": "Comparing three blocks of code\nWhat does this function do? What are the parameters?\n\nline 2, 6, 10:\n\n\nbox_w = int(input(\"Box width? \")) \nfit_w = box_w // cube_len\nprint(str(fit_w) + \" Rubik's cubes will fit width-wise.\")\n\n\nline 3, 7, 11:\n\n\nbox_h = int(input(\"Box height? \")) \nfit_h = box_h // cube_len\nprint(str(fit_h) + \" Rubik's cubes will fit height-wise.\")\n\n\nline 4, 8, 12:\n\n\nbox_l = int(input(\"Box length? \"))\nfit_l = box_l // cube_len\nprint(str(fit_l) + \" Rubik's cubes will fit length-wise.\")",
-    "crumbs": [
-      "Module 4 - Built-In Functions and Decomposition",
-      "more on decomposition (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-04-02.html#comparing-code-answers",
-    "href": "slides-04-02.html#comparing-code-answers",
-    "title": "more on decomposition (slides)",
-    "section": "Comparing code – answers",
-    "text": "Comparing code – answers\nGiven the length of a cube and the name of a box side:\n\nIt prompts you to the enter the length of the side\nIt calculates the number of cube that can fit in the side\nIt print the message and return the number.",
-    "crumbs": [
-      "Module 4 - Built-In Functions and Decomposition",
-      "more on decomposition (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-09-02.html#correct-or-not",
-    "href": "slides-09-02.html#correct-or-not",
-    "title": "for loops – iterating over items (slides)",
-    "section": "Correct or not?",
-    "text": "Correct or not?\nIs the solution correct or not?\nLine 3: can we use for x in list?\n\ndef max_list(numbers):\n    max = None\n    for i in range(len(numbers)):\n        numbers[i] *= 2\n        if max == None or numbers[i] &gt; max:\n            max = numbers[i]\n    return max",
-    "crumbs": [
-      "Module 9 - Data Structures (dictionaries)",
-      "for loops -- iterating over items (slides)"
     ]
   }
 ]
