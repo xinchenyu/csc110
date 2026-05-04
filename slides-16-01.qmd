@@ -14,7 +14,7 @@ df-print: kable
 Final exam 
 
 
--   Friday May 8, **6:00 - 8:00pm**,  **BIOE (Modern Languages) 100**
+-   Friday May 8, **6:00 - 8:00pm**, in **BIOE 100**
 
 -   Bring your photo ID
 
