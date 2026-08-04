@@ -1,8 +1,9 @@
 ---
 title: "Syllabus"
 author: "Xinchen Yu (she/her/hers)"
-date: "Spring 2026"
+date: "Fall 2026"
 output:
+  html_document: default
   pdf_document: default
 subtitle: CSc 110 Computer Programming I
 ---
@@ -107,15 +108,14 @@ Absences pre-approved by the UA Dean of Students (or dean's designee) will be ho
 
 ## Administrative Drops
 
-Every semester, students enroll in introductory CS classes but do not submit any work, resulting in a grade of `E` at the end of the term. To prevent this, at the end of the **second week** (Jan 23), all students who have not submitted/completed **three or more** of the following will be administratively dropped:
+Every semester, students enroll in introductory CS classes but do not submit any work, resulting in a grade of `E` at the end of the term. To prevent this, at the end of the **second week**, all students who have not submitted/completed **three or more** of the following will be administratively dropped:
 
-1.  Jan 15 quiz
-2.  Class presence on Jan 20
-3.  Jan 22 quiz
-4.  [Module 1 Programming Problem 1](assignments-01.html)
-5.  [Module 1 Programming Problem 2](assignments-01.html)
+1.  Quiz 01
+2.  Quiz 02
+3.  [Module 1 Programming Problem 1](assignments-01.html)
+4.  [Module 1 Programming Problem 2](assignments-01.html)
 
-Mar 31 is the last day instructors may administratively drop students. Check more important dates [here](https://registrar.arizona.edu/dates-and-deadlines).
+Nov 1 is the last day instructors may administratively drop students. Check more important dates [here](https://registrar.arizona.edu/dates-and-deadlines).
 
 ## Illnesses and Emergencies
 
@@ -140,10 +140,10 @@ All online communication will be conducted through my official UA e-mail address
 
 All readings, videos, and assignment instructions will be available in the course website.
 
--   Course D2L: <https://d2l.arizona.edu/d2l/home/1720122>
--   Course Gradescope: <https://www.gradescope.com/courses/1213866>
+-   Course D2L: <https://d2l.arizona.edu/d2l/home/1795127>
+-   Course Gradescope: <https://www.gradescope.com/courses/1343427>
 -   Course website: <https://xinchenyu.github.io/csc110/>
--   Piazza: <https://piazza.com/arizona/spring2026/csc110002> (Access code: wildcats)
+-   Piazza: <https://piazza.com/arizona/fall2026/csc110002/home> (Access code: wildcats)
 
 # Assignments and Examinations: Schedule/Due Dates
 
@@ -159,8 +159,8 @@ There will be three exams (each 15%) throughout the course (including two midter
 
 The midterm exams will be on:
 
--   Midterm Exam 1 - `r schedule %>% filter(exam == "Midterm 1" & term == "spring 2026") %>% pull(formatted_date)`
--   Midterm Exam 2 - `r schedule %>% filter(exam == "Midterm 2" & term == "spring 2026") %>% pull(formatted_date)`
+-   Midterm Exam 1 - `r schedule %>% filter(exam == "Midterm 1" & term == "fall 2026") %>% pull(formatted_date)`
+-   Midterm Exam 2 - `r schedule %>% filter(exam == "Midterm 2" & term == "fall 2026") %>% pull(formatted_date)`
 
 You must keep theses dates available. Do not schedule any flights, travel plans, or other conflicts with these exams.
 
@@ -192,7 +192,7 @@ Your first TA office visit should take place before the Midterm 1 date, and the 
 
 The final exam is worth 15%.
 
-The final exam date and time is: `r schedule %>% filter(exam == "Final Exam" & term == "spring 2026") %>% pull(formatted_date)` -- `r schedule %>% filter(exam == "Final Exam" & term == "spring 2026") %>% pull(time)` in [BIOE 100](https://classrooms.registrar.arizona.edu/43/100).
+The final exam date and time is: `r schedule %>% filter(exam == "Final Exam" & term == "fall 2026") %>% pull(formatted_date)` -- `r schedule %>% filter(exam == "Final Exam" & term == "fall 2026") %>% pull(time)`.
 
 You must keep this time available. Do not schedule any flights, travel plans, or other conflicts with this exam.
 
@@ -231,7 +231,7 @@ List topics in logical units in a weekly/daily schedule, including assignment du
 
 ```{r}
 schedule %>% 
-  filter(term == "spring 2026") %>% 
+  filter(term == "fall 2026") %>% 
   select(week_number, formatted_start, module, topic) %>% 
   kable(col.names = c("Week", "Start Date", "Module", "Topic"))
 ```
@@ -242,7 +242,7 @@ We won't have classes due to university-wide holidays on the following dates:
 
 ```{r}
 schedule %>% 
-  filter(!is.na(holiday) & term == "spring 2026") %>% 
+  filter(!is.na(holiday) & term == "fall 2026") %>% 
   select(week_number, formatted_date, holiday) %>% 
   kable(col.names = c("Week", "Date", "Holiday"))
 ```
@@ -265,96 +265,25 @@ In this course, we will focus on the following competencies:
 -   **Communication**: Students are encouraged to emphasize communication by interacting with teaching assistants and using various channels, such as office hours, Gradescope, class discussions, and Piazza, to stay updated on course materials.
 
 
-# Department of Computer Science Code of Conduct
-
-The Department of Computer Science is committed to providing and maintaining a supportive educational environment for all. We strive to be welcoming and inclusive, respect privacy and confidentiality, behave respectfully and courteously, and practice intellectual honesty. Disruptive behaviors (such as physical or emotional harassment, dismissive attitudes, and abuse of department resources) will not be tolerated. The complete Code of Conduct is available on our department web site. We expect that you will adhere to this code, as well as the UA Student Code of Conduct, while you are a member of this class.
-
 # Classroom Behavior Policy
 
 To foster a positive learning environment, students and instructors have a shared responsibility. We want a safe, welcoming, and inclusive environment where all of us feel comfortable with each other and where we can challenge ourselves to succeed. To that end, our focus is on the tasks at hand and not on extraneous activities (e.g., texting, chatting, reading a newspaper, making phone calls, web surfing, etc.).
 
 Students are asked to refrain from disruptive conversations with people sitting around them during lecture. Students observed engaging in disruptive activity will be asked to cease this behavior. Those who continue to disrupt the class will be asked to leave lecture or discussion and may be reported to the Dean of Students.
 
-## Threatening Behavior Policy
+# Class Participation Policies  
 
-The UA Threatening Behavior by Students Policy prohibits threats of physical harm to any member of the University community, including to oneself. See <http://policy.arizona.edu/education-and-student-affairs/threatening-behavior-students>.
+Participation is required and an important part of the learning experience in this course. Students are expected to arrive prepared, engage actively in lectures, contribute to discussions and in-class activities, and collaborate respectfully with their peers.
+
+# Class Absence Policies
+
+Regular attendance is expected because lectures include quizzes, active learning activities and collaborative exercises that cannot be fully replicated outside of class. If you must miss class due to illness, a university-approved activity, or other legitimate circumstances, please notify the instructor as soon as possible. Students are responsible for completing any missed work. Absences pre-approved by the University or the Dean of Students will be accommodated in accordance with University policies.
 
 # Accessibility and Accommodations
 
 At the University of Arizona, we strive to make learning experiences as accessible as possible. If you anticipate or experience barriers based on disability or pregnancy, please contact the Disability Resource Center (520-621-3268, <https://drc.arizona.edu/>) to establish reasonable accommodations.
 
-# Code of Academic Integrity
 
-Students are encouraged to share intellectual views and discuss freely the principles and applications of course materials. However, graded work/exercises must be the product of independent effort unless otherwise instructed. 
-
-**All work you submit for grading in this course must be your own. Submitting work that includes many (minor and/or major) components that are not your own work is considered plagiarism. Instances of plagiarism will be reported to the Dean of Students.**
-
-Keep in mind that all assignments and practice problems provided in this course are meant to help you to practice the skills that you will need for graded work (including on paper quizzes and exams), so it is generally in your best interest to avoid taking shortcuts even on these assignments.
-
-Students are expected to adhere to the UA Code of Academic Integrity as described in the UA General Catalog. See <https://deanofstudents.arizona.edu/student-rights-responsibilities/academic-integrity>.
-
-Uploading material from this course to a website other than D2L is strictly prohibited and will be considered a violation of the course policy and a violation of the code of academic integrity. Obtaining material associated with this course (or previous offerings of this course) on a site other than D2L and the course website, such as Chegg, Course Hero, etc. or accessing these sites during a quiz or exam is a violation of the code of academic integrity. Any student determined to have uploaded or accessed material in an unauthorized manner will be reported to the Dean of Students for a Code of Academic Integrity violation, with a recommended sanction of a failing grade in the course (faculty can replace this sanction with whatever sanction they plan to use for their course).
-
-The University Libraries have some excellent tips for avoiding plagiarism, available at $$http://new.library.arizona.edu/research/citing/plagiarism$$(<http://new.library.arizona.edu/research/citing/plagiarism>.
-
-Selling class notes and/or other course materials to other students or to a third party for resale is not permitted without the instructor's express written consent. Violations to this and other course rules are subject to the Code of Academic Integrity and may result in course sanctions. Additionally, students who use D2L or UA e-mail to sell or buy these copyrighted materials are subject to Code of Conduct Violations for misuse of student e-mail addresses. This conduct may also constitute copyright infringement.
-
-# Nondiscrimination and Anti-harassment Policy
-
-The University of Arizona is committed to creating and maintaining an environment free of discrimination. In support of this commitment, the University prohibits discrimination, including harassment and retaliation, based on a protected classification, including race, color, religion, sex, national origin, age, disability, veteran status, sexual orientation, gender identity, or genetic information. For more information, including how to report a concern, please see <http://policy.arizona.edu/human-resources/nondiscrimination-and-anti-harassment-policy>.
-
-Our classroom is a place where everyone is encouraged to express well-formed opinions and their reasons for those opinions. We also want to create a tolerant and open environment where such opinions can be expressed without resorting to bullying or discrimination of others.
-
-# Additional Resources for Students
-
-UA Academic policies and procedures are available at <http://catalog.arizona.edu/policies>. Visit the UArizona COVID-19 page for regular updates.
-
-## Campus Health
-
-<http://www.health.arizona.edu/>
-
-Campus Health provides quality medical and mental health care services through virtual and in-person care. Voluntary, free, and convenient COVID-19 testing is available for students on Main Campus. COVID-19 vaccine is available for all students at Campus Health.
-
-Phone: 520-621-9202
-
-## Counseling and Psych Services (CAPS)
-
-<https://health.arizona.edu/counseling-psych-services>
-
-CAPS provides mental health care, including short-term counseling services.
-
-Phone: 520-621-3334
-
-## The Dean of Students Office's Student Assistance Program
-
-<https://deanofstudents.arizona.edu/support/student-assistance>
-
-Student Assistance helps students manage crises, life traumas, and other barriers that impede success. The staff addresses the needs of students who experience issues related to social adjustment, academic challenges, psychological health, physical health, victimization, and relationship issues, through a variety of interventions, referrals, and follow up services.
-
-Email: DOS-deanofstudents\@email.arizona.edu Phone: 520-621-7057
-
-## Survivor Advocacy Program
-
-<https://survivoradvocacy.arizona.edu/>
-
-The Survivor Advocacy Program provides confidential support and advocacy services to student survivors of sexual and gender-based violence. The Program can also advise students about relevant non-UA resources available within the local community for support.
-
-Email: survivoradvocacy\@email.arizona.edu Phone: 520-621-5767
-
-# Campus Pantry
-
-Any student who has difficulty affording groceries or accessing sufficient food to eat every day, or who lacks a safe and stable place to live and believes this may affect their performance in the course, is urged to contact the Dean of Students for support. In addition, the University of Arizona Campus Pantry is open for students to receive supplemental groceries at no cost. Please see their website at: [campuspantry.arizona.edu](https://campuspantry.arizona.edu/) for open times.
-
-Furthermore, please notify me if you are comfortable in doing so. This will enable me to provide any resources that I may possess.
-
-# Pronouns and Preferred Names
-
-This course affirms people of all gender expressions and gender identities. If you prefer to be called a different name than what is on the class roster, please let me know. Feel free to correct instructors on your pronoun. If you have any questions or concerns, please do not hesitate to contact me directly in class or via email (instructor email). If you wish to change your preferred name or pronoun in the UAccess system, please use the following guidelines:
-
--   **Preferred name**: University of Arizona students may choose to identify themselves within the University community using a preferred first name that differs from their official/legal name. A student's preferred name will appear instead of the person's official/legal first name in select University-related systems and documents, provided that the name is not being used for the purpose of misrepresentation. Students are able to update their preferred names in UAccess.
--   **Pronouns**: Students may designate pronouns they use to identify themselves. Instructors and staff are encouraged to use pronouns for people that they use for themselves as a sign of respect and inclusion. Students are able to update and edit their pronouns in UAccess.
-
-More information on updating your preferred name and pronouns is available on the Office of the Registrar site at <https://www.registrar.arizona.edu/>.
 
 # Safety on Campus and in the Classroom
 
@@ -366,9 +295,16 @@ Also watch the video available at <https://arizona.sabacloud.com/Saba/Web_spf/NA
 
 Student education records are considered confidential and may not be released without the written consent of the student. For more information visit <http://www.registrar.arizona.edu/ferpa>.
 
-# Land Acknowledgement Statement
+# University-wide Policies link
 
-We respectfully acknowledge the University of Arizona is on the land and territories of Indigenous peoples. Today, Arizona is home to 22 federally recognized tribes, with Tucson being home to the O'odham and the Yaqui. Committed to diversity and inclusion, the University strives to build sustainable relationships with sovereign Native Nations and Indigenous communities through education offerings, partnerships, and community service.
+All students must familiarize themselves with the policies and resources at the following link: <https://catalog.arizona.edu/syllabus-policies>  
+
+- Threatening Behavior Policy 
+- Student Code of Academic Integrity 
+- Nondiscrimination and Anti-Harassment Policy 
+- Disability Syllabus Statement 
+- Religious Accommodation Policy 
+- Absences pre-approved by the University Dean of Students (or dean’s designee) will be honored. 
 
 # Subject to Change Statement
 
