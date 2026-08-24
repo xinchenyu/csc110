@@ -47,41 +47,23 @@ The TAs are responsible for:
     -   data structures and more!
 -   Prerequisites: College Algebra or CSc 101 or appropriate math placement score
 
-## The intro sequence
-
-This is the intro course sequence for the CS department:
-
-<center>
-
-<br/>
-
-<p>CSc 101 - Intro to Computer Science</p>
-
-<img src="arrow_down.gif" width="50" align="center"/>
-
-<p>CSc 110 - Intro to Computer Programming I</p>
-
-<img src="arrow_down.gif" width="50" align="center"/>
-
-<p>CSc 120 - Intro to Computer Programming II</p>
-
-</center>
 
 ## In-class activity 1
 
 - 👥 Pair with a partner at your table
 
-- 🔄 Share one thing you're willing to try, fail at, and eventually succeed in
+- 🧩 Share something you enjoy figuring out and building toward
+
+- 🔄 What have you tried, failed at, and eventually succeeded in?
 
 - 💬 Be ready to share your partner's story!
 
 
 ## What do you need to succeed in this class?
 
-A willingness to:
-
--   be curious about how things work
--   try and fail
+-   Curiosity: HOW does this work?
+-   Persistence: Let me try AGAIN.
+-   Independence: Let ME figure this out.
 
 ## What do you need to succeed in this class?
 
@@ -99,6 +81,8 @@ A willingness to:
 
 ## Assessment structure
 
+Exams and quizzes are on paper. 
+
 -   Programming Problems
 
 -   Short Projects (to be completed in the lab sessions)
@@ -109,18 +93,12 @@ A willingness to:
 
 -   Midterms and Final Exam (on paper)
 
-## Exams and Quizzes
-
-Exams are on paper. Why?
-
--   Important skill to develop: whiteboard coding interviews are common
--   Gives you the chance to see for yourself what you have or haven’t learned
 
 ## In-class activity 2
 
 Course website: [xinchenyu.github.io/csc110](https://xinchenyu.github.io/csc110/)
 
-Access [gradescope](https://www.gradescope.com/courses/1213866), discuss with your group members and work on quiz 01. Answers can be found at:
+Access [gradescope](https://www.gradescope.com/courses/1343427), discuss with your group members and work on quiz 01. Answers can be found at:
 
 -   Syllabus
 -   TAs and Office Hours
@@ -128,8 +106,8 @@ Access [gradescope](https://www.gradescope.com/courses/1213866), discuss with yo
 
 ## Other Important Dates
 
--   Last day for students to add themselves to a course using UAccess is Jan 21
--   Last day for students to drop without a grade of W (withdraw) is Jan 27
+-   Last day to add yourselves to a course using UAccess is Aug 31
+-   Last day to drop without a grade of W (withdraw) is Sep 6
 
 ## Academic integrity
 
@@ -176,7 +154,7 @@ Come to office hours but come prepared!
 
 -   Come to office hours!
     -   1 point of extra credit if you show up to office hours (read the syllabus for specifics on this)
--   Ask on [Piazza](https://piazza.com/class/mk3c0x143v2wf) 
+-   Ask on [Piazza](https://piazza.com/class/msf3x0fin897j) 
     -   ask on Piazza: questions about in-class activities, assignments, quizzes, and exams (has private options)
     -   email me: only logistics-related questions
 
