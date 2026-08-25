@@ -209,17 +209,6 @@
     ]
   },
   {
-    "objectID": "hello.html#videos",
-    "href": "hello.html#videos",
-    "title": "Hello World!",
-    "section": "Videos",
-    "text": "Videos\n\n\n\n\nExample: Using Variables And Literal Constants\nType and run the following program:\n# Filename : var.py\ni = 5\nprint(i)\ni = i + 1\nprint(i)\n\ns = '''This is a multi-line string.\nThis is the second line.'''\nprint(s)\nOutput:\n5\n6\nThis is a multi-line string.\nThis is the second line.\nHow It Works\nHere’s how this program works. First, we assign the literal constant value 5 to the variable i using the assignment operator (=). This line is called a statement because it states that something should be done and in this case, we connect the variable name i to the value 5. Next, we print the value of i using the print statement which, unsurprisingly, just prints the value of the variable to the screen.\nThen we add 1 to the value stored in i and store it back. We then print it and expectedly, we get the value 6.\nSimilarly, we assign the literal string to the variable s and then print it.\n\nNote for static language programmers\nVariables are used by just assigning them a value. No declaration or data type definition is needed/used.",
-    "crumbs": [
-      "Module 1 - Basics",
-      "Hello World!"
-    ]
-  },
-  {
     "objectID": "hello.html#logical-and-physical-line",
     "href": "hello.html#logical-and-physical-line",
     "title": "Hello World!",
@@ -2928,7 +2917,7 @@
     "href": "slides-07-02.html#random-module",
     "title": "random (slides)",
     "section": "random module",
-    "text": "random module\nWe need to import the module random\nWhat do the functions .random() and .randint() return?\n\nimport random\n\nn = random.random() #returns a random float between 0 and 1\nprint(n)\n\nn = random.randint(0, 9) #returns a random integer betweem 0 and 9.\n\n\nprint(n)\n\n0.8922416142649852\n0",
+    "text": "random module\nWe need to import the module random\nWhat do the functions .random() and .randint() return?\n\nimport random\n\nn = random.random() #returns a random float between 0 and 1\nprint(n)\n\nn = random.randint(0, 9) #returns a random integer betweem 0 and 9.\n\n\nprint(n)\n\n0.3813797969412184\n1",
     "crumbs": [
       "Module 7 - Data Structures (lists)",
       "random (slides)"
@@ -2939,7 +2928,7 @@
     "href": "slides-07-02.html#read-the-function",
     "title": "random (slides)",
     "section": "Read the function",
-    "text": "Read the function\nWhat does the function do?\n\nimport random\n\ndef pick_winner(names):\n  index = random.randint(0, len(names) - 1)\n  return names[index]\n\nif __name__ == \"__main__\":\n  winner = pick_winner([\"Peter\", \"Joan\", \"Mary\", \"June\"])\n  print(winner)\n\nJoan",
+    "text": "Read the function\nWhat does the function do?\n\nimport random\n\ndef pick_winner(names):\n  index = random.randint(0, len(names) - 1)\n  return names[index]\n\nif __name__ == \"__main__\":\n  winner = pick_winner([\"Peter\", \"Joan\", \"Mary\", \"June\"])\n  print(winner)\n\nJune",
     "crumbs": [
       "Module 7 - Data Structures (lists)",
       "random (slides)"
@@ -6212,7 +6201,7 @@
     "href": "slides-16-01.html#write-a-function---solution",
     "title": "final exam review (slides)",
     "section": "write a function - solution",
-    "text": "write a function - solution\n\ndef create_list(items, n):\n  new_list = [ ]\n  for value in items:\n    new_list.extend([value] * n)\n  return new_list\n\ndef main():\n  items = {\"banana\", \"apple\", \"pear\"}\n  print(create_list(items, 2))  \n  \nmain()\n\n['pear', 'pear', 'banana', 'banana', 'apple', 'apple']",
+    "text": "write a function - solution\n\ndef create_list(items, n):\n  new_list = [ ]\n  for value in items:\n    new_list.extend([value] * n)\n  return new_list\n\ndef main():\n  items = {\"banana\", \"apple\", \"pear\"}\n  print(create_list(items, 2))  \n  \nmain()\n\n['banana', 'banana', 'pear', 'pear', 'apple', 'apple']",
     "crumbs": [
       "Module 16 - Review",
       "final exam review (slides)"
@@ -8545,7 +8534,7 @@
     "href": "syllabus.html#holidays",
     "title": "Syllabus",
     "section": "Holidays",
-    "text": "Holidays\nWe won’t have classes due to university-wide holidays on the following dates:\n\n\n\n\n\nWeek\nDate\nHoliday\n\n\n\n\n3\nTue, Sep 01\nLabor Day\n\n\n12\nWed, Nov 11\nVeterans Day\n\n\n14\nThu, Nov 26\nThanksgiving Recess",
+    "text": "Holidays\nWe won’t have classes due to university-wide holidays on the following dates:\n\n\n\n\n\nWeek\nDate\nHoliday\n\n\n\n\n3\nMon, Sep 07\nLabor Day\n\n\n12\nWed, Nov 11\nVeterans Day\n\n\n14\nThu, Nov 26\nThanksgiving Recess",
     "crumbs": [
       "Start Here",
       "Syllabus"
