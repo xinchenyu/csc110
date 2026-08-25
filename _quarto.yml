@@ -91,9 +91,6 @@ website:
         contents: 
         - practice-01.qmd
         - gradescope-errors.qmd
-      - section: "Watch"
-        contents:
-        - videos.qmd
       - section: "Module 1 - Basics"
         contents:
         - hello.qmd

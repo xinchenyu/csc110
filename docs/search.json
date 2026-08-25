@@ -242,17 +242,6 @@
     ]
   },
   {
-    "objectID": "hello.html#video",
-    "href": "hello.html#video",
-    "title": "Hello World!",
-    "section": "Video",
-    "text": "Video",
-    "crumbs": [
-      "Module 1 - Basics",
-      "Hello World!"
-    ]
-  },
-  {
     "objectID": "io.html",
     "href": "io.html",
     "title": "Input and Output",
@@ -2939,7 +2928,7 @@
     "href": "slides-07-02.html#random-module",
     "title": "random (slides)",
     "section": "random module",
-    "text": "random module\nWe need to import the module random\nWhat do the functions .random() and .randint() return?\n\nimport random\n\nn = random.random() #returns a random float between 0 and 1\nprint(n)\n\nn = random.randint(0, 9) #returns a random integer betweem 0 and 9.\n\n\nprint(n)\n\n0.9822428548450081\n6",
+    "text": "random module\nWe need to import the module random\nWhat do the functions .random() and .randint() return?\n\nimport random\n\nn = random.random() #returns a random float between 0 and 1\nprint(n)\n\nn = random.randint(0, 9) #returns a random integer betweem 0 and 9.\n\n\nprint(n)\n\n0.8922416142649852\n0",
     "crumbs": [
       "Module 7 - Data Structures (lists)",
       "random (slides)"
@@ -2950,7 +2939,7 @@
     "href": "slides-07-02.html#read-the-function",
     "title": "random (slides)",
     "section": "Read the function",
-    "text": "Read the function\nWhat does the function do?\n\nimport random\n\ndef pick_winner(names):\n  index = random.randint(0, len(names) - 1)\n  return names[index]\n\nif __name__ == \"__main__\":\n  winner = pick_winner([\"Peter\", \"Joan\", \"Mary\", \"June\"])\n  print(winner)\n\nMary",
+    "text": "Read the function\nWhat does the function do?\n\nimport random\n\ndef pick_winner(names):\n  index = random.randint(0, len(names) - 1)\n  return names[index]\n\nif __name__ == \"__main__\":\n  winner = pick_winner([\"Peter\", \"Joan\", \"Mary\", \"June\"])\n  print(winner)\n\nJoan",
     "crumbs": [
       "Module 7 - Data Structures (lists)",
       "random (slides)"
@@ -4589,7 +4578,7 @@
     "href": "practice-01.html",
     "title": "Practice Problems",
     "section": "",
-    "text": "Midterm Study Guide\nMidterm 1 (Modules 1-6)\n\noperations\nbuilt-in functions such as round(), input(), .isnumeric(), etc.\nif elif else statements\nwhile loop + strings\ndecomposition: define your own functions and main function\ncombinations of above (for example, using input() in the while loop)\n\nMidterm 2 (Modules 1-10 with a focus on Modules 7-10)\n\nif elif else statements\ndraw loop table based on functions\nwhile loop\nfor loop (2 ways of for loops)\nlist: mutability, iterating a list (to find max, total, etc)\ndictionary: mutability\ncombinations of above\n\n\n\nExtra Practice Problems\nI’ve created a Google colab notebook with practice exercises, and test cases. Here are the instructions to use the notebook:\n\nAccess notebook on google colab – you need to be signed in with a google account\nIf a black screen shows up, click on the “open with Google colab” at the top of the screen\nRun the first chunk of code. No need to change it, just make sure you run it by hovering over the [ ] on the left upper corner of the code chunk and then pressing the ► button that appears\nScroll down and follow the instructions to write different functions. Make sure you run your code by hovering over the [ ] on the left upper corner of the code chunk and then pressing the ► button that appears\nRun the following chunk with the testing (the one that calls the pass_or_fail function)\n\nNotebooks:\n\nPractice Problems Module 2\nPractice Problems Module 4\nPractice Problems Module 5\nPractice Problems Module 6\nPractice Problems Module 7\nPractice Problems Module 8 I\nPractice Problems Module 8 II\nExtra Practice Problems\nPractice Problems Module 8\nPractice Problems Module 9 I\nPractice Problems Module 9 II\nPractice Problems Module 10\nPractice Problems Module 11\nPractice Problems Module 12\nPractice Problems Module 12\nPractice Problems Module 13\nPractice Problems Module 14 I\nPractice problems Module 14 II\nPractice Problems Module 15\n\n\n\nVideo demonstration\n\n\n\nSolutions\nI highly recommend you do not look at the solutions before you try writing the practice functions yourself. Once you wrote your functions, you can compare yours with my solutions:\n\nSolutions for practice problems Module 2\nSolutions for practice problems Module 4\nSolutions for practice problems Module 5\nSolutions for practice problems Module 6\nSolutions for practice problems Module 7\nSolutions for practice problems Module 8 I\nSolutions for practice problems Module 8 II\nSolutions for practice problems\nSolutions for practice problems Module 8 III\nSolutions for practice problems Module 9 I\nSolutions for practice problems Module 9 II\nSolutions for practice problems Module 10\nSolutions for practice problems Module 11\nSolutions for practice problems Module 12\nSolutions for practice problems Module 12\n[Solutions for practice problems Module 13\nSolutions for practice problems Module 14 I\nSolutions for practice problems Module 14 II\nSolutions for practice problems Module 15",
+    "text": "Midterm Study Guide\nMidterm 1 (Modules 1-6)\n\noperations\nbuilt-in functions such as round(), input(), .isnumeric(), etc.\nif elif else statements\nwhile loop + strings\ndecomposition: define your own functions and main function\ncombinations of above (for example, using input() in the while loop)\n\nMidterm 2 (Modules 1-10 with a focus on Modules 7-10)\n\nif elif else statements\ndraw loop table based on functions\nwhile loop\nfor loop (2 ways of for loops)\nlist: mutability, iterating a list (to find max, total, etc)\ndictionary: mutability\ncombinations of above",
     "crumbs": [
       "Extra Resources",
       "Practice Problems"
@@ -5343,17 +5332,6 @@
     ]
   },
   {
-    "objectID": "slides-01-01.html#the-intro-sequence",
-    "href": "slides-01-01.html#the-intro-sequence",
-    "title": "course introduction (slides)",
-    "section": "The intro sequence",
-    "text": "The intro sequence\nThis is the intro course sequence for the CS department:\n\n\n\nCSc 101 - Intro to Computer Science\n\n\n\nCSc 110 - Intro to Computer Programming I\n\n\n\nCSc 120 - Intro to Computer Programming II",
-    "crumbs": [
-      "Module 1 - Basics",
-      "course introduction (slides)"
-    ]
-  },
-  {
     "objectID": "slides-01-01.html#in-class-activity-1",
     "href": "slides-01-01.html#in-class-activity-1",
     "title": "course introduction (slides)",
@@ -5403,17 +5381,6 @@
     "title": "course introduction (slides)",
     "section": "Assessment structure",
     "text": "Assessment structure\nExams and quizzes are on paper.\n\nProgramming Problems\nShort Projects (to be completed in the lab sessions)\nProjects\nWeekly Quizzes (on paper)\nMidterms and Final Exam (on paper)",
-    "crumbs": [
-      "Module 1 - Basics",
-      "course introduction (slides)"
-    ]
-  },
-  {
-    "objectID": "slides-01-01.html#exams-and-quizzes",
-    "href": "slides-01-01.html#exams-and-quizzes",
-    "title": "course introduction (slides)",
-    "section": "Exams and Quizzes",
-    "text": "Exams and Quizzes\nExams are on paper. Why?\n\nImportant skill to develop: whiteboard coding interviews are common\nGives you the chance to see for yourself what you have or haven’t learned\nLearn to program without relying on AI",
     "crumbs": [
       "Module 1 - Basics",
       "course introduction (slides)"
@@ -6245,7 +6212,7 @@
     "href": "slides-16-01.html#write-a-function---solution",
     "title": "final exam review (slides)",
     "section": "write a function - solution",
-    "text": "write a function - solution\n\ndef create_list(items, n):\n  new_list = [ ]\n  for value in items:\n    new_list.extend([value] * n)\n  return new_list\n\ndef main():\n  items = {\"banana\", \"apple\", \"pear\"}\n  print(create_list(items, 2))  \n  \nmain()\n\n['banana', 'banana', 'pear', 'pear', 'apple', 'apple']",
+    "text": "write a function - solution\n\ndef create_list(items, n):\n  new_list = [ ]\n  for value in items:\n    new_list.extend([value] * n)\n  return new_list\n\ndef main():\n  items = {\"banana\", \"apple\", \"pear\"}\n  print(create_list(items, 2))  \n  \nmain()\n\n['pear', 'pear', 'banana', 'banana', 'apple', 'apple']",
     "crumbs": [
       "Module 16 - Review",
       "final exam review (slides)"
@@ -8600,11 +8567,7 @@
     "href": "videos.html",
     "title": "Video Lessons",
     "section": "",
-    "text": "Module 3:\n\nHypotenuse\n\nModule 4:\n\nOdd function\nString method .isnumeric()\nFizz Buzz problem (if conditionals)\n\nModule 5:\n\nString manipulation\nIntroduction to while loops\n\nModule 6:\n\nReview while loops and strings\nWhile loops and lists",
-    "crumbs": [
-      "Watch",
-      "Video Lessons"
-    ]
+    "text": "Module 3:\n\nHypotenuse\n\nModule 4:\n\nOdd function\nString method .isnumeric()\nFizz Buzz problem (if conditionals)\n\nModule 5:\n\nString manipulation\nIntroduction to while loops\n\nModule 6:\n\nReview while loops and strings\nWhile loops and lists"
   },
   {
     "objectID": "assignments-15.html",
@@ -8632,7 +8595,7 @@
     "href": "assignments-01.html",
     "title": "Module 1 Assignments",
     "section": "",
-    "text": "Programming Problems should be submitted to gradescope.\nIf you need instructions on how to submit your .py files to gradescope, watch the video at the end of this page.\n\nProgramming Problems\nDue date: Wednesday, September 02, 2026 at 9pm\n\n\nProgramming Problem 1\nWrite a python program that prints out the string “Hello World!”. Be careful with capitalization and punctuation. Remember to write code inside a function called main():\n\ndef main():\n    # write your print statement here\n    \nmain()\n\nThe exact output of the program should be:\nHello World!\n\nName the program hello.py. Make sure that gradescope gives you the points for passing the test case.\n\n\nProgramming Problem 2\nWrite a python program that prints out the following excerpt from Amanda Gorman’s poem, “The Hill We Climb”:\nWhen day comes, we ask ourselves, where can we find light in this never-ending shade?\n\nThe loss we carry. A sea we must wade.\nWe braved the belly of the beast.\n\nWe've learned that quiet isn't always peace, \nand the norms and notions of what \"just\" is isn't always justice.\n\nAnd yet the dawn is ours before we knew it.\n\nSomehow we do it.\n\nName the program poem.py. Remember to write code inside a function called main(). Make sure that gradescope gives you the points for passing the test case. You can submit your solution to gradescope as many times as you want before the deadline.\nHINT: print() has a parameter called end which is set as end=\"\\n\" by default – change that to end=\"\" to remove the last newline character.\nMake sure you do the reading for this module, especially the section on Escape Sequences\n\n\nHow to submit to gradescope video",
+    "text": "Programming Problems should be submitted to gradescope.\nIf you need instructions on how to submit your .py files to gradescope, watch the video at the end of this page.\n\nProgramming Problems\nDue date: Wednesday, September 02, 2026 at 9pm\n\n\nProgramming Problem 1\nWrite a python program that prints out the string “Hello World!”. Be careful with capitalization and punctuation. Remember to write code inside a function called main():\n\ndef main():\n    # write your print statement here\n    \nmain()\n\nThe exact output of the program should be:\nHello World!\n\nName the program hello.py. Make sure that gradescope gives you the points for passing the test case.\n\n\nProgramming Problem 2\nWrite a python program that prints out the following excerpt from Amanda Gorman’s poem, “The Hill We Climb”:\nWhen day comes, we ask ourselves, where can we find light in this never-ending shade?\n\nThe loss we carry. A sea we must wade.\nWe braved the belly of the beast.\n\nWe've learned that quiet isn't always peace, \nand the norms and notions of what \"just\" is isn't always justice.\n\nAnd yet the dawn is ours before we knew it.\n\nSomehow we do it.\n\nName the program poem.py. Remember to write code inside a function called main(). Make sure that gradescope gives you the points for passing the test case. You can submit your solution to gradescope as many times as you want before the deadline.\nHINT: print() has a parameter called end which is set as end=\"\\n\" by default – change that to end=\"\" to remove the last newline character.\nMake sure you do the reading for this module, especially the section on Escape Sequences",
     "crumbs": [
       "Module 1 - Basics",
       "Module 1 Assignments"

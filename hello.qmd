@@ -177,6 +177,4 @@ Notice that there is a single space at the beginning of the second line. The err
 >
 > Python will always use indentation for blocks and will never use braces.
 
-## Video
 
-{{< video https://youtu.be/TS8TWgg4U1U >}}
