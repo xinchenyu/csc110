@@ -31,13 +31,6 @@ Ideally, you will be using an IDE (Integrated Development Environment) which fac
 3.  Save it as a file with the filename mentioned.
 4.  Run the interpreter with the command `python program.py` to run the program.
 
-## Videos
-
-{{< video https://youtu.be/Ut1maJMufBk >}}
-
-{{< video https://youtu.be/T4V-9qn-azI >}}
-
-{{< video https://www.youtube.com/embed/cfS7v8nqsuY >}}
 
 ### Example: Using Variables And Literal Constants
 
