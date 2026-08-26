@@ -44,6 +44,7 @@ All assignments that are submitted on Gradescope are due at 9pm (Wednesdays for 
 ## Class slides
 
 -   [Course Introduction](slides-01-01.html)
+-   [Python Basics](slides-01-02.html)
 
 
 # Week 2 (`r schedule %>% filter(week_number == 2 & term == "fall 2026") %>% pull(formatted_start)`)
@@ -57,7 +58,6 @@ All assignments that are submitted on Gradescope are due at 9pm (Wednesdays for 
 
 ## Class slides
 
--   [Python Basics](slides-01-02.html)
 -   [Operations](slides-02-01.html)
 -   [Functions](slides-02-02.html)
 

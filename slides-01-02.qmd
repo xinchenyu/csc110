@@ -9,7 +9,7 @@ slide-number: true
 
 ## Announcements
 
--   Sign-up for your lab session at [xinchenyu.github.io/csc110/short-projects.html](https://xinchenyu.github.io/csc110/short-projects.html)
+-   The first lab sessions start next week.
 -   Full schedule for office hours can be found at [xinchenyu.github.io/csc110/tas.html](https://xinchenyu.github.io/csc110/tas.html)
 
 ## Did you set up your workspace?

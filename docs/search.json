@@ -1953,7 +1953,7 @@
     "href": "slides-01-02.html#announcements",
     "title": "python basics (slides)",
     "section": "Announcements",
-    "text": "Announcements\n\nSign-up for your lab session at xinchenyu.github.io/csc110/short-projects.html\nFull schedule for office hours can be found at xinchenyu.github.io/csc110/tas.html",
+    "text": "Announcements\n\nThe first lab sessions start next week.\nFull schedule for office hours can be found at xinchenyu.github.io/csc110/tas.html",
     "crumbs": [
       "Module 1 - Basics",
       "python basics (slides)"
@@ -7841,7 +7841,7 @@
     "href": "schedule.html#class-slides",
     "title": "Schedule",
     "section": "Class slides",
-    "text": "Class slides\n\nCourse Introduction",
+    "text": "Class slides\n\nCourse Introduction\nPython Basics",
     "crumbs": [
       "Start Here",
       "Schedule"
@@ -7874,7 +7874,7 @@
     "href": "schedule.html#class-slides-1",
     "title": "Schedule",
     "section": "Class slides",
-    "text": "Class slides\n\nPython Basics\nOperations\nFunctions",
+    "text": "Class slides\n\nOperations\nFunctions",
     "crumbs": [
       "Start Here",
       "Schedule"
