@@ -14,7 +14,6 @@ assignments <- read_excel("assessment_schedule.xlsx") %>%
 
 Programming Problems should be submitted to [gradescope](https://www.gradescope.com/courses/1343427).
 
-If you need instructions on how to submit your `.py` files to gradescope, watch the video at the end of this page.
 
 # Programming Problems
 

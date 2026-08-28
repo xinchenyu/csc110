@@ -143,17 +143,6 @@
     ]
   },
   {
-    "objectID": "assignments-14.html",
-    "href": "assignments-14.html",
-    "title": "Module 14 Assignments",
-    "section": "",
-    "text": "Short Programming projects are submitted during our weekly 45-minute in-person lab sessions. Each lab sessions is guided by two TAs. The instructions for the short project will be available only during the lab sessions. To schedule your lab session go to the weekly lab session spreadsheet in Short Project Dates and Instructions.",
-    "crumbs": [
-      "Module 14 - Control Flow with different Data Structures",
-      "Module 14 Assignments"
-    ]
-  },
-  {
     "objectID": "assignments-14.html#programming-problem-27",
     "href": "assignments-14.html#programming-problem-27",
     "title": "Module 14 Assignments",
@@ -308,7 +297,7 @@
     "href": "assignments-02.html",
     "title": "Module 2 Assignments",
     "section": "",
-    "text": "Due date: Wednesday, September 09, 2026 at 9pm\nShort Programming projects are submitted during our weekly 45-minute in-person lab sessions. Each lab sessions is guided by two TAs. The instructions for the short project will be available only during the lab sessions. To schedule your lab session go to the weekly lab session spreadsheet in Short Project Dates and Instructions.",
+    "text": "Due date: Wednesday, September 09, 2026 at 9pm\nShort Programming projects are submitted during our weekly 50-minute in-person lab sessions. Each lab sessions is guided by our TAs. The instructions for the short project will be available during the lab sessions. This is the discussion section you selected when you enrolled in the course. The available sections can be found in the syllabus.",
     "crumbs": [
       "Module 2 - Functions, Operators, and Expressions",
       "Module 2 Assignments"
@@ -396,7 +385,7 @@
     "href": "assignments-13.html",
     "title": "Module 13 Assignments",
     "section": "",
-    "text": "Due date: Wednesday, November 25, 2026 at 9pm\nShort Programming projects are submitted during our weekly 45-minute in-person lab sessions. Each lab sessions is guided by two TAs. The instructions for the short project will be available only during the lab sessions. To schedule your lab session go to the weekly lab session spreadsheet in Short Project Dates and Instructions.",
+    "text": "Due date: Wednesday, November 25, 2026 at 9pm",
     "crumbs": [
       "Module 13 - Data Structures (sets)",
       "Module 13 Assignments"
@@ -429,7 +418,7 @@
     "href": "assignments-07.html",
     "title": "Module 7 Assignments",
     "section": "",
-    "text": "Due date: Wednesday, October 14, 2026 at 9pm\nShort Programming projects are submitted during our weekly 45-minute in-person lab sessions. Each lab sessions is guided by two TAs. The instructions for the short project will be available only during the lab sessions. To schedule your lab session go to the weekly lab session spreadsheet in Short Project Dates and Instructions.",
+    "text": "Due date: Wednesday, October 14, 2026 at 9pm",
     "crumbs": [
       "Module 7 - Data Structures (lists)",
       "Module 7 Assignments"
@@ -462,7 +451,7 @@
     "href": "assignments-06.html",
     "title": "Module 6 Assignments",
     "section": "",
-    "text": "Due date: Friday, October 09, 2026 at 9pm\nShort Programming projects are submitted during our weekly 45-minute in-person lab sessions. Each lab sessions is guided by two TAs. The instructions for the short project will be available only during the lab sessions. To schedule your lab session go to the weekly lab session spreadsheet in Short Project Dates and Instructions.",
+    "text": "Due date: Friday, October 09, 2026 at 9pm",
     "crumbs": [
       "Module 6 - Control Flow (while statements)",
       "Module 6 Assignments"
@@ -850,7 +839,7 @@
     "href": "assignments-11.html",
     "title": "Module 11 Assignments",
     "section": "",
-    "text": "Due date: Wednesday, November 11, 2026 at 9pm\nShort Programming projects are submitted during our weekly 45-minute in-person lab sessions. Each lab sessions is guided by two TAs. The instructions for the short project will be available only during the lab sessions. To schedule your lab session go to the weekly lab session spreadsheet in Short Project Dates and Instructions.",
+    "text": "Due date: Wednesday, November 11, 2026 at 9pm",
     "crumbs": [
       "Module 11 - Data Structures (tuples)",
       "Module 11 Assignments"
@@ -2851,7 +2840,7 @@
     "href": "assignments-08.html",
     "title": "Module 8 Assignments",
     "section": "",
-    "text": "Due date: Wednesday, October 21, 2026 at 9pm\nShort Programming projects are submitted during our weekly 45-minute in-person lab sessions. Each lab sessions is guided by two TAs. The instructions for the short project will be available only during the lab sessions. To schedule your lab session go to the weekly lab session spreadsheet in Short Project Dates and Instructions.",
+    "text": "Due date: Wednesday, October 21, 2026 at 9pm",
     "crumbs": [
       "Module 8 - Control Flow (for statements)",
       "Module 8 Assignments"
@@ -2917,7 +2906,7 @@
     "href": "slides-07-02.html#random-module",
     "title": "random (slides)",
     "section": "random module",
-    "text": "random module\nWe need to import the module random\nWhat do the functions .random() and .randint() return?\n\nimport random\n\nn = random.random() #returns a random float between 0 and 1\nprint(n)\n\nn = random.randint(0, 9) #returns a random integer betweem 0 and 9.\n\n\nprint(n)\n\n0.3813797969412184\n1",
+    "text": "random module\nWe need to import the module random\nWhat do the functions .random() and .randint() return?\n\nimport random\n\nn = random.random() #returns a random float between 0 and 1\nprint(n)\n\nn = random.randint(0, 9) #returns a random integer betweem 0 and 9.\n\n\nprint(n)\n\n0.4655336944695918\n3",
     "crumbs": [
       "Module 7 - Data Structures (lists)",
       "random (slides)"
@@ -2928,7 +2917,7 @@
     "href": "slides-07-02.html#read-the-function",
     "title": "random (slides)",
     "section": "Read the function",
-    "text": "Read the function\nWhat does the function do?\n\nimport random\n\ndef pick_winner(names):\n  index = random.randint(0, len(names) - 1)\n  return names[index]\n\nif __name__ == \"__main__\":\n  winner = pick_winner([\"Peter\", \"Joan\", \"Mary\", \"June\"])\n  print(winner)\n\nJune",
+    "text": "Read the function\nWhat does the function do?\n\nimport random\n\ndef pick_winner(names):\n  index = random.randint(0, len(names) - 1)\n  return names[index]\n\nif __name__ == \"__main__\":\n  winner = pick_winner([\"Peter\", \"Joan\", \"Mary\", \"June\"])\n  print(winner)\n\nPeter",
     "crumbs": [
       "Module 7 - Data Structures (lists)",
       "random (slides)"
@@ -6201,7 +6190,7 @@
     "href": "slides-16-01.html#write-a-function---solution",
     "title": "final exam review (slides)",
     "section": "write a function - solution",
-    "text": "write a function - solution\n\ndef create_list(items, n):\n  new_list = [ ]\n  for value in items:\n    new_list.extend([value] * n)\n  return new_list\n\ndef main():\n  items = {\"banana\", \"apple\", \"pear\"}\n  print(create_list(items, 2))  \n  \nmain()\n\n['banana', 'banana', 'pear', 'pear', 'apple', 'apple']",
+    "text": "write a function - solution\n\ndef create_list(items, n):\n  new_list = [ ]\n  for value in items:\n    new_list.extend([value] * n)\n  return new_list\n\ndef main():\n  items = {\"banana\", \"apple\", \"pear\"}\n  print(create_list(items, 2))  \n  \nmain()\n\n['banana', 'banana', 'apple', 'apple', 'pear', 'pear']",
     "crumbs": [
       "Module 16 - Review",
       "final exam review (slides)"
@@ -7015,7 +7004,7 @@
     "href": "assignments-05.html",
     "title": "Module 5 Assignments",
     "section": "",
-    "text": "Due date: Wednesday, September 30, 2026 at 9pm\nShort Programming projects are submitted during our weekly 45-minute in-person lab sessions. Each lab sessions is guided by two TAs. The instructions for the short project will be available only during the lab sessions. To schedule your lab session go to the weekly lab session spreadsheet in Short Project Dates and Instructions.",
+    "text": "Due date: Wednesday, September 30, 2026 at 9pm",
     "crumbs": [
       "Module 5 - Control Flow (if statements)",
       "Module 5 Assignments"
@@ -7048,7 +7037,7 @@
     "href": "assignments-10.html",
     "title": "Module 10 Assignments",
     "section": "",
-    "text": "Due date: Wednesday, November 04, 2026 at 9pm\nShort Programming projects are submitted during our weekly 45-minute in-person lab sessions. Each lab sessions is guided by two TAs. The instructions for the short project will be available only during the lab sessions. To schedule your lab session go to the weekly lab session spreadsheet in Short Project Dates and Instructions.",
+    "text": "Due date: Wednesday, November 04, 2026 at 9pm",
     "crumbs": [
       "Module 10 - Reading and Writing Text Files",
       "Module 10 Assignments"
@@ -7081,7 +7070,7 @@
     "href": "assignments-04.html",
     "title": "Module 4 Assignments",
     "section": "",
-    "text": "Due date: Wednesday, September 23, 2026 at 9pm\nShort Programming projects are submitted during our weekly 45-minute in-person lab sessions. Each lab sessions is guided by two TAs. The instructions for the short project will be available only during the lab sessions. To schedule your lab session go to the weekly lab session spreadsheet in Short Project Dates and Instructions.",
+    "text": "Due date: Wednesday, September 23, 2026 at 9pm",
     "crumbs": [
       "Module 4 - Built-In Functions and Decomposition",
       "Module 4 Assignments"
@@ -7196,7 +7185,7 @@
     "href": "assignments-12.html",
     "title": "Module 12 Assignments",
     "section": "",
-    "text": "Due date: Wednesday, November 18, 2026 at 9pm\nShort Programming projects are submitted during our weekly 45-minute in-person lab sessions. Each lab sessions is guided by two TAs. The instructions for the short project will be available only during the lab sessions. To schedule your lab session go to the weekly lab session spreadsheet in Short Project Dates and Instructions.",
+    "text": "Due date: Wednesday, November 18, 2026 at 9pm",
     "crumbs": [
       "Module 12 - Data Structures (2D lists)",
       "Module 12 Assignments"
@@ -7621,7 +7610,7 @@
     "href": "assignments-03.html",
     "title": "Module 3 Assignments",
     "section": "",
-    "text": "Due date: Wednesday, September 16, 2026 at 9pm\nShort Programming projects are submitted during our weekly 45-minute in-person lab sessions. Each lab sessions is guided by two TAs. The instructions for the short project will be available only during the lab sessions. To schedule your lab session go to the weekly lab session spreadsheet in Short Project Dates and Instructions.",
+    "text": "Due date: Wednesday, September 16, 2026 at 9pm",
     "crumbs": [
       "Module 3 - Decomposition and More on Functions",
       "Module 3 Assignments"
@@ -8584,7 +8573,7 @@
     "href": "assignments-01.html",
     "title": "Module 1 Assignments",
     "section": "",
-    "text": "Programming Problems should be submitted to gradescope.\nIf you need instructions on how to submit your .py files to gradescope, watch the video at the end of this page.\n\nProgramming Problems\nDue date: Wednesday, September 02, 2026 at 9pm\n\n\nProgramming Problem 1\nWrite a python program that prints out the string “Hello World!”. Be careful with capitalization and punctuation. Remember to write code inside a function called main():\n\ndef main():\n    # write your print statement here\n    \nmain()\n\nThe exact output of the program should be:\nHello World!\n\nName the program hello.py. Make sure that gradescope gives you the points for passing the test case.\n\n\nProgramming Problem 2\nWrite a python program that prints out the following excerpt from Amanda Gorman’s poem, “The Hill We Climb”:\nWhen day comes, we ask ourselves, where can we find light in this never-ending shade?\n\nThe loss we carry. A sea we must wade.\nWe braved the belly of the beast.\n\nWe've learned that quiet isn't always peace, \nand the norms and notions of what \"just\" is isn't always justice.\n\nAnd yet the dawn is ours before we knew it.\n\nSomehow we do it.\n\nName the program poem.py. Remember to write code inside a function called main(). Make sure that gradescope gives you the points for passing the test case. You can submit your solution to gradescope as many times as you want before the deadline.\nHINT: print() has a parameter called end which is set as end=\"\\n\" by default – change that to end=\"\" to remove the last newline character.\nMake sure you do the reading for this module, especially the section on Escape Sequences",
+    "text": "Programming Problems should be submitted to gradescope.\n\nProgramming Problems\nDue date: Wednesday, September 02, 2026 at 9pm\n\n\nProgramming Problem 1\nWrite a python program that prints out the string “Hello World!”. Be careful with capitalization and punctuation. Remember to write code inside a function called main():\n\ndef main():\n    # write your print statement here\n    \nmain()\n\nThe exact output of the program should be:\nHello World!\n\nName the program hello.py. Make sure that gradescope gives you the points for passing the test case.\n\n\nProgramming Problem 2\nWrite a python program that prints out the following excerpt from Amanda Gorman’s poem, “The Hill We Climb”:\nWhen day comes, we ask ourselves, where can we find light in this never-ending shade?\n\nThe loss we carry. A sea we must wade.\nWe braved the belly of the beast.\n\nWe've learned that quiet isn't always peace, \nand the norms and notions of what \"just\" is isn't always justice.\n\nAnd yet the dawn is ours before we knew it.\n\nSomehow we do it.\n\nName the program poem.py. Remember to write code inside a function called main(). Make sure that gradescope gives you the points for passing the test case. You can submit your solution to gradescope as many times as you want before the deadline.\nHINT: print() has a parameter called end which is set as end=\"\\n\" by default – change that to end=\"\" to remove the last newline character.\nMake sure you do the reading for this module, especially the section on Escape Sequences",
     "crumbs": [
       "Module 1 - Basics",
       "Module 1 Assignments"
