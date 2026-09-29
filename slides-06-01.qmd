@@ -8,11 +8,11 @@ slide-number: true
 
 ## Announcements
 
-* Midterm 1 Feb 24, Tuesday -- BRING PHOTO ID
+* Midterm 1 Oct 06, Tuesday -- BRING PHOTO ID
   * Time and room: same as regular lecture
   * Module 1 to Module 6
 * Review session
-  * Time: Feb 23, Monday 5:00 - 6:30pm
+  * Time: Oct 05, Monday 5:00 - 6:30pm
   * Room: TBD
 * [Study guide](https://xinchenyu.github.io/csc110/practice-01.html)
 

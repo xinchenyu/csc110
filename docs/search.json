@@ -1216,7 +1216,7 @@
     "href": "slides-06-01.html#announcements",
     "title": "while loop intro (slides)",
     "section": "Announcements",
-    "text": "Announcements\n\nMidterm 1 Feb 24, Tuesday – BRING PHOTO ID\n\nTime and room: same as regular lecture\nModule 1 to Module 6\n\nReview session\n\nTime: Feb 23, Monday 5:00 - 6:30pm\nRoom: TBD\n\nStudy guide",
+    "text": "Announcements\n\nMidterm 1 Oct 06, Tuesday – BRING PHOTO ID\n\nTime and room: same as regular lecture\nModule 1 to Module 6\n\nReview session\n\nTime: Oct 05, Monday 5:00 - 6:30pm\nRoom: TBD\n\nStudy guide",
     "crumbs": [
       "Module 6 - Control Flow (while statements)",
       "while loop intro (slides)"
@@ -4556,7 +4556,7 @@
     "href": "practice-01.html",
     "title": "Practice Problems",
     "section": "",
-    "text": "Midterm Study Guide\nMidterm 1 (Modules 1-6)\n\noperations\nbuilt-in functions such as round(), input(), .isnumeric(), etc.\nif elif else statements\nwhile loop + strings\ndecomposition: define your own functions and main function\ncombinations of above (for example, using input() in the while loop)\n\nMidterm 2 (Modules 1-10 with a focus on Modules 7-10)\n\nif elif else statements\ndraw loop table based on functions\nwhile loop\nfor loop (2 ways of for loops)\nlist: mutability, iterating a list (to find max, total, etc)\ndictionary: mutability\ncombinations of above",
+    "text": "Midterm Study Guide\nMidterm 1 (Modules 1-6), Study Guide 1\n\noperations\nbuilt-in functions such as round(), input(), .isnumeric(), etc.\nif elif else statements\nwhile loop + strings\ndecomposition: define your own functions and main function\ncombinations of above (for example, using input() in the while loop)\n\nMidterm 2 (Modules 1-10 with a focus on Modules 7-10)\n\nif elif else statements\ndraw loop table based on functions\nwhile loop\nfor loop (2 ways of for loops)\nlist: mutability, iterating a list (to find max, total, etc)\ndictionary: mutability\ncombinations of above",
     "crumbs": [
       "Extra Resources",
       "Practice Problems"
