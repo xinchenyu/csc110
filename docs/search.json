@@ -4556,7 +4556,7 @@
     "href": "practice-01.html",
     "title": "Practice Problems",
     "section": "",
-    "text": "Midterm Study Guide\nMidterm 1 (Modules 1-6), Study Guide 1\n\noperations\nbuilt-in functions such as round(), input(), .isnumeric(), etc.\nif elif else statements\nwhile loop + strings\ndecomposition: define your own functions and main function\ncombinations of above (for example, using input() in the while loop)\n\nMidterm 2 (Modules 1-10 with a focus on Modules 7-10)\n\nif elif else statements\ndraw loop table based on functions\nwhile loop\nfor loop (2 ways of for loops)\nlist: mutability, iterating a list (to find max, total, etc)\ndictionary: mutability\ncombinations of above",
+    "text": "Midterm Study Guide\nMidterm 1 (Modules 1-6), Study Guide 1\n\noperations\nbuilt-in functions such as round(), input(), .isnumeric(), etc.\nif elif else statements\nwhile loop + strings\ndecomposition: define your own functions and main function\ncombinations of above (for example, using input() in the while loop)\n\nMidterm 2 (Modules 1-10 with a focus on Modules 7-10), Study Guide 2\n\nif elif else statements\ndraw loop table based on functions\nwhile loop\nfor loop (2 ways of for loops)\nlist: mutability, iterating a list (to find max, total, etc)\ndictionary: mutability\ncombinations of above",
     "crumbs": [
       "Extra Resources",
       "Practice Problems"
